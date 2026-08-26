@@ -1,5 +1,5 @@
 {
-  "fetched_at_utc": "2026-08-26T15:10:57.638697+00:00",
+  "fetched_at_utc": "2026-08-26T15:14:09.931064+00:00",
   "slate_date_et": "2026-08-26",
   "pregame_only": true,
   "source": "DraftKings Predictions",
@@ -190,14 +190,14 @@
           "player": "Landen Roupp",
           "line": 5.5,
           "over": "−122",
-          "under": "+113",
+          "under": "+117",
           "k9": 8.69,
           "market_name": "Landen Roupp Strikeouts Thrown O/U"
         },
         {
           "player": "Nick Lodolo",
           "line": 4.5,
-          "over": "−113",
+          "over": "−117",
           "under": "+108",
           "k9": 7.08,
           "market_name": "Nick Lodolo Strikeouts Thrown O/U"
@@ -387,7 +387,7 @@
         {
           "player": "Jesus Luzardo",
           "line": 7.5,
-          "over": "+104",
+          "over": "−104",
           "under": "−108",
           "k9": 11.19,
           "market_name": "Jesus Luzardo Strikeouts Thrown O/U"
@@ -826,7 +826,7 @@
           "player": "MacKenzie Gore",
           "line": 6.5,
           "over": "+133",
-          "under": "−144",
+          "under": "−138",
           "k9": 9.95,
           "market_name": "MacKenzie Gore Strikeouts Thrown O/U"
         },
