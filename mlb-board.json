@@ -1,6 +1,6 @@
 {
-  "fetched_at_utc": "2026-08-26T15:14:09.931064+00:00",
-  "slate_date_et": "2026-08-26",
+  "fetched_at_utc": "2026-08-27T14:55:03.120433+00:00",
+  "slate_date_et": "2026-08-27",
   "pregame_only": true,
   "source": "DraftKings Predictions",
   "league_id": "84240",
@@ -8,145 +8,390 @@
   "strikeout_subcategory_id": "15221",
   "games": [
     {
-      "event_id": "34570668",
-      "matchup": "TB Rays @ DET Tigers",
-      "start_utc": "2026-08-26T17:10:00.0000000Z",
+      "event_id": "34576458",
+      "matchup": "COL Rockies @ WAS Nationals",
+      "start_utc": "2026-08-27T17:05:00.0000000Z",
       "away": {
-        "name": "TB Rays",
-        "short": "TB",
-        "starting_pitcher": "Freddy Peralta"
+        "name": "COL Rockies",
+        "short": "COL",
+        "starting_pitcher": "Gabriel Hughes"
       },
       "home": {
-        "name": "DET Tigers",
-        "short": "DET",
-        "starting_pitcher": "Troy Melton"
+        "name": "WAS Nationals",
+        "short": "WAS",
+        "starting_pitcher": "Jake Irvin"
       },
       "moneyline": {
         "away": {
-          "team": "TB Rays",
-          "odds": "+108"
+          "team": "COL Rockies",
+          "odds": "+122"
         },
         "home": {
-          "team": "DET Tigers",
+          "team": "WAS Nationals",
+          "odds": "−133"
+        }
+      },
+      "total": {
+        "over": {
+          "points": 9.5,
           "odds": "−113"
+        },
+        "under": {
+          "points": 9.5,
+          "odds": "+108"
+        }
+      },
+      "run_line": {
+        "away": {
+          "team": "COL Rockies",
+          "points": -0.5,
+          "odds": "+122"
+        },
+        "home": {
+          "team": "WAS Nationals",
+          "points": 0.5,
+          "odds": "−138"
+        }
+      },
+      "strikeouts": [
+        {
+          "player": "Jake Irvin",
+          "line": 4.5,
+          "over": "−108",
+          "under": "−104",
+          "k9": 8.84,
+          "market_name": "Jake Irvin Strikeouts Thrown O/U"
+        },
+        {
+          "player": "Gabriel Hughes",
+          "line": 3.5,
+          "over": "+104",
+          "under": "−108",
+          "k9": 7.38,
+          "market_name": "Gabriel Hughes Strikeouts Thrown O/U"
+        }
+      ],
+      "start_et": "2026-08-27T13:05:00-04:00"
+    },
+    {
+      "event_id": "34576466",
+      "matchup": "BAL Orioles @ STL Cardinals",
+      "start_utc": "2026-08-27T18:15:00.0000000Z",
+      "away": {
+        "name": "BAL Orioles",
+        "short": "BAL",
+        "starting_pitcher": "Trevor Rogers"
+      },
+      "home": {
+        "name": "STL Cardinals",
+        "short": "STL",
+        "starting_pitcher": "Cooper Hjerpe"
+      },
+      "moneyline": {
+        "away": {
+          "team": "BAL Orioles",
+          "odds": "−113"
+        },
+        "home": {
+          "team": "STL Cardinals",
+          "odds": "+108"
         }
       },
       "total": {
         "over": {
           "points": 7.5,
-          "odds": "+100"
+          "odds": "−117"
         },
         "under": {
           "points": 7.5,
-          "odds": "−104"
+          "odds": "+113"
         }
       },
       "run_line": {
         "away": {
-          "team": "TB Rays",
-          "points": -1.5,
-          "odds": "+186"
+          "team": "BAL Orioles",
+          "points": 0.5,
+          "odds": "−117"
         },
         "home": {
-          "team": "DET Tigers",
-          "points": 1.5,
-          "odds": "−186"
+          "team": "STL Cardinals",
+          "points": -0.5,
+          "odds": "+108"
         }
       },
       "strikeouts": [
         {
-          "player": "Freddy Peralta",
+          "player": "Trevor Rogers",
+          "line": 4.5,
+          "over": "−138",
+          "under": "+133",
+          "k9": 7.73,
+          "market_name": "Trevor Rogers Strikeouts Thrown O/U"
+        }
+      ],
+      "start_et": "2026-08-27T14:15:00-04:00"
+    },
+    {
+      "event_id": "34576467",
+      "matchup": "HOU Astros @ NY Yankees",
+      "start_utc": "2026-08-27T23:05:00.0000000Z",
+      "away": {
+        "name": "HOU Astros",
+        "short": "HOU",
+        "starting_pitcher": "Hayden Wesneski"
+      },
+      "home": {
+        "name": "NY Yankees",
+        "short": "NYY",
+        "starting_pitcher": "Gerrit Cole"
+      },
+      "moneyline": {
+        "away": {
+          "team": "HOU Astros",
+          "odds": "+138"
+        },
+        "home": {
+          "team": "NY Yankees",
+          "odds": "−150"
+        }
+      },
+      "total": {
+        "over": {
+          "points": 8.5,
+          "odds": "+104"
+        },
+        "under": {
+          "points": 8.5,
+          "odds": "−122"
+        }
+      },
+      "run_line": {},
+      "strikeouts": [
+        {
+          "player": "Gerrit Cole",
+          "line": 5.5,
+          "over": "−104",
+          "under": "+100",
+          "k9": 9.71,
+          "market_name": "Gerrit Cole Strikeouts Thrown O/U"
+        },
+        {
+          "player": "Hayden Wesneski",
           "line": 4.5,
           "over": "+117",
           "under": "−127",
-          "k9": 8.6,
-          "market_name": "Freddy Peralta Strikeouts Thrown O/U"
-        },
-        {
-          "player": "Troy Melton",
-          "line": 3.5,
-          "over": "−144",
-          "under": "+127",
-          "k9": 7.6,
-          "market_name": "Troy Melton Strikeouts Thrown O/U"
+          "k9": 7.16,
+          "market_name": "Hayden Wesneski Strikeouts Thrown O/U"
         }
       ],
-      "start_et": "2026-08-26T13:10:00-04:00"
+      "start_et": "2026-08-27T19:05:00-04:00"
     },
     {
-      "event_id": "34570669",
-      "matchup": "CHI Cubs @ ARI Diamondbacks",
-      "start_utc": "2026-08-26T19:40:00.0000000Z",
+      "event_id": "34576474",
+      "matchup": "KC Royals @ TOR Blue Jays",
+      "start_utc": "2026-08-27T23:07:00.0000000Z",
       "away": {
-        "name": "CHI Cubs",
-        "short": "CHC",
-        "starting_pitcher": "Matthew Boyd"
+        "name": "KC Royals",
+        "short": "KC",
+        "starting_pitcher": "Noah Cameron"
       },
       "home": {
-        "name": "ARI Diamondbacks",
-        "short": "ARI",
-        "starting_pitcher": "Eduardo Rodriguez"
+        "name": "TOR Blue Jays",
+        "short": "TOR",
+        "starting_pitcher": "Spencer Arrighetti"
       },
       "moneyline": {
         "away": {
-          "team": "CHI Cubs",
-          "odds": "−104"
+          "team": "KC Royals",
+          "odds": "−108"
         },
         "home": {
-          "team": "ARI Diamondbacks",
-          "odds": "+100"
+          "team": "TOR Blue Jays",
+          "odds": "+104"
         }
       },
       "total": {
         "over": {
           "points": 8.5,
-          "odds": "−108"
+          "odds": "+104"
         },
         "under": {
           "points": 8.5,
-          "odds": "+104"
+          "odds": "−113"
         }
       },
       "run_line": {
         "away": {
-          "team": "CHI Cubs",
-          "points": -1.5,
-          "odds": "+156"
+          "team": "KC Royals",
+          "points": 0.5,
+          "odds": "−108"
         },
         "home": {
-          "team": "ARI Diamondbacks",
-          "points": 1.5,
-          "odds": "−163"
+          "team": "TOR Blue Jays",
+          "points": -0.5,
+          "odds": "+100"
         }
       },
       "strikeouts": [
         {
-          "player": "Eduardo Rodriguez",
+          "player": "Noah Cameron",
           "line": 4.5,
-          "over": "+150",
-          "under": "−150",
-          "k9": 6.39,
-          "market_name": "Eduardo Rodriguez Strikeouts Thrown O/U"
+          "over": "+122",
+          "under": "−127",
+          "k9": 8.04,
+          "market_name": "Noah Cameron Strikeouts Thrown O/U"
         },
         {
-          "player": "Matthew Boyd",
-          "line": 3.5,
-          "over": "−113",
-          "under": "+104",
-          "k9": 7.02,
-          "market_name": "Matthew Boyd Strikeouts Thrown O/U"
+          "player": "Spencer Arrighetti",
+          "line": 4.5,
+          "over": "+138",
+          "under": "−144",
+          "k9": 8.97,
+          "market_name": "Spencer Arrighetti Strikeouts Thrown O/U"
         }
       ],
-      "start_et": "2026-08-26T15:40:00-04:00"
+      "start_et": "2026-08-27T19:07:00-04:00"
     },
     {
-      "event_id": "34570670",
-      "matchup": "CIN Reds @ SF Giants",
-      "start_utc": "2026-08-26T19:45:00.0000000Z",
+      "event_id": "34576475",
+      "matchup": "MIL Brewers @ NY Mets",
+      "start_utc": "2026-08-27T23:10:00.0000000Z",
       "away": {
-        "name": "CIN Reds",
-        "short": "CIN",
-        "starting_pitcher": "Nick Lodolo"
+        "name": "MIL Brewers",
+        "short": "MIL",
+        "starting_pitcher": "Jacob Misiorowski"
+      },
+      "home": {
+        "name": "NY Mets",
+        "short": "NYM",
+        "starting_pitcher": "Sean Manaea"
+      },
+      "moneyline": {
+        "away": {
+          "team": "MIL Brewers",
+          "odds": "−194"
+        },
+        "home": {
+          "team": "NY Mets",
+          "odds": "+178"
+        }
+      },
+      "total": {
+        "over": {
+          "points": 7.5,
+          "odds": "+122"
+        },
+        "under": {
+          "points": 7.5,
+          "odds": "−127"
+        }
+      },
+      "run_line": {
+        "away": {
+          "team": "MIL Brewers",
+          "points": -1.5,
+          "odds": "+100"
+        },
+        "home": {
+          "team": "NY Mets",
+          "points": 1.5,
+          "odds": "−108"
+        }
+      },
+      "strikeouts": [
+        {
+          "player": "Jacob Misiorowski",
+          "line": 8.5,
+          "over": "+104",
+          "under": "−108",
+          "k9": 13.41,
+          "market_name": "Jacob Misiorowski Strikeouts Thrown O/U"
+        },
+        {
+          "player": "Sean Manaea",
+          "line": 4.5,
+          "over": "−150",
+          "under": "+144",
+          "k9": 9,
+          "market_name": "Sean Manaea Strikeouts Thrown O/U"
+        }
+      ],
+      "start_et": "2026-08-27T19:10:00-04:00"
+    },
+    {
+      "event_id": "34576476",
+      "matchup": "LA Dodgers @ ATL Braves",
+      "start_utc": "2026-08-27T23:15:00.0000000Z",
+      "away": {
+        "name": "LA Dodgers",
+        "short": "LAD",
+        "starting_pitcher": "Yoshinobu Yamamoto"
+      },
+      "home": {
+        "name": "ATL Braves",
+        "short": "ATL",
+        "starting_pitcher": "Chris Sale"
+      },
+      "moneyline": {
+        "away": {
+          "team": "LA Dodgers",
+          "odds": "+113"
+        },
+        "home": {
+          "team": "ATL Braves",
+          "odds": "−117"
+        }
+      },
+      "total": {
+        "over": {
+          "points": 6.5,
+          "odds": "+100"
+        },
+        "under": {
+          "points": 6.5,
+          "odds": "−104"
+        }
+      },
+      "run_line": {
+        "away": {
+          "team": "LA Dodgers",
+          "points": -0.5,
+          "odds": "+108"
+        },
+        "home": {
+          "team": "ATL Braves",
+          "points": 0.5,
+          "odds": "−122"
+        }
+      },
+      "strikeouts": [
+        {
+          "player": "Chris Sale",
+          "line": 7.5,
+          "over": "+127",
+          "under": "−133",
+          "k9": 11.07,
+          "market_name": "Chris Sale Strikeouts Thrown O/U"
+        },
+        {
+          "player": "Yoshinobu Yamamoto",
+          "line": 6.5,
+          "over": "+144",
+          "under": "−150",
+          "k9": 8.6,
+          "market_name": "Yoshinobu Yamamoto Strikeouts Thrown O/U"
+        }
+      ],
+      "start_et": "2026-08-27T19:15:00-04:00"
+    },
+    {
+      "event_id": "34576477",
+      "matchup": "ARI Diamondbacks @ SF Giants",
+      "start_utc": "2026-08-28T01:45:00.0000000Z",
+      "away": {
+        "name": "ARI Diamondbacks",
+        "short": "ARI",
+        "starting_pitcher": "Jose Cabrera"
       },
       "home": {
         "name": "SF Giants",
@@ -155,823 +400,55 @@
       },
       "moneyline": {
         "away": {
-          "team": "CIN Reds",
-          "odds": "+100"
+          "team": "ARI Diamondbacks",
+          "odds": "−104"
         },
         "home": {
           "team": "SF Giants",
-          "odds": "−104"
+          "odds": "+100"
         }
       },
       "total": {
         "over": {
-          "points": 7.5,
-          "odds": "−108"
+          "points": 8.5,
+          "odds": "+113"
         },
         "under": {
-          "points": 7.5,
-          "odds": "+100"
+          "points": 8.5,
+          "odds": "−117"
         }
       },
       "run_line": {
         "away": {
-          "team": "CIN Reds",
-          "points": -1.5,
-          "odds": "+170"
+          "team": "ARI Diamondbacks",
+          "points": 0.5,
+          "odds": "−108"
         },
         "home": {
           "team": "SF Giants",
-          "points": 1.5,
-          "odds": "−178"
+          "points": -0.5,
+          "odds": "−104"
         }
       },
       "strikeouts": [
         {
           "player": "Landen Roupp",
-          "line": 5.5,
-          "over": "−122",
-          "under": "+117",
+          "line": 4.5,
+          "over": "+113",
+          "under": "−117",
           "k9": 8.69,
           "market_name": "Landen Roupp Strikeouts Thrown O/U"
         },
         {
-          "player": "Nick Lodolo",
-          "line": 4.5,
-          "over": "−117",
-          "under": "+108",
-          "k9": 7.08,
-          "market_name": "Nick Lodolo Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T15:45:00-04:00"
-    },
-    {
-      "event_id": "34570671",
-      "matchup": "CLE Guardians @ LA Angels",
-      "start_utc": "2026-08-26T20:07:00.0000000Z",
-      "away": {
-        "name": "CLE Guardians",
-        "short": "CLE",
-        "starting_pitcher": "Joey Cantillo"
-      },
-      "home": {
-        "name": "LA Angels",
-        "short": "LAA",
-        "starting_pitcher": "Grayson Rodriguez"
-      },
-      "moneyline": {
-        "away": {
-          "team": "CLE Guardians",
-          "odds": "−133"
-        },
-        "home": {
-          "team": "LA Angels",
-          "odds": "+127"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 8.5,
-          "odds": "+100"
-        },
-        "under": {
-          "points": 8.5,
-          "odds": "−108"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "CLE Guardians",
-          "points": -1.5,
-          "odds": "+122"
-        },
-        "home": {
-          "team": "LA Angels",
-          "points": 1.5,
-          "odds": "−127"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Joey Cantillo",
-          "line": 6.5,
-          "over": "−122",
-          "under": "+117",
-          "k9": 9.94,
-          "market_name": "Joey Cantillo Strikeouts Thrown O/U"
-        },
-        {
-          "player": "Grayson Rodriguez",
-          "line": 4.5,
-          "over": "+138",
-          "under": "−150",
-          "k9": 8.32,
-          "market_name": "Grayson Rodriguez Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T16:07:00-04:00"
-    },
-    {
-      "event_id": "34570672",
-      "matchup": "PIT Pirates @ SD Padres",
-      "start_utc": "2026-08-26T20:10:00.0000000Z",
-      "away": {
-        "name": "PIT Pirates",
-        "short": "PIT",
-        "starting_pitcher": "Bubba Chandler"
-      },
-      "home": {
-        "name": "SD Padres",
-        "short": "SD",
-        "starting_pitcher": "Randy Vasquez"
-      },
-      "moneyline": {
-        "away": {
-          "team": "PIT Pirates",
-          "odds": "+122"
-        },
-        "home": {
-          "team": "SD Padres",
-          "odds": "−127"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 8.5,
-          "odds": "+108"
-        },
-        "under": {
-          "points": 8.5,
-          "odds": "−108"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "PIT Pirates",
-          "points": 1.5,
-          "odds": "−170"
-        },
-        "home": {
-          "team": "SD Padres",
-          "points": -1.5,
-          "odds": "+163"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Bubba Chandler",
-          "line": 4.5,
-          "over": "+133",
-          "under": "−138",
-          "k9": 8.19,
-          "market_name": "Bubba Chandler Strikeouts Thrown O/U"
-        },
-        {
-          "player": "Randy Vasquez",
+          "player": "Jose Cabrera",
           "line": 3.5,
-          "over": "+100",
-          "under": "−104",
-          "k9": 5.64,
-          "market_name": "Randy Vasquez Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T16:10:00-04:00"
-    },
-    {
-      "event_id": "34570673",
-      "matchup": "PHI Phillies @ SEA Mariners",
-      "start_utc": "2026-08-26T20:10:00.0000000Z",
-      "away": {
-        "name": "PHI Phillies",
-        "short": "PHI",
-        "starting_pitcher": "Jesus Luzardo"
-      },
-      "home": {
-        "name": "SEA Mariners",
-        "short": "SEA",
-        "starting_pitcher": "Bryan Woo"
-      },
-      "moneyline": {
-        "away": {
-          "team": "PHI Phillies",
-          "odds": "−122"
-        },
-        "home": {
-          "team": "SEA Mariners",
-          "odds": "+117"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 6.5,
-          "odds": "−117"
-        },
-        "under": {
-          "points": 6.5,
-          "odds": "+113"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "PHI Phillies",
-          "points": -1.5,
-          "odds": "+144"
-        },
-        "home": {
-          "team": "SEA Mariners",
-          "points": 1.5,
-          "odds": "−150"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Jesus Luzardo",
-          "line": 7.5,
-          "over": "−104",
-          "under": "−108",
-          "k9": 11.19,
-          "market_name": "Jesus Luzardo Strikeouts Thrown O/U"
-        },
-        {
-          "player": "Bryan Woo",
-          "line": 5.5,
-          "over": "+138",
-          "under": "−150",
-          "k9": 8.91,
-          "market_name": "Bryan Woo Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T16:10:00-04:00"
-    },
-    {
-      "event_id": "34570674",
-      "matchup": "BOS Red Sox @ MIA Marlins",
-      "start_utc": "2026-08-26T22:40:00.0000000Z",
-      "away": {
-        "name": "BOS Red Sox",
-        "short": "BOS",
-        "starting_pitcher": "Sonny Gray"
-      },
-      "home": {
-        "name": "MIA Marlins",
-        "short": "MIA",
-        "starting_pitcher": "Ryan Gusto"
-      },
-      "moneyline": {
-        "away": {
-          "team": "BOS Red Sox",
-          "odds": "−127"
-        },
-        "home": {
-          "team": "MIA Marlins",
-          "odds": "+122"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 7.5,
-          "odds": "−108"
-        },
-        "under": {
-          "points": 7.5,
-          "odds": "+104"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "BOS Red Sox",
-          "points": -1.5,
-          "odds": "+127"
-        },
-        "home": {
-          "team": "MIA Marlins",
-          "points": 1.5,
-          "odds": "−133"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Sonny Gray",
-          "line": 5.5,
-          "over": "−104",
-          "under": "+100",
-          "k9": 7.98,
-          "market_name": "Sonny Gray Strikeouts Thrown O/U"
-        },
-        {
-          "player": "Ryan Gusto",
-          "line": 3.5,
-          "over": "−133",
-          "under": "+127",
-          "k9": 7.96,
-          "market_name": "Ryan Gusto Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T18:40:00-04:00"
-    },
-    {
-      "event_id": "34570675",
-      "matchup": "COL Rockies @ WAS Nationals",
-      "start_utc": "2026-08-26T22:45:00.0000000Z",
-      "away": {
-        "name": "COL Rockies",
-        "short": "COL",
-        "starting_pitcher": "Tanner Gordon"
-      },
-      "home": {
-        "name": "WAS Nationals",
-        "short": "WAS",
-        "starting_pitcher": "Matt Waldron"
-      },
-      "moneyline": {
-        "away": {
-          "team": "COL Rockies",
-          "odds": "+117"
-        },
-        "home": {
-          "team": "WAS Nationals",
-          "odds": "−117"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 8.5,
-          "odds": "−122"
-        },
-        "under": {
-          "points": 8.5,
-          "odds": "+117"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "COL Rockies",
-          "points": 1.5,
-          "odds": "−178"
-        },
-        "home": {
-          "team": "WAS Nationals",
-          "points": -1.5,
-          "odds": "+170"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Tanner Gordon",
-          "line": 3.5,
-          "over": "+100",
-          "under": "−108",
-          "k9": 7.51,
-          "market_name": "Tanner Gordon Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T18:45:00-04:00"
-    },
-    {
-      "event_id": "34570676",
-      "matchup": "HOU Astros @ NY Yankees",
-      "start_utc": "2026-08-26T23:05:00.0000000Z",
-      "away": {
-        "name": "HOU Astros",
-        "short": "HOU",
-        "starting_pitcher": "Peter Lambert"
-      },
-      "home": {
-        "name": "NY Yankees",
-        "short": "NYY",
-        "starting_pitcher": null
-      },
-      "moneyline": {
-        "away": {
-          "team": "HOU Astros",
-          "odds": "+113"
-        },
-        "home": {
-          "team": "NY Yankees",
-          "odds": "−117"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 8.5,
-          "odds": "−113"
-        },
-        "under": {
-          "points": 8.5,
-          "odds": "+108"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "HOU Astros",
-          "points": 1.5,
-          "odds": "−178"
-        },
-        "home": {
-          "team": "NY Yankees",
-          "points": -1.5,
-          "odds": "+170"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Peter Lambert",
-          "line": 5.5,
-          "over": "+138",
-          "under": "−144",
-          "k9": 8.83,
-          "market_name": "Peter Lambert Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T19:05:00-04:00"
-    },
-    {
-      "event_id": "34570677",
-      "matchup": "KC Royals @ TOR Blue Jays",
-      "start_utc": "2026-08-26T23:07:00.0000000Z",
-      "away": {
-        "name": "KC Royals",
-        "short": "KC",
-        "starting_pitcher": "Randy Dobnak"
-      },
-      "home": {
-        "name": "TOR Blue Jays",
-        "short": "TOR",
-        "starting_pitcher": "Spencer Miles"
-      },
-      "moneyline": {
-        "away": {
-          "team": "KC Royals",
-          "odds": "+138"
-        },
-        "home": {
-          "team": "TOR Blue Jays",
-          "odds": "−144"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 8.5,
-          "odds": "−113"
-        },
-        "under": {
-          "points": 8.5,
-          "odds": "+108"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "KC Royals",
-          "points": 1.5,
-          "odds": "−156"
-        },
-        "home": {
-          "team": "TOR Blue Jays",
-          "points": -1.5,
-          "odds": "+150"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Randy Dobnak",
-          "line": 2.5,
-          "over": "−108",
-          "under": "+104",
-          "k9": 5.72,
-          "market_name": "Randy Dobnak Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T19:07:00-04:00"
-    },
-    {
-      "event_id": "34570678",
-      "matchup": "MIL Brewers @ NY Mets",
-      "start_utc": "2026-08-26T23:10:00.0000000Z",
-      "away": {
-        "name": "MIL Brewers",
-        "short": "MIL",
-        "starting_pitcher": "Dustin May"
-      },
-      "home": {
-        "name": "NY Mets",
-        "short": "NYM",
-        "starting_pitcher": "Robert Stock"
-      },
-      "moneyline": {
-        "away": {
-          "team": "MIL Brewers",
-          "odds": "−144"
-        },
-        "home": {
-          "team": "NY Mets",
-          "odds": "+138"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 8.5,
-          "odds": "+108"
-        },
-        "under": {
-          "points": 8.5,
-          "odds": "−108"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "MIL Brewers",
-          "points": -1.5,
-          "odds": "+113"
-        },
-        "home": {
-          "team": "NY Mets",
-          "points": 1.5,
-          "odds": "−117"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Dustin May",
-          "line": 5.5,
-          "over": "+194",
-          "under": "−203",
-          "k9": 8.56,
-          "market_name": "Dustin May Strikeouts Thrown O/U"
-        },
-        {
-          "player": "Robert Stock",
-          "line": 4.5,
           "over": "+122",
-          "under": "−133",
-          "k9": 10.26,
-          "market_name": "Robert Stock Strikeouts Thrown O/U"
+          "under": "−127",
+          "k9": 6.11,
+          "market_name": "Jose Cabrera Strikeouts Thrown O/U"
         }
       ],
-      "start_et": "2026-08-26T19:10:00-04:00"
-    },
-    {
-      "event_id": "34570679",
-      "matchup": "LA Dodgers @ ATL Braves",
-      "start_utc": "2026-08-26T23:15:00.0000000Z",
-      "away": {
-        "name": "LA Dodgers",
-        "short": "LAD",
-        "starting_pitcher": "Roki Sasaki"
-      },
-      "home": {
-        "name": "ATL Braves",
-        "short": "ATL",
-        "starting_pitcher": "AJ Smith-Shawver"
-      },
-      "moneyline": {
-        "away": {
-          "team": "LA Dodgers",
-          "odds": "−127"
-        },
-        "home": {
-          "team": "ATL Braves",
-          "odds": "+122"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 8.5,
-          "odds": "−108"
-        },
-        "under": {
-          "points": 8.5,
-          "odds": "+104"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "LA Dodgers",
-          "points": -1.5,
-          "odds": "+133"
-        },
-        "home": {
-          "team": "ATL Braves",
-          "points": 1.5,
-          "odds": "−138"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Roki Sasaki",
-          "line": 4.5,
-          "over": "−133",
-          "under": "+127",
-          "k9": 8.84,
-          "market_name": "Roki Sasaki Strikeouts Thrown O/U"
-        },
-        {
-          "player": "AJ Smith-Shawver",
-          "line": 4.5,
-          "over": "+144",
-          "under": "−156",
-          "k9": 7.27,
-          "market_name": "AJ Smith-Shawver Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T19:15:00-04:00"
-    },
-    {
-      "event_id": "34570680",
-      "matchup": "TEX Rangers @ CHI White Sox",
-      "start_utc": "2026-08-26T23:40:00.0000000Z",
-      "away": {
-        "name": "TEX Rangers",
-        "short": "TEX",
-        "starting_pitcher": "MacKenzie Gore"
-      },
-      "home": {
-        "name": "CHI White Sox",
-        "short": "CWS",
-        "starting_pitcher": "Sean Burke"
-      },
-      "moneyline": {
-        "away": {
-          "team": "TEX Rangers",
-          "odds": "+113"
-        },
-        "home": {
-          "team": "CHI White Sox",
-          "odds": "−117"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 7.5,
-          "odds": "−117"
-        },
-        "under": {
-          "points": 7.5,
-          "odds": "+113"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "TEX Rangers",
-          "points": 1.5,
-          "odds": "−186"
-        },
-        "home": {
-          "team": "CHI White Sox",
-          "points": -1.5,
-          "odds": "+178"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "MacKenzie Gore",
-          "line": 6.5,
-          "over": "+133",
-          "under": "−138",
-          "k9": 9.95,
-          "market_name": "MacKenzie Gore Strikeouts Thrown O/U"
-        },
-        {
-          "player": "Sean Burke",
-          "line": 5.5,
-          "over": "−133",
-          "under": "+127",
-          "k9": 9.74,
-          "market_name": "Sean Burke Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T19:40:00-04:00"
-    },
-    {
-      "event_id": "34570681",
-      "matchup": "BAL Orioles @ STL Cardinals",
-      "start_utc": "2026-08-26T23:45:00.0000000Z",
-      "away": {
-        "name": "BAL Orioles",
-        "short": "BAL",
-        "starting_pitcher": "Kyle Bradish"
-      },
-      "home": {
-        "name": "STL Cardinals",
-        "short": "STL",
-        "starting_pitcher": "Michael McGreevy"
-      },
-      "moneyline": {
-        "away": {
-          "team": "BAL Orioles",
-          "odds": "−104"
-        },
-        "home": {
-          "team": "STL Cardinals",
-          "odds": "+100"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 8.5,
-          "odds": "+104"
-        },
-        "under": {
-          "points": 8.5,
-          "odds": "−108"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "BAL Orioles",
-          "points": -1.5,
-          "odds": "+163"
-        },
-        "home": {
-          "team": "STL Cardinals",
-          "points": 1.5,
-          "odds": "−170"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Kyle Bradish",
-          "line": 4.5,
-          "over": "+100",
-          "under": "−104",
-          "k9": 8.37,
-          "market_name": "Kyle Bradish Strikeouts Thrown O/U"
-        },
-        {
-          "player": "Michael McGreevy",
-          "line": 4.5,
-          "over": "+122",
-          "under": "−133",
-          "k9": 6.23,
-          "market_name": "Michael McGreevy Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T19:45:00-04:00"
-    },
-    {
-      "event_id": "34570684",
-      "matchup": "MIN Twins @ Athletics",
-      "start_utc": "2026-08-27T01:05:00.0000000Z",
-      "away": {
-        "name": "MIN Twins",
-        "short": "MIN",
-        "starting_pitcher": "Connor Prielipp"
-      },
-      "home": {
-        "name": "Athletics",
-        "short": "A's",
-        "starting_pitcher": "J.T. Ginn"
-      },
-      "moneyline": {
-        "away": {
-          "team": "MIN Twins",
-          "odds": "−127"
-        },
-        "home": {
-          "team": "Athletics",
-          "odds": "+122"
-        }
-      },
-      "total": {
-        "over": {
-          "points": 10.5,
-          "odds": "+104"
-        },
-        "under": {
-          "points": 10.5,
-          "odds": "−108"
-        }
-      },
-      "run_line": {
-        "away": {
-          "team": "MIN Twins",
-          "points": -1.5,
-          "odds": "+122"
-        },
-        "home": {
-          "team": "Athletics",
-          "points": 1.5,
-          "odds": "−127"
-        }
-      },
-      "strikeouts": [
-        {
-          "player": "Connor Prielipp",
-          "line": 5.5,
-          "over": "+100",
-          "under": "−104",
-          "k9": 9.7,
-          "market_name": "Connor Prielipp Strikeouts Thrown O/U"
-        },
-        {
-          "player": "J.T. Ginn",
-          "line": 4.5,
-          "over": "+127",
-          "under": "−133",
-          "k9": 8.03,
-          "market_name": "J.T. Ginn Strikeouts Thrown O/U"
-        }
-      ],
-      "start_et": "2026-08-26T21:05:00-04:00"
+      "start_et": "2026-08-27T21:45:00-04:00"
     }
   ]
 }
