@@ -191,6 +191,20 @@ class Handler(BaseHTTPRequestHandler):
         if p == "/api/picks":
             try: return self.send(200, json.dumps(fetch_json(FEEDS["picks"])), "application/json")
             except Exception as e: return self.send(502, json.dumps({"error":str(e)}), "application/json")
+        if p == "/api/private-metrics":
+            data={
+                "actualTodayPnl": os.environ.get("ACTUAL_TODAY_PNL"),
+                "actualWeekPnl": os.environ.get("ACTUAL_WEEK_PNL"),
+                "actual30dPnl": os.environ.get("ACTUAL_30D_PNL"),
+                "actualAllTimePnl": os.environ.get("ACTUAL_ALL_TIME_PNL"),
+                "actualAllTimeWinnings": os.environ.get("ACTUAL_ALL_TIME_WINNINGS"),
+                "actualAllTimeLost": os.environ.get("ACTUAL_ALL_TIME_LOST"),
+                "returnedToBank": os.environ.get("RETURNED_TO_BANK"),
+                "addedFromBank": os.environ.get("ADDED_FROM_BANK"),
+                "netBankRefill": os.environ.get("NET_BANK_REFILL"),
+                "draftKingsPnl": os.environ.get("DRAFTKINGS_PNL")
+            }
+            return self.send(200,json.dumps(data),"application/json")
         if p == "/api/status":
             out=[]
             for key,url in FEEDS.items():
