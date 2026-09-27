@@ -106,10 +106,10 @@ function renderToday(){
  otherToday.innerHTML=other.length?other.map(r=>pickCard(r,false)).join(""):'<div class="sub">No shadows or passes today.</div>';
 }
 function renderBankroll(){
- const official=rows.filter(r=>r.trackType==="OFFICIAL");
- const values=official.map(r=>N(r.officialBankrollUnits)).filter(v=>v!==null);
+ const tracked=rows.filter(r=>r.trackType==="OFFICIAL" && N(r.officialBankrollUnits)!==null);
+ const values=tracked.map(r=>N(r.officialBankrollUnits)).filter(v=>v!==null);
  const available=values.length?values[values.length-1]:100;
- const committed=official.filter(r=>!settled(r)).reduce((a,r)=>a+(N(r.stakeUnits)||0),0);
+ const committed=tracked.filter(r=>!settled(r)).reduce((a,r)=>a+(N(r.stakeUnits)||0),0);
  const total=available+committed;
  paperTotal.textContent=total.toFixed(2)+"u";
  paperAvail.textContent=available.toFixed(2)+"u";
