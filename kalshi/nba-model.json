@@ -1,0 +1,21 @@
+{
+  "source": "Kalshi",
+  "sport": "NBA",
+  "sport_key": "nba",
+  "generated_at_utc": "2026-09-27T16:37:58.268139+00:00",
+  "board_date_et": "2026-09-27",
+  "through_date_et": "2026-09-29",
+  "max_days_ahead": 2,
+  "max_bid_ask_spread": 0.15,
+  "source_market_count": 6,
+  "model_market_count": 0,
+  "markets_by_type": {},
+  "rejected": {
+    "missing_date": 0,
+    "outside_date_window": 6,
+    "invalid_prices": 0,
+    "inactive_market": 0,
+    "wide_bid_ask": 0
+  },
+  "markets": []
+}
