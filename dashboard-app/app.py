@@ -21,53 +21,133 @@ HTML = r'''<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gambling Dashboard</title>
 <style>
-:root{--bg:#071019;--panel:#0e1a26;--line:#213448;--text:#edf5ff;--muted:#91a5ba;--green:#37df8b;--red:#ff6578;--amber:#efc163}
+:root{--bg:#071019;--panel:#0e1a26;--line:#213448;--text:#edf5ff;--muted:#91a5ba;--green:#37df8b;--red:#ff6578;--amber:#efc163;--blue:#68a8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% -10%,#123249 0,#071019 35%);color:var(--text);font-family:Inter,system-ui,sans-serif}
 header,main{max-width:1380px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;gap:20px;align-items:center}
-h1,h2{margin:0}.eyebrow{font-size:11px;font-weight:900;letter-spacing:.13em;color:#59dca1}.sub{color:var(--muted);font-size:12px}
+h1,h2,h3{margin:0}.eyebrow{font-size:11px;font-weight:900;letter-spacing:.13em;color:#59dca1}.sub{color:var(--muted);font-size:12px;line-height:1.45}
 button{background:#102131;color:#dce9f4;border:1px solid #294258;border-radius:9px;padding:9px 12px;cursor:pointer}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric,.panel,.card{background:linear-gradient(160deg,#0f1d2a,#0b1722);border:1px solid var(--line);border-radius:16px;padding:17px}
-.metric .v{font-size:27px;font-weight:900;margin:7px 0}.panel{margin-top:16px}.twocol{display:grid;grid-template-columns:1.3fr .9fr;gap:16px}
-.stack{display:flex;flex-direction:column;gap:10px}.card{background:#0a1620}.row{display:flex;justify-content:space-between;gap:10px}.pick{font-weight:800;margin:5px 0}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.chip{font-size:11px;border:1px solid #2b4359;border-radius:999px;padding:4px 7px;color:#cbd9e7}.off{background:#0d2b20;color:#89efb8}.sha{background:#2a2310;color:#f1cf7b}.pas{background:#18222c;color:#b7c5d4}
+.metric .v{font-size:27px;font-weight:900;margin:7px 0}.panel{margin-top:16px}.twocol{display:grid;grid-template-columns:1.25fr .9fr;gap:16px}
+.stack{display:flex;flex-direction:column;gap:10px}.card{background:#0a1620}.row{display:flex;justify-content:space-between;gap:10px}.pick{font-weight:800;margin:5px 0}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.chip{font-size:11px;border:1px solid #2b4359;border-radius:999px;padding:4px 7px;color:#cbd9e7}
+.off{background:#0d2b20;color:#89efb8}.sha{background:#2a2310;color:#f1cf7b}.pas{background:#18222c;color:#b7c5d4}.hero{border:2px solid #2f9e67;background:linear-gradient(145deg,#0b2119,#0a1620);box-shadow:0 0 0 1px #1a5139 inset}.hero .pick{font-size:22px}.official-banner{display:flex;align-items:center;gap:8px;color:#8ff3bd;font-weight:900;letter-spacing:.08em;font-size:12px}.official-banner:before{content:"";width:9px;height:9px;border-radius:50%;background:#37df8b;box-shadow:0 0 14px #37df8b}
+.section-gap{margin-top:16px}.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.kpi{background:#09141e;border:1px solid #20364a;border-radius:13px;padding:13px}.kpi .big{font-size:22px;font-weight:900;margin-top:5px}
 table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;border-bottom:1px solid #1b2c3c;text-align:left;font-size:13px}th{font-size:11px;color:#8095aa;text-transform:uppercase}.scroll{overflow:auto}
 .pos{color:var(--green)}.neg{color:var(--red)}.muted{color:var(--muted)}.health{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:6px}.dot.ok{background:var(--green)}
-.login{min-height:100vh;display:grid;place-items:center}.loginbox{width:min(420px,calc(100% - 36px));background:#0e1a26;border:1px solid var(--line);border-radius:20px;padding:30px}input{width:100%;background:#071019;color:white;border:1px solid #2c4359;border-radius:10px;padding:13px;margin:14px 0}.loginbox button{width:100%;background:#37df8b;color:#04120a;font-weight:900}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.twocol{grid-template-columns:1fr}.health{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){header,main{padding:16px}.grid{grid-template-columns:1fr 1fr}.health{grid-template-columns:1fr}}
+.league-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.league-card{background:#0a1620;border:1px solid #20364a;border-radius:14px;padding:14px}.league-title{font-weight:900;font-size:16px}.league-state{font-size:20px;font-weight:900;margin:7px 0}
+.notice{border:1px solid #314b62;background:#0b1a26;border-radius:12px;padding:12px;color:#bcd0e1;font-size:12px;line-height:1.5}.bankbox{border:1px solid #24465a;background:#0a1721;border-radius:14px;padding:15px;margin-top:12px}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.twocol{grid-template-columns:1fr}.health,.league-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){header,main{padding:16px}.grid{grid-template-columns:1fr 1fr}.health,.league-grid{grid-template-columns:1fr}.kpi-row{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}}
 </style></head>
 <body>
 <header><div><div class="eyebrow">PRIVATE MODEL ANALYTICS</div><h1>Gambling Dashboard</h1></div><div><span id="stamp" class="sub">Loading…</span> <button onclick="load()">Refresh</button> <button onclick="logout()">Log out</button></div></header>
 <main>
-<section class="grid" id="metrics"></section>
+<section><div class="eyebrow">ACTUAL BETTING PERFORMANCE</div><div class="grid" id="actualMetrics" style="margin-top:8px"></div></section>
+
 <section class="twocol">
-<div class="panel"><div class="eyebrow">TODAY</div><h2>Model Card</h2><div id="today" class="stack" style="margin-top:12px"></div></div>
-<div class="panel"><div class="eyebrow">PERFORMANCE</div><h2>Official / Shadow</h2><div id="perf" style="margin-top:12px"></div><div style="margin-top:18px" class="eyebrow">OFFICIAL BANKROLL</div><div id="bankroll" style="font-size:30px;font-weight:900;margin-top:6px">100.00u</div><p class="sub">Private cash-flow connection is not enabled yet. Bank transactions and dollar balances are intentionally excluded.</p></div>
+<div class="panel">
+  <div class="eyebrow">TODAY'S OFFICIAL BETS</div><h2>Official Picks</h2>
+  <div id="officialToday" class="stack" style="margin-top:12px"></div>
+  <div class="section-gap"><div class="eyebrow">SHADOW / PASS</div><div id="otherToday" class="stack" style="margin-top:10px"></div></div>
+</div>
+<div class="panel">
+  <div class="eyebrow">MODEL BANKROLL</div><h2>Paper Model Capital</h2>
+  <div class="kpi-row" style="margin-top:12px">
+    <div class="kpi"><div class="sub">Total Capital</div><div id="paperTotal" class="big">100.00u</div></div>
+    <div class="kpi"><div class="sub">Available</div><div id="paperAvail" class="big">100.00u</div></div>
+    <div class="kpi"><div class="sub">Committed</div><div id="paperCommitted" class="big">0.00u</div></div>
+  </div>
+  <p class="sub">This is the paper-model bankroll, not your DraftKings/account cash balance. Pending stakes are shown as committed rather than treated as a loss.</p>
+  <div class="bankbox"><div class="eyebrow">BANK REFILL</div><div id="bankRefill" style="font-size:25px;font-weight:900;margin-top:5px">—</div><div id="bankRefillDetail" class="sub" style="margin-top:6px"></div></div>
+</div>
 </section>
-<section class="panel"><div class="eyebrow">LEDGER</div><h2>Recent Picks</h2><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Date</th><th>League</th><th>Track</th><th>Selection</th><th>Edge</th><th>Grade</th><th>Result</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+
+<section class="panel"><div class="eyebrow">LEAGUES</div><h2>Model Status & Advice</h2><div id="leagueGrid" class="league-grid" style="margin-top:12px"></div></section>
+
+<section class="panel"><div class="eyebrow">MODEL PERFORMANCE</div><h2>Official / Shadow Ledger</h2><div id="modelPerf" class="grid" style="margin-top:12px"></div></section>
+
+<section class="panel"><div class="eyebrow">LEDGER</div><h2>Recent Picks</h2><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Date</th><th>League</th><th>Track</th><th>Selection</th><th>Edge</th><th>Grade</th><th>Result</th></tr></thead><tbody id="rowsTable"></tbody></table></div></section>
+
 <section class="panel"><div class="eyebrow">SYSTEM</div><h2>Feed Health</h2><div id="health" class="health" style="margin-top:12px"></div></section>
 </main>
 <script>
-let rows=[];
+let rows=[],statusData={feeds:[]},privateMetrics={};
 const E=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
 const N=v=>{const n=parseFloat(String(v??"").replace(/[+%$u,]/g,""));return Number.isFinite(n)?n:null};
 const todayET=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
 const settled=r=>["WIN","WON","LOSS","LOST","PUSH"].includes(String(r.result||"").toUpperCase());
-function perf(rs){let w=0,l=0,p=0,pnl=0,risk=0;rs.filter(settled).forEach(r=>{const x=String(r.result||"").toUpperCase();if(x.includes("WIN"))w++;else if(x.includes("LOSS")||x.includes("LOST"))l++;else p++;const q=N(r.pnlUnits);if(q!==null)pnl+=q;const s=N(r.stakeUnits);if(s!==null)risk+=s});return{w,l,p,pnl,roi:risk?100*pnl/risk:null}}
+function perf(rs){let w=0,l=0,p=0,pnl=0,risk=0;rs.filter(settled).forEach(r=>{const x=String(r.result||"").toUpperCase();if(x.includes("WIN"))w++;else if(x.includes("LOSS")||x.includes("LOST"))l++;else p++;const q=N(r.pnlUnits);if(q!==null)pnl+=q;const s=N(r.stakeUnits);if(s!==null)risk+=s});return{w,l,p,pnl,risk,roi:risk?100*pnl/risk:null}}
 const unit=v=>{const n=N(v);return n===null?"—":(n>0?"+":"")+n.toFixed(2)+"u"};
-function render(){
- const official=rows.filter(r=>r.trackType==="OFFICIAL"), shadow=rows.filter(r=>r.trackType==="SHADOW");
- const windows=[["Today",r=>r.dateET===todayET()],["This Week",r=>Date.now()-new Date(r.dateET+"T12:00:00-04:00").getTime()<=7*86400000],["Last 30 Days",r=>Date.now()-new Date(r.dateET+"T12:00:00-04:00").getTime()<=30*86400000],["All Time",r=>true]];
- metrics.innerHTML=windows.map(([label,f])=>{const p=perf(official.filter(f));return '<div class="metric"><div class="sub">'+label+'</div><div class="v '+(p.pnl>0?'pos':p.pnl<0?'neg':'')+'">'+unit(p.pnl)+'</div><div class="sub">'+p.w+'-'+p.l+(p.roi!==null?' · ROI '+p.roi.toFixed(1)+'%':'')+'</div></div>'}).join("");
- const t=rows.filter(r=>r.dateET===todayET()); today.innerHTML=t.length?t.map(r=>'<div class="card"><div class="row"><span class="chip '+(r.trackType==="OFFICIAL"?'off':r.trackType==="SHADOW"?'sha':'pas')+'">'+E(r.trackType)+'</span><span>'+E(r.result||"Pending")+'</span></div><div class="pick">'+E(r.selection)+'</div><div class="sub">'+E(r.league)+' · '+E(r.event)+'</div><div class="chips"><span class="chip">'+E(r.category)+'</span>'+(r.edge?'<span class="chip">Edge '+E(r.edge)+' pp</span>':'')+(r.confidence?'<span class="chip">'+E(r.confidence)+'</span>':'')+'</div><div class="sub" style="margin-top:8px">'+E(r.reason||"")+'</div></div>').join(""):'<p class="muted">No model entries for today yet.</p>';
- const po=perf(official), ps=perf(shadow); perf.innerHTML='<div class="grid" style="grid-template-columns:1fr 1fr"><div class="card"><div class="eyebrow">OFFICIAL</div><div class="v" style="font-size:24px;font-weight:900">'+po.w+'-'+po.l+'</div><div>'+unit(po.pnl)+'</div></div><div class="card"><div class="eyebrow">SHADOW</div><div class="v" style="font-size:24px;font-weight:900">'+ps.w+'-'+ps.l+'</div><div>'+unit(ps.pnl)+'</div></div></div>';
- const br=official.map(r=>N(r.officialBankrollUnits)).filter(v=>v!==null); bankroll.textContent=(br.length?br[br.length-1]:100).toFixed(2)+"u";
- rowsEl=document.getElementById("rows"); rowsEl.innerHTML=[...rows].sort((a,b)=>String(b.boardTimestampET||b.dateET).localeCompare(String(a.boardTimestampET||a.dateET))).map(r=>'<tr><td>'+E(r.dateET)+'</td><td>'+E(r.league)+'</td><td>'+E(r.trackType)+'</td><td>'+E(r.selection)+'</td><td>'+E(r.edge||"—")+'</td><td>'+E(r.confidence||"—")+'</td><td>'+E(r.result||"Pending")+'</td></tr>').join("");
+const money=v=>{const n=N(v);return n===null?"—":(n<0?"-$":"$")+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})};
+function friendly(r){
+ if(r.trackType==="OFFICIAL" && r.category==="Total" && String(r.selection||"").startsWith("NO — Over")){
+   return "UNDER "+E(r.line||"")+" POINTS";
+ }
+ return E(r.selection||"");
 }
+function renderActual(){
+ const vals=[
+  ["Today",privateMetrics.actualTodayPnl],
+  ["This Week",privateMetrics.actualWeekPnl],
+  ["Last 30 Days",privateMetrics.actual30dPnl],
+  ["All Time",privateMetrics.actualAllTimePnl]
+ ];
+ actualMetrics.innerHTML=vals.map(x=>{const n=N(x[1]);return '<div class="metric"><div class="sub">'+x[0]+' Net P/L</div><div class="v '+(n>0?'pos':n<0?'neg':'')+'">'+money(x[1])+'</div><div class="sub">Settled tracked betting performance</div></div>'}).join("");
+ const refill=N(privateMetrics.netBankRefill); bankRefill.textContent=money(refill);
+ bankRefill.className=refill>0?"pos":refill<0?"neg":"";
+ bankRefillDetail.textContent="Returned to bank "+money(privateMetrics.returnedToBank)+" · Added from bank "+money(privateMetrics.addedFromBank);
+}
+function pickCard(r,hero){
+ const execution=r.odds?'<span class="chip">Execution: '+E(r.odds)+'</span>':'';
+ return '<div class="card '+(hero?'hero':'')+'">'+(hero?'<div class="official-banner">OFFICIAL PICK</div>':'')+'<div class="row"><span class="chip '+(r.trackType==="OFFICIAL"?'off':r.trackType==="SHADOW"?'sha':'pas')+'">'+E(r.trackType)+'</span><span>'+E(r.result||"Pending")+'</span></div><div class="pick">'+friendly(r)+'</div><div class="sub">'+E(r.league)+' · '+E(r.event)+'</div><div class="chips"><span class="chip">'+E(r.category)+'</span>'+execution+(r.edge?'<span class="chip">Edge '+E(r.edge)+' pp</span>':'')+(r.confidence?'<span class="chip">'+E(r.confidence)+'</span>':'')+(r.stakeUnits?'<span class="chip">Stake '+E(r.stakeUnits)+'u</span>':'')+'</div><div class="sub" style="margin-top:8px">'+E(r.reason||"")+'</div></div>';
+}
+function renderToday(){
+ const t=rows.filter(r=>r.dateET===todayET());
+ const off=t.filter(r=>r.trackType==="OFFICIAL"), other=t.filter(r=>r.trackType!=="OFFICIAL");
+ officialToday.innerHTML=off.length?off.map(r=>pickCard(r,true)).join(""):'<div class="notice">No OFFICIAL model bet has been posted for today yet.</div>';
+ otherToday.innerHTML=other.length?other.map(r=>pickCard(r,false)).join(""):'<div class="sub">No shadows or passes today.</div>';
+}
+function renderBankroll(){
+ const official=rows.filter(r=>r.trackType==="OFFICIAL");
+ const values=official.map(r=>N(r.officialBankrollUnits)).filter(v=>v!==null);
+ const available=values.length?values[values.length-1]:100;
+ const committed=official.filter(r=>!settled(r)).reduce((a,r)=>a+(N(r.stakeUnits)||0),0);
+ const total=available+committed;
+ paperTotal.textContent=total.toFixed(2)+"u";
+ paperAvail.textContent=available.toFixed(2)+"u";
+ paperCommitted.textContent=committed.toFixed(2)+"u";
+}
+function renderLeagueGrid(){
+ const leagues=["NFL","MLB","NCAAF","NBA","WNBA"];
+ leagueGrid.innerHTML=leagues.map(l=>{
+   const rs=rows.filter(r=>r.league===l), today=rs.filter(r=>r.dateET===todayET());
+   const off=today.find(r=>r.trackType==="OFFICIAL");
+   const pass=today.find(r=>r.trackType==="PASS");
+   const sh=today.filter(r=>r.trackType==="SHADOW").length;
+   const feed=(statusData.feeds||[]).find(f=>f.key.toUpperCase()===l || (l==="NCAAF"&&f.key==="ncaafb"));
+   let state="No current model entry",detail="";
+   if(off){state="OFFICIAL PICK";detail=friendly(off);}
+   else if(pass){state=E(pass.selection||"PASS");detail=E(pass.reason||"");}
+   else if(l==="MLB"&&feed&&feed.ok){state="BOARD LIVE";detail=(feed.count||0)+" MLB games available — model advice has not synced yet.";}
+   else if(feed&&feed.ok){state="FEED LIVE";detail=(feed.count||0)+" candidates/entries available.";}
+   else if(feed&&!feed.ok){state="NO LIVE FEED";detail="Waiting for the next scheduled board.";}
+   return '<div class="league-card"><div class="league-title">'+l+'</div><div class="league-state '+(state==="OFFICIAL PICK"?'pos':'')+'">'+state+'</div><div class="sub">'+detail+'</div><div class="sub" style="margin-top:8px">'+sh+' shadow'+(sh===1?'':'s')+' today</div></div>';
+ }).join("");
+}
+function renderModelPerf(){
+ const off=perf(rows.filter(r=>r.trackType==="OFFICIAL")),sh=perf(rows.filter(r=>r.trackType==="SHADOW"));
+ modelPerf.innerHTML='<div class="metric"><div class="sub">Official Record</div><div class="v">'+off.w+'-'+off.l+'</div><div class="sub">'+unit(off.pnl)+(off.roi!==null?' · ROI '+off.roi.toFixed(1)+'%':'')+'</div></div><div class="metric"><div class="sub">Shadow Record</div><div class="v">'+sh.w+'-'+sh.l+'</div><div class="sub">'+unit(sh.pnl)+' diagnostic only</div></div><div class="metric"><div class="sub">Pending Official</div><div class="v">'+rows.filter(r=>r.trackType==="OFFICIAL"&&!settled(r)).length+'</div><div class="sub">Open paper selections</div></div><div class="metric"><div class="sub">Total Model Entries</div><div class="v">'+rows.length+'</div><div class="sub">Official + shadow + pass</div></div>';
+}
+function renderLedger(){
+ rowsTable.innerHTML=[...rows].sort((a,b)=>String(b.boardTimestampET||b.dateET).localeCompare(String(a.boardTimestampET||a.dateET))).map(r=>'<tr><td>'+E(r.dateET)+'</td><td>'+E(r.league)+'</td><td><span class="chip '+(r.trackType==="OFFICIAL"?'off':r.trackType==="SHADOW"?'sha':'pas')+'">'+E(r.trackType)+'</span></td><td>'+friendly(r)+'</td><td>'+E(r.edge||"—")+'</td><td>'+E(r.confidence||"—")+'</td><td>'+E(r.result||"Pending")+'</td></tr>').join("");
+}
+function renderHealth(){
+ health.innerHTML=(statusData.feeds||[]).map(f=>'<div class="card"><div><span class="dot '+(f.ok?'ok':'')+'"></span><b>'+E(f.key.toUpperCase())+'</b></div><div class="sub" style="margin-top:7px">'+(f.ok?E(f.date||"Available")+(f.count!=null?' · '+E(f.count)+' items':''):(f.status===404?'Not published yet':'Unavailable'))+'</div></div>').join("");
+}
+function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderModelPerf();renderLedger();renderHealth()}
 async function load(){
  try{
-  const [p,s]=await Promise.all([fetch("/api/picks",{cache:"no-store"}),fetch("/api/status",{cache:"no-store"})]);
+  const [p,s,m]=await Promise.all([fetch("/api/picks",{cache:"no-store"}),fetch("/api/status",{cache:"no-store"}),fetch("/api/private-metrics",{cache:"no-store"})]);
   if(p.status===401){location.href="/login";return}
-  const d=await p.json(); rows=d.rows||[]; render();
-  const st=await s.json(); health.innerHTML=(st.feeds||[]).map(f=>'<div class="card"><div><span class="dot '+(f.ok?'ok':'')+'"></span><b>'+E(f.key.toUpperCase())+'</b></div><div class="sub" style="margin-top:7px">'+(f.ok?E(f.date||"Available")+(f.count!=null?' · '+E(f.count)+' items':''):(f.status===404?'Not published yet':'Unavailable'))+'</div></div>').join("");
+  const d=await p.json(); rows=d.rows||[]; statusData=s.ok?await s.json():{feeds:[]}; privateMetrics=m.ok?await m.json():{}; render();
   stamp.textContent="Updated "+new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit"}).format(new Date())+" ET";
  }catch(e){stamp.textContent="Feed error";}
 }
