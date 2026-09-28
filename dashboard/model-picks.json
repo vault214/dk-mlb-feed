@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, and account identifiers are excluded.",
-  "updatedAt": "2026-09-28T20:19:57.735Z",
+  "updatedAt": "2026-09-28T20:31:57.254Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -699,6 +699,30 @@
       "reason": "No WNBA games scheduled Monday, Sep 28; next playoff games are Tuesday, Sep 29. No stale prices reused and no player props invented.",
       "boardTimestampET": "2026-09-28 10:57 ET",
       "sourceRun": "Daily Basketball Models 2026-09-28 AM"
+    },
+    {
+      "entryId": "MLB-PASS-2026-09-28",
+      "dateET": "2026-09-28",
+      "league": "MLB",
+      "model": "MLB Conservative A/B/C",
+      "trackType": "PASS",
+      "event": "MLB slate",
+      "category": "Slate",
+      "market": "Official card",
+      "selection": "NO MLB SLATE",
+      "line": null,
+      "odds": null,
+      "breakEven": null,
+      "modelProbability": null,
+      "edge": null,
+      "confidence": null,
+      "stakeUnits": "0",
+      "result": "Pass",
+      "pnlUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "Official MLB schedule shows no games on Sep 28, 2026. Collector correctly returned 0 games; treated as a clean no-slate PASS rather than a data failure.",
+      "boardTimestampET": "2026-09-28 16:18 ET",
+      "sourceRun": "Manual no-slate repair / MLB schedule verification"
     }
   ]
 }
