@@ -1,0 +1,34 @@
+{
+  "source": "Kalshi",
+  "sport": "NBA",
+  "sport_key": "nba",
+  "board_date_et": "2026-09-28",
+  "through_date_et": "2026-09-30",
+  "source_model_market_count": 0,
+  "candidate_market_count": 0,
+  "markets_by_type": {},
+  "selection_rules": {
+    "max_total": 240,
+    "category_caps": {
+      "game": 40,
+      "spread": 40,
+      "total": 30,
+      "points": 35,
+      "rebounds": 25,
+      "assists": 25,
+      "points_rebounds_assists": 25,
+      "three_pointers": 20
+    },
+    "per_event_caps": {
+      "game": 99,
+      "spread": 3,
+      "total": 2,
+      "points": 3,
+      "rebounds": 3,
+      "assists": 3,
+      "points_rebounds_assists": 3,
+      "three_pointers": 3
+    }
+  },
+  "markets": []
+}
