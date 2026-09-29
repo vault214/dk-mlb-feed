@@ -22,8 +22,9 @@ SERIES = {
     "game": "KXWNBAGAME",
     "spread": "KXWNBASPREAD",
     "total": "KXWNBATOTAL",
-    "strikeouts": "KXWNBAKS",
-    "outs_recorded": "KXWNBAOUTS",
+    "points": "KXWNBAPTS",
+    "rebounds": "KXWNBAREB",
+    "assists": "KXWNBAAST",
 }
 
 CATEGORY_CAPS = {
@@ -49,7 +50,7 @@ MAX_SPREAD = 0.15
 HORIZON_DAYS = 2
 
 REMOTE_PATH = "kalshi/wnba-candidates.json"
-DEFAULT_REPO = "vault214/dk-wnba-feed"
+DEFAULT_REPO = "vault214/dk-mlb-feed"
 DEFAULT_BRANCH = "main"
 
 TICKER_DATE_RE = re.compile(r"-(\d{2}[A-Z]{3}\d{2})")
