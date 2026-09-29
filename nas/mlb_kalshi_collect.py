@@ -336,6 +336,12 @@ def main():
     candidates = reduce_candidates(model_ready)
 
     category_counts = Counter(m["category"] for m in candidates)
+    candidate_dates = Counter(
+        datetime.fromisoformat(m["event_start_et"]).astimezone(TZ).date().isoformat()
+        for m in candidates
+        if m.get("event_start_et")
+    )
+    today_candidate_market_count = candidate_dates.get(today.isoformat(), 0)
     no_current_markets = len(model_ready) == 0
 
     payload = {
@@ -348,6 +354,8 @@ def main():
         "raw_market_count": raw_count,
         "source_model_market_count": len(model_ready),
         "candidate_market_count": len(candidates),
+        "today_candidate_market_count": today_candidate_market_count,
+        "candidate_markets_by_date": dict(sorted(candidate_dates.items())),
         "no_current_markets": no_current_markets,
         "markets_by_type": dict(sorted(category_counts.items())),
         "series_open_market_counts": series_counts,
@@ -368,6 +376,9 @@ def main():
     print(f"Raw markets: {raw_count}")
     print(f"Model-ready: {len(model_ready)}")
     print(f"Candidates: {len(candidates)}")
+    print(f"Today's candidates: {today_candidate_market_count}")
+    for day, count in sorted(candidate_dates.items()):
+        print(f"  date {day}: {count}")
     for cat, count in sorted(category_counts.items()):
         print(f"  {cat}: {count}")
 
