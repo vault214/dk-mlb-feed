@@ -14,7 +14,7 @@ FEEDS = {
     "nfl": RAW + "/kalshi/nfl-candidates.json",
     "ncaafb": RAW + "/kalshi/ncaafb-candidates.json",
     "nba": RAW + "/kalshi/nba-candidates.json",
-    "mlb": RAW + "/mlb-board.json",
+    "mlb": RAW + "/kalshi/mlb-candidates.json",
 }
 
 HTML = r'''<!doctype html>
