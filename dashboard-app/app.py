@@ -16,6 +16,7 @@ FEEDS = {
     "nba": RAW + "/kalshi/nba-candidates.json",
     "wnba": RAW + "/kalshi/wnba-candidates.json",
     "mlb": RAW + "/kalshi/mlb-candidates.json",
+    "nhl": RAW + "/kalshi/nhl-candidates.json",
 }
 
 HTML = r'''<!doctype html>
@@ -117,7 +118,7 @@ function renderBankroll(){
  paperCommitted.textContent=committed.toFixed(2)+"u";
 }
 function renderLeagueGrid(){
- const leagues=["NFL","MLB","NCAAF","NBA","WNBA"];
+ const leagues=["NFL","MLB","NCAAF","NBA","WNBA","NHL"];
  leagueGrid.innerHTML=leagues.map(l=>{
    const rs=rows.filter(r=>r.league===l), today=rs.filter(r=>r.dateET===todayET());
    const off=today.find(r=>r.trackType==="OFFICIAL");
