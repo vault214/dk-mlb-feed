@@ -36,7 +36,7 @@ button{background:#102131;color:#dce9f4;border:1px solid #294258;border-radius:9
 table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;border-bottom:1px solid #1b2c3c;text-align:left;font-size:13px}th{font-size:11px;color:#8095aa;text-transform:uppercase}.scroll{overflow:auto}
 .pos{color:var(--green)}.neg{color:var(--red)}.muted{color:var(--muted)}.health{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:6px}.dot.ok{background:var(--green)}
 .league-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.league-card{background:#0a1620;border:1px solid #20364a;border-radius:14px;padding:14px}.league-title{font-weight:900;font-size:16px}.league-state{font-size:20px;font-weight:900;margin:7px 0}
-.notice{border:1px solid #314b62;background:#0b1a26;border-radius:12px;padding:12px;color:#bcd0e1;font-size:12px;line-height:1.5}.bankbox{border:1px solid #24465a;background:#0a1721;border-radius:14px;padding:15px;margin-top:12px}
+.notice{border:1px solid #314b62;background:#0b1a26;border-radius:12px;padding:12px;color:#bcd0e1;font-size:12px;line-height:1.5}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{font-weight:800}.tab.active{border-color:#37df8b;color:#8ff3bd;background:#0d2b20}.sport-record{font-size:24px;font-weight:900;margin:6px 0}.bankbox{border:1px solid #24465a;background:#0a1721;border-radius:14px;padding:15px;margin-top:12px}
 @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.twocol{grid-template-columns:1fr}.health,.league-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){header,main{padding:16px}.grid{grid-template-columns:1fr 1fr}.health,.league-grid{grid-template-columns:1fr}.kpi-row{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}}
 </style></head>
 <body>
@@ -65,6 +65,8 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 
 <section class="panel"><div class="eyebrow">LEAGUES</div><h2>Model Status & Advice</h2><div id="leagueGrid" class="league-grid" style="margin-top:12px"></div></section>
 
+<section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="tabs" id="perfTabs" style="margin-top:12px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
+
 <section class="panel"><div class="eyebrow">MODEL PERFORMANCE</div><h2>Official / Shadow Ledger</h2><div id="modelPerf" class="grid" style="margin-top:12px"></div></section>
 
 <section class="panel"><div class="eyebrow">LEDGER</div><h2>Recent Picks</h2><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Date</th><th>League</th><th>Track</th><th>Selection</th><th>Edge</th><th>Grade</th><th>Result</th></tr></thead><tbody id="rowsTable"></tbody></table></div></section>
@@ -72,7 +74,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <section class="panel"><div class="eyebrow">SYSTEM</div><h2>Feed Health</h2><div id="health" class="health" style="margin-top:12px"></div></section>
 </main>
 <script>
-let rows=[],statusData={feeds:[]},privateMetrics={};
+let rows=[],statusData={feeds:[]},privateMetrics={},perfLeague="ALL";
 const E=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
 const N=v=>{const n=parseFloat(String(v??"").replace(/[+%$u,]/g,""));return Number.isFinite(n)?n:null};
 const todayET=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
@@ -135,6 +137,25 @@ function renderLeagueGrid(){
    return '<div class="league-card"><div class="league-title">'+l+'</div><div class="league-state '+(state==="OFFICIAL PICK"?'pos':'')+'">'+state+'</div><div class="sub">'+detail+'</div><div class="sub" style="margin-top:8px">'+sh+' shadow'+(sh===1?'':'s')+' today</div></div>';
  }).join("");
 }
+function setPerfLeague(l){perfLeague=l;document.querySelectorAll("#perfTabs .tab").forEach(b=>b.classList.toggle("active",b.dataset.league===l));renderSportComparison()}
+function sportVerdict(p){
+ const n=p.w+p.l;if(!n)return "No settled OFFICIAL bets yet — still collecting evidence.";
+ const rate=100*p.w/n;
+ if(n<5)return "Very early sample — "+p.w+"-"+p.l+" so far. Too soon to judge the model.";
+ if(p.pnl>=3 && rate>=60)return "🔥 This model is killing it so far — strong record and positive units.";
+ if(p.pnl>0)return "📈 Positive so far — the model is making money, but keep watching the sample.";
+ if(p.pnl<=-3 || rate<40)return "🧊 This model is struggling — negative results warrant a close look before trusting the edge.";
+ return "⚖️ Mixed results so far — no clear edge in the settled sample yet.";
+}
+function renderSportComparison(){
+ const leagues=["MLB","NFL","NCAAF","NBA","WNBA","NHL"];
+ const selected=perfLeague==="ALL"?leagues:[perfLeague];
+ const cards=selected.map(l=>{const rs=rows.filter(r=>r.league===l&&r.trackType==="OFFICIAL");const p=perf(rs);const n=p.w+p.l;const rate=n?100*p.w/n:null;return {l,p,n,rate};});
+ if(perfLeague==="ALL"){
+   const all=perf(rows.filter(r=>r.trackType==="OFFICIAL")); sportHeadline.innerHTML="<b>All-sports OFFICIAL record: "+all.w+"-"+all.l+(all.p?"-"+all.p:"")+"</b> · "+unit(all.pnl)+(all.roi!==null?" · ROI "+all.roi.toFixed(1)+"%":"")+"<br><span class='sub'>League cards below use OFFICIAL settled paper bets only; SHADOW bets never affect these records.</span>";
+ }else{const x=cards[0];sportHeadline.innerHTML="<b>"+x.l+": "+x.p.w+"-"+x.p.l+(x.p.p?"-"+x.p.p:"")+" · "+unit(x.p.pnl)+(x.p.roi!==null?" · ROI "+x.p.roi.toFixed(1)+"%":"")+"</b><br>"+sportVerdict(x.p);}
+ sportPerf.innerHTML=cards.map(x=>'<div class="metric"><div class="sub">'+x.l+' OFFICIAL</div><div class="sport-record">'+x.p.w+'-'+x.p.l+(x.p.p?'-'+x.p.p:'')+'</div><div class="'+(x.p.pnl>0?'pos':x.p.pnl<0?'neg':'')+'"><b>'+unit(x.p.pnl)+'</b>'+(x.p.roi!==null?' · '+x.p.roi.toFixed(1)+'% ROI':'')+'</div><div class="sub" style="margin-top:7px">'+sportVerdict(x.p)+'</div></div>').join("");
+}
 function renderModelPerf(){
  const off=perf(rows.filter(r=>r.trackType==="OFFICIAL")),sh=perf(rows.filter(r=>r.trackType==="SHADOW"));
  modelPerf.innerHTML='<div class="metric"><div class="sub">Official Record</div><div class="v">'+off.w+'-'+off.l+'</div><div class="sub">'+unit(off.pnl)+(off.roi!==null?' · ROI '+off.roi.toFixed(1)+'%':'')+'</div></div><div class="metric"><div class="sub">Shadow Record</div><div class="v">'+sh.w+'-'+sh.l+'</div><div class="sub">'+unit(sh.pnl)+' diagnostic only</div></div><div class="metric"><div class="sub">Pending Official</div><div class="v">'+rows.filter(r=>r.trackType==="OFFICIAL"&&!settled(r)).length+'</div><div class="sub">Open paper selections</div></div><div class="metric"><div class="sub">Total Model Entries</div><div class="v">'+rows.length+'</div><div class="sub">Official + shadow + pass</div></div>';
@@ -145,7 +166,7 @@ function renderLedger(){
 function renderHealth(){
  health.innerHTML=(statusData.feeds||[]).map(f=>'<div class="card"><div><span class="dot '+(f.ok?'ok':'')+'"></span><b>'+E(f.key.toUpperCase())+'</b></div><div class="sub" style="margin-top:7px">'+(f.ok?E(f.date||"Available")+(f.count!=null?' · '+E(f.count)+' items':''):(f.status===404?'Not published yet':'Unavailable'))+'</div></div>').join("");
 }
-function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderModelPerf();renderLedger();renderHealth()}
+function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth()}
 async function load(){
  try{
   const [p,s,m]=await Promise.all([fetch("/api/picks",{cache:"no-store"}),fetch("/api/status",{cache:"no-store"}),fetch("/api/private-metrics",{cache:"no-store"})]);
