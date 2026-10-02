@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "visibility": "sanitized-private-performance-feed",
   "source": "Kalshi authenticated account API",
-  "fetched_at_utc": "2026-10-02T03:30:47.876725+00:00",
+  "fetched_at_utc": "2026-10-02T12:00:11.578475+00:00",
   "fill_count": 47,
-  "settlement_count": 33,
+  "settlement_count": 35,
   "position_count": 35,
   "summary_by_sport": {
     "MLB": {
@@ -21,9 +21,9 @@
     },
     "NFL": {
       "fills": 17,
-      "settlements": 10,
+      "settlements": 12,
       "positions": 12,
-      "settled_positions": 10
+      "settled_positions": 12
     },
     "NHL": {
       "fills": 2,
@@ -46,6 +46,56 @@
   },
   "accounting_note": "Per-market actual P/L is derived from member fills: sell proceeds + winning-side settlement payout - buy premium - fill fees. Deposits/withdrawals are excluded.",
   "positions": [
+    {
+      "trade_id": "KALSHI-KXNFLRSHYDS-26OCT01PITCLE-PITJWARREN30-70",
+      "ticker": "KXNFLRSHYDS-26OCT01PITCLE-PITJWARREN30-70",
+      "event_ticker": "KXNFLRSHYDS-26OCT01PITCLE",
+      "sport": "NFL",
+      "selection_side": "YES",
+      "net_yes_contracts": 5.19,
+      "net_no_contracts": 0.0,
+      "gross_contracts_bought": 5.19,
+      "gross_buy_cost": 2.9064,
+      "gross_sell_proceeds": 0.0,
+      "fees": 0.0896,
+      "risk": 2.996,
+      "avg_entry_price": 0.56,
+      "settlement_payout": 5.19,
+      "net_pnl": 2.194,
+      "result": "Win",
+      "market_result": "yes",
+      "opened_time": "2026-10-01T20:12:21.837955Z",
+      "last_fill_time": "2026-10-01T20:12:21.837955Z",
+      "settled_time": "2026-10-02T04:03:33.99702Z",
+      "fill_ids": [
+        "07231d6d-8011-aaab-c66d-5598f4921be1"
+      ]
+    },
+    {
+      "trade_id": "KALSHI-KXNFLSPREAD-26OCT01PITCLE-PIT3",
+      "ticker": "KXNFLSPREAD-26OCT01PITCLE-PIT3",
+      "event_ticker": "KXNFLSPREAD-26OCT01PITCLE",
+      "sport": "NFL",
+      "selection_side": "YES",
+      "net_yes_contracts": 3.65,
+      "net_no_contracts": 0.0,
+      "gross_contracts_bought": 3.65,
+      "gross_buy_cost": 1.9345,
+      "gross_sell_proceeds": 0.0,
+      "fees": 0.0637,
+      "risk": 1.9982,
+      "avg_entry_price": 0.53,
+      "settlement_payout": 0.0,
+      "net_pnl": -1.9982,
+      "result": "Loss",
+      "market_result": "no",
+      "opened_time": "2026-10-01T20:11:36.775959Z",
+      "last_fill_time": "2026-10-01T20:11:36.775959Z",
+      "settled_time": "2026-10-02T03:52:04.254708Z",
+      "fill_ids": [
+        "07231c8b-3779-bcd0-b017-2abcac970f15"
+      ]
+    },
     {
       "trade_id": "KALSHI-KXMLBTOTAL-26OCT011400PHIATL-8",
       "ticker": "KXMLBTOTAL-26OCT011400PHIATL-8",
@@ -94,56 +144,6 @@
       "settled_time": "2026-10-02T00:50:24.114665Z",
       "fill_ids": [
         "07231d73-0481-9771-09c5-75f2b93e3e45"
-      ]
-    },
-    {
-      "trade_id": "KALSHI-KXNFLRSHYDS-26OCT01PITCLE-PITJWARREN30-70",
-      "ticker": "KXNFLRSHYDS-26OCT01PITCLE-PITJWARREN30-70",
-      "event_ticker": null,
-      "sport": "NFL",
-      "selection_side": "YES",
-      "net_yes_contracts": 5.19,
-      "net_no_contracts": 0.0,
-      "gross_contracts_bought": 5.19,
-      "gross_buy_cost": 2.9064,
-      "gross_sell_proceeds": 0.0,
-      "fees": 0.0896,
-      "risk": 2.996,
-      "avg_entry_price": 0.56,
-      "settlement_payout": null,
-      "net_pnl": null,
-      "result": "Open",
-      "market_result": null,
-      "opened_time": "2026-10-01T20:12:21.837955Z",
-      "last_fill_time": "2026-10-01T20:12:21.837955Z",
-      "settled_time": null,
-      "fill_ids": [
-        "07231d6d-8011-aaab-c66d-5598f4921be1"
-      ]
-    },
-    {
-      "trade_id": "KALSHI-KXNFLSPREAD-26OCT01PITCLE-PIT3",
-      "ticker": "KXNFLSPREAD-26OCT01PITCLE-PIT3",
-      "event_ticker": null,
-      "sport": "NFL",
-      "selection_side": "YES",
-      "net_yes_contracts": 3.65,
-      "net_no_contracts": 0.0,
-      "gross_contracts_bought": 3.65,
-      "gross_buy_cost": 1.9345,
-      "gross_sell_proceeds": 0.0,
-      "fees": 0.0637,
-      "risk": 1.9982,
-      "avg_entry_price": 0.53,
-      "settlement_payout": null,
-      "net_pnl": null,
-      "result": "Open",
-      "market_result": null,
-      "opened_time": "2026-10-01T20:11:36.775959Z",
-      "last_fill_time": "2026-10-01T20:11:36.775959Z",
-      "settled_time": null,
-      "fill_ids": [
-        "07231c8b-3779-bcd0-b017-2abcac970f15"
       ]
     },
     {
@@ -1783,6 +1783,36 @@
     }
   ],
   "settlements": [
+    {
+      "ticker": "KXNFLRSHYDS-26OCT01PITCLE-PITJWARREN30-70",
+      "event_ticker": "KXNFLRSHYDS-26OCT01PITCLE",
+      "sport": "NFL",
+      "market_result": "yes",
+      "yes_count": 5.19,
+      "yes_total_cost": 2.9064,
+      "no_count": 0.0,
+      "no_total_cost": 0.0,
+      "revenue_cents": 519,
+      "value_cents": 100,
+      "fee_cost": 0.0896,
+      "settled_time": "2026-10-02T04:03:33.99702Z",
+      "exchange_index": 0
+    },
+    {
+      "ticker": "KXNFLSPREAD-26OCT01PITCLE-PIT3",
+      "event_ticker": "KXNFLSPREAD-26OCT01PITCLE",
+      "sport": "NFL",
+      "market_result": "no",
+      "yes_count": 3.65,
+      "yes_total_cost": 1.9345,
+      "no_count": 0.0,
+      "no_total_cost": 0.0,
+      "revenue_cents": 0,
+      "value_cents": 0,
+      "fee_cost": 0.0637,
+      "settled_time": "2026-10-02T03:52:04.254708Z",
+      "exchange_index": 0
+    },
     {
       "ticker": "KXMLBTOTAL-26OCT011400PHIATL-8",
       "event_ticker": "KXMLBTOTAL-26OCT011400PHIATL",
