@@ -90,7 +90,7 @@ function friendly(r){
 }
 function renderActual(){
  const vals=[
-  ["Today",privateMetrics.actualTodayPnl],
+  ["Yesterday",privateMetrics.actualYesterdayPnl],
   ["This Week",privateMetrics.actualWeekPnl],
   ["Last 30 Days",privateMetrics.actual30dPnl],
   ["All Time",privateMetrics.actualAllTimePnl]
@@ -230,7 +230,7 @@ class Handler(BaseHTTPRequestHandler):
             except Exception as e: return self.send(502, json.dumps({"error":str(e)}), "application/json")
         if p == "/api/private-metrics":
             data={
-                "actualTodayPnl": os.environ.get("ACTUAL_TODAY_PNL"),
+                "actualYesterdayPnl": os.environ.get("ACTUAL_YESTERDAY_PNL"),
                 "actualWeekPnl": os.environ.get("ACTUAL_WEEK_PNL"),
                 "actual30dPnl": os.environ.get("ACTUAL_30D_PNL"),
                 "actualAllTimePnl": os.environ.get("ACTUAL_ALL_TIME_PNL"),
