@@ -43,6 +43,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <header><div><div class="eyebrow">PRIVATE MODEL ANALYTICS</div><h1>Gambling Dashboard</h1></div><div><span id="stamp" class="sub">Loading…</span> <button onclick="load()">Refresh</button> <button onclick="logout()">Log out</button></div></header>
 <main>
 <section><div class="eyebrow">ACTUAL BETTING PERFORMANCE</div><div class="grid" id="actualMetrics" style="margin-top:8px"></div></section>
+<section class="panel"><div class="eyebrow">ACTUAL BY PLATFORM</div><h2>DraftKings vs Kalshi</h2><div id="platformActuals" class="grid" style="margin-top:12px"></div></section>
 
 <section class="twocol">
 <div class="panel">
