@@ -1011,6 +1011,30 @@
       "reason": "Current Kalshi board verified for 2026-10-01 with 8 same-day candidates, all PHI-ATL. A finalist Under 7.5 via NO at $0.53 modeled ~54% (+1 pp); B finalist Atlanta win YES at $0.51 modeled ~53.5% (+2.5 pp); no same-day repeatable pitcher-prop candidate for C. Starting-pitcher uncertainty (Aaron Nola expected for PHI; Atlanta planning Grant Holmes/Ray Kerr/bullpen), playoff bullpen usage, and fees/slippage leave no robust edge. No shadow recorded because apparent edges are too thin after friction.",
       "boardTimestampET": "2026-10-01 10:55 ET",
       "sourceRun": "MLB Kalshi Model automation 2026-10-01"
+    },
+    {
+      "entryId": "NHL-TEST-FLOW-2026-10-01",
+      "dateET": "2026-10-01",
+      "league": "NHL",
+      "model": "NHL Kalshi Model",
+      "trackType": "PASS",
+      "event": "Dashboard integration test",
+      "category": "Slate",
+      "market": "Integration test",
+      "selection": "TEST FLOW OK",
+      "line": null,
+      "odds": null,
+      "breakEven": null,
+      "modelProbability": null,
+      "edge": null,
+      "confidence": "TEST",
+      "stakeUnits": 0,
+      "result": "Pass",
+      "pnlUnits": null,
+      "officialBankrollUnits": 100,
+      "reason": "Temporary NHL dashboard integration test; not a betting selection.",
+      "boardTimestampET": "2026-10-01 TEST",
+      "sourceRun": "NHL dashboard integration test"
     }
   ]
 }
