@@ -58,7 +58,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
     <div class="kpi"><div class="sub">Committed</div><div id="paperCommitted" class="big">0.00u</div></div>
   </div>
   <p class="sub">This is the paper-model bankroll, not your DraftKings/account cash balance. Pending stakes are shown as committed rather than treated as a loss.</p>
-  <div class="bankbox"><div class="eyebrow">BANK REFILL</div><div id="bankRefill" style="font-size:25px;font-weight:900;margin-top:5px">—</div><div id="bankRefillDetail" class="sub" style="margin-top:6px"></div></div>
+  <div class="bankbox"><div class="eyebrow">BANK REFILL</div><div id="bankRefill" style="font-size:25px;font-weight:900;margin-top:5px">—</div><div id="bankRefillDetail" class="sub" style="margin-top:6px"></div><div id="bookCashFlow" class="sub" style="margin-top:6px"></div></div>
 </div>
 </section>
 
@@ -95,7 +95,7 @@ function renderActual(){
  actualMetrics.innerHTML=vals.map(x=>{const n=N(x[1]);return '<div class="metric"><div class="sub">'+x[0]+' Net P/L</div><div class="v '+(n>0?'pos':n<0?'neg':'')+'">'+money(x[1])+'</div><div class="sub">Settled tracked betting performance</div></div>'}).join("");
  const refill=N(privateMetrics.netBankRefill); bankRefill.textContent=money(refill);
  bankRefill.className=refill>0?"pos":refill<0?"neg":"";
- bankRefillDetail.textContent="Returned to bank "+money(privateMetrics.returnedToBank)+" · Added from bank "+money(privateMetrics.addedFromBank);
+ bankRefillDetail.textContent="Returned to bank "+money(privateMetrics.returnedToBank)+" · Added from bank "+money(privateMetrics.addedFromBank);\n bookCashFlow.textContent="DraftKings net "+money(privateMetrics.draftKingsNetBankRefill)+" · Kalshi net "+money(privateMetrics.kalshiNetBankRefill)+" (cash flow only)";
 }
 function pickCard(r,hero){
  const execution=r.odds?'<span class="chip">Execution: '+E(r.odds)+'</span>':'';
@@ -204,7 +204,13 @@ class Handler(BaseHTTPRequestHandler):
                 "returnedToBank": os.environ.get("RETURNED_TO_BANK"),
                 "addedFromBank": os.environ.get("ADDED_FROM_BANK"),
                 "netBankRefill": os.environ.get("NET_BANK_REFILL"),
-                "draftKingsPnl": os.environ.get("DRAFTKINGS_PNL")
+                "draftKingsPnl": os.environ.get("DRAFTKINGS_PNL"),
+                "draftKingsReturnedToBank": os.environ.get("DRAFTKINGS_RETURNED_TO_BANK"),
+                "draftKingsAddedFromBank": os.environ.get("DRAFTKINGS_ADDED_FROM_BANK"),
+                "draftKingsNetBankRefill": os.environ.get("DRAFTKINGS_NET_BANK_REFILL"),
+                "kalshiReturnedToBank": os.environ.get("KALSHI_RETURNED_TO_BANK"),
+                "kalshiAddedFromBank": os.environ.get("KALSHI_ADDED_FROM_BANK"),
+                "kalshiNetBankRefill": os.environ.get("KALSHI_NET_BANK_REFILL")
             }
             return self.send(200,json.dumps(data),"application/json")
         if p == "/api/status":
