@@ -98,7 +98,8 @@ function renderActual(){
  actualMetrics.innerHTML=vals.map(x=>{const n=N(x[1]);return '<div class="metric"><div class="sub">'+x[0]+' Net P/L</div><div class="v '+(n>0?'pos':n<0?'neg':'')+'">'+money(x[1])+'</div><div class="sub">Settled tracked betting performance</div></div>'}).join("");
  const refill=N(privateMetrics.netBankRefill); bankRefill.textContent=money(refill);
  bankRefill.className=refill>0?"pos":refill<0?"neg":"";
- bankRefillDetail.textContent="Returned to bank "+money(privateMetrics.returnedToBank)+" · Added from bank "+money(privateMetrics.addedFromBank);\n bookCashFlow.textContent="DraftKings net "+money(privateMetrics.draftKingsNetBankRefill)+" · Kalshi net "+money(privateMetrics.kalshiNetBankRefill)+" (cash flow only)";
+ bankRefillDetail.textContent="Returned to bank "+money(privateMetrics.returnedToBank)+" · Added from bank "+money(privateMetrics.addedFromBank);
+ bookCashFlow.textContent="DraftKings net "+money(privateMetrics.draftKingsNetBankRefill)+" · Kalshi net "+money(privateMetrics.kalshiNetBankRefill)+" (cash flow only)";
 }
 function pickCard(r,hero){
  const execution=r.odds?'<span class="chip">Execution: '+E(r.odds)+'</span>':'';
