@@ -173,12 +173,107 @@ def safe_settlement(s):
     }
 
 
-def summarize(fills, settlements):
-    by_sport = defaultdict(lambda: {"fills": 0, "settlements": 0})
+def build_positions(fills, settlements):
+    """Aggregate member fills into one accounting row per Kalshi market."""
+    by_ticker = defaultdict(list)
+    for fill in fills:
+        if fill.get("ticker"):
+            by_ticker[fill["ticker"]].append(fill)
+
+    settlement_by_ticker = {s.get("ticker"): s for s in settlements if s.get("ticker")}
+    positions = []
+
+    for ticker, market_fills in by_ticker.items():
+        market_fills = sorted(market_fills, key=lambda x: x.get("created_time") or "")
+        net_contracts = {"yes": 0.0, "no": 0.0}
+        bought_contracts = {"yes": 0.0, "no": 0.0}
+        buy_premium = {"yes": 0.0, "no": 0.0}
+        gross_buy_cost = 0.0
+        gross_sell_proceeds = 0.0
+        fees = 0.0
+
+        for x in market_fills:
+            side = (x.get("outcome_side") or "").lower()
+            action = (x.get("action") or "").lower()
+            count = x.get("count") or 0.0
+            price = x.get("yes_price") if side == "yes" else x.get("no_price")
+            price = price or 0.0
+            fee = x.get("fee_cost") or 0.0
+            fees += fee
+
+            if side not in ("yes", "no"):
+                continue
+            if action == "buy":
+                net_contracts[side] += count
+                bought_contracts[side] += count
+                buy_premium[side] += count * price
+                gross_buy_cost += count * price
+            elif action == "sell":
+                net_contracts[side] -= count
+                gross_sell_proceeds += count * price
+
+        dominant_side = "yes" if net_contracts["yes"] >= net_contracts["no"] else "no"
+        total_bought = bought_contracts["yes"] + bought_contracts["no"]
+        avg_entry = (
+            (buy_premium["yes"] + buy_premium["no"]) / total_bought
+            if total_bought > 0 else None
+        )
+
+        settlement = settlement_by_ticker.get(ticker)
+        settled = settlement is not None
+        settlement_payout = 0.0
+        result = "Open"
+        pnl = None
+
+        if settled:
+            winning_side = (settlement.get("market_result") or "").lower()
+            if winning_side in ("yes", "no"):
+                settlement_payout = max(0.0, net_contracts.get(winning_side, 0.0))
+            pnl = gross_sell_proceeds + settlement_payout - gross_buy_cost - fees
+            if pnl > 1e-9:
+                result = "Win"
+            elif pnl < -1e-9:
+                result = "Loss"
+            else:
+                result = "Push"
+
+        positions.append({
+            "trade_id": "KALSHI-" + ticker,
+            "ticker": ticker,
+            "event_ticker": settlement.get("event_ticker") if settlement else None,
+            "sport": infer_sport(ticker),
+            "selection_side": dominant_side.upper(),
+            "net_yes_contracts": round(net_contracts["yes"], 6),
+            "net_no_contracts": round(net_contracts["no"], 6),
+            "gross_contracts_bought": round(total_bought, 6),
+            "gross_buy_cost": round(gross_buy_cost, 6),
+            "gross_sell_proceeds": round(gross_sell_proceeds, 6),
+            "fees": round(fees, 6),
+            "risk": round(gross_buy_cost + fees, 6),
+            "avg_entry_price": round(avg_entry, 6) if avg_entry is not None else None,
+            "settlement_payout": round(settlement_payout, 6) if settled else None,
+            "net_pnl": round(pnl, 6) if pnl is not None else None,
+            "result": result,
+            "market_result": settlement.get("market_result") if settlement else None,
+            "opened_time": market_fills[0].get("created_time") if market_fills else None,
+            "last_fill_time": market_fills[-1].get("created_time") if market_fills else None,
+            "settled_time": settlement.get("settled_time") if settlement else None,
+            "fill_ids": [x.get("fill_id") for x in market_fills if x.get("fill_id")],
+        })
+
+    return sorted(positions, key=lambda x: x.get("settled_time") or x.get("last_fill_time") or "", reverse=True)
+
+
+def summarize(fills, settlements, positions):
+    by_sport = defaultdict(lambda: {"fills": 0, "settlements": 0, "positions": 0, "settled_positions": 0})
     for x in fills:
         by_sport[x["sport"]]["fills"] += 1
     for x in settlements:
         by_sport[x["sport"]]["settlements"] += 1
+    for x in positions:
+        by_sport[x["sport"]]["positions"] += 1
+        if x.get("result") in ("Win", "Loss", "Push"):
+            by_sport[x["sport"]]["settled_positions"] += 1
     return dict(sorted(by_sport.items()))
 
 
@@ -261,6 +356,7 @@ def main():
 
     fills = [safe_fill(x) for x in fills_raw]
     settlements = [safe_settlement(x) for x in settlements_raw]
+    positions = build_positions(fills, settlements)
 
     payload = {
         "schemaVersion": 1,
@@ -269,12 +365,13 @@ def main():
         "fetched_at_utc": datetime.now(timezone.utc).isoformat(),
         "fill_count": len(fills),
         "settlement_count": len(settlements),
-        "summary_by_sport": summarize(fills, settlements),
+        "position_count": len(positions),
+        "summary_by_sport": summarize(fills, settlements, positions),
         "accounting_note": (
-            "This feed intentionally preserves settlement cost/revenue fields. "
-            "Downstream sync should compute actual P/L only from documented settlement data, "
-            "not from deposits/withdrawals."
+            "Per-market actual P/L is derived from member fills: sell proceeds + winning-side "
+            "settlement payout - buy premium - fill fees. Deposits/withdrawals are excluded."
         ),
+        "positions": positions,
         "fills": fills,
         "settlements": settlements,
     }
@@ -285,6 +382,7 @@ def main():
     print(f"Saved: {OUT_FILE}")
     print(f"Fills: {len(fills)}")
     print(f"Settlements: {len(settlements)}")
+    print(f"Positions: {len(positions)}")
     print(f"GitHub: {REMOTE_PATH}")
     if commit:
         print(f"Commit: {commit}")
