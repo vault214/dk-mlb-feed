@@ -43,7 +43,7 @@ PER_EVENT_CAPS = {
 }
 
 MAX_TOTAL = 220
-MAX_SPREAD = 0.15
+MAX_SPREAD = 0.05
 HORIZON_DAYS = 2
 
 REMOTE_PATH = "kalshi/mlb-candidates.json"
