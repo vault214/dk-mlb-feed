@@ -65,7 +65,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 
 <section class="panel"><div class="eyebrow">LEAGUES</div><h2>Model Status & Advice</h2><div id="leagueGrid" class="league-grid" style="margin-top:12px"></div></section>
 
-<section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="tabs" id="perfTabs" style="margin-top:12px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
+<section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
 
 <section class="panel"><div class="eyebrow">MODEL PERFORMANCE</div><h2>Official / Shadow Ledger</h2><div id="modelPerf" class="grid" style="margin-top:12px"></div></section>
 
@@ -74,7 +74,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <section class="panel"><div class="eyebrow">SYSTEM</div><h2>Feed Health</h2><div id="health" class="health" style="margin-top:12px"></div></section>
 </main>
 <script>
-let rows=[],statusData={feeds:[]},privateMetrics={},perfLeague="ALL";
+let rows=[],statusData={feeds:[]},privateMetrics={},perfLeague="ALL",perfTrack="OFFICIAL";
 const E=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
 const N=v=>{const n=parseFloat(String(v??"").replace(/[+%$u,]/g,""));return Number.isFinite(n)?n:null};
 const todayET=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
@@ -139,10 +139,16 @@ function renderLeagueGrid(){
  }).join("");
 }
 function setPerfLeague(l){perfLeague=l;document.querySelectorAll("#perfTabs .tab").forEach(b=>b.classList.toggle("active",b.dataset.league===l));renderSportComparison()}
-function sportVerdict(p){
- const n=p.w+p.l;if(!n)return "No settled OFFICIAL bets yet — still collecting evidence.";
+function setPerfTrack(t){perfTrack=t;document.querySelectorAll("#trackTabs .tab").forEach(b=>b.classList.toggle("active",b.dataset.track===t));renderSportComparison()}
+function sportVerdict(p,track){
+ const n=p.w+p.l;if(!n)return "No settled "+track+" bets yet — still collecting evidence.";
  const rate=100*p.w/n;
  if(n<5)return "Very early sample — "+p.w+"-"+p.l+" so far. Too soon to judge the model.";
+ if(track==="SHADOW"){
+   if(rate>=60)return "🔥 Shadow ideas are hitting well so far — useful evidence for model development.";
+   if(rate<40)return "🧊 Shadow ideas are struggling — useful signal that these marginal edges are not holding up.";
+   return "⚖️ Shadow results are mixed so far — keep collecting evidence.";
+ }
  if(p.pnl>=3 && rate>=60)return "🔥 This model is killing it so far — strong record and positive units.";
  if(p.pnl>0)return "📈 Positive so far — the model is making money, but keep watching the sample.";
  if(p.pnl<=-3 || rate<40)return "🧊 This model is struggling — negative results warrant a close look before trusting the edge.";
@@ -151,11 +157,17 @@ function sportVerdict(p){
 function renderSportComparison(){
  const leagues=["MLB","NFL","NCAAF","NBA","WNBA","NHL"];
  const selected=perfLeague==="ALL"?leagues:[perfLeague];
- const cards=selected.map(l=>{const rs=rows.filter(r=>r.league===l&&r.trackType==="OFFICIAL");const p=perf(rs);const n=p.w+p.l;const rate=n?100*p.w/n:null;return {l,p,n,rate};});
+ const cards=selected.map(l=>{const rs=rows.filter(r=>r.league===l&&r.trackType===perfTrack);const p=perf(rs);const n=p.w+p.l;const rate=n?100*p.w/n:null;return {l,p,n,rate};});
+ const trackLabel=perfTrack==="OFFICIAL"?"OFFICIAL":"SHADOW";
  if(perfLeague==="ALL"){
-   const all=perf(rows.filter(r=>r.trackType==="OFFICIAL")); sportHeadline.innerHTML="<b>All-sports OFFICIAL record: "+all.w+"-"+all.l+(all.p?"-"+all.p:"")+"</b> · "+unit(all.pnl)+(all.roi!==null?" · ROI "+all.roi.toFixed(1)+"%":"")+"<br><span class='sub'>League cards below use OFFICIAL settled paper bets only; SHADOW bets never affect these records.</span>";
- }else{const x=cards[0];sportHeadline.innerHTML="<b>"+x.l+": "+x.p.w+"-"+x.p.l+(x.p.p?"-"+x.p.p:"")+" · "+unit(x.p.pnl)+(x.p.roi!==null?" · ROI "+x.p.roi.toFixed(1)+"%":"")+"</b><br>"+sportVerdict(x.p);}
- sportPerf.innerHTML=cards.map(x=>'<div class="metric"><div class="sub">'+x.l+' OFFICIAL</div><div class="sport-record">'+x.p.w+'-'+x.p.l+(x.p.p?'-'+x.p.p:'')+'</div><div class="'+(x.p.pnl>0?'pos':x.p.pnl<0?'neg':'')+'"><b>'+unit(x.p.pnl)+'</b>'+(x.p.roi!==null?' · '+x.p.roi.toFixed(1)+'% ROI':'')+'</div><div class="sub" style="margin-top:7px">'+sportVerdict(x.p)+'</div></div>').join("");
+   const all=perf(rows.filter(r=>r.trackType===perfTrack));
+   const rate=(all.w+all.l)?100*all.w/(all.w+all.l):null;
+   sportHeadline.innerHTML="<b>All-sports "+trackLabel+" record: "+all.w+"-"+all.l+(all.p?"-"+all.p:"")+"</b>"+(perfTrack==="OFFICIAL"?" · "+unit(all.pnl)+(all.roi!==null?" · ROI "+all.roi.toFixed(1)+"%":""):(rate!==null?" · Hit rate "+rate.toFixed(1)+"%":""))+"<br><span class='sub'>"+(perfTrack==="OFFICIAL"?"Official settled paper bets only; shadow bets never affect these records.":"Shadow results are diagnostic only and do not affect the official bankroll.")+"</span>";
+ }else{
+   const x=cards[0];
+   sportHeadline.innerHTML="<b>"+x.l+" "+trackLabel+": "+x.p.w+"-"+x.p.l+(x.p.p?"-"+x.p.p:"")+(perfTrack==="OFFICIAL"?" · "+unit(x.p.pnl)+(x.p.roi!==null?" · ROI "+x.p.roi.toFixed(1)+"%":""):(x.rate!==null?" · Hit rate "+x.rate.toFixed(1)+"%":""))+"</b><br>"+sportVerdict(x.p,perfTrack);
+ }
+ sportPerf.innerHTML=cards.map(x=>'<div class="metric"><div class="sub">'+x.l+' '+trackLabel+'</div><div class="sport-record">'+x.p.w+'-'+x.p.l+(x.p.p?'-'+x.p.p:'')+'</div>'+(perfTrack==="OFFICIAL"?'<div class="'+(x.p.pnl>0?'pos':x.p.pnl<0?'neg':'')+'"><b>'+unit(x.p.pnl)+'</b>'+(x.p.roi!==null?' · '+x.p.roi.toFixed(1)+'% ROI':'')+'</div>':'<div><b>'+(x.rate!==null?x.rate.toFixed(1)+'% hit rate':'—')+'</b></div>')+'<div class="sub" style="margin-top:7px">'+sportVerdict(x.p,perfTrack)+'</div></div>').join("");
 }
 function renderModelPerf(){
  const off=perf(rows.filter(r=>r.trackType==="OFFICIAL")),sh=perf(rows.filter(r=>r.trackType==="SHADOW"));
