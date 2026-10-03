@@ -17,7 +17,7 @@ jobs:
       TZ: America/New_York
       GOOGLE_SHEET_ID: 1yTkEAnkNQ6MEKZLBQ0Imd_47hzGUQ1LL2fop2N1tcrQ
       GOOGLE_WORKSHEET_BETS: Bets
-      DK_STORAGE_STATE_B64: ${{ secrets.DK_STORAGE_STATE_B64 }}
+      DK_STORAGE_STATE_GZ_B64: ${{ secrets.DK_STORAGE_STATE_GZ_B64 }}
       GOOGLE_SERVICE_ACCOUNT_JSON_B64: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON_B64 }}
 
     steps:
@@ -40,7 +40,7 @@ jobs:
       - name: Validate required secrets
         shell: bash
         run: |
-          test -n "$DK_STORAGE_STATE_B64" || { echo "Missing DK_STORAGE_STATE_B64"; exit 1; }
+          test -n "$DK_STORAGE_STATE_GZ_B64" || { echo "Missing DK_STORAGE_STATE_GZ_B64"; exit 1; }
           test -n "$GOOGLE_SERVICE_ACCOUNT_JSON_B64" || { echo "Missing GOOGLE_SERVICE_ACCOUNT_JSON_B64"; exit 1; }
 
       - name: Sync DraftKings actual bets
