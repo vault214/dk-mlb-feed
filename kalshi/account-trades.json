@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "visibility": "sanitized-private-performance-feed",
   "source": "Kalshi authenticated account API",
-  "fetched_at_utc": "2026-10-02T12:00:11.578475+00:00",
-  "fill_count": 47,
-  "settlement_count": 35,
-  "position_count": 35,
+  "fetched_at_utc": "2026-10-03T03:30:08.810149+00:00",
+  "fill_count": 48,
+  "settlement_count": 36,
+  "position_count": 36,
   "summary_by_sport": {
     "MLB": {
       "fills": 11,
@@ -14,10 +14,10 @@
       "settled_positions": 8
     },
     "NCAAF": {
-      "fills": 5,
-      "settlements": 3,
-      "positions": 3,
-      "settled_positions": 3
+      "fills": 6,
+      "settlements": 4,
+      "positions": 4,
+      "settled_positions": 4
     },
     "NFL": {
       "fills": 17,
@@ -46,6 +46,31 @@
   },
   "accounting_note": "Per-market actual P/L is derived from member fills: sell proceeds + winning-side settlement payout - buy premium - fill fees. Deposits/withdrawals are excluded.",
   "positions": [
+    {
+      "trade_id": "KALSHI-KXNCAAFGAME-26OCT02PITTVT-PITT",
+      "ticker": "KXNCAAFGAME-26OCT02PITTVT-PITT",
+      "event_ticker": "KXNCAAFGAME-26OCT02PITTVT",
+      "sport": "NCAAF",
+      "selection_side": "YES",
+      "net_yes_contracts": 2.09,
+      "net_no_contracts": 0.0,
+      "gross_contracts_bought": 2.09,
+      "gross_buy_cost": 0.9614,
+      "gross_sell_proceeds": 0.0,
+      "fees": 0.0364,
+      "risk": 0.9978,
+      "avg_entry_price": 0.46,
+      "settlement_payout": 2.09,
+      "net_pnl": 1.0922,
+      "result": "Win",
+      "market_result": "yes",
+      "opened_time": "2026-10-02T20:28:14.171855Z",
+      "last_fill_time": "2026-10-02T20:28:14.171855Z",
+      "settled_time": "2026-10-03T02:48:47.415825Z",
+      "fill_ids": [
+        "072302cc-fa39-9684-5f33-15c47dfcc540"
+      ]
+    },
     {
       "trade_id": "KALSHI-KXNFLRSHYDS-26OCT01PITCLE-PITJWARREN30-70",
       "ticker": "KXNFLRSHYDS-26OCT01PITCLE-PITJWARREN30-70",
@@ -936,6 +961,24 @@
   ],
   "fills": [
     {
+      "fill_id": "072302cc-fa39-9684-5f33-15c47dfcc540",
+      "trade_id": "072302cc-fa39-9684-5f33-15c47dfcc540",
+      "order_id": "01a0fe4d-9b30-7b09-baae-f00204b77d3a",
+      "ticker": "KXNCAAFGAME-26OCT02PITTVT-PITT",
+      "sport": "NCAAF",
+      "outcome_side": "yes",
+      "book_side": "bid",
+      "action": "buy",
+      "count": 2.09,
+      "yes_price": 0.46,
+      "no_price": 0.54,
+      "fee_cost": 0.0364,
+      "is_taker": true,
+      "created_time": "2026-10-02T20:28:14.171855Z",
+      "exchange_index": 0,
+      "subaccount_number": 0
+    },
+    {
       "fill_id": "07231d6d-8011-aaab-c66d-5598f4921be1",
       "trade_id": "07231d6d-8011-aaab-c66d-5598f4921be1",
       "order_id": "01a0f918-b488-7613-915c-159a2da02515",
@@ -1783,6 +1826,21 @@
     }
   ],
   "settlements": [
+    {
+      "ticker": "KXNCAAFGAME-26OCT02PITTVT-PITT",
+      "event_ticker": "KXNCAAFGAME-26OCT02PITTVT",
+      "sport": "NCAAF",
+      "market_result": "yes",
+      "yes_count": 2.09,
+      "yes_total_cost": 0.9614,
+      "no_count": 0.0,
+      "no_total_cost": 0.0,
+      "revenue_cents": 209,
+      "value_cents": 100,
+      "fee_cost": 0.0364,
+      "settled_time": "2026-10-03T02:48:47.415825Z",
+      "exchange_index": 0
+    },
     {
       "ticker": "KXNFLRSHYDS-26OCT01PITCLE-PITJWARREN30-70",
       "event_ticker": "KXNFLRSHYDS-26OCT01PITCLE",
