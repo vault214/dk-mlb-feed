@@ -1,4 +1,5 @@
 import base64
+import gzip
 import json
 import os
 import re
@@ -280,7 +281,7 @@ def fetch_with_page(page, path, label):
     return text
 
 def main():
-    storage_raw = base64.b64decode(os.environ["DK_STORAGE_STATE_B64"]).decode("utf-8")
+    storage_raw = gzip.decompress(base64.b64decode(os.environ["DK_STORAGE_STATE_GZ_B64"])).decode("utf-8")
     storage = json.loads(storage_raw)
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
