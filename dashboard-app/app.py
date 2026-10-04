@@ -17,6 +17,7 @@ FEEDS = {
     "wnba": RAW + "/kalshi/wnba-candidates.json",
     "mlb": RAW + "/kalshi/mlb-candidates.json",
     "nhl": RAW + "/kalshi/nhl-candidates.json",
+    "actual": RAW + "/dashboard/actual-performance.json",
 }
 
 HTML = r'''<!doctype html>
@@ -229,13 +230,17 @@ class Handler(BaseHTTPRequestHandler):
             try: return self.send(200, json.dumps(fetch_json(FEEDS["picks"])), "application/json")
             except Exception as e: return self.send(502, json.dumps({"error":str(e)}), "application/json")
         if p == "/api/private-metrics":
+            try:
+                actual=fetch_json(FEEDS["actual"])
+            except Exception:
+                actual={}
             data={
-                "actualYesterdayPnl": os.environ.get("ACTUAL_YESTERDAY_PNL"),
-                "actualWeekPnl": os.environ.get("ACTUAL_WEEK_PNL"),
-                "actual30dPnl": os.environ.get("ACTUAL_30D_PNL"),
-                "actualAllTimePnl": os.environ.get("ACTUAL_ALL_TIME_PNL"),
-                "actualAllTimeWinnings": os.environ.get("ACTUAL_ALL_TIME_WINNINGS"),
-                "actualAllTimeLost": os.environ.get("ACTUAL_ALL_TIME_LOST"),
+                "actualYesterdayPnl": actual.get("actualYesterdayPnl", os.environ.get("ACTUAL_YESTERDAY_PNL")),
+                "actualWeekPnl": actual.get("actualWeekPnl", os.environ.get("ACTUAL_WEEK_PNL")),
+                "actual30dPnl": actual.get("actual30dPnl", os.environ.get("ACTUAL_30D_PNL")),
+                "actualAllTimePnl": actual.get("actualAllTimePnl", os.environ.get("ACTUAL_ALL_TIME_PNL")),
+                "actualAllTimeWinnings": actual.get("actualAllTimeWinnings", os.environ.get("ACTUAL_ALL_TIME_WINNINGS")),
+                "actualAllTimeLost": actual.get("actualAllTimeLost", os.environ.get("ACTUAL_ALL_TIME_LOST")),
                 "returnedToBank": os.environ.get("RETURNED_TO_BANK"),
                 "addedFromBank": os.environ.get("ADDED_FROM_BANK"),
                 "netBankRefill": os.environ.get("NET_BANK_REFILL"),
