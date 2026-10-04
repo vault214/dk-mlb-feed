@@ -16,6 +16,7 @@ SERVICE_ACCOUNT_FILE = os.getenv("GOOGLE_SERVICE_ACCOUNT_FILE", "/app/secrets/go
 SHEET_ID = os.environ["GOOGLE_SHEET_ID"]
 WORKSHEET = os.getenv("GOOGLE_WORKSHEET_BETS", "Bets")
 MAX_SCROLLS = int(os.getenv("DK_MAX_SCROLLS", "12"))
+MAX_POSITIONS_PER_STATUS = int(os.getenv("DK_MAX_POSITIONS_PER_STATUS", "30"))
 
 HEADERS = [
     "Trade ID","Date/Time ET","Date/Time UTC","Type","Sport","Market","Selection","Side",
@@ -85,12 +86,14 @@ def unique_position_links(page, status):
             break
         page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
         page.wait_for_timeout(1200)
-    return sorted(seen)
+    return sorted(seen, key=lambda href: int(href.rstrip("/").split("/")[-1]), reverse=True)[:MAX_POSITIONS_PER_STATUS]
 
 def my_position_text(page):
     target = page.get_by_text("My Position", exact=True).first
-    if target.count() == 0:
-        raise RuntimeError("My Position section not found")
+    try:
+        target.wait_for(state="visible", timeout=10000)
+    except Exception:
+        raise RuntimeError("My Position section not found after 10s")
     return target.evaluate("el => el.parentElement.parentElement.innerText")
 
 def clean_lines(text):
@@ -277,7 +280,7 @@ def main():
                 position_id = href.rstrip("/").split("/")[-1]
                 url = href if href.startswith("http") else DK_BASE_URL + href
                 page.goto(url, wait_until="domcontentloaded", timeout=60000)
-                page.wait_for_timeout(1200)
+                page.wait_for_timeout(2500)
                 try:
                     row = parse_position(position_id, status, my_position_text(page))
                     merged[position_id] = row
