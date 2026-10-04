@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "visibility": "sanitized-private-performance-feed",
   "source": "Kalshi authenticated account API",
-  "fetched_at_utc": "2026-10-04T03:30:28.473361+00:00",
+  "fetched_at_utc": "2026-10-04T12:00:55.227785+00:00",
   "fill_count": 67,
-  "settlement_count": 50,
+  "settlement_count": 52,
   "position_count": 54,
   "summary_by_sport": {
     "MLB": {
       "fills": 15,
-      "settlements": 11,
+      "settlements": 12,
       "positions": 12,
-      "settled_positions": 11
+      "settled_positions": 12
     },
     "NCAAF": {
       "fills": 18,
@@ -33,9 +33,9 @@
     },
     "Other": {
       "fills": 11,
-      "settlements": 8,
+      "settlements": 9,
       "positions": 10,
-      "settled_positions": 8
+      "settled_positions": 9
     },
     "WNBA": {
       "fills": 3,
@@ -46,6 +46,56 @@
   },
   "accounting_note": "Per-market actual P/L is derived from member fills: sell proceeds + winning-side settlement payout - buy premium - fill fees. Deposits/withdrawals are excluded.",
   "positions": [
+    {
+      "trade_id": "KALSHI-KXMVECROSSCATEGORY-S2026A35C4CF0A06-C7D00DDA6E7",
+      "ticker": "KXMVECROSSCATEGORY-S2026A35C4CF0A06-C7D00DDA6E7",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026A35C4CF0A06",
+      "sport": "Other",
+      "selection_side": "YES",
+      "net_yes_contracts": 6.61,
+      "net_no_contracts": 0.0,
+      "gross_contracts_bought": 6.61,
+      "gross_buy_cost": 2.88196,
+      "gross_sell_proceeds": 0.0,
+      "fees": 0.11384,
+      "risk": 2.9958,
+      "avg_entry_price": 0.436,
+      "settlement_payout": 0.0,
+      "net_pnl": -2.9958,
+      "result": "Loss",
+      "market_result": "no",
+      "opened_time": "2026-10-03T16:01:32.592788Z",
+      "last_fill_time": "2026-10-03T16:01:32.592788Z",
+      "settled_time": "2026-10-04T09:33:07.279544Z",
+      "fill_ids": [
+        "07250b80-e6e1-94c8-dfd9-2ea08baacd4e"
+      ]
+    },
+    {
+      "trade_id": "KALSHI-KXMLBTEAMTOTAL-26OCT032030SDMIL-MIL4",
+      "ticker": "KXMLBTEAMTOTAL-26OCT032030SDMIL-MIL4",
+      "event_ticker": "KXMLBTEAMTOTAL-26OCT032030SDMIL",
+      "sport": "MLB",
+      "selection_side": "YES",
+      "net_yes_contracts": 3.45,
+      "net_no_contracts": 0.0,
+      "gross_contracts_bought": 3.45,
+      "gross_buy_cost": 1.9665,
+      "gross_sell_proceeds": 0.0,
+      "fees": 0.0296,
+      "risk": 1.9961,
+      "avg_entry_price": 0.57,
+      "settlement_payout": 0.0,
+      "net_pnl": -1.9961,
+      "result": "Loss",
+      "market_result": "no",
+      "opened_time": "2026-10-03T17:03:36.9005Z",
+      "last_fill_time": "2026-10-03T17:03:36.9005Z",
+      "settled_time": "2026-10-04T04:15:57.116892Z",
+      "fill_ids": [
+        "07250ba6-e6c9-8bfc-07ab-845658382dd1"
+      ]
+    },
     {
       "trade_id": "KALSHI-KXNCAAFGAME-26OCT03MIACLEM-CLEM",
       "ticker": "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
@@ -398,31 +448,6 @@
       ]
     },
     {
-      "trade_id": "KALSHI-KXMLBTEAMTOTAL-26OCT032030SDMIL-MIL4",
-      "ticker": "KXMLBTEAMTOTAL-26OCT032030SDMIL-MIL4",
-      "event_ticker": null,
-      "sport": "MLB",
-      "selection_side": "YES",
-      "net_yes_contracts": 3.45,
-      "net_no_contracts": 0.0,
-      "gross_contracts_bought": 3.45,
-      "gross_buy_cost": 1.9665,
-      "gross_sell_proceeds": 0.0,
-      "fees": 0.0296,
-      "risk": 1.9961,
-      "avg_entry_price": 0.57,
-      "settlement_payout": null,
-      "net_pnl": null,
-      "result": "Open",
-      "market_result": null,
-      "opened_time": "2026-10-03T17:03:36.9005Z",
-      "last_fill_time": "2026-10-03T17:03:36.9005Z",
-      "settled_time": null,
-      "fill_ids": [
-        "07250ba6-e6c9-8bfc-07ab-845658382dd1"
-      ]
-    },
-    {
       "trade_id": "KALSHI-KXNFLRSHYDS-26OCT04JACCIN-JACBTUTEN33-60",
       "ticker": "KXNFLRSHYDS-26OCT04JACCIN-JACBTUTEN33-60",
       "event_ticker": null,
@@ -470,31 +495,6 @@
       "settled_time": null,
       "fill_ids": [
         "07250891-5931-8920-b8cb-878550d83cd6"
-      ]
-    },
-    {
-      "trade_id": "KALSHI-KXMVECROSSCATEGORY-S2026A35C4CF0A06-C7D00DDA6E7",
-      "ticker": "KXMVECROSSCATEGORY-S2026A35C4CF0A06-C7D00DDA6E7",
-      "event_ticker": null,
-      "sport": "Other",
-      "selection_side": "YES",
-      "net_yes_contracts": 6.61,
-      "net_no_contracts": 0.0,
-      "gross_contracts_bought": 6.61,
-      "gross_buy_cost": 2.88196,
-      "gross_sell_proceeds": 0.0,
-      "fees": 0.11384,
-      "risk": 2.9958,
-      "avg_entry_price": 0.436,
-      "settlement_payout": null,
-      "net_pnl": null,
-      "result": "Open",
-      "market_result": null,
-      "opened_time": "2026-10-03T16:01:32.592788Z",
-      "last_fill_time": "2026-10-03T16:01:32.592788Z",
-      "settled_time": null,
-      "fill_ids": [
-        "07250b80-e6e1-94c8-dfd9-2ea08baacd4e"
       ]
     },
     {
@@ -2619,6 +2619,36 @@
     }
   ],
   "settlements": [
+    {
+      "ticker": "KXMVECROSSCATEGORY-S2026A35C4CF0A06-C7D00DDA6E7",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026A35C4CF0A06",
+      "sport": "Other",
+      "market_result": "no",
+      "yes_count": 6.61,
+      "yes_total_cost": 2.88196,
+      "no_count": 0.0,
+      "no_total_cost": 0.0,
+      "revenue_cents": 0,
+      "value_cents": 0,
+      "fee_cost": 0.11384,
+      "settled_time": "2026-10-04T09:33:07.279544Z",
+      "exchange_index": 1
+    },
+    {
+      "ticker": "KXMLBTEAMTOTAL-26OCT032030SDMIL-MIL4",
+      "event_ticker": "KXMLBTEAMTOTAL-26OCT032030SDMIL",
+      "sport": "MLB",
+      "market_result": "no",
+      "yes_count": 3.45,
+      "yes_total_cost": 1.9665,
+      "no_count": 0.0,
+      "no_total_cost": 0.0,
+      "revenue_cents": 0,
+      "value_cents": 0,
+      "fee_cost": 0.0296,
+      "settled_time": "2026-10-04T04:15:57.116892Z",
+      "exchange_index": 3
+    },
     {
       "ticker": "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
       "event_ticker": "KXNCAAFGAME-26OCT03MIACLEM",
