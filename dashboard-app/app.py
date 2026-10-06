@@ -78,7 +78,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <section class="panel"><div class="eyebrow">SYSTEM</div><h2>Feed Health</h2><div id="health" class="health" style="margin-top:12px"></div></section>
 </div>
 <div id="yesterdayView" style="display:none">
-<section class="panel" style="margin-top:0"><div class="eyebrow">RECONCILIATION</div><h2>Yesterday's Betting Transactions</h2><div id="yesterdaySummary" class="grid" style="margin-top:12px"></div><div id="yesterdayMeta" class="sub" style="margin-top:12px"></div><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Time ET</th><th>Sport</th><th>Market</th><th>Selection</th><th>Risk</th><th>Price</th><th>Result</th><th>Net P/L</th><th>Trade ID</th></tr></thead><tbody id="yesterdayRows"></tbody></table></div></section>
+<section class="panel" style="margin-top:0"><div class="eyebrow">RECONCILIATION</div><h2>Yesterday's Betting Transactions</h2><div id="yesterdaySummary" class="grid" style="margin-top:12px"></div><div id="yesterdayMeta" class="sub" style="margin-top:12px"></div><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Time ET</th><th>Platform</th><th>Sport</th><th>Market</th><th>Selection</th><th>Risk</th><th>Price</th><th>Result</th><th>Net P/L</th><th>Trade ID</th></tr></thead><tbody id="yesterdayRows"></tbody></table></div></section>
 </div>
 </main>
 <script>
@@ -212,7 +212,7 @@ function renderYesterday(){
   ["Settled Net P/L",money(pnl)]
  ].map(x=>'<div class="metric"><div class="sub">'+x[0]+'</div><div class="v">'+x[1]+'</div></div>').join("");
  yesterdayMeta.textContent=(yesterdayBets.date?"Date: "+yesterdayBets.date+" · ":"")+(open?open+" still open/unsettled · ":"")+"Use this table to cross-check yesterday against DraftKings/Kalshi.";
- yesterdayRows.innerHTML=rs.length?rs.map(r=>'<tr><td>'+E(r.timeET||"")+'</td><td>'+E(r.sport||"")+'</td><td>'+E(r.market||"")+'</td><td>'+E(r.selection||"")+'</td><td>'+money(r.risk)+'</td><td>'+E(r.price||r.odds||"—")+'</td><td>'+E(r.result||"")+'</td><td>'+money(r.pnl)+'</td><td>'+E(r.tradeId||"")+'</td></tr>').join(""):'<tr><td colspan="9" class="muted">No transactions were loaded for yesterday.</td></tr>';
+ yesterdayRows.innerHTML=rs.length?rs.map(r=>'<tr><td>'+E(r.timeET||"")+'</td><td>'+E(r.platform||"")+'</td><td>'+E(r.sport||"")+'</td><td>'+E(r.market||"")+'</td><td>'+E(r.selection||"")+'</td><td>'+money(r.risk)+'</td><td>'+E(r.price||r.odds||"—")+'</td><td>'+E(r.result||"")+'</td><td>'+money(r.pnl)+'</td><td>'+E(r.tradeId||"")+'</td></tr>').join(""):'<tr><td colspan="10" class="muted">No transactions were loaded for yesterday.</td></tr>';
 }
 function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderYesterday()}
 async function load(){
