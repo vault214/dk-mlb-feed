@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, and account identifiers are excluded.",
-  "updatedAt": "2026-10-06T01:05:31.739Z",
+  "updatedAt": "2026-10-06T01:41:07.511Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -651,30 +651,6 @@
       "reason": "Verified repository board_date_et=2026-09-28; candidate_market_count=0 and source_model_market_count=0. No NBA prices or selections invented.",
       "boardTimestampET": "2026-09-28 10:57 ET",
       "sourceRun": "Daily Basketball Models 2026-09-28 AM"
-    },
-    {
-      "entryId": "WNBA-OFFICIAL-001",
-      "dateET": null,
-      "league": "WNBA",
-      "model": "WNBA Conservative Model",
-      "trackType": "OFFICIAL",
-      "event": null,
-      "category": "Player Prop",
-      "market": "Rebounds",
-      "selection": "Kiki Iriafen Over 9.5 rebounds",
-      "line": "9.5",
-      "odds": "+138",
-      "breakEven": null,
-      "modelProbability": null,
-      "edge": null,
-      "confidence": null,
-      "stakeUnits": null,
-      "result": null,
-      "pnlUnits": null,
-      "officialBankrollUnits": null,
-      "reason": "Historical tracker anchor preserved from conversation. Other fields left blank because they cannot be verified from available history without guessing.",
-      "boardTimestampET": null,
-      "sourceRun": "WNBA tracker historical backfill"
     },
     {
       "entryId": "WNBA-PASS-2026-09-28-AM",
