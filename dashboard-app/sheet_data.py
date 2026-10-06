@@ -64,8 +64,19 @@ def get_yesterday_bets():
             except ValueError:
                 display_price = avg_price
 
+        trade_id = cell(row, "Trade ID")
+        raw_status = cell(row, "Raw Status")
+        platform = "DraftKings"
+        if str(trade_id).startswith("KALSHI-") or "Kalshi" in raw_status:
+            platform = "Kalshi"
+        elif str(trade_id).startswith("ACTION-"):
+            platform = "Action"
+        elif str(trade_id).startswith("DKP") or str(trade_id).isdigit():
+            platform = "DraftKings"
+
         rows.append({
-            "tradeId": cell(row, "Trade ID"),
+            "tradeId": trade_id,
+            "platform": platform,
             "timeET": dt.strftime("%-I:%M %p"),
             "sport": cell(row, "Sport"),
             "market": cell(row, "Market"),
