@@ -101,6 +101,8 @@ function renderActual(){
  bankRefill.className=refill>0?"pos":refill<0?"neg":"";
  bankRefillDetail.textContent="Returned to bank "+money(privateMetrics.returnedToBank)+" · Added from bank "+money(privateMetrics.addedFromBank);
  bookCashFlow.textContent="DraftKings net "+money(privateMetrics.draftKingsNetBankRefill)+" · Kalshi net "+money(privateMetrics.kalshiNetBankRefill)+" (cash flow only)";
+ const platforms=[["DraftKings",privateMetrics.draftKingsPnl],["Kalshi",privateMetrics.kalshiPnl]];
+ platformActuals.innerHTML=platforms.map(x=>{const n=N(x[1]);return '<div class="metric"><div class="sub">'+x[0]+' Actual P/L</div><div class="v '+(n>0?'pos':n<0?'neg':'')+'">'+money(x[1])+'</div><div class="sub">Settled tracked bets only</div></div>'}).join("");
 }
 function pickCard(r,hero){
  const execution=r.odds?'<span class="chip">Execution: '+E(r.odds)+'</span>':'';
@@ -133,7 +135,7 @@ function renderLeagueGrid(){
    let state="No current model entry",detail="";
    if(off){state="OFFICIAL PICK";detail=friendly(off);}
    else if(pass){state=E(pass.selection||"PASS");detail=E(pass.reason||"");}
-   else if(l==="MLB"&&feed&&feed.ok){state="BOARD LIVE";detail=(feed.count||0)+" MLB games available — model advice has not synced yet.";}
+   else if(l==="MLB"&&feed&&feed.ok){state="BOARD LIVE";detail=(feed.count||0)+" MLB candidates available — model advice has not synced yet.";}
    else if(feed&&feed.ok){state="FEED LIVE";detail=(feed.count||0)+" candidates/entries available.";}
    else if(feed&&!feed.ok){state="NO LIVE FEED";detail="Waiting for the next scheduled board.";}
    return '<div class="league-card"><div class="league-title">'+l+'</div><div class="league-state '+(state==="OFFICIAL PICK"?'pos':'')+'">'+state+'</div><div class="sub">'+detail+'</div><div class="sub" style="margin-top:8px">'+sh+' shadow'+(sh===1?'':'s')+' today</div></div>';
@@ -245,6 +247,7 @@ class Handler(BaseHTTPRequestHandler):
                 "addedFromBank": os.environ.get("ADDED_FROM_BANK"),
                 "netBankRefill": os.environ.get("NET_BANK_REFILL"),
                 "draftKingsPnl": os.environ.get("DRAFTKINGS_PNL"),
+                "kalshiPnl": os.environ.get("KALSHI_PNL"),
                 "draftKingsReturnedToBank": os.environ.get("DRAFTKINGS_RETURNED_TO_BANK"),
                 "draftKingsAddedFromBank": os.environ.get("DRAFTKINGS_ADDED_FROM_BANK"),
                 "draftKingsNetBankRefill": os.environ.get("DRAFTKINGS_NET_BANK_REFILL"),
