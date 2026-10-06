@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "visibility": "sanitized-private-performance-feed",
   "source": "Kalshi authenticated account API",
-  "fetched_at_utc": "2026-10-06T03:30:18.374877+00:00",
+  "fetched_at_utc": "2026-10-06T12:00:42.316628+00:00",
   "fill_count": 83,
-  "settlement_count": 66,
+  "settlement_count": 68,
   "position_count": 68,
   "summary_by_sport": {
     "MLB": {
@@ -21,9 +21,9 @@
     },
     "NFL": {
       "fills": 32,
-      "settlements": 24,
+      "settlements": 26,
       "positions": 26,
-      "settled_positions": 24
+      "settled_positions": 26
     },
     "NHL": {
       "fills": 2,
@@ -46,6 +46,56 @@
   },
   "accounting_note": "Per-market actual P/L is derived from member fills: sell proceeds + winning-side settlement payout - buy premium - fill fees. Deposits/withdrawals are excluded.",
   "positions": [
+    {
+      "trade_id": "KALSHI-KXNFLRSHYDS-26OCT05ATLNO-NOAKAMARA41-40",
+      "ticker": "KXNFLRSHYDS-26OCT05ATLNO-NOAKAMARA41-40",
+      "event_ticker": "KXNFLRSHYDS-26OCT05ATLNO",
+      "sport": "NFL",
+      "selection_side": "YES",
+      "net_yes_contracts": 2.05,
+      "net_no_contracts": 0.0,
+      "gross_contracts_bought": 2.05,
+      "gross_buy_cost": 0.9635,
+      "gross_sell_proceeds": 0.0,
+      "fees": 0.0358,
+      "risk": 0.9993,
+      "avg_entry_price": 0.47,
+      "settlement_payout": 0.0,
+      "net_pnl": -0.9993,
+      "result": "Loss",
+      "market_result": "no",
+      "opened_time": "2026-10-05T16:43:09.953542Z",
+      "last_fill_time": "2026-10-05T16:43:09.953542Z",
+      "settled_time": "2026-10-06T03:39:27.919039Z",
+      "fill_ids": [
+        "07253876-b1d9-9899-ae63-5c4592915519"
+      ]
+    },
+    {
+      "trade_id": "KALSHI-KXNFLRSHYDS-26OCT05ATLNO-ATLBROBINSON7-90",
+      "ticker": "KXNFLRSHYDS-26OCT05ATLNO-ATLBROBINSON7-90",
+      "event_ticker": "KXNFLRSHYDS-26OCT05ATLNO",
+      "sport": "NFL",
+      "selection_side": "YES",
+      "net_yes_contracts": 3.94,
+      "net_no_contracts": 0.0,
+      "gross_contracts_bought": 3.94,
+      "gross_buy_cost": 1.9306,
+      "gross_sell_proceeds": 0.0,
+      "fees": 0.069,
+      "risk": 1.9996,
+      "avg_entry_price": 0.49,
+      "settlement_payout": 3.94,
+      "net_pnl": 1.9404,
+      "result": "Win",
+      "market_result": "yes",
+      "opened_time": "2026-10-05T16:42:56.642571Z",
+      "last_fill_time": "2026-10-05T16:42:56.642571Z",
+      "settled_time": "2026-10-06T03:37:27.151982Z",
+      "fill_ids": [
+        "072539f3-27e1-a6ab-a442-918f5cb2ff0c"
+      ]
+    },
     {
       "trade_id": "KALSHI-KXMLBGAME-26OCT052000NYYTB-NYY",
       "ticker": "KXMLBGAME-26OCT052000NYYTB-NYY",
@@ -70,56 +120,6 @@
       "fill_ids": [
         "07253fe9-9db9-9e3c-6b2a-0febd00601e8",
         "07253a83-ac39-8194-8530-72c4e94d7044"
-      ]
-    },
-    {
-      "trade_id": "KALSHI-KXNFLRSHYDS-26OCT05ATLNO-NOAKAMARA41-40",
-      "ticker": "KXNFLRSHYDS-26OCT05ATLNO-NOAKAMARA41-40",
-      "event_ticker": null,
-      "sport": "NFL",
-      "selection_side": "YES",
-      "net_yes_contracts": 2.05,
-      "net_no_contracts": 0.0,
-      "gross_contracts_bought": 2.05,
-      "gross_buy_cost": 0.9635,
-      "gross_sell_proceeds": 0.0,
-      "fees": 0.0358,
-      "risk": 0.9993,
-      "avg_entry_price": 0.47,
-      "settlement_payout": null,
-      "net_pnl": null,
-      "result": "Open",
-      "market_result": null,
-      "opened_time": "2026-10-05T16:43:09.953542Z",
-      "last_fill_time": "2026-10-05T16:43:09.953542Z",
-      "settled_time": null,
-      "fill_ids": [
-        "07253876-b1d9-9899-ae63-5c4592915519"
-      ]
-    },
-    {
-      "trade_id": "KALSHI-KXNFLRSHYDS-26OCT05ATLNO-ATLBROBINSON7-90",
-      "ticker": "KXNFLRSHYDS-26OCT05ATLNO-ATLBROBINSON7-90",
-      "event_ticker": null,
-      "sport": "NFL",
-      "selection_side": "YES",
-      "net_yes_contracts": 3.94,
-      "net_no_contracts": 0.0,
-      "gross_contracts_bought": 3.94,
-      "gross_buy_cost": 1.9306,
-      "gross_sell_proceeds": 0.0,
-      "fees": 0.069,
-      "risk": 1.9996,
-      "avg_entry_price": 0.49,
-      "settlement_payout": null,
-      "net_pnl": null,
-      "result": "Open",
-      "market_result": null,
-      "opened_time": "2026-10-05T16:42:56.642571Z",
-      "last_fill_time": "2026-10-05T16:42:56.642571Z",
-      "settled_time": null,
-      "fill_ids": [
-        "072539f3-27e1-a6ab-a442-918f5cb2ff0c"
       ]
     },
     {
@@ -3259,6 +3259,36 @@
     }
   ],
   "settlements": [
+    {
+      "ticker": "KXNFLRSHYDS-26OCT05ATLNO-NOAKAMARA41-40",
+      "event_ticker": "KXNFLRSHYDS-26OCT05ATLNO",
+      "sport": "NFL",
+      "market_result": "no",
+      "yes_count": 2.05,
+      "yes_total_cost": 0.9635,
+      "no_count": 0.0,
+      "no_total_cost": 0.0,
+      "revenue_cents": 0,
+      "value_cents": 0,
+      "fee_cost": 0.0358,
+      "settled_time": "2026-10-06T03:39:27.919039Z",
+      "exchange_index": 0
+    },
+    {
+      "ticker": "KXNFLRSHYDS-26OCT05ATLNO-ATLBROBINSON7-90",
+      "event_ticker": "KXNFLRSHYDS-26OCT05ATLNO",
+      "sport": "NFL",
+      "market_result": "yes",
+      "yes_count": 3.94,
+      "yes_total_cost": 1.9306,
+      "no_count": 0.0,
+      "no_total_cost": 0.0,
+      "revenue_cents": 394,
+      "value_cents": 100,
+      "fee_cost": 0.069,
+      "settled_time": "2026-10-06T03:37:27.151982Z",
+      "exchange_index": 0
+    },
     {
       "ticker": "KXMLBGAME-26OCT052000NYYTB-NYY",
       "event_ticker": "KXMLBGAME-26OCT052000NYYTB",
