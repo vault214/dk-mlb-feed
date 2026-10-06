@@ -53,6 +53,13 @@ all_time_pnl = money(dash_metrics[2]) if len(dash_metrics) > 2 else 0.0
 all_time_winnings = money(dash_metrics[6]) if len(dash_metrics) > 6 else 0.0
 all_time_lost = money(dash_metrics[7]) if len(dash_metrics) > 7 else 0.0
 
+# Platform P/L buckets from Dashboard summary table.
+platform_rows = book.worksheet("Dashboard").get("A7:H20")
+platform_pnl = {}
+for row in platform_rows:
+    if len(row) >= 4 and row[0] in {"DraftKings","Kalshi"}:
+        platform_pnl[row[0]] = money(row[3])
+
 data = {
     "updatedAt": now.isoformat(),
     "actualYesterdayPnl": yesterday_pnl,
@@ -60,7 +67,9 @@ data = {
     "actual30dPnl": money(periods.get("Last 30 Days", [""]*9)[8] if len(periods.get("Last 30 Days", [])) > 8 else 0),
     "actualAllTimePnl": all_time_pnl,
     "actualAllTimeWinnings": all_time_winnings,
-    "actualAllTimeLost": all_time_lost
+    "actualAllTimeLost": all_time_lost,
+    "draftKingsPnl": platform_pnl.get("DraftKings"),
+    "kalshiPnl": platform_pnl.get("Kalshi")
 }
 
 # Recent Performance's net P/L is in column I in the sheet. If the bounded read above
