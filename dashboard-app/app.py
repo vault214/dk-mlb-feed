@@ -133,10 +133,12 @@ function renderLeagueGrid(){
    const sh=today.filter(r=>r.trackType==="SHADOW").length;
    const feed=(statusData.feeds||[]).find(f=>f.key.toUpperCase()===l || (l==="NCAAF"&&f.key==="ncaafb"));
    let state="No current model entry",detail="";
+   const freshFeed=feed&&feed.ok&&(!feed.date||feed.date===todayET());
    if(off){state="OFFICIAL PICK";detail=friendly(off);}
    else if(pass){state=E(pass.selection||"PASS");detail=E(pass.reason||"");}
-   else if(l==="MLB"&&feed&&feed.ok){state="BOARD LIVE";detail=(feed.count||0)+" MLB candidates available — model advice has not synced yet.";}
-   else if(feed&&feed.ok){state="FEED LIVE";detail=(feed.count||0)+" candidates/entries available.";}
+   else if(feed&&feed.ok&&!freshFeed){state="STALE BOARD";detail="Last published board: "+E(feed.date||"unknown")+". Waiting for the next scheduled refresh.";}
+   else if(l==="MLB"&&freshFeed){state="BOARD LIVE";detail=(feed.count||0)+" MLB candidates available — model advice has not synced yet.";}
+   else if(freshFeed){state="FEED LIVE";detail=(feed.count||0)+" candidates/entries available.";}
    else if(feed&&!feed.ok){state="NO LIVE FEED";detail="Waiting for the next scheduled board.";}
    return '<div class="league-card"><div class="league-title">'+l+'</div><div class="league-state '+(state==="OFFICIAL PICK"?'pos':'')+'">'+state+'</div><div class="sub">'+detail+'</div><div class="sub" style="margin-top:8px">'+sh+' shadow'+(sh===1?'':'s')+' today</div></div>';
  }).join("");
@@ -180,7 +182,7 @@ function renderLedger(){
  rowsTable.innerHTML=[...rows].sort((a,b)=>String(b.boardTimestampET||b.dateET).localeCompare(String(a.boardTimestampET||a.dateET))).map(r=>'<tr><td>'+E(r.dateET)+'</td><td>'+E(r.league)+'</td><td><span class="chip '+(r.trackType==="OFFICIAL"?'off':r.trackType==="SHADOW"?'sha':'pas')+'">'+E(r.trackType)+'</span></td><td>'+friendly(r)+'</td><td>'+E(r.edge||"—")+'</td><td>'+E(r.confidence||"—")+'</td><td>'+E(r.result||"Pending")+'</td></tr>').join("");
 }
 function renderHealth(){
- health.innerHTML=(statusData.feeds||[]).map(f=>'<div class="card"><div><span class="dot '+(f.ok?'ok':'')+'"></span><b>'+E(f.key.toUpperCase())+'</b></div><div class="sub" style="margin-top:7px">'+(f.ok?E(f.date||"Available")+(f.count!=null?' · '+E(f.count)+' items':''):(f.status===404?'Not published yet':'Unavailable'))+'</div></div>').join("");
+ health.innerHTML=(statusData.feeds||[]).map(f=>{const fresh=f.ok&&(!f.date||f.date===todayET());return '<div class="card"><div><span class="dot '+(fresh?'ok':'')+'"></span><b>'+E(f.key.toUpperCase())+'</b></div><div class="sub" style="margin-top:7px">'+(f.ok?(fresh?"Current: ":"Stale: ")+E(f.date||"Available")+(f.count!=null?' · '+E(f.count)+' items':''):(f.status===404?'Not published yet':'Unavailable'))+'</div></div>'}).join("");
 }
 function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth()}
 async function load(){
