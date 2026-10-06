@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, and account identifiers are excluded.",
-  "updatedAt": "2026-10-06T01:03:23.683Z",
+  "updatedAt": "2026-10-06T01:05:31.739Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -1549,7 +1549,7 @@
       "event": "NBA preseason slate",
       "category": "Slate",
       "market": "Kalshi candidate board",
-      "selection": "DATA PASS",
+      "selection": "INVALIDATED DATA PASS",
       "line": null,
       "odds": null,
       "breakEven": null,
@@ -1560,7 +1560,7 @@
       "result": "Pass",
       "pnlUnits": null,
       "officialBankrollUnits": "100",
-      "reason": "NBA games exist today, but the authoritative kalshi/nba-candidates.json board is dated 2026-10-05 and contains zero same-day candidates. Exact executable asks cannot be verified, so no prices or A/B/C selections are invented.",
+      "reason": "Invalidated after audit: the 2026-10-05 NBA candidate board contained 35 same-day markets (10 game, 10 total, 15 spread). The automation incorrectly inferred zero same-day candidates from feed metadata/schema. No retroactive official or shadow bet is created because the slate is already in progress/complete; model requires a fresh pregame run.",
       "boardTimestampET": "2026-10-05 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-05"
     },
@@ -1597,7 +1597,7 @@
       "event": "Philadelphia @ Tampa Bay; Ottawa @ Boston; Winnipeg @ Pittsburgh; San Jose @ Dallas",
       "category": "Slate",
       "market": "Kalshi candidate board",
-      "selection": "DATA PASS",
+      "selection": "INVALIDATED DATA PASS",
       "line": null,
       "odds": null,
       "breakEven": null,
@@ -1608,7 +1608,7 @@
       "result": "Pass",
       "pnlUnits": null,
       "officialBankrollUnits": "100",
-      "reason": "NHL games exist today, but the authoritative kalshi/nhl-candidates.json board is dated 2026-10-05 and contains zero same-day supported game-winner/spread/total candidates. Exact executable asks are unavailable, so A/B/C cannot be priced and no play is invented.",
+      "reason": "Invalidated after audit: the 2026-10-05 NHL candidate board contained 28 same-day supported markets (8 game, 8 total, 12 spread). The automation incorrectly inferred zero same-day candidates from feed metadata/schema. No retroactive official or shadow bet is created because the slate is already in progress/complete; model requires a fresh pregame run.",
       "boardTimestampET": "2026-10-05 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-05"
     }
