@@ -37,12 +37,14 @@ button{background:#102131;color:#dce9f4;border:1px solid #294258;border-radius:9
 table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;border-bottom:1px solid #1b2c3c;text-align:left;font-size:13px}th{font-size:11px;color:#8095aa;text-transform:uppercase}.scroll{overflow:auto}
 .pos{color:var(--green)}.neg{color:var(--red)}.muted{color:var(--muted)}.health{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:6px}.dot.ok{background:var(--green)}
 .league-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.league-card{background:#0a1620;border:1px solid #20364a;border-radius:14px;padding:14px}.league-title{font-weight:900;font-size:16px}.league-state{font-size:20px;font-weight:900;margin:7px 0}
-.notice{border:1px solid #314b62;background:#0b1a26;border-radius:12px;padding:12px;color:#bcd0e1;font-size:12px;line-height:1.5}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{font-weight:800}.tab.active{border-color:#37df8b;color:#8ff3bd;background:#0d2b20}.sport-record{font-size:24px;font-weight:900;margin:6px 0}.bankbox{border:1px solid #24465a;background:#0a1721;border-radius:14px;padding:15px;margin-top:12px}
+.notice{border:1px solid #314b62;background:#0b1a26;border-radius:12px;padding:12px;color:#bcd0e1;font-size:12px;line-height:1.5}.view-tabs{display:flex;gap:8px;margin-bottom:16px}.view-tab.active{border-color:#37df8b;color:#8ff3bd;background:#0d2b20}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{font-weight:800}.tab.active{border-color:#37df8b;color:#8ff3bd;background:#0d2b20}.sport-record{font-size:24px;font-weight:900;margin:6px 0}.bankbox{border:1px solid #24465a;background:#0a1721;border-radius:14px;padding:15px;margin-top:12px}
 @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.twocol{grid-template-columns:1fr}.health,.league-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){header,main{padding:16px}.grid{grid-template-columns:1fr 1fr}.health,.league-grid{grid-template-columns:1fr}.kpi-row{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}}
 </style></head>
 <body>
 <header><div><div class="eyebrow">PRIVATE MODEL ANALYTICS</div><h1>Gambling Dashboard</h1></div><div><span id="stamp" class="sub">Loading…</span> <button onclick="load()">Refresh</button> <button onclick="logout()">Log out</button></div></header>
 <main>
+<div class="view-tabs"><button id="overviewTab" class="view-tab active" onclick="setMainView('overview')">Dashboard</button><button id="yesterdayTab" class="view-tab" onclick="setMainView('yesterday')">Yesterday Transactions</button></div>
+<div id="overviewView">
 <section><div class="eyebrow">ACTUAL BETTING PERFORMANCE</div><div class="grid" id="actualMetrics" style="margin-top:8px"></div></section>
 <section class="panel"><div class="eyebrow">ACTUAL BY PLATFORM</div><h2>DraftKings vs Kalshi</h2><div id="platformActuals" class="grid" style="margin-top:12px"></div></section>
 
@@ -73,9 +75,13 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <section class="panel"><div class="eyebrow">LEDGER</div><h2>Recent Picks</h2><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Date</th><th>League</th><th>Track</th><th>Selection</th><th>Edge</th><th>Grade</th><th>Result</th></tr></thead><tbody id="rowsTable"></tbody></table></div></section>
 
 <section class="panel"><div class="eyebrow">SYSTEM</div><h2>Feed Health</h2><div id="health" class="health" style="margin-top:12px"></div></section>
+</div>
+<div id="yesterdayView" style="display:none">
+<section class="panel" style="margin-top:0"><div class="eyebrow">RECONCILIATION</div><h2>Yesterday's Betting Transactions</h2><div id="yesterdaySummary" class="grid" style="margin-top:12px"></div><div id="yesterdayMeta" class="sub" style="margin-top:12px"></div><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Time ET</th><th>Sport</th><th>Market</th><th>Selection</th><th>Risk</th><th>Price</th><th>Result</th><th>Net P/L</th><th>Trade ID</th></tr></thead><tbody id="yesterdayRows"></tbody></table></div></section>
+</div>
 </main>
 <script>
-let rows=[],statusData={feeds:[]},privateMetrics={},perfLeague="ALL",perfTrack="OFFICIAL";
+let rows=[],statusData={feeds:[]},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL";
 const E=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
 const N=v=>{const n=parseFloat(String(v??"").replace(/[+%$u,]/g,""));return Number.isFinite(n)?n:null};
 const todayET=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
@@ -184,12 +190,35 @@ function renderLedger(){
 function renderHealth(){
  health.innerHTML=(statusData.feeds||[]).map(f=>{const fresh=f.ok&&(!f.date||f.date===todayET());return '<div class="card"><div><span class="dot '+(fresh?'ok':'')+'"></span><b>'+E(f.key.toUpperCase())+'</b></div><div class="sub" style="margin-top:7px">'+(f.ok?(fresh?"Current: ":"Stale: ")+E(f.date||"Available")+(f.count!=null?' · '+E(f.count)+' items':''):(f.status===404?'Not published yet':'Unavailable'))+'</div></div>'}).join("");
 }
-function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth()}
+function setMainView(v){
+ overviewView.style.display=v==="overview"?"block":"none";
+ yesterdayView.style.display=v==="yesterday"?"block":"none";
+ overviewTab.classList.toggle("active",v==="overview");
+ yesterdayTab.classList.toggle("active",v==="yesterday");
+}
+function renderYesterday(){
+ const rs=yesterdayBets.rows||[];
+ const totalRisk=rs.reduce((a,r)=>a+(N(r.risk)||0),0);
+ const settledRs=rs.filter(r=>["Win","Loss","Push","Settled"].includes(String(r.result||"")));
+ const pnl=settledRs.reduce((a,r)=>a+(N(r.pnl)||0),0);
+ const wins=settledRs.filter(r=>String(r.result)==="Win").length;
+ const losses=settledRs.filter(r=>String(r.result)==="Loss").length;
+ const open=rs.filter(r=>String(r.result)==="Open").length;
+ yesterdaySummary.innerHTML=[
+  ["Transactions",rs.length],
+  ["Total Risk",money(totalRisk)],
+  ["Settled Record",wins+"-"+losses],
+  ["Settled Net P/L",money(pnl)]
+ ].map(x=>'<div class="metric"><div class="sub">'+x[0]+'</div><div class="v">'+x[1]+'</div></div>').join("");
+ yesterdayMeta.textContent=(yesterdayBets.date?"Date: "+yesterdayBets.date+" · ":"")+(open?open+" still open/unsettled · ":"")+"Use this table to cross-check yesterday against DraftKings/Kalshi.";
+ yesterdayRows.innerHTML=rs.length?rs.map(r=>'<tr><td>'+E(r.timeET||"")+'</td><td>'+E(r.sport||"")+'</td><td>'+E(r.market||"")+'</td><td>'+E(r.selection||"")+'</td><td>'+money(r.risk)+'</td><td>'+E(r.price||r.odds||"—")+'</td><td>'+E(r.result||"")+'</td><td>'+money(r.pnl)+'</td><td>'+E(r.tradeId||"")+'</td></tr>').join(""):'<tr><td colspan="9" class="muted">No transactions were loaded for yesterday.</td></tr>';
+}
+function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderYesterday()}
 async function load(){
  try{
-  const [p,s,m]=await Promise.all([fetch("/api/picks",{cache:"no-store"}),fetch("/api/status",{cache:"no-store"}),fetch("/api/private-metrics",{cache:"no-store"})]);
+  const [p,s,m,y]=await Promise.all([fetch("/api/picks",{cache:"no-store"}),fetch("/api/status",{cache:"no-store"}),fetch("/api/private-metrics",{cache:"no-store"}),fetch("/api/yesterday-bets",{cache:"no-store"})]);
   if(p.status===401){location.href="/login";return}
-  const d=await p.json(); rows=d.rows||[]; statusData=s.ok?await s.json():{feeds:[]}; privateMetrics=m.ok?await m.json():{}; render();
+  const d=await p.json(); rows=d.rows||[]; statusData=s.ok?await s.json():{feeds:[]}; privateMetrics=m.ok?await m.json():{}; yesterdayBets=y.ok?await y.json():{date:null,rows:[]}; render();
   stamp.textContent="Updated "+new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit"}).format(new Date())+" ET";
  }catch(e){stamp.textContent="Feed error";}
 }
@@ -258,6 +287,13 @@ class Handler(BaseHTTPRequestHandler):
                 "kalshiNetBankRefill": os.environ.get("KALSHI_NET_BANK_REFILL")
             }
             return self.send(200,json.dumps(data),"application/json")
+        if p == "/api/yesterday-bets":
+            try:
+                data=json.loads(os.environ.get("YESTERDAY_BETS_JSON","{}"))
+                if not isinstance(data,dict): data={}
+            except Exception:
+                data={}
+            return self.send(200,json.dumps({"date":data.get("date"),"rows":data.get("rows",[])}),"application/json")
         if p == "/api/status":
             out=[]
             for key,url in FEEDS.items():
