@@ -2,6 +2,7 @@ import os, json, hashlib, urllib.request, urllib.error
 from http import cookies
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
+from sheet_data import get_yesterday_bets
 
 PORT = int(os.environ.get("PORT", "10000"))
 PASSWORD = os.environ["DASHBOARD_PASSWORD"]
@@ -289,11 +290,10 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200,json.dumps(data),"application/json")
         if p == "/api/yesterday-bets":
             try:
-                data=json.loads(os.environ.get("YESTERDAY_BETS_JSON","{}"))
-                if not isinstance(data,dict): data={}
-            except Exception:
-                data={}
-            return self.send(200,json.dumps({"date":data.get("date"),"rows":data.get("rows",[])}),"application/json")
+                data=get_yesterday_bets()
+            except Exception as e:
+                data={"date":None,"rows":[],"error":str(e)}
+            return self.send(200,json.dumps(data),"application/json")
         if p == "/api/status":
             out=[]
             for key,url in FEEDS.items():
