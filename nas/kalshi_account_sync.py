@@ -32,7 +32,7 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 
 API_ROOT = "https://external-api.kalshi.com"
 API_PREFIX = "/trade-api/v2"
-OUT_DIR = Path("/app/data")
+OUT_DIR = Path(os.environ.get("KALSHI_OUTPUT_DIR", "/app/data"))
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 OUT_FILE = OUT_DIR / "kalshi_account_trades.json"
 
@@ -45,8 +45,11 @@ PRIVATE_KEY_PATH = os.environ.get("KALSHI_PRIVATE_KEY_PATH", "").strip()
 
 
 def load_private_key():
+    pem = os.environ.get("KALSHI_PRIVATE_KEY_PEM", "")
+    if pem.strip():
+        return serialization.load_pem_private_key(pem.replace("\\n", "\n").encode("utf-8"), password=None)
     if not PRIVATE_KEY_PATH:
-        raise RuntimeError("KALSHI_PRIVATE_KEY_PATH is not set")
+        raise RuntimeError("Set KALSHI_PRIVATE_KEY_PEM or KALSHI_PRIVATE_KEY_PATH")
     path = Path(PRIVATE_KEY_PATH)
     if not path.exists():
         raise RuntimeError(f"Kalshi private key file not found: {path}")
@@ -377,7 +380,11 @@ def main():
     }
 
     OUT_FILE.write_text(json.dumps(payload, indent=2) + "\n")
-    commit = push_github(payload)
+    commit = None
+    if os.environ.get("KALSHI_PUBLISH_GITHUB_FEED", "true").strip().lower() not in {"0", "false", "no"}:
+        commit = push_github(payload)
+    else:
+        print("Publishing the account-level feed to the GitHub repository is disabled.")
 
     print(f"Saved: {OUT_FILE}")
     print(f"Fills: {len(fills)}")
