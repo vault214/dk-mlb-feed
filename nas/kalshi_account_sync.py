@@ -23,7 +23,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
-from datetime import datetime, time as datetime_time, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 
 from cryptography.hazmat.primitives import hashes, serialization
