@@ -416,9 +416,11 @@ def main():
     print(f"Fills: {len(fills)}")
     print(f"Settlements: {len(settlements)}")
     print(f"Positions: {len(positions)}")
-    print(f"GitHub: {REMOTE_PATH}")
     if commit:
+        print(f"GitHub: {REMOTE_PATH}")
         print(f"Commit: {commit}")
+    else:
+        print("Account feed was kept in the runner workspace and not committed.")
 
 
 if __name__ == "__main__":
