@@ -1,4 +1,5 @@
 import base64
+import gzip
 import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -16,5 +17,5 @@ with sync_playwright() as pw:
 
 raw = OUT.read_bytes()
 print("\nSaved:", OUT.resolve())
-print("\nDK_STORAGE_STATE_B64 (copy this into Render, not into ChatGPT):\n")
-print(base64.b64encode(raw).decode())
+print("\nDK_STORAGE_STATE_GZ_B64 (add this as a GitHub Actions repository secret; never paste it into chat):\n")
+print(base64.b64encode(gzip.compress(raw)).decode())
