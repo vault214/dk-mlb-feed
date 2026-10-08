@@ -116,7 +116,7 @@ def _worksheet():
     return gspread.authorize(credentials).open_by_key(SHEET_ID).worksheet(WORKSHEET)
 
 
-def sync_rows(rows):
+def sync_rows(rows, note_by_id):
     if not rows:
         return {"updated": 0, "added": 0}
 
@@ -142,9 +142,9 @@ def sync_rows(rows):
             current = values[sheet_row - 1]
             current_note = current[21] if len(current) > 21 else ""
             if not current_note or current_note.startswith("Source=Kalshi;"):
-                note_updates.append({"range": f"V{sheet_row}", "values": [[row_note(trade_id, rows)]]})
+                note_updates.append({"range": f"V{sheet_row}", "values": [[note_by_id.get(trade_id, "Source=Kalshi")]]})
         else:
-            appends.append(row + ["No", "", "", row_note_for_row(row, rows)])
+            appends.append(row + ["No", "", "", note_by_id.get(trade_id, "Source=Kalshi")])
 
     if updates:
         ws.batch_update(updates, value_input_option="USER_ENTERED")
@@ -158,29 +158,15 @@ def sync_rows(rows):
     return {"updated": len(updates), "added": len(appends)}
 
 
-def row_note_for_row(row, rows):
-    notes = {str(item.get("trade_id") or ""): source_note(item) for item in _POSITIONS}
-    return notes.get(row[0], "Source=Kalshi")
-
-
-# Set for the duration of sync_rows so notes are derived from the same fetched snapshot.
-_POSITIONS = []
-
-
-def row_note(trade_id, rows):
-    notes = {str(item.get("trade_id") or ""): source_note(item) for item in _POSITIONS}
-    return notes.get(trade_id, "Source=Kalshi")
-
-
 def main():
-    global _POSITIONS
     if not INPUT_FILE.exists():
         raise RuntimeError(f"Kalshi account feed not found: {INPUT_FILE}")
     payload = json.loads(INPUT_FILE.read_text(encoding="utf-8"))
     positions = payload.get("positions") or []
-    _POSITIONS = [p for p in positions if str(p.get("trade_id") or "").startswith("KALSHI-")]
-    rows = [position_to_row(position) for position in _POSITIONS]
-    stats = sync_rows(rows)
+    positions = [p for p in positions if str(p.get("trade_id") or "").startswith("KALSHI-")]
+    rows = [position_to_row(position) for position in positions]
+    note_by_id = {str(p["trade_id"]): source_note(p) for p in positions}
+    stats = sync_rows(rows, note_by_id)
     print(json.dumps({"ok": True, "positions": len(rows), **stats}))
 
 
