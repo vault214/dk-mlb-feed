@@ -62,6 +62,9 @@ jobs:
   refresh-dashboard-metrics:
     needs: sync-account
     runs-on: ubuntu-latest
+    concurrency:
+      group: dashboard-actual-metrics
+      cancel-in-progress: false
     timeout-minutes: 10
     permissions:
       contents: write
