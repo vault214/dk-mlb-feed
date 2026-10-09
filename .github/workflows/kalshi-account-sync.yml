@@ -30,7 +30,7 @@ jobs:
       KALSHI_PUBLISH_GITHUB_FEED: "false"
       KALSHI_SCHEDULE_ONLY_IF_DUE: ${{ github.event_name == 'schedule' }}
       GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule || '' }}
-      KALSHI_OUTPUT_DIR: ${{ runner.temp }}/kalshi-account-sync
+      KALSHI_OUTPUT_DIR: /tmp/kalshi-account-sync
       GOOGLE_SHEET_ID: 1yTkEAnkNQ6MEKZLBQ0Imd_47hzGUQ1LL2fop2N1tcrQ
       GOOGLE_WORKSHEET_BETS: Bets
       GOOGLE_SERVICE_ACCOUNT_JSON_B64: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON_B64 }}
