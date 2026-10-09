@@ -1,0 +1,101 @@
+name: Kalshi Account Bet Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub cron is UTC. These paired slots keep the intended 08:00 and 23:30
+    # America/New_York schedule aligned across daylight saving time. The script
+    # skips the slot that does not map to one of those local times.
+    - cron: "0 12 * * *"
+    - cron: "0 13 * * *"
+    - cron: "30 3 * * *"
+    - cron: "30 4 * * *"
+
+concurrency:
+  group: kalshi-account-bet-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  sync-account:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TZ: America/New_York
+      KALSHI_API_KEY_ID: ${{ secrets.KALSHI_API_KEY_ID }}
+      KALSHI_PRIVATE_KEY_PEM: ${{ secrets.KALSHI_PRIVATE_KEY_PEM }}
+      KALSHI_INCLUDE_HISTORICAL_FILLS: "true"
+      KALSHI_PUBLISH_GITHUB_FEED: "false"
+      KALSHI_SCHEDULE_ONLY_IF_DUE: ${{ github.event_name == 'schedule' }}
+      GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule || '' }}
+      KALSHI_OUTPUT_DIR: ${{ runner.temp }}/kalshi-account-sync
+      GOOGLE_SHEET_ID: 1yTkEAnkNQ6MEKZLBQ0Imd_47hzGUQ1LL2fop2N1tcrQ
+      GOOGLE_WORKSHEET_BETS: Bets
+      GOOGLE_SERVICE_ACCOUNT_JSON_B64: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON_B64 }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r nas/requirements-kalshi-account.txt gspread==6.2.1 google-auth==2.40.3
+
+      - name: Validate required secrets
+        shell: bash
+        run: |
+          test -n "$KALSHI_API_KEY_ID" || { echo "Missing KALSHI_API_KEY_ID"; exit 1; }
+          test -n "$KALSHI_PRIVATE_KEY_PEM" || { echo "Missing KALSHI_PRIVATE_KEY_PEM"; exit 1; }
+          test -n "$GOOGLE_SERVICE_ACCOUNT_JSON_B64" || { echo "Missing GOOGLE_SERVICE_ACCOUNT_JSON_B64"; exit 1; }
+
+      - name: Fetch Kalshi account positions
+        run: python nas/kalshi_account_sync.py
+
+      - name: Upsert Kalshi positions into the private Bets sheet
+        run: python nas/kalshi_sheet_sync.py
+
+  refresh-dashboard-metrics:
+    needs: sync-account
+    runs-on: ubuntu-latest
+    concurrency:
+      group: dashboard-actual-metrics
+      cancel-in-progress: false
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      TZ: America/New_York
+      GOOGLE_SERVICE_ACCOUNT_JSON_B64: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON_B64 }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install gspread google-auth
+
+      - name: Refresh dashboard summary from the sheet
+        run: python dashboard/sync_actual_metrics.py
+
+      - name: Commit updated dashboard summary
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dashboard/actual-performance.json
+          if git diff --cached --quiet; then
+            echo "No dashboard metric changes"
+            exit 0
+          fi
+          git commit -m "Refresh actual betting dashboard metrics"
+          git pull --rebase origin main
+          git push

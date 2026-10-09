@@ -1,40 +1,25 @@
 # DraftKings cloud sync
 
-One-shot cloud replacement for the former QNAP `dk-predictions-sync` container.
+The DraftKings actual-bet import runs in GitHub Actions. It reads the signed-in browser state from the encrypted repository secret `DK_STORAGE_STATE_GZ_B64`, imports open and settled trades, and upserts them into the private Bets sheet.
 
-It preserves the existing Bets sheet schema and Trade ID upsert behavior:
+It preserves the existing Bets sheet behavior:
 - A:R are refreshed from DraftKings.
 - S:V annotations are preserved for existing rows.
 - New rows default Model Pick? to No.
 - The sheet is sorted newest-first.
 
-## Required Render environment variables
+## Required GitHub Actions secrets
 
-- `GOOGLE_SHEET_ID`
-- `GOOGLE_WORKSHEET_BETS=Bets`
-- `GOOGLE_SERVICE_ACCOUNT_JSON_B64`
-- `DK_STORAGE_STATE_B64`
-- `TZ=America/New_York`
+- `GOOGLE_SERVICE_ACCOUNT_JSON_B64` (already used by the dashboard metrics workflow)
+- `DK_STORAGE_STATE_GZ_B64`
 
-Do not commit either base64 secret to GitHub.
+Do not commit either secret or paste them into chat.
 
-## Build command
+## Refresh the DraftKings session
 
-```
-pip install -r dk-cloud-sync/requirements.txt && python -m playwright install chromium
-```
+On a trusted local computer, run:
 
-## Start command
-
-```
-python dk-cloud-sync/sync.py
-```
-
-## Refreshing the DraftKings session
-
-On a trusted local computer:
-
-```
+```sh
 python3 -m venv .venv
 source .venv/bin/activate
 pip install playwright
@@ -42,4 +27,6 @@ python -m playwright install chromium
 python dk-cloud-sync/export_session.py
 ```
 
-After logging in, copy the generated `DK_STORAGE_STATE_B64` value directly into the Render environment variable. Do not paste it into chat.
+Log into DraftKings Predictions in the browser window. The script prints a compressed `DK_STORAGE_STATE_GZ_B64` value. In GitHub, open **Settings → Secrets and variables → Actions**, create or update that repository secret, and paste the value there. Then run **Actions → DraftKings Actual Bet Sync → Run workflow**.
+
+The login happens on the local computer; scheduled imports run in GitHub Actions. QNAP is not required for this importer.
