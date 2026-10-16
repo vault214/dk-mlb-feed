@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, and account identifiers are excluded.",
-  "updatedAt": "2026-10-16T14:57:00.000Z",
+  "updatedAt": "2026-10-16T22:11:05.645Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -1942,7 +1942,7 @@
       "confidence": "Diagnostic / low confidence",
       "stakeUnits": 1,
       "result": "Win",
-      "pnlUnits": 1.0408163265,
+      "pnlUnits": 1.040816327,
       "officialBankrollUnits": null,
       "reason": "Settled: Carolina beat Vancouver 7-2 (9 total goals) on Oct. 8, so YES on Over 6.5 won. Shadow P/L +1.041u on 1.00u risk at $0.49, separate from official performance.",
       "boardTimestampET": "2026-10-08 11:03 ET",
@@ -2470,7 +2470,7 @@
       "confidence": "Diagnostic / medium-low confidence",
       "stakeUnits": 1,
       "result": "Win",
-      "pnlUnits": 1.0408163265,
+      "pnlUnits": 1.040816327,
       "officialBankrollUnits": null,
       "reason": "Settled: Cleveland beat Tampa Bay 7-3 on Oct. 12; Drew Rasmussen struck out seven over six-plus innings, so YES on 6+ won. Shadow P/L +1.0408u on 1.00u risk at $0.49, separate from official performance. Original model and rejection thresholds retained for audit.",
       "boardTimestampET": "2026-10-12 11:02 ET",
@@ -3123,6 +3123,30 @@
       "reason": "Raw model ~59%, raw edge +5pp with Swayman and Dostal projected. Robust probability ~53%, robust edge -1pp after goalie-confirmation, travel and early-season scoring variance. Official rejected because robust edge is nonpositive; 1/2/3pp fee and slippage sensitivity further weaken the case, so positive net EV is unproven. Paper 1.00u risk; shadow P/L separate.",
       "boardTimestampET": "2026-10-16 10:57 ET",
       "sourceRun": "Daily Sports Models 2026-10-16"
+    },
+    {
+      "entryId": "NCAAF-PASS-2026-10-16-FRI",
+      "dateET": "2026-10-16",
+      "league": "NCAAF",
+      "model": "NCAA Football Kalshi Model",
+      "trackType": "PASS",
+      "event": "Friday FBS slate",
+      "category": "Slate",
+      "market": "Kalshi candidate board",
+      "selection": "OFFICIAL PASS",
+      "line": null,
+      "odds": null,
+      "breakEven": null,
+      "modelProbability": null,
+      "edge": null,
+      "confidence": "No verified robust edge",
+      "stakeUnits": 0,
+      "result": "Pass",
+      "pnlUnits": null,
+      "officialBankrollUnits": 100.818,
+      "reason": "Current board verified: 220 candidates; 27 eligible markets from 3 Friday FBS games. A Memphis -7.5 YES $0.45; B Washington-Purdue Over 50.5 YES $0.50; C Coastal Carolina win YES $0.49. Unconfirmed injury and weather impacts, missing calibrated model probabilities; no official or shadow bets. Saturday excluded.",
+      "boardTimestampET": "2026-10-16 18:09 ET",
+      "sourceRun": "NCAA Football Kalshi Model 2026-10-16 FRI"
     }
   ]
 }
