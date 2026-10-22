@@ -338,7 +338,12 @@ def push_github(payload):
 
 
 def scheduled_run_is_due():
-    """Match the local 08:00 or 23:30 ET schedule despite DST changes."""
+    """Accept only cron slots mapped to 08:00 or 23:30 ET, even if GitHub starts late.
+
+    GitHub Actions may queue scheduled workflows for hours. The cron expression
+    identifies the intended UTC slot, so rejecting a valid slot based on the
+    runner's start time can leave the downstream sheet sync without its input.
+    """
     cron = os.environ.get("GITHUB_EVENT_SCHEDULE", "").strip()
     fields = cron.split()
     if len(fields) < 2:
@@ -354,15 +359,16 @@ def scheduled_run_is_due():
         tzinfo=timezone.utc,
     )
     scheduled_local = scheduled_utc.astimezone(ZoneInfo(os.environ.get("TZ", "America/New_York")))
-    if (scheduled_local.hour, scheduled_local.minute) not in {(8, 0), (23, 30)}:
-        return False
-    elapsed = (datetime.now(scheduled_local.tzinfo) - scheduled_local).total_seconds()
-    return 0 <= elapsed <= 90 * 60
+    return (scheduled_local.hour, scheduled_local.minute) in {(8, 0), (23, 30)}
 
 
 def main():
     if os.environ.get("KALSHI_SCHEDULE_ONLY_IF_DUE", "").strip().lower() == "true" and not scheduled_run_is_due():
         print("Skipping this UTC schedule slot; it does not map to the 08:00 or 23:30 America/New_York run.")
+        output_path = os.environ.get("GITHUB_OUTPUT")
+        if output_path:
+            with open(output_path, "a", encoding="utf-8") as output_file:
+                output_file.write("skipped=true\\n")
         return
     if not API_KEY_ID:
         raise RuntimeError("KALSHI_API_KEY_ID is not set")

@@ -54,9 +54,11 @@ jobs:
           test -n "$GOOGLE_SERVICE_ACCOUNT_JSON_B64" || { echo "Missing GOOGLE_SERVICE_ACCOUNT_JSON_B64"; exit 1; }
 
       - name: Fetch Kalshi account positions
+        id: fetch-account-positions
         run: python nas/kalshi_account_sync.py
 
       - name: Upsert Kalshi positions into the private Bets sheet
+        if: steps.fetch-account-positions.outputs.skipped != 'true'
         run: python nas/kalshi_sheet_sync.py
 
   refresh-dashboard-metrics:
