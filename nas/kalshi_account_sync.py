@@ -368,7 +368,7 @@ def main():
         output_path = os.environ.get("GITHUB_OUTPUT")
         if output_path:
             with open(output_path, "a", encoding="utf-8") as output_file:
-                output_file.write("skipped=true\\n")
+                output_file.write("skipped=true\n")
         return
     if not API_KEY_ID:
         raise RuntimeError("KALSHI_API_KEY_ID is not set")
