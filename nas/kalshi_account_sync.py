@@ -365,6 +365,10 @@ def scheduled_run_is_due():
 def main():
     if os.environ.get("KALSHI_SCHEDULE_ONLY_IF_DUE", "").strip().lower() == "true" and not scheduled_run_is_due():
         print("Skipping this UTC schedule slot; it does not map to the 08:00 or 23:30 America/New_York run.")
+        output_path = os.environ.get("GITHUB_OUTPUT")
+        if output_path:
+            with open(output_path, "a", encoding="utf-8") as output_file:
+                output_file.write("skipped=true\\n")
         return
     if not API_KEY_ID:
         raise RuntimeError("KALSHI_API_KEY_ID is not set")
