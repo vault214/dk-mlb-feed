@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, and account identifiers are excluded.",
-  "updatedAt": "2026-10-25T14:56:13.000Z",
+  "updatedAt": "2026-10-25T15:02:20.767Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -3916,6 +3916,24 @@
       "reason": "Raw model 48% vs executable YES ask 40% = +8pp; robust 42% = +2pp after fees/slippage, projected-goalie and margin variance. Official rejection: robust edge below target. Dallas has the home-ice and team-strength advantage, but Ilya Sorokin's ability to suppress scoring makes the multi-goal margin fragile. Shadow only; positive net EV after costs is unproven.",
       "boardTimestampET": "2026-10-25 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-10-25"
+    },
+    {
+      "entryId": "NFL-PASS-2026-10-25-SUNAM",
+      "dateET": "2026-10-25",
+      "league": "NFL",
+      "model": "NFL Kalshi Model",
+      "trackType": "PASS",
+      "event": "NFL Week 7 Sunday slate (11 pregame games; Paris underway)",
+      "category": "Slate",
+      "market": "Kalshi candidate board",
+      "selection": "DATA PASS — quote freshness unverified",
+      "confidence": "No verified executable quote freshness / robust edge",
+      "stakeUnits": 0,
+      "result": "Pass",
+      "officialBankrollUnits": 100.869,
+      "reason": "DATA PASS. GitHub vault214/dk-mlb-feed main kalshi/nfl-candidates.json board_date_et=2026-10-25, candidate_market_count=216 equals 216 rows. 207 Oct 25 active markets across all 12 Sunday games; 9 Oct 26 Monday markets excluded. Paris PIT-NO 9:30 AM ET already underway at 11:01 ET; exclude its 23 rows from new selections, leaving 184 pregame Sunday markets across 11 games. All same-day YES/NO asks numeric and in (0,1), but no quote-capture/refresh timestamp; open_time/close_time are NOT price freshness. Screening ONLY (not bets): A Atlanta +2.5 via NO on San Francisco -2.5, KXNFLSPREAD-26OCT25SFATL-SF3, no_ask $0.49 / BE 49%; SF on short rest/travel, WR Evans/Samuel and DE Bosa out, ATL home; no robust edge validated. B Green Bay-Detroit UNDER 55.5 via NO on over 55.5, KXNFLTOTAL-26OCT25GBDET-56, no_ask $0.51 / BE 51%; DET offense productive, GB Josh Jacobs activated, indoor game, high variance. C Bijan Robinson 90+ rush yards YES, KXNFLRSHYDS-26OCT25SFATL-ATLBROBINSON7-90, yes_ask $0.50 / BE 50%; 641 yards/111 carries through six games but only 61 yards/9 carries last week and SF strong run defense. Model probabilities/robust edges not independently calibrated; no fee/slippage-adjusted ~5pp edge established. No official or shadow entries; NFL official 3-2, +0.869u, bankroll 100.869u unchanged. No retroactive promotions.",
+      "boardTimestampET": "2026-10-25 11:01 ET",
+      "sourceRun": "NFL Kalshi Model 2026-10-25 SUNAM"
     }
   ]
 }
