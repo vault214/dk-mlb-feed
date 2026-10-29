@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, and account identifiers are excluded.",
-  "updatedAt": "2026-10-28T15:12:00.000Z",
+  "updatedAt": "2026-10-29T14:55:27.000Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -4415,6 +4415,24 @@
       "reason": "Raw model 49% vs executable YES ask $0.42 = +7pp; robust 44% = +2pp after fees/slippage, projected-goalie uncertainty and puck-line empty-net variance. Official rejection: robust edge below target. Edmonton has the stronger team-strength/home-ice case, but Tristan Jarry's early .861 save percentage and Hyman/Ekholm availability reduce confidence. Shadow only; positive net EV after costs remains unproven.",
       "boardTimestampET": "2026-10-28 11:12 ET",
       "sourceRun": "Daily Sports Models 2026-10-28"
+    },
+    {
+      "entryId": "NFL-PASS-2026-10-29-THUAM",
+      "dateET": "2026-10-29",
+      "league": "NFL",
+      "model": "NFL Kalshi Model",
+      "trackType": "PASS",
+      "event": "Carolina Panthers @ Green Bay Packers",
+      "category": "Slate",
+      "market": "Kalshi candidate board",
+      "selection": "DATA PASS — quote freshness unverified",
+      "confidence": "No verified robust edge",
+      "stakeUnits": 0,
+      "result": "Pass",
+      "officialBankrollUnits": 100.869,
+      "reason": "DATA PASS. Authoritative GitHub vault214/dk-mlb-feed main kalshi/nfl-candidates.json: board_date_et=2026-10-29; candidate_market_count=23 equals 23 active same-day markets, all for Carolina Panthers @ Green Bay Packers, 8:15 PM ET at Lambeau Field. All YES/NO asks numeric in (0,1). GitHub file modified at 2026-10-29 10:55 ET, but neither board nor market rows provide a quote-capture/refresh timestamp; GitHub modification does not prove quote freshness. A screening only: GB -3.5 via YES KXNFLSPREAD-26OCT29CARGB-GB4 yes_ask $0.51 (51% BE); B UNDER 46.5 via NO on Over 46.5 KXNFLTOTAL-26OCT29CARGB-47 no_ask $0.48 (48% BE); C Josh Jacobs 60+ rushing yards YES KXNFLRSHYDS-26OCT29CARGB-GBJJACOBS8-60 yes_ask $0.52 (52% BE). GB C Sean Rhyan, G Travis Glover and LB Zaire Franklin out; WR Matthew Golden and DT Devonte Wyatt questionable. CAR G Damien Lewis, OLB Jaelan Phillips, CB Akayleb Evans out; RT Taylor Moton on IR. Short week and both damaged offensive lines increase volatility. Jacobs only recently returned, workload/role uncertain; CAR conceded 258 rushing yards last week. Weather forecast near 50-54F, light 5-8 mph wind, mostly dry; no material weather penalty. No independently calibrated model probabilities or robust after-cost edge established, so no official or shadow entry; historical 3-2 official, +0.869u, bankroll 100.869u preserved. No retroactive shadow promotion.",
+      "boardTimestampET": "2026-10-29 10:55 ET",
+      "sourceRun": "NFL Kalshi Model — 2026-10-29 THUAM"
     }
   ]
 }
