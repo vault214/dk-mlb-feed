@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-01T16:09:00.000Z",
+  "updatedAt": "2026-11-01T16:05:44.661Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -5099,6 +5099,23 @@
       "reason": "Raw model 58% vs executable YES ask $0.50 = +8pp; robust 54% = +4pp after fees/slippage, goalie conflict and puck-line variance. Carolina is 11-2-2 with a +21 goal differential; Winnipeg is 4-7-3, missing Josh Morrissey and winless in eight. Official rejection: conflicting reports on Carolina's starter leave the robust edge one point below threshold. Shadow only; positive net EV after costs remains unproven.",
       "boardTimestampET": "2026-11-01 11:09 ET",
       "sourceRun": "Daily Sports Models 2026-11-01"
+    },
+    {
+      "entryId": "NFL-PASS-2026-11-01-SUNAM",
+      "dateET": "2026-11-01",
+      "league": "NFL",
+      "model": "NFL Kalshi Model",
+      "trackType": "PASS",
+      "event": "NFL Sunday Week 8 slate (12 games)",
+      "category": "Slate",
+      "market": "Kalshi candidate board",
+      "selection": "DATA PASS — quote freshness unverified",
+      "stakeUnits": 0,
+      "result": "Pass",
+      "officialBankrollUnits": 100.869,
+      "reason": "DATA PASS. Authoritative Kalshi GitHub main kalshi/nfl-candidates.json: board_date_et=2026-11-01; candidate_market_count=216 matches 216 active markets, with 208 dated Sunday Nov 1 across all 12 NFL games and 8 Monday Nov 2 excluded. All YES/NO asks valid (0,1), but no quote-capture/refresh timestamp in board or market rows; open/close times do not prove executable quote freshness. A screening ONLY: Raiders +1.5 via NO on Jets win by >1.5, KXNFLSPREAD-26NOV01LVNYJ-NYJ2, no_ask $0.49 (49% BE); NYJ DT T'Vondre Sweat and DE Joseph Ossai out, DE David Bailey doubtful; Breece Hall questionable; LV Brock Bowers expected. B: KC-DEN UNDER 40.5 via NO on Over 40.5, KXNFLTOTAL-26NOV01KCDEN-41, no_ask $0.47 (47% BE); Mahomes/Nix efficiency uneven and DEN defense strong, but Rashee Rice returns, Hufanga out, Pat Surtain II returns, weather ~62-64F and 6-7 mph wind/dry, so no weather-based under edge. C: CeeDee Lamb 7+ receptions YES, KXNFLREC-26NOV01ARIDAL-DALCLAMB88-7, yes_ask $0.52 (52% BE); DAL Lamb ~30.5% target share through Week 7, Pickens questionable, Turpin out; catch volume/game script uncertain. No independently calibrated probability, post-fee/slippage robust edge or valid fresh quote, so no OFFICIAL or SHADOW. NFL official 3-2, +0.869u, 100.869u bankroll unchanged. Sources: https://www.covers.com/sport/football/nfl/matchup/380032 ; https://www.covers.com/sport/football/nfl/matchup/380036 ; https://statchasers.com/nfl/teams/dallas-cowboys/ ; https://weather.football/nfl/game/2026-08-kc-at-den .",
+      "boardTimestampET": "2026-11-01 11:04 ET (run start)",
+      "sourceRun": "NFL Kalshi automation run 2026-11-01"
     }
   ]
 }
