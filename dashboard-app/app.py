@@ -38,7 +38,7 @@ button{background:#102131;color:#dce9f4;border:1px solid #294258;border-radius:9
 table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;border-bottom:1px solid #1b2c3c;text-align:left;font-size:13px}th{font-size:11px;color:#8095aa;text-transform:uppercase}.scroll{overflow:auto}
 .pos{color:var(--green)}.neg{color:var(--red)}.muted{color:var(--muted)}.health{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:6px}.dot.ok{background:var(--green)}
 .league-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.league-card{background:#0a1620;border:1px solid #20364a;border-radius:14px;padding:14px}.league-title{font-weight:900;font-size:16px}.league-state{font-size:20px;font-weight:900;margin:7px 0}
-.notice{border:1px solid #314b62;background:#0b1a26;border-radius:12px;padding:12px;color:#bcd0e1;font-size:12px;line-height:1.5}.view-tabs{display:flex;gap:8px;margin-bottom:16px}.view-tab.active{border-color:#37df8b;color:#8ff3bd;background:#0d2b20}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{font-weight:800}.tab.active{border-color:#37df8b;color:#8ff3bd;background:#0d2b20}.sport-record{font-size:24px;font-weight:900;margin:6px 0}.bankbox{border:1px solid #24465a;background:#0a1721;border-radius:14px;padding:15px;margin-top:12px}
+.notice{border:1px solid #314b62;background:#0b1a26;border-radius:12px;padding:12px;color:#bcd0e1;font-size:12px;line-height:1.5}.view-tabs{display:flex;gap:8px;margin-bottom:16px}.season-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.view-tab.active{border-color:#37df8b;color:#8ff3bd;background:#0d2b20}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{font-weight:800}.tab.active{border-color:#37df8b;color:#8ff3bd;background:#0d2b20}.sport-record{font-size:24px;font-weight:900;margin:6px 0}.bankbox{border:1px solid #24465a;background:#0a1721;border-radius:14px;padding:15px;margin-top:12px}
 @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.twocol{grid-template-columns:1fr}.health,.league-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){header,main{padding:16px}.grid{grid-template-columns:1fr 1fr}.health,.league-grid{grid-template-columns:1fr}.kpi-row{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}}
 </style></head>
 <body>
@@ -69,7 +69,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 
 <section class="panel"><div class="eyebrow">LEAGUES</div><h2>Model Status & Advice</h2><div id="leagueGrid" class="league-grid" style="margin-top:12px"></div></section>
 
-<section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
+<section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="season-tabs" id="seasonTabs"><button class="tab active" data-season="ACTIVE" onclick="setSeasonView('ACTIVE')">Active Season</button><button class="tab" data-season="ALL" onclick="setSeasonView('ALL')">All-Time</button></div><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
 
 <section class="panel"><div class="eyebrow">MODEL PERFORMANCE</div><h2>Official / Shadow Ledger</h2><div id="modelPerf" class="grid" style="margin-top:12px"></div></section>
 
@@ -82,12 +82,15 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </div>
 </main>
 <script>
-let rows=[],statusData={feeds:[]},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL";
+let rows=[],statusData={feeds:[]},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
+const ACTIVE_LEAGUES=["NFL","NCAAF","NBA","NHL"];
+const ALL_LEAGUES=["MLB","NFL","NCAAF","NBA","WNBA","NHL"];
+const scopedRows=()=>seasonView==="ALL"?rows:rows.filter(r=>ACTIVE_LEAGUES.includes(r.league));
 const E=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
 const N=v=>{const n=parseFloat(String(v??"").replace(/[+%$u,]/g,""));return Number.isFinite(n)?n:null};
 const todayET=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
 const settled=r=>["WIN","WON","LOSS","LOST","PUSH"].includes(String(r.result||"").toUpperCase());
-function perf(rs){let w=0,l=0,p=0,pnl=0,risk=0;rs.filter(settled).forEach(r=>{const x=String(r.result||"").toUpperCase();if(x.includes("WIN"))w++;else if(x.includes("LOSS")||x.includes("LOST"))l++;else p++;const q=N(r.pnlUnits);if(q!==null)pnl+=q;const s=N(r.stakeUnits);if(s!==null)risk+=s});return{w,l,p,pnl,risk,roi:risk?100*pnl/risk:null}}
+function perf(rs){let w=0,l=0,p=0,pnl=0,risk=0;rs.filter(settled).forEach(r=>{const x=String(r.result||"").toUpperCase();if(x.includes("WIN"))w++;else if(x.includes("LOSS")||x.includes("LOST"))l++;else p++;const q=N(r.plUnits);if(q!==null)pnl+=q;const s=N(r.stakeUnits);if(s!==null)risk+=s});return{w,l,p,pnl,risk,roi:risk?100*pnl/risk:null}}
 const unit=v=>{const n=N(v);return n===null?"—":(n>0?"+":"")+n.toFixed(2)+"u"};
 const money=v=>{const n=N(v);return n===null?"—":(n<0?"-$":"$")+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})};
 function friendly(r){
@@ -116,7 +119,7 @@ function pickCard(r,hero){
  return '<div class="card '+(hero?'hero':'')+'">'+(hero?'<div class="official-banner">OFFICIAL PICK</div>':'')+'<div class="row"><span class="chip '+(r.trackType==="OFFICIAL"?'off':r.trackType==="SHADOW"?'sha':'pas')+'">'+E(r.trackType)+'</span><span>'+E(r.result||"Pending")+'</span></div><div class="pick">'+friendly(r)+'</div><div class="sub">'+E(r.league)+' · '+E(r.event)+'</div><div class="chips"><span class="chip">'+E(r.category)+'</span>'+execution+(r.edge?'<span class="chip">Edge '+E(r.edge)+' pp</span>':'')+(r.confidence?'<span class="chip">'+E(r.confidence)+'</span>':'')+(r.stakeUnits?'<span class="chip">Stake '+E(r.stakeUnits)+'u</span>':'')+'</div><div class="sub" style="margin-top:8px">'+E(r.reason||"")+'</div></div>';
 }
 function renderToday(){
- const t=rows.filter(r=>r.dateET===todayET());
+ const t=scopedRows().filter(r=>r.dateET===todayET());
  const off=t.filter(r=>r.trackType==="OFFICIAL"), other=t.filter(r=>r.trackType!=="OFFICIAL");
  officialToday.innerHTML=off.length?off.map(r=>pickCard(r,true)).join(""):'<div class="notice">No OFFICIAL model bet has been posted for today yet.</div>';
  otherToday.innerHTML=other.length?other.map(r=>pickCard(r,false)).join(""):'<div class="sub">No shadows or passes today.</div>';
@@ -132,7 +135,7 @@ function renderBankroll(){
  paperCommitted.textContent=committed.toFixed(2)+"u";
 }
 function renderLeagueGrid(){
- const leagues=["NFL","MLB","NCAAF","NBA","WNBA","NHL"];
+ const leagues=seasonView==="ALL"?["NFL","MLB","NCAAF","NBA","WNBA","NHL"]:ACTIVE_LEAGUES;
  leagueGrid.innerHTML=leagues.map(l=>{
    const rs=rows.filter(r=>r.league===l), today=rs.filter(r=>r.dateET===todayET());
    const off=today.find(r=>r.trackType==="OFFICIAL");
@@ -150,6 +153,7 @@ function renderLeagueGrid(){
    return '<div class="league-card"><div class="league-title">'+l+'</div><div class="league-state '+(state==="OFFICIAL PICK"?'pos':'')+'">'+state+'</div><div class="sub">'+detail+'</div><div class="sub" style="margin-top:8px">'+sh+' shadow'+(sh===1?'':'s')+' today</div></div>';
  }).join("");
 }
+function setSeasonView(v){seasonView=v;perfLeague="ALL";document.querySelectorAll("#seasonTabs .tab").forEach(b=>b.classList.toggle("active",b.dataset.season===v));renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderToday();}
 function setPerfLeague(l){perfLeague=l;document.querySelectorAll("#perfTabs .tab").forEach(b=>b.classList.toggle("active",b.dataset.league===l));renderSportComparison()}
 function setPerfTrack(t){perfTrack=t;document.querySelectorAll("#trackTabs .tab").forEach(b=>b.classList.toggle("active",b.dataset.track===t));renderSportComparison()}
 function sportVerdict(p,track){
@@ -167,12 +171,15 @@ function sportVerdict(p,track){
  return "⚖️ Mixed results so far — no clear edge in the settled sample yet.";
 }
 function renderSportComparison(){
- const leagues=["MLB","NFL","NCAAF","NBA","WNBA","NHL"];
+ const leagues=seasonView==="ALL"?ALL_LEAGUES:ACTIVE_LEAGUES;
+ document.querySelectorAll("#perfTabs .tab").forEach(b=>{b.style.display=leagues.includes(b.dataset.league)||b.dataset.league==="ALL"?"":"none";});
+ if(perfLeague!=="ALL"&&!leagues.includes(perfLeague))perfLeague="ALL";
+ document.querySelectorAll("#perfTabs .tab").forEach(b=>b.classList.toggle("active",b.dataset.league===perfLeague));
  const selected=perfLeague==="ALL"?leagues:[perfLeague];
  const cards=selected.map(l=>{const rs=rows.filter(r=>r.league===l&&r.trackType===perfTrack);const p=perf(rs);const n=p.w+p.l;const rate=n?100*p.w/n:null;return {l,p,n,rate};});
  const trackLabel=perfTrack==="OFFICIAL"?"OFFICIAL":"SHADOW";
  if(perfLeague==="ALL"){
-   const all=perf(rows.filter(r=>r.trackType===perfTrack));
+   const all=perf(scopedRows().filter(r=>r.trackType===perfTrack));
    const rate=(all.w+all.l)?100*all.w/(all.w+all.l):null;
    sportHeadline.innerHTML="<b>All-sports "+trackLabel+" record: "+all.w+"-"+all.l+(all.p?"-"+all.p:"")+"</b>"+(perfTrack==="OFFICIAL"?" · "+unit(all.pnl)+(all.roi!==null?" · ROI "+all.roi.toFixed(1)+"%":""):(rate!==null?" · Hit rate "+rate.toFixed(1)+"%":""))+"<br><span class='sub'>"+(perfTrack==="OFFICIAL"?"Official settled paper bets only; shadow bets never affect these records.":"Shadow results are diagnostic only and do not affect the official bankroll.")+"</span>";
  }else{
@@ -182,14 +189,14 @@ function renderSportComparison(){
  sportPerf.innerHTML=cards.map(x=>'<div class="metric"><div class="sub">'+x.l+' '+trackLabel+'</div><div class="sport-record">'+x.p.w+'-'+x.p.l+(x.p.p?'-'+x.p.p:'')+'</div>'+(perfTrack==="OFFICIAL"?'<div class="'+(x.p.pnl>0?'pos':x.p.pnl<0?'neg':'')+'"><b>'+unit(x.p.pnl)+'</b>'+(x.p.roi!==null?' · '+x.p.roi.toFixed(1)+'% ROI':'')+'</div>':'<div><b>'+(x.rate!==null?x.rate.toFixed(1)+'% hit rate':'—')+'</b></div>')+'<div class="sub" style="margin-top:7px">'+sportVerdict(x.p,perfTrack)+'</div></div>').join("");
 }
 function renderModelPerf(){
- const off=perf(rows.filter(r=>r.trackType==="OFFICIAL")),sh=perf(rows.filter(r=>r.trackType==="SHADOW"));
- modelPerf.innerHTML='<div class="metric"><div class="sub">Official Record</div><div class="v">'+off.w+'-'+off.l+'</div><div class="sub">'+unit(off.pnl)+(off.roi!==null?' · ROI '+off.roi.toFixed(1)+'%':'')+'</div></div><div class="metric"><div class="sub">Shadow Record</div><div class="v">'+sh.w+'-'+sh.l+'</div><div class="sub">'+unit(sh.pnl)+' diagnostic only</div></div><div class="metric"><div class="sub">Pending Official</div><div class="v">'+rows.filter(r=>r.trackType==="OFFICIAL"&&!settled(r)).length+'</div><div class="sub">Open paper selections</div></div><div class="metric"><div class="sub">Total Model Entries</div><div class="v">'+rows.length+'</div><div class="sub">Official + shadow + pass</div></div>';
+ const current=scopedRows();const off=perf(current.filter(r=>r.trackType==="OFFICIAL")),sh=perf(current.filter(r=>r.trackType==="SHADOW"));
+ modelPerf.innerHTML='<div class="metric"><div class="sub">Official Record</div><div class="v">'+off.w+'-'+off.l+'</div><div class="sub">'+unit(off.pnl)+(off.roi!==null?' · ROI '+off.roi.toFixed(1)+'%':'')+'</div></div><div class="metric"><div class="sub">Shadow Record</div><div class="v">'+sh.w+'-'+sh.l+'</div><div class="sub">'+unit(sh.pnl)+' diagnostic only</div></div><div class="metric"><div class="sub">Pending Official</div><div class="v">'+current.filter(r=>r.trackType==="OFFICIAL"&&!settled(r)&&String(r.result||"").toUpperCase()!=="PASS").length+'</div><div class="sub">Open paper selections</div></div><div class="metric"><div class="sub">Total Model Entries</div><div class="v">'+current.length+'</div><div class="sub">Official + shadow + pass</div></div>';
 }
 function renderLedger(){
- rowsTable.innerHTML=[...rows].sort((a,b)=>String(b.boardTimestampET||b.dateET).localeCompare(String(a.boardTimestampET||a.dateET))).map(r=>'<tr><td>'+E(r.dateET)+'</td><td>'+E(r.league)+'</td><td><span class="chip '+(r.trackType==="OFFICIAL"?'off':r.trackType==="SHADOW"?'sha':'pas')+'">'+E(r.trackType)+'</span></td><td>'+friendly(r)+'</td><td>'+E(r.edge||"—")+'</td><td>'+E(r.confidence||"—")+'</td><td>'+E(r.result||"Pending")+'</td></tr>').join("");
+ rowsTable.innerHTML=[...scopedRows()].sort((a,b)=>String(b.boardTimestampET||b.dateET).localeCompare(String(a.boardTimestampET||a.dateET))).map(r=>'<tr><td>'+E(r.dateET)+'</td><td>'+E(r.league)+'</td><td><span class="chip '+(r.trackType==="OFFICIAL"?'off':r.trackType==="SHADOW"?'sha':'pas')+'">'+E(r.trackType)+'</span></td><td>'+friendly(r)+'</td><td>'+E(r.edge||"—")+'</td><td>'+E(r.confidence||"—")+'</td><td>'+E(r.result||"Pending")+'</td></tr>').join("");
 }
 function renderHealth(){
- health.innerHTML=(statusData.feeds||[]).map(f=>{const fresh=f.ok&&(!f.date||f.date===todayET());return '<div class="card"><div><span class="dot '+(fresh?'ok':'')+'"></span><b>'+E(f.key.toUpperCase())+'</b></div><div class="sub" style="margin-top:7px">'+(f.ok?(fresh?"Current: ":"Stale: ")+E(f.date||"Available")+(f.count!=null?' · '+E(f.count)+' items':''):(f.status===404?'Not published yet':'Unavailable'))+'</div></div>'}).join("");
+ health.innerHTML=(statusData.feeds||[]).filter(f=>seasonView==="ALL"||!["mlb","wnba"].includes(String(f.key).toLowerCase())).map(f=>{const fresh=f.ok&&(!f.date||f.date===todayET());return '<div class="card"><div><span class="dot '+(fresh?'ok':'')+'"></span><b>'+E(f.key.toUpperCase())+'</b></div><div class="sub" style="margin-top:7px">'+(f.ok?(fresh?"Current: ":"Stale: ")+E(f.date||"Available")+(f.count!=null?' · '+E(f.count)+' items':''):(f.status===404?'Not published yet':'Unavailable'))+'</div></div>'}).join("");
 }
 function setMainView(v){
  overviewView.style.display=v==="overview"?"block":"none";
