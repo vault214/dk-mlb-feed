@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-03T16:04:00Z",
+  "updatedAt": "2026-11-04T22:36:11Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -6363,6 +6363,30 @@
       "reason": "Authoritative kalshi/nhl-candidates.json has board_date_et=2026-11-02, not 2026-11-03. External schedule validation found 11 NHL games today, but the feed contains no valid current-day executable rows. A/B/C unavailable; no ask or modeled edge substituted, and no shadow created. Official record 0-1, -1.000u; bankroll 99.000u. Settled shadows after Nov. 2: 12-9, +3.588u.",
       "boardTimestampET": "2026-11-03 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-11-03"
+    },
+    {
+      "entryId": "NCAAB-PASS-2026-11-04",
+      "dateET": "2026-11-04",
+      "league": "NCAAB",
+      "model": "Men's NCAAB Kalshi Conservative Model",
+      "trackType": "PASS",
+      "event": "Men's NCAAB evening slate",
+      "category": "A/B/C screening",
+      "market": "Kalshi ncaab-candidates.json",
+      "selection": "OFFICIAL PASS",
+      "line": null,
+      "odds": null,
+      "breakEven": null,
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Uncalibrated early-season uncertainty",
+      "stakeUnits": 0,
+      "result": "N/A",
+      "plUnits": 0,
+      "officialBankrollUnits": 100,
+      "reason": "First NCAAB evaluation at 17:36 ET; board_date_et=2026-11-04. 68 same-day rows: 18 winner, 30 spread, 20 total; both asks numeric in (0,1). Screening finalists (not wagers): A California -15.5, KXNCAAMBSPREAD-26NOV04RADCAL-CAL16, YES ask .53/BE53%; B Radford-California UNDER 156.5 (NO on Over 156.5), KXNCAAMBTOTAL-26NOV04RADCAL-157, NO ask .47/BE47%; C Saint Mary's winner, KXNCAAMBGAME-26NOV04NDSUSMC-SMC, YES ask .90/BE90%. Cal tips 21:00 ET and SMC 22:00 ET; other games not eligible without independently confirmed future tip. No supported calibrated probability or raw/robust edge established; do not infer edge from qualitative previews or small samples. Cal's 115-86 opener was versus D-II Adams State; NDSU's 90-59 opener was versus Minnesota Crookston, limiting opponent-adjusted inference. SMC required overtime versus Illinois State; substantial roster turnover and incomplete nonconference availability reporting. Independent shadow evaluation rejects all screened candidates for unsupported probability estimates, not merely failure of official threshold; no shadow risk. Quote capture timestamp absent, so price freshness independently unproven. Official 0-0, 0u, 100u bankroll; shadow 0-0, 0u. Sources: https://gobison.com/news/2026/11/3/mens-basketball-bison-headed-to-california-for-three-game-road-swing ; https://www.reuters.com/sports/basketball/fresh-off-115-point-showing-cal-gears-up-radford--flm-2026-11-03/ ; https://www.sfchronicle.com/sports/article/sportscal-22507514.php",
+      "boardTimestampET": "2026-11-04 17:36 ET",
+      "sourceRun": "Daily Sports Models NCAAB 2026-11-04"
     }
   ]
 }
