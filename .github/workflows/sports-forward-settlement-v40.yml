@@ -7,6 +7,8 @@ on:
       - '.github/workflows/sports-forward-settlement-v40.yml'
       - 'models/sport_moneyline_settlement_v40.py'
       - 'models/test_sport_moneyline_settlement_v40.py'
+      - 'models/sport_readiness_v40.py'
+      - 'models/test_sport_readiness_v40.py'
   schedule:
     - cron: '35 11,23 * * *'
 permissions:
@@ -32,11 +34,20 @@ jobs:
         run: |
           PYTHONPATH=models python -m unittest discover -s models -p 'test_sport_moneyline_forward_v40.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_sport_moneyline_settlement_v40.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_sport_readiness_v40.py' -v
       - name: Confirm historical game finals against independent settled Kalshi markets
         run: |
           python models/sport_moneyline_settlement_v40.py \
             --archive-dir research/sports-forward \
             --output dashboard/sports-v40-result-health.json
+      - name: Update consolidated seven-sport readiness from independent research only
+        run: |
+          python models/sport_readiness_v40.py \
+            --model-health dashboard/model-health.json \
+            --capture-health dashboard/sports-v40-capture-health.json \
+            --result-health dashboard/sports-v40-result-health.json \
+            --ncaaf dashboard/ncaaf-v39-forward-scorecard.json \
+            --output dashboard/sports-v40-readiness.json
       - name: Check all scorecards are research only and lack a fabricated model edge
         run: |
           python - <<'PY'
@@ -44,6 +55,10 @@ jobs:
           d=json.load(open("dashboard/sports-v40-result-health.json"))
           assert not d["official_eligible"] and not d["shadow_eligible"] and not d["production_eligible"]
           assert set(d["leagues"])=={"NFL","NBA","NHL","NCAAB","MLB","WNBA"}
+          status=json.load(open("dashboard/sports-v40-readiness.json"))
+          assert not status["official_eligible"] and not status["production_eligible"]
+          assert len(status["sports"])==7
+          assert all(not x["official_eligible"] for x in status["sports"])
           for sport in ("NFL","NBA","NHL","NCAAB"):
               r=d["leagues"][sport]
               assert r["independent_model_brier"] is None
@@ -55,13 +70,15 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: four-sport-independent-settlement-research
-          path: dashboard/sports-v40-result-health.json
+          path: |
+            dashboard/sports-v40-result-health.json
+            dashboard/sports-v40-readiness.json
           retention-days: 14
       - name: Publish only verified research outcome evidence
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboard/sports-v40-result-health.json research/sports-forward/
+          git add dashboard/sports-v40-result-health.json dashboard/sports-v40-readiness.json research/sports-forward/
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Score independently settled four-sport moneyline research [skip ci]"
           for attempt in 1 2 3 4 5; do
