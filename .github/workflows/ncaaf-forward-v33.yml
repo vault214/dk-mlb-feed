@@ -17,6 +17,8 @@ on:
       - 'research/ncaaf-primary-availability-input.json'
       - 'models/ncaaf_supplemental_availability_v36.py'
       - 'models/test_ncaaf_supplemental_v36.py'
+      - 'models/ncaaf_availability_triage_v37.py'
+      - 'models/test_ncaaf_availability_triage_v37.py'
       - '.github/workflows/ncaaf-forward-v33.yml'
   schedule:
     - cron: '13 * * * 5,6,0,1'
@@ -39,6 +41,7 @@ jobs:
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_primary_report_v35.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_official_discovery_v35.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_supplemental_v36.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_availability_triage_v37.py' -v
   forward:
     if: github.event_name != 'push'
     needs: checks
@@ -79,6 +82,11 @@ jobs:
       - name: Cross-reference optional third-party matchup report leads (never verify player status)
         run: |
           python models/ncaaf_supplemental_availability_v36.py             --queue dashboard/ncaaf-v34-availability-health.json             --output dashboard/ncaaf-v36-secondary-leads.json
+      - name: Capture unverified position-QB risk flags for primary-source follow-up
+        run: |
+          python models/ncaaf_availability_triage_v37.py \
+            --source dashboard/ncaaf-v36-secondary-leads.json \
+            --output dashboard/ncaaf-v37-availability-triage.json
       - name: Verify submitted direct conference game reports and exact QB excerpts
         run: |
           python -m pip install 'pypdf>=5,<7' -q
@@ -88,6 +96,7 @@ jobs:
         run: |
           python models/ncaaf_game_eligibility_v35.py             --research dashboard/ncaaf-v32-research.json             --availability dashboard/ncaaf-v35-verified-availability.json             --model dashboard/ncaaf-v32-health.json             --settlement dashboard/ncaaf-v34-settlement-health.json \
             --supplemental dashboard/ncaaf-v36-secondary-leads.json \
+            --triage dashboard/ncaaf-v37-availability-triage.json \
             --archive-dir research/ncaaf-forward             --output dashboard/ncaaf-v35-eligibility.json
       - name: Validate data shape and research-only gates
         run: |
@@ -101,6 +110,9 @@ jobs:
           assert a["official_eligible"] is False
           assert all(not g.get("model_eligible",False) for g in a["game_review_queue"])
           e=json.load(open("dashboard/ncaaf-v35-eligibility.json"))
+          t=json.load(open("dashboard/ncaaf-v37-availability-triage.json"))
+          assert t["official_eligible"] is False
+          assert all(not x.get("official_qb_verified") and not x.get("used_to_adjust_probabilities") for x in t["games"])
           assert e["production_eligible"] is False and e["official_eligible"] is False
           assert e["games_blocked"]==e["matched_games"]
           assert all(not x["official_eligible"] and not x["shadow_eligible"] for x in e["games"])
@@ -124,12 +136,13 @@ jobs:
             dashboard/ncaaf-v35-verified-availability.json
             dashboard/ncaaf-v35-source-discovery.json
             dashboard/ncaaf-v36-secondary-leads.json
+            dashboard/ncaaf-v37-availability-triage.json
           retention-days: 14
       - name: Commit forward evidence only, never official picks or accounts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboard/ncaaf-v33-health.json dashboard/ncaaf-v34-settlement-health.json dashboard/ncaaf-v35-eligibility.json dashboard/ncaaf-v35-verified-availability.json dashboard/ncaaf-v35-source-discovery.json dashboard/ncaaf-v36-secondary-leads.json research/ncaaf-forward/
+          git add dashboard/ncaaf-v33-health.json dashboard/ncaaf-v34-settlement-health.json dashboard/ncaaf-v35-eligibility.json dashboard/ncaaf-v35-verified-availability.json dashboard/ncaaf-v35-source-discovery.json dashboard/ncaaf-v36-secondary-leads.json dashboard/ncaaf-v37-availability-triage.json research/ncaaf-forward/
           if ! git diff --cached --quiet; then
             git commit -m "Archive NCAAF read-only orderbook and settlement research [skip ci]"
             for attempt in 1 2 3 4 5; do
