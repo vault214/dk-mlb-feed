@@ -52,6 +52,24 @@ class TestScorecard(unittest.TestCase):
     x=analyze(d,NOW)
     self.assertEqual(x["independently_verified_game_probability_samples"],1)
     self.assertEqual(x["research_edge_strategy_distinct_games"],1)
+ def test_unsettled_candidate_is_not_selected_using_hindsight(self):
+    d=sample()
+    # Two different contracts in the same game. The greatest as-of edge is
+    # unverified. Do not retroactively select the runner-up verified ticker.
+    unverified=obs(p=.97,ask=.30)
+    unverified["ticker"]="KXNCAAFGAME-26NOV07ABC-OTHER"
+    unverified["selectionLabel"]="Georgia"
+    d["2026-11-07"]["observations"].append(unverified)
+    x=analyze(d,NOW)
+    self.assertEqual(x["precommitted_research_candidate_games"],1)
+    self.assertEqual(x["precommitted_candidate_games_awaiting_independent_settlement"],1)
+    self.assertEqual(x["research_edge_strategy_distinct_games"],0)
+    self.assertEqual(x["independently_verified_game_probability_samples"],1)
+ def test_precommitted_candidate_remains_pending_when_no_games_settled(self):
+    x=analyze(sample(False),NOW)
+    self.assertEqual(x["precommitted_research_candidate_games"],1)
+    self.assertEqual(x["precommitted_candidate_games_awaiting_independent_settlement"],1)
+    self.assertIsNone(x["theoretical_one_contract_net_pnl_sum"])
  def test_unverified_settlement_not_counted(self):
     x=analyze(sample(False),NOW)
     self.assertEqual(x["independently_verified_game_probability_samples"],0)
