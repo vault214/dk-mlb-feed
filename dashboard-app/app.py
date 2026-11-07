@@ -225,7 +225,11 @@ function renderNcaafEligibility(){
    eligibilityGrid.innerHTML="";
    return;
  }
- eligibilitySummary.textContent=games.length+" matchups · "+(data.games_blocked??games.length)+" blocked · independent settled game sample "+(data.forward_independent_verified_games??0)+" / "+(data.minimum_distinct_forward_games_research_target??40)+" research target.";
+ const generated=new Date(data.generatedAtUTC||0);
+ const expired=!Number.isFinite(generated.getTime()) || Date.now()-generated.getTime()>120000;
+ eligibilitySummary.textContent=games.length+" matchups · "+(data.games_blocked??games.length)+" blocked · "+(data.generatedAtUTC||"unknown capture time")+" · "
+   +(expired?"SAVED RESEARCH SNAPSHOT EXPIRED — QUOTES NOT LIVE":"As-of-capture quote check only")
+   +" · independent settled game sample "+(data.forward_independent_verified_games??0)+" / "+(data.minimum_distinct_forward_games_research_target??40)+" research target.";
  eligibilityGrid.innerHTML=games.map(g=>{
    const issues=(g.reasons||[]).slice(0,5).map(x=>'<div class="sub" style="margin-top:4px">• '+E(x)+'</div>').join("");
    const more=(g.reasons||[]).length>5?'<div class="sub">+'+E(g.reasons.length-5)+' additional checks</div>':'';
