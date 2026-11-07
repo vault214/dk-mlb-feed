@@ -33,6 +33,7 @@ ELIGIBILITY_V35_URL = RAW + "/dashboard/ncaaf-v35-eligibility.json"
 PREGAME_V38_URL = RAW + "/dashboard/ncaaf-v38-window.json"
 PROVIDER_V39_URL = RAW + "/dashboard/ncaaf-v39-provider-proof.json"
 SCORECARD_V39_URL = RAW + "/dashboard/ncaaf-v39-forward-scorecard.json"
+SPORTS_V40_READINESS_URL = RAW + "/dashboard/sports-v40-readiness.json"
 
 HTML = r'''<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -257,6 +258,7 @@ function renderNcaafEligibility(){
 function renderResearchHealth(){
  const sports=["NCAAF","NFL","NBA","NHL","NCAAB","MLB","WNBA"];
  const mapped=new Map((researchData.leagues||[]).map(x=>[x.league,x]));
+ const forwardReadiness=new Map((((ncaafContext||{}).sportsReadiness||{}).sports||[]).map(x=>[x.sport,x]));
  const label=n=>n===null||n===undefined?"—":Number(n).toFixed(3);
  const hasReport=(researchData.leagues||[]).length>0;
  researchSummary.textContent=hasReport
@@ -266,6 +268,7 @@ function renderResearchHealth(){
   const x=mapped.get(league);
   if(!x)return '<div class="league-card"><div class="league-title">'+league+'</div><div class="sub" style="margin-top:8px">Awaiting backtest</div></div>';
   const report=x.research_status||"UNAVAILABLE";
+  const r40=forwardReadiness.get(league)||{};
   const baseline=label(x.home_prior_baseline_brier);
   const brier=label(x.winner_brier);
   const hasImprovement=x.improvement_vs_home_baseline!=null;
@@ -290,12 +293,13 @@ function renderResearchHealth(){
   const historicalWx=w34.archived_pregame_forecast_games!==undefined?'<div class="sub">Historic 24h-ahead weather: '+E(w34.archived_pregame_forecast_games)+' games · probability impact uncalibrated</div>':'';
   const publisher=source39.official_hubs_checked!==undefined?'<div class="sub">Publisher source check: '+E(source39.official_hubs_retrieved??0)+' / '+E(source39.official_hubs_checked??0)+' official portals reachable · '+E(source39.games_with_verified_publisher_link??0)+' matched games with conference-attested viewer (NOT player verification)</div>':'';
   const scorecard=score39.independently_verified_game_probability_samples!==undefined?'<div class="sub" style="margin-top:7px">Forward game scorecard: '+E(score39.independently_verified_game_probability_samples)+' independently verified games · '+E(score39.market_midpoint_baseline_samples??0)+' market comparison samples · '+E(score39.precommitted_research_candidate_games??0)+' pregame research candidates · '+E(score39.precommitted_candidate_games_awaiting_independent_settlement??0)+' awaiting settlement · '+E(score39.research_edge_strategy_distinct_games??0)+' settled candidates</div><div class="sub">Model Brier: '+E(score39.model_home_probability_brier??"Not yet measurable")+' · Historical theoretical net return: '+E(score39.theoretical_one_contract_net_pnl_sum??"No settled samples")+' (not real or official paper P/L)</div>':'';
+  const forward40=r40.state?'<div class="sub" style="margin-top:8px"><b>Forward readiness: '+E(r40.state)+'</b> · '+E(r40.unique_games_with_market_snapshots??0)+' observed games · '+E(r40.independent_settled_game_samples??0)+' independently settled · '+E(r40.new_prospective_games_pending??0)+' pending</div><div class="sub">Next evidence: '+E(r40.next_model_evidence||"Not available")+'</div>':'';
   return '<div class="league-card"><div class="league-title">'+E(league)+'</div><div class="chip pas" style="display:inline-block;margin:8px 0">RESEARCH ONLY</div>'
    +'<div class="sub">Status: '+E(report)+'</div><div class="sub">Holdout games: '+E(x.holdout_games??"—")+'</div>'
    +'<div class="sub">Winner Brier: '+E(brier)+' · Baseline: '+E(baseline)+'</div>'
    +'<div class="sub">Improvement: '+E(improvement)+' (positive is better)</div>'
    +'<div class="sub">Board: '+E(m.date_et||"—")+' · '+E(m.candidate_market_count??"—")+' markets</div>'
-   +'<div class="sub">Missing: '+E(gaps||"verified inputs")+'</div>'+improved+wx+quotes+forward+settlement+availability+historicalWx+publisher+scorecard+'</div>';
+   +'<div class="sub">Missing: '+E(gaps||"verified inputs")+'</div>'+improved+wx+quotes+forward+settlement+availability+historicalWx+publisher+scorecard+forward40+'</div>';
  }).join("");
 }
 function renderHealth(){
@@ -372,7 +376,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, HTML)
         if p == "/api/ncaaf-research-health":
             out={}
-            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL),("quotes",QUOTE_V32_URL),("forward",FORWARD_V33_URL),("settlement",SETTLEMENT_V34_URL),("availability",AVAILABILITY_V34_URL),("weatherHistory",WEATHER_HISTORY_V34_URL),("eligibility",ELIGIBILITY_V35_URL),("pregameWindow",PREGAME_V38_URL),("publisherSource",PROVIDER_V39_URL),("forwardScorecard",SCORECARD_V39_URL)):
+            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL),("quotes",QUOTE_V32_URL),("forward",FORWARD_V33_URL),("settlement",SETTLEMENT_V34_URL),("availability",AVAILABILITY_V34_URL),("weatherHistory",WEATHER_HISTORY_V34_URL),("eligibility",ELIGIBILITY_V35_URL),("pregameWindow",PREGAME_V38_URL),("publisherSource",PROVIDER_V39_URL),("forwardScorecard",SCORECARD_V39_URL),("sportsReadiness",SPORTS_V40_READINESS_URL)):
                 try: out[key]=fetch_json(url)
                 except Exception: out[key]={}
             return self.send(200,json.dumps(out),"application/json")
