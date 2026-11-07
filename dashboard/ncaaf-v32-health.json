@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAtUTC": "2026-11-07T19:46:24.429468+00:00",
+  "capturedAtUTC": "2026-11-07T20:01:58.195920+00:00",
   "sport": "NCAAF",
   "status": "RESEARCH ONLY",
   "production_eligible": false,
@@ -18,10 +18,10 @@
     "status": "RESEARCH COMPARISON ONLY",
     "board_date": "2026-11-07",
     "moneyline_events": 55,
-    "matched_events": 13,
-    "compared_contract_sides": 52,
+    "matched_events": 11,
+    "compared_contract_sides": 44,
     "excluded_events": {
-      "matchup not uniquely verified as pregame FBS": 11,
+      "matchup not uniquely verified as pregame FBS": 13,
       "event lacks exactly two distinct winner labels": 30,
       "unverified or ambiguous team alias": 1
     }

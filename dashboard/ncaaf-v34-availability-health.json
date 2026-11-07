@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "generatedAtUTC": "2026-11-07T19:46:50.982586+00:00",
+  "generatedAtUTC": "2026-11-07T20:03:58.187435+00:00",
   "status": "PRIMARY-SOURCE AVAILABILITY REVIEW QUEUE \u2014 NONE VERIFIED",
   "matched_games": 13,
   "official_conference_report_hubs_found": 9,
@@ -34,7 +34,7 @@
       "material_absences_verified": false,
       "risk_adjustment_backtested": false,
       "model_eligible": false,
-      "review_due_before_kickoff": true
+      "review_due_before_kickoff": false
     },
     {
       "cfbd_game_id": "401871073",
@@ -55,7 +55,7 @@
       "material_absences_verified": false,
       "risk_adjustment_backtested": false,
       "model_eligible": false,
-      "review_due_before_kickoff": true
+      "review_due_before_kickoff": false
     },
     {
       "cfbd_game_id": "401856740",
