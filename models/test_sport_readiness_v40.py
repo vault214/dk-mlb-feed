@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import datetime as dt
 import unittest
-from sport_readiness_v40 import summarize,ALL,UTC
+from sport_readiness_v40 import summarize,ALL
+UTC=dt.timezone.utc
 NOW=dt.datetime(2026,11,7,22,tzinfo=UTC)
 M={"leagues":[{"league":"NHL","holdout_games":631,
    "winner_brier":.251,"improvement_vs_home_baseline":-.002,"missing_verified_inputs":["starting goalie"]},
