@@ -92,7 +92,7 @@ def fee_spec(series, market):
     raw=market.get("fee_multiplier_override")
     if raw is None:raw=series.get("fee_multiplier")
     multiplier=dec(raw)
-    if typ!="quadratic" or multiplier is None or multiplier<0 or multiplier>10:
+    if typ not in ("quadratic","quadratic_with_maker_fees") or multiplier is None or multiplier<0 or multiplier>10:
         return None,"unverified or non-quadratic fee type/multiplier"
     return multiplier,None
 
@@ -307,6 +307,10 @@ def summarize(datasets,now,snapshot):
         pre=[r for r in observations if stamp(r["quote_observed_utc"])<kick]
         near=[r for r in pre if 0<=(kick-stamp(r["quote_observed_utc"])).total_seconds()/60<=CLOSE_PROXY_MAX_GAP_MINUTES]
         close=near[-1] if near else None
+        # A single quote is never a closing-line comparison; require a later
+        # independent observation separated by at least five minutes.
+        if close is not None and (stamp(close["quote_observed_utc"])-stamp(base["quote_observed_utc"])).total_seconds()<300:
+            close=None
         if close is not None:
             comparisons.append({
                 "ticker":key[0],"side":key[1],
