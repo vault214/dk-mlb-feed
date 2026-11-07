@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "sport": "NCAAF",
+  "generatedAtUTC": "2026-11-07T19:27:11.881129+00:00",
+  "status": "FORWARD RESEARCH ONLY",
+  "latest_capture_status": "READY FOR RESEARCH",
+  "latest_candidate_sides": 52,
+  "latest_depth_checked": 26,
+  "latest_orderbooks_available": 26,
+  "latest_fee_estimations": 0,
+  "latest_eligible_official": 0,
+  "latest_eligible_shadow": 0,
+  "archived_observations": 52,
+  "unique_contract_sides": 52,
+  "closing_price_proxy_pairs": 24,
+  "contract_side_outcomes": 0,
+  "forward_contract_side_brier": null,
+  "theoretical_one_contract_pnl_sum": null,
+  "theoretical_one_contract_pnl_count": 0,
+  "closing_proxy_examples": [
+    {
+      "ticker": "KXNCAAFGAME-26NOV07WKUMTU-MTU",
+      "side": "YES",
+      "first_observed_utc": "2026-11-07T19:27:12.554264+00:00",
+      "pre_kickoff_proxy_utc": "2026-11-07T19:27:12.554264+00:00",
+      "entry_ask": 0.45,
+      "last_pre_kickoff_ask": 0.45,
+      "closing_proxy_favorable_if_positive_pp": 0.0,
+      "proxy_is_true_exchange_closing_price": false
+    },
+    {
+      "ticker": "KXNCAAFGAME-26NOV07WKUMTU-WKU",
+      "side": "NO",
+      "first_observed_utc": "2026-11-07T19:27:12.992790+00:00",
+      "pre_kickoff_proxy_utc": "2026-11-07T19:27:12.992790+00:00",
+      "entry_ask": 0.45,
+      "last_pre_kickoff_ask": 0.45,
+      "closing_proxy_favorable_if_positive_pp": 0.0,
+      "proxy_is_true_exchange_closing_price": false
+    },
+    {
+      "ticker": "KXNCAAFGAME-26NOV07OREOSU-ORE",
+      "side": "NO",
+      "first_observed_utc": "2026-11-07T19:27:14.222315+00:00",
+      "pre_kickoff_proxy_utc": "2026-11-07T19:27:14.222315+00:00",
+      "entry_ask": 0.73,
+      "last_pre_kickoff_ask": 0.73,
+      "closing_proxy_favorable_if_positive_pp": 0.0,
+      "proxy_is_true_exchange_closing_price": false
+    },
+    {
+      "ticker": "KXNCAAFGAME-26NOV07OREOSU-OSU",
+      "side": "YES",
+      "first_observed_utc": "2026-11-07T19:27:14.649941+00:00",
+      "pre_kickoff_proxy_utc": "2026-11-07T19:27:14.649941+00:00",
+      "entry_ask": 0.73,
+      "last_pre_kickoff_ask": 0.73,
+      "closing_proxy_favorable_if_positive_pp": 0.0,
+      "proxy_is_true_exchange_closing_price": false
+    },
+    {
+      "ticker": "KXNCAAFGAME-26NOV07CINHOU-CIN",
+      "side": "YES",
+      "first_observed_utc": "2026-11-07T19:27:15.997498+00:00",
+      "pre_kickoff_proxy_utc": "2026-11-07T19:27:15.997498+00:00",
+      "entry_ask": 0.23,
+      "last_pre_kickoff_ask": 0.23,
+      "closing_proxy_favorable_if_positive_pp": 0.0,
+      "proxy_is_true_exchange_closing_price": false
+    }
+  ],
+  "exclusions": {},
+  "critical_missing_checks": [
+    "Verified GAME-SPECIFIC QB and injury reports for BOTH teams",
+    "Independent historical weather probability adjustment calibration",
+    "Validated forward net-edge accuracy, sufficient sample and market liquidity",
+    "Independent final game result crosscheck, closing book within suitable pre-kickoff interval",
+    "Orderbook sampling is not trade execution; fee is estimate, never a charged fee"
+  ],
+  "official_eligible": false,
+  "shadow_eligible": false,
+  "production_eligible": false,
+  "note": "Forward observations are per contract-side, highly correlated. Do not sum as independent bets or use theoretical PNL as real or official paper PNL."
+}
