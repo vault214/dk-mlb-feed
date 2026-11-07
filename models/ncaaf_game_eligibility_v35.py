@@ -67,7 +67,7 @@ def best_archive_observations(datasets,now):
                 bykey[key]=r
     return bykey
 
-def screen(research,availability,model,settlement,archives,now):
+def screen(research,availability,model,settlement,archives,now,supplemental=None):
     if now.tzinfo is None:raise ValueError("now must have timezone")
     model_cap=timestamp(research.get("modelCapturedAtUTC"))
     model_fresh=bool(model_cap and dt.timedelta(0)<=now-model_cap<=dt.timedelta(hours=18))
@@ -79,6 +79,8 @@ def screen(research,availability,model,settlement,archives,now):
     forward_supported=bool(unique>=MIN_INDEPENDENT_SETTLED_GAMES
         and settlement.get("forward_unique_game_brier") is not None)
     bygame={str(x.get("cfbd_game_id")):x for x in availability.get("game_review_queue",[])}
+    supplemental_by_id={str(x.get("cfbd_game_id")):x
+                        for x in (supplemental or {}).get("games",[])}
     bybook=best_archive_observations(archives,now)
     grp=collections.defaultdict(list)
     for r in research.get("rows",[]):
@@ -91,21 +93,28 @@ def screen(research,availability,model,settlement,archives,now):
         if kick is None:continue
         pregame=now<kick
         review=bygame.get(gid,{})
-        availability_verified=bool(
+        source_observed=timestamp(review.get("report_observed_at_utc"))
+        source_published=timestamp(review.get("report_published_at_utc"))
+        document_verified=bool(
             review.get("two_teams_report_coverage_confirmed") is True
-            and review.get("starting_qb_names_confirmed") is True
-            and review.get("starting_qb_statuses_verified") is True
-            and review.get("material_absences_verified") is True
-            and review.get("risk_adjustment_backtested") is True
             and review.get("game_specific_primary_report_url")
-            and timestamp(review.get("report_published_at_utc"))
-            and timestamp(review["report_published_at_utc"])<kick)
+            and source_observed and source_observed<kick
+            and (source_published is None or source_published<=source_observed))
+        qb_verified=bool(document_verified
+            and review.get("starting_qb_names_confirmed") is True
+            and review.get("starting_qb_statuses_verified") is True)
+        impact_verified=bool(document_verified
+            and review.get("material_absences_verified") is True
+            and review.get("risk_adjustment_backtested") is True)
+        availability_verified=bool(qb_verified and impact_verified)
         wx=weather_check(first)
         reasons=[]
         if not pregame:reasons.append("KICKOFF ALREADY PASSED")
         if not model_fresh:reasons.append("MODEL SNAPSHOT EXPIRED")
         if not model_research_supported:reasons.append("MODEL HOLDOUT / CALIBRATION BELOW RESEARCH THRESHOLD")
-        if not availability_verified:reasons.append("GAME-SPECIFIC QB / INJURY EVIDENCE UNVERIFIED")
+        if not document_verified:reasons.append("PRIMARY GAME-SPECIFIC AVAILABILITY DOCUMENT UNVERIFIED")
+        if not qb_verified:reasons.append("BOTH STARTING QB STATUSES NOT VERIFIED")
+        if not impact_verified:reasons.append("MATERIAL PLAYER ABSENCES / IMPACT NOT VALIDATED")
         if not wx["clear"]:reasons.append(wx["status"])
         if not forward_supported:reasons.append("INSUFFICIENT INDEPENDENT FORWARD SETTLEMENT VALIDATION")
         quotes=[];valid_quote_sides=0
@@ -153,6 +162,7 @@ def screen(research,availability,model,settlement,archives,now):
             reasons.append("NO MATCHED AVAILABILITY REVIEW")
         status="NOT PREGAME" if not pregame else "BLOCKED — EVIDENCE INCOMPLETE"
         counts[status]+=1
+        lead=supplemental_by_id.get(gid,{})
         games.append({
             "cfbd_game_id":gid,"home_team":first.get("homeTeam"),"away_team":first.get("awayTeam"),
             "kickoff_utc":first["kickoffUTC"],"status":status,"reasons":reasons,
@@ -160,7 +170,10 @@ def screen(research,availability,model,settlement,archives,now):
             "model_holdout_research_supported":model_research_supported,
             "independent_forward_games":unique,
             "availability_report_hub":review.get("report_discovery_hub"),
-            "game_specific_report_verified":availability_verified,
+            "game_specific_report_verified":document_verified,
+            "supplemental_report_lead_url":lead.get("supplemental_url"),
+            "supplemental_report_lead_status":lead.get("status","NO SUPPLEMENTAL REPORT LEAD"),
+            "supplemental_data_counted_as_verified":False,
             "qb_and_injury_verified":availability_verified,
             "weather":wx,
             "valid_live_quote_sides":valid_quote_sides,
@@ -191,6 +204,7 @@ def main():
     p.add_argument("--model",default="dashboard/ncaaf-v32-health.json")
     p.add_argument("--settlement",default="dashboard/ncaaf-v34-settlement-health.json")
     p.add_argument("--archive-dir",default="research/ncaaf-forward")
+    p.add_argument("--supplemental",default=None)
     p.add_argument("--output",default="dashboard/ncaaf-v35-eligibility.json")
     a=p.parse_args()
     def load(path):return json.loads(pathlib.Path(path).read_text())
@@ -200,7 +214,7 @@ def main():
         obj=load(path)
         if obj.get("sport")=="NCAAF":archive[path.stem]=obj
     out=screen(load(a.research),load(a.availability),load(a.model),load(a.settlement),
-               archive,dt.datetime.now(UTC))
+               archive,dt.datetime.now(UTC),load(a.supplemental) if a.supplemental else None)
     dest=pathlib.Path(a.output);dest.parent.mkdir(parents=True,exist_ok=True)
     dest.write_text(json.dumps(out,indent=2)+"\n")
     print(json.dumps({k:out[k] for k in (
