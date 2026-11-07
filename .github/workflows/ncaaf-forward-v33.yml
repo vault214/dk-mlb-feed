@@ -76,7 +76,9 @@ jobs:
             --discovery dashboard/ncaaf-v35-source-discovery.json             --output dashboard/ncaaf-v35-verified-availability.json
       - name: Build individual matchup eligibility blockers (never place paper picks)
         run: |
-          python models/ncaaf_game_eligibility_v35.py             --research dashboard/ncaaf-v32-research.json             --availability dashboard/ncaaf-v35-verified-availability.json             --model dashboard/ncaaf-v32-health.json             --settlement dashboard/ncaaf-v34-settlement-health.json             --archive-dir research/ncaaf-forward             --output dashboard/ncaaf-v35-eligibility.json
+          python models/ncaaf_game_eligibility_v35.py             --research dashboard/ncaaf-v32-research.json             --availability dashboard/ncaaf-v35-verified-availability.json             --model dashboard/ncaaf-v32-health.json             --settlement dashboard/ncaaf-v34-settlement-health.json \
+            --supplemental dashboard/ncaaf-v36-secondary-leads.json \
+            --archive-dir research/ncaaf-forward             --output dashboard/ncaaf-v35-eligibility.json
       - name: Validate data shape and research-only gates
         run: |
           python - <<'PY'
