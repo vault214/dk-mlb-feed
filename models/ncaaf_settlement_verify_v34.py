@@ -172,19 +172,38 @@ def load_archives(root):
         except (ValueError,OSError):pass
     return res
 
+def settlement_seasons(archives,now,year_override=None):
+    """Include prior season at calendar rollover; no premature archived loss."""
+    if year_override is not None:
+        return [year_override]
+    current=now.astimezone(ET).year
+    years={current}
+    for archive in archives.values():
+        for row in archive.get("observations",[]):
+            kickoff=stamp(row.get("kickoffUTC"))
+            if kickoff is not None:
+                season=kickoff.astimezone(ET).year
+                if current-1<=season<=current:
+                    years.add(season)
+    return sorted(years)
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--archive-dir",default="research/ncaaf-forward")
     p.add_argument("--health",default="dashboard/ncaaf-v34-settlement-health.json")
-    p.add_argument("--year",type=int,default=dt.datetime.now(ET).year)
+    p.add_argument("--year",type=int,default=None)
     a=p.parse_args()
     token=os.environ.get("CFBD_API_KEY","").strip()
     if not token:raise DataError("CFBD_API_KEY unavailable")
     now=dt.datetime.now(UTC)
     archives=load_archives(a.archive_dir)
-    # One batch request per API family, regardless of archive observation count.
-    games=fetch("/games",{"year":a.year,"classification":"fbs"},token)
-    teams=fetch("/teams/fbs",{"year":a.year},token)
+    # Query at most current and previous season, so December postseason
+    # contracts settling in January remain independently verifiable.
+    years=settlement_seasons(archives,now,a.year)
+    games=[];teams=[]
+    for year in years:
+        games.extend(fetch("/games",{"year":year,"classification":"fbs"},token))
+        teams.extend(fetch("/teams/fbs",{"year":year},token))
     out=reconcile(archives,games,teams,now)
     for day,item in archives.items():
         pathlib.Path(a.archive_dir,day+".json").write_text(json.dumps(item,indent=2)+"\n")
