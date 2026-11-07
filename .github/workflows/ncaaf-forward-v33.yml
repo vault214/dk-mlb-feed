@@ -6,6 +6,8 @@ on:
     paths:
       - 'models/ncaaf_forward_audit_v33.py'
       - 'models/test_ncaaf_forward_v33.py'
+      - 'models/ncaaf_settlement_verify_v34.py'
+      - 'models/test_ncaaf_settlement_v34.py'
       - '.github/workflows/ncaaf-forward-v33.yml'
   schedule:
     - cron: '13 * * * 5,6,0,1'
@@ -17,7 +19,7 @@ concurrency:
 jobs:
   forward:
     runs-on: ubuntu-latest
-    timeout-minutes: 14
+    timeout-minutes: 18
     permissions:
       contents: write
     steps:
@@ -29,7 +31,9 @@ jobs:
         with:
           python-version: '3.11'
       - name: Offline fee, depth, time-window and settlement safety tests
-        run: PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_forward_v33.py' -v
+        run: |
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_forward_v33.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_settlement_v34.py' -v
       - name: Sample market depth and series fees and update prospective research only
         run: |
           python models/ncaaf_forward_audit_v33.py \
@@ -37,6 +41,15 @@ jobs:
             --archive-dir research/ncaaf-forward \
             --health dashboard/ncaaf-v33-health.json \
             --contracts 1
+      - name: Independent game-final and Kalshi settlement corroboration
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: |
+          if [ -z "$CFBD_API_KEY" ]; then
+            echo "CFBD secret unavailable - cannot independently verify settlements" >&2
+            exit 1
+          fi
+          python models/ncaaf_settlement_verify_v34.py             --archive-dir research/ncaaf-forward             --health dashboard/ncaaf-v34-settlement-health.json
       - name: Validate data shape and research-only gates
         run: |
           python - <<'PY'
@@ -45,6 +58,10 @@ jobs:
           assert d["production_eligible"] is False
           assert d["official_eligible"] is False
           assert d["shadow_eligible"] is False
+          v=json.load(open("dashboard/ncaaf-v34-settlement-health.json"))
+          assert v["production_eligible"] is False
+          assert v["official_eligible"] is False
+          assert v["shadow_eligible"] is False
           for path in glob.glob("research/ncaaf-forward/*.json"):
               a=json.load(open(path))
               assert a["sport"]=="NCAAF"
@@ -56,12 +73,13 @@ jobs:
           name: ncaaf-forward-research-v33
           path: |
             dashboard/ncaaf-v33-health.json
+            dashboard/ncaaf-v34-settlement-health.json
           retention-days: 14
       - name: Commit forward evidence only, never official picks or accounts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboard/ncaaf-v33-health.json research/ncaaf-forward/
+          git add dashboard/ncaaf-v33-health.json dashboard/ncaaf-v34-settlement-health.json research/ncaaf-forward/
           if ! git diff --cached --quiet; then
             git commit -m "Archive NCAAF read-only orderbook and settlement research [skip ci]"
             git fetch origin main
