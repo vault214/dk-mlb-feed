@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sport": "NCAAF",
+  "year": 2026,
+  "capturedAtUTC": "2026-11-07T18:54:54.061244+00:00",
+  "source": "CollegeFootballData API",
+  "fbs_team_count": 138,
+  "season_fbs_games": 761,
+  "completed_fbs_games_before_today": 512,
+  "advanced_game_ids": 1166,
+  "upcoming_fbs_games": 76,
+  "upcoming_with_minimum_advanced_data": 76,
+  "gaps": [
+    "opponent-adjusted efficiency calibration",
+    "quarterback/injury verification",
+    "weather verification",
+    "historical timestamped Kalshi executable asks",
+    "game-to-Kalshi market mapping and current quote verification"
+  ],
+  "status": "RESEARCH ONLY",
+  "production_eligible": false,
+  "official_eligible": false
+}
