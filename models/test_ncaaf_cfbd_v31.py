@@ -35,8 +35,8 @@ class Tests(unittest.TestCase):
             "startDate":"2026-11-10T15:00:00Z","completed":True})
         stats.extend([astat(200,"Team1",.99,99),astat(200,"Team2",.99,99)])
         snap=build_snapshot(2026,games,stats,teams,now)
-        self.assertEqual(snap["upcoming_fbs_games"],2) # future "completed" incorrectly included? Should exclude.
-        self.assertEqual(snap["upcoming_with_minimum_advanced_data"],2)
+        self.assertEqual(snap["upcoming_fbs_games"],1)
+        self.assertEqual(snap["upcoming_with_minimum_advanced_data"],1)
         self.assertFalse(snap["official_eligible"])
         self.assertEqual(snap["upcoming"][0]["home"]["games"],5)
         self.assertAlmostEqual(snap["upcoming"][0]["home"]["offense_ppa_per_play"],.2)
