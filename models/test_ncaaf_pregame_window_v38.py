@@ -29,6 +29,16 @@ class PregameClock(unittest.TestCase):
       self.assertEqual(x["final_report_due_minutes_before_kickoff"],120)
       x=report_clock(g(conf,conf),NOW+dt.timedelta(minutes=61))
       self.assertIn("ACTUAL DOCUMENT",x["stage"])
+ def test_policy_omission_never_assumes_healthy_without_actual_game_report(self):
+    for conf in ("SEC","Big Ten"):
+      x=report_clock(g(conf,conf),KICK-dt.timedelta(minutes=5))
+      self.assertIn("ONLY IF",x["unlisted_player_policy_if_verified_complete_report"])
+      self.assertFalse(x["actual_unlisted_player_status_assessed"])
+      self.assertFalse(x["both_starting_qbs_verified"])
+    for conf in ("ACC","Big 12"):
+      x=report_clock(g(conf,conf),KICK-dt.timedelta(minutes=5))
+      self.assertEqual(x["unlisted_player_policy_if_verified_complete_report"],
+                        "NO VERIFIED SAFE OMISSION INFERENCE")
  def test_nonconference_not_eligible_even_sec_school(self):
     for item in (g("SEC","SEC",False),g("SEC","Big Ten",False),g("SEC","ACC",True)):
       x=report_clock(item,NOW)
