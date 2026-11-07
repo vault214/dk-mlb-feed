@@ -7,6 +7,8 @@ on:
       - '.github/workflows/ncaaf-settlement-daily-v36.yml'
       - 'models/ncaaf_settlement_verify_v34.py'
       - 'models/test_ncaaf_settlement_v34.py'
+      - 'models/ncaaf_forward_scorecard_v39.py'
+      - 'models/test_ncaaf_forward_scorecard_v39.py'
   schedule:
     - cron: '25 08,20 * * *'
 permissions:
@@ -29,7 +31,9 @@ jobs:
         with:
           python-version: '3.11'
       - name: Check settlement source, identity and idempotence tests
-        run: PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_settlement_v34.py' -v
+        run: |
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_settlement_v34.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_forward_scorecard_v39.py' -v
       - name: Corroborate Kalshi market outcomes with independent CFBD final scores
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
@@ -38,12 +42,21 @@ jobs:
           python models/ncaaf_settlement_verify_v34.py \
             --archive-dir research/ncaaf-forward \
             --health dashboard/ncaaf-v34-settlement-health.json
+      - name: Score independent settled games once, excluding repeated correlated quote sides
+        run: |
+          python models/ncaaf_forward_scorecard_v39.py \
+            --archive-dir research/ncaaf-forward \
+            --output dashboard/ncaaf-v39-forward-scorecard.json
       - name: Prohibit result promotion and private-ledger edits
         run: |
           python - <<'PY'
           import json,glob
           d=json.load(open("dashboard/ncaaf-v34-settlement-health.json"))
           assert not d["official_eligible"] and not d["production_eligible"] and not d["shadow_eligible"]
+          sc=json.load(open("dashboard/ncaaf-v39-forward-scorecard.json"))
+          assert not sc["official_eligible"] and not sc["shadow_eligible"] and not sc["production_eligible"]
+          assert sc["independently_verified_game_probability_samples"] <= d["independently_verified_tickers"]
+          assert sc["research_edge_strategy_distinct_games"] <= d["independently_verified_tickers"]
           for p in glob.glob("research/ncaaf-forward/20??-??-??.json"):
               a=json.load(open(p))
               assert a["sport"]=="NCAAF"
@@ -53,13 +66,15 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: daily-ncaaf-independent-settlement
-          path: dashboard/ncaaf-v34-settlement-health.json
+          path: |
+            dashboard/ncaaf-v34-settlement-health.json
+            dashboard/ncaaf-v39-forward-scorecard.json
           retention-days: 14
       - name: Publish independent research only, with safe concurrent push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboard/ncaaf-v34-settlement-health.json research/ncaaf-forward/
+          git add dashboard/ncaaf-v34-settlement-health.json dashboard/ncaaf-v39-forward-scorecard.json research/ncaaf-forward/
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Update independently confirmed NCAAF outcomes [skip ci]"
           for attempt in 1 2 3 4 5; do
