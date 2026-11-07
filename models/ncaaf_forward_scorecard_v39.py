@@ -13,7 +13,7 @@ import datetime as dt
 import json
 import math
 import pathlib
-from ncaaf_forward_audit_v33 import stamp, ET
+from ncaaf_forward_audit_v33 import stamp, ET, UTC
 
 EDGE_PP=5.0
 RESERVE_PP=4.0
