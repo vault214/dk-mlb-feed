@@ -186,12 +186,25 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument("--queue",default="dashboard/ncaaf-v34-availability-health.json")
     p.add_argument("--input",default="research/ncaaf-primary-availability-input.json")
+    p.add_argument("--discovery",default=None)
     p.add_argument("--output",default="dashboard/ncaaf-v35-verified-availability.json")
     a=p.parse_args()
     q=json.loads(pathlib.Path(a.queue).read_text())
     incoming=json.loads(pathlib.Path(a.input).read_text())
     if incoming.get("schemaVersion")!=1 or not isinstance(incoming.get("reports"),list):
         raise ValueError("source input schema invalid")
+    if a.discovery:
+        detected=json.loads(pathlib.Path(a.discovery).read_text())
+        proposed=detected.get("candidate_evidence",{}).get("reports",[])
+        if not isinstance(proposed,list):
+            raise ValueError("malformed direct report discovery candidates")
+        indexed={(str(x.get("cfbd_game_id")),str(x.get("direct_official_report_url")))
+                 for x in incoming["reports"]}
+        for candidate in proposed:
+            key=(str(candidate.get("cfbd_game_id")),str(candidate.get("direct_official_report_url")))
+            if key not in indexed:
+                incoming["reports"].append(candidate)
+                indexed.add(key)
     value=verify(q,incoming,dt.datetime.now(UTC))
     target=pathlib.Path(a.output);target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(json.dumps(value,indent=2)+"\n")
