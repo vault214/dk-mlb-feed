@@ -43,7 +43,7 @@ class LiveCaptureTests(unittest.TestCase):
     x,_=matched_games(board(),scoreboard_events("NBA",{"events":[past]}),NOW)
     self.assertEqual(x,[])
  def test_requires_fresh_live_book_before_kickoff(self):
-    match=matched_games(board(),sched(),NOW)[0]
+    match=matched_games(board(),sched(),NOW)[0][0]
     market=lambda ticker:{"ticker":ticker,"status":"active","series_ticker":"KXNBAGAME"}
     book=lambda ticker:{"no_dollars":[["0.60","10"]],"yes_dollars":[["0.60","10"]]}
     series=lambda ticker:{"ticker":ticker,"fee_type":"quadratic","fee_multiplier":1}
@@ -56,7 +56,7 @@ class LiveCaptureTests(unittest.TestCase):
     self.assertIsNone(late)
     self.assertIn("not before kickoff",reason)
  def test_missing_depth_is_not_model_probability(self):
-    match=matched_games(board(),sched(),NOW)[0]
+    match=matched_games(board(),sched(),NOW)[0][0]
     x,e=capture_one(match,NOW,lambda t:{"ticker":t,"status":"active"},
          lambda t:{"no_dollars":[["0.60","10"]],"yes_dollars":[]},
          lambda t:{"fee_type":"quadratic","fee_multiplier":1},
