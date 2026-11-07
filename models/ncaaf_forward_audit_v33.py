@@ -330,6 +330,9 @@ def summarize(datasets,now,snapshot):
         if close is not None:
             comparisons.append({
                 "ticker":key[0],"side":key[1],
+                "cfbdGameId":base.get("cfbdGameId"),
+                "homeTeam":base.get("homeTeam"),
+                "selectionLabel":base.get("selectionLabel"),
                 "first_observed_utc":base["quote_observed_utc"],
                 "pre_kickoff_proxy_utc":close["quote_observed_utc"],
                 "entry_ask":base["book_vwap_ask"],"last_pre_kickoff_ask":close["book_vwap_ask"],
@@ -347,6 +350,18 @@ def summarize(datasets,now,snapshot):
             "winner_indicator":y,"model_probability":p,
             "brier":round((p-y)**2,6),
             "theoretical_one_contract_pnl_after_estimated_fee":pnl})
+    # One predeclared home-team YES contract per game avoids double-counting
+    # correlated yes/no research contract sides when evaluating line movement.
+    game_close={}
+    for c in comparisons:
+        if c.get("side")!="YES" or c.get("selectionLabel")!=c.get("homeTeam"):
+            continue
+        gid=c.get("cfbdGameId")
+        if not gid:continue
+        old=game_close.get(gid)
+        if old is None or c["first_observed_utc"]<old["first_observed_utc"]:
+            game_close[gid]=c
+    game_movements=[v["closing_proxy_favorable_if_positive_pp"] for v in game_close.values()]
     briers=[x["brier"] for x in settled]
     pnl=[x["theoretical_one_contract_pnl_after_estimated_fee"] for x in settled
         if x["theoretical_one_contract_pnl_after_estimated_fee"] is not None]
@@ -365,6 +380,9 @@ def summarize(datasets,now,snapshot):
         "archived_observations":len(allrows),
         "unique_contract_sides":len(first),
         "closing_price_proxy_pairs":len(comparisons),
+        "independent_game_closing_proxy_pairs":len(game_movements),
+        "independent_game_average_closing_movement_pp":round(sum(game_movements)/len(game_movements),4) if game_movements else None,
+        "independent_game_positive_closing_movement_pct":round(100*sum(x>0 for x in game_movements)/len(game_movements),2) if game_movements else None,
         "contract_side_outcomes":len(settled),
         "forward_contract_side_brier":round(sum(briers)/len(briers),6) if briers else None,
         "theoretical_one_contract_pnl_sum":round(sum(pnl),5) if pnl else None,
