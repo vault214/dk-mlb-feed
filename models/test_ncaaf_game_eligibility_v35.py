@@ -71,6 +71,27 @@ class TestEligibility(unittest.TestCase):
         x[4]["2026-11-07"]["observations"][0]["quote_observed_utc"]="2026-11-07T17:30:00+00:00"
         z=screen(*x,NOW)
         self.assertEqual(z["games"][0]["valid_live_quote_sides"],0)
+    def test_third_party_report_link_never_unblocks_evidence(self):
+        lead={"games":[{"cfbd_game_id":GID,
+               "supplemental_url":"https://kickoffstatus.com/games/2026-11-07-texas-at-missouri/",
+               "status":"THIRD-PARTY GAME INDEX LINK — NOT VERIFIED"}]}
+        x=screen(*inputs(),NOW,lead)
+        row=x["games"][0]
+        self.assertIsNotNone(row["supplemental_report_lead_url"])
+        self.assertFalse(row["supplemental_data_counted_as_verified"])
+        self.assertFalse(row["game_specific_report_verified"])
+        self.assertFalse(row["official_eligible"])
+        self.assertIn("PRIMARY GAME-SPECIFIC AVAILABILITY DOCUMENT UNVERIFIED",row["reasons"])
+    def test_document_source_before_kickoff_without_report_published_is_not_qb_confirmation(self):
+        inputs_ = list(inputs())
+        review=inputs_[1]["game_review_queue"][0]
+        review.update({"two_teams_report_coverage_confirmed":True,
+                       "game_specific_primary_report_url":"https://www.secsports.com/games/official-matchup-document",
+                       "report_observed_at_utc":"2026-11-07T16:00:00+00:00"})
+        row=screen(*inputs_,NOW)["games"][0]
+        self.assertTrue(row["game_specific_report_verified"])
+        self.assertFalse(row["qb_and_injury_verified"])
+        self.assertIn("BOTH STARTING QB STATUSES NOT VERIFIED",row["reasons"])
     def test_no_auto_eligibility_even_if_mocks_pass(self):
         x=list(inputs())
         review=x[1]["game_review_queue"][0]
@@ -81,7 +102,8 @@ class TestEligibility(unittest.TestCase):
           "material_absences_verified":True,
           "risk_adjustment_backtested":True,
           "game_specific_primary_report_url":"https://www.secsports.com/report/fixture123",
-          "report_published_at_utc":"2026-11-07T16:00:00+00:00"})
+          "report_published_at_utc":"2026-11-07T16:00:00+00:00",
+          "report_observed_at_utc":"2026-11-07T16:20:00+00:00"})
         x[3].update({"unique_game_winner_samples":80,"forward_unique_game_brier":.20})
         z=screen(*x,NOW)
         self.assertEqual(z["games"][0]["reasons"],[])
