@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'models/ncaaf_cfbd_model_v32.py'
+      - 'models/ncaaf_availability_queue_v34.py'
+      - 'models/test_ncaaf_availability_v34.py'
       - 'models/ncaaf_weather_context_v32.py'
       - 'models/ncaaf_kalshi_live_quotes_v32.py'
       - 'models/ncaaf_publish_research_v32.py'
@@ -37,6 +39,7 @@ jobs:
       - name: Offline safety and mapping tests
         run: |
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_cfbd_v32.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_availability_v34.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_weather_context_v32.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_kalshi_quotes_v32.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_publish_research_v32.py' -v
@@ -46,6 +49,11 @@ jobs:
         run: |
           if [ -z "$CFBD_API_KEY" ]; then echo "Missing CFBD_API_KEY" >&2; exit 1; fi
           python models/ncaaf_cfbd_model_v32.py --board kalshi/ncaafb-candidates.json --output ncaaf-cfbd-v32-research.json --health dashboard/ncaaf-v32-health.json
+      - name: Build official conference report discovery and QB/injury review queue
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: |
+          python models/ncaaf_availability_queue_v34.py             --research dashboard/ncaaf-v32-research.json             --output dashboard/ncaaf-v34-availability-health.json
       - name: Enrich matched kickoff games with stadium-verified forecast context
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
@@ -66,6 +74,7 @@ jobs:
             ncaaf-weather-v32-research.json
             ncaaf-kalshi-live-v32-research.json
             dashboard/ncaaf-v32-health.json
+            dashboard/ncaaf-v34-availability-health.json
             dashboard/ncaaf-v32-weather-health.json
             dashboard/ncaaf-v32-quote-health.json
             dashboard/ncaaf-v32-research.json
@@ -74,7 +83,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboard/ncaaf-v32-health.json dashboard/ncaaf-v32-weather-health.json dashboard/ncaaf-v32-quote-health.json dashboard/ncaaf-v32-research.json
+          git add dashboard/ncaaf-v32-health.json dashboard/ncaaf-v32-weather-health.json dashboard/ncaaf-v32-quote-health.json dashboard/ncaaf-v32-research.json dashboard/ncaaf-v34-availability-health.json
           if ! git diff --cached --quiet; then
             git commit -m "Update CFBD NCAAF v3.2 research-only validation health [skip ci]"
             git fetch origin main
