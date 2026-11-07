@@ -15,6 +15,7 @@ import os
 import pathlib
 import statistics
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -33,14 +34,26 @@ def fetch(path, params, token):
         "Authorization": "Bearer " + token,
         "Accept": "application/json",
         "User-Agent": "IndependentNCAAFResearch/3.1"})
-    try:
-        with urllib.request.urlopen(req, timeout=50) as resp:
-            result = json.load(resp)
-    except urllib.error.HTTPError as exc:
-        # NEVER echo request URLs (or headers), response bodies, or token.
-        raise DataError("CFBD endpoint " + path + " returned HTTP " + str(exc.code)) from None
-    except (urllib.error.URLError, TimeoutError, ValueError):
-        raise DataError("CFBD endpoint " + path + " could not be fetched/decoded") from None
+    # CFBD sometimes responds with transient overload (e.g. HTTP 503) during
+    # parallel jobs. Retry only transient errors with bounded exponential delay.
+    # Never put Authorization headers, endpoint query URLs, or response bodies
+    # into GitHub logs.
+    result=None
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=50) as resp:
+                result = json.load(resp)
+            break
+        except urllib.error.HTTPError as exc:
+            if exc.code in (429,500,502,503,504) and attempt<3:
+                time.sleep(2**attempt)
+                continue
+            raise DataError("CFBD endpoint " + path + " returned HTTP " + str(exc.code)) from None
+        except (urllib.error.URLError, TimeoutError, ValueError):
+            if attempt<3:
+                time.sleep(2**attempt)
+                continue
+            raise DataError("CFBD endpoint " + path + " could not be fetched/decoded") from None
     if not isinstance(result, list):
         raise DataError("CFBD endpoint " + path + " returned unexpected data shape")
     return result
