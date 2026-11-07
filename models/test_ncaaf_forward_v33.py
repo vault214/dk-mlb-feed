@@ -101,6 +101,7 @@ class ForwardAuditTests(unittest.TestCase):
             clock=lambda:later)
         archive=merge_snapshot(archive,more)
         self.assertEqual(summarize(archive,later,more)["closing_price_proxy_pairs"],1)
+        self.assertEqual(summarize(archive,later,more)["independent_game_closing_proxy_pairs"],1)
     def test_no_false_settlement(self):
         snap=audit(self.research,self.now,
           market_fn=lambda tick:self.market,
