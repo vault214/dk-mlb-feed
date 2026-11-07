@@ -31,6 +31,8 @@ AVAILABILITY_V34_URL = RAW + "/dashboard/ncaaf-v34-availability-health.json"
 WEATHER_HISTORY_V34_URL = RAW + "/dashboard/ncaaf-v34-weather-history-health.json"
 ELIGIBILITY_V35_URL = RAW + "/dashboard/ncaaf-v35-eligibility.json"
 PREGAME_V38_URL = RAW + "/dashboard/ncaaf-v38-window.json"
+PROVIDER_V39_URL = RAW + "/dashboard/ncaaf-v39-provider-proof.json"
+SCORECARD_V39_URL = RAW + "/dashboard/ncaaf-v39-forward-scorecard.json"
 
 HTML = r'''<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -277,6 +279,8 @@ function renderResearchHealth(){
   const v34=league==="NCAAF"?ncaafContext.settlement||{}:{};
   const a34=league==="NCAAF"?ncaafContext.availability||{}:{};
   const w34=league==="NCAAF"?ncaafContext.weatherHistory||{}:{};
+  const source39=league==="NCAAF"?ncaafContext.publisherSource||{}:{};
+  const score39=league==="NCAAF"?ncaafContext.forwardScorecard||{}:{};
   const improved=v.calibration?'<div class="sub" style="margin-top:7px">CFBD enhanced research: '+E(v.calibration.holdout_games)+' blind-test games · Brier '+E(Number(v.calibration.holdout_brier).toFixed(3))+' · '+E(v.market_matching?.matched_events??"—")+' matched pregame Kalshi moneylines</div>':'';
   const wx=w.counts?'<div class="sub">Kickoff forecast context: '+E(w.counts.forecast_available??0)+' weather reports · '+E(w.counts.indoor_venue??0)+' indoor venues</div>':'';
   const quotes=q.unique_tickers_checked!==undefined?'<div class="sub">Public ask checks: '+E(q.unique_tickers_checked??0)+' contracts · '+E(q.market_request_results?.["CURRENT QUOTE OBSERVED"]??0)+' current asks · no execution depth verified</div>':'';
@@ -284,12 +288,14 @@ function renderResearchHealth(){
   const settlement=v34.independently_verified_tickers!==undefined?'<div class="sub">Independent final score + market verified: '+E(v34.independently_verified_tickers)+' tickers · unique game samples '+E(v34.unique_game_winner_samples??0)+'</div>':'';
   const availability=a34.matched_games!==undefined?'<div class="sub">Official availability review: '+E(a34.matched_games)+' games · '+E(a34.game_specific_reports_verified??0)+' actual game reports verified</div>':'';
   const historicalWx=w34.archived_pregame_forecast_games!==undefined?'<div class="sub">Historic 24h-ahead weather: '+E(w34.archived_pregame_forecast_games)+' games · probability impact uncalibrated</div>':'';
+  const publisher=source39.official_hubs_checked!==undefined?'<div class="sub">Publisher source check: '+E(source39.official_hubs_retrieved??0)+' / '+E(source39.official_hubs_checked??0)+' official portals reachable · '+E(source39.games_with_verified_publisher_link??0)+' matched games with conference-attested viewer (NOT player verification)</div>':'';
+  const scorecard=score39.independently_verified_game_probability_samples!==undefined?'<div class="sub" style="margin-top:7px">Forward game scorecard: '+E(score39.independently_verified_game_probability_samples)+' independently verified games · '+E(score39.market_midpoint_baseline_samples??0)+' market comparison samples · '+E(score39.research_edge_strategy_distinct_games??0)+' hypothetical research candidates</div><div class="sub">Model Brier: '+E(score39.model_home_probability_brier??"Not yet measurable")+' · Historical theoretical net return: '+E(score39.theoretical_one_contract_net_pnl_sum??"No settled samples")+' (not real or official paper P/L)</div>':'';
   return '<div class="league-card"><div class="league-title">'+E(league)+'</div><div class="chip pas" style="display:inline-block;margin:8px 0">RESEARCH ONLY</div>'
    +'<div class="sub">Status: '+E(report)+'</div><div class="sub">Holdout games: '+E(x.holdout_games??"—")+'</div>'
    +'<div class="sub">Winner Brier: '+E(brier)+' · Baseline: '+E(baseline)+'</div>'
    +'<div class="sub">Improvement: '+E(improvement)+' (positive is better)</div>'
    +'<div class="sub">Board: '+E(m.date_et||"—")+' · '+E(m.candidate_market_count??"—")+' markets</div>'
-   +'<div class="sub">Missing: '+E(gaps||"verified inputs")+'</div>'+improved+wx+quotes+forward+settlement+availability+historicalWx+'</div>';
+   +'<div class="sub">Missing: '+E(gaps||"verified inputs")+'</div>'+improved+wx+quotes+forward+settlement+availability+historicalWx+publisher+scorecard+'</div>';
  }).join("");
 }
 function renderHealth(){
@@ -366,7 +372,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, HTML)
         if p == "/api/ncaaf-research-health":
             out={}
-            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL),("quotes",QUOTE_V32_URL),("forward",FORWARD_V33_URL),("settlement",SETTLEMENT_V34_URL),("availability",AVAILABILITY_V34_URL),("weatherHistory",WEATHER_HISTORY_V34_URL),("eligibility",ELIGIBILITY_V35_URL),("pregameWindow",PREGAME_V38_URL)):
+            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL),("quotes",QUOTE_V32_URL),("forward",FORWARD_V33_URL),("settlement",SETTLEMENT_V34_URL),("availability",AVAILABILITY_V34_URL),("weatherHistory",WEATHER_HISTORY_V34_URL),("eligibility",ELIGIBILITY_V35_URL),("pregameWindow",PREGAME_V38_URL),("publisherSource",PROVIDER_V39_URL),("forwardScorecard",SCORECARD_V39_URL)):
                 try: out[key]=fetch_json(url)
                 except Exception: out[key]={}
             return self.send(200,json.dumps(out),"application/json")
