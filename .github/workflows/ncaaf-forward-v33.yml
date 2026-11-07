@@ -8,6 +8,8 @@ on:
       - 'models/test_ncaaf_forward_v33.py'
       - 'models/ncaaf_settlement_verify_v34.py'
       - 'models/test_ncaaf_settlement_v34.py'
+      - 'models/ncaaf_game_eligibility_v35.py'
+      - 'models/test_ncaaf_game_eligibility_v35.py'
       - '.github/workflows/ncaaf-forward-v33.yml'
   schedule:
     - cron: '13 * * * 5,6,0,1'
@@ -34,6 +36,7 @@ jobs:
         run: |
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_forward_v33.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_settlement_v34.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_game_eligibility_v35.py' -v
       - name: Sample market depth and series fees and update prospective research only
         run: |
           python models/ncaaf_forward_audit_v33.py \
@@ -50,6 +53,9 @@ jobs:
             exit 1
           fi
           python models/ncaaf_settlement_verify_v34.py             --archive-dir research/ncaaf-forward             --health dashboard/ncaaf-v34-settlement-health.json
+      - name: Build individual matchup eligibility blockers (never place paper picks)
+        run: |
+          python models/ncaaf_game_eligibility_v35.py             --research dashboard/ncaaf-v32-research.json             --availability dashboard/ncaaf-v34-availability-health.json             --model dashboard/ncaaf-v32-health.json             --settlement dashboard/ncaaf-v34-settlement-health.json             --archive-dir research/ncaaf-forward             --output dashboard/ncaaf-v35-eligibility.json
       - name: Validate data shape and research-only gates
         run: |
           python - <<'PY'
@@ -58,6 +64,10 @@ jobs:
           assert d["production_eligible"] is False
           assert d["official_eligible"] is False
           assert d["shadow_eligible"] is False
+          e=json.load(open("dashboard/ncaaf-v35-eligibility.json"))
+          assert e["production_eligible"] is False and e["official_eligible"] is False
+          assert e["games_blocked"]==e["matched_games"]
+          assert all(not x["official_eligible"] and not x["shadow_eligible"] for x in e["games"])
           v=json.load(open("dashboard/ncaaf-v34-settlement-health.json"))
           assert v["production_eligible"] is False
           assert v["official_eligible"] is False
@@ -74,12 +84,13 @@ jobs:
           path: |
             dashboard/ncaaf-v33-health.json
             dashboard/ncaaf-v34-settlement-health.json
+            dashboard/ncaaf-v35-eligibility.json
           retention-days: 14
       - name: Commit forward evidence only, never official picks or accounts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboard/ncaaf-v33-health.json dashboard/ncaaf-v34-settlement-health.json research/ncaaf-forward/
+          git add dashboard/ncaaf-v33-health.json dashboard/ncaaf-v34-settlement-health.json dashboard/ncaaf-v35-eligibility.json research/ncaaf-forward/
           if ! git diff --cached --quiet; then
             git commit -m "Archive NCAAF read-only orderbook and settlement research [skip ci]"
             for attempt in 1 2 3 4 5; do
