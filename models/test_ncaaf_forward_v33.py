@@ -47,6 +47,8 @@ class ForwardAuditTests(unittest.TestCase):
         mult,error=fee_spec(self.series,self.market)
         self.assertIsNone(error)
         self.assertEqual(taker_fee(D("1"),D(".40"),mult),D(".02"))
+        with_maker={**self.series,"fee_type":"quadratic_with_maker_fees"}
+        self.assertEqual(fee_spec(with_maker,self.market)[0],D("1"))
         s={**self.series};del s["fee_multiplier"]
         self.assertIsNotNone(fee_spec(s,self.market)[1])
     def test_research_only_capture(self):
@@ -83,6 +85,18 @@ class ForwardAuditTests(unittest.TestCase):
         self.assertAlmostEqual(report["forward_contract_side_brier"],.09)
         self.assertFalse(report["production_eligible"])
         self.assertEqual(report["closing_price_proxy_pairs"],0)
+    def test_requires_two_distinct_closing_proxy_observations(self):
+        initial=audit(self.research,self.now,market_fn=lambda t:self.market,
+            orderbook_fn=lambda t:self.book,series_fn=lambda t:self.series,
+            clock=lambda:self.now)
+        archive=merge_snapshot({},initial)
+        self.assertEqual(summarize(archive,self.now,initial)["closing_price_proxy_pairs"],0)
+        later=self.now+dt.timedelta(minutes=60)
+        more=audit(self.research,later,market_fn=lambda t:self.market,
+            orderbook_fn=lambda t:self.book,series_fn=lambda t:self.series,
+            clock=lambda:later)
+        archive=merge_snapshot(archive,more)
+        self.assertEqual(summarize(archive,later,more)["closing_price_proxy_pairs"],1)
     def test_no_false_settlement(self):
         snap=audit(self.research,self.now,
           market_fn=lambda tick:self.market,
