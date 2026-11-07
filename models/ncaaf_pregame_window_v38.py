@@ -64,6 +64,11 @@ def report_clock(row,now):
        "final_report_due_utc":due.isoformat() if due else None,
        "final_report_due_minutes_before_kickoff":pol[1] if pol else None,
        "official_policy_url":pol[2] if pol else None,
+       "unlisted_player_policy_if_verified_complete_report":
+          ("AVAILABLE BY REPORTING POLICY — ONLY IF PLAYER IS COVERED AND A COMPLETE FINAL GAME REPORT IS VERIFIED"
+           if pol and pol[0] in ("SEC","BIGTEN")
+           else "NO VERIFIED SAFE OMISSION INFERENCE"),
+       "actual_unlisted_player_status_assessed":False,
        "stage":stage,
        "actual_final_report_verified":False,
        "both_starting_qbs_verified":False,
