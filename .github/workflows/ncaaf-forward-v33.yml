@@ -15,6 +15,8 @@ on:
       - 'models/ncaaf_official_report_discovery_v35.py'
       - 'models/test_ncaaf_official_discovery_v35.py'
       - 'research/ncaaf-primary-availability-input.json'
+      - 'models/ncaaf_supplemental_availability_v36.py'
+      - 'models/test_ncaaf_supplemental_v36.py'
       - '.github/workflows/ncaaf-forward-v33.yml'
   schedule:
     - cron: '13 * * * 5,6,0,1'
@@ -44,6 +46,7 @@ jobs:
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_game_eligibility_v35.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_primary_report_v35.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_official_discovery_v35.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_supplemental_v36.py' -v
       - name: Sample market depth and series fees and update prospective research only
         run: |
           python models/ncaaf_forward_audit_v33.py \
@@ -63,6 +66,9 @@ jobs:
       - name: Discover candidate direct game report links on official conference sites
         run: |
           python models/ncaaf_official_report_discovery_v35.py             --queue dashboard/ncaaf-v34-availability-health.json             --output dashboard/ncaaf-v35-source-discovery.json
+      - name: Cross-reference optional third-party matchup report leads (never verify player status)
+        run: |
+          python models/ncaaf_supplemental_availability_v36.py             --queue dashboard/ncaaf-v34-availability-health.json             --output dashboard/ncaaf-v36-secondary-leads.json
       - name: Verify submitted direct conference game reports and exact QB excerpts
         run: |
           python -m pip install 'pypdf>=5,<7' -q
@@ -105,12 +111,13 @@ jobs:
             dashboard/ncaaf-v35-eligibility.json
             dashboard/ncaaf-v35-verified-availability.json
             dashboard/ncaaf-v35-source-discovery.json
+            dashboard/ncaaf-v36-secondary-leads.json
           retention-days: 14
       - name: Commit forward evidence only, never official picks or accounts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboard/ncaaf-v33-health.json dashboard/ncaaf-v34-settlement-health.json dashboard/ncaaf-v35-eligibility.json dashboard/ncaaf-v35-verified-availability.json dashboard/ncaaf-v35-source-discovery.json research/ncaaf-forward/
+          git add dashboard/ncaaf-v33-health.json dashboard/ncaaf-v34-settlement-health.json dashboard/ncaaf-v35-eligibility.json dashboard/ncaaf-v35-verified-availability.json dashboard/ncaaf-v35-source-discovery.json dashboard/ncaaf-v36-secondary-leads.json research/ncaaf-forward/
           if ! git diff --cached --quiet; then
             git commit -m "Archive NCAAF read-only orderbook and settlement research [skip ci]"
             for attempt in 1 2 3 4 5; do
