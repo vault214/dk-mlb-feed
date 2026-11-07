@@ -19,7 +19,7 @@ import sys
 from ncaaf_cfbd_ingest_v31 import fetch, instant, summarize_team, finite, ET, UTC, DataError
 
 SEASONS = (2024,2025)
-FEATURES = ("home_advantage","ppa_matchup","ppa_defense","success_matchup","success_defense","pace_diff")
+FEATURES = ("intercept","home_advantage","ppa_matchup","ppa_defense","success_matchup","success_defense","pace_diff")
 MIN_GAMES=3
 RIDGE=15.0
 
@@ -56,7 +56,7 @@ def norm_cdf(z):
     return 0.5*(1+math.erf(z/math.sqrt(2)))
 
 def vector(home,away,neutral):
-    return [0.0 if neutral else 1.0,
+    return [1.0, 0.0 if neutral else 1.0,
             (home["offense_ppa_per_play"]-away["defense_ppa_allowed_per_play"]),
             (away["offense_ppa_per_play"]-home["defense_ppa_allowed_per_play"]),
             (home["offense_success_rate"]-away["defense_success_rate_allowed"]),
@@ -100,7 +100,7 @@ def game_rows(games,advanced,teams,year,cutoff=None,require_completed=True):
                 "feature_date_exclusive":today})
         # Only incorporate completed games from PREVIOUS dates on later iterations.
         for g in batch:
-            if g["completed"] and g["home_points"] is not None and g["away_points"] is not None:
+            if g["completed"] and (cutoff is None or g["when"]<cutoff) and g["home_points"] is not None and g["away_points"] is not None:
                 hist[g["home"]].append(g["id"])
                 hist[g["away"]].append(g["id"])
     return result
