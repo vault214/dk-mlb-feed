@@ -41,6 +41,25 @@ class TestSettlement(unittest.TestCase):
     self.assertAlmostEqual(result["forward_unique_game_brier"],(.65-1)**2,6)
     self.assertFalse(result["official_eligible"])
     self.assertFalse(archives["2026-11-07"]["verified_outcomes"][TICK]["official_eligible"])
+ def test_second_reconcile_does_not_reverify_or_change_timestamp(self):
+    archives={"2026-11-07":archive()}
+    get=lambda ticker:{"ticker":TICK,"status":"settled","result":"yes"}
+    first=reconcile(archives,[game()],TEAMS,NOW,market_fn=get)
+    self.assertEqual(first["newly_verified_tickers_this_run"],1)
+    original=archives["2026-11-07"]["verified_outcomes"][TICK]["verified_at_utc"]
+    later=NOW+dt.timedelta(hours=6)
+    second=reconcile(archives,[game()],TEAMS,later,market_fn=get)
+    self.assertEqual(second["newly_verified_tickers_this_run"],0)
+    self.assertEqual(second["independently_verified_tickers"],1)
+    self.assertEqual(archives["2026-11-07"]["verified_outcomes"][TICK]["verified_at_utc"],original)
+ def test_conflicting_refinal_removes_prior_verification(self):
+    archives={"2026-11-07":archive()}
+    get=lambda ticker:{"ticker":TICK,"status":"settled","result":"yes"}
+    reconcile(archives,[game()],TEAMS,NOW,market_fn=get)
+    changed=game(home_score=18,away_score=23)
+    later=reconcile(archives,[changed],TEAMS,NOW+dt.timedelta(hours=1),market_fn=get)
+    self.assertEqual(later["independently_verified_tickers"],0)
+    self.assertGreater(later["unverified_reasons"].get("SOURCE RESULT CONFLICT",0),0)
  def test_market_vs_cfbd_conflict_fails_closed(self):
     x={"2026-11-07":archive()}
     out=reconcile(x,[game()],TEAMS,NOW,
