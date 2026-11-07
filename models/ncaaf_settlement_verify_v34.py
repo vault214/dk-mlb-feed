@@ -96,13 +96,26 @@ def reconcile(archives,games,teams,now,market_fn=get_market):
                 counters["KALSHI NOT SETTLED"]+=1;continue
             settled_public.add(ticker)
             if result!=evidence["expected_market_result"]:
+                archive.setdefault("verified_outcomes",{}).pop(ticker,None)
                 counters["SOURCE RESULT CONFLICT"]+=1
                 conflict_details.append({"ticker":ticker,"game_id":gid,
                   "cfbd_winner":evidence["winner_team"],"kalshi_result":result})
                 continue
             prior=(archive.get("verified_outcomes") or {}).get(ticker)
-            if prior and prior.get("cfbd_game_id")!=gid:
-                counters["ARCHIVE IDENTITY CONFLICT"]+=1;continue
+            if prior:
+                if (prior.get("cfbd_game_id")!=gid or
+                    prior.get("market_result")!=result or
+                    prior.get("home_points")!=evidence["home_points"] or
+                    prior.get("away_points")!=evidence["away_points"]):
+                    counters["ARCHIVED RESULT CHANGED — REQUIRES REVIEW"]+=1
+                    # Revoke stale verification rather than counting conflicting evidence.
+                    archive["verified_outcomes"].pop(ticker,None)
+                    conflict_details.append({"ticker":ticker,"game_id":gid,
+                      "reason":"archived verified result changed"})
+                    continue
+                # Preserve initial verification timestamp and avoid rewriting an
+                # already corroborated result on every daily validation run.
+                continue
             archive.setdefault("verified_outcomes",{})[ticker]={
                 **evidence,"market_result":result,
                 "verified_at_utc":now.isoformat(),
