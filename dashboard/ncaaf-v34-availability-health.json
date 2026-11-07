@@ -1,62 +1,20 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "generatedAtUTC": "2026-11-07T20:03:58.187435+00:00",
+  "generatedAtUTC": "2026-11-07T21:07:01.967258+00:00",
   "status": "PRIMARY-SOURCE AVAILABILITY REVIEW QUEUE \u2014 NONE VERIFIED",
-  "matched_games": 13,
-  "official_conference_report_hubs_found": 9,
+  "matched_games": 11,
+  "official_conference_report_hubs_found": 8,
   "game_specific_reports_verified": 0,
   "starting_qbs_verified": 0,
   "injury_availability_verified": 0,
   "conference_policy_hub_is_not_game_report": true,
   "source_discovery_status": {
-    "OFFICIAL POLICY HUB ONLY \u2014 MATCHUP REPORT NOT VERIFIED": 9,
-    "NO VERIFIED SAME-CONFERENCE POLICY": 3,
+    "OFFICIAL POLICY HUB ONLY \u2014 MATCHUP REPORT NOT VERIFIED": 8,
+    "NO VERIFIED SAME-CONFERENCE POLICY": 2,
     "NO CONFERENCE REPORT COVERAGE ASSUMED": 1
   },
   "game_review_queue": [
-    {
-      "cfbd_game_id": "401856744",
-      "event_date_et": "2026-11-07",
-      "kickoff_utc": "2026-11-07T20:00:00+00:00",
-      "home_team": "South Carolina",
-      "away_team": "Texas A&M",
-      "home_conference": "SEC",
-      "away_conference": "SEC",
-      "conference_game": true,
-      "report_discovery_hub": "https://www.secsports.com/fbreports",
-      "source_status": "OFFICIAL POLICY HUB ONLY \u2014 MATCHUP REPORT NOT VERIFIED",
-      "game_specific_primary_report_url": null,
-      "report_published_at_utc": null,
-      "two_teams_report_coverage_confirmed": false,
-      "starting_qb_names_confirmed": false,
-      "starting_qb_statuses_verified": false,
-      "material_absences_verified": false,
-      "risk_adjustment_backtested": false,
-      "model_eligible": false,
-      "review_due_before_kickoff": false
-    },
-    {
-      "cfbd_game_id": "401871073",
-      "event_date_et": "2026-11-07",
-      "kickoff_utc": "2026-11-07T20:00:00+00:00",
-      "home_team": "Kennesaw State",
-      "away_team": "Delaware",
-      "home_conference": "Conference USA",
-      "away_conference": "Conference USA",
-      "conference_game": true,
-      "report_discovery_hub": null,
-      "source_status": "NO VERIFIED SAME-CONFERENCE POLICY",
-      "game_specific_primary_report_url": null,
-      "report_published_at_utc": null,
-      "two_teams_report_coverage_confirmed": false,
-      "starting_qb_names_confirmed": false,
-      "starting_qb_statuses_verified": false,
-      "material_absences_verified": false,
-      "risk_adjustment_backtested": false,
-      "model_eligible": false,
-      "review_due_before_kickoff": false
-    },
     {
       "cfbd_game_id": "401856740",
       "event_date_et": "2026-11-07",
@@ -76,7 +34,7 @@
       "material_absences_verified": false,
       "risk_adjustment_backtested": false,
       "model_eligible": false,
-      "review_due_before_kickoff": true
+      "review_due_before_kickoff": false
     },
     {
       "cfbd_game_id": "401856851",
@@ -87,7 +45,7 @@
       "home_conference": "Big 12",
       "away_conference": "Big 12",
       "conference_game": true,
-      "report_discovery_hub": "https://big12sports.com/sports/2025/8/21/availability-reporting.aspx",
+      "report_discovery_hub": "https://big12sports.com/sports/2025/8/14/FBreporting.aspx?lv=true",
       "source_status": "OFFICIAL POLICY HUB ONLY \u2014 MATCHUP REPORT NOT VERIFIED",
       "game_specific_primary_report_url": null,
       "report_published_at_utc": null,
@@ -97,7 +55,7 @@
       "material_absences_verified": false,
       "risk_adjustment_backtested": false,
       "model_eligible": false,
-      "review_due_before_kickoff": true
+      "review_due_before_kickoff": false
     },
     {
       "cfbd_game_id": "401858514",
@@ -108,7 +66,7 @@
       "home_conference": "Big Ten",
       "away_conference": "Big Ten",
       "conference_game": true,
-      "report_discovery_hub": "https://bigten.org/",
+      "report_discovery_hub": "https://bigten.org/news/2026/8/28/big-ten-announces-changes-to-football-availability-reporting-process.aspx",
       "source_status": "OFFICIAL POLICY HUB ONLY \u2014 MATCHUP REPORT NOT VERIFIED",
       "game_specific_primary_report_url": null,
       "report_published_at_utc": null,
@@ -118,7 +76,7 @@
       "material_absences_verified": false,
       "risk_adjustment_backtested": false,
       "model_eligible": false,
-      "review_due_before_kickoff": true
+      "review_due_before_kickoff": false
     },
     {
       "cfbd_game_id": "401871076",
@@ -139,7 +97,7 @@
       "material_absences_verified": false,
       "risk_adjustment_backtested": false,
       "model_eligible": false,
-      "review_due_before_kickoff": true
+      "review_due_before_kickoff": false
     },
     {
       "cfbd_game_id": "401862821",
@@ -160,7 +118,7 @@
       "material_absences_verified": false,
       "risk_adjustment_backtested": false,
       "model_eligible": false,
-      "review_due_before_kickoff": true
+      "review_due_before_kickoff": false
     },
     {
       "cfbd_game_id": "401858517",
@@ -171,7 +129,7 @@
       "home_conference": "Big Ten",
       "away_conference": "Big Ten",
       "conference_game": true,
-      "report_discovery_hub": "https://bigten.org/",
+      "report_discovery_hub": "https://bigten.org/news/2026/8/28/big-ten-announces-changes-to-football-availability-reporting-process.aspx",
       "source_status": "OFFICIAL POLICY HUB ONLY \u2014 MATCHUP REPORT NOT VERIFIED",
       "game_specific_primary_report_url": null,
       "report_published_at_utc": null,
@@ -276,7 +234,7 @@
       "home_conference": "Big 12",
       "away_conference": "Big 12",
       "conference_game": true,
-      "report_discovery_hub": "https://big12sports.com/sports/2025/8/21/availability-reporting.aspx",
+      "report_discovery_hub": "https://big12sports.com/sports/2025/8/14/FBreporting.aspx?lv=true",
       "source_status": "OFFICIAL POLICY HUB ONLY \u2014 MATCHUP REPORT NOT VERIFIED",
       "game_specific_primary_report_url": null,
       "report_published_at_utc": null,
