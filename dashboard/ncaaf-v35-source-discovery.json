@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "generatedAtUTC": "2026-11-07T20:09:17.330424+00:00",
+  "generatedAtUTC": "2026-11-07T20:41:14.449206+00:00",
   "status": "OFFICIAL DIRECT REPORT DISCOVERY \u2014 NOT VERIFIED",
   "conference_hubs_checked": 3,
   "conference_hubs_fetchable": 3,
-  "matchups_checked": 8,
+  "matchups_checked": 5,
   "unambiguous_direct_report_candidates": 0,
   "candidate_evidence": {
     "schemaVersion": 1,
@@ -13,39 +13,6 @@
     "reports": []
   },
   "matchups": [
-    {
-      "cfbd_game_id": "401856740",
-      "home_team": "LSU",
-      "away_team": "Alabama",
-      "kickoff_utc": "2026-11-07T20:30:00+00:00",
-      "candidate_urls": [],
-      "report_hub_retrieved": true,
-      "hub_embedded_iframes": 0,
-      "document_content_verified": false,
-      "notes": "HTML links only; conference JS/iframe reports may not expose direct document links"
-    },
-    {
-      "cfbd_game_id": "401856851",
-      "home_team": "Houston",
-      "away_team": "Cincinnati",
-      "kickoff_utc": "2026-11-07T20:30:00+00:00",
-      "candidate_urls": [],
-      "report_hub_retrieved": true,
-      "hub_embedded_iframes": 0,
-      "document_content_verified": false,
-      "notes": "HTML links only; conference JS/iframe reports may not expose direct document links"
-    },
-    {
-      "cfbd_game_id": "401858514",
-      "home_team": "Ohio State",
-      "away_team": "Oregon",
-      "kickoff_utc": "2026-11-07T20:30:00+00:00",
-      "candidate_urls": [],
-      "report_hub_retrieved": true,
-      "hub_embedded_iframes": 0,
-      "document_content_verified": false,
-      "notes": "HTML links only; conference JS/iframe reports may not expose direct document links"
-    },
     {
       "cfbd_game_id": "401858517",
       "home_team": "Wisconsin",
