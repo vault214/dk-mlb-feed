@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUTC": "2026-11-07T22:25:35.882908+00:00",
+  "status": "SEVEN-SPORT READINESS / FORWARD COVERAGE \u2014 RESEARCH ONLY",
+  "active_capture_sports": [
+    "NFL",
+    "NBA",
+    "NHL",
+    "NCAAB"
+  ],
+  "separate_primary_sport": "NCAAF",
+  "offseason_sports": [
+    "MLB",
+    "WNBA"
+  ],
+  "sports": [
+    {
+      "sport": "NCAAF",
+      "state": "RESEARCH ACTIVE",
+      "historical_holdout_games": 805,
+      "historical_winner_brier": 0.222454,
+      "historical_improvement_vs_home_baseline": 0.018813,
+      "last_board_date_et": "2026-11-07",
+      "capture_status": "NCAAF SEPARATE WORKFLOW",
+      "last_capture_new_moneyline_quotes": null,
+      "unique_games_with_market_snapshots": 13,
+      "independent_settled_game_samples": 0,
+      "market_midpoint_brier": null,
+      "new_prospective_games_pending": 3,
+      "next_model_evidence": "official game-specific availability and independently settled forward games",
+      "blockers": [
+        "Verified model inputs missing: FBS membership, adjusted offense/defense, true tempo, quarterback, injuries, weather",
+        "Insufficient distinct independently settled forward games for research review",
+        "Primary game-specific player evidence and impact still unverified"
+      ],
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "production_eligible": false
+    },
+    {
+      "sport": "NFL",
+      "state": "CANDIDATE BOARD STALE",
+      "historical_holdout_games": 256,
+      "historical_winner_brier": 0.228601,
+      "historical_improvement_vs_home_baseline": 0.022052,
+      "last_board_date_et": "2026-11-05",
+      "capture_status": "BOARD DATE STALE \u2014 NO CAPTURE",
+      "last_capture_new_moneyline_quotes": 0,
+      "unique_games_with_market_snapshots": 0,
+      "independent_settled_game_samples": 0,
+      "market_midpoint_brier": null,
+      "new_prospective_games_pending": 0,
+      "next_model_evidence": "EPA/success, starting QB, injury, weather and an independent per-game live model forecast",
+      "blockers": [
+        "Verified model inputs missing: EPA/success rate, true pace, quarterback, injuries, weather, personnel",
+        "No new valid independent game-matched market observations in last capture",
+        "No paired independent forward model probability for exact timestamped game winner contract",
+        "Insufficient distinct independently settled forward games for research review"
+      ],
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "production_eligible": false
+    },
+    {
+      "sport": "NBA",
+      "state": "RESEARCH ACTIVE",
+      "historical_holdout_games": 497,
+      "historical_winner_brier": 0.226615,
+      "historical_improvement_vs_home_baseline": 0.020754,
+      "last_board_date_et": "2026-11-07",
+      "capture_status": "PROSPECTIVE INDEPENDENT GAME-WINNER PRICE SAMPLING ONLY",
+      "last_capture_new_moneyline_quotes": 6,
+      "unique_games_with_market_snapshots": 6,
+      "independent_settled_game_samples": 0,
+      "market_midpoint_brier": null,
+      "new_prospective_games_pending": 6,
+      "next_model_evidence": "adjusted possessions, confirmed starters/minutes, injuries and an independent live game forecast",
+      "blockers": [
+        "Verified model inputs missing: adjusted efficiency, possessions/pace, starters, minutes, injuries, player prop distributions",
+        "No paired independent forward model probability for exact timestamped game winner contract",
+        "Insufficient distinct independently settled forward games for research review"
+      ],
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "production_eligible": false
+    },
+    {
+      "sport": "NHL",
+      "state": "RESEARCH ACTIVE",
+      "historical_holdout_games": 631,
+      "historical_winner_brier": 0.254494,
+      "historical_improvement_vs_home_baseline": -0.002183,
+      "last_board_date_et": "2026-11-07",
+      "capture_status": "PROSPECTIVE INDEPENDENT GAME-WINNER PRICE SAMPLING ONLY",
+      "last_capture_new_moneyline_quotes": 8,
+      "unique_games_with_market_snapshots": 8,
+      "independent_settled_game_samples": 0,
+      "market_midpoint_brier": null,
+      "new_prospective_games_pending": 8,
+      "next_model_evidence": "expected goals and verified starting goalie; first improve winner model versus baseline",
+      "blockers": [
+        "Verified model inputs missing: expected goals, goalie confirmation, starting goalie quality, injuries, special teams",
+        "Historical winner baseline NOT beaten; retrain/revalidate",
+        "No paired independent forward model probability for exact timestamped game winner contract",
+        "Insufficient distinct independently settled forward games for research review"
+      ],
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "production_eligible": false
+    },
+    {
+      "sport": "NCAAB",
+      "state": "RESEARCH ACTIVE",
+      "historical_holdout_games": 2276,
+      "historical_winner_brier": 0.19313,
+      "historical_improvement_vs_home_baseline": 0.019457,
+      "last_board_date_et": "2026-11-07",
+      "capture_status": "PROSPECTIVE INDEPENDENT GAME-WINNER PRICE SAMPLING ONLY",
+      "last_capture_new_moneyline_quotes": 8,
+      "unique_games_with_market_snapshots": 8,
+      "independent_settled_game_samples": 0,
+      "market_midpoint_brier": null,
+      "new_prospective_games_pending": 8,
+      "next_model_evidence": "Division I team/roster verification, adjusted efficiency, starters and prospective model",
+      "blockers": [
+        "Verified model inputs missing: Division I eligibility, adjusted efficiency, possessions/pace, transfers/rosters, starters, injuries",
+        "No paired independent forward model probability for exact timestamped game winner contract",
+        "Insufficient distinct independently settled forward games for research review"
+      ],
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "production_eligible": false
+    },
+    {
+      "sport": "MLB",
+      "state": "OFFSEASON",
+      "historical_holdout_games": 2477,
+      "historical_winner_brier": 0.249824,
+      "historical_improvement_vs_home_baseline": -0.001352,
+      "last_board_date_et": "2026-11-07",
+      "capture_status": "OFFSEASON \u2014 NO GAME-WINNER CAPTURE",
+      "last_capture_new_moneyline_quotes": 0,
+      "unique_games_with_market_snapshots": 0,
+      "independent_settled_game_samples": 0,
+      "market_midpoint_brier": null,
+      "new_prospective_games_pending": null,
+      "next_model_evidence": "confirmed starter, lineup, bullpen, park/weather and season restart",
+      "blockers": [
+        "Verified model inputs missing: probable/confirmed pitcher, lineup, bullpen, park, weather, pitcher props",
+        "Historical winner baseline NOT beaten; retrain/revalidate",
+        "Insufficient distinct independently settled forward games for research review",
+        "Offseason: live market validation deferred"
+      ],
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "production_eligible": false
+    },
+    {
+      "sport": "WNBA",
+      "state": "OFFSEASON",
+      "historical_holdout_games": 306,
+      "historical_winner_brier": 0.228641,
+      "historical_improvement_vs_home_baseline": 0.017602,
+      "last_board_date_et": "2026-11-07",
+      "capture_status": "OFFSEASON \u2014 NO GAME-WINNER CAPTURE",
+      "last_capture_new_moneyline_quotes": 0,
+      "unique_games_with_market_snapshots": 0,
+      "independent_settled_game_samples": 0,
+      "market_midpoint_brier": null,
+      "new_prospective_games_pending": null,
+      "next_model_evidence": "adjusted efficiency, confirmed starters/minutes and season restart",
+      "blockers": [
+        "Verified model inputs missing: adjusted efficiency, possessions/pace, starters, minutes, injuries, player prop distributions",
+        "Insufficient distinct independently settled forward games for research review",
+        "Offseason: live market validation deferred"
+      ],
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "production_eligible": false
+    }
+  ],
+  "official_eligible": false,
+  "shadow_eligible": false,
+  "production_eligible": false,
+  "note": "Positive historical holdout metrics and future public odds are insufficient to claim calibrated betting profitability. No official/shadow picks, trades, or canonical betting ledger changes."
+}
