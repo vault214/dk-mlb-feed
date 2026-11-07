@@ -28,7 +28,7 @@ jobs:
           PYTHONPATH=models python -m unittest discover -s models -p 'test_sport_moneyline_forward_v40.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_sport_moneyline_settlement_v40.py' -v
   capture:
-    if: github.event_name != 'push'
+    if: github.event_name != 'push' || contains(github.event.head_commit.message, '[bootstrap-sports]')
     needs: checks
     concurrency:
       group: sports-forward-v40
