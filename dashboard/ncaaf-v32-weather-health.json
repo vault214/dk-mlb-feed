@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "sport": "NCAAF",
+  "capturedAtUTC": "2026-11-07T19:08:47.025694+00:00",
+  "status": "WEATHER RESEARCH ONLY",
+  "counts": {
+    "matched_events": 13,
+    "forecast_available": 13,
+    "indoor_venue": 0,
+    "unverified_venue": 0,
+    "forecast_unavailable": 0,
+    "game_already_started": 0
+  },
+  "qb_verified": false,
+  "injuries_verified": false,
+  "official_eligible": false,
+  "production_eligible": false,
+  "note": "Forecasts are sourced when venue/roof confirmed, but no untested weather adjustment is applied."
+}
