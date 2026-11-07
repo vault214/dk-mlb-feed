@@ -67,7 +67,16 @@ jobs:
           git add dashboard/ncaaf-v34-weather-history-health.json research/ncaaf-weather/prior-day.json
           if ! git diff --cached --quiet; then
             git commit -m "Backfill pre-event NCAAF historical weather research [skip ci]"
-            git fetch origin main
-            git rebase origin/main
-            git push origin HEAD:main
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then
+                echo "Published verified historical research"
+                exit 0
+              fi
+              echo "main moved during push; retrying ($attempt of 5)" >&2
+              sleep $((attempt*2))
+            done
+            echo "Publish failed after 5 safe rebased attempts" >&2
+            exit 1
           fi
