@@ -1,13 +1,15 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "generatedAtUTC": "2026-11-07T19:40:37.440291+00:00",
+  "generatedAtUTC": "2026-11-07T19:43:26.476970+00:00",
   "status": "24-HOUR-AHEAD WEATHER HISTORY RESEARCH ONLY",
   "outdoor_completed_fbs_fixture_candidates": 2375,
-  "archived_pregame_forecast_games": 12,
-  "new_forecasts_archived": 12,
+  "archived_pregame_forecast_games": 23,
+  "new_forecasts_archived": 11,
   "new_attempts": 12,
-  "errors": {},
+  "errors": {
+    "PREVIOUS RUNS API ERROR": 1
+  },
   "weather_win_probability_adjustment": "NOT CALIBRATED \u2014 no automatic probability change",
   "before_kickoff_forecast_provenance": "fixed 24h lead, not retrospective realized conditions",
   "seasons_with_archive": [
