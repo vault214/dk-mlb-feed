@@ -35,6 +35,12 @@ def publish(model, weather, quotes):
           "marketState":q.get("quote_status","QUOTE NOT VERIFIED"),
           "grossDifferencePP":q.get("gross_model_minus_latest_ask_pp"),
           "weatherForecastStatus":w.get("status","NOT VERIFIED"),
+          # Sourced forecast detail is needed to distinguish a benign weather
+          # situation from wind, precipitation or temperature uncertainty.
+          # The model probability itself is NEVER adjusted with this heuristic.
+          "weatherSnapshot":{k:(w.get("forecast") or {}).get(k)
+            for k in ("temperature_f","wind_mph","gust_mph",
+                      "precipitation_probability_pct","precipitation_mm")},
           "qbVerified":False,"injuriesVerified":False,
           "feesVerified":False,"askDepthVerified":False,
           "researchOnly":True,"officialEligible":False,"shadowEligible":False,
