@@ -63,6 +63,10 @@ class ForwardAuditTests(unittest.TestCase):
         self.assertEqual(row["taker_fee_estimate_dollars"],.02)
         self.assertFalse(row["official_eligible"])
         self.assertFalse(row["qb_game_report_verified"])
+        self.assertTrue(row["depth_scenarios_contracts"]["1"]["depth_available"])
+        self.assertFalse(row["depth_scenarios_contracts"]["10"]["depth_available"])
+        self.assertFalse(row["depth_scenarios_contracts"]["100"]["depth_available"])
+        self.assertEqual(snap["scenario_depth_10_contract_sides"],0)
         self.assertFalse(snap["production_eligible"])
     def test_stale_model_prevents_capture(self):
         data=dict(self.research)
