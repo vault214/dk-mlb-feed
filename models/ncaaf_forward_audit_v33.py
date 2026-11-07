@@ -158,7 +158,7 @@ def select_rows(research,now):
     return rows,"READY FOR RESEARCH"
 
 def audit(research, now, market_fn=get_market, orderbook_fn=get_orderbook,
-          series_fn=get_series, contracts=D("1")):
+          series_fn=get_series, contracts=D("1"), clock=None):
     candidates,status=select_rows(research,now)
     output={"schemaVersion":1,"sport":"NCAAF","status":status,
             "sampled_at_utc":now.isoformat(),"model_captured_at_utc":research.get("modelCapturedAtUTC"),
@@ -204,7 +204,7 @@ def audit(research, now, market_fn=get_market, orderbook_fn=get_orderbook,
         # model payout ($1 if correct) - total filled cost and taker-fee estimate.
         # This is a mark, NOT a guaranteed transaction or paper recommendation.
         expectation=(model-p)*contracts-fee if fee is not None else None
-        observed=dt.datetime.now(UTC)
+        observed=(clock or (lambda:dt.datetime.now(UTC)))()
         if observed>=kick:excluded["QUOTE OBSERVED AT OR AFTER KICKOFF"]+=1;continue
         row={
             "ticker":ticker,"side":r["side"],"cfbdGameId":str(r["cfbdGameId"]),
