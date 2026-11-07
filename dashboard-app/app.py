@@ -233,6 +233,8 @@ function renderNcaafEligibility(){
  eligibilityGrid.innerHTML=games.map(g=>{
    const issues=(g.reasons||[]).slice(0,5).map(x=>'<div class="sub" style="margin-top:4px">• '+E(x)+'</div>').join("");
    const more=(g.reasons||[]).length>5?'<div class="sub">+'+E(g.reasons.length-5)+' additional checks</div>':'';
+   const qbFlags=(g.secondary_qb_risk_flags_unverified||[]).filter(q=>q.source_type==="THIRD-PARTY TRANSCRIPTION - NOT OFFICIAL EVIDENCE").slice(0,4);
+   const qbRisk=qbFlags.length?'<div class="sub" style="margin-top:7px">Unverified QB-position concerns (third-party only): '+qbFlags.map(q=>E(q.name)+' — '+E(q.secondary_status)).join('; ')+'</div>':'';
    const lead=String(g.supplemental_report_lead_url||"");
    const leadSafe=/^https:\/\/kickoffstatus\.com\/games\/[a-z0-9\/-]+\/?$/.test(lead);
    const leadText=leadSafe?'<div class="sub" style="margin-top:7px"><a href="'+E(lead)+'" target="_blank" rel="noopener noreferrer">Third-party matchup notes (NOT verified)</a></div>':'';
@@ -243,6 +245,7 @@ function renderNcaafEligibility(){
      +'<div class="sub">Fee/depth-checked sides at capture: '+E(g.valid_live_quote_sides??0)+' / '+E(g.available_contract_side_samples??0)+'</div>'
      +'<div class="sub">Primary report verified: '+(g.game_specific_report_verified?"Yes":"No")+'</div>'
      +leadText
+     +qbRisk
      +'<div style="margin-top:7px"><b>Unmet checks</b>'+issues+more+'</div></div>';
  }).join("");
 }
