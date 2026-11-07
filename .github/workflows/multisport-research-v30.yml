@@ -1,0 +1,107 @@
+name: Seven-sport research validation and model health
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'models/multisport_*.py'
+      - 'models/test_multisport_v30.py'
+      - '.github/workflows/multisport-research-v30.yml'
+  schedule:
+    - cron: '15 12 * * 2'
+permissions:
+  contents: read
+concurrency:
+  group: multisport-research-v30
+  cancel-in-progress: false
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test chronology, season split, research-only safety
+        run: PYTHONPATH=models python -m unittest discover -s models -p 'test_multisport_v30.py' -v
+  research:
+    needs: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          - {league: NCAAF, start: '2024-08-01', end: '2025-12-31'}
+          - {league: NFL, start: '2024-08-01', end: '2025-12-31'}
+          - {league: NBA, start: '2024-10-01', end: '2025-12-31'}
+          - {league: NHL, start: '2024-10-01', end: '2025-12-31'}
+          - {league: NCAAB, start: '2024-11-01', end: '2025-12-31'}
+          - {league: MLB, start: '2024-03-01', end: '2025-11-01'}
+          - {league: WNBA, start: '2024-05-01', end: '2025-10-31'}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Historical completed scores
+        run: |
+          python models/multisport_collect_v30.py --league '${{ matrix.league }}' --start '${{ matrix.start }}' --end '${{ matrix.end }}' --output scores.json
+      - name: Pregame-only rolling baseline
+        run: |
+          python models/multisport_features_v30.py --league '${{ matrix.league }}' --games scores.json --output features.json
+      - name: Strict separate-season holdout
+        run: |
+          python models/multisport_backtest_v30.py --features features.json --output report.json
+      - name: Stage distinct artifact filenames
+        run: |
+          mkdir -p artifacts
+          cp scores.json 'artifacts/${{ matrix.league }}-scores.json'
+          cp features.json 'artifacts/${{ matrix.league }}-features.json'
+          cp report.json 'artifacts/${{ matrix.league }}.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: research-${{ matrix.league }}
+          path: artifacts/
+          retention-days: 14
+  publish-health:
+    needs: [tests, research]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: research-*
+          merge-multiple: true
+          path: research-results
+      - name: Build sanitized league-by-league model health
+        run: |
+          python models/multisport_health_v30.py --reports-dir research-results --boards-dir kalshi --output dashboard/model-health.json
+          python -m json.tool dashboard/model-health.json > /dev/null
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seven-league-model-health
+          path: dashboard/model-health.json
+          retention-days: 30
+      - name: Commit health ONLY (never betting/pick ledgers)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git rebase origin/main
+          git add dashboard/model-health.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update sanitized seven-league research model health [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "Model health unchanged"
+          fi
