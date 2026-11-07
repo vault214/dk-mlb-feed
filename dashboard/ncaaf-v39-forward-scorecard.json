@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "generatedAtUTC": "2026-11-07T21:19:45.607214+00:00",
+  "generatedAtUTC": "2026-11-07T21:24:55.470143+00:00",
   "status": "FORWARD INDEPENDENT GAME PERFORMANCE \u2014 RESEARCH ONLY",
   "research_unique_games_with_pregame_quotes": 13,
   "research_unique_games_unverified": 13,
@@ -11,6 +11,8 @@
   "market_midpoint_baseline_samples": 0,
   "market_bidask_midpoint_brier": null,
   "market_bidask_midpoint_log_loss": null,
+  "precommitted_research_candidate_games": 3,
+  "precommitted_candidate_games_awaiting_independent_settlement": 3,
   "research_edge_strategy_distinct_games": 0,
   "research_edge_strategy_wins": 0,
   "research_edge_strategy_win_rate": null,
@@ -20,9 +22,35 @@
   "mean_later_pregame_quote_movement_pp": null,
   "minimum_unique_games_before_model_edge_review": 40,
   "review_sample_target_met": false,
-  "hypothetical_strategy_rule": "Earliest observed batch within 120 seconds, select only max pregame net edge >=5pp after fee + 4pp model reserve; deterministic per-game tie break.",
+  "hypothetical_strategy_rule": "Earliest observed batch within 120 seconds independent of eventual settlement; select max pregame net edge >=5pp after fee + 4pp model reserve; unresolved candidates remain pending and are NOT dropped from the selection denominator.",
   "games": [],
   "research_candidate_examples": [],
+  "unsettled_precommitted_examples": [
+    {
+      "game_id": "401856741",
+      "ticker": "KXNCAAFGAME-26NOV07UGAMISS-MISS",
+      "side": "YES",
+      "asof_utc": "2026-11-07T19:28:12.799492+00:00",
+      "research_score_pp": 8.163,
+      "official_eligible": false
+    },
+    {
+      "game_id": "401858514",
+      "ticker": "KXNCAAFGAME-26NOV07OREOSU-ORE",
+      "side": "NO",
+      "asof_utc": "2026-11-07T19:28:13.660377+00:00",
+      "research_score_pp": 7.473,
+      "official_eligible": false
+    },
+    {
+      "game_id": "401871076",
+      "ticker": "KXNCAAFGAME-26NOV07WKUMTU-MTU",
+      "side": "YES",
+      "asof_utc": "2026-11-07T19:28:11.909203+00:00",
+      "research_score_pp": 20.135,
+      "official_eligible": false
+    }
+  ],
   "official_eligible": false,
   "shadow_eligible": false,
   "production_eligible": false,
