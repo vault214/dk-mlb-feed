@@ -9,6 +9,8 @@ on:
       - 'models/test_ncaaf_provider_proof_v39.py'
       - 'models/ncaaf_viewer_format_probe_v39.py'
       - 'models/test_ncaaf_viewer_format_probe_v39.py'
+      - 'models/ncaaf_viewer_browser_probe_v39.py'
+      - 'models/test_ncaaf_viewer_browser_probe_v39.py'
   schedule:
     - cron: '31 14 * * 5,6'
 permissions:
@@ -34,6 +36,7 @@ jobs:
         run: |
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_provider_proof_v39.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_viewer_format_probe_v39.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_viewer_browser_probe_v39.py' -v
       - name: Inspect actual conference html for an authorized football report viewer
         run: |
           python models/ncaaf_provider_proof_v39.py \
@@ -44,6 +47,11 @@ jobs:
           python models/ncaaf_viewer_format_probe_v39.py \
             --provider dashboard/ncaaf-v39-provider-proof.json \
             --output dashboard/ncaaf-v39-viewer-probe.json
+      - name: Render only conference-attested public viewers to test JavaScript access
+        run: |
+          python models/ncaaf_viewer_browser_probe_v39.py \
+            --provider dashboard/ncaaf-v39-provider-proof.json \
+            --output dashboard/ncaaf-v39-browser-probe.json
       - name: Prohibit inferred QB status or official picks from provider links
         run: |
           python - <<'PY'
@@ -53,6 +61,9 @@ jobs:
           v=json.load(open("dashboard/ncaaf-v39-viewer-probe.json"))
           assert not v["official_eligible"] and not v["shadow_eligible"] and not v["production_eligible"]
           assert all(not x["specific_game_final_report_verified"] and not x["starting_qb_verified"] for x in v["games"])
+          b=json.load(open("dashboard/ncaaf-v39-browser-probe.json"))
+          assert not b["official_eligible"] and not b["shadow_eligible"]
+          assert all(not x["exact_matchup_final_report_verified"] and not x["player_statuses_verified"] for x in b["games"])
           assert all(not g["final_report_for_this_game_verified"]
                      and not g["both_starting_qbs_verified"]
                      and not g["official_eligible"] for g in d["games"])
@@ -64,12 +75,13 @@ jobs:
           path: |
             dashboard/ncaaf-v39-provider-proof.json
             dashboard/ncaaf-v39-viewer-probe.json
+            dashboard/ncaaf-v39-browser-probe.json
           retention-days: 14
       - name: Commit sanitized source availability evidence only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboard/ncaaf-v39-provider-proof.json dashboard/ncaaf-v39-viewer-probe.json
+          git add dashboard/ncaaf-v39-provider-proof.json dashboard/ncaaf-v39-viewer-probe.json dashboard/ncaaf-v39-browser-probe.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Refresh official NCAAF publisher source provenance [skip ci]"
           for attempt in 1 2 3 4 5; do
