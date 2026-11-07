@@ -24,6 +24,7 @@ FEEDS = {
 }
 RESEARCH_V32_URL = RAW + "/dashboard/ncaaf-v32-health.json"
 WEATHER_V32_URL = RAW + "/dashboard/ncaaf-v32-weather-health.json"
+QUOTE_V32_URL = RAW + "/dashboard/ncaaf-v32-quote-health.json"
 
 HTML = r'''<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -224,14 +225,16 @@ function renderResearchHealth(){
   const gaps=(x.missing_verified_inputs||[]).slice(0,3).join(", ");
   const v=league==="NCAAF"?ncaafContext.model||{}:{};
   const w=league==="NCAAF"?ncaafContext.weather||{}:{};
+  const q=league==="NCAAF"?ncaafContext.quotes||{}:{};
   const improved=v.calibration?'<div class="sub" style="margin-top:7px">CFBD enhanced research: '+E(v.calibration.holdout_games)+' blind-test games · Brier '+E(Number(v.calibration.holdout_brier).toFixed(3))+' · '+E(v.market_matching?.matched_events??"—")+' matched pregame Kalshi moneylines</div>':'';
   const wx=w.counts?'<div class="sub">Kickoff forecast context: '+E(w.counts.forecast_available??0)+' weather reports · '+E(w.counts.indoor_venue??0)+' indoor venues</div>':'';
+  const quotes=q.unique_tickers_checked!==undefined?'<div class="sub">Public ask checks: '+E(q.unique_tickers_checked??0)+' contracts · '+E(q.market_request_results?.["CURRENT QUOTE OBSERVED"]??0)+' current asks · no execution depth verified</div>':'';
   return '<div class="league-card"><div class="league-title">'+E(league)+'</div><div class="chip pas" style="display:inline-block;margin:8px 0">RESEARCH ONLY</div>'
    +'<div class="sub">Status: '+E(report)+'</div><div class="sub">Holdout games: '+E(x.holdout_games??"—")+'</div>'
    +'<div class="sub">Winner Brier: '+E(brier)+' · Baseline: '+E(baseline)+'</div>'
    +'<div class="sub">Improvement: '+E(improvement)+' (positive is better)</div>'
    +'<div class="sub">Board: '+E(m.date_et||"—")+' · '+E(m.candidate_market_count??"—")+' markets</div>'
-   +'<div class="sub">Missing: '+E(gaps||"verified inputs")+'</div>'+improved+wx+'</div>';
+   +'<div class="sub">Missing: '+E(gaps||"verified inputs")+'</div>'+improved+wx+quotes+'</div>';
  }).join("");
 }
 function renderHealth(){
@@ -308,7 +311,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, HTML)
         if p == "/api/ncaaf-research-health":
             out={}
-            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL)):
+            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL),("quotes",QUOTE_V32_URL)):
                 try: out[key]=fetch_json(url)
                 except Exception: out[key]={}
             return self.send(200,json.dumps(out),"application/json")
