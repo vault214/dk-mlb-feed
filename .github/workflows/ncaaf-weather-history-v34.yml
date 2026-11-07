@@ -8,7 +8,7 @@ on:
       - 'models/test_ncaaf_weather_history_v34.py'
       - '.github/workflows/ncaaf-weather-history-v34.yml'
   schedule:
-    - cron: '40 13 * * 3'
+    - cron: '40 13 * * *'
 permissions:
   contents: read
 concurrency:
@@ -35,7 +35,7 @@ jobs:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
         run: |
           if [ -z "$CFBD_API_KEY" ]; then echo "No CFBD_API_KEY available" >&2; exit 1; fi
-          python models/ncaaf_weather_history_v34.py --batch 12 \
+          python models/ncaaf_weather_history_v34.py --batch 30 \
             --archive research/ncaaf-weather/prior-day.json \
             --health dashboard/ncaaf-v34-weather-history-health.json
       - name: Validate research status and archived weather provenance
