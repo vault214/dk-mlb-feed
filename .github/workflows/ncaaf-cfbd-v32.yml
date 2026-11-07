@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'models/ncaaf_cfbd_model_v32.py'
+      - 'models/ncaaf_cfbd_ingest_v31.py'
       - 'models/ncaaf_availability_queue_v34.py'
       - 'models/test_ncaaf_availability_v34.py'
       - 'models/ncaaf_weather_context_v32.py'
