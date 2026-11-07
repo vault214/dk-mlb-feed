@@ -71,6 +71,19 @@ class TestEligibility(unittest.TestCase):
         x[4]["2026-11-07"]["observations"][0]["quote_observed_utc"]="2026-11-07T17:30:00+00:00"
         z=screen(*x,NOW)
         self.assertEqual(z["games"][0]["valid_live_quote_sides"],0)
+    def test_unverified_qb_triage_only_if_observed_pregame(self):
+        triage={"generatedAtUTC":"2026-11-07T16:55:00+00:00",
+                "games":[{"cfbd_game_id":GID,
+                    "secondary_qb_risk_flags":[{"side":"home","name":"Sample QB",
+                       "secondary_status":"OUT","source_type":
+                       "THIRD-PARTY TRANSCRIPTION - NOT OFFICIAL EVIDENCE"}]}]}
+        z=screen(*inputs(),NOW,None,triage)
+        self.assertEqual(len(z["games"][0]["secondary_qb_risk_flags_unverified"]),1)
+        self.assertFalse(z["games"][0]["secondary_qb_flags_used_for_model"])
+        self.assertFalse(z["games"][0]["official_eligible"])
+        triage["generatedAtUTC"]="2026-11-07T23:00:00+00:00"
+        z=screen(*inputs(),NOW,None,triage)
+        self.assertEqual(z["games"][0]["secondary_qb_risk_flags_unverified"],[])
     def test_third_party_report_link_never_unblocks_evidence(self):
         lead={"games":[{"cfbd_game_id":GID,
                "supplemental_url":"https://kickoffstatus.com/games/2026-11-07-texas-at-missouri/",
