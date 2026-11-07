@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "sport": "NCAAF",
+  "verifiedAtUTC": "2026-11-07T19:37:08.381560+00:00",
+  "status": "INDEPENDENT RESULT RECONCILIATION \u2014 RESEARCH ONLY",
+  "independently_completed_game_ids": 0,
+  "public_kalshi_settled_tickers": 0,
+  "independently_verified_tickers": 0,
+  "newly_verified_tickers_this_run": 0,
+  "unique_game_winner_samples": 0,
+  "forward_unique_game_brier": null,
+  "unverified_reasons": {
+    "GAME NOT YET ELIGIBLE FOR SETTLEMENT": 26
+  },
+  "conflicts": [],
+  "official": null,
+  "shadow": [],
+  "production_eligible": false,
+  "official_eligible": false,
+  "shadow_eligible": false,
+  "note": "Kalshi contract outcome must match an independent CFBD completed score and unambiguous team identity. Duplicate correlated contract sides are not counted as independent games."
+}
