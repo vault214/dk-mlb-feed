@@ -68,8 +68,8 @@ jobs:
         id: window
         run: |
           python models/ncaaf_pregame_window_v38.py \
-            --queue ncaaf-v38-scoped-queue.json \
-            --research ncaaf-v38-filtered-research.json \
+            --queue dashboard/ncaaf-v34-availability-health.json \
+            --research dashboard/ncaaf-v32-research.json \
             --output dashboard/ncaaf-v38-window.json \
             --filtered-research ncaaf-v38-filtered-research.json \
             --scoped-queue ncaaf-v38-scoped-queue.json
