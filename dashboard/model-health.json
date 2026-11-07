@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "visibility": "sanitized research model health only",
+  "generatedAtUTC": "2026-11-07T17:26:03.299427+00:00",
+  "status": "RESEARCH ONLY \u2014 NO PRODUCTION VALIDATION",
+  "leagues": [
+    {
+      "league": "NCAAF",
+      "research_status": "RESEARCH HOLDOUT ONLY",
+      "historical_games_collected": 1913,
+      "feature_rows": 1311,
+      "training_games": 506,
+      "holdout_games": 805,
+      "winner_brier": 0.222454,
+      "home_prior_baseline_brier": 0.241267,
+      "improvement_vs_home_baseline": 0.018813,
+      "failed_source_dates": 0,
+      "missing_verified_inputs": [
+        "FBS membership",
+        "adjusted offense/defense",
+        "true tempo",
+        "quarterback",
+        "injuries",
+        "weather"
+      ],
+      "market_price_backtest": "NOT AVAILABLE - no timestamped Kalshi historical asks",
+      "production_eligible": false,
+      "official_eligible": false,
+      "market_board": {
+        "date_et": "2026-11-07",
+        "candidate_market_count": 220,
+        "active_markets_with_at_least_one_executable_ask": 220,
+        "quote_timestamp_verification": "UNVERIFIED"
+      }
+    },
+    {
+      "league": "NFL",
+      "research_status": "RESEARCH HOLDOUT ONLY",
+      "historical_games_collected": 542,
+      "feature_rows": 459,
+      "training_games": 203,
+      "holdout_games": 256,
+      "winner_brier": 0.228601,
+      "home_prior_baseline_brier": 0.250652,
+      "improvement_vs_home_baseline": 0.022052,
+      "failed_source_dates": 0,
+      "missing_verified_inputs": [
+        "EPA/success rate",
+        "true pace",
+        "quarterback",
+        "injuries",
+        "weather",
+        "personnel"
+      ],
+      "market_price_backtest": "NOT AVAILABLE - no timestamped Kalshi historical asks",
+      "production_eligible": false,
+      "official_eligible": false,
+      "market_board": {
+        "date_et": "2026-11-05",
+        "candidate_market_count": 23,
+        "active_markets_with_at_least_one_executable_ask": 23,
+        "quote_timestamp_verification": "UNVERIFIED"
+      }
+    },
+    {
+      "league": "NBA",
+      "research_status": "RESEARCH HOLDOUT ONLY",
+      "historical_games_collected": 1821,
+      "feature_rows": 1740,
+      "training_games": 1243,
+      "holdout_games": 497,
+      "winner_brier": 0.226615,
+      "home_prior_baseline_brier": 0.247369,
+      "improvement_vs_home_baseline": 0.020754,
+      "failed_source_dates": 0,
+      "missing_verified_inputs": [
+        "adjusted efficiency",
+        "possessions/pace",
+        "starters",
+        "minutes",
+        "injuries",
+        "player prop distributions"
+      ],
+      "market_price_backtest": "NOT AVAILABLE - no timestamped Kalshi historical asks",
+      "production_eligible": false,
+      "official_eligible": false,
+      "market_board": {
+        "date_et": "2026-11-07",
+        "candidate_market_count": 178,
+        "active_markets_with_at_least_one_executable_ask": 178,
+        "quote_timestamp_verification": "UNVERIFIED"
+      }
+    },
+    {
+      "league": "NHL",
+      "research_status": "RESEARCH HOLDOUT ONLY",
+      "historical_games_collected": 2036,
+      "feature_rows": 1942,
+      "training_games": 1311,
+      "holdout_games": 631,
+      "winner_brier": 0.254494,
+      "home_prior_baseline_brier": 0.25231,
+      "improvement_vs_home_baseline": -0.002183,
+      "failed_source_dates": 0,
+      "missing_verified_inputs": [
+        "expected goals",
+        "goalie confirmation",
+        "starting goalie quality",
+        "injuries",
+        "special teams"
+      ],
+      "market_price_backtest": "NOT AVAILABLE - no timestamped Kalshi historical asks",
+      "production_eligible": false,
+      "official_eligible": false,
+      "market_board": {
+        "date_et": "2026-11-07",
+        "candidate_market_count": 105,
+        "active_markets_with_at_least_one_executable_ask": 105,
+        "quote_timestamp_verification": "UNVERIFIED"
+      }
+    },
+    {
+      "league": "NCAAB",
+      "research_status": "RESEARCH HOLDOUT ONLY",
+      "historical_games_collected": 9038,
+      "feature_rows": 7200,
+      "training_games": 4924,
+      "holdout_games": 2276,
+      "winner_brier": 0.19313,
+      "home_prior_baseline_brier": 0.212587,
+      "improvement_vs_home_baseline": 0.019457,
+      "failed_source_dates": 0,
+      "missing_verified_inputs": [
+        "Division I eligibility",
+        "adjusted efficiency",
+        "possessions/pace",
+        "transfers/rosters",
+        "starters",
+        "injuries"
+      ],
+      "market_price_backtest": "NOT AVAILABLE - no timestamped Kalshi historical asks",
+      "production_eligible": false,
+      "official_eligible": false,
+      "market_board": {
+        "date_et": "2026-11-07",
+        "candidate_market_count": 300,
+        "active_markets_with_at_least_one_executable_ask": 300,
+        "quote_timestamp_verification": "UNVERIFIED"
+      }
+    },
+    {
+      "league": "MLB",
+      "research_status": "RESEARCH HOLDOUT ONLY",
+      "historical_games_collected": 4951,
+      "feature_rows": 4869,
+      "training_games": 2392,
+      "holdout_games": 2477,
+      "winner_brier": 0.249824,
+      "home_prior_baseline_brier": 0.248472,
+      "improvement_vs_home_baseline": -0.001352,
+      "failed_source_dates": 0,
+      "missing_verified_inputs": [
+        "probable/confirmed pitcher",
+        "lineup",
+        "bullpen",
+        "park",
+        "weather",
+        "pitcher props"
+      ],
+      "market_price_backtest": "NOT AVAILABLE - no timestamped Kalshi historical asks",
+      "production_eligible": false,
+      "official_eligible": false,
+      "market_board": {
+        "date_et": "2026-11-07",
+        "candidate_market_count": 0,
+        "active_markets_with_at_least_one_executable_ask": 0,
+        "quote_timestamp_verification": "BOARD FETCH TIME ONLY; NOT PER-CONTRACT ASK FRESHNESS"
+      }
+    },
+    {
+      "league": "WNBA",
+      "research_status": "RESEARCH HOLDOUT ONLY",
+      "historical_games_collected": 576,
+      "feature_rows": 536,
+      "training_games": 230,
+      "holdout_games": 306,
+      "winner_brier": 0.228641,
+      "home_prior_baseline_brier": 0.246243,
+      "improvement_vs_home_baseline": 0.017602,
+      "failed_source_dates": 0,
+      "missing_verified_inputs": [
+        "adjusted efficiency",
+        "possessions/pace",
+        "starters",
+        "minutes",
+        "injuries",
+        "player prop distributions"
+      ],
+      "market_price_backtest": "NOT AVAILABLE - no timestamped Kalshi historical asks",
+      "production_eligible": false,
+      "official_eligible": false,
+      "market_board": {
+        "date_et": "2026-11-07",
+        "candidate_market_count": 0,
+        "active_markets_with_at_least_one_executable_ask": 0,
+        "quote_timestamp_verification": "UNVERIFIED"
+      }
+    }
+  ],
+  "disclaimer": "A passing workflow is not a calibrated betting model. No market P/L or automatic official bets derive from this report."
+}
