@@ -1,0 +1,89 @@
+name: Four-sport prospective moneyline research v4.0
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sports-forward-capture-v40.yml'
+      - 'models/sport_moneyline_forward_v40.py'
+      - 'models/sport_moneyline_settlement_v40.py'
+      - 'models/test_sport_moneyline_forward_v40.py'
+      - 'models/test_sport_moneyline_settlement_v40.py'
+  schedule:
+    - cron: '17 16,18,20,22 * * *'
+    - cron: '17 0,2,4 * * *'
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Exact-game identity and settlement anti-leakage tests
+        run: |
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_sport_moneyline_forward_v40.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_sport_moneyline_settlement_v40.py' -v
+  capture:
+    if: github.event_name != 'push'
+    needs: checks
+    concurrency:
+      group: sports-forward-v40
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Record public NFL NBA NHL NCAAB matching game-winner books before verified kickoff
+        run: |
+          python models/sport_moneyline_forward_v40.py \
+            --archive-dir research/sports-forward \
+            --boards-dir kalshi \
+            --output dashboard/sports-v40-capture-health.json
+      - name: Never create bets or call market odds an independent model
+        run: |
+          python - <<'PY'
+          import json,glob
+          status=json.load(open("dashboard/sports-v40-capture-health.json"))
+          assert not status["official_eligible"] and not status["production_eligible"]
+          assert set(status["leagues"])=={"NFL","NBA","NHL","NCAAB","MLB","WNBA"}
+          for path in glob.glob("research/sports-forward/*/*.json"):
+              archive=json.load(open(path))
+              assert archive["sport"] in ("NFL","NBA","NHL","NCAAB")
+              assert all(o["research_only"] and not o["official_eligible"]
+                         and o["independent_model_probability"] is None
+                         and not o["model_edge_evaluated"]
+                         for o in archive.get("observations",[]))
+          print("No independent model edge or official pick inferred from market asks")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: four-sport-pregame-market-research
+          path: dashboard/sports-v40-capture-health.json
+          retention-days: 14
+      - name: Publish only sanitized research market observations
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dashboard/sports-v40-capture-health.json research/sports-forward/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Archive read-only cross-sport prospective market research [skip ci]"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt*2))
+          done
+          echo "Unable to publish research after safe retries" >&2
+          exit 1
