@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'models/ncaaf_cfbd_model_v32.py'
+      - 'models/ncaaf_weather_context_v32.py'
+      - 'models/test_ncaaf_weather_context_v32.py'
       - 'models/test_ncaaf_cfbd_v32.py'
       - '.github/workflows/ncaaf-cfbd-v32.yml'
   schedule:
@@ -31,19 +33,27 @@ jobs:
       - name: Offline safety and mapping tests
         run: |
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_cfbd_v32.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_weather_context_v32.py' -v
       - name: Train 2024, calibrate 2025, evaluate 2026, map pregame FBS moneylines
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
         run: |
           if [ -z "$CFBD_API_KEY" ]; then echo "Missing CFBD_API_KEY" >&2; exit 1; fi
           python models/ncaaf_cfbd_model_v32.py --board kalshi/ncaafb-candidates.json --output ncaaf-cfbd-v32-research.json --health dashboard/ncaaf-v32-health.json
+      - name: Enrich matched kickoff games with stadium-verified forecast context
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: |
+          python models/ncaaf_weather_context_v32.py --research ncaaf-cfbd-v32-research.json --output ncaaf-weather-v32-research.json --health dashboard/ncaaf-v32-weather-health.json
       - name: Archive research-only details
         uses: actions/upload-artifact@v4
         with:
           name: ncaaf-v32-independent-research
           path: |
             ncaaf-cfbd-v32-research.json
+            ncaaf-weather-v32-research.json
             dashboard/ncaaf-v32-health.json
+            dashboard/ncaaf-v32-weather-health.json
           retention-days: 14
       - name: Commit sanitized diagnostics only
         run: |
@@ -51,7 +61,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git rebase origin/main
-          git add dashboard/ncaaf-v32-health.json
+          git add dashboard/ncaaf-v32-health.json dashboard/ncaaf-v32-weather-health.json
           if ! git diff --cached --quiet; then
             git commit -m "Update CFBD NCAAF v3.2 research-only validation health [skip ci]"
             git push origin HEAD:main
