@@ -1,0 +1,39 @@
+name: Football research backtest (NCAAF + NFL)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 10 * * 2'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    strategy:
+      matrix:
+        league: [NCAAF, NFL]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests
+        run: PYTHONPATH=models python -m unittest discover -s models -p 'test_football*.py'
+      - name: Collect historical scores (research only)
+        run: |
+          python models/football_collect_scores_v21.py --league "${{ matrix.league }}" --start 2024-08-01 --end 2025-12-31 --output scores.json
+      - name: Build strictly pregame rolling features
+        run: |
+          python models/football_pregame_features_v21.py --league "${{ matrix.league }}" --games scores.json --output features.json
+      - name: Evaluate chronological holdout
+        run: |
+          python models/ncaaf_calibration_v21.py --historical features.json > calibration.json
+          cat calibration.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: football-research-${{ matrix.league }}
+          path: |
+            scores.json
+            features.json
+            calibration.json
+          retention-days: 14
