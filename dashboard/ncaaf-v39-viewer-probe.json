@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "sport": "NCAAF",
+  "generatedAtUTC": "2026-11-07T21:22:29.886438+00:00",
+  "status": "OFFICIAL PUBLIC VIEWER HTTP FORMAT PROBE \u2014 NOT PLAYER VERIFICATION",
+  "attested_viewers_probed": 1,
+  "viewers_retrieved": 1,
+  "viewer_fetch_health": [
+    {
+      "retrieved": true,
+      "html_bytes": 7629,
+      "visible_chars": 15,
+      "js_hydration_likely": true,
+      "content_is_a_matchup_specific_final_report": false
+    }
+  ],
+  "matched_games": 2,
+  "games": [
+    {
+      "cfbd_game_id": "401856851",
+      "conference": "big 12",
+      "home_team": "Houston",
+      "away_team": "Cincinnati",
+      "viewer": "https://app.hdintelligence.com/?source=B12&sport=Football&conf=B12&type=report",
+      "viewer_retrieved": true,
+      "visible_html_characters": 15,
+      "requires_js_or_rendering": true,
+      "specific_game_final_report_verified": false,
+      "starting_qb_verified": false,
+      "official_eligible": false
+    },
+    {
+      "cfbd_game_id": "401856856",
+      "conference": "big 12",
+      "home_team": "Texas Tech",
+      "away_team": "West Virginia",
+      "viewer": "https://app.hdintelligence.com/?source=B12&sport=Football&conf=B12&type=report",
+      "viewer_retrieved": true,
+      "visible_html_characters": 15,
+      "requires_js_or_rendering": true,
+      "specific_game_final_report_verified": false,
+      "starting_qb_verified": false,
+      "official_eligible": false
+    }
+  ],
+  "official_eligible": false,
+  "shadow_eligible": false,
+  "production_eligible": false,
+  "note": "This only determines if conference-attested HDI viewer HTML can be read. Player status or even a correct match must still be isolated with game/time/report source evidence. JavaScript-rendered pages require a permitted rendering strategy."
+}
