@@ -19,9 +19,9 @@ from ncaaf_cfbd_ingest_v31 import fetch, DataError, instant, ET, UTC
 
 HUBS={
     "sec":"https://www.secsports.com/fbreports",
-    "big 12":"https://big12sports.com/sports/2025/8/21/availability-reporting.aspx",
-    "big ten":"https://bigten.org/",
-    "acc":"https://theacc.com/sports/2025/8/28/availability-reporting.aspx"
+    "big 12":"https://big12sports.com/sports/2025/8/14/FBreporting.aspx?lv=true",
+    "big ten":"https://bigten.org/news/2026/8/28/big-ten-announces-changes-to-football-availability-reporting-process.aspx",
+    "acc":"https://theacc.com/sports/2025/8/28/availability-reporting-football.aspx"
 }
 NAMES={
     "southeastern":"sec","sec":"sec",
