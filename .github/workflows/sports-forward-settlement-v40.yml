@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/sports-forward-settlement-v40.yml'
+      - 'models/sport_moneyline_settlement_v40.py'
+      - 'models/test_sport_moneyline_settlement_v40.py'
   schedule:
     - cron: '35 11,23 * * *'
 permissions:
