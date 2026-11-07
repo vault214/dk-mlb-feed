@@ -2,7 +2,7 @@
 """Offline CFBD independent-final-score validation tests. No remote calls."""
 import datetime as dt
 import unittest
-from ncaaf_settlement_verify_v34 import reconcile, scoreboard_side
+from ncaaf_settlement_verify_v34 import reconcile, scoreboard_side, settlement_seasons
 from ncaaf_cfbd_model_v32 import alias_index
 
 UTC=dt.timezone.utc
@@ -32,6 +32,12 @@ TEAMS=[{"school":HOME},{"school":AWAY}]+[{"school":"Team "+str(i)} for i in rang
 NOW=dt.datetime(2026,11,8,10,tzinfo=UTC)
 
 class TestSettlement(unittest.TestCase):
+ def test_new_year_still_checks_older_season_archive(self):
+    first={"2026-12-31":{"sport":"NCAAF","observations":[{
+        "kickoffUTC":"2026-12-31T23:00:00+00:00"}]}}
+    newyear=dt.datetime(2027,1,1,12,tzinfo=UTC)
+    self.assertEqual(settlement_seasons(first,newyear),[2026,2027])
+    self.assertEqual(settlement_seasons(first,newyear,2025),[2025])
  def test_verified_independent_market_result(self):
     archives={"2026-11-07":archive()}
     result=reconcile(archives,[game()],TEAMS,NOW,
