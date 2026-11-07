@@ -1,0 +1,73 @@
+name: NCAAF historical pregame weather archive v3.4 (research)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'models/ncaaf_weather_history_v34.py'
+      - 'models/test_ncaaf_weather_history_v34.py'
+      - '.github/workflows/ncaaf-weather-history-v34.yml'
+  schedule:
+    - cron: '40 13 * * 3'
+permissions:
+  contents: read
+concurrency:
+  group: ncaaf-weather-history-v34
+  cancel-in-progress: false
+jobs:
+  weather:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Offline proof of fixed pre-event forecast provenance
+        run: PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_weather_history_v34.py' -v
+      - name: Batch historical fixed-24-hour-lead weather forecasts
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: |
+          if [ -z "$CFBD_API_KEY" ]; then echo "No CFBD_API_KEY available" >&2; exit 1; fi
+          python models/ncaaf_weather_history_v34.py --batch 12 \
+            --archive research/ncaaf-weather/prior-day.json \
+            --health dashboard/ncaaf-v34-weather-history-health.json
+      - name: Validate research status and archived weather provenance
+        run: |
+          python - <<'PY'
+          import json
+          f=json.load(open("research/ncaaf-weather/prior-day.json"))
+          h=json.load(open("dashboard/ncaaf-v34-weather-history-health.json"))
+          assert not f["production_eligible"] and not h["official_eligible"]
+          assert all(x["weather"]["forecast_lead_hours"]==24 and
+                     not x["model_probability_adjusted"] and
+                     not x["production_eligible"] for x in f["records"])
+          # An empty batch is allowed after the backlog is exhausted. On an
+          # initial run, failing to fetch any forecasts is an ERROR, not coverage.
+          if h["archived_pregame_forecast_games"]==0 and h["new_attempts"]>0:
+              raise SystemExit("No valid historical pregame forecasts retrieved")
+          print("Prior-day forecast archive safety validated")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ncaaf-weather-history-v34-research
+          path: |
+            dashboard/ncaaf-v34-weather-history-health.json
+          retention-days: 14
+      - name: Publish only validated historical research and health
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dashboard/ncaaf-v34-weather-history-health.json research/ncaaf-weather/prior-day.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Backfill pre-event NCAAF historical weather research [skip ci]"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
