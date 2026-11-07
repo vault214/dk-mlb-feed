@@ -67,7 +67,7 @@ def best_archive_observations(datasets,now):
                 bykey[key]=r
     return bykey
 
-def screen(research,availability,model,settlement,archives,now,supplemental=None):
+def screen(research,availability,model,settlement,archives,now,supplemental=None,triage=None):
     if now.tzinfo is None:raise ValueError("now must have timezone")
     model_cap=timestamp(research.get("modelCapturedAtUTC"))
     model_fresh=bool(model_cap and dt.timedelta(0)<=now-model_cap<=dt.timedelta(hours=18))
@@ -81,6 +81,9 @@ def screen(research,availability,model,settlement,archives,now,supplemental=None
     bygame={str(x.get("cfbd_game_id")):x for x in availability.get("game_review_queue",[])}
     supplemental_by_id={str(x.get("cfbd_game_id")):x
                         for x in (supplemental or {}).get("games",[])}
+    triage_by_id={str(x.get("cfbd_game_id")):x
+                  for x in (triage or {}).get("games",[])}
+    triage_observed=timestamp((triage or {}).get("generatedAtUTC"))
     bybook=best_archive_observations(archives,now)
     grp=collections.defaultdict(list)
     for r in research.get("rows",[]):
@@ -163,6 +166,9 @@ def screen(research,availability,model,settlement,archives,now,supplemental=None
         status="NOT PREGAME" if not pregame else "BLOCKED — EVIDENCE INCOMPLETE"
         counts[status]+=1
         lead=supplemental_by_id.get(gid,{})
+        secondary=triage_by_id.get(gid,{})
+        secondary_pregame=bool(triage_observed and triage_observed<kick)
+        secondary_qb_flags=secondary.get("secondary_qb_risk_flags",[]) if secondary_pregame else []
         games.append({
             "cfbd_game_id":gid,"home_team":first.get("homeTeam"),"away_team":first.get("awayTeam"),
             "kickoff_utc":first["kickoffUTC"],"status":status,"reasons":reasons,
@@ -174,6 +180,9 @@ def screen(research,availability,model,settlement,archives,now,supplemental=None
             "supplemental_report_lead_url":lead.get("supplemental_url"),
             "supplemental_report_lead_status":lead.get("status","NO SUPPLEMENTAL REPORT LEAD"),
             "supplemental_data_counted_as_verified":False,
+            "secondary_qb_risk_flags_unverified":secondary_qb_flags,
+            "secondary_qb_source_asof_utc":triage_observed.isoformat() if secondary_pregame else None,
+            "secondary_qb_flags_used_for_model":False,
             "qb_and_injury_verified":availability_verified,
             "weather":wx,
             "valid_live_quote_sides":valid_quote_sides,
@@ -205,6 +214,7 @@ def main():
     p.add_argument("--settlement",default="dashboard/ncaaf-v34-settlement-health.json")
     p.add_argument("--archive-dir",default="research/ncaaf-forward")
     p.add_argument("--supplemental",default=None)
+    p.add_argument("--triage",default=None)
     p.add_argument("--output",default="dashboard/ncaaf-v35-eligibility.json")
     a=p.parse_args()
     def load(path):return json.loads(pathlib.Path(path).read_text())
@@ -214,7 +224,8 @@ def main():
         obj=load(path)
         if obj.get("sport")=="NCAAF":archive[path.stem]=obj
     out=screen(load(a.research),load(a.availability),load(a.model),load(a.settlement),
-               archive,dt.datetime.now(UTC),load(a.supplemental) if a.supplemental else None)
+               archive,dt.datetime.now(UTC),load(a.supplemental) if a.supplemental else None,
+               load(a.triage) if a.triage else None)
     dest=pathlib.Path(a.output);dest.parent.mkdir(parents=True,exist_ok=True)
     dest.write_text(json.dumps(out,indent=2)+"\n")
     print(json.dumps({k:out[k] for k in (
