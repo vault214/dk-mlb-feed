@@ -87,9 +87,18 @@ jobs:
           git add dashboard/ncaaf-v32-health.json dashboard/ncaaf-v32-weather-health.json dashboard/ncaaf-v32-quote-health.json dashboard/ncaaf-v32-research.json dashboard/ncaaf-v34-availability-health.json
           if ! git diff --cached --quiet; then
             git commit -m "Update CFBD NCAAF v3.2 research-only validation health [skip ci]"
-            git fetch origin main
-            git rebase origin/main
-            git push origin HEAD:main
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then
+                echo "Published research safely"
+                exit 0
+              fi
+              echo "main moved concurrently; retrying ($attempt of 5)" >&2
+              sleep $((attempt*2))
+            done
+            echo "Could not publish research after 5 retries" >&2
+            exit 1
           else
             echo "No change to health report"
           fi
