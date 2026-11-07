@@ -59,11 +59,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin main
-          git rebase origin/main
           git add dashboard/ncaaf-v32-health.json dashboard/ncaaf-v32-weather-health.json
           if ! git diff --cached --quiet; then
             git commit -m "Update CFBD NCAAF v3.2 research-only validation health [skip ci]"
+            git fetch origin main
+            git rebase origin/main
             git push origin HEAD:main
           else
             echo "No change to health report"
