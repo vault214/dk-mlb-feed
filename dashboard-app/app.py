@@ -22,6 +22,8 @@ FEEDS = {
     "nhl": RAW + "/kalshi/nhl-candidates.json",
     "actual": RAW + "/dashboard/actual-performance.json",
 }
+RESEARCH_V32_URL = RAW + "/dashboard/ncaaf-v32-health.json"
+WEATHER_V32_URL = RAW + "/dashboard/ncaaf-v32-weather-health.json"
 
 HTML = r'''<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -89,7 +91,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </div>
 </main>
 <script>
-let rows=[],statusData={feeds:[]},researchData={leagues:[]},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
+let rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
 const ACTIVE_LEAGUES=["NFL","NCAAF","NBA","NHL","NCAAB"];
 const ALL_LEAGUES=["MLB","NFL","NCAAF","NBA","WNBA","NHL","NCAAB"];
 const scopedRows=()=>seasonView==="ALL"?rows:rows.filter(r=>ACTIVE_LEAGUES.includes(r.league));
@@ -220,12 +222,16 @@ function renderResearchHealth(){
   const improvement=hasImprovement?(Number(x.improvement_vs_home_baseline)>0?"+":"")+Number(x.improvement_vs_home_baseline).toFixed(3):"—";
   const m=x.market_board||{};
   const gaps=(x.missing_verified_inputs||[]).slice(0,3).join(", ");
+  const v=league==="NCAAF"?ncaafContext.model||{}:{};
+  const w=league==="NCAAF"?ncaafContext.weather||{}:{};
+  const improved=v.calibration?'<div class="sub" style="margin-top:7px">CFBD enhanced research: '+E(v.calibration.holdout_games)+' blind-test games · Brier '+E(Number(v.calibration.holdout_brier).toFixed(3))+' · '+E(v.market_matching?.matched_events??"—")+' matched pregame Kalshi moneylines</div>':'';
+  const wx=w.counts?'<div class="sub">Kickoff forecast context: '+E(w.counts.forecast_available??0)+' weather reports · '+E(w.counts.indoor_venue??0)+' indoor venues</div>':'';
   return '<div class="league-card"><div class="league-title">'+E(league)+'</div><div class="chip pas" style="display:inline-block;margin:8px 0">RESEARCH ONLY</div>'
    +'<div class="sub">Status: '+E(report)+'</div><div class="sub">Holdout games: '+E(x.holdout_games??"—")+'</div>'
    +'<div class="sub">Winner Brier: '+E(brier)+' · Baseline: '+E(baseline)+'</div>'
    +'<div class="sub">Improvement: '+E(improvement)+' (positive is better)</div>'
    +'<div class="sub">Board: '+E(m.date_et||"—")+' · '+E(m.candidate_market_count??"—")+' markets</div>'
-   +'<div class="sub">Missing: '+E(gaps||"verified inputs")+'</div></div>';
+   +'<div class="sub">Missing: '+E(gaps||"verified inputs")+'</div>'+improved+wx+'</div>';
  }).join("");
 }
 function renderHealth(){
@@ -257,9 +263,9 @@ function renderYesterday(){
 function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderResearchHealth();renderYesterday()}
 async function load(){
  try{
-  const [p,s,m,y,h]=await Promise.all([fetch("/api/picks",{cache:"no-store"}),fetch("/api/status",{cache:"no-store"}),fetch("/api/private-metrics",{cache:"no-store"}),fetch("/api/yesterday-bets",{cache:"no-store"}),fetch("/api/model-health",{cache:"no-store"})]);
+  const [p,s,m,y,h,n]=await Promise.all([fetch("/api/picks",{cache:"no-store"}),fetch("/api/status",{cache:"no-store"}),fetch("/api/private-metrics",{cache:"no-store"}),fetch("/api/yesterday-bets",{cache:"no-store"}),fetch("/api/model-health",{cache:"no-store"}),fetch("/api/ncaaf-research-health",{cache:"no-store"})]);
   if(p.status===401){location.href="/login";return}
-  const d=await p.json(); rows=d.rows||[]; statusData=s.ok?await s.json():{feeds:[]}; privateMetrics=m.ok?await m.json():{}; yesterdayBets=y.ok?await y.json():{date:null,rows:[]}; researchData=h.ok?await h.json():{leagues:[]}; render();
+  const d=await p.json(); rows=d.rows||[]; statusData=s.ok?await s.json():{feeds:[]}; privateMetrics=m.ok?await m.json():{}; yesterdayBets=y.ok?await y.json():{date:null,rows:[]}; researchData=h.ok?await h.json():{leagues:[]}; ncaafContext=n.ok?await n.json():{}; render();
   stamp.textContent="Updated "+new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit"}).format(new Date())+" ET";
  }catch(e){stamp.textContent="Feed error";}
 }
@@ -300,6 +306,12 @@ class Handler(BaseHTTPRequestHandler):
             return self.redirect("/login")
         if p == "/":
             return self.send(200, HTML)
+        if p == "/api/ncaaf-research-health":
+            out={}
+            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL)):
+                try: out[key]=fetch_json(url)
+                except Exception: out[key]={}
+            return self.send(200,json.dumps(out),"application/json")
         if p == "/api/model-health":
             try: return self.send(200,json.dumps(fetch_json(FEEDS["model_health"])),"application/json")
             except Exception: return self.send(404,json.dumps({"error":"research report not published yet"}),"application/json")
