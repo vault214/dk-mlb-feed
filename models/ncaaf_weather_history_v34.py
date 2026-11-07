@@ -94,17 +94,27 @@ def fixtures_by_season(datasets,venues):
 def collect(candidates,previous,now,fetch_fn=fetch_weather,max_new=12):
     if max_new<1 or max_new>50:raise ValueError("batch limit out of bounds")
     rows={str(r["cfbd_game_id"]):r for r in previous if r.get("cfbd_game_id")}
-    # deterministically rotate selected seasons, do not sample on outcome.
+    # Stratify by calendar week/season, not teams, winners or observed weather.
+    # Avoid sampling only opening week, which could badly bias validation.
     buckets=collections.defaultdict(list)
+    observed_per_week=collections.Counter()
+    for r in rows.values():
+        when=instant(r.get("kickoff_utc"))
+        if when is not None:
+            observed_per_week[(r["year"],when.isocalendar().week)]+=1
     for g in candidates:
         if g["cfbd_game_id"] not in rows:
-            buckets[g["year"]].append(g)
-    seasons=sorted(buckets)
+            key=(g["year"],instant(g["kickoff_utc"]).isocalendar().week)
+            buckets[key].append(g)
     selection=[]
-    while len(selection)<max_new and any(buckets.values()):
-        for year in seasons:
-            if buckets[year] and len(selection)<max_new:
-                selection.append(buckets[year].pop(0))
+    picked_per_week=collections.Counter()
+    while len(selection)<max_new:
+        available=[k for k,items in buckets.items() if items]
+        if not available:break
+        # Evenly sample season weeks, fixed tie-break not based on game result.
+        k=min(available,key=lambda x:(observed_per_week[x]+picked_per_week[x],x[1],x[0]))
+        selection.append(buckets[k].pop(0))
+        picked_per_week[k]+=1
     checks=collections.Counter()
     for g in selection:
         kickoff=instant(g["kickoff_utc"])
