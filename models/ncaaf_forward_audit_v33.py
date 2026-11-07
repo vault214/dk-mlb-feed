@@ -248,8 +248,6 @@ def archives(archive_dir,now):
     for f in root.glob("20??-??-??.json"):
         try:
             day=dt.date.fromisoformat(f.stem)
-            if abs((now.date()-day).days)>SETTLEMENT_LOOKBACK_DAYS:
-                continue
             obj=json.loads(f.read_text())
             if obj.get("schemaVersion")!=1 or obj.get("sport")!="NCAAF":continue
             result[f.stem]=obj
@@ -272,6 +270,8 @@ def merge_snapshot(existing,snapshot):
 def settle_archives(datasets, now, market_fn=get_market):
     cache={}
     for day,archive in datasets.items():
+        if abs((now.date()-dt.date.fromisoformat(day)).days)>30:
+            continue
         for x in archive["observations"]:
             ticker=x["ticker"];kick=stamp(x.get("kickoffUTC"))
             if kick is None or kick>now+dt.timedelta(minutes=-15):
@@ -299,7 +299,6 @@ def summarize(datasets,now,snapshot):
         settlements.update(a.get("settlements",{}))
     for r in allrows:groups[(r["ticker"],r["side"],r["cfbdGameId"])].append(r)
     first=[];comparisons=[];settled=[]
-    close_proxy_games=set()
     for key,observations in groups.items():
         observations.sort(key=lambda r:r["quote_observed_utc"])
         base=observations[0]
@@ -309,13 +308,12 @@ def summarize(datasets,now,snapshot):
         near=[r for r in pre if 0<=(kick-stamp(r["quote_observed_utc"])).total_seconds()/60<=CLOSE_PROXY_MAX_GAP_MINUTES]
         close=near[-1] if near else None
         if close is not None:
-            close_proxy_games.add(key)
             comparisons.append({
                 "ticker":key[0],"side":key[1],
                 "first_observed_utc":base["quote_observed_utc"],
                 "pre_kickoff_proxy_utc":close["quote_observed_utc"],
                 "entry_ask":base["book_vwap_ask"],"last_pre_kickoff_ask":close["book_vwap_ask"],
-                "closing_proxy_movement_pp":round(100*(base["book_vwap_ask"]-close["book_vwap_ask"]),3),
+                "closing_proxy_favorable_if_positive_pp":round(100*(close["book_vwap_ask"]-base["book_vwap_ask"]),3),
                 "proxy_is_true_exchange_closing_price":False})
         outcome=settlements.get(key[0],{}).get("outcome")
         if outcome not in ("YES","NO"):continue
