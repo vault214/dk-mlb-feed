@@ -38,7 +38,6 @@ def slug(text):
     s=unicodedata.normalize("NFKD",str(text or "")).encode("ascii","ignore").decode().lower()
     s=s.replace("&"," and ").replace("'","")
     s=re.sub("[^a-z0-9]+","-",s).strip("-")
-    if s.endswith("-and-m"):s=s[:-6]+"-a-m"
     return s
 
 def slugs(team):
