@@ -21,6 +21,8 @@ on:
       - 'models/test_ncaaf_availability_triage_v37.py'
       - 'models/ncaaf_pregame_window_v38.py'
       - 'models/test_ncaaf_pregame_window_v38.py'
+      - 'models/ncaaf_provider_proof_v39.py'
+      - 'models/test_ncaaf_provider_proof_v39.py'
       - '.github/workflows/ncaaf-forward-v33.yml'
   schedule:
     - cron: '7,22,37,52 13-23 * * 5,6'
@@ -46,6 +48,7 @@ jobs:
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_supplemental_v36.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_availability_triage_v37.py' -v
           PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_pregame_window_v38.py' -v
+          PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_provider_proof_v39.py' -v
   forward:
     if: github.event_name != 'push'
     needs: checks
@@ -85,6 +88,12 @@ jobs:
         if: steps.window.outputs.capture == 'true'
         run: |
           python models/ncaaf_official_report_discovery_v35.py             --queue ncaaf-v38-scoped-queue.json             --output dashboard/ncaaf-v35-source-discovery.json
+      - name: Verify published HDI viewer links only when attested by official conference HTML
+        if: steps.window.outputs.capture == 'true'
+        run: |
+          python models/ncaaf_provider_proof_v39.py \
+            --queue ncaaf-v38-scoped-queue.json \
+            --output dashboard/ncaaf-v39-provider-proof.json
       - name: Cross-reference optional third-party matchup report leads (never verify player status)
         if: steps.window.outputs.capture == 'true'
         run: |
@@ -123,6 +132,10 @@ jobs:
           assert all(not g.get("model_eligible",False) for g in a["game_review_queue"])
           e=json.load(open("dashboard/ncaaf-v35-eligibility.json"))
           t=json.load(open("dashboard/ncaaf-v37-availability-triage.json"))
+          h=json.load(open("dashboard/ncaaf-v39-provider-proof.json"))
+          assert h["official_eligible"] is False
+          assert all(not x["final_report_for_this_game_verified"] and
+                     not x["both_starting_qbs_verified"] for x in h["games"])
           assert t["official_eligible"] is False
           assert all(not x.get("official_qb_verified") and not x.get("used_to_adjust_probabilities") for x in t["games"])
           assert e["production_eligible"] is False and e["official_eligible"] is False
@@ -151,13 +164,14 @@ jobs:
             dashboard/ncaaf-v36-secondary-leads.json
             dashboard/ncaaf-v37-availability-triage.json
             dashboard/ncaaf-v38-window.json
+            dashboard/ncaaf-v39-provider-proof.json
           retention-days: 14
       - name: Commit forward evidence only, never official picks or accounts
         if: steps.window.outputs.capture == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboard/ncaaf-v33-health.json dashboard/ncaaf-v34-settlement-health.json dashboard/ncaaf-v35-eligibility.json dashboard/ncaaf-v35-verified-availability.json dashboard/ncaaf-v35-source-discovery.json dashboard/ncaaf-v36-secondary-leads.json dashboard/ncaaf-v37-availability-triage.json dashboard/ncaaf-v38-window.json research/ncaaf-forward/
+          git add dashboard/ncaaf-v33-health.json dashboard/ncaaf-v34-settlement-health.json dashboard/ncaaf-v35-eligibility.json dashboard/ncaaf-v35-verified-availability.json dashboard/ncaaf-v35-source-discovery.json dashboard/ncaaf-v36-secondary-leads.json dashboard/ncaaf-v37-availability-triage.json dashboard/ncaaf-v38-window.json dashboard/ncaaf-v39-provider-proof.json research/ncaaf-forward/
           if ! git diff --cached --quiet; then
             git commit -m "Archive NCAAF read-only orderbook and settlement research [skip ci]"
             for attempt in 1 2 3 4 5; do
