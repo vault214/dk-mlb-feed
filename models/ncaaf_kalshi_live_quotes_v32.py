@@ -31,12 +31,18 @@ def price(x):
     if not math.isfinite(n) or n<=0:return None
     return n if n<1 else n/100 if n<=100 else None
 
+def dollar_ask(x):
+    if x is None or isinstance(x,bool):return None
+    try:n=float(x)
+    except (TypeError,ValueError):return None
+    return n if math.isfinite(n) and 0<n<1 else None
+
 def extract(m,now):
     if not isinstance(m,dict):return {"status":"BAD MARKET RESPONSE"}
     ticker=m.get("ticker")
     if not ticker:return {"status":"MISSING TICKER"}
-    yes=price(m.get("yes_ask_dollars"))
-    no=price(m.get("no_ask_dollars"))
+    yes=dollar_ask(m.get("yes_ask_dollars"))
+    no=dollar_ask(m.get("no_ask_dollars"))
     if yes is None:yes=price(m.get("yes_ask"))
     if no is None:no=price(m.get("no_ask"))
     close=m.get("close_time")
