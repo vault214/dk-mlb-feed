@@ -3,7 +3,10 @@ on:
   push:
     branches: [main]
     paths:
-      - 'models/**'
+      - 'models/football_collect_scores_v21.py'
+      - 'models/football_pregame_features_v21.py'
+      - 'models/ncaaf_calibration_v21.py'
+      - 'models/test_football_v21.py'
       - '.github/workflows/football-research-v21.yml'
   workflow_dispatch:
   schedule:
