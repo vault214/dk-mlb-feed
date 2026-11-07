@@ -70,6 +70,8 @@ def analyze(archives,now):
                 confirmed[gid][ticker]=ev
     primary=[]
     matched=[]
+    pending_candidates=[]
+    all_precommitted=[]
     close_examples=[]
     unverified=set()
     for gid,obs in sorted(games.items()):
@@ -77,7 +79,6 @@ def analyze(archives,now):
         verified=confirmed.get(gid,{})
         if not verified:
             unverified.add(gid)
-            continue
         # Require same CFBD game and home-team winner evidence, never infer.
         homeobs=[r for r in obs if r.get("side")=="YES" and
                  r.get("selectionLabel")==r.get("homeTeam") and
@@ -115,21 +116,26 @@ def analyze(archives,now):
         earliest=stamp(obs[0]["quote_observed_utc"])
         first_batch=[r for r in obs if
             (stamp(r["quote_observed_utc"])-earliest).total_seconds()<=120 and
-            r["ticker"] in verified]
+            True]
         qualified=[]
         for r in first_batch:
             fee=number(r.get("taker_fee_estimate_dollars"))
             size=number(r.get("sample_contracts"))
             if fee is None or fee<0 or size is None or abs(size-1)>1e-9:continue
-            ev=verified[r["ticker"]]
-            if ev.get("cfbd_game_id")!=gid:continue
             edge=100*(r["model_probability"]-r["book_vwap_ask"]-fee/size)-RESERVE_PP
             if edge>=EDGE_PP:
                 qualified.append((edge,r))
         if not qualified:continue
         qualified.sort(key=lambda item:(-item[0],item[1]["ticker"],item[1]["side"]))
         edge,entry=qualified[0]
-        result=verified[entry["ticker"]]["market_result"]
+        all_precommitted.append({"game_id":gid,"ticker":entry["ticker"],
+            "side":entry["side"],"asof_utc":entry["quote_observed_utc"],
+            "research_score_pp":round(edge,3),"official_eligible":False})
+        ev=verified.get(entry["ticker"])
+        if not ev or ev.get("cfbd_game_id")!=gid:
+            pending_candidates.append(gid)
+            continue
+        result=ev["market_result"]
         hit=int(entry["side"]==result)
         fee=number(entry["taker_fee_estimate_dollars"])
         pnl=hit-(entry["book_vwap_ask"]+fee)
@@ -170,6 +176,8 @@ def analyze(archives,now):
         "market_midpoint_baseline_samples":market_count,
         "market_bidask_midpoint_brier":b_market,
         "market_bidask_midpoint_log_loss":log_loss(primary,"home_market_bid_ask_midpoint"),
+        "precommitted_research_candidate_games":len(all_precommitted),
+        "precommitted_candidate_games_awaiting_independent_settlement":len(pending_candidates),
         "research_edge_strategy_distinct_games":len(matched),
         "research_edge_strategy_wins":win,
         "research_edge_strategy_win_rate":round(win/len(matched),4) if matched else None,
@@ -179,9 +187,10 @@ def analyze(archives,now):
         "mean_later_pregame_quote_movement_pp":round(sum(close_examples)/len(close_examples),4) if close_examples else None,
         "minimum_unique_games_before_model_edge_review":MIN_GAMES,
         "review_sample_target_met":len(primary)>=MIN_GAMES and len(matched)>=MIN_GAMES,
-        "hypothetical_strategy_rule":"Earliest observed batch within 120 seconds, select only max pregame net edge >=5pp after fee + 4pp model reserve; deterministic per-game tie break.",
+        "hypothetical_strategy_rule":"Earliest observed batch within 120 seconds independent of eventual settlement; select max pregame net edge >=5pp after fee + 4pp model reserve; unresolved candidates remain pending and are NOT dropped from the selection denominator.",
         "games":primary,
         "research_candidate_examples":matched[:30],
+        "unsettled_precommitted_examples":all_precommitted[:15],
         "official_eligible":False,"shadow_eligible":False,"production_eligible":False,
         "not_an_executed_strategy":True,
         "note":"Contract-side observations are correlated and not actual fills. One independently corroborated game is counted once. Market midpoint is an ask/bid proxy, not exchange closing price. Historical research strategies chosen after seeing data may overfit; reserve future slates for independent evaluation."}
