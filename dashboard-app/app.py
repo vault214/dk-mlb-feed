@@ -29,6 +29,7 @@ FORWARD_V33_URL = RAW + "/dashboard/ncaaf-v33-health.json"
 SETTLEMENT_V34_URL = RAW + "/dashboard/ncaaf-v34-settlement-health.json"
 AVAILABILITY_V34_URL = RAW + "/dashboard/ncaaf-v34-availability-health.json"
 WEATHER_HISTORY_V34_URL = RAW + "/dashboard/ncaaf-v34-weather-history-health.json"
+ELIGIBILITY_V35_URL = RAW + "/dashboard/ncaaf-v35-eligibility.json"
 
 HTML = r'''<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -81,6 +82,13 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
   <div class="notice" style="margin-top:12px">These are preliminary retrospective model diagnostics, not live betting predictions or proof of profitable Kalshi edges. Green data-collection jobs do not authorize paper picks.</div>
   <div id="researchSummary" class="sub" style="margin-top:12px">Research health report not yet available.</div>
   <div id="researchHealth" class="league-grid" style="margin-top:12px"></div>
+</section>
+<section class="panel">
+  <div class="eyebrow">NCAA FOOTBALL · INDIVIDUAL EVIDENCE CHECKS</div>
+  <h2>Which Matchups Are Blocked?</h2>
+  <div class="notice" style="margin-top:12px">These are research diagnostics, not betting recommendations. No game is automatically approved; official and shadow picks retain independent policy checks.</div>
+  <div id="eligibilitySummary" class="sub" style="margin-top:12px">Awaiting game-by-game research report.</div>
+  <div id="eligibilityGrid" class="league-grid" style="margin-top:12px"></div>
 </section>
 
 <section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="season-tabs" id="seasonTabs"><button class="tab active" data-season="ACTIVE" onclick="setSeasonView('ACTIVE')">Active Season</button><button class="tab" data-season="ALL" onclick="setSeasonView('ALL')">All-Time</button></div><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="NCAAB" onclick="setPerfLeague('NCAAB')">NCAAB</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
@@ -209,6 +217,27 @@ function renderModelPerf(){
 function renderLedger(){
  rowsTable.innerHTML=[...scopedRows()].sort((a,b)=>String(b.boardTimestampET||b.dateET).localeCompare(String(a.boardTimestampET||a.dateET))).map(r=>'<tr><td>'+E(r.dateET)+'</td><td>'+E(r.league)+'</td><td><span class="chip '+(r.trackType==="OFFICIAL"?'off':r.trackType==="SHADOW"?'sha':'pas')+'">'+E(r.trackType)+'</span></td><td>'+friendly(r)+'</td><td>'+E(r.edge||"—")+'</td><td>'+E(r.confidence||"—")+'</td><td>'+E(r.result||"Pending")+'</td></tr>').join("");
 }
+function renderNcaafEligibility(){
+ const data=ncaafContext.eligibility||{};
+ const games=data.games||[];
+ if(!games.length){
+   eligibilitySummary.textContent="No per-game eligibility research has been published yet.";
+   eligibilityGrid.innerHTML="";
+   return;
+ }
+ eligibilitySummary.textContent=games.length+" matchups · "+(data.games_blocked??games.length)+" blocked · independent settled game sample "+(data.forward_independent_verified_games??0)+" / "+(data.minimum_distinct_forward_games_research_target??40)+" research target.";
+ eligibilityGrid.innerHTML=games.map(g=>{
+   const issues=(g.reasons||[]).slice(0,5).map(x=>'<div class="sub" style="margin-top:4px">• '+E(x)+'</div>').join("");
+   const more=(g.reasons||[]).length>5?'<div class="sub">+'+E(g.reasons.length-5)+' additional checks</div>':'';
+   return '<div class="league-card"><div class="league-title">'+E(g.away_team)+' at '+E(g.home_team)+'</div>'
+     +'<div class="chip pas" style="display:inline-block;margin:8px 0">RESEARCH ONLY</div>'
+     +'<div class="sub">Kickoff: '+E(g.kickoff_utc||"—")+'</div>'
+     +'<div class="sub">Status: '+E(g.status)+'</div>'
+     +'<div class="sub">Fresh fee/depth-checked sides: '+E(g.valid_live_quote_sides??0)+' / '+E(g.available_contract_side_samples??0)+'</div>'
+     +'<div class="sub">Primary report verified: '+(g.game_specific_report_verified?"Yes":"No")+'</div>'
+     +'<div style="margin-top:7px"><b>Unmet checks</b>'+issues+more+'</div></div>';
+ }).join("");
+}
 function renderResearchHealth(){
  const sports=["NCAAF","NFL","NBA","NHL","NCAAB","MLB","WNBA"];
  const mapped=new Map((researchData.leagues||[]).map(x=>[x.league,x]));
@@ -275,7 +304,7 @@ function renderYesterday(){
  yesterdayMeta.textContent=(yesterdayBets.date?"Date: "+yesterdayBets.date+" · ":"")+(open?open+" still open/unsettled · ":"")+"Use this table to cross-check yesterday against DraftKings/Kalshi.";
  yesterdayRows.innerHTML=rs.length?rs.map(r=>'<tr><td>'+E(r.timeET||"")+'</td><td>'+E(r.platform||"")+'</td><td>'+E(r.sport||"")+'</td><td>'+E(r.market||"")+'</td><td>'+E(r.selection||"")+'</td><td>'+money(r.risk)+'</td><td>'+E(r.price||r.odds||"—")+'</td><td>'+E(r.result||"")+'</td><td>'+money(r.pnl)+'</td><td>'+E(r.tradeId||"")+'</td></tr>').join(""):'<tr><td colspan="10" class="muted">No transactions were loaded for yesterday.</td></tr>';
 }
-function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderResearchHealth();renderYesterday()}
+function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderResearchHealth();renderNcaafEligibility();renderYesterday()}
 async function load(){
  try{
   const [p,s,m,y,h,n]=await Promise.all([fetch("/api/picks",{cache:"no-store"}),fetch("/api/status",{cache:"no-store"}),fetch("/api/private-metrics",{cache:"no-store"}),fetch("/api/yesterday-bets",{cache:"no-store"}),fetch("/api/model-health",{cache:"no-store"}),fetch("/api/ncaaf-research-health",{cache:"no-store"})]);
@@ -323,7 +352,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, HTML)
         if p == "/api/ncaaf-research-health":
             out={}
-            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL),("quotes",QUOTE_V32_URL),("forward",FORWARD_V33_URL),("settlement",SETTLEMENT_V34_URL),("availability",AVAILABILITY_V34_URL),("weatherHistory",WEATHER_HISTORY_V34_URL)):
+            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL),("quotes",QUOTE_V32_URL),("forward",FORWARD_V33_URL),("settlement",SETTLEMENT_V34_URL),("availability",AVAILABILITY_V34_URL),("weatherHistory",WEATHER_HISTORY_V34_URL),("eligibility",ELIGIBILITY_V35_URL)):
                 try: out[key]=fetch_json(url)
                 except Exception: out[key]={}
             return self.send(200,json.dumps(out),"application/json")
