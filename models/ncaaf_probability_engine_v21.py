@@ -109,7 +109,7 @@ def main():
     with open(a.board) as f:board=json.load(f)
     with open(a.projections,newline="") as f:projections=list(csv.DictReader(f))
     result=run(board,projections,date)
-    data=json.dumps(result,indent=2)+"\\n"
+    data=json.dumps(result,indent=2)+chr(10)
     if a.output:pathlib.Path(a.output).write_text(data)
     else:print(data)
 if __name__=="__main__":main()
