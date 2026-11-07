@@ -30,6 +30,7 @@ SETTLEMENT_V34_URL = RAW + "/dashboard/ncaaf-v34-settlement-health.json"
 AVAILABILITY_V34_URL = RAW + "/dashboard/ncaaf-v34-availability-health.json"
 WEATHER_HISTORY_V34_URL = RAW + "/dashboard/ncaaf-v34-weather-history-health.json"
 ELIGIBILITY_V35_URL = RAW + "/dashboard/ncaaf-v35-eligibility.json"
+PREGAME_V38_URL = RAW + "/dashboard/ncaaf-v38-window.json"
 
 HTML = r'''<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -244,6 +245,8 @@ function renderNcaafEligibility(){
      +'<div class="sub">Status: '+E(g.status)+'</div>'
      +'<div class="sub">Fee/depth-checked sides at capture: '+E(g.valid_live_quote_sides??0)+' / '+E(g.available_contract_side_samples??0)+'</div>'
      +'<div class="sub">Primary report verified: '+(g.game_specific_report_verified?"Yes":"No")+'</div>'
+     +'<div class="sub">Conference report stage: '+E(g.conference_final_report_stage||"Not checked")+'</div>'
+     +'<div class="sub">Final report deadline: '+E(g.conference_final_report_due_utc||"No verified conference policy")+'</div>'
      +leadText
      +qbRisk
      +'<div style="margin-top:7px"><b>Unmet checks</b>'+issues+more+'</div></div>';
@@ -363,7 +366,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, HTML)
         if p == "/api/ncaaf-research-health":
             out={}
-            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL),("quotes",QUOTE_V32_URL),("forward",FORWARD_V33_URL),("settlement",SETTLEMENT_V34_URL),("availability",AVAILABILITY_V34_URL),("weatherHistory",WEATHER_HISTORY_V34_URL),("eligibility",ELIGIBILITY_V35_URL)):
+            for key,url in (("model",RESEARCH_V32_URL),("weather",WEATHER_V32_URL),("quotes",QUOTE_V32_URL),("forward",FORWARD_V33_URL),("settlement",SETTLEMENT_V34_URL),("availability",AVAILABILITY_V34_URL),("weatherHistory",WEATHER_HISTORY_V34_URL),("eligibility",ELIGIBILITY_V35_URL),("pregameWindow",PREGAME_V38_URL)):
                 try: out[key]=fetch_json(url)
                 except Exception: out[key]={}
             return self.send(200,json.dumps(out),"application/json")
