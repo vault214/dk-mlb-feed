@@ -1,0 +1,67 @@
+name: NCAA Football CFBD research ingestion
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'models/ncaaf_cfbd_ingest_v31.py'
+      - 'models/test_ncaaf_cfbd_v31.py'
+      - '.github/workflows/ncaaf-cfbd-v31.yml'
+  schedule:
+    - cron: '15 13 * * 5,6'
+permissions:
+  contents: read
+concurrency:
+  group: ncaaf-cfbd-research-v31
+  cancel-in-progress: false
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Offline safety tests
+        run: PYTHONPATH=models python -m unittest discover -s models -p 'test_ncaaf_cfbd_v31.py' -v
+      - name: Verify CollegeFootballData secret exists
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: |
+          if [ -z "$CFBD_API_KEY" ]; then
+            echo "CFBD_API_KEY repository secret not available to this workflow" >&2
+            exit 1
+          fi
+          echo "CFBD_API_KEY is available (contents never printed)"
+      - name: Fetch authenticated current-season independent team advanced stats
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: |
+          python models/ncaaf_cfbd_ingest_v31.py --output ncaaf-cfbd-snapshot.json --health dashboard/ncaaf-cfbd-health.json
+      - name: Upload private-workflow research snapshot and public health
+        uses: actions/upload-artifact@v4
+        with:
+          name: ncaaf-cfbd-research-snapshot
+          path: |
+            ncaaf-cfbd-snapshot.json
+            dashboard/ncaaf-cfbd-health.json
+          retention-days: 14
+      - name: Publish sanitized health only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git rebase origin/main
+          git add dashboard/ncaaf-cfbd-health.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh CFBD NCAAF research coverage [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No CFBD health changes"
+          fi
