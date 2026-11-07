@@ -107,6 +107,7 @@ jobs:
           python models/ncaaf_game_eligibility_v35.py             --research ncaaf-v38-filtered-research.json             --availability dashboard/ncaaf-v35-verified-availability.json             --model dashboard/ncaaf-v32-health.json             --settlement dashboard/ncaaf-v34-settlement-health.json \
             --supplemental dashboard/ncaaf-v36-secondary-leads.json \
             --triage dashboard/ncaaf-v37-availability-triage.json \
+            --window dashboard/ncaaf-v38-window.json \
             --archive-dir research/ncaaf-forward             --output dashboard/ncaaf-v35-eligibility.json
       - name: Validate data shape and research-only gates
         if: steps.window.outputs.capture == 'true'
