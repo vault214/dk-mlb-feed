@@ -126,7 +126,7 @@ def public_scoreboard(league,day):
     except (urllib.error.URLError,TimeoutError,OSError,ValueError):
         raise ValueError("unofficial ESPN scoreboard unavailable") from None
 
-def capture_one(row,now,market_fn=get_market,book_fn=get_orderbook,series_fn=get_series):
+def capture_one(row,now,market_fn=get_market,book_fn=get_orderbook,series_fn=get_series,clock=None):
     ticker=row["ticker"]
     try:
         market=market_fn(ticker)
@@ -140,7 +140,7 @@ def capture_one(row,now,market_fn=get_market,book_fn=get_orderbook,series_fn=get
         series=series_fn(str(market.get("series_ticker") or ticker.split("-")[0]))
         multiplier,error=fee_spec(series,market)
         fee=taker_fee(D("1"),D(str(yes["vwap_ask"])),multiplier) if multiplier is not None else None
-        at=dt.datetime.now(UTC)
+        at=(clock or (lambda:dt.datetime.now(UTC)))()
         kick=stamp(row["kickoff_utc"])
         if not (now<=at<kick-dt.timedelta(minutes=1)):
             raise ValueError("not before kickoff")
@@ -219,8 +219,6 @@ def run(root,boards_dir,now,scoreboard_fn=public_scoreboard,capture_fn=capture_o
             schedules,missing=read_schedules(league,now,scoreboard_fn)
             if missing:raise ValueError("missing dates from independent schedule")
             report=scan(league,board,schedules,now,capture_fn)
-            current_date=now.astimezone(ET).date().isoformat()
-            for day,obs in collections.defaultdict(list,{}).items():pass
             bydate=collections.defaultdict(list)
             for item in report.get("observations",[]):bydate[item["event_date_et"]].append(item)
             for day,items in bydate.items():
