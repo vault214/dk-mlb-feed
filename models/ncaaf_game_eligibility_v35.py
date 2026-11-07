@@ -67,7 +67,7 @@ def best_archive_observations(datasets,now):
                 bykey[key]=r
     return bykey
 
-def screen(research,availability,model,settlement,archives,now,supplemental=None,triage=None):
+def screen(research,availability,model,settlement,archives,now,supplemental=None,triage=None,window=None):
     if now.tzinfo is None:raise ValueError("now must have timezone")
     model_cap=timestamp(research.get("modelCapturedAtUTC"))
     model_fresh=bool(model_cap and dt.timedelta(0)<=now-model_cap<=dt.timedelta(hours=18))
@@ -83,6 +83,8 @@ def screen(research,availability,model,settlement,archives,now,supplemental=None
                         for x in (supplemental or {}).get("games",[])}
     triage_by_id={str(x.get("cfbd_game_id")):x
                   for x in (triage or {}).get("games",[])}
+    deadline_by_id={str(x.get("cfbd_game_id")):x
+                    for x in (window or {}).get("games",[])}
     triage_observed=timestamp((triage or {}).get("generatedAtUTC"))
     bybook=best_archive_observations(archives,now)
     grp=collections.defaultdict(list)
@@ -166,6 +168,7 @@ def screen(research,availability,model,settlement,archives,now,supplemental=None
         status="NOT PREGAME" if not pregame else "BLOCKED — EVIDENCE INCOMPLETE"
         counts[status]+=1
         lead=supplemental_by_id.get(gid,{})
+        clock=deadline_by_id.get(gid,{})
         secondary=triage_by_id.get(gid,{})
         secondary_pregame=bool(triage_observed and triage_observed<kick)
         secondary_qb_flags=secondary.get("secondary_qb_risk_flags",[]) if secondary_pregame else []
@@ -177,6 +180,12 @@ def screen(research,availability,model,settlement,archives,now,supplemental=None
             "independent_forward_games":unique,
             "availability_report_hub":review.get("report_discovery_hub"),
             "game_specific_report_verified":document_verified,
+            "conference_final_report_due_utc":clock.get("final_report_due_utc"),
+            "conference_final_report_stage":clock.get("stage"),
+            "conference_report_policy_url":clock.get("official_policy_url"),
+            "conference_report_policy_applicable":clock.get("official_policy_applicable",False),
+            "player_omission_policy_interpretation":clock.get("unlisted_player_policy_if_verified_complete_report"),
+            "unlisted_starter_availability_inferred":False,
             "supplemental_report_lead_url":lead.get("supplemental_url"),
             "supplemental_report_lead_status":lead.get("status","NO SUPPLEMENTAL REPORT LEAD"),
             "supplemental_data_counted_as_verified":False,
@@ -215,6 +224,7 @@ def main():
     p.add_argument("--archive-dir",default="research/ncaaf-forward")
     p.add_argument("--supplemental",default=None)
     p.add_argument("--triage",default=None)
+    p.add_argument("--window",default=None)
     p.add_argument("--output",default="dashboard/ncaaf-v35-eligibility.json")
     a=p.parse_args()
     def load(path):return json.loads(pathlib.Path(path).read_text())
@@ -225,7 +235,8 @@ def main():
         if obj.get("sport")=="NCAAF":archive[path.stem]=obj
     out=screen(load(a.research),load(a.availability),load(a.model),load(a.settlement),
                archive,dt.datetime.now(UTC),load(a.supplemental) if a.supplemental else None,
-               load(a.triage) if a.triage else None)
+               load(a.triage) if a.triage else None,
+               load(a.window) if a.window else None)
     dest=pathlib.Path(a.output);dest.parent.mkdir(parents=True,exist_ok=True)
     dest.write_text(json.dumps(out,indent=2)+"\n")
     print(json.dumps({k:out[k] for k in (
