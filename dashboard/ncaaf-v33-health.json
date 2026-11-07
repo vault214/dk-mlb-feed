@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "generatedAtUTC": "2026-11-07T20:41:29.870813+00:00",
+  "generatedAtUTC": "2026-11-07T20:41:56.782830+00:00",
   "status": "FORWARD RESEARCH ONLY",
   "latest_capture_status": "READY FOR RESEARCH",
   "latest_candidate_sides": 28,
@@ -12,7 +12,7 @@
   "latest_depth_sides_100_contracts": 28,
   "latest_eligible_official": 0,
   "latest_eligible_shadow": 0,
-  "archived_observations": 700,
+  "archived_observations": 728,
   "unique_contract_sides": 52,
   "closing_price_proxy_pairs": 32,
   "independent_game_closing_proxy_pairs": 6,
