@@ -199,6 +199,20 @@ def audit(research, now, market_fn=get_market, orderbook_fn=get_orderbook,
         if not sim.get("depth_available"):
             excluded["INSUFFICIENT ASK DEPTH"]+=1;continue
         p=dec(sim["vwap_ask"]); fee=taker_fee(contracts,p,spec) if spec is not None else None
+        # Evaluate bounded research depth/fee scenarios without assuming what
+        # the user's abstract 1.00u paper stake equals in real dollars.
+        scenarios={}
+        for quantity in (D("1"),D("10"),D("100")):
+            fill=simulated_taker(book,r["side"],quantity)
+            if fill is None or not fill.get("depth_available"):
+                scenarios[str(quantity)]={"depth_available":False}
+            else:
+                filled_price=dec(fill["vwap_ask"])
+                estimated_fee=taker_fee(quantity,filled_price,spec) if spec is not None else None
+                scenarios[str(quantity)]={
+                    "depth_available":True,"vwap_ask":fill["vwap_ask"],
+                    "slippage_pp":fill["book_slippage_pp"],
+                    "estimated_taker_fee_dollars":float(estimated_fee) if estimated_fee is not None else None}
         model=dec(r["modelProbability"])
         # Conservative net research value at a 1-contract sampled book:
         # model payout ($1 if correct) - total filled cost and taker-fee estimate.
@@ -217,7 +231,7 @@ def audit(research, now, market_fn=get_market, orderbook_fn=get_orderbook,
             "orderbook_top_ask":sim["top_ask"],"book_vwap_ask":sim["vwap_ask"],
             "top_level_contracts":sim["top_qty"],"available_contracts":sim["available_contracts"],
             "book_slippage_pp":sim["book_slippage_pp"],
-            "sample_contracts":float(contracts),"series_ticker":series_ticker,
+            "sample_contracts":float(contracts),"depth_scenarios_contracts":scenarios,"series_ticker":series_ticker,
             "series_fee_type":s.get("fee_type") if s else None,
             "series_fee_multiplier":float(spec) if spec is not None else None,
             "taker_fee_estimate_dollars":float(fee) if fee is not None else None,
@@ -235,6 +249,8 @@ def audit(research, now, market_fn=get_market, orderbook_fn=get_orderbook,
     output["markets_checked"]=len(markets)
     output["orderbooks_available"]=sum(1 for b in books.values() if b)
     output["observations_with_fee_estimates"]=sum(r["taker_fee_estimate_dollars"] is not None for r in output["observations"])
+    output["scenario_depth_10_contract_sides"]=sum(r["depth_scenarios_contracts"]["10"]["depth_available"] for r in output["observations"])
+    output["scenario_depth_100_contract_sides"]=sum(r["depth_scenarios_contracts"]["100"]["depth_available"] for r in output["observations"])
     return output
 
 def filename(archive_dir,day):
@@ -343,6 +359,8 @@ def summarize(datasets,now,snapshot):
         "latest_depth_checked":snapshot.get("markets_checked",0),
         "latest_orderbooks_available":snapshot.get("orderbooks_available",0),
         "latest_fee_estimations":snapshot.get("observations_with_fee_estimates",0),
+        "latest_depth_sides_10_contracts":snapshot.get("scenario_depth_10_contract_sides",0),
+        "latest_depth_sides_100_contracts":snapshot.get("scenario_depth_100_contract_sides",0),
         "latest_eligible_official":0,"latest_eligible_shadow":0,
         "archived_observations":len(allrows),
         "unique_contract_sides":len(first),
