@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "capturedAtUTC": "2026-11-07T19:03:10.790020+00:00",
+  "sport": "NCAAF",
+  "status": "RESEARCH ONLY",
+  "production_eligible": false,
+  "official_eligible": false,
+  "calibration": {
+    "training_games": 575,
+    "calibration_games": 587,
+    "holdout_games": 288,
+    "holdout_brier": 0.21024,
+    "home_prior_brier": 0.240761,
+    "improvement": 0.030521,
+    "ece": 0.058211
+  },
+  "market_matching": {
+    "status": "RESEARCH COMPARISON ONLY",
+    "board_date": "2026-11-07",
+    "moneyline_events": 55,
+    "matched_events": 13,
+    "compared_contract_sides": 52,
+    "excluded_events": {
+      "matchup not uniquely verified as pregame FBS": 11,
+      "event lacks exactly two distinct winner labels": 30,
+      "unverified or ambiguous team alias": 1
+    }
+  },
+  "unverified_requirements": [
+    "quarterback availability",
+    "injuries",
+    "weather",
+    "fresh executable ask timestamp",
+    "market fees/liquidity",
+    "independent forward validation"
+  ],
+  "note": "Independent calibrated pregame winner research. NOT eligible to issue official or shadow picks."
+}
