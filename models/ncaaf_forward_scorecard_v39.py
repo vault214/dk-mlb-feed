@@ -115,8 +115,7 @@ def analyze(archives,now):
         # estimated edge, but only if >=5pp; one side total per distinct game.
         earliest=stamp(obs[0]["quote_observed_utc"])
         first_batch=[r for r in obs if
-            (stamp(r["quote_observed_utc"])-earliest).total_seconds()<=120 and
-            True]
+            (stamp(r["quote_observed_utc"])-earliest).total_seconds()<=120]
         qualified=[]
         for r in first_batch:
             fee=number(r.get("taker_fee_estimate_dollars"))
