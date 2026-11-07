@@ -118,7 +118,7 @@ def build_snapshot(year, games, stats, teams, now):
     for g in prior:
         by_team[g["home"]].append(g["id"])
         by_team[g["away"]].append(g["id"])
-    planned=[x for x in usable if x["when"]>now and x["when"]<=now+dt.timedelta(days=7)]
+    planned=[x for x in usable if not x["completed"] and x["when"]>now and x["when"]<=now+dt.timedelta(days=7)]
     rows=[]
     for g in planned:
         h=summarize_team(g["home"],by_team[g["home"]],adv)
