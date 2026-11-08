@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "generatedAtUTC": "2026-11-07T20:45:45.104445+00:00",
+  "generatedAtUTC": "2026-11-08T00:26:18.291908+00:00",
   "status": "OFFICIAL DIRECT REPORT DISCOVERY \u2014 NOT VERIFIED",
-  "conference_hubs_checked": 3,
-  "conference_hubs_fetchable": 3,
-  "matchups_checked": 5,
+  "conference_hubs_checked": 2,
+  "conference_hubs_fetchable": 2,
+  "matchups_checked": 3,
   "unambiguous_direct_report_candidates": 0,
   "candidate_evidence": {
     "schemaVersion": 1,
@@ -13,28 +13,6 @@
     "reports": []
   },
   "matchups": [
-    {
-      "cfbd_game_id": "401858517",
-      "home_team": "Wisconsin",
-      "away_team": "Rutgers",
-      "kickoff_utc": "2026-11-07T21:15:00+00:00",
-      "candidate_urls": [],
-      "report_hub_retrieved": true,
-      "hub_embedded_iframes": 0,
-      "document_content_verified": false,
-      "notes": "HTML links only; conference JS/iframe reports may not expose direct document links"
-    },
-    {
-      "cfbd_game_id": "401856745",
-      "home_team": "Tennessee",
-      "away_team": "Kentucky",
-      "kickoff_utc": "2026-11-07T23:15:00+00:00",
-      "candidate_urls": [],
-      "report_hub_retrieved": true,
-      "hub_embedded_iframes": 0,
-      "document_content_verified": false,
-      "notes": "HTML links only; conference JS/iframe reports may not expose direct document links"
-    },
     {
       "cfbd_game_id": "401856741",
       "home_team": "Ole Miss",
@@ -64,7 +42,7 @@
       "kickoff_utc": "2026-11-08T02:30:00+00:00",
       "candidate_urls": [],
       "report_hub_retrieved": true,
-      "hub_embedded_iframes": 0,
+      "hub_embedded_iframes": 1,
       "document_content_verified": false,
       "notes": "HTML links only; conference JS/iframe reports may not expose direct document links"
     }

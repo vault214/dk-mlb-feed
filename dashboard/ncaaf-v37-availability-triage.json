@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "sport": "NCAAF",
+  "generatedAtUTC": "2026-11-08T00:26:20.102773+00:00",
+  "status": "UNVERIFIED PRE-KICKOFF QB CONCERN PRIORITIZATION ONLY",
+  "game_pages_reviewed": 4,
+  "pages_parsed": 4,
+  "games_with_secondary_qb_risk_flags": 1,
+  "games": [
+    {
+      "cfbd_game_id": "401856741",
+      "home_team": "Ole Miss",
+      "away_team": "Georgia",
+      "event_date_et": "2026-11-07",
+      "source_url": "https://kickoffstatus.com/games/2026-11-07-georgia-at-ole-miss/",
+      "captured_utc": "2026-11-08T00:26:20.102773+00:00",
+      "status": "THIRD-PARTY QC ONLY - NOT PRIMARY VERIFICATION",
+      "qb_position_rows_seen": 0,
+      "secondary_qb_risk_flags": [],
+      "official_qb_verified": false,
+      "actual_starter_confirmed": false,
+      "official_injury_verified": false,
+      "used_to_adjust_probabilities": false
+    },
+    {
+      "cfbd_game_id": "401858291",
+      "home_team": "Notre Dame",
+      "away_team": "Miami",
+      "event_date_et": "2026-11-07",
+      "source_url": "https://kickoffstatus.com/games/2026-11-07-miami-at-notre-dame/",
+      "captured_utc": "2026-11-08T00:26:20.102773+00:00",
+      "status": "THIRD-PARTY QC ONLY - NOT PRIMARY VERIFICATION",
+      "qb_position_rows_seen": 0,
+      "secondary_qb_risk_flags": [],
+      "official_qb_verified": false,
+      "actual_starter_confirmed": false,
+      "official_injury_verified": false,
+      "used_to_adjust_probabilities": false
+    },
+    {
+      "cfbd_game_id": "401856739",
+      "home_team": "Florida",
+      "away_team": "Oklahoma",
+      "event_date_et": "2026-11-07",
+      "source_url": "https://kickoffstatus.com/games/2026-11-07-oklahoma-at-florida/",
+      "captured_utc": "2026-11-08T00:26:20.102773+00:00",
+      "status": "THIRD-PARTY QC ONLY - NOT PRIMARY VERIFICATION",
+      "qb_position_rows_seen": 0,
+      "secondary_qb_risk_flags": [],
+      "official_qb_verified": false,
+      "actual_starter_confirmed": false,
+      "official_injury_verified": false,
+      "used_to_adjust_probabilities": false
+    },
+    {
+      "cfbd_game_id": "401856856",
+      "home_team": "Texas Tech",
+      "away_team": "West Virginia",
+      "event_date_et": "2026-11-07",
+      "source_url": "https://kickoffstatus.com/games/2026-11-07-west-virginia-at-texas-tech/",
+      "captured_utc": "2026-11-08T00:26:20.102773+00:00",
+      "status": "THIRD-PARTY QC ONLY - NOT PRIMARY VERIFICATION",
+      "qb_position_rows_seen": 1,
+      "secondary_qb_risk_flags": [
+        {
+          "side": "away",
+          "name": "Jyron Hughley",
+          "position": "QB",
+          "secondary_status": "OUT",
+          "text_status": "Out",
+          "source_type": "THIRD-PARTY TRANSCRIPTION - NOT OFFICIAL EVIDENCE",
+          "starting_qb_verified": false,
+          "player_status_officially_verified": false
+        }
+      ],
+      "official_qb_verified": false,
+      "actual_starter_confirmed": false,
+      "official_injury_verified": false,
+      "used_to_adjust_probabilities": false
+    }
+  ],
+  "official_eligible": false,
+  "shadow_eligible": false,
+  "production_eligible": false,
+  "note": "Third-party QB position rows are a HUMAN/PRIMARY source verification priority only; never assume this is the actual starter or that other unlisted players are available."
+}
