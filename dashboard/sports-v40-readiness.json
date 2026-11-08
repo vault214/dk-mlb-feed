@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUTC": "2026-11-08T02:38:28.078898+00:00",
+  "generatedAtUTC": "2026-11-08T17:11:52.164099+00:00",
   "status": "SEVEN-SPORT READINESS / FORWARD COVERAGE \u2014 RESEARCH ONLY",
   "active_capture_sports": [
     "NFL",
@@ -69,7 +69,7 @@
       "historical_improvement_vs_home_baseline": 0.020754,
       "last_board_date_et": "2026-11-07",
       "capture_status": "PROSPECTIVE INDEPENDENT GAME-WINNER PRICE SAMPLING ONLY",
-      "last_capture_new_moneyline_quotes": 6,
+      "last_capture_new_moneyline_quotes": 0,
       "unique_games_with_market_snapshots": 6,
       "independent_settled_game_samples": 0,
       "market_midpoint_brier": null,
@@ -77,6 +77,7 @@
       "next_model_evidence": "adjusted possessions, confirmed starters/minutes, injuries and an independent live game forecast",
       "blockers": [
         "Verified model inputs missing: adjusted efficiency, possessions/pace, starters, minutes, injuries, player prop distributions",
+        "No new valid independent game-matched market observations in last capture",
         "No paired independent forward model probability for exact timestamped game winner contract",
         "Insufficient distinct independently settled forward games for research review"
       ],
@@ -92,7 +93,7 @@
       "historical_improvement_vs_home_baseline": -0.002183,
       "last_board_date_et": "2026-11-07",
       "capture_status": "PROSPECTIVE INDEPENDENT GAME-WINNER PRICE SAMPLING ONLY",
-      "last_capture_new_moneyline_quotes": 8,
+      "last_capture_new_moneyline_quotes": 0,
       "unique_games_with_market_snapshots": 8,
       "independent_settled_game_samples": 0,
       "market_midpoint_brier": null,
@@ -101,6 +102,7 @@
       "blockers": [
         "Verified model inputs missing: expected goals, goalie confirmation, starting goalie quality, injuries, special teams",
         "Historical winner baseline NOT beaten; retrain/revalidate",
+        "No new valid independent game-matched market observations in last capture",
         "No paired independent forward model probability for exact timestamped game winner contract",
         "Insufficient distinct independently settled forward games for research review"
       ],
@@ -116,7 +118,7 @@
       "historical_improvement_vs_home_baseline": 0.019457,
       "last_board_date_et": "2026-11-07",
       "capture_status": "PROSPECTIVE INDEPENDENT GAME-WINNER PRICE SAMPLING ONLY",
-      "last_capture_new_moneyline_quotes": 8,
+      "last_capture_new_moneyline_quotes": 0,
       "unique_games_with_market_snapshots": 8,
       "independent_settled_game_samples": 0,
       "market_midpoint_brier": null,
@@ -124,6 +126,7 @@
       "next_model_evidence": "Division I team/roster verification, adjusted efficiency, starters and prospective model",
       "blockers": [
         "Verified model inputs missing: Division I eligibility, adjusted efficiency, possessions/pace, transfers/rosters, starters, injuries",
+        "No new valid independent game-matched market observations in last capture",
         "No paired independent forward model probability for exact timestamped game winner contract",
         "Insufficient distinct independently settled forward games for research review"
       ],
