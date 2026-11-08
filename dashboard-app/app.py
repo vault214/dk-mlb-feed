@@ -95,7 +95,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
   <div id="eligibilityGrid" class="league-grid" style="margin-top:12px"></div>
 </section>
 
-<section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="season-tabs" id="seasonTabs"><button class="tab active" data-season="ACTIVE" onclick="setSeasonView('ACTIVE')">Active Season</button><button class="tab" data-season="ALL" onclick="setSeasonView('ALL')">All-Time</button></div><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="NCAAB" onclick="setPerfLeague('NCAAB')">NCAAB</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
+<section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="season-tabs" id="seasonTabs"><button class="tab active" data-season="ACTIVE" onclick="setSeasonView('ACTIVE')">Active Season</button><button class="tab" data-season="ALL" onclick="setSeasonView('ALL')">All-Time</button></div><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="NCAAB" onclick="setPerfLeague('NCAAB')">NCAAB</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button><button class="tab" data-league="EPL" onclick="setPerfLeague('EPL')">Premier League</button><button class="tab" data-league="SERIEA" onclick="setPerfLeague('SERIEA')">Serie A</button><button class="tab" data-league="MLS" onclick="setPerfLeague('MLS')">MLS</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
 
 <section class="panel"><div class="eyebrow">MODEL PERFORMANCE</div><h2>Official / Shadow Ledger</h2><div id="modelPerf" class="grid" style="margin-top:12px"></div></section>
 
@@ -109,8 +109,8 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </main>
 <script>
 let rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
-const ACTIVE_LEAGUES=["NFL","NCAAF","NBA","NHL","NCAAB"];
-const ALL_LEAGUES=["MLB","NFL","NCAAF","NBA","WNBA","NHL","NCAAB"];
+const ACTIVE_LEAGUES=["NFL","NCAAF","NBA","NHL","NCAAB","EPL","SERIEA","MLS"];
+const ALL_LEAGUES=["MLB","NFL","NCAAF","NBA","WNBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const scopedRows=()=>seasonView==="ALL"?rows:rows.filter(r=>ACTIVE_LEAGUES.includes(r.league));
 const E=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
 const N=v=>{const n=parseFloat(String(v??"").replace(/[+%$u,]/g,""));return Number.isFinite(n)?n:null};
@@ -161,7 +161,7 @@ function renderBankroll(){
  paperCommitted.textContent=committed.toFixed(2)+"u";
 }
 function renderLeagueGrid(){
- const leagues=seasonView==="ALL"?["NFL","MLB","NCAAF","NBA","WNBA","NHL","NCAAB"]:ACTIVE_LEAGUES;
+ const leagues=seasonView==="ALL"?["NFL","MLB","NCAAF","NBA","WNBA","NHL","NCAAB","EPL","SERIEA","MLS"]:ACTIVE_LEAGUES;
  leagueGrid.innerHTML=leagues.map(l=>{
    const rs=rows.filter(r=>r.league===l), today=rs.filter(r=>r.dateET===todayET());
    const off=today.find(r=>r.trackType==="OFFICIAL");
@@ -330,12 +330,21 @@ function renderYesterday(){
 }
 function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderResearchHealth();renderNcaafEligibility();renderYesterday()}
 async function load(){
- try{
-  const [p,s,m,y,h,n]=await Promise.all([fetch("/api/picks",{cache:"no-store"}),fetch("/api/status",{cache:"no-store"}),fetch("/api/private-metrics",{cache:"no-store"}),fetch("/api/yesterday-bets",{cache:"no-store"}),fetch("/api/model-health",{cache:"no-store"}),fetch("/api/ncaaf-research-health",{cache:"no-store"})]);
-  if(p.status===401){location.href="/login";return}
-  const d=await p.json(); rows=d.rows||[]; statusData=s.ok?await s.json():{feeds:[]}; privateMetrics=m.ok?await m.json():{}; yesterdayBets=y.ok?await y.json():{date:null,rows:[]}; researchData=h.ok?await h.json():{leagues:[]}; ncaafContext=n.ok?await n.json():{}; render();
-  stamp.textContent="Updated "+new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit"}).format(new Date())+" ET";
- }catch(e){stamp.textContent="Feed error";}
+ const paths=["/api/picks","/api/status","/api/private-metrics","/api/yesterday-bets","/api/model-health","/api/ncaaf-research-health"];
+ const results=await Promise.allSettled(paths.map(path=>fetch(path,{cache:"no-store"})));
+ const p=results[0];
+ if(p.status==="fulfilled"&&p.value.status===401){location.href="/login";return}
+ const read=async item=>{
+  if(item.status!=="fulfilled"||!item.value.ok)return null;
+  try{return await item.value.json()}catch(e){return null}
+ };
+ const [d,s,m,y,h,n]=await Promise.all(results.map(read));
+ if(d&&Array.isArray(d.rows)) rows=d.rows;
+ statusData=s||{feeds:[]}; privateMetrics=m||{}; yesterdayBets=y||{date:null,rows:[]}; researchData=h||{leagues:[]}; ncaafContext=n||{};
+ render();
+ const failures=paths.filter((_,i)=>results[i].status!=="fulfilled"||!results[i].value.ok).map(path=>path.replace("/api/",""));
+ const stampTime=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit"}).format(new Date())+" ET";
+ stamp.textContent=failures.length?"Partial feed · "+failures.join(", ")+" unavailable · showing loaded data · "+stampTime:"Updated "+stampTime;
 }
 async function logout(){await fetch("/api/logout",{method:"POST"});location.href="/login"}
 load();setInterval(load,300000);
