@@ -1,17 +1,16 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "verifiedAtUTC": "2026-11-07T21:25:23.916382+00:00",
+  "verifiedAtUTC": "2026-11-08T15:26:42.517144+00:00",
   "status": "INDEPENDENT RESULT RECONCILIATION \u2014 RESEARCH ONLY",
-  "independently_completed_game_ids": 0,
+  "independently_completed_game_ids": 13,
   "public_kalshi_settled_tickers": 0,
   "independently_verified_tickers": 0,
   "newly_verified_tickers_this_run": 0,
   "unique_game_winner_samples": 0,
   "forward_unique_game_brier": null,
   "unverified_reasons": {
-    "GAME NOT FINAL": 14,
-    "GAME NOT YET ELIGIBLE FOR SETTLEMENT": 12
+    "KALSHI NOT SETTLED": 26
   },
   "conflicts": [],
   "official": null,
