@@ -110,6 +110,33 @@
       "official_eligible": false,
       "shadow_eligible": false,
       "research_only": true
+    },
+    {
+      "espn_game_id": "401909951",
+      "event_ticker": "KXNBAGAME-26NOV08MIASAC",
+      "event_date_et": "2026-11-08",
+      "kickoff_utc": "2026-11-09T02:00:00+00:00",
+      "home_team": "Sacramento Kings",
+      "away_team": "Miami Heat",
+      "home_team_id": "23",
+      "away_team_id": "14",
+      "ticker": "KXNBAGAME-26NOV08MIASAC-SAC",
+      "home_selection_label": "Sacramento",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-09T01:43:10.525094+00:00",
+      "home_yes_ask": 0.17,
+      "home_no_ask": 0.84,
+      "home_bidask_midpoint": 0.165,
+      "yes_contracts_available": 3256313.78,
+      "no_contracts_available": 1979795.62,
+      "taker_fee_estimate_one_yes_contract": 0.01,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
     }
   ],
   "verified_outcomes": {}

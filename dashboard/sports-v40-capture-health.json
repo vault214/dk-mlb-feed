@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUTC": "2026-11-08T20:27:46.365326+00:00",
+  "generatedAtUTC": "2026-11-09T01:43:09.981892+00:00",
   "status": "CROSS-SPORT MONEYLINE FORWARD COLLECTION \u2014 RESEARCH ONLY",
   "leagues": {
     "NFL": {
@@ -8,66 +8,66 @@
       "status": "PROSPECTIVE INDEPENDENT GAME-WINNER PRICE SAMPLING ONLY",
       "board_date_et": "2026-11-08",
       "candidate_events": 14,
-      "matched_events": 4,
-      "attempted_events": 4,
+      "matched_events": 0,
+      "attempted_events": 0,
       "exclusions": {
-        "NO UNIQUE MATCH OF BOTH TEAMS TO FUTURE ESPN GAME": 10
+        "NO UNIQUE MATCH OF BOTH TEAMS TO FUTURE ESPN GAME": 14
       },
       "official_eligible": false,
       "shadow_eligible": false,
       "production_eligible": false,
       "note": "No independent sportsbook model probabilities exist here. Public sampled book asks are NOT user fills. No market-derived model edge or official pick.",
-      "new_observations": 4
+      "new_observations": 0
     },
     "NBA": {
       "sport": "NBA",
       "status": "PROSPECTIVE INDEPENDENT GAME-WINNER PRICE SAMPLING ONLY",
       "board_date_et": "2026-11-08",
       "candidate_events": 21,
-      "matched_events": 4,
-      "attempted_events": 4,
+      "matched_events": 1,
+      "attempted_events": 1,
       "exclusions": {
-        "NO UNIQUE MATCH OF BOTH TEAMS TO FUTURE ESPN GAME": 15,
+        "NO UNIQUE MATCH OF BOTH TEAMS TO FUTURE ESPN GAME": 18,
         "MISSING EXACT TWO WINNER TICKERS": 2
       },
       "official_eligible": false,
       "shadow_eligible": false,
       "production_eligible": false,
       "note": "No independent sportsbook model probabilities exist here. Public sampled book asks are NOT user fills. No market-derived model edge or official pick.",
-      "new_observations": 4
+      "new_observations": 1
     },
     "NHL": {
       "sport": "NHL",
       "status": "PROSPECTIVE INDEPENDENT GAME-WINNER PRICE SAMPLING ONLY",
       "board_date_et": "2026-11-08",
       "candidate_events": 16,
-      "matched_events": 4,
-      "attempted_events": 4,
+      "matched_events": 0,
+      "attempted_events": 0,
       "exclusions": {
-        "NO UNIQUE MATCH OF BOTH TEAMS TO FUTURE ESPN GAME": 12
+        "NO UNIQUE MATCH OF BOTH TEAMS TO FUTURE ESPN GAME": 16
       },
       "official_eligible": false,
       "shadow_eligible": false,
       "production_eligible": false,
       "note": "No independent sportsbook model probabilities exist here. Public sampled book asks are NOT user fills. No market-derived model edge or official pick.",
-      "new_observations": 4
+      "new_observations": 0
     },
     "NCAAB": {
       "sport": "NCAAB",
       "status": "PROSPECTIVE INDEPENDENT GAME-WINNER PRICE SAMPLING ONLY",
       "board_date_et": "2026-11-08",
       "candidate_events": 62,
-      "matched_events": 9,
-      "attempted_events": 8,
+      "matched_events": 2,
+      "attempted_events": 2,
       "exclusions": {
-        "NO UNIQUE MATCH OF BOTH TEAMS TO FUTURE ESPN GAME": 49,
+        "NO UNIQUE MATCH OF BOTH TEAMS TO FUTURE ESPN GAME": 56,
         "MISSING EXACT TWO WINNER TICKERS": 4
       },
       "official_eligible": false,
       "shadow_eligible": false,
       "production_eligible": false,
       "note": "No independent sportsbook model probabilities exist here. Public sampled book asks are NOT user fills. No market-derived model edge or official pick.",
-      "new_observations": 8
+      "new_observations": 2
     },
     "MLB": {
       "sport": "MLB",
