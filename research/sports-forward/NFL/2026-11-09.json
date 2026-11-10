@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sport": "NFL",
+  "event_date_et": "2026-11-09",
+  "observations": [
+    {
+      "espn_game_id": "401873051",
+      "event_ticker": "KXNFLGAME-26NOV09BUFMIN",
+      "event_date_et": "2026-11-09",
+      "kickoff_utc": "2026-11-10T01:15:00+00:00",
+      "home_team": "Minnesota Vikings",
+      "away_team": "Buffalo Bills",
+      "home_team_id": "16",
+      "away_team_id": "2",
+      "ticker": "KXNFLGAME-26NOV09BUFMIN-MIN",
+      "home_selection_label": "Minnesota",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-10T00:14:53.931763+00:00",
+      "home_yes_ask": 0.37,
+      "home_no_ask": 0.64,
+      "home_bidask_midpoint": 0.365,
+      "yes_contracts_available": 28617990.15,
+      "no_contracts_available": 7605090.12,
+      "taker_fee_estimate_one_yes_contract": 0.02,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
+    }
+  ],
+  "verified_outcomes": {}
+}

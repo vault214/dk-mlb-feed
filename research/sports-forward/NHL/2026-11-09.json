@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sport": "NHL",
+  "event_date_et": "2026-11-09",
+  "observations": [
+    {
+      "espn_game_id": "401892681",
+      "event_ticker": "KXNHLGAME-26NOV09PHIVAN",
+      "event_date_et": "2026-11-09",
+      "kickoff_utc": "2026-11-10T02:30:00+00:00",
+      "home_team": "Vancouver Canucks",
+      "away_team": "Philadelphia Flyers",
+      "home_team_id": "22",
+      "away_team_id": "15",
+      "ticker": "KXNHLGAME-26NOV09PHIVAN-VAN",
+      "home_selection_label": "Vancouver",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-10T00:14:57.814549+00:00",
+      "home_yes_ask": 0.46,
+      "home_no_ask": 0.55,
+      "home_bidask_midpoint": 0.455,
+      "yes_contracts_available": 889211.4,
+      "no_contracts_available": 365472.93,
+      "taker_fee_estimate_one_yes_contract": 0.02,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
+    }
+  ],
+  "verified_outcomes": {}
+}
