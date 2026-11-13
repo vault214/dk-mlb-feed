@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUTC": "2026-11-12T19:02:11.395992+00:00",
+  "generatedAtUTC": "2026-11-13T03:31:36.018940+00:00",
   "status": "INDEPENDENT MULTISPORT MONEYLINE RESULT RECONCILIATION \u2014 RESEARCH ONLY",
   "leagues": {
     "NFL": {
@@ -22,9 +22,9 @@
     },
     "NBA": {
       "sport": "NBA",
-      "observed_unique_games": 28,
+      "observed_unique_games": 32,
       "independently_settled_games": 0,
-      "games_awaiting_settlement": 28,
+      "games_awaiting_settlement": 32,
       "market_midpoint_brier": null,
       "market_midpoint_log_loss": null,
       "independent_model_brier": null,
@@ -34,14 +34,14 @@
       "shadow_eligible": false,
       "production_eligible": false,
       "note": "Market midpoint is NOT an independent win model. No precommitted model edges or stakes, so no hypothetical strategy profit is calculated.",
-      "checked_archive_days": 5,
+      "checked_archive_days": 6,
       "unavailable_archive_dates": []
     },
     "NHL": {
       "sport": "NHL",
-      "observed_unique_games": 25,
+      "observed_unique_games": 33,
       "independently_settled_games": 0,
-      "games_awaiting_settlement": 25,
+      "games_awaiting_settlement": 33,
       "market_midpoint_brier": null,
       "market_midpoint_log_loss": null,
       "independent_model_brier": null,
@@ -51,14 +51,14 @@
       "shadow_eligible": false,
       "production_eligible": false,
       "note": "Market midpoint is NOT an independent win model. No precommitted model edges or stakes, so no hypothetical strategy profit is calculated.",
-      "checked_archive_days": 5,
+      "checked_archive_days": 6,
       "unavailable_archive_dates": []
     },
     "NCAAB": {
       "sport": "NCAAB",
-      "observed_unique_games": 44,
+      "observed_unique_games": 52,
       "independently_settled_games": 0,
-      "games_awaiting_settlement": 44,
+      "games_awaiting_settlement": 52,
       "market_midpoint_brier": null,
       "market_midpoint_log_loss": null,
       "independent_model_brier": null,
@@ -68,7 +68,7 @@
       "shadow_eligible": false,
       "production_eligible": false,
       "note": "Market midpoint is NOT an independent win model. No precommitted model edges or stakes, so no hypothetical strategy profit is calculated.",
-      "checked_archive_days": 5,
+      "checked_archive_days": 6,
       "unavailable_archive_dates": []
     },
     "MLB": {
