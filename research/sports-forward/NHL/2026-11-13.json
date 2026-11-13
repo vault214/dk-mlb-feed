@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sport": "NHL",
+  "event_date_et": "2026-11-13",
+  "observations": [
+    {
+      "espn_game_id": "401892707",
+      "event_ticker": "KXNHLGAME-26NOV13NSHVGK",
+      "event_date_et": "2026-11-13",
+      "kickoff_utc": "2026-11-14T03:00:00+00:00",
+      "home_team": "Vegas Golden Knights",
+      "away_team": "Nashville Predators",
+      "home_team_id": "37",
+      "away_team_id": "27",
+      "ticker": "KXNHLGAME-26NOV13NSHVGK-VGK",
+      "home_selection_label": "Vegas",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-13T21:58:21.303598+00:00",
+      "home_yes_ask": 0.59,
+      "home_no_ask": 0.42,
+      "home_bidask_midpoint": 0.585,
+      "yes_contracts_available": 922462.75,
+      "no_contracts_available": 402411.01,
+      "taker_fee_estimate_one_yes_contract": 0.02,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
+    }
+  ],
+  "verified_outcomes": {}
+}
