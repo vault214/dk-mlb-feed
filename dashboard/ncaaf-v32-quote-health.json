@@ -2,12 +2,10 @@
   "schemaVersion": 1,
   "sport": "NCAAF",
   "status": "LIVE PRICE RESEARCH ONLY",
-  "capturedAtUTC": "2026-11-07T21:07:20.133285+00:00",
-  "unique_tickers_checked": 12,
-  "market_request_results": {
-    "CURRENT QUOTE OBSERVED": 12
-  },
-  "contract_sides_reviewed": 24,
+  "capturedAtUTC": "2026-11-13T20:37:54.300831+00:00",
+  "unique_tickers_checked": 0,
+  "market_request_results": {},
+  "contract_sides_reviewed": 0,
   "no_assumption_of_execution_depth_or_fees": true,
   "official_eligible": false,
   "production_eligible": false,

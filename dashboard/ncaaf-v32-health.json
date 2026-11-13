@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAtUTC": "2026-11-07T21:06:07.829476+00:00",
+  "capturedAtUTC": "2026-11-13T20:37:27.090291+00:00",
   "sport": "NCAAF",
   "status": "RESEARCH ONLY",
   "production_eligible": false,
@@ -8,23 +8,19 @@
   "calibration": {
     "training_games": 575,
     "calibration_games": 587,
-    "holdout_games": 298,
-    "holdout_brier": 0.212113,
-    "home_prior_brier": 0.242964,
-    "improvement": 0.030851,
-    "ece": 0.061914
+    "holdout_games": 346,
+    "holdout_brier": 0.214296,
+    "home_prior_brier": 0.245364,
+    "improvement": 0.031068,
+    "ece": 0.064698
   },
   "market_matching": {
-    "status": "RESEARCH COMPARISON ONLY",
-    "board_date": "2026-11-07",
-    "moneyline_events": 55,
-    "matched_events": 6,
-    "compared_contract_sides": 24,
-    "excluded_events": {
-      "matchup not uniquely verified as pregame FBS": 18,
-      "event lacks exactly two distinct winner labels": 30,
-      "unverified or ambiguous team alias": 1
-    }
+    "status": "BOARD DATE STALE",
+    "board_date": null,
+    "moneyline_events": 0,
+    "matched_events": 0,
+    "compared_contract_sides": 0,
+    "excluded_events": {}
   },
   "unverified_requirements": [
     "quarterback availability",
