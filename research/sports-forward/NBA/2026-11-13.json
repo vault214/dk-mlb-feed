@@ -218,6 +218,33 @@
       "official_eligible": false,
       "shadow_eligible": false,
       "research_only": true
+    },
+    {
+      "espn_game_id": "401909303",
+      "event_ticker": "KXNBAGAME-26NOV13PORSAC",
+      "event_date_et": "2026-11-13",
+      "kickoff_utc": "2026-11-14T03:00:00+00:00",
+      "home_team": "Sacramento Kings",
+      "away_team": "Portland Trail Blazers",
+      "home_team_id": "23",
+      "away_team_id": "22",
+      "ticker": "KXNBAGAME-26NOV13PORSAC-SAC",
+      "home_selection_label": "Sacramento",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-14T02:25:05.650366+00:00",
+      "home_yes_ask": 0.2,
+      "home_no_ask": 0.81,
+      "home_bidask_midpoint": 0.195,
+      "yes_contracts_available": 3369731.38,
+      "no_contracts_available": 1877042.45,
+      "taker_fee_estimate_one_yes_contract": 0.02,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
     }
   ],
   "verified_outcomes": {}
