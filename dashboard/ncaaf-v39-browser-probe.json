@@ -1,25 +1,11 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "generatedAtUTC": "2026-11-13T20:57:46.850504+00:00",
+  "generatedAtUTC": "2026-11-14T19:25:42.125357+00:00",
   "status": "AUTHORIZED PUBLIC VIEWER BROWSER STRUCTURE PROBE \u2014 NO GAME APPROVAL",
-  "unique_attested_viewers": 1,
-  "browser_render_succeeded": 1,
-  "games": [
-    {
-      "cfbd_game_id": "401856856",
-      "home_team": "Texas Tech",
-      "away_team": "West Virginia",
-      "conference": "big 12",
-      "viewer_url": "https://app.hdintelligence.com/?source=B12&sport=Football&conf=B12&type=report",
-      "browser_render_succeeded": true,
-      "rendered_visible_characters": 3650,
-      "report_terms_detected": false,
-      "exact_matchup_final_report_verified": false,
-      "player_statuses_verified": false,
-      "production_eligible": false
-    }
-  ],
+  "unique_attested_viewers": 0,
+  "browser_render_succeeded": 0,
+  "games": [],
   "official_eligible": false,
   "shadow_eligible": false,
   "production_eligible": false,
