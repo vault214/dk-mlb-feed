@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAtUTC": null,
+  "updatedAtUTC": "2026-11-15T22:41:25.039054+00:00",
   "sourcePolicy": "Only timestamped pre-kickoff original public best-bet posts; never infer picks.",
   "cappers": [
     {
@@ -19,5 +19,6 @@
       "handle": "@Stuckey2"
     }
   ],
-  "picks": []
+  "picks": [],
+  "rejectedCount": 0
 }
