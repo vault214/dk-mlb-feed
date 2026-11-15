@@ -73,7 +73,7 @@ def build():
                 raise ValueError("settled before start")
             et = posted.astimezone(ZoneInfo("America/New_York"))
             entry = {k: row[k] for k in ("id", "capperId", "sport", "event", "selection", "market", "sourceUrl", "postedAtUTC", "eventStartUTC", "bestBetEvidence", "reviewedBy")}
-            entry.update(dateET=et.date().isoformat(), postedAtET=et.isoformat(), odds=odds, result=result, riskUnits=1.0, plUnits=grade(odds, result), settlementSourceUrl=row.get("settlementSourceUrl"), status="VERIFIED_REVIEWED")
+            entry.update(dateET=start.astimezone(ZoneInfo("America/New_York")).date().isoformat(), postedAtET=et.isoformat(), odds=odds, result=result, riskUnits=1.0, plUnits=grade(odds, result), settlementSourceUrl=row.get("settlementSourceUrl"), status="VERIFIED_REVIEWED")
             valid.append(entry)
             seen.add(row["id"])
         except (ValueError, TypeError, KeyError) as exc:
