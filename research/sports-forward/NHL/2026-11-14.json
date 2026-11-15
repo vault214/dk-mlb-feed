@@ -218,6 +218,33 @@
       "official_eligible": false,
       "shadow_eligible": false,
       "research_only": true
+    },
+    {
+      "espn_game_id": "401892720",
+      "event_ticker": "KXNHLGAME-26NOV14CGYLA",
+      "event_date_et": "2026-11-14",
+      "kickoff_utc": "2026-11-15T03:00:00+00:00",
+      "home_team": "Los Angeles Kings",
+      "away_team": "Calgary Flames",
+      "home_team_id": "8",
+      "away_team_id": "3",
+      "ticker": "KXNHLGAME-26NOV14CGYLA-LA",
+      "home_selection_label": "Los Angeles",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-15T01:52:33.313687+00:00",
+      "home_yes_ask": 0.61,
+      "home_no_ask": 0.4,
+      "home_bidask_midpoint": 0.605,
+      "yes_contracts_available": 1192762.44,
+      "no_contracts_available": 469010.6,
+      "taker_fee_estimate_one_yes_contract": 0.02,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
     }
   ],
   "verified_outcomes": {}
