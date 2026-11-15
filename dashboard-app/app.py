@@ -22,6 +22,7 @@ FEEDS = {
     "nhl": RAW + "/kalshi/nhl-candidates.json",
     "actual": RAW + "/dashboard/actual-performance.json",
     "cappers": RAW + "/dashboard/capper-consensus.json",
+    "capper_discovery": RAW + "/dashboard/capper-discovery.json",
 }
 RESEARCH_V32_URL = RAW + "/dashboard/ncaaf-v32-health.json"
 WEATHER_V32_URL = RAW + "/dashboard/ncaaf-v32-weather-health.json"
@@ -111,7 +112,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </div>
 </main>
 <script>
-let capperData=null,rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
+let capperData=null,capperDiscovery=null,rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
 const ACTIVE_LEAGUES=["NFL","NCAAF","NBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const ALL_LEAGUES=["MLB","NFL","NCAAF","NBA","WNBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const scopedRows=()=>seasonView==="ALL"?rows:rows.filter(r=>ACTIVE_LEAGUES.includes(r.league));
@@ -342,11 +343,11 @@ function renderCappers(){
  }).join("");
  const today=picks.filter(p=>p.dateET===todayET());
  capperRows.innerHTML=today.length?today.map(p=>'<tr><td>'+E(cs.find(c=>c.id===p.capperId)?.name||p.capperId)+'</td><td>'+E(p.sport||'—')+'</td><td>'+E(p.postedAtET)+'</td><td>'+E(p.selection)+'</td><td>'+E(p.odds||"—")+'</td><td>'+E(p.result||"Pending")+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Original post</a></td></tr>').join(""):'<tr><td colspan="7">No independently verified best bets published for today.</td></tr>';
- capperStatus.textContent=capperData?'Verified feed · '+picks.length+' source-linked entries · Last update '+(capperData.updatedAtUTC||'not yet populated'):'Capper feed unavailable — no picks assumed.';
+ capperStatus.textContent=(capperData?'Verified feed · '+picks.length+' source-linked entries':'Verified feed unavailable')+' · '+(capperDiscovery?.leads?.length||0)+' unverified public discovery leads (not bets) · Last scan '+(capperDiscovery?.updatedAtUTC||'not yet run');
 }
 function render(){renderCappers();renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderResearchHealth();renderNcaafEligibility();renderYesterday()}
 async function load(){
- const paths=["/api/picks","/api/status","/api/private-metrics","/api/yesterday-bets","/api/model-health","/api/ncaaf-research-health","/api/cappers"];
+ const paths=["/api/picks","/api/status","/api/private-metrics","/api/yesterday-bets","/api/model-health","/api/ncaaf-research-health","/api/cappers","/api/capper-discovery"];
  const results=await Promise.allSettled(paths.map(path=>fetch(path,{cache:"no-store"})));
  const p=results[0];
  if(p.status==="fulfilled"&&p.value.status===401){location.href="/login";return}
@@ -354,7 +355,8 @@ async function load(){
   if(item.status!=="fulfilled"||!item.value.ok)return null;
   try{return await item.value.json()}catch(e){return null}
  };
- const [d,s,m,y,h,n,c]=await Promise.all(results.map(read));
+ const [d,s,m,y,h,n,c,cd]=await Promise.all(results.map(read));
+ capperDiscovery=cd;
  capperData=c;
  if(d&&Array.isArray(d.rows)) rows=d.rows;
  statusData=s||{feeds:[]}; privateMetrics=m||{}; yesterdayBets=y||{date:null,rows:[]}; researchData=h||{leagues:[]}; ncaafContext=n||{};
@@ -409,6 +411,9 @@ class Handler(BaseHTTPRequestHandler):
         if p == "/api/model-health":
             try: return self.send(200,json.dumps(fetch_json(FEEDS["model_health"])),"application/json")
             except Exception: return self.send(404,json.dumps({"error":"research report not published yet"}),"application/json")
+        if p == "/api/capper-discovery":
+            try: return self.send(200,json.dumps(fetch_json(FEEDS["capper_discovery"])),"application/json")
+            except Exception: return self.send(200,json.dumps({"leads":[],"updatedAtUTC":None}),"application/json")
         if p == "/api/cappers":
             try: return self.send(200,json.dumps(fetch_json(FEEDS["cappers"])),"application/json")
             except Exception: return self.send(503,json.dumps({"error":"capper feed unavailable"}),"application/json")
