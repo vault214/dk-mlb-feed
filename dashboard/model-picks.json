@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-14T16:12:24Z",
+  "updatedAt": "2026-11-15 11:02:28 UTC",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -7605,12 +7605,12 @@
       "edgePP": null,
       "confidence": "Low — minimum-action / uncalibrated",
       "stakeUnits": 1,
-      "result": "Pending",
-      "plUnits": null,
-      "officialBankrollUnits": 106.233395815,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR. Memphis YES chosen as a comparatively steady eligible winner market at 61¢, within the 75¢ entry-price cap. BKN@MEM tips 8:00 PM ET. NBA injury report lists Mikel Brown Jr. questionable (illness) and Nolan Traore probable (right calf); other listed Brooklyn absences are G League assignments. Independent calibrated win probability/edge unavailable; pace, usage and minutes uncertainty not fully modeled. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet; paper tracking only. One contract costs $0.61 and yields $0.39 gross if correct; $1 spent would yield about $0.639 gross before fees.",
-      "boardTimestampET": "2026-11-14 11:07 ET",
-      "sourceRun": "Daily Sports Models 2026-11-14"
+      "result": "Win",
+      "plUnits": 0.639344262295082,
+      "officialBankrollUnits": null,
+      "reason": null,
+      "boardTimestampET": null,
+      "sourceRun": null
     },
     {
       "entryId": "NBA-SHADOW-021",
@@ -7629,12 +7629,12 @@
       "edgePP": null,
       "confidence": "Low — riskier shadow / uncalibrated",
       "stakeUnits": 0.5,
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Win",
+      "plUnits": 0.8513513513513513,
       "officialBankrollUnits": null,
-      "reason": "RISKIER SHADOW — Miami underdog in a different fixture from the official pick; intentionally higher variance. Jalen Duren is out for Detroit; Miami's official report was not yet submitted in the current 6:00 AM ET report. No independent minutes/usage/pace-adjusted probability or edge available. DET@MIA tips 8:00 PM ET. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet; paper tracking only. One contract costs $0.37 and yields $0.63 gross if correct; $1 spent would yield about $1.703 gross before fees.",
-      "boardTimestampET": "2026-11-14 11:07 ET",
-      "sourceRun": "Daily Sports Models 2026-11-14"
+      "reason": null,
+      "boardTimestampET": null,
+      "sourceRun": null
     },
     {
       "entryId": "NHL-OFFICIAL-007",
@@ -7653,12 +7653,12 @@
       "edgePP": null,
       "confidence": "Low — minimum-action / uncalibrated",
       "stakeUnits": 1,
-      "result": "Pending",
-      "plUnits": null,
-      "officialBankrollUnits": 99.208986485,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR. Winnipeg selected as the steadier available winner market below the 75¢ cap; Winnipeg 9-8-3, Chicago 5-13-1. NHL.com projects Stuart Skinner and Spencer Knight (neither treated as confirmed here); DeMelo is week-to-week, Rosen out/Niederreiter enters, and Chicago's Byram remains injured. No validated expected-goals/goalie-adjusted probability or edge. Winnipeg–Chicago starts 3:30 PM ET. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet; paper tracking only. One contract costs $0.60 and yields $0.40 gross if correct; $1 spent would yield about $0.667 gross before fees.",
-      "boardTimestampET": "2026-11-14 11:07 ET",
-      "sourceRun": "Daily Sports Models 2026-11-14"
+      "result": "Win",
+      "plUnits": 0.6666666666666667,
+      "officialBankrollUnits": null,
+      "reason": null,
+      "boardTimestampET": null,
+      "sourceRun": null
     },
     {
       "entryId": "NHL-SHADOW-027",
@@ -7677,12 +7677,12 @@
       "edgePP": null,
       "confidence": "Low — riskier shadow / uncalibrated",
       "stakeUnits": 0.5,
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Loss",
+      "plUnits": -0.5,
       "officialBankrollUnits": null,
-      "reason": "RISKIER SHADOW — Seattle underdog in a separate fixture; higher variance. NHL.com projects Joey Daccord for Seattle and lists Seattle injuries including McCann, Lindgren, Melanson and Douglas; Carolina's projected lineup includes potential Staal return. Brandon Bussi reported confirmed by a goalie tracker, but not a full independent goalie model. No calibrated probability/edge; NHL score-only baseline underperformed. Seattle–Carolina starts 1:00 PM ET. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet; paper tracking only. One contract costs $0.23 and yields $0.77 gross if correct; $1 spent would yield about $3.348 gross before fees.",
-      "boardTimestampET": "2026-11-14 11:07 ET",
-      "sourceRun": "Daily Sports Models 2026-11-14"
+      "reason": null,
+      "boardTimestampET": null,
+      "sourceRun": null
     },
     {
       "entryId": "NCAAB-OFFICIAL-006",
@@ -7701,12 +7701,12 @@
       "edgePP": null,
       "confidence": "Low — minimum-action / uncalibrated",
       "stakeUnits": 1,
-      "result": "Pending",
-      "plUnits": null,
-      "officialBankrollUnits": 98.951182724,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR. Gonzaga game-winner chosen as a comparatively steady eligible D-I contract under the 75¢ cap. Gonzaga home matchup; game starts 3:30 PM ET. Early-season sample, transfers/roster continuity, adjusted efficiency, pace, rotation and injury/minute impacts are not independently calibrated here; model probability/edge unavailable. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet; paper tracking only. One contract costs $0.68 and yields $0.32 gross if correct; $1 spent would yield about $0.471 gross before fees.",
-      "boardTimestampET": "2026-11-14 11:07 ET",
-      "sourceRun": "Daily Sports Models 2026-11-14"
+      "result": "Loss",
+      "plUnits": -1,
+      "officialBankrollUnits": null,
+      "reason": null,
+      "boardTimestampET": null,
+      "sourceRun": null
     },
     {
       "entryId": "NCAAB-SHADOW-006",
@@ -7725,12 +7725,12 @@
       "edgePP": null,
       "confidence": "Low — riskier shadow / uncalibrated",
       "stakeUnits": 0.5,
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Loss",
+      "plUnits": -0.5,
       "officialBankrollUnits": null,
-      "reason": "RISKIER SHADOW — Wofford underdog in a different D-I fixture from the official pick; intentionally higher variance. Scheduled 2:00 PM ET. No independently calibrated team/roster/efficiency probability or edge; diagnostic only. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet; paper tracking only. One contract costs $0.30 and yields $0.70 gross if correct; $1 spent would yield about $2.333 gross before fees.",
-      "boardTimestampET": "2026-11-14 11:07 ET",
-      "sourceRun": "Daily Sports Models 2026-11-14"
+      "reason": null,
+      "boardTimestampET": null,
+      "sourceRun": null
     },
     {
       "entryId": "NCAAF-OFFICIAL-004",
@@ -7749,12 +7749,12 @@
       "edgePP": null,
       "confidence": "Low — minimum-action / research-only",
       "stakeUnits": 1,
-      "result": "Pending",
-      "plUnits": null,
-      "officialBankrollUnits": 98.818,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR. Wake Forest selected as the best-supported eligible FBS candidate among those assessed; exact FBS fixture and noon ET kickoff verified. Gio Lopez listed probable; availability sources show several Wake absences and SMU's Ira Singleton IV out. Forecast includes 14 mph wind/gusts near 23 mph; pass-volume uncertainty. NCAAF v3.5/v3.8 snapshots are stale (Nov. 8); v3.9 (Nov. 14) has 0 independently verified probability samples, 0 settled games and 40-game target unmet. Independent probability/edge unavailable; not production validated. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet; paper tracking only. One contract costs $0.47 and yields $0.53 gross if correct; $1 spent would yield about $1.128 gross before fees.",
-      "boardTimestampET": "2026-11-14 11:07 ET",
-      "sourceRun": "Daily Sports Models 2026-11-14"
+      "result": "Win",
+      "plUnits": 1.1276595744680853,
+      "officialBankrollUnits": null,
+      "reason": null,
+      "boardTimestampET": null,
+      "sourceRun": null
     },
     {
       "entryId": "NCAAF-SHADOW-012",
@@ -7773,12 +7773,12 @@
       "edgePP": null,
       "confidence": "Low — riskier shadow / research-only",
       "stakeUnits": 0.5,
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Win",
+      "plUnits": 0.8513513513513513,
       "officialBankrollUnits": null,
-      "reason": "RISKIER SHADOW — Texas underdog in a separate FBS fixture; higher variance. Current FBS slate entry verified; scheduled evening kickoff. No independently calibrated probability/edge or game-specific validated quarterback/injury/weather model; v3.9 forward scorecard remains research-only with no verified probability samples. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet; paper tracking only. One contract costs $0.37 and yields $0.63 gross if correct; $1 spent would yield about $1.703 gross before fees.",
-      "boardTimestampET": "2026-11-14 11:07 ET",
-      "sourceRun": "Daily Sports Models 2026-11-14"
+      "reason": null,
+      "boardTimestampET": null,
+      "sourceRun": null
     }
   ]
 }
