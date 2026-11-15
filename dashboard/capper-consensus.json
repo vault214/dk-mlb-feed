@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "updatedAtUTC": null,
+  "sourcePolicy": "Only timestamped pre-kickoff original public best-bet posts; never infer picks.",
+  "cappers": [
+    {
+      "id": "cody",
+      "name": "Cody Brown Bets",
+      "handle": "@CodyBrownBets"
+    },
+    {
+      "id": "koerner",
+      "name": "Sean Koerner",
+      "handle": "@The_Oddsmaker"
+    },
+    {
+      "id": "stuckey",
+      "name": "Stuckey",
+      "handle": "@Stuckey2"
+    }
+  ],
+  "picks": []
+}
