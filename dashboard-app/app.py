@@ -21,6 +21,7 @@ FEEDS = {
     "mlb": RAW + "/kalshi/mlb-candidates.json",
     "nhl": RAW + "/kalshi/nhl-candidates.json",
     "actual": RAW + "/dashboard/actual-performance.json",
+    "cappers": RAW + "/dashboard/capper-consensus.json",
 }
 RESEARCH_V32_URL = RAW + "/dashboard/ncaaf-v32-health.json"
 WEATHER_V32_URL = RAW + "/dashboard/ncaaf-v32-weather-health.json"
@@ -82,6 +83,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </section>
 <section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="season-tabs" id="seasonTabs"><button class="tab active" data-season="ACTIVE" onclick="setSeasonView('ACTIVE')">Active Season</button><button class="tab" data-season="ALL" onclick="setSeasonView('ALL')">All-Time</button></div><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="NCAAB" onclick="setPerfLeague('NCAAB')">NCAAB</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button><button class="tab" data-league="EPL" onclick="setPerfLeague('EPL')">Premier League</button><button class="tab" data-league="SERIEA" onclick="setPerfLeague('SERIEA')">Serie A</button><button class="tab" data-league="MLS" onclick="setPerfLeague('MLS')">MLS</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
 
+<section class="panel"><div class="eyebrow">NFL · INDEPENDENT PAPER TRACKING</div><h2>Capper Consensus</h2><div class="notice" style="margin-top:12px">Publicly verified best bets only. These selections do not change official model picks or place wagers. Missing posts are shown as unverified, not inferred.</div><div id="capperCards" class="grid" style="margin-top:12px"></div><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Capper</th><th>Posted ET</th><th>Best bet</th><th>Odds</th><th>Result</th><th>Source</th></tr></thead><tbody id="capperRows"></tbody></table></div><div id="capperStatus" class="sub" style="margin-top:10px"></div></section>
 <section class="panel"><div class="eyebrow">LEAGUES</div><h2>Model Status & Advice</h2><div id="leagueGrid" class="league-grid" style="margin-top:12px"></div></section>
 <section class="panel"><div class="eyebrow">VALIDATION LAB · RESEARCH ONLY</div><h2>Model Health Across All Seven Sports</h2>
   <div class="notice" style="margin-top:12px">These are preliminary retrospective model diagnostics, not live betting predictions or proof of profitable Kalshi edges. Green data-collection jobs do not authorize paper picks.</div>
@@ -109,7 +111,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </div>
 </main>
 <script>
-let rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
+let capperData=null,rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
 const ACTIVE_LEAGUES=["NFL","NCAAF","NBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const ALL_LEAGUES=["MLB","NFL","NCAAF","NBA","WNBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const scopedRows=()=>seasonView==="ALL"?rows:rows.filter(r=>ACTIVE_LEAGUES.includes(r.league));
@@ -329,9 +331,22 @@ function renderYesterday(){
  yesterdayMeta.textContent=(yesterdayBets.date?"Date: "+yesterdayBets.date+" · ":"")+(open?open+" still open/unsettled · ":"")+"Use this table to cross-check yesterday against DraftKings/Kalshi.";
  yesterdayRows.innerHTML=rs.length?rs.map(r=>'<tr><td>'+E(r.timeET||"")+'</td><td>'+E(r.platform||"")+'</td><td>'+E(r.sport||"")+'</td><td>'+E(r.market||"")+'</td><td>'+E(r.selection||"")+'</td><td>'+money(r.risk)+'</td><td>'+E(r.price||r.odds||"—")+'</td><td>'+E(r.result||"")+'</td><td>'+money(r.pnl)+'</td><td>'+E(r.tradeId||"")+'</td></tr>').join(""):'<tr><td colspan="10" class="muted">No transactions were loaded for yesterday.</td></tr>';
 }
-function render(){renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderResearchHealth();renderNcaafEligibility();renderYesterday()}
+function renderCappers(){
+ const cs=capperData?.cappers||[{id:"cody",name:"Cody Brown Bets"},{id:"koerner",name:"Sean Koerner"},{id:"stuckey",name:"Stuckey"}];
+ const picks=(capperData?.picks||[]).filter(p=>p.sourceUrl&&p.postedAtET&&p.selection&&p.dateET);
+ capperCards.innerHTML=cs.map(c=>{
+  const settled=picks.filter(p=>p.capperId===c.id&&["WIN","LOSS","PUSH"].includes(String(p.result||"").toUpperCase())&&Number.isFinite(Number(p.plUnits))&&Number.isFinite(Number(p.riskUnits))&&Number(p.riskUnits)>0);
+  const wins=settled.filter(p=>p.result==="WIN").length,losses=settled.filter(p=>p.result==="LOSS").length;
+  const net=settled.reduce((a,p)=>a+Number(p.plUnits),0),risk=settled.reduce((a,p)=>a+Number(p.riskUnits),0);
+  return '<div class="metric"><div class="sub">'+E(c.name)+'</div><div class="v">'+wins+'-'+losses+'</div><div class="sub">'+(risk?(net>=0?'+':'')+net.toFixed(2)+'u · '+(100*net/risk).toFixed(1)+'% ROI':'No graded picks yet')+'</div></div>';
+ }).join("");
+ const today=picks.filter(p=>p.dateET===todayET());
+ capperRows.innerHTML=today.length?today.map(p=>'<tr><td>'+E(cs.find(c=>c.id===p.capperId)?.name||p.capperId)+'</td><td>'+E(p.postedAtET)+'</td><td>'+E(p.selection)+'</td><td>'+E(p.odds||"—")+'</td><td>'+E(p.result||"Pending")+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Original post</a></td></tr>').join(""):'<tr><td colspan="6">No independently verified NFL best bets published for today.</td></tr>';
+ capperStatus.textContent=capperData?'Verified feed · '+picks.length+' source-linked entries · Last update '+(capperData.updatedAtUTC||'not yet populated'):'Capper feed unavailable — no picks assumed.';
+}
+function render(){renderCappers();renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderResearchHealth();renderNcaafEligibility();renderYesterday()}
 async function load(){
- const paths=["/api/picks","/api/status","/api/private-metrics","/api/yesterday-bets","/api/model-health","/api/ncaaf-research-health"];
+ const paths=["/api/picks","/api/status","/api/private-metrics","/api/yesterday-bets","/api/model-health","/api/ncaaf-research-health","/api/cappers"];
  const results=await Promise.allSettled(paths.map(path=>fetch(path,{cache:"no-store"})));
  const p=results[0];
  if(p.status==="fulfilled"&&p.value.status===401){location.href="/login";return}
@@ -339,7 +354,8 @@ async function load(){
   if(item.status!=="fulfilled"||!item.value.ok)return null;
   try{return await item.value.json()}catch(e){return null}
  };
- const [d,s,m,y,h,n]=await Promise.all(results.map(read));
+ const [d,s,m,y,h,n,c]=await Promise.all(results.map(read));
+ capperData=c;
  if(d&&Array.isArray(d.rows)) rows=d.rows;
  statusData=s||{feeds:[]}; privateMetrics=m||{}; yesterdayBets=y||{date:null,rows:[]}; researchData=h||{leagues:[]}; ncaafContext=n||{};
  render();
@@ -393,6 +409,9 @@ class Handler(BaseHTTPRequestHandler):
         if p == "/api/model-health":
             try: return self.send(200,json.dumps(fetch_json(FEEDS["model_health"])),"application/json")
             except Exception: return self.send(404,json.dumps({"error":"research report not published yet"}),"application/json")
+        if p == "/api/cappers":
+            try: return self.send(200,json.dumps(fetch_json(FEEDS["cappers"])),"application/json")
+            except Exception: return self.send(503,json.dumps({"error":"capper feed unavailable"}),"application/json")
         if p == "/api/picks":
             try: return self.send(200, json.dumps(fetch_json(FEEDS["picks"])), "application/json")
             except Exception as e: return self.send(502, json.dumps({"error":str(e)}), "application/json")
