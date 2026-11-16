@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 2,
+  "checkedOnET": "2026-11-16",
+  "policy": {
+    "minSettledPicksPerSport": 200,
+    "requirePositiveAuditedROI": true,
+    "requireMultiSeasonRecord": true,
+    "requireConsistentSubperiods": true,
+    "requireTimestampedPregamePicks": true,
+    "trackClosingLineValue": true,
+    "paperOnly": true,
+    "note": "Sample size and positive units alone do not establish ROI or a causal edge. Never label profitable until independent ledger and period-level verification."
+  },
+  "roster": [
+    {
+      "id": "koerner",
+      "name": "Sean Koerner",
+      "handle": "@The_Oddsmaker",
+      "role": "PRIMARY_BENCHMARK",
+      "sports": [
+        "NFL",
+        "NCAAB",
+        "MLB",
+        "WNBA"
+      ],
+      "excludeFromPriority": [
+        "NBA"
+      ],
+      "notes": "Publisher-reported plus units in several sports; NBA published units are negative. Audit before qualifying."
+    },
+    {
+      "id": "stuckey",
+      "name": "Stuckey",
+      "handle": "@Stuckey2",
+      "role": "EVALUATION",
+      "sports": [
+        "NFL",
+        "NCAAF",
+        "NCAAB"
+      ],
+      "notes": "Small independent season-to-date sample; not evidence of durable profitability."
+    },
+    {
+      "id": "dellera",
+      "name": "Joe Dellera",
+      "handle": "@JoeDellera",
+      "role": "EVALUATION",
+      "sports": [
+        "NBA"
+      ],
+      "notes": "Publisher describes profitable track record, but a complete independently auditable sport-level ledger is not yet established."
+    },
+    {
+      "id": "cody",
+      "name": "Cody Brown Bets",
+      "handle": "@CodyBrownBets",
+      "role": "COMPARISON_ONLY",
+      "sports": [
+        "NFL",
+        "NBA",
+        "NCAAB"
+      ],
+      "notes": "Compare against candidates; never imply verified profitability without independent complete ledger."
+    }
+  ],
+  "publishedRecords": [
+    {
+      "capperId": "koerner",
+      "sport": "NFL",
+      "wins": 1343,
+      "losses": 1101,
+      "pushes": 21,
+      "reportedUnits": 148.43,
+      "reportedROI": null,
+      "verifiedROI": false,
+      "multiSeasonVerified": false,
+      "subperiodConsistencyVerified": false,
+      "sourceType": "PUBLISHER_REPORTED",
+      "sourceUrl": "https://www.actionnetwork.com/article/author/sean-koerner",
+      "asOfET": "2026-11-16"
+    },
+    {
+      "capperId": "koerner",
+      "sport": "NCAAB",
+      "wins": 313,
+      "losses": 254,
+      "pushes": 3,
+      "reportedUnits": 31.47,
+      "reportedROI": null,
+      "verifiedROI": false,
+      "multiSeasonVerified": false,
+      "subperiodConsistencyVerified": false,
+      "sourceType": "PUBLISHER_REPORTED",
+      "sourceUrl": "https://www.actionnetwork.com/article/author/sean-koerner",
+      "asOfET": "2026-11-16"
+    },
+    {
+      "capperId": "koerner",
+      "sport": "MLB",
+      "wins": 391,
+      "losses": 351,
+      "pushes": 7,
+      "reportedUnits": 44.4,
+      "reportedROI": null,
+      "verifiedROI": false,
+      "multiSeasonVerified": false,
+      "subperiodConsistencyVerified": false,
+      "sourceType": "PUBLISHER_REPORTED",
+      "sourceUrl": "https://www.actionnetwork.com/article/author/sean-koerner",
+      "asOfET": "2026-11-16"
+    },
+    {
+      "capperId": "koerner",
+      "sport": "WNBA",
+      "wins": 211,
+      "losses": 177,
+      "pushes": 5,
+      "reportedUnits": 25.03,
+      "reportedROI": null,
+      "verifiedROI": false,
+      "multiSeasonVerified": false,
+      "subperiodConsistencyVerified": false,
+      "sourceType": "PUBLISHER_REPORTED",
+      "sourceUrl": "https://www.actionnetwork.com/article/author/sean-koerner",
+      "asOfET": "2026-11-16"
+    },
+    {
+      "capperId": "koerner",
+      "sport": "NBA",
+      "wins": 108,
+      "losses": 107,
+      "pushes": 2,
+      "reportedUnits": -4.14,
+      "reportedROI": null,
+      "verifiedROI": false,
+      "multiSeasonVerified": false,
+      "subperiodConsistencyVerified": false,
+      "sourceType": "PUBLISHER_REPORTED",
+      "sourceUrl": "https://www.actionnetwork.com/article/author/sean-koerner",
+      "asOfET": "2026-11-16"
+    },
+    {
+      "capperId": "stuckey",
+      "sport": "ALL",
+      "wins": 29,
+      "losses": 24,
+      "pushes": 1,
+      "reportedUnits": 2.19,
+      "reportedROI": 4,
+      "verifiedROI": false,
+      "multiSeasonVerified": false,
+      "subperiodConsistencyVerified": false,
+      "sourceType": "THIRD_PARTY_UNAUDITED",
+      "sourceUrl": "https://podpickstracker.com/hosts/action-network/stuckey",
+      "asOfET": "2026-11-16",
+      "note": "All sports season-to-date aggregate, only 53 graded picks; not eligible for per-sport qualification."
+    }
+  ],
+  "independentlyAuditedRecords": [],
+  "lastForwardStartUTC": null
+}
