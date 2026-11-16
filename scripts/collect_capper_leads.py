@@ -11,9 +11,9 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dashboard" / "capper-discovery.json"
 SEARCHES = {
-    "cody": '"Cody Brown Bets" ("best bet" OR "bet of the day")',
-    "koerner": '"Sean Koerner" ("best bet" OR "NFL pick" OR "NBA pick")',
-    "stuckey": '"Stuckey" "Action Network" ("best bet" OR "pick")',
+    "cody": '"Cody Brown Bets" "best bet"',
+    "koerner": '"Sean Koerner" "pick"',
+    "stuckey": '"Stuckey" "Action Network" "pick"',
 }
 SPORT_TERMS = {
     "NFL": ("nfl", "football", "chiefs", "eagles"),
@@ -27,7 +27,7 @@ SPORT_TERMS = {
 def collect():
     leads = []
     for capper, query in SEARCHES.items():
-        params = urllib.parse.urlencode({"q": query + " when:7d", "hl": "en-US", "gl": "US", "ceid": "US:en"})
+        params = urllib.parse.urlencode({"q": query + " when:14d", "hl": "en-US", "gl": "US", "ceid": "US:en"})
         req = urllib.request.Request("https://news.google.com/rss/search?" + params, headers={"User-Agent": "Mozilla/5.0 capper-research/1.0"})
         try:
             with urllib.request.urlopen(req, timeout=20) as response:
@@ -52,6 +52,11 @@ def collect():
             unique.append(lead)
             seen.add(key)
     OUT.parent.mkdir(parents=True, exist_ok=True)
+    # Preserve human-readable candidate evidence for review, not a wager ledger.
+    for lead in unique:
+        title = lead["title"].lower()
+        lead["candidateBestBet"] = any(term in title for term in ("best bet", "best bets", "stuckey's spot"))
+        lead["reviewNeeded"] = ["original post timestamp", "exact event and selection", "American odds", "event start time", "human approval"]
     OUT.write_text(json.dumps({"updatedAtUTC": dt.datetime.now(dt.timezone.utc).isoformat(), "leads": unique, "note": "Discovery links are NOT betting picks. Require original pregame evidence and odds verification before promotion."}, indent=2) + "\n")
     print("Discovered", len(unique), "unverified public leads")
 
