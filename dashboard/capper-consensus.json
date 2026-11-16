@@ -1,121 +1,39 @@
 {
-  "schemaVersion": 1,
-  "updatedAtUTC": "2026-11-16T17:08:46.616175+00:00",
-  "sourcePolicy": "Documented pregame, publicly attributable picks with explicit selection, publication timestamp and listed odds. Paper tracking only; no inferred picks.",
+  "schemaVersion": 2,
+  "updatedAtUTC": null,
+  "sourcePolicy": "Forward-observed paper selections only. No capper is qualified as profitable without independently audited sport-level ROI, 200+ settled picks, multiple seasons and stable subperiods.",
   "cappers": [
-    {
-      "id": "cody",
-      "name": "Cody Brown Bets",
-      "handle": "@CodyBrownBets"
-    },
     {
       "id": "koerner",
       "name": "Sean Koerner",
-      "handle": "@The_Oddsmaker"
+      "handle": "@The_Oddsmaker",
+      "role": "PRIMARY_BENCHMARK",
+      "qualificationStatus": "NOT_YET_AUDITED"
     },
     {
       "id": "stuckey",
       "name": "Stuckey",
-      "handle": "@Stuckey2"
-    },
-    {
-      "id": "sartori",
-      "name": "Tony Sartori",
-      "handle": "@tony_sartori",
-      "source": "Action Network \u00b7 Daily Dangles"
+      "handle": "@Stuckey2",
+      "role": "EVALUATION",
+      "qualificationStatus": "NOT_YET_AUDITED"
     },
     {
       "id": "dellera",
       "name": "Joe Dellera",
       "handle": "@JoeDellera",
-      "source": "Action Network"
+      "role": "EVALUATION",
+      "qualificationStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "id": "cody",
+      "name": "Cody Brown Bets",
+      "handle": "@CodyBrownBets",
+      "role": "COMPARISON_ONLY",
+      "qualificationStatus": "NOT_YET_AUDITED"
     }
   ],
-  "picks": [
-    {
-      "id": "2026-11-16-stuckey-lac-bal-u39p5",
-      "capperId": "stuckey",
-      "sport": "NFL",
-      "event": "Los Angeles Chargers at Baltimore Ravens",
-      "selection": "UNDER 39.5 total points",
-      "market": "Game total",
-      "sourceUrl": "https://www.actionnetwork.com/nfl/los-angeles-chargers-vs-baltimore-ravens-prediction-pick-odds-nfl-monday-night-football-november-16",
-      "postedAtUTC": "2026-11-16T15:40:00Z",
-      "eventStartUTC": "2026-11-17T01:15:00Z",
-      "bestBetEvidence": "Stuckey's named pregame article identifies Under 39.5 (-115) as his Chargers vs Ravens best bet.",
-      "reviewedBy": "assistant-public-source-verification-2026-11-16",
-      "dateET": "2026-11-16",
-      "postedAtET": "2026-11-16T10:40:00-05:00",
-      "odds": -115,
-      "result": "PENDING",
-      "riskUnits": 1.0,
-      "plUnits": null,
-      "settlementSourceUrl": null,
-      "status": "VERIFIED_REVIEWED"
-    },
-    {
-      "id": "2026-11-16-sartori-mtl-nyr-u6p5",
-      "capperId": "sartori",
-      "sport": "NHL",
-      "event": "Montreal Canadiens at New York Rangers",
-      "selection": "UNDER 6.5 total goals",
-      "market": "Game total",
-      "sourceUrl": "https://www.actionnetwork.com/nhl/montreal-canadiens-vs-new-york-rangers-prediction-picks-nhl-odds-monday-november-16",
-      "postedAtUTC": "2026-11-16T15:18:00Z",
-      "eventStartUTC": "2026-11-17T00:30:00Z",
-      "bestBetEvidence": "Tony Sartori's authored pregame article explicitly identifies Under 6.5 (-135, DraftKings) as his best bet.",
-      "reviewedBy": "assistant-public-source-verification-2026-11-16",
-      "dateET": "2026-11-16",
-      "postedAtET": "2026-11-16T10:18:00-05:00",
-      "odds": -135,
-      "result": "PENDING",
-      "riskUnits": 1.0,
-      "plUnits": null,
-      "settlementSourceUrl": null,
-      "status": "VERIFIED_REVIEWED"
-    },
-    {
-      "id": "2026-11-16-sartori-van-uta-m1p5",
-      "capperId": "sartori",
-      "sport": "NHL",
-      "event": "Vancouver Canucks at Utah Mammoth",
-      "selection": "Utah Mammoth -1.5 goals",
-      "market": "Puck line",
-      "sourceUrl": "https://www.actionnetwork.com/nhl/nhl-predictions-tonight-expert-picks-best-bets-monday-november-16",
-      "postedAtUTC": "2026-11-16T15:14:00Z",
-      "eventStartUTC": "2026-11-17T02:30:00Z",
-      "bestBetEvidence": "Tony Sartori's timestamped Daily Dangles column gives Mammoth -1.5 (-135 DraftKings) as a best bet.",
-      "reviewedBy": "assistant-public-source-verification-2026-11-16",
-      "dateET": "2026-11-16",
-      "postedAtET": "2026-11-16T10:14:00-05:00",
-      "odds": -135,
-      "result": "PENDING",
-      "riskUnits": 1.0,
-      "plUnits": null,
-      "settlementSourceUrl": null,
-      "status": "VERIFIED_REVIEWED"
-    },
-    {
-      "id": "2026-11-16-dellera-phx-den-kennard-o7p5",
-      "capperId": "dellera",
-      "sport": "NBA",
-      "event": "Phoenix Suns at Denver Nuggets",
-      "selection": "Luke Kennard OVER 7.5 points",
-      "market": "Player points prop",
-      "sourceUrl": "https://www.actionnetwork.com/nba/phoenix-suns-vs-denver-nuggets-prediction-pick-nba-odds-for-monday-november-16",
-      "postedAtUTC": "2026-11-16T15:14:00Z",
-      "eventStartUTC": "2026-11-17T02:00:00Z",
-      "bestBetEvidence": "Joe Dellera's article identifies Luke Kennard Over 7.5 Points (-142) as his Suns vs Nuggets best bet.",
-      "reviewedBy": "assistant-public-source-verification-2026-11-16",
-      "dateET": "2026-11-16",
-      "postedAtET": "2026-11-16T10:14:00-05:00",
-      "odds": -142,
-      "result": "PENDING",
-      "riskUnits": 1.0,
-      "plUnits": null,
-      "settlementSourceUrl": null,
-      "status": "VERIFIED_REVIEWED"
-    }
-  ],
-  "rejectedCount": 0
+  "picks": [],
+  "rejectedCount": 0,
+  "legacyArchive": "dashboard/capper-legacy-archive.json",
+  "statsNote": "Publisher-reported history lives separately in capper-qualification.json; not included in forward ROI."
 }
