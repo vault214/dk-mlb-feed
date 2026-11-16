@@ -15,7 +15,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1] / "dashboard"
 INPUT = ROOT / "capper-submissions.json"
 OUTPUT = ROOT / "capper-consensus.json"
-CAPS = {"cody", "koerner", "stuckey"}
+CAPS = {"cody", "koerner", "stuckey", "sartori", "dellera"}
 SPORTS = {"NFL", "NCAAF", "NBA", "NCAAB", "WNBA", "MLB", "NHL", "MLS", "EPL", "SERIEA", "SOCCER"}
 RESULTS = {"PENDING", "WIN", "LOSS", "PUSH", "VOID"}
 REQUIRED = ("id", "capperId", "sport", "event", "selection", "market", "odds", "sourceUrl", "postedAtUTC", "eventStartUTC", "bestBetEvidence", "reviewedBy")
