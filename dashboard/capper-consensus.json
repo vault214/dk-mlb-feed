@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAtUTC": "2026-11-16T17:10:00Z",
+  "updatedAtUTC": "2026-11-16T17:08:46.616175+00:00",
   "sourcePolicy": "Documented pregame, publicly attributable picks with explicit selection, publication timestamp and listed odds. Paper tracking only; no inferred picks.",
   "cappers": [
     {
@@ -22,7 +22,7 @@
       "id": "sartori",
       "name": "Tony Sartori",
       "handle": "@tony_sartori",
-      "source": "Action Network · Daily Dangles"
+      "source": "Action Network \u00b7 Daily Dangles"
     },
     {
       "id": "dellera",
@@ -48,7 +48,7 @@
       "postedAtET": "2026-11-16T10:40:00-05:00",
       "odds": -115,
       "result": "PENDING",
-      "riskUnits": 1,
+      "riskUnits": 1.0,
       "plUnits": null,
       "settlementSourceUrl": null,
       "status": "VERIFIED_REVIEWED"
@@ -69,7 +69,7 @@
       "postedAtET": "2026-11-16T10:18:00-05:00",
       "odds": -135,
       "result": "PENDING",
-      "riskUnits": 1,
+      "riskUnits": 1.0,
       "plUnits": null,
       "settlementSourceUrl": null,
       "status": "VERIFIED_REVIEWED"
@@ -90,7 +90,7 @@
       "postedAtET": "2026-11-16T10:14:00-05:00",
       "odds": -135,
       "result": "PENDING",
-      "riskUnits": 1,
+      "riskUnits": 1.0,
       "plUnits": null,
       "settlementSourceUrl": null,
       "status": "VERIFIED_REVIEWED"
@@ -111,7 +111,7 @@
       "postedAtET": "2026-11-16T10:14:00-05:00",
       "odds": -142,
       "result": "PENDING",
-      "riskUnits": 1,
+      "riskUnits": 1.0,
       "plUnits": null,
       "settlementSourceUrl": null,
       "status": "VERIFIED_REVIEWED"
