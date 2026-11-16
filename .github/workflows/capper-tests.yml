@@ -20,3 +20,19 @@ jobs:
           python-version: '3.12'
       - run: python -m unittest discover -s scripts -p 'test_capper_consensus.py' -v
       - run: python -m py_compile scripts/build_capper_consensus.py scripts/collect_capper_leads.py dashboard-app/app.py
+      - name: Check embedded dashboard JavaScript
+        run: |
+          python - <<'PY'
+          import ast, pathlib, re
+          src = ast.parse(pathlib.Path("dashboard-app/app.py").read_text())
+          code = None
+          for node in src.body:
+              if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == "HTML" for t in node.targets):
+                  code = ast.literal_eval(node.value)
+                  break
+          assert code is not None, "Missing HTML template"
+          scripts = re.findall(r"<script[^>]*>(.*?)</script>", code, flags=re.DOTALL)
+          assert scripts, "No dashboard JavaScript"
+          pathlib.Path("/tmp/gambling-dashboard.js").write_text("\n".join(scripts))
+          PY
+          node --check /tmp/gambling-dashboard.js
