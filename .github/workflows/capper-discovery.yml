@@ -1,7 +1,7 @@
 name: Discover public capper posts
 on:
   schedule:
-    - cron: '20 13,17,21 * * *'
+    - cron: '20 13,15,17,19,21,23 * * *'
   workflow_dispatch:
 permissions:
   contents: write
