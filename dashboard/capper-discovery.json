@@ -1,0 +1,39 @@
+{
+  "updatedAtUTC": "2026-11-16T17:13:00Z",
+  "method": "Public web review by assistant; automated RSS scan is scheduled separately",
+  "note": "These are unverified public leads, NOT accepted wager selections. Publication timestamp must be audited before promoting.",
+  "leads": [
+    {
+      "capperId": "andylang",
+      "title": "Andy Lang: Cameron Dicker Over 1.5 field goals (-123) vs Baltimore Ravens, WagerTalk free play",
+      "sourceUrl": "https://www.wagertalk.com/ppg-detail/158076/monday-night-football-best-prop-this-line-is-wrong",
+      "published": "Nov 16, 2026; absolute source release time not shown",
+      "sports": [
+        "NFL"
+      ],
+      "candidateBestBet": true,
+      "status": "UNVERIFIED_DISCOVERY_ONLY",
+      "reviewNeeded": [
+        "immutable first-publication timestamp",
+        "source price snapshot",
+        "independent settlement"
+      ]
+    },
+    {
+      "capperId": "kelly",
+      "title": "Kelly In Vegas: Baltimore Ravens -4.5 (-108), WagerTalk free play",
+      "sourceUrl": "https://www.wagertalk.com/free-sports-picks",
+      "published": "Page says released/revised one day earlier; exact timestamp unavailable",
+      "sports": [
+        "NFL"
+      ],
+      "candidateBestBet": true,
+      "status": "UNVERIFIED_DISCOVERY_ONLY",
+      "reviewNeeded": [
+        "immutable original release timestamp",
+        "individual stable pick URL",
+        "independent settlement"
+      ]
+    }
+  ]
+}
