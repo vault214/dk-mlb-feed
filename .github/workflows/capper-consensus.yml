@@ -5,6 +5,8 @@ on:
     paths:
       - 'dashboard/capper-submissions.json'
       - 'scripts/build_capper_consensus.py'
+      - 'dashboard/capper-qualification.json'
+      - 'dashboard/capper-legacy-archive.json'
   workflow_dispatch:
 permissions:
   contents: write
