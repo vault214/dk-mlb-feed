@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updatedAtUTC": "2026-11-15T22:41:25.039054+00:00",
-  "sourcePolicy": "Only timestamped pre-kickoff original public best-bet posts; never infer picks.",
+  "sourcePolicy": "Documented pregame, publicly attributable picks with explicit selection, publication timestamp and listed odds. Paper tracking only; no inferred picks.",
   "cappers": [
     {
       "id": "cody",
@@ -17,6 +17,18 @@
       "id": "stuckey",
       "name": "Stuckey",
       "handle": "@Stuckey2"
+    },
+    {
+      "id": "sartori",
+      "name": "Tony Sartori",
+      "handle": "@tony_sartori",
+      "source": "Action Network · Daily Dangles"
+    },
+    {
+      "id": "dellera",
+      "name": "Joe Dellera",
+      "handle": "@JoeDellera",
+      "source": "Action Network"
     }
   ],
   "picks": [],
