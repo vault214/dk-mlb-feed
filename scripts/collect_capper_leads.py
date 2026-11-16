@@ -69,6 +69,19 @@ def collect():
         prior = {}
     for lead in unique:
         lead["firstSeenUTC"] = prior.get((lead["capperId"], lead["sourceUrl"]), {}).get("firstSeenUTC", first_seen)
+    # Keep earlier reviewed leads through temporary RSS outages, but expire after
+    # 72 hours so the dashboard never presents last week's article as current.
+    cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=72)
+    present = {(x["capperId"], x["sourceUrl"]) for x in unique}
+    for key, lead in prior.items():
+        if key in present:
+            continue
+        try:
+            seen_at = dt.datetime.fromisoformat(lead.get("firstSeenUTC", "").replace("Z", "+00:00"))
+        except ValueError:
+            seen_at = dt.datetime.now(dt.timezone.utc)
+        if seen_at.tzinfo and seen_at > cutoff:
+            unique.append(lead)
     OUT.write_text(json.dumps({"updatedAtUTC": dt.datetime.now(dt.timezone.utc).isoformat(), "leads": unique, "note": "Discovery links are NOT betting picks. Require original pregame evidence and odds verification before promotion."}, indent=2) + "\n")
     print("Discovered", len(unique), "unverified public leads")
 
