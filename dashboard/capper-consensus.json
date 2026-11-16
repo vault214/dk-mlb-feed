@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": null,
+  "updatedAtUTC": "2026-11-16T17:33:07.542162+00:00",
   "sourcePolicy": "Forward-observed paper selections only. No capper is qualified as profitable without independently audited sport-level ROI, 200+ settled picks, multiple seasons and stable subperiods.",
   "cappers": [
     {
@@ -8,32 +8,45 @@
       "name": "Sean Koerner",
       "handle": "@The_Oddsmaker",
       "role": "PRIMARY_BENCHMARK",
-      "qualificationStatus": "NOT_YET_AUDITED"
+      "qualificationStatus": "NOT_YET_QUALIFIED"
     },
     {
       "id": "stuckey",
       "name": "Stuckey",
       "handle": "@Stuckey2",
       "role": "EVALUATION",
-      "qualificationStatus": "NOT_YET_AUDITED"
+      "qualificationStatus": "NOT_YET_QUALIFIED"
     },
     {
       "id": "dellera",
       "name": "Joe Dellera",
       "handle": "@JoeDellera",
       "role": "EVALUATION",
-      "qualificationStatus": "NOT_YET_AUDITED"
+      "qualificationStatus": "NOT_YET_QUALIFIED"
     },
     {
       "id": "cody",
       "name": "Cody Brown Bets",
       "handle": "@CodyBrownBets",
       "role": "COMPARISON_ONLY",
-      "qualificationStatus": "NOT_YET_AUDITED"
+      "qualificationStatus": "NOT_YET_QUALIFIED"
     }
   ],
   "picks": [],
   "rejectedCount": 0,
   "legacyArchive": "dashboard/capper-legacy-archive.json",
-  "statsNote": "Publisher-reported history lives separately in capper-qualification.json; not included in forward ROI."
+  "statsNote": "Publisher-reported history lives separately in capper-qualification.json; not included in forward ROI.",
+  "qualificationsBySport": {
+    "koerner:NFL": "NOT_YET_QUALIFIED",
+    "koerner:NCAAB": "NOT_YET_QUALIFIED",
+    "koerner:MLB": "NOT_YET_QUALIFIED",
+    "koerner:WNBA": "NOT_YET_QUALIFIED",
+    "stuckey:NFL": "NOT_YET_QUALIFIED",
+    "stuckey:NCAAF": "NOT_YET_QUALIFIED",
+    "stuckey:NCAAB": "NOT_YET_QUALIFIED",
+    "dellera:NBA": "NOT_YET_QUALIFIED",
+    "cody:NFL": "NOT_YET_QUALIFIED",
+    "cody:NBA": "NOT_YET_QUALIFIED",
+    "cody:NCAAB": "NOT_YET_QUALIFIED"
+  }
 }
