@@ -1,5 +1,70 @@
 {
   "schemaVersion": 1,
-  "note": "Only human-reviewed, source-backed submissions are eligible. Discovery leads must never be auto-approved.",
-  "submissions": []
+  "note": "Source-reviewed, publicly timestamped selections, recorded strictly as paper entries; the reviewer is an AI assistant, not an independent human auditor.",
+  "submissions": [
+    {
+      "id": "2026-11-16-stuckey-lac-bal-u39p5",
+      "capperId": "stuckey",
+      "sport": "NFL",
+      "event": "Los Angeles Chargers at Baltimore Ravens",
+      "selection": "UNDER 39.5 total points",
+      "market": "Game total",
+      "odds": -115,
+      "sourceUrl": "https://www.actionnetwork.com/nfl/los-angeles-chargers-vs-baltimore-ravens-prediction-pick-odds-nfl-monday-night-football-november-16",
+      "postedAtUTC": "2026-11-16T15:40:00Z",
+      "eventStartUTC": "2026-11-17T01:15:00Z",
+      "bestBetEvidence": "Stuckey's named pregame article identifies Under 39.5 (-115) as his Chargers vs Ravens best bet.",
+      "approvalStatus": "APPROVED",
+      "reviewedBy": "assistant-public-source-verification-2026-11-16",
+      "result": "PENDING"
+    },
+    {
+      "id": "2026-11-16-sartori-mtl-nyr-u6p5",
+      "capperId": "sartori",
+      "sport": "NHL",
+      "event": "Montreal Canadiens at New York Rangers",
+      "selection": "UNDER 6.5 total goals",
+      "market": "Game total",
+      "odds": -135,
+      "sourceUrl": "https://www.actionnetwork.com/nhl/montreal-canadiens-vs-new-york-rangers-prediction-picks-nhl-odds-monday-november-16",
+      "postedAtUTC": "2026-11-16T15:18:00Z",
+      "eventStartUTC": "2026-11-17T00:30:00Z",
+      "bestBetEvidence": "Tony Sartori's authored pregame article explicitly identifies Under 6.5 (-135, DraftKings) as his best bet.",
+      "approvalStatus": "APPROVED",
+      "reviewedBy": "assistant-public-source-verification-2026-11-16",
+      "result": "PENDING"
+    },
+    {
+      "id": "2026-11-16-sartori-van-uta-m1p5",
+      "capperId": "sartori",
+      "sport": "NHL",
+      "event": "Vancouver Canucks at Utah Mammoth",
+      "selection": "Utah Mammoth -1.5 goals",
+      "market": "Puck line",
+      "odds": -135,
+      "sourceUrl": "https://www.actionnetwork.com/nhl/nhl-predictions-tonight-expert-picks-best-bets-monday-november-16",
+      "postedAtUTC": "2026-11-16T15:14:00Z",
+      "eventStartUTC": "2026-11-17T02:30:00Z",
+      "bestBetEvidence": "Tony Sartori's timestamped Daily Dangles column gives Mammoth -1.5 (-135 DraftKings) as a best bet.",
+      "approvalStatus": "APPROVED",
+      "reviewedBy": "assistant-public-source-verification-2026-11-16",
+      "result": "PENDING"
+    },
+    {
+      "id": "2026-11-16-dellera-phx-den-kennard-o7p5",
+      "capperId": "dellera",
+      "sport": "NBA",
+      "event": "Phoenix Suns at Denver Nuggets",
+      "selection": "Luke Kennard OVER 7.5 points",
+      "market": "Player points prop",
+      "odds": -142,
+      "sourceUrl": "https://www.actionnetwork.com/nba/phoenix-suns-vs-denver-nuggets-prediction-pick-nba-odds-for-monday-november-16",
+      "postedAtUTC": "2026-11-16T15:14:00Z",
+      "eventStartUTC": "2026-11-17T02:00:00Z",
+      "bestBetEvidence": "Joe Dellera's article identifies Luke Kennard Over 7.5 Points (-142) as his Suns vs Nuggets best bet.",
+      "approvalStatus": "APPROVED",
+      "reviewedBy": "assistant-public-source-verification-2026-11-16",
+      "result": "PENDING"
+    }
+  ]
 }

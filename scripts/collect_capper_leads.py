@@ -14,6 +14,9 @@ SEARCHES = {
     "cody": '"Cody Brown Bets" "best bet"',
     "koerner": '"Sean Koerner" "pick"',
     "stuckey": '"Stuckey" "Action Network" "pick"',
+    "sartori": '"Tony Sartori" "Daily Dangles" NHL best bet',
+    "dellera": '"Joe Dellera" "Action Network" "NBA" pick',
+    "andylang": '"Andy Lang" "WagerTalk" "free pick"',
 }
 SPORT_TERMS = {
     "NFL": ("nfl", "football", "chiefs", "eagles"),
@@ -57,6 +60,15 @@ def collect():
         title = lead["title"].lower()
         lead["candidateBestBet"] = any(term in title for term in ("best bet", "best bets", "stuckey's spot"))
         lead["reviewNeeded"] = ["original post timestamp", "exact event and selection", "American odds", "event start time", "human approval"]
+    # A discovery run is not a verified pick: preserve the first time each lead
+    # was seen, even if syndication pages update their headline later.
+    first_seen = dt.datetime.now(dt.timezone.utc).isoformat()
+    try:
+        prior = { (x["capperId"], x["sourceUrl"]): x for x in json.loads(OUT.read_text()).get("leads", []) }
+    except (FileNotFoundError, ValueError, KeyError):
+        prior = {}
+    for lead in unique:
+        lead["firstSeenUTC"] = prior.get((lead["capperId"], lead["sourceUrl"]), {}).get("firstSeenUTC", first_seen)
     OUT.write_text(json.dumps({"updatedAtUTC": dt.datetime.now(dt.timezone.utc).isoformat(), "leads": unique, "note": "Discovery links are NOT betting picks. Require original pregame evidence and odds verification before promotion."}, indent=2) + "\n")
     print("Discovered", len(unique), "unverified public leads")
 
