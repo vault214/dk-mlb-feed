@@ -1,0 +1,22 @@
+name: Capper qualification regression checks
+on:
+  pull_request:
+    paths:
+      - 'dashboard-app/app.py'
+      - 'scripts/build_capper_consensus.py'
+      - 'scripts/test_capper_consensus.py'
+      - 'dashboard/capper-qualification.json'
+      - '.github/workflows/capper-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s scripts -p 'test_capper_consensus.py' -v
+      - run: python -m py_compile scripts/build_capper_consensus.py scripts/collect_capper_leads.py dashboard-app/app.py
