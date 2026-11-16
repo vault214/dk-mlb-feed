@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Discover public capper posts across sports. Leads are NOT verified picks."""
 import datetime as dt
+from email.utils import parsedate_to_datetime
 import json
 import os
 from pathlib import Path
@@ -11,12 +12,16 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dashboard" / "capper-discovery.json"
 SEARCHES = {
+    "koerner": '"Sean Koerner" "NFL" best bet',
+    "stuckey": '"Stuckey" "Action Network" best bet',
+    "dellera": '"Joe Dellera" "Action Network" best bet',
     "cody": '"Cody Brown Bets" "best bet"',
-    "koerner": '"Sean Koerner" "pick"',
-    "stuckey": '"Stuckey" "Action Network" "pick"',
-    "sartori": '"Tony Sartori" "Daily Dangles" NHL best bet',
-    "dellera": '"Joe Dellera" "Action Network" "NBA" pick',
-    "andylang": '"Andy Lang" "WagerTalk" "free pick"',
+}
+AUTHOR_TERMS = {
+    "koerner": ("sean koerner",),
+    "stuckey": ("stuckey",),
+    "dellera": ("joe dellera",),
+    "cody": ("cody brown bets", "codybrownbets"),
 }
 SPORT_TERMS = {
     "NFL": ("nfl", "football", "chiefs", "eagles"),
@@ -30,7 +35,7 @@ SPORT_TERMS = {
 def collect():
     leads = []
     for capper, query in SEARCHES.items():
-        params = urllib.parse.urlencode({"q": query + " when:14d", "hl": "en-US", "gl": "US", "ceid": "US:en"})
+        params = urllib.parse.urlencode({"q": query + " when:4d", "hl": "en-US", "gl": "US", "ceid": "US:en"})
         req = urllib.request.Request("https://news.google.com/rss/search?" + params, headers={"User-Agent": "Mozilla/5.0 capper-research/1.0"})
         try:
             with urllib.request.urlopen(req, timeout=20) as response:
@@ -45,6 +50,16 @@ def collect():
             if not title or not url:
                 continue
             low = title.lower()
+            # A Google News search match does not prove who actually authored a pick.
+            # Keep only explicit name matches in the headline, still unverified.
+            if not any(alias in low for alias in AUTHOR_TERMS[capper]):
+                continue
+            try:
+                published_at = parsedate_to_datetime(published).astimezone(dt.timezone.utc)
+                if published_at < dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=72):
+                    continue
+            except (ValueError, TypeError, AttributeError):
+                continue
             sports = [name for name, terms in SPORT_TERMS.items() if any(t in low for t in terms)]
             leads.append({"capperId": capper, "title": title, "sourceUrl": url, "published": published, "sports": sports, "status": "UNVERIFIED_DISCOVERY_ONLY"})
     seen = set()
@@ -74,7 +89,7 @@ def collect():
     cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=72)
     present = {(x["capperId"], x["sourceUrl"]) for x in unique}
     for key, lead in prior.items():
-        if key in present:
+        if key[0] not in SEARCHES or key in present:
             continue
         try:
             seen_at = dt.datetime.fromisoformat(lead.get("firstSeenUTC", "").replace("Z", "+00:00"))
