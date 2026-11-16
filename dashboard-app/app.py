@@ -85,7 +85,22 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </section>
 <section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="season-tabs" id="seasonTabs"><button class="tab active" data-season="ACTIVE" onclick="setSeasonView('ACTIVE')">Active Season</button><button class="tab" data-season="ALL" onclick="setSeasonView('ALL')">All-Time</button></div><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="NCAAB" onclick="setPerfLeague('NCAAB')">NCAAB</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button><button class="tab" data-league="EPL" onclick="setPerfLeague('EPL')">Premier League</button><button class="tab" data-league="SERIEA" onclick="setPerfLeague('SERIEA')">Serie A</button><button class="tab" data-league="MLS" onclick="setPerfLeague('MLS')">MLS</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
 
-<section class="panel"><div class="eyebrow">RESEARCH · PROFITABILITY BEFORE POPULARITY</div><h2>Capper Qualification &amp; Forward Tracking</h2><div class="notice" style="margin-top:12px">No capper is yet independently qualified as profitable. Benchmark and evaluation roles are not endorsements. Require 200+ settled picks per sport, independently audited positive ROI, multiple seasons, stable periods, and pregame source records. No real wagers are placed.</div><div id="capperCards" class="grid" style="margin-top:12px"></div><div class="eyebrow" style="margin-top:20px">PUBLISHER-REPORTED HISTORY · NOT OUR ROI</div><div class="scroll" style="margin-top:10px"><table><thead><tr><th>Capper</th><th>Sport</th><th>Reported W-L-P</th><th>Reported units</th><th>Reported ROI</th><th>As of</th><th>Audit status</th><th>Source</th></tr></thead><tbody id="capperEvidenceRows"></tbody></table></div><div class="eyebrow" style="margin-top:20px">OUR FORWARD RESULTS BY CAPPER &amp; SPORT</div><div class="scroll" style="margin-top:10px"><table><thead><tr><th>Capper</th><th>Sport</th><th>Forward W-L-P</th><th>Net units</th><th>Forward ROI</th><th>Eligibility</th></tr></thead><tbody id="capperForwardRows"></tbody></table></div><div class="eyebrow" style="margin-top:20px">OUR FORWARD-ONLY PAPER SAMPLE</div><div class="scroll" style="margin-top:12px"><table><thead><tr><th>Capper</th><th>Sport</th><th>Game date</th><th>Posted ET</th><th>Best bet</th><th>Odds</th><th>Result</th><th>Source</th></tr></thead><tbody id="capperRows"></tbody></table></div><div id="capperStatus" class="sub" style="margin-top:10px"></div><div id="capperLeadList" class="stack" style="margin-top:12px"></div></section>
+<section class="panel"><div class="eyebrow">RESEARCH · SOURCE-VERIFIED PAPER TRACKING</div><h2>Capper Performance by Sport</h2>
+<div class="notice" style="margin-top:12px">Choose a capper and a sport to see their forward-tracked record and every recorded selection. Publisher-reported historical performance is shown separately and is not independently audited. No capper is currently qualified as profitable. Paper tracking only; no wagers are placed.</div>
+<div class="eyebrow" style="margin-top:20px">SELECT CAPPER</div>
+<div id="capperTabs" class="tabs" role="tablist" aria-label="Capper" style="margin-top:9px"></div>
+<div class="eyebrow" style="margin-top:18px">SELECT SPORT</div>
+<div id="capperSportTabs" class="tabs" role="tablist" aria-label="Sport" style="margin-top:9px"></div>
+<div id="capperHeadline" class="notice" style="margin-top:14px"></div>
+<div id="capperCards" class="grid" style="margin-top:12px"></div>
+<div class="eyebrow" style="margin-top:20px">FORWARD PAPER RESULTS BY SPORT</div>
+<div class="scroll" style="margin-top:10px"><table><thead><tr><th>Sport</th><th>W-L-P</th><th>Pending</th><th>Net units</th><th>ROI</th><th>Qualification</th></tr></thead><tbody id="capperForwardRows"></tbody></table></div>
+<div class="eyebrow" style="margin-top:20px">SOURCE-REVIEWED PICKS · FORWARD SAMPLE</div>
+<div class="scroll" style="margin-top:12px"><table><thead><tr><th>Game date</th><th>Sport</th><th>Event</th><th>Selection</th><th>Odds</th><th>Result</th><th>P/L</th><th>Source</th></tr></thead><tbody id="capperRows"></tbody></table></div>
+<div class="eyebrow" style="margin-top:20px">PUBLISHED HISTORY · NOT INDEPENDENTLY AUDITED</div>
+<div class="scroll" style="margin-top:10px"><table><thead><tr><th>Sport</th><th>Reported W-L-P</th><th>Reported units</th><th>Reported ROI</th><th>As of</th><th>Audit status</th><th>Source</th></tr></thead><tbody id="capperEvidenceRows"></tbody></table></div>
+<div id="capperStatus" class="sub" style="margin-top:10px"></div>
+<div id="capperLeadList" class="stack" style="margin-top:12px"></div></section>
 <section class="panel"><div class="eyebrow">LEAGUES</div><h2>Model Status & Advice</h2><div id="leagueGrid" class="league-grid" style="margin-top:12px"></div></section>
 <section class="panel"><div class="eyebrow">VALIDATION LAB · RESEARCH ONLY</div><h2>Model Health Across All Seven Sports</h2>
   <div class="notice" style="margin-top:12px">These are preliminary retrospective model diagnostics, not live betting predictions or proof of profitable Kalshi edges. Green data-collection jobs do not authorize paper picks.</div>
@@ -113,7 +128,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </div>
 </main>
 <script>
-let capperData=null,capperDiscovery=null,capperQualification=null,rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
+let capperData=null,capperDiscovery=null,capperQualification=null,capperSelectedId="koerner",capperSelectedSport="ALL",rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
 const ACTIVE_LEAGUES=["NFL","NCAAF","NBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const ALL_LEAGUES=["MLB","NFL","NCAAF","NBA","WNBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const scopedRows=()=>seasonView==="ALL"?rows:rows.filter(r=>ACTIVE_LEAGUES.includes(r.league));
@@ -333,46 +348,86 @@ function renderYesterday(){
  yesterdayMeta.textContent=(yesterdayBets.date?"Date: "+yesterdayBets.date+" · ":"")+(open?open+" still open/unsettled · ":"")+"Use this table to cross-check yesterday against DraftKings/Kalshi.";
  yesterdayRows.innerHTML=rs.length?rs.map(r=>'<tr><td>'+E(r.timeET||"")+'</td><td>'+E(r.platform||"")+'</td><td>'+E(r.sport||"")+'</td><td>'+E(r.market||"")+'</td><td>'+E(r.selection||"")+'</td><td>'+money(r.risk)+'</td><td>'+E(r.price||r.odds||"—")+'</td><td>'+E(r.result||"")+'</td><td>'+money(r.pnl)+'</td><td>'+E(r.tradeId||"")+'</td></tr>').join(""):'<tr><td colspan="10" class="muted">No transactions were loaded for yesterday.</td></tr>';
 }
+function capperPaperStats(picks){
+ const closed=picks.filter(p=>["WIN","LOSS","PUSH"].includes(String(p.result||"").toUpperCase())&&p.plUnits!==null&&p.plUnits!==undefined&&p.riskUnits!==null&&p.riskUnits!==undefined&&Number.isFinite(Number(p.plUnits))&&Number.isFinite(Number(p.riskUnits))&&Number(p.riskUnits)>0);
+ const w=closed.filter(p=>String(p.result).toUpperCase()==="WIN").length;
+ const l=closed.filter(p=>String(p.result).toUpperCase()==="LOSS").length;
+ const push=closed.filter(p=>String(p.result).toUpperCase()==="PUSH").length;
+ const pending=picks.filter(p=>String(p.result||"PENDING").toUpperCase()==="PENDING").length;
+ const units=closed.reduce((n,p)=>n+Number(p.plUnits),0);
+ const risk=closed.reduce((n,p)=>n+Number(p.riskUnits),0);
+ return {w,l,push,pending,units,risk,roi:risk?100*units/risk:null};
+}
+function capperUnits(n){return (n>0?"+":"")+n.toFixed(2)+"u"}
+function capperPct(n){return n===null?"—":(n>0?"+":"")+n.toFixed(1)+"%"}
 function renderCappers(){
  const meta=capperQualification||{};
  const cs=meta.roster||capperData?.cappers||[];
- const picks=(capperData?.picks||[]).filter(p=>p.sourceUrl&&p.postedAtET&&p.selection&&p.dateET&&p.status==="SOURCE_REVIEWED_FORWARD_PAPER");
+ if(!cs.length){capperHeadline.textContent="Capper roster feed unavailable.";capperCards.innerHTML="";capperTabs.innerHTML="";capperSportTabs.innerHTML="";return;}
+ if(!cs.some(c=>c.id===capperSelectedId))capperSelectedId=cs[0].id;
+ const active=cs.find(c=>c.id===capperSelectedId);
+ const sports=active.sports||[];
+ if(capperSelectedSport!=="ALL"&&!sports.includes(capperSelectedSport))capperSelectedSport="ALL";
+ const sport=capperSelectedSport;
+ const matchesSport=p=>sport==="ALL"||p.sport===sport;
+ const picks=(capperData?.picks||[]).filter(p=>p.capperId===active.id&&p.sourceUrl&&p.postedAtET&&p.selection&&p.dateET&&p.status==="SOURCE_REVIEWED_FORWARD_PAPER");
+ const selected=picks.filter(matchesSport);
  const status=capperData?.qualificationsBySport||{};
- capperCards.innerHTML=cs.map(c=>{
-  const settled=picks.filter(p=>p.capperId===c.id&&["WIN","LOSS","PUSH","VOID"].includes(String(p.result||"").toUpperCase())&&p.plUnits!==null&&p.riskUnits!==null);
-  const wins=settled.filter(p=>p.result==="WIN").length, losses=settled.filter(p=>p.result==="LOSS").length;
-  const net=settled.reduce((a,p)=>a+Number(p.plUnits),0),risk=settled.reduce((a,p)=>a+Number(p.riskUnits),0);
-  const role=({PRIMARY_BENCHMARK:"Primary research benchmark",EVALUATION:"Evaluation candidate",COMPARISON_ONLY:"Comparison only"})[c.role]||"Research";
-  const qualified=(c.sports||[]).filter(sp=>status[c.id+":"+sp]==="AUDITED_POSITIVE");
-  return '<div class="metric"><div class="sub">'+E(c.name)+' · '+E(role)+'</div><div class="v">'+wins+'-'+losses+'</div><div class="sub">'+(risk?(net>=0?"+":"")+net.toFixed(2)+"u · "+(100*net/risk).toFixed(1)+"% forward paper ROI":"No forward graded picks yet")+'</div><div class="sub">'+(qualified.length?'Audited sports: '+E(qualified.join(", ")):'No independently qualified sports')+'</div></div>';
- }).join("");
- const sportRows=cs.flatMap(c=>(c.sports||[]).map(sport=>{
-   const sample=picks.filter(p=>p.capperId===c.id&&p.sport===sport);
-   const settled=sample.filter(p=>["WIN","LOSS","PUSH","VOID"].includes(String(p.result||"").toUpperCase())&&p.plUnits!==null&&p.riskUnits!==null);
-   const w=settled.filter(p=>p.result==="WIN").length,l=settled.filter(p=>p.result==="LOSS").length,ps=settled.length-w-l;
-   const net=settled.reduce((sum,p)=>sum+Number(p.plUnits),0),risk=settled.reduce((sum,p)=>sum+Number(p.riskUnits),0);
-   const qualified=status[c.id+":"+sport]==="AUDITED_POSITIVE";
-   return '<tr><td>'+E(c.name)+'</td><td>'+E(sport)+'</td><td>'+w+'-'+l+'-'+ps+'</td><td>'+E(risk?(net>=0?"+":"")+net.toFixed(2)+"u":"—")+'</td><td>'+E(risk?(100*net/risk).toFixed(1)+"%":"—")+'</td><td>'+E(qualified?"Audited positive":"Not yet independently qualified")+'</td></tr>';
- }));
- capperForwardRows.innerHTML=sportRows.length?sportRows.join(""):'<tr><td colspan="6">No sport-level forward tracking roster available.</td></tr>';
- const published=meta.publishedRecords||[];
- const nfmt=v=>v===null||v===undefined?'—':String(v);
+ const role=({PRIMARY_BENCHMARK:"Primary research benchmark",EVALUATION:"Evaluation candidate",COMPARISON_ONLY:"Comparison only"})[active.role]||"Research";
+ capperTabs.innerHTML=cs.map(c=>'<button type="button" class="tab'+(c.id===active.id?" active":"")+'" data-capper="'+E(c.id)+'" role="tab" aria-selected="'+(c.id===active.id)+'">'+E(c.name)+'</button>').join("");
+ capperSportTabs.innerHTML=['ALL',...sports].map(k=>'<button type="button" class="tab'+(sport===k?" active":"")+'" data-capper-sport="'+E(k)+'" role="tab" aria-selected="'+(sport===k)+'">'+E(k==="ALL"?"All sports":k)+'</button>').join("");
+ const total=capperPaperStats(selected);
+ const qSport=sport==="ALL"?"all tracked sports":sport;
+ const qualified=sport==="ALL"?sports.filter(sp=>status[active.id+":"+sp]==="AUDITED_POSITIVE"):status[active.id+":"+sport]==="AUDITED_POSITIVE"?[sport]:[];
+ capperHeadline.innerHTML='<strong>'+E(active.name)+' · '+E(qSport)+'</strong><div class="sub">'+E(role)+' · '+E(qualified.length?"Independently audited positive: "+qualified.join(", "):"No independently qualified sports")+' · Results below are from our forward-observed paper picks only.</div>';
+ capperCards.innerHTML=[
+  ["Forward W-L-P",total.w+"-"+total.l+"-"+total.push,total.pending+" pending · "+selected.length+" observed"],
+  ["Net paper units",total.risk?capperUnits(total.units):"—",total.risk?"Settled paper picks only":"No settled forward picks"],
+  ["Forward paper ROI",capperPct(total.roi),total.risk?total.risk.toFixed(2)+"u settled risk":"Not enough forward data"],
+  ["Tracked selections",String(selected.length),sports.length+" tracked sport"+(sports.length===1?"":"s")]
+ ].map(x=>'<div class="metric"><div class="sub">'+E(x[0])+'</div><div class="v">'+E(x[1])+'</div><div class="sub">'+E(x[2])+'</div></div>').join("");
+ const sportList=sport==="ALL"?sports:[sport];
+ capperForwardRows.innerHTML=sportList.map(sp=>{
+  const grouped=picks.filter(p=>p.sport===sp);
+  const st=capperPaperStats(grouped);
+  const audited=status[active.id+":"+sp]==="AUDITED_POSITIVE";
+  return '<tr><td>'+E(sp)+'</td><td>'+st.w+'-'+st.l+'-'+st.push+'</td><td>'+st.pending+'</td><td>'+E(st.risk?capperUnits(st.units):"—")+'</td><td>'+E(capperPct(st.roi))+'</td><td>'+E(audited?"Independently audited":"Not yet independently qualified")+'</td></tr>';
+ }).join("")||'<tr><td colspan="6">No sports assigned to this capper.</td></tr>';
+ const recent=[...selected].sort((a,b)=>String(b.eventStartUTC||b.dateET).localeCompare(String(a.eventStartUTC||a.dateET))).slice(0,100);
+ capperRows.innerHTML=recent.length?recent.map(p=>{
+  const pl=p.plUnits!==null&&p.plUnits!==undefined&&["WIN","LOSS","PUSH"].includes(String(p.result||"").toUpperCase())&&Number.isFinite(Number(p.plUnits))?capperUnits(Number(p.plUnits)):"—";
+  return '<tr><td>'+E(p.dateET||"—")+'</td><td>'+E(p.sport||"—")+'</td><td>'+E(p.event||"—")+'</td><td><strong>'+E(p.selection)+'</strong><div class="sub">'+E(p.market||"")+'</div></td><td>'+E(p.odds||"—")+'</td><td>'+E(p.result||"PENDING")+'</td><td>'+E(pl)+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Original</a></td></tr>';
+ }).join(""):'<tr><td colspan="8">No forward-reviewed '+E(sport==="ALL"?"picks":"picks for "+sport)+' for '+E(active.name)+' yet. Previously archived picks are excluded from this fresh sample.</td></tr>';
+ const published=(meta.publishedRecords||[]).filter(r=>r.capperId===active.id&&(sport==="ALL"||r.sport===sport));
  capperEvidenceRows.innerHTML=published.length?published.map(r=>{
-  const c=cs.find(c=>c.id===r.capperId);
+  const units=r.reportedUnits===null||r.reportedUnits===undefined?null:Number(r.reportedUnits);
   const audited=Boolean(r.verifiedROI&&r.multiSeasonVerified&&r.subperiodConsistencyVerified);
-  const state= r.sport==="ALL"?"Aggregate only · not sport-qualified":
-    r.reportedUnits<0?"Publisher negative · exclude from priority":
-    audited?"Check full independent audit":"Not independently audited";
-  const units=Number(r.reportedUnits);
-  return '<tr><td>'+E(c?.name||r.capperId)+'</td><td>'+E(r.sport)+'</td><td>'+E(r.wins)+"-"+E(r.losses)+"-"+E(r.pushes)+'</td><td>'+E((units>0?"+":"")+units.toFixed(2))+'u</td><td>'+E(nfmt(r.reportedROI===null?null:r.reportedROI+"%"))+'</td><td>'+E(r.asOfET||'—')+'</td><td>'+E(state)+'</td><td><a href="'+E(r.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Published record</a></td></tr>';
- }).join(""):'<tr><td colspan="8">No published capper records independently reviewed yet.</td></tr>';
- const recent=[...picks].sort((a,b)=>String(b.dateET).localeCompare(String(a.dateET))).slice(0,30);
- capperRows.innerHTML=recent.length?recent.map(p=>'<tr><td>'+E(cs.find(c=>c.id===p.capperId)?.name||p.capperId)+'</td><td>'+E(p.sport||"—")+'</td><td>'+E(p.dateET||"—")+'</td><td>'+E(p.postedAtET)+'</td><td>'+E(p.selection)+'</td><td>'+E(p.odds||"—")+'</td><td>'+E(p.result||"PENDING")+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Source</a></td></tr>').join(""):'<tr><td colspan="8">Clean forward sample: no newly source-reviewed pregame picks yet. Previous selections are archived, not counted.</td></tr>';
- const allowed=new Set(cs.map(c=>c.id));
- const leads=(capperDiscovery?.leads||[]).filter(l=>allowed.has(l.capperId)&&l.candidateBestBet).slice(0,8);
- capperLeadList.innerHTML=leads.length?'<div class="eyebrow">SOURCE LEADS · NOT PICKS</div>'+leads.map(l=>'<div class="card"><div class="sub">'+E(l.capperId.toUpperCase())+' · '+E(l.published||"publication date unavailable")+'</div><div class="pick">'+E(l.title)+'</div><div class="sub">Selection, posted odds and pregame evidence must be checked before prospective tracking</div><a href="'+E(l.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Review source</a></div>').join(""):'<div class="sub">No eligible public discovery leads found in the latest scan.</div>';
- capperStatus.textContent="Forward sample: "+picks.length+" reviewed entries · Published history is third-party reported and excluded from our ROI · Discovery scan: "+(capperDiscovery?.updatedAtUTC||"not yet run");
+  const state=r.sport==="ALL"?"All sports combined · not sport-qualified":units!==null&&units<0?"Published negative return":audited?"Independent audit details required":"Publisher/third-party report only";
+  return '<tr><td>'+E(r.sport)+'</td><td>'+E(r.wins)+"-"+E(r.losses)+"-"+E(r.pushes)+'</td><td>'+E(units===null?"—":capperUnits(units))+'</td><td>'+E(r.reportedROI===null||r.reportedROI===undefined?"—":capperPct(Number(r.reportedROI)))+'</td><td>'+E(r.asOfET||"—")+'</td><td>'+E(state)+'</td><td><a href="'+E(r.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Reported record</a></td></tr>';
+ }).join(""):'<tr><td colspan="7">No published historical record available for this capper and sport. This does not mean a 0-0 record.</td></tr>';
+ const leads=(capperDiscovery?.leads||[]).filter(l=>l.capperId===active.id&&l.candidateBestBet&&(sport==="ALL"||!(l.sports||[]).length||(l.sports||[]).includes(sport))).slice(0,8);
+ capperLeadList.innerHTML=leads.length?'<div class="eyebrow">UNVERIFIED PUBLIC LEADS · NOT PICKS</div>'+leads.map(l=>'<div class="card"><div class="sub">'+E(l.published||"Publication date unavailable")+'</div><div class="pick">'+E(l.title)+'</div><div class="sub">Needs original pregame evidence and odds verification</div><a href="'+E(l.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Review source</a></div>').join(""):'<div class="sub">No public leads pending review for this tab.</div>';
+ capperStatus.textContent="Showing "+recent.length+" of "+selected.length+" forward paper picks · Published history not included in our W-L or ROI · Last source scan: "+(capperDiscovery?.updatedAtUTC||"not yet run");
 }
+function setCapperView(id){
+ const roster=capperQualification?.roster||capperData?.cappers||[];
+ if(!roster.some(c=>c.id===id))return;
+ capperSelectedId=id;capperSelectedSport="ALL";renderCappers();
+}
+function setCapperSportView(sport){
+ const roster=capperQualification?.roster||capperData?.cappers||[];
+ const active=roster.find(c=>c.id===capperSelectedId);
+ if(!active||(sport!=="ALL"&&!(active.sports||[]).includes(sport)))return;
+ capperSelectedSport=sport;renderCappers();
+}
+document.getElementById("capperTabs").addEventListener("click",ev=>{
+ const button=ev.target.closest("button[data-capper]");
+ if(button)setCapperView(button.getAttribute("data-capper"));
+});
+document.getElementById("capperSportTabs").addEventListener("click",ev=>{
+ const button=ev.target.closest("button[data-capper-sport]");
+ if(button)setCapperSportView(button.getAttribute("data-capper-sport"));
+});
 function render(){renderCappers();renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderResearchHealth();renderNcaafEligibility();renderYesterday()}
 async function load(){
  const paths=["/api/picks","/api/status","/api/private-metrics","/api/yesterday-bets","/api/model-health","/api/ncaaf-research-health","/api/cappers","/api/capper-discovery","/api/capper-qualification"];
