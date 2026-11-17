@@ -11,6 +11,7 @@ from pathlib import Path
 import urllib.error
 import urllib.parse
 import urllib.request
+from zoneinfo import ZoneInfo
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -149,7 +150,7 @@ def collect():
     health = "OK" if successful == len(SEARCHES) else "DEGRADED" if successful else "FAILED"
     data = {
         "schemaVersion": 2, "updatedAtUTC": now.isoformat(),
-        "scanDateET": now.astimezone(dt.timezone(dt.timedelta(hours=-5))).date().isoformat(),
+        "scanDateET": now.astimezone(ZoneInfo("America/New_York")).date().isoformat(),
         "scanHealth": health,
         "lastSuccessfulSourceScanUTC": now.isoformat() if successful else prior_success,
         "sourceStatus": source_status,
