@@ -20,7 +20,7 @@ SPORTS = {"NFL", "NCAAF", "NBA", "NCAAB", "WNBA", "MLB", "NHL", "MLS", "EPL", "S
 RESULTS = {"PENDING", "WIN", "LOSS", "PUSH", "VOID"}
 
 REQUIRED = ("id", "capperId", "sport", "event", "selection", "market", "odds",
-            "sourceUrl", "postedAtUTC", "eventStartUTC", "observedAtUTC",
+            "sourceUrl", "eventStartUTC", "observedAtUTC",
             "bestBetEvidence", "reviewedBy")
 
 
@@ -103,12 +103,12 @@ def build():
                 raise ValueError("invalid original source URL")
             if len(str(row["bestBetEvidence"]).strip()) < 10:
                 raise ValueError("no meaningful best bet evidence")
-            posted = parse_time(row["postedAtUTC"])
+            posted = parse_time(row["postedAtUTC"]) if row.get("postedAtUTC") else None
             observed = parse_time(row["observedAtUTC"])
             start = parse_time(row["eventStartUTC"])
-            if posted >= start or observed >= start:
+            if (posted and posted >= start) or observed >= start:
                 raise ValueError("posted or first observed after event started")
-            if observed < posted:
+            if posted and observed < posted:
                 raise ValueError("first seen earlier than original publication")
             odds = int(row["odds"])
             if not (abs(odds) >= 100 and abs(odds) <= 10000):
@@ -124,7 +124,11 @@ def build():
             entry = {k: row[k] for k in REQUIRED}
             entry.update(
                 dateET=start.astimezone(et).date().isoformat(),
-                postedAtET=posted.astimezone(et).isoformat(),
+                postedAtUTC=posted.isoformat() if posted else None,
+                postedAtET=posted.astimezone(et).isoformat() if posted else None,
+                observedAtET=observed.astimezone(et).isoformat(),
+                publicationTimeVerified=bool(posted),
+                timeBasis="Original publication" if posted else "First independently observed before start",
                 odds=odds, result=result, riskUnits=1.0,
                 plUnits=paper_profit(odds, result),
                 settlementSourceUrl=row.get("settlementSourceUrl"),
@@ -143,7 +147,7 @@ def build():
         for c in roster
     ]
     baseline["qualificationsBySport"] = sport_status
-    baseline["picks"] = sorted(valid, key=lambda p: p["postedAtUTC"], reverse=True)
+    baseline["picks"] = sorted(valid, key=lambda p: p.get("postedAtUTC") or p["observedAtUTC"], reverse=True)
     baseline["updatedAtUTC"] = dt.datetime.now(dt.timezone.utc).isoformat()
     baseline["rejectedCount"] = len(rejected)
     OUTPUT.write_text(json.dumps(baseline, indent=2) + "\n")
