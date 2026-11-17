@@ -79,5 +79,44 @@ class QualificationTests(unittest.TestCase):
                 for key, value in saved.items():
                     setattr(mod, key, value)
 
+    def test_first_observed_before_kickoff_without_inventing_publication_time(self):
+        """An original author's timestamp may be unavailable; record our first observation."""
+        row = {
+            "id": "new-before-kickoff", "capperId": "koerner", "sport": "NFL",
+            "event": "Chargers at Ravens", "selection": "Over 13.5 receiving yards",
+            "market": "Player receiving yards", "odds": -111,
+            "sourceUrl": "https://www.actionnetwork.com/article/author/sean-koerner/",
+            "eventStartUTC": "2026-11-17T01:15:00Z",
+            "observedAtUTC": "2026-11-17T00:54:43Z",
+            "bestBetEvidence": "Original public author page showed the player selection and odds.",
+            "reviewedBy": "assistant-source-review", "approvalStatus": "APPROVED",
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            files = {
+                "OUTPUT": {"schemaVersion": 2, "cappers": [], "picks": []},
+                "INPUT": {"submissions": [row]},
+                "QUAL": {"policy": POLICY, "roster": [{"id": "koerner", "name": "Sean Koerner", "handle": "@The_Oddsmaker", "role": "PRIMARY_BENCHMARK", "sports": ["NFL"]}], "independentlyAuditedRecords": []},
+                "ARCHIVE": {"picks": []},
+            }
+            saved = {}
+            try:
+                for key, value in files.items():
+                    saved[key] = getattr(mod, key)
+                    path = root / (key.lower() + ".json")
+                    path.write_text(json.dumps(value))
+                    setattr(mod, key, path)
+                mod.build()
+                result = json.loads(mod.OUTPUT.read_text())
+                self.assertEqual(result["rejectedCount"], 0)
+                self.assertEqual(len(result["picks"]), 1)
+                self.assertIsNone(result["picks"][0]["postedAtUTC"])
+                self.assertFalse(result["picks"][0]["publicationTimeVerified"])
+                self.assertTrue(result["picks"][0]["observedAtET"].startswith("2026-11-16"))
+                self.assertEqual(result["picks"][0]["result"], "PENDING")
+            finally:
+                for key, value in saved.items():
+                    setattr(mod, key, value)
+
 if __name__ == "__main__":
     unittest.main()
