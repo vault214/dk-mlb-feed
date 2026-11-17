@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-17T00:57:02.257748+00:00",
+  "updatedAtUTC": "2026-11-17T19:37:52.431847+00:00",
   "sourcePolicy": "Forward-observed paper selections only. No capper is qualified as profitable without independently audited sport-level ROI, 200+ settled picks, multiple seasons and stable subperiods.",
   "cappers": [
     {
@@ -33,6 +33,33 @@
     }
   ],
   "picks": [
+    {
+      "id": "2026-11-17-dellera-wembanyama-over27p5",
+      "capperId": "dellera",
+      "sport": "NBA",
+      "event": "Detroit Pistons at San Antonio Spurs",
+      "selection": "Victor Wembanyama OVER 27.5 points",
+      "market": "Player points",
+      "odds": -120,
+      "sourceUrl": "https://www.actionnetwork.com/nba/nba-player-props-for-victor-wembanyama-luka-doncic-on-tuesday-november-17/embed",
+      "eventStartUTC": "2026-11-18T01:00:00Z",
+      "observedAtUTC": "2026-11-17T19:34:54Z",
+      "bestBetEvidence": "Action Network Nov 17 12:52 PM ET staff article lists Victor Wembanyama Over 27.5 Points (-120) in a section explicitly credited By Joe Dellera. Independently located before scheduled 8 PM ET tipoff; original first-publication timestamp not assumed.",
+      "reviewedBy": "assistant-public-web-review-2026-11-17",
+      "dateET": "2026-11-17",
+      "postedAtUTC": null,
+      "postedAtET": null,
+      "observedAtET": "2026-11-17T14:34:54-05:00",
+      "publicationTimeVerified": false,
+      "timeBasis": "First independently observed before start",
+      "result": "PENDING",
+      "riskUnits": 1.0,
+      "plUnits": null,
+      "settlementSourceUrl": null,
+      "status": "SOURCE_REVIEWED_FORWARD_PAPER",
+      "qualificationStatus": "NOT_YET_QUALIFIED",
+      "trackRole": "EVALUATION"
+    },
     {
       "id": "2026-11-16-koerner-k-lambert-smith-rec-over13p5-111",
       "capperId": "koerner",
