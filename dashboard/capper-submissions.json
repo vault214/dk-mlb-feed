@@ -1,5 +1,25 @@
 {
   "schemaVersion": 2,
-  "note": "New forward-only paper sample. Previous 2026-11-16 picks archived; new submissions must be observed pregame, source-backed and independently approved before publishing.",
-  "submissions": []
+  "note": "Paper-only prospective sample; source post may omit original publication time, in which case pregame firstSeenUTC is recorded and the UI must not misstate it as original post time.",
+  "submissions": [
+    {
+      "id": "2026-11-16-koerner-k-lambert-smith-rec-over13p5-111",
+      "capperId": "koerner",
+      "sport": "NFL",
+      "event": "Los Angeles Chargers at Baltimore Ravens",
+      "selection": "KeAndre Lambert-Smith OVER 13.5 receiving yards",
+      "market": "Player receiving yards",
+      "odds": -111,
+      "sourceUrl": "https://www.actionnetwork.com/article/author/sean-koerner/",
+      "observedAtUTC": "2026-11-17T00:54:43Z",
+      "eventStartUTC": "2026-11-17T01:15:00Z",
+      "bestBetEvidence": "Action Network's Sean Koerner author page displayed K.Lambert-Smith o13.5 Rec Yds -111 for LAC@BAL at 0.56u, plus explanatory pick analysis. First observed in this session before kickoff; original publication time not independently shown.",
+      "approvalStatus": "APPROVED",
+      "reviewedBy": "assistant-observed-public-source-before-start-2026-11-16",
+      "result": "PENDING",
+      "sourcePriceType": "AUTHOR_POSTED_NOT_EXECUTABLE",
+      "sourceReportedRiskUnits": 0.56,
+      "note": "Forward paper track normalized to 1u. Original publication timestamp not asserted; eligibility based on public pick first seen at 7:54:43 PM ET before 8:15 PM ET kickoff."
+    }
+  ]
 }
