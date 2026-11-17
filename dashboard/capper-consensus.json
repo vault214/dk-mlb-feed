@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-16T17:33:07.542162+00:00",
+  "updatedAtUTC": "2026-11-17T00:57:02.257748+00:00",
   "sourcePolicy": "Forward-observed paper selections only. No capper is qualified as profitable without independently audited sport-level ROI, 200+ settled picks, multiple seasons and stable subperiods.",
   "cappers": [
     {
@@ -32,7 +32,35 @@
       "qualificationStatus": "NOT_YET_QUALIFIED"
     }
   ],
-  "picks": [],
+  "picks": [
+    {
+      "id": "2026-11-16-koerner-k-lambert-smith-rec-over13p5-111",
+      "capperId": "koerner",
+      "sport": "NFL",
+      "event": "Los Angeles Chargers at Baltimore Ravens",
+      "selection": "KeAndre Lambert-Smith OVER 13.5 receiving yards",
+      "market": "Player receiving yards",
+      "odds": -111,
+      "sourceUrl": "https://www.actionnetwork.com/article/author/sean-koerner/",
+      "eventStartUTC": "2026-11-17T01:15:00Z",
+      "observedAtUTC": "2026-11-17T00:54:43Z",
+      "bestBetEvidence": "Action Network's Sean Koerner author page displayed K.Lambert-Smith o13.5 Rec Yds -111 for LAC@BAL at 0.56u, plus explanatory pick analysis. First observed in this session before kickoff; original publication time not independently shown.",
+      "reviewedBy": "assistant-observed-public-source-before-start-2026-11-16",
+      "dateET": "2026-11-16",
+      "postedAtUTC": null,
+      "postedAtET": null,
+      "observedAtET": "2026-11-16T19:54:43-05:00",
+      "publicationTimeVerified": false,
+      "timeBasis": "First independently observed before start",
+      "result": "PENDING",
+      "riskUnits": 1.0,
+      "plUnits": null,
+      "settlementSourceUrl": null,
+      "status": "SOURCE_REVIEWED_FORWARD_PAPER",
+      "qualificationStatus": "NOT_YET_QUALIFIED",
+      "trackRole": "PRIMARY_BENCHMARK"
+    }
+  ],
   "rejectedCount": 0,
   "legacyArchive": "dashboard/capper-legacy-archive.json",
   "statsNote": "Publisher-reported history lives separately in capper-qualification.json; not included in forward ROI.",
