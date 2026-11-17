@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sport": "NHL",
+  "event_date_et": "2026-11-16",
+  "observations": [
+    {
+      "espn_game_id": "401892727",
+      "event_ticker": "KXNHLGAME-26NOV16VANUTA",
+      "event_date_et": "2026-11-16",
+      "kickoff_utc": "2026-11-17T02:30:00+00:00",
+      "home_team": "Utah Mammoth",
+      "away_team": "Vancouver Canucks",
+      "home_team_id": "129764",
+      "away_team_id": "22",
+      "ticker": "KXNHLGAME-26NOV16VANUTA-UTA",
+      "home_selection_label": "Utah",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-17T00:13:38.352397+00:00",
+      "home_yes_ask": 0.75,
+      "home_no_ask": 0.26,
+      "home_bidask_midpoint": 0.745,
+      "yes_contracts_available": 1559045.84,
+      "no_contracts_available": 559980.13,
+      "taker_fee_estimate_one_yes_contract": 0.02,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
+    }
+  ],
+  "verified_outcomes": {}
+}
