@@ -24,6 +24,7 @@ FEEDS = {
     "cappers": RAW + "/dashboard/capper-consensus.json",
     "capper_discovery": RAW + "/dashboard/capper-discovery.json",
     "capper_qualification": RAW + "/dashboard/capper-qualification.json",
+    "capper_archive": RAW + "/dashboard/capper-legacy-archive.json",
 }
 RESEARCH_V32_URL = RAW + "/dashboard/ncaaf-v32-health.json"
 WEATHER_V32_URL = RAW + "/dashboard/ncaaf-v32-weather-health.json"
@@ -86,6 +87,8 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="season-tabs" id="seasonTabs"><button class="tab active" data-season="ACTIVE" onclick="setSeasonView('ACTIVE')">Active Season</button><button class="tab" data-season="ALL" onclick="setSeasonView('ALL')">All-Time</button></div><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="NCAAB" onclick="setPerfLeague('NCAAB')">NCAAB</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button><button class="tab" data-league="EPL" onclick="setPerfLeague('EPL')">Premier League</button><button class="tab" data-league="SERIEA" onclick="setPerfLeague('SERIEA')">Serie A</button><button class="tab" data-league="MLS" onclick="setPerfLeague('MLS')">MLS</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
 
 <section class="panel"><div class="eyebrow">RESEARCH · SOURCE-VERIFIED PAPER TRACKING</div><h2>Capper Performance by Sport</h2>
+<div class="eyebrow" style="margin-top:18px">LATEST SOURCE-LINKED PICKS · FORWARD AND ARCHIVED</div>
+<div class="scroll" style="margin-top:10px"><table><thead><tr><th>Capper</th><th>Sport</th><th>Date</th><th>Selection</th><th>Odds</th><th>Result</th><th>Tracking cohort</th><th>Source</th></tr></thead><tbody id="capperLatestRows"></tbody></table></div>
 <div class="notice" style="margin-top:12px">Choose a capper and a sport to see their forward-tracked record and every recorded selection. Publisher-reported historical performance is shown separately and is not independently audited. No capper is currently qualified as profitable. Paper tracking only; no wagers are placed.</div>
 <div class="eyebrow" style="margin-top:20px">SELECT CAPPER</div>
 <div id="capperTabs" class="tabs" role="tablist" aria-label="Capper" style="margin-top:9px"></div>
@@ -97,6 +100,8 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <div class="scroll" style="margin-top:10px"><table><thead><tr><th>Sport</th><th>W-L-P</th><th>Pending</th><th>Net units</th><th>ROI</th><th>Qualification</th></tr></thead><tbody id="capperForwardRows"></tbody></table></div>
 <div class="eyebrow" style="margin-top:20px">SOURCE-REVIEWED PICKS · FORWARD SAMPLE</div>
 <div class="scroll" style="margin-top:12px"><table><thead><tr><th>Game date</th><th>Sport</th><th>Event</th><th>Selection</th><th>Odds</th><th>Result</th><th>P/L</th><th>Source</th></tr></thead><tbody id="capperRows"></tbody></table></div>
+<div class="eyebrow" style="margin-top:20px">PREVIOUS SOURCED PICKS · ARCHIVED (EXCLUDED FROM FORWARD ROI)</div>
+<div class="scroll" style="margin-top:10px"><table><thead><tr><th>Date</th><th>Sport</th><th>Event</th><th>Selection</th><th>Odds</th><th>Result</th><th>Source</th></tr></thead><tbody id="capperArchivedRows"></tbody></table></div>
 <div class="eyebrow" style="margin-top:20px">PUBLISHED HISTORY · NOT INDEPENDENTLY AUDITED</div>
 <div class="scroll" style="margin-top:10px"><table><thead><tr><th>Sport</th><th>Reported W-L-P</th><th>Reported units</th><th>Reported ROI</th><th>As of</th><th>Audit status</th><th>Source</th></tr></thead><tbody id="capperEvidenceRows"></tbody></table></div>
 <div id="capperStatus" class="sub" style="margin-top:10px"></div>
@@ -128,7 +133,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </div>
 </main>
 <script>
-let capperData=null,capperDiscovery=null,capperQualification=null,capperSelectedId="koerner",capperSelectedSport="ALL",rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
+let capperData=null,capperDiscovery=null,capperQualification=null,capperArchive=null,capperSelectedId="koerner",capperSelectedSport="ALL",rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
 const ACTIVE_LEAGUES=["NFL","NCAAF","NBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const ALL_LEAGUES=["MLB","NFL","NCAAF","NBA","WNBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const scopedRows=()=>seasonView==="ALL"?rows:rows.filter(r=>ACTIVE_LEAGUES.includes(r.league));
@@ -370,6 +375,8 @@ function renderCappers(){
  if(capperSelectedSport!=="ALL"&&!sports.includes(capperSelectedSport))capperSelectedSport="ALL";
  const sport=capperSelectedSport;
  const matchesSport=p=>sport==="ALL"||p.sport===sport;
+ const archivedAll=capperArchive?.picks||[];
+ const archived=archivedAll.filter(p=>p.capperId===active.id&&matchesSport(p));
  const picks=(capperData?.picks||[]).filter(p=>p.capperId===active.id&&p.sourceUrl&&p.postedAtET&&p.selection&&p.dateET&&p.status==="SOURCE_REVIEWED_FORWARD_PAPER");
  const selected=picks.filter(matchesSport);
  const status=capperData?.qualificationsBySport||{};
@@ -393,10 +400,15 @@ function renderCappers(){
   const audited=status[active.id+":"+sp]==="AUDITED_POSITIVE";
   return '<tr><td>'+E(sp)+'</td><td>'+st.w+'-'+st.l+'-'+st.push+'</td><td>'+st.pending+'</td><td>'+E(st.risk?capperUnits(st.units):"—")+'</td><td>'+E(capperPct(st.roi))+'</td><td>'+E(audited?"Independently audited":"Not yet independently qualified")+'</td></tr>';
  }).join("")||'<tr><td colspan="6">No sports assigned to this capper.</td></tr>';
- const recent=[...selected].sort((a,b)=>String(b.eventStartUTC||b.dateET).localeCompare(String(a.eventStartUTC||a.dateET))).slice(0,100);
+ const allCurrent=capperData?.picks||[];
+ const latest=[...allCurrent.map(p=>({...p,cohort:"Forward paper"})),...archivedAll.map(p=>({...p,cohort:"Research archive"}))].sort((a,b)=>String(b.eventStartUTC||b.dateET).localeCompare(String(a.eventStartUTC||a.dateET))).slice(0,12);
+ const capNames=Object.fromEntries([...cs.map(c=>[c.id,c.name]),["sartori","Tony Sartori"]]);
+ capperLatestRows.innerHTML=latest.length?latest.map(p=>'<tr><td>'+E(capNames[p.capperId]||p.capperId)+'</td><td>'+E(p.sport)+'</td><td>'+E(p.dateET||"—")+'</td><td>'+E(p.selection)+'</td><td>'+E(p.odds===null||p.odds===undefined?"—":(Number(p.odds)>0?"+":"")+p.odds)+'</td><td>'+E(p.result||"PENDING")+'</td><td>'+E(p.cohort)+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Original</a></td></tr>').join(""):'<tr><td colspan="8">No sourced picks in forward tracking or the research archive.</td></tr>';
+ capperArchivedRows.innerHTML=archived.length?archived.map(p=>'<tr><td>'+E(p.dateET||"—")+'</td><td>'+E(p.sport||"—")+'</td><td>'+E(p.event||"—")+'</td><td>'+E(p.selection)+'</td><td>'+E(p.odds===null||p.odds===undefined?"—":(Number(p.odds)>0?"+":"")+p.odds)+'</td><td>'+E(p.result||"PENDING")+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Article</a></td></tr>').join(""):'<tr><td colspan="7">No earlier archived selections for this capper and sport.</td></tr>';
+  const recent=[...selected].sort((a,b)=>String(b.eventStartUTC||b.dateET).localeCompare(String(a.eventStartUTC||a.dateET))).slice(0,100);
  capperRows.innerHTML=recent.length?recent.map(p=>{
   const pl=p.plUnits!==null&&p.plUnits!==undefined&&["WIN","LOSS","PUSH"].includes(String(p.result||"").toUpperCase())&&Number.isFinite(Number(p.plUnits))?capperUnits(Number(p.plUnits)):"—";
-  return '<tr><td>'+E(p.dateET||"—")+'</td><td>'+E(p.sport||"—")+'</td><td>'+E(p.event||"—")+'</td><td><strong>'+E(p.selection)+'</strong><div class="sub">'+E(p.market||"")+'</div></td><td>'+E(p.odds||"—")+'</td><td>'+E(p.result||"PENDING")+'</td><td>'+E(pl)+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Original</a></td></tr>';
+  return '<tr><td>'+E(p.dateET||"—")+'</td><td>'+E(p.sport||"—")+'</td><td>'+E(p.event||"—")+'</td><td><strong>'+E(p.selection)+'</strong><div class="sub">'+E(p.market||"")+' · '+E(p.publicationTimeVerified?"Published "+p.postedAtET:"First seen "+(p.observedAtET||"pregame"))+'</div></td><td>'+E(p.odds||"—")+'</td><td>'+E(p.result||"PENDING")+'</td><td>'+E(pl)+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Original</a></td></tr>';
  }).join(""):'<tr><td colspan="8">No forward-reviewed '+E(sport==="ALL"?"picks":"picks for "+sport)+' for '+E(active.name)+' yet. Previously archived picks are excluded from this fresh sample.</td></tr>';
  const published=(meta.publishedRecords||[]).filter(r=>r.capperId===active.id&&(sport==="ALL"||r.sport===sport));
  capperEvidenceRows.innerHTML=published.length?published.map(r=>{
@@ -430,7 +442,7 @@ document.getElementById("capperSportTabs").addEventListener("click",ev=>{
 });
 function render(){renderCappers();renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderResearchHealth();renderNcaafEligibility();renderYesterday()}
 async function load(){
- const paths=["/api/picks","/api/status","/api/private-metrics","/api/yesterday-bets","/api/model-health","/api/ncaaf-research-health","/api/cappers","/api/capper-discovery","/api/capper-qualification"];
+ const paths=["/api/picks","/api/status","/api/private-metrics","/api/yesterday-bets","/api/model-health","/api/ncaaf-research-health","/api/cappers","/api/capper-discovery","/api/capper-qualification","/api/capper-archive"];
  const results=await Promise.allSettled(paths.map(path=>fetch(path,{cache:"no-store"})));
  const p=results[0];
  if(p.status==="fulfilled"&&p.value.status===401){location.href="/login";return}
@@ -438,7 +450,8 @@ async function load(){
   if(item.status!=="fulfilled"||!item.value.ok)return null;
   try{return await item.value.json()}catch(e){return null}
  };
- const [d,s,m,y,h,n,c,cd,cq]=await Promise.all(results.map(read));
+ const [d,s,m,y,h,n,c,cd,cq,ca]=await Promise.all(results.map(read));
+ capperArchive=ca;
  capperQualification=cq;
  capperDiscovery=cd;
  capperData=c;
@@ -498,6 +511,9 @@ class Handler(BaseHTTPRequestHandler):
         if p == "/api/capper-discovery":
             try: return self.send(200,json.dumps(fetch_json(FEEDS["capper_discovery"])),"application/json")
             except Exception: return self.send(200,json.dumps({"leads":[],"updatedAtUTC":None}),"application/json")
+        if p == "/api/capper-archive":
+            try: return self.send(200,json.dumps(fetch_json(FEEDS["capper_archive"])),"application/json")
+            except Exception: return self.send(503,json.dumps({"picks":[]}),"application/json")
         if p == "/api/capper-qualification":
             try: return self.send(200,json.dumps(fetch_json(FEEDS["capper_qualification"])),"application/json")
             except Exception: return self.send(503,json.dumps({"error":"capper qualification report unavailable"}),"application/json")
