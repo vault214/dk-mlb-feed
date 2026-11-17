@@ -86,7 +86,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </section>
 <section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="season-tabs" id="seasonTabs"><button class="tab active" data-season="ACTIVE" onclick="setSeasonView('ACTIVE')">Active Season</button><button class="tab" data-season="ALL" onclick="setSeasonView('ALL')">All-Time</button></div><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="NCAAB" onclick="setPerfLeague('NCAAB')">NCAAB</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button><button class="tab" data-league="EPL" onclick="setPerfLeague('EPL')">Premier League</button><button class="tab" data-league="SERIEA" onclick="setPerfLeague('SERIEA')">Serie A</button><button class="tab" data-league="MLS" onclick="setPerfLeague('MLS')">MLS</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
 
-<section class="panel"><div class="eyebrow">RESEARCH · SOURCE-VERIFIED PAPER TRACKING</div><h2>Capper Performance by Sport</h2>
+<section class="panel"><div class="eyebrow">RESEARCH · SOURCE-VERIFIED PAPER TRACKING</div><h2>Capper Performance by Sport</h2><div id="capperScanBanner" class="notice" style="margin-top:12px">Checking source scan status...</div>
 <div class="eyebrow" style="margin-top:18px">LATEST SOURCE-LINKED PICKS · FORWARD AND ARCHIVED</div>
 <div class="scroll" style="margin-top:10px"><table><thead><tr><th>Capper</th><th>Sport</th><th>Date</th><th>Selection</th><th>Odds</th><th>Result</th><th>Tracking cohort</th><th>Source</th></tr></thead><tbody id="capperLatestRows"></tbody></table></div>
 <div class="notice" style="margin-top:12px">Choose a capper and a sport to see their forward-tracked record and every recorded selection. Publisher-reported historical performance is shown separately and is not independently audited. No capper is currently qualified as profitable. Paper tracking only; no wagers are placed.</div>
@@ -366,6 +366,17 @@ function capperPaperStats(picks){
 function capperUnits(n){return (n>0?"+":"")+n.toFixed(2)+"u"}
 function capperPct(n){return n===null?"—":(n>0?"+":"")+n.toFixed(1)+"%"}
 function renderCappers(){
+ const scan=capperDiscovery||{};
+ const scanDate=scan.scanDateET||"";
+ const calendarDay=new Date().toLocaleDateString("sv-SE",{timeZone:"America/New_York"});
+ const lastScan=scan.updatedAtUTC||"never";
+ const sourceSummary=(scan.sourceStatus||[]).map(x=>x.capperId+":"+x.status).join(" · ");
+ const scannedToday=scanDate===calendarDay;
+ const scanProblem=!scannedToday||scan.scanHealth!=="OK";
+ capperScanBanner.style.borderColor=scanProblem?"#b08337":"#2f9e67";
+ capperScanBanner.textContent=(!scannedToday?"No completed capper discovery scan today. ":scan.scanHealth==="OK"?"Discovery scan ran today. ":"Today's scan is "+(scan.scanHealth||"unverified")+". ")+
+   "Last attempt: "+lastScan+" · "+(scan.freshLeadsThisRun||0)+" new public leads · "+sourceSummary+
+   " · Discovery is NOT verified picks. Green deployment checks don't confirm capper collection.";
  const meta=capperQualification||{};
  const cs=meta.roster||capperData?.cappers||[];
  if(!cs.length){capperHeadline.textContent="Capper roster feed unavailable.";capperCards.innerHTML="";capperTabs.innerHTML="";capperSportTabs.innerHTML="";return;}

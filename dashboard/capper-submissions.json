@@ -20,6 +20,24 @@
       "sourcePriceType": "AUTHOR_POSTED_NOT_EXECUTABLE",
       "sourceReportedRiskUnits": 0.56,
       "note": "Forward paper track normalized to 1u. Original publication timestamp not asserted; eligibility based on public pick first seen at 7:54:43 PM ET before 8:15 PM ET kickoff."
+    },
+    {
+      "id": "2026-11-17-dellera-wembanyama-over27p5",
+      "capperId": "dellera",
+      "sport": "NBA",
+      "event": "Detroit Pistons at San Antonio Spurs",
+      "selection": "Victor Wembanyama OVER 27.5 points",
+      "market": "Player points",
+      "odds": -120,
+      "sourceUrl": "https://www.actionnetwork.com/nba/nba-player-props-for-victor-wembanyama-luka-doncic-on-tuesday-november-17/embed",
+      "observedAtUTC": "2026-11-17T19:34:54Z",
+      "eventStartUTC": "2026-11-18T01:00:00Z",
+      "bestBetEvidence": "Action Network Nov 17 12:52 PM ET staff article lists Victor Wembanyama Over 27.5 Points (-120) in a section explicitly credited By Joe Dellera. Independently located before scheduled 8 PM ET tipoff; original first-publication timestamp not assumed.",
+      "approvalStatus": "APPROVED",
+      "reviewedBy": "assistant-public-web-review-2026-11-17",
+      "result": "PENDING",
+      "sourcePriceType": "AUTHOR_LISTED_HISTORICAL",
+      "note": "Paper only; listed author price not a current executable quote. Entry derives from a pregame webpage observation; does not qualify the capper."
     }
   ]
 }
