@@ -377,7 +377,7 @@ function renderCappers(){
  const matchesSport=p=>sport==="ALL"||p.sport===sport;
  const archivedAll=capperArchive?.picks||[];
  const archived=archivedAll.filter(p=>p.capperId===active.id&&matchesSport(p));
- const picks=(capperData?.picks||[]).filter(p=>p.capperId===active.id&&p.sourceUrl&&p.postedAtET&&p.selection&&p.dateET&&p.status==="SOURCE_REVIEWED_FORWARD_PAPER");
+ const picks=(capperData?.picks||[]).filter(p=>p.capperId===active.id&&p.sourceUrl&&(p.postedAtET||p.observedAtET)&&p.selection&&p.dateET&&p.status==="SOURCE_REVIEWED_FORWARD_PAPER");
  const selected=picks.filter(matchesSport);
  const status=capperData?.qualificationsBySport||{};
  const role=({PRIMARY_BENCHMARK:"Primary research benchmark",EVALUATION:"Evaluation candidate",COMPARISON_ONLY:"Comparison only"})[active.role]||"Research";
