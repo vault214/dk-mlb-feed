@@ -21,6 +21,9 @@ API = "https://api.elections.kalshi.com/trade-api/v2"
 HISTORY = "https://huggingface.co/datasets/minmaxxxer/atp-wta-matches-with-odds"
 SCORES = "https://site.api.espn.com/apis/site/v2/sports/tennis/{}/scoreboard"
 TOURS = {"ATP": "KXATPMATCH", "WTA": "KXWTAMATCH"}
+OTHER_SERIES = {"ATP Challenger": "KXATPCHALLENGERMATCH",
+                "WTA Challenger": "KXWTACHALLENGERMATCH", "ITF": "KXITFMATCH"}
+PREGAME_BUFFER = timedelta(minutes=2)
 # Only named surfaces we can identify reliably. Unknown surfaces get no pick.
 SURFACES = {
     "hard": ("atp world tour finals", "atp finals", "wta finals", "australian open",
@@ -169,7 +172,7 @@ def evaluate(tour, day):
     series = json.loads(get(API + "/series/" + TOURS[tour]))["series"]
     if series.get("ticker") != TOURS[tour]:
         raise ValueError("series identity mismatch")
-    candidates, matched = [], 0
+    candidates, matched, quote_errors = [], 0, 0
     for event, milestone in market_page(TOURS[tour]):
         details = milestone["details"]
         start = utc(milestone["start_date"])
@@ -192,7 +195,7 @@ def evaluate(tour, day):
         if len(starts) != 1:
             continue
         cutoff = min(starts[0], start)
-        if cutoff <= datetime.now(timezone.utc) + timedelta(minutes=10):
+        if cutoff <= datetime.now(timezone.utc) + PREGAME_BUFFER:
             continue
         matched += 1
         point_ratings = [match_rating(market["yes_sub_title"], surface, ratings) for market in markets]
@@ -202,7 +205,11 @@ def evaluate(tour, day):
             candidate = price_pick(series, market, point_ratings[index], point_ratings[1-index], int(best_of))
             if not candidate:
                 continue
-            book = get_orderbook(market["ticker"])
+            try:
+                book = get_orderbook(market["ticker"])
+            except (OSError, ValueError):
+                quote_errors += 1
+                continue
             yes, no = levels(book.get("yes_dollars")), levels(book.get("no_dollars"))
             if not yes or not no:
                 continue
@@ -210,7 +217,7 @@ def evaluate(tour, day):
                 "yes_bid_dollars": yes[0][0], "yes_ask_dollars": 1 - no[0][0],
                 "yes_ask_size_fp": no[0][1],
             }, point_ratings[index], point_ratings[1-index], int(best_of))
-            if not candidate or cutoff <= datetime.now(timezone.utc) + timedelta(minutes=10):
+            if not candidate or cutoff <= datetime.now(timezone.utc) + PREGAME_BUFFER:
                 continue
             candidates.append(candidate | {
                 "ticker": market["ticker"], "eventTicker": event["event_ticker"],
@@ -219,7 +226,8 @@ def evaluate(tour, day):
                 "dateET": day.isoformat(), "tour": tour, "tournament": tournament,
                 "ratingsDate": ratings_day.isoformat(), "surface": surface, "bestOf": int(best_of),
             })
-    return candidates, {"status": "OK", "scheduledSingles": len(schedule), "matchedMarkets": matched,
+    return candidates, {"status": "PARTIAL" if quote_errors else "OK", "quoteErrors": quote_errors,
+                        "scheduledSingles": len(schedule), "matchedMarkets": matched,
                         "eligibleCandidates": len(candidates), "ratingsDate": ratings_day.isoformat()}
 
 
@@ -239,26 +247,46 @@ def price_pick(series, market, rating, opponent, best_of):
         return None
     fee = float(taker_fee(D("1"), D(str(ask)), multiplier))
     edge = p - ask - fee
-    if p > 0.75 or edge < 0.025:
+    if p > 0.75 or ask > 0.75:
         return None
     return {"probability": p, "ask": ask, "fee": fee, "edge": edge, "rating": rating,
             "opponentRating": opponent, "result": "PENDING", "plUnits": None}
 
 
 def capture(candidates, ledger, day):
-    for track in ("OFFICIAL", "SHADOW"):
-        if any(p["track"] == track and p["dateET"] == day for p in ledger):
-            continue
-        booked = {p["eventTicker"] for p in ledger}
-        if track == "OFFICIAL":
-            eligible = [p for p in candidates if p["probability"] >= 0.48 and p["edge"] >= 0.05]
-            ranking = lambda p: (p["edge"], p["probability"])
-        else:
-            eligible = [p for p in candidates if p["probability"] < 0.50]
-            ranking = lambda p: (p["edge"], -p["probability"])
-        pick = max((p for p in eligible if p["eventTicker"] not in booked), key=ranking, default=None)
-        if pick:
-            ledger.append(pick | {"track": track, "stakeUnits": 1.0 if track == "OFFICIAL" else 0.5})
+    booked = [p for p in ledger if p["dateET"] == day]
+    remaining = [p for p in candidates
+                 if utc(p["matchStartUTC"]) > datetime.now(timezone.utc) + PREGAME_BUFFER
+                 and all(p["ticker"] != old["ticker"] for old in booked)]
+    if remaining and not any(p["track"] == "OFFICIAL" for p in booked):
+        pool = [p for p in remaining
+                if p["probability"] >= 0.48 and p["edge"] >= 0.05]
+        official = max(pool, key=lambda p: p["edge"]) if pool else max(
+            remaining, key=lambda p: (p["probability"], p["edge"]))
+        pick = official | {"track": "OFFICIAL", "stakeUnits": 1.0,
+                           "selectionBasis": "EDGE_QUALIFIED" if pool else "MINIMUM_ACTION"}
+        ledger.append(pick)
+        booked.append(pick)
+        remaining.remove(official)
+    if not remaining or any(p["track"] == "SHADOW" for p in booked):
+        return
+    official = next(p for p in booked if p["track"] == "OFFICIAL")
+    riskier = [p for p in remaining if p["probability"] < official["probability"]]
+    if not riskier:
+        return
+    distinct = [p for p in riskier if p["eventTicker"] != official["eventTicker"]]
+    pool = distinct or riskier
+    edge_qualified = [p for p in pool if p["probability"] < 0.50 and p["edge"] >= 0.025]
+    shadow = max(edge_qualified or pool, key=lambda p: (p["edge"], -p["probability"]))
+    ledger.append(shadow | {"track": "SHADOW", "stakeUnits": 0.5,
+                            "selectionBasis": "EDGE_QUALIFIED" if edge_qualified else "MINIMUM_ACTION"})
+
+
+def other_tour_coverage(series, day, now):
+    return sum(1 for _, milestone in market_page(series)
+               if milestone["details"].get("status") in {"not_started", "SCH"}
+               and utc(milestone["start_date"]) > now
+               and utc(milestone["start_date"]).astimezone(ET).date() == day)
 
 
 def settle(pick):
@@ -285,25 +313,32 @@ def main():
     now = datetime.now(timezone.utc)
     day = now.astimezone(ET).date()
     ledger = json.loads(OUT.read_text())["picks"] if OUT.exists() else []
-    candidates, sources, unresolved = [], {}, []
+    candidates, sources, unresolved, unmodeled = [], {}, [], {}
     with ThreadPoolExecutor(max_workers=6) as pool:
         pending = {pool.submit(settle, p): p["ticker"] for p in ledger
                    if p["result"] == "PENDING" and utc(p["matchStartUTC"]) < now}
         tours = {tour: pool.submit(evaluate, tour, day) for tour in TOURS}
+        coverage = {name: pool.submit(other_tour_coverage, series, day, now)
+                    for name, series in OTHER_SERIES.items()}
         for tour, future in tours.items():
             try:
                 rows, sources[tour] = future.result()
                 candidates.extend(rows)
             except (OSError, ValueError, KeyError, TypeError) as error:
                 sources[tour] = {"status": "UNAVAILABLE", "reason": str(error)[:160] if isinstance(error, ValueError) else type(error).__name__}
+        capture(candidates, ledger, day.isoformat())
+        for name, future in coverage.items():
+            try:
+                unmodeled[name] = future.result()
+            except (OSError, ValueError, KeyError, TypeError):
+                unmodeled[name] = None
         for future, ticker in pending.items():
             try:
                 future.result()
             except (OSError, ValueError, KeyError, TypeError):
                 unresolved.append(ticker)
-    capture(candidates, ledger, day.isoformat())
     out = {"dateET": day.isoformat(), "updatedAtUTC": now.isoformat(), "sources": sources,
-           "settlementErrors": unresolved, "picks": ledger}
+           "settlementErrors": unresolved, "unmodeledUpcoming": unmodeled, "picks": ledger}
     OUT.write_text(json.dumps(out, indent=2) + "\n")
     print(json.dumps({k: v for k, v in out.items() if k != "picks"}, indent=2))
 

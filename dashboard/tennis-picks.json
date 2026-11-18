@@ -1,22 +1,80 @@
 {
   "dateET": "2026-11-18",
-  "updatedAtUTC": "2026-11-18T18:42:52.880380+00:00",
+  "updatedAtUTC": "2026-11-18T19:21:43.692130+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
+      "quoteErrors": 0,
       "scheduledSingles": 1,
       "matchedMarkets": 1,
-      "eligibleCandidates": 0,
+      "eligibleCandidates": 2,
       "ratingsDate": "2026-11-15"
     },
     "WTA": {
       "status": "OK",
-      "scheduledSingles": 2,
+      "quoteErrors": 0,
+      "scheduledSingles": 1,
       "matchedMarkets": 0,
       "eligibleCandidates": 0,
       "ratingsDate": "2026-11-15"
     }
   },
   "settlementErrors": [],
-  "picks": []
+  "unmodeledUpcoming": {
+    "ATP Challenger": 17,
+    "WTA Challenger": 1,
+    "ITF": 46
+  },
+  "picks": [
+    {
+      "probability": 0.6018873358682032,
+      "ask": 0.58,
+      "fee": 0.02,
+      "edge": 0.0018873358682032389,
+      "rating": 1670.2259669786076,
+      "opponentRating": 1598.4222819122765,
+      "result": "PENDING",
+      "plUnits": null,
+      "ticker": "KXATPMATCH-26NOV17COBTIA-TIA",
+      "eventTicker": "KXATPMATCH-26NOV17COBTIA",
+      "selection": "Frances Tiafoe",
+      "opponent": "Flavio Cobolli",
+      "matchStartUTC": "2026-11-18T19:30:00+00:00",
+      "observedAtUTC": "2026-11-18T19:22:17.244648+00:00",
+      "dateET": "2026-11-18",
+      "tour": "ATP",
+      "tournament": "ATP World Tour Finals Men Singles",
+      "ratingsDate": "2026-11-15",
+      "surface": "hard",
+      "bestOf": 3,
+      "track": "OFFICIAL",
+      "stakeUnits": 1.0,
+      "selectionBasis": "MINIMUM_ACTION"
+    },
+    {
+      "probability": 0.39811266413179675,
+      "ask": 0.43,
+      "fee": 0.02,
+      "edge": -0.05188733586820325,
+      "rating": 1598.4222819122765,
+      "opponentRating": 1670.2259669786076,
+      "result": "PENDING",
+      "plUnits": null,
+      "ticker": "KXATPMATCH-26NOV17COBTIA-COB",
+      "eventTicker": "KXATPMATCH-26NOV17COBTIA",
+      "selection": "Flavio Cobolli",
+      "opponent": "Frances Tiafoe",
+      "matchStartUTC": "2026-11-18T19:30:00+00:00",
+      "observedAtUTC": "2026-11-18T19:22:13.525386+00:00",
+      "dateET": "2026-11-18",
+      "tour": "ATP",
+      "tournament": "ATP World Tour Finals Men Singles",
+      "ratingsDate": "2026-11-15",
+      "surface": "hard",
+      "bestOf": 3,
+      "track": "SHADOW",
+      "stakeUnits": 0.5,
+      "selectionBasis": "MINIMUM_ACTION"
+    }
+  ]
 }

@@ -136,8 +136,9 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <div id="tennisView" style="display:none">
 <section class="panel">
 <h2>ATP &amp; WTA Singles Model</h2>
-<p class="sub">Paper picks for Kalshi match winners. The model uses surface Elo, checks the scheduled start and live pregame quotes, and excludes selections above 75% model probability. History from <a class="sub" target="_blank" rel="noopener noreferrer" href="https://huggingface.co/datasets/minmaxxxer/atp-wta-matches-with-odds">Min Maxxxer / Tennis Odds Actor</a>.</p>
+<p class="sub">Paper picks for Kalshi match winners. The model uses surface Elo and verified pregame quotes. It caps the entry ask at 75¢ and model win probability at 75%. Minimum-action picks are paper entries with a lower edge requirement. History from <a class="sub" target="_blank" rel="noopener noreferrer" href="https://huggingface.co/datasets/minmaxxxer/atp-wta-matches-with-odds">Min Maxxxer / Tennis Odds Actor</a>.</p>
 <div id="tennisFeedStatus" class="notice" aria-live="polite"></div>
+<div id="tennisCoverageStatus" class="sub" style="margin-top:8px"></div>
 <h3 style="margin-top:16px">Today's picks</h3>
 <div class="scroll"><table><thead><tr><th>Track</th><th>Match / start ET</th><th>Selection</th><th>Model win</th><th>YES ask</th><th>Edge after fee</th><th>Risk</th><th>Result</th></tr></thead><tbody id="tennisTodayRows"></tbody></table></div>
 <h3 style="margin-top:16px">Paper performance</h3>
@@ -163,7 +164,7 @@ function tennisOverviewRow(pick){
   event:pick.tour+" · "+pick.tournament+" · vs. "+pick.opponent,
   category:"Singles match winner",odds:(pick.ask*100).toFixed(1)+"¢ YES",
   edge:(pick.edge*100).toFixed(1),stakeUnits:pick.stakeUnits,
-  reason:"Model win probability "+(pick.probability*100).toFixed(1)+"% · Edge after estimated fee",
+  reason:(pick.selectionBasis==="MINIMUM_ACTION"?"Minimum action · ":"")+"Model win probability "+(pick.probability*100).toFixed(1)+"% · Edge after estimated fee",
   result:pick.result,plUnits:pick.plUnits,boardTimestampET:pick.observedAtUTC
  };
 }
@@ -413,7 +414,7 @@ function setMainView(view){
 }
 function tennisRows(picks,empty){
  const start=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
- return picks.map(p=>'<tr><td>'+E(p.track)+'</td><td>'+E(p.tour+" · "+p.tournament)+'<div class="sub">'+E(start.format(new Date(p.matchStartUTC))+" ET")+'</div></td><td><strong>'+E(p.selection)+'</strong><div class="sub">vs. '+E(p.opponent)+' · '+E(p.surface)+' · Best of '+E(p.bestOf)+'</div></td><td>'+E((p.probability*100).toFixed(1))+'%</td><td>'+E((p.ask*100).toFixed(1))+'¢</td><td>'+E((p.edge*100).toFixed(1))+' pp</td><td>'+E(p.stakeUnits)+'u</td><td>'+E(p.result)+(p.plUnits==null?'':' · '+E(capperUnits(p.plUnits)))+'</td></tr>').join("")||'<tr><td colspan="8">'+E(empty)+'</td></tr>';
+ return picks.map(p=>'<tr><td>'+E(p.track)+(p.selectionBasis==="MINIMUM_ACTION"?'<div class="sub">Minimum action</div>':'')+'</td><td>'+E(p.tour+" · "+p.tournament)+'<div class="sub">'+E(start.format(new Date(p.matchStartUTC))+" ET")+'</div></td><td><strong>'+E(p.selection)+'</strong><div class="sub">vs. '+E(p.opponent)+' · '+E(p.surface)+' · Best of '+E(p.bestOf)+'</div></td><td>'+E((p.probability*100).toFixed(1))+'%</td><td>'+E((p.ask*100).toFixed(1))+'¢</td><td>'+E((p.edge*100).toFixed(1))+' pp</td><td>'+E(p.stakeUnits)+'u</td><td>'+E(p.result)+(p.plUnits==null?'':' · '+E(capperUnits(p.plUnits)))+'</td></tr>').join("")||'<tr><td colspan="8">'+E(empty)+'</td></tr>';
 }
 function tennisModelStatus(date,pickCount){
  if(!tennisData)return tennisUnavailable?{state:"FEED UNAVAILABLE",detail:"Tennis model feed unavailable."}:{state:"LOADING",detail:"Model feed loading…"};
@@ -433,6 +434,8 @@ function renderTennis(){
  const sources=Object.entries(tennisData?.sources||{}).map(([tour,x])=>tour+" "+(x.status==="OK"?x.matchedMarkets+" matched / "+x.scheduledSingles+" upcoming":x.status.toLowerCase()));
  const attempted=tennisData?.updatedAtUTC?new Date(tennisData.updatedAtUTC).toLocaleString("en-US",{timeZone:"America/New_York"})+" ET":"—";
  tennisFeedStatus.textContent=tennisData?(current?"Last run ":"Last report is from "+tennisData.dateET+" · Last run ")+attempted+" · "+sources.join(" · "):"Tennis model feed unavailable.";
+ const coverage=Object.entries(tennisData?.unmodeledUpcoming||{}).map(([tour,count])=>tour+" "+(count??"unavailable"));
+ tennisCoverageStatus.textContent=coverage.length?"Additional upcoming Kalshi matches outside model coverage · "+coverage.join(" · "):"";
  tennisTodayRows.innerHTML=tennisRows(todays,tennisModelStatus(date,todays.length).detail);
  tennisPreviousRows.innerHTML=tennisRows(previous,"No previous tennis picks recorded.");
  tennisPerformance.innerHTML=tracks.map(track=>{
