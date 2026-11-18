@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-17T19:37:52.431847+00:00",
+  "updatedAtUTC": "2026-11-18T18:39:32.428457+00:00",
   "sourcePolicy": "Forward-observed paper selections only. No capper is qualified as profitable without independently audited sport-level ROI, 200+ settled picks, multiple seasons and stable subperiods.",
   "cappers": [
     {
@@ -8,6 +8,12 @@
       "name": "Sean Koerner",
       "handle": "@The_Oddsmaker",
       "role": "PRIMARY_BENCHMARK",
+      "sports": [
+        "NFL",
+        "NCAAB",
+        "MLB",
+        "WNBA"
+      ],
       "qualificationStatus": "NOT_YET_QUALIFIED"
     },
     {
@@ -15,6 +21,11 @@
       "name": "Stuckey",
       "handle": "@Stuckey2",
       "role": "EVALUATION",
+      "sports": [
+        "NFL",
+        "NCAAF",
+        "NCAAB"
+      ],
       "qualificationStatus": "NOT_YET_QUALIFIED"
     },
     {
@@ -22,6 +33,9 @@
       "name": "Joe Dellera",
       "handle": "@JoeDellera",
       "role": "EVALUATION",
+      "sports": [
+        "NBA"
+      ],
       "qualificationStatus": "NOT_YET_QUALIFIED"
     },
     {
@@ -29,10 +43,52 @@
       "name": "Cody Brown Bets",
       "handle": "@CodyBrownBets",
       "role": "COMPARISON_ONLY",
+      "sports": [
+        "NFL",
+        "NBA",
+        "NCAAB"
+      ],
+      "qualificationStatus": "NOT_YET_QUALIFIED"
+    },
+    {
+      "id": "zachcohen",
+      "name": "Zachary Cohen",
+      "handle": "VSiN",
+      "role": "EVALUATION",
+      "sports": [
+        "TENNIS"
+      ],
       "qualificationStatus": "NOT_YET_QUALIFIED"
     }
   ],
   "picks": [
+    {
+      "id": "2026-11-18-zachcohen-tiafoe-moneyline",
+      "capperId": "zachcohen",
+      "sport": "TENNIS",
+      "event": "Frances Tiafoe vs. Flavio Cobolli",
+      "selection": "Frances Tiafoe moneyline",
+      "market": "ATP singles match winner",
+      "odds": -133,
+      "sourceUrl": "https://vsin.com/tennis/atp-finals-tennis-best-bets-predictions-for-wednesday-november-18/",
+      "eventStartUTC": "2026-11-18T19:30:00Z",
+      "observedAtUTC": "2026-11-18T18:36:25.858621+00:00",
+      "bestBetEvidence": "VSiN best bets article by Zachary Cohen lists Tiafoe moneyline at -133 in the Tiafoe vs. Cobolli section.",
+      "reviewedBy": "assistant-public-web-review-2026-11-18",
+      "dateET": "2026-11-18",
+      "postedAtUTC": "2026-11-18T02:50:25+00:00",
+      "postedAtET": "2026-11-17T21:50:25-05:00",
+      "observedAtET": "2026-11-18T13:36:25.858621-05:00",
+      "publicationTimeVerified": true,
+      "timeBasis": "Original publication",
+      "result": "PENDING",
+      "riskUnits": 1.0,
+      "plUnits": null,
+      "settlementSourceUrl": null,
+      "status": "SOURCE_REVIEWED_FORWARD_PAPER",
+      "qualificationStatus": "NOT_YET_QUALIFIED",
+      "trackRole": "EVALUATION"
+    },
     {
       "id": "2026-11-17-dellera-wembanyama-over27p5",
       "capperId": "dellera",
@@ -102,6 +158,7 @@
     "dellera:NBA": "NOT_YET_QUALIFIED",
     "cody:NFL": "NOT_YET_QUALIFIED",
     "cody:NBA": "NOT_YET_QUALIFIED",
-    "cody:NCAAB": "NOT_YET_QUALIFIED"
+    "cody:NCAAB": "NOT_YET_QUALIFIED",
+    "zachcohen:TENNIS": "NOT_YET_QUALIFIED"
   }
 }

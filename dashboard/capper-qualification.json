@@ -61,6 +61,17 @@
         "NCAAB"
       ],
       "notes": "Compare against candidates; never imply verified profitability without independent complete ledger."
+    },
+    {
+      "id": "zachcohen",
+      "name": "Zachary Cohen",
+      "handle": "VSiN",
+      "role": "EVALUATION",
+      "sports": [
+        "TENNIS"
+      ],
+      "sourceUrl": "https://vsin.com/author/zach-cohen/",
+      "notes": "Public ATP and WTA picks at VSiN. No independently audited tennis ROI established."
     }
   ],
   "publishedRecords": [

@@ -38,6 +38,23 @@
       "result": "PENDING",
       "sourcePriceType": "AUTHOR_LISTED_HISTORICAL",
       "note": "Paper only; listed author price not a current executable quote. Entry derives from a pregame webpage observation; does not qualify the capper."
+    },
+    {
+      "id": "2026-11-18-zachcohen-tiafoe-moneyline",
+      "capperId": "zachcohen",
+      "sport": "TENNIS",
+      "event": "Frances Tiafoe vs. Flavio Cobolli",
+      "selection": "Frances Tiafoe moneyline",
+      "market": "ATP singles match winner",
+      "odds": -133,
+      "sourceUrl": "https://vsin.com/tennis/atp-finals-tennis-best-bets-predictions-for-wednesday-november-18/",
+      "observedAtUTC": "2026-11-18T18:36:25.858621+00:00",
+      "eventStartUTC": "2026-11-18T19:30:00Z",
+      "postedAtUTC": "2026-11-18T02:50:25Z",
+      "bestBetEvidence": "VSiN best bets article by Zachary Cohen lists Tiafoe moneyline at -133 in the Tiafoe vs. Cobolli section.",
+      "reviewedBy": "assistant-public-web-review-2026-11-18",
+      "approvalStatus": "APPROVED",
+      "result": "PENDING"
     }
   ]
 }

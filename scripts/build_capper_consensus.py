@@ -16,7 +16,7 @@ INPUT = ROOT / "capper-submissions.json"
 OUTPUT = ROOT / "capper-consensus.json"
 QUAL = ROOT / "capper-qualification.json"
 ARCHIVE = ROOT / "capper-legacy-archive.json"
-SPORTS = {"NFL", "NCAAF", "NBA", "NCAAB", "WNBA", "MLB", "NHL", "MLS", "EPL", "SERIEA", "SOCCER"}
+SPORTS = {"NFL", "NCAAF", "NBA", "NCAAB", "WNBA", "MLB", "NHL", "MLS", "EPL", "SERIEA", "SOCCER", "TENNIS"}
 RESULTS = {"PENDING", "WIN", "LOSS", "PUSH", "VOID"}
 
 REQUIRED = ("id", "capperId", "sport", "event", "selection", "market", "odds",
@@ -142,7 +142,7 @@ def build():
             rejected.append({"id": row.get("id", "unknown"), "reason": str(exc)})
 
     baseline["cappers"] = [
-        {k: c[k] for k in ("id", "name", "handle", "role")}
+        {k: c[k] for k in ("id", "name", "handle", "role", "sports")}
         | {"qualificationStatus": "NOT_YET_QUALIFIED"}
         for c in roster
     ]

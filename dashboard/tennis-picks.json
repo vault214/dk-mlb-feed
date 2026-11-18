@@ -1,0 +1,22 @@
+{
+  "dateET": "2026-11-18",
+  "updatedAtUTC": "2026-11-18T18:39:03.672585+00:00",
+  "sources": {
+    "ATP": {
+      "status": "OK",
+      "scheduledSingles": 1,
+      "matchedMarkets": 1,
+      "eligibleCandidates": 0,
+      "ratingsDate": "2026-11-16"
+    },
+    "WTA": {
+      "status": "OK",
+      "scheduledSingles": 2,
+      "matchedMarkets": 0,
+      "eligibleCandidates": 0,
+      "ratingsDate": "2026-11-16"
+    }
+  },
+  "settlementErrors": [],
+  "picks": []
+}

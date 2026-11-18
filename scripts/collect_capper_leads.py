@@ -7,6 +7,7 @@ errors and first observations; avoid stale headline carryover.
 import datetime as dt
 from email.utils import parsedate_to_datetime
 import json
+from html import unescape
 from pathlib import Path
 import urllib.error
 import urllib.parse
@@ -21,12 +22,14 @@ SEARCHES = {
     "stuckey": '"Stuckey" "Action Network" picks',
     "dellera": '"Joe Dellera" NBA picks',
     "cody": '"Cody Brown Bets" NBA NFL best bet',
+    "zachcohen": None,
 }
 AUTHOR_TERMS = {
     "koerner": ("sean koerner",),
     "stuckey": ("stuckey",),
     "dellera": ("joe dellera",),
     "cody": ("cody brown bets", "codybrownbets"),
+    "zachcohen": ("zachary cohen",),
 }
 SPORT_TERMS = {
     "NFL": ("nfl", "football", "chiefs", "eagles"),
@@ -74,6 +77,33 @@ def retrieve_rss(query):
     return None, [], failures
 
 
+def retrieve_vsin():
+    # VSiN's public WordPress records: Zachary Cohen (26), Tennis (79).
+    url = "https://vsin.com/wp-json/wp/v2/posts?" + urllib.parse.urlencode({
+        "author": 26, "categories": 79, "per_page": 25, "_fields": "author,date_gmt,link,title",
+    })
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=18) as response:
+            posts = json.loads(response.read(500_000))
+        if not isinstance(posts, list):
+            raise ValueError("VSiN posts response is not a list")
+        items = []
+        for post in posts:
+            link = post["link"]
+            if post["author"] != 26 or not link.startswith("https://vsin.com/"):
+                continue
+            published = dt.datetime.fromisoformat(post["date_gmt"] + "+00:00")
+            item = ET.Element("item")
+            ET.SubElement(item, "title").text = unescape(post["title"]["rendered"])
+            ET.SubElement(item, "link").text = link
+            ET.SubElement(item, "pubDate").text = published.strftime("%a, %d %b %Y %H:%M:%S GMT")
+            items.append(item)
+        return "VSiN", items, []
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        return None, [], ["VSiN:" + type(exc).__name__]
+
+
 def collect():
     now = dt.datetime.now(UTC)
     cutoff = now - dt.timedelta(hours=72)
@@ -91,7 +121,7 @@ def collect():
             pass
     leads, source_status = [], []
     for capper, query in SEARCHES.items():
-        provider, items, failures = retrieve_rss(query)
+        provider, items, failures = retrieve_vsin() if capper == "zachcohen" else retrieve_rss(query)
         fresh = 0
         if provider:
             for item in items[:25]:
@@ -103,14 +133,16 @@ def collect():
                     continue
                 low = title.lower()
                 author_in_title = any(term in low for term in AUTHOR_TERMS[capper])
-                sports = [name for name, terms in SPORT_TERMS.items() if any(term in low for term in terms)]
+                sports = ["TENNIS"] if provider == "VSiN" else [
+                    name for name, terms in SPORT_TERMS.items() if any(term in low for term in terms)
+                ]
                 prev = previous.get((capper, url), {})
                 leads.append({
                     "capperId": capper, "title": title, "sourceUrl": url,
                     "published": published, "publishedAtUTC": pub_dt.isoformat(),
                     "sports": sports,
                     "authorInHeadline": author_in_title,
-                    "status": "UNVERIFIED_DISCOVERY_ONLY" if author_in_title else "AUTHOR_UNCONFIRMED",
+                    "status": "UNVERIFIED_DISCOVERY_ONLY" if author_in_title or provider == "VSiN" else "AUTHOR_UNCONFIRMED",
                     "candidateBestBet": any(s in low for s in ("best bet", "best bets", "pick", "prop")),
                     "reviewNeeded": ["verify actual author", "original pregame publication timestamp", "exact selection and quoted odds", "event start time", "reviewer approval"],
                     "firstSeenUTC": prev.get("firstSeenUTC") or now.isoformat(),
@@ -121,6 +153,7 @@ def collect():
             "provider": provider,
             "status": "OK" if provider else "BLOCKED",
             "freshLeads": fresh,
+            "checkedAtUTC": now.isoformat(),
             "errors": failures
         })
         print(capper, "provider", provider or "none", "fresh", fresh, "errors", failures)
