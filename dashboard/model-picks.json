@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-18T11:00:08 UTCZ",
+  "updatedAt": "2026-11-18 11:00:28 UTC",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
