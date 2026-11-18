@@ -1,32 +1,32 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-18T18:40:26.055628+00:00",
+  "updatedAtUTC": "2026-11-18T20:27:34.071445+00:00",
   "scanDateET": "2026-11-18",
   "scanHealth": "OK",
-  "lastSuccessfulSourceScanUTC": "2026-11-18T18:40:26.055628+00:00",
+  "lastSuccessfulSourceScanUTC": "2026-11-18T20:27:34.071445+00:00",
   "sourceStatus": [
     {
       "capperId": "koerner",
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 1,
-      "checkedAtUTC": "2026-11-18T18:40:26.055628+00:00",
+      "checkedAtUTC": "2026-11-18T20:27:34.071445+00:00",
       "errors": []
     },
     {
       "capperId": "stuckey",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 7,
-      "checkedAtUTC": "2026-11-18T18:40:26.055628+00:00",
+      "freshLeads": 8,
+      "checkedAtUTC": "2026-11-18T20:27:34.071445+00:00",
       "errors": []
     },
     {
       "capperId": "dellera",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 7,
-      "checkedAtUTC": "2026-11-18T18:40:26.055628+00:00",
+      "freshLeads": 8,
+      "checkedAtUTC": "2026-11-18T20:27:34.071445+00:00",
       "errors": []
     },
     {
@@ -34,20 +34,20 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-18T18:40:26.055628+00:00",
+      "checkedAtUTC": "2026-11-18T20:27:34.071445+00:00",
       "errors": []
     },
     {
       "capperId": "zachcohen",
       "provider": "VSiN",
       "status": "OK",
-      "freshLeads": 3,
-      "checkedAtUTC": "2026-11-18T18:40:26.055628+00:00",
+      "freshLeads": 4,
+      "checkedAtUTC": "2026-11-18T20:27:34.071445+00:00",
       "errors": []
     }
   ],
-  "freshLeadsThisRun": 18,
-  "retainedRecentLeads": 7,
+  "freshLeadsThisRun": 21,
+  "retainedRecentLeads": 6,
   "leads": [
     {
       "capperId": "koerner",
@@ -91,10 +91,10 @@
     },
     {
       "capperId": "stuckey",
-      "title": "Seahawks vs Raiders Predictions, Odds, Picks - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQQ3k5R1R0V0w5RXlReWRJZnYweGtDVk1HaThFcDdGdU9ON0Jmai1VcVFJNTUxcU5zUkoyV0xkXzFjaHc1R0p0QllqeTlYUmpQTzhZc1RQNDBXcU5RUmFMVjM2eDQyUXpsd2VqTmpMbUZUS2x0dDhCaVFiVXhHMUZQWENYUmtzUklQRjBzRg?oc=5",
-      "published": "Sun, 15 Nov 2026 20:19:04 GMT",
-      "publishedAtUTC": "2026-11-15T20:19:04+00:00",
+      "title": "Seahawks vs Raiders Predictions, Odds, Picks - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcjIxTmU0TTNhXzJwcy0wUVRBRnNpTnozWXhvaDV3S1RZYmtUS3liMjVNMkZDY1E0b0NTeUc2UFRUOXIxeXZtNHR0Y0lTemw3RjJvUVVFTXg1enBiZHE4c0Z0R1Z1R2RsRG9nTG8wV0F1WEwwc2lZNndVX0FQdzZhRjlIRmFaalREODc4Zi0tekhhUFl6UTlhdG1Bcjl6QXR3MnFMeVhscHF2NnFlOVpjeWppOHdqMEk?oc=5",
+      "published": "Sun, 15 Nov 2026 21:05:00 GMT",
+      "publishedAtUTC": "2026-11-15T21:05:00+00:00",
       "sports": [],
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
@@ -106,7 +106,7 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-17T19:37:53.827428+00:00"
+      "firstSeenUTC": "2026-11-16T17:11:51.899328+00:00"
     },
     {
       "capperId": "stuckey",
@@ -169,6 +169,27 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-18T18:40:26.055628+00:00"
+    },
+    {
+      "capperId": "stuckey",
+      "title": "Chargers vs Ravens Props, Monday Night Football Picks, Predictions, Best Bets - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZjNGRGp3WVNMSFRPTGR0RXhKb3B0Ml9IdzFubWtmTDEyTnZmNjI5RzNuVEdiaVN5MXJTbXVaalUxQ283SC1yZWNqQVh2UGp6a3I3SHBoM05Sd1RZQW42UkJpWEN2SkdiSl9BMDRvOElxVVU0LUV2a0xHS3FPYUpNX0RHcTlOY2RkR2h4NUQ4eUJkRGR4V2xMdW9SUF9Nend3OTBjWmVVcHRLWngyVVRR?oc=5",
+      "published": "Mon, 16 Nov 2026 23:10:00 GMT",
+      "publishedAtUTC": "2026-11-16T23:10:00+00:00",
+      "sports": [
+        "NFL"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-18T20:27:34.071445+00:00"
     },
     {
       "capperId": "stuckey",
@@ -298,6 +319,27 @@
     },
     {
       "capperId": "dellera",
+      "title": "NBA Best Bets for Heat vs Bucks, Nuggets vs Celtics on Wednesday, November 18 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSW1VQjZnTjRKSHIxQ1RaLWJqelhOcXNNVXZWd0EzQWFzTTdFNVdsczZPS011WV9sYk5LUGRpYkxCRXlxR0ZvWm9tYlAwdG4xODA5REdpbG5veGo4cUxIVU5yUzRUUDdjbGJiNnJ2cDUzWExrd0VFeFlRcmthVUd1ejhQYkxKNWRLVk1VN2RlNlFzTGdwV09JcEhXYWRDUDFCNmR6Y1JXcHk3T0txU1E?oc=5",
+      "published": "Wed, 18 Nov 2026 17:01:00 GMT",
+      "publishedAtUTC": "2026-11-18T17:01:00+00:00",
+      "sports": [
+        "NBA"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-18T20:27:34.071445+00:00"
+    },
+    {
+      "capperId": "dellera",
       "title": "NBA Best Bets for Lakers vs Hornets on Tuesday, November 17 - Action Network",
       "sourceUrl": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPNjJaeHAwenBWRWRNN1VIQVd2a1Q3aG1WVWhURkt1YmczRE1IbFJvTWtEZm1ZbUo3am1XUXpPY1BLTjFhUTFZc1RWT3hGTzdXeVA3Nmd6LTZTaU5CaUJlVkpZaERYWTNmR0haN3B2WEpyWFhxMTkyNzhhWWRhZ0hFRFVZN3lPUkJRSWh6THRxRWVEUUpWMGVidUxVN0d6QTFzOFVvTEVLMzc4R0NCWmc?oc=5",
       "published": "Wed, 18 Nov 2026 01:25:00 GMT",
@@ -358,6 +400,27 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-17T19:37:53.827428+00:00"
+    },
+    {
+      "capperId": "zachcohen",
+      "title": "ATP Finals Tennis Best Bets & Predictions for Thursday, November 19",
+      "sourceUrl": "https://vsin.com/tennis/atp-finals-tennis-best-bets-predictions-for-thursday-november-19/",
+      "published": "Wed, 18 Nov 2026 20:16:18 GMT",
+      "publishedAtUTC": "2026-11-18T20:16:18+00:00",
+      "sports": [
+        "TENNIS"
+      ],
+      "authorInHeadline": false,
+      "status": "UNVERIFIED_DISCOVERY_ONLY",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-18T20:27:34.071445+00:00"
     },
     {
       "capperId": "zachcohen",
@@ -499,23 +562,6 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-17T19:37:53.827428+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Seahawks vs Raiders Predictions, Odds, Picks - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcjIxTmU0TTNhXzJwcy0wUVRBRnNpTnozWXhvaDV3S1RZYmtUS3liMjVNMkZDY1E0b0NTeUc2UFRUOXIxeXZtNHR0Y0lTemw3RjJvUVVFTXg1enBiZHE4c0Z0R1Z1R2RsRG9nTG8wV0F1WEwwc2lZNndVX0FQdzZhRjlIRmFaalREODc4Zi0tekhhUFl6UTlhdG1Bcjl6QXR3MnFMeVhscHF2NnFlOVpjeWppOHdqMEk?oc=5",
-      "published": "Sun, 15 Nov 2026 21:05:00 GMT",
-      "sports": [],
-      "status": "UNVERIFIED_DISCOVERY_ONLY",
-      "candidateBestBet": false,
-      "reviewNeeded": [
-        "original post timestamp",
-        "exact event and selection",
-        "American odds",
-        "event start time",
-        "human approval"
-      ],
-      "firstSeenUTC": "2026-11-16T17:11:51.899328+00:00"
     },
     {
       "capperId": "stuckey",
