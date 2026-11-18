@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Capture and grade ATP/WTA paper picks from public pregame inputs."""
+from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
+import csv
 from datetime import datetime, timedelta, timezone
-from html import unescape
 import json
 from pathlib import Path
 import re
 import unicodedata
-from urllib.parse import urlencode
+from urllib.error import HTTPError
+from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
@@ -16,7 +18,7 @@ from ncaaf_forward_audit_v33 import D, fee_spec, get_orderbook, levels, taker_fe
 OUT = Path(__file__).resolve().parents[1] / "dashboard" / "tennis-picks.json"
 ET = ZoneInfo("America/New_York")
 API = "https://api.elections.kalshi.com/trade-api/v2"
-RATINGS = "https://tennisabstract.com/reports/{}_elo_ratings.html"
+HISTORY = "https://huggingface.co/datasets/minmaxxxer/atp-wta-matches-with-odds"
 SCORES = "https://site.api.espn.com/apis/site/v2/sports/tennis/{}/scoreboard"
 TOURS = {"ATP": "KXATPMATCH", "WTA": "KXWTAMATCH"}
 # Only named surfaces we can identify reliably. Unknown surfaces get no pick.
@@ -34,8 +36,11 @@ def get(url, **query):
     if query:
         url += "?" + urlencode(query)
     request = Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept": "*/*"})
-    with urlopen(request, timeout=18) as response:
-        return response.read().decode("utf-8")
+    try:
+        with urlopen(request, timeout=18) as response:
+            return response.read().decode("utf-8")
+    except HTTPError as error:
+        raise ValueError(f"{urlsplit(url).hostname} returned HTTP {error.code}") from error
 
 
 def utc(value):
@@ -50,23 +55,58 @@ def key(name):
     return "".join(c for c in normalized if c.isascii() and c.isalnum())
 
 
-def parse_ratings(html):
-    date = re.search(r"Last update:\s*(\d{4}-\d{2}-\d{2})", html)
-    table = re.search(r'<table id="reportable".*?</table>', html, re.S)
-    if date is None or table is None:
-        raise ValueError("ratings table unavailable")
-    players = {}
-    for row in re.findall(r"<tr\b[^>]*>(.*?)</tr>", table.group(), re.S):
-        cells = [unescape(re.sub(r"<[^>]+>", "", c)).strip()
-                 for c in re.findall(r"<td\b[^>]*>(.*?)</td>", row, re.S)]
-        if len(cells) < 11 or not cells[0].isdigit():
+def ratings_for(tour, day):
+    rows = {}
+    for year in (day.year - 1, day.year):
+        url = f"{HISTORY}/resolve/main/{tour.lower()}_matches_{year}.csv"
+        for row in csv.DictReader(get(url).splitlines()):
+            if row["match_id"] and row["start_time_utc"]:
+                rows[row["match_id"]] = row
+    overall = defaultdict(lambda: 1500.0)
+    surface_ratings = defaultdict(lambda: 1500.0)
+    aliases, match_counts = defaultdict(set), defaultdict(int)
+    latest = None
+    for row in sorted(rows.values(), key=lambda r: r["start_time_utc"]):
+        date = utc(row["start_time_utc"]).astimezone(ET).date()
+        surface = row["surface"].lower()
+        score = row["score"]
+        if (date >= day or surface not in SURFACES
+                or not re.fullmatch(r"(?:\d+-\d+(?:\(\d+\))?)(?: \d+-\d+(?:\(\d+\))?)+", score)):
             continue
-        players[key(cells[1])] = {surface: float(cells[index])
-                                  for surface, index in (("hard", 6), ("clay", 8), ("grass", 10))
-                                  if re.fullmatch(r"\d+(?:\.\d+)?", cells[index])}
-    if not players:
-        raise ValueError("no ratings parsed")
-    return datetime.fromisoformat(date[1]).date(), players
+        winner, loser = row["winner_id"], row["loser_id"]
+        if not winner or not loser or winner == loser:
+            continue
+        for side in ("winner", "loser"):
+            player = row[f"{side}_id"]
+            aliases[key(row[f"{side}_name"])].add(player)
+            match_counts[player] += 1
+        update_elo(overall, winner, loser)
+        update_elo(surface_ratings, (winner, surface), (loser, surface))
+        latest = date
+    if latest is None or day - latest > timedelta(days=35):
+        raise ValueError("historical match results are stale")
+    return latest, overall, surface_ratings, aliases, match_counts
+
+
+def update_elo(ratings, winner, loser):
+    change = 24 * (1 - probability(ratings[winner], ratings[loser], 3))
+    ratings[winner] += change
+    ratings[loser] -= change
+
+
+def match_rating(name, surface, data):
+    _, overall, surface_ratings, aliases, match_counts = data
+    words = name.split()
+    if len(words) < 2:
+        return None
+    labels = {key(" ".join(words[index:]) + words[0][0]) for index in range(1, len(words))}
+    ids = set().union(*(aliases.get(label, set()) for label in labels))
+    if len(ids) != 1:
+        return None
+    player = ids.pop()
+    if match_counts[player] < 15:
+        return None
+    return 0.6 * overall[player] + 0.4 * surface_ratings[player, surface]
 
 
 def probability(rating, opponent, best_of):
@@ -121,10 +161,11 @@ def scheduled(tour, day):
 
 def evaluate(tour, day):
     now = datetime.now(timezone.utc)
-    ratings_day, ratings = parse_ratings(get(RATINGS.format(tour.lower())))
-    if not timedelta(0) <= day - ratings_day <= timedelta(days=14):
-        raise ValueError("ratings out of date")
     schedule = list(scheduled(tour, day))
+    if not schedule:
+        return [], {"status": "OK", "scheduledSingles": 0, "matchedMarkets": 0, "eligibleCandidates": 0}
+    ratings = ratings_for(tour, day)
+    ratings_day = ratings[0]
     series = json.loads(get(API + "/series/" + TOURS[tour]))["series"]
     if series.get("ticker") != TOURS[tour]:
         raise ValueError("series identity mismatch")
@@ -154,7 +195,7 @@ def evaluate(tour, day):
         if cutoff <= datetime.now(timezone.utc) + timedelta(minutes=10):
             continue
         matched += 1
-        point_ratings = [ratings.get(name, {}).get(surface) for name in names]
+        point_ratings = [match_rating(market["yes_sub_title"], surface, ratings) for market in markets]
         if None in point_ratings:
             continue
         for index, market in enumerate(markets):
@@ -254,7 +295,7 @@ def main():
                 rows, sources[tour] = future.result()
                 candidates.extend(rows)
             except (OSError, ValueError, KeyError, TypeError) as error:
-                sources[tour] = {"status": "UNAVAILABLE", "reason": type(error).__name__}
+                sources[tour] = {"status": "UNAVAILABLE", "reason": str(error)[:160] if isinstance(error, ValueError) else type(error).__name__}
         for future, ticker in pending.items():
             try:
                 future.result()

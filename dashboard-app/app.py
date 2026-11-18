@@ -135,7 +135,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <div id="tennisView" style="display:none">
 <section class="panel">
 <h2>ATP &amp; WTA Singles Model</h2>
-<p class="sub">Paper picks for Kalshi match winners. The model uses surface Elo, checks the scheduled start and live pregame quotes, and excludes selections above 75% model probability.</p>
+<p class="sub">Paper picks for Kalshi match winners. The model uses surface Elo, checks the scheduled start and live pregame quotes, and excludes selections above 75% model probability. History from <a class="sub" target="_blank" rel="noopener noreferrer" href="https://huggingface.co/datasets/minmaxxxer/atp-wta-matches-with-odds">Min Maxxxer / Tennis Odds Actor</a>.</p>
 <div id="tennisFeedStatus" class="notice" aria-live="polite"></div>
 <h3 style="margin-top:16px">Today's picks</h3>
 <div class="scroll"><table><thead><tr><th>Track</th><th>Match / start ET</th><th>Selection</th><th>Model win</th><th>YES ask</th><th>Edge after fee</th><th>Risk</th><th>Result</th></tr></thead><tbody id="tennisTodayRows"></tbody></table></div>
