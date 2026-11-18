@@ -1,6 +1,6 @@
 {
   "dateET": "2026-11-18",
-  "updatedAtUTC": "2026-11-18T19:21:43.692130+00:00",
+  "updatedAtUTC": "2026-11-18T19:22:49.022370+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
@@ -23,7 +23,7 @@
   "unmodeledUpcoming": {
     "ATP Challenger": 17,
     "WTA Challenger": 1,
-    "ITF": 46
+    "ITF": 45
   },
   "picks": [
     {
