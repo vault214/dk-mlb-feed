@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "generatedAtUTC": "2026-11-17T21:53:35.363030+00:00",
+  "generatedAtUTC": "2026-11-18T21:33:17.923544+00:00",
   "status": "24-HOUR-AHEAD WEATHER HISTORY RESEARCH ONLY",
-  "outdoor_completed_fbs_fixture_candidates": 2490,
-  "archived_pregame_forecast_games": 307,
+  "outdoor_completed_fbs_fixture_candidates": 2493,
+  "archived_pregame_forecast_games": 337,
   "new_forecasts_archived": 30,
   "new_attempts": 30,
   "errors": {},
