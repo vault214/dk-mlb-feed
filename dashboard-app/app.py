@@ -71,7 +71,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <section class="twocol">
 <div class="panel">
   <div class="eyebrow">TODAY'S OFFICIAL BETS</div><h2>Official Picks</h2>
-  <div id="officialToday" class="stack" style="margin-top:12px"></div>
+  <div id="officialToday" class="stack" style="margin-top:12px"><div class="sub">Loading today’s picks…</div></div>
   <div class="section-gap"><div class="eyebrow">SHADOW / PASS</div><div id="otherToday" class="stack" style="margin-top:10px"></div></div>
 </div>
 <div class="panel">
@@ -87,7 +87,7 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 </section>
 <section class="panel"><div class="eyebrow">SPORT COMPARISON</div><h2>How Are the Models Doing?</h2><div class="season-tabs" id="seasonTabs"><button class="tab active" data-season="ACTIVE" onclick="setSeasonView('ACTIVE')">Active Season</button><button class="tab" data-season="ALL" onclick="setSeasonView('ALL')">All-Time</button></div><div class="tabs" id="trackTabs" style="margin-top:12px"><button class="tab active" data-track="OFFICIAL" onclick="setPerfTrack('OFFICIAL')">Official</button><button class="tab" data-track="SHADOW" onclick="setPerfTrack('SHADOW')">Shadow</button></div><div class="tabs" id="perfTabs" style="margin-top:10px"><button class="tab active" data-league="ALL" onclick="setPerfLeague('ALL')">All Sports</button><button class="tab" data-league="MLB" onclick="setPerfLeague('MLB')">MLB</button><button class="tab" data-league="NFL" onclick="setPerfLeague('NFL')">NFL</button><button class="tab" data-league="NCAAF" onclick="setPerfLeague('NCAAF')">NCAAF</button><button class="tab" data-league="NBA" onclick="setPerfLeague('NBA')">NBA</button><button class="tab" data-league="NCAAB" onclick="setPerfLeague('NCAAB')">NCAAB</button><button class="tab" data-league="WNBA" onclick="setPerfLeague('WNBA')">WNBA</button><button class="tab" data-league="NHL" onclick="setPerfLeague('NHL')">NHL</button><button class="tab" data-league="EPL" onclick="setPerfLeague('EPL')">Premier League</button><button class="tab" data-league="SERIEA" onclick="setPerfLeague('SERIEA')">Serie A</button><button class="tab" data-league="MLS" onclick="setPerfLeague('MLS')">MLS</button></div><div id="sportHeadline" class="notice" style="margin-top:12px"></div><div id="sportPerf" class="grid" style="margin-top:12px"></div></section>
 
-<div id="capperHome"><section id="capperPanel" class="panel"><div class="eyebrow">SOURCE-VERIFIED PAPER TRACKING</div><h2 id="capperTitle">Capper Performance by Sport</h2><div id="capperScanBanner" class="notice" style="margin-top:12px">Checking source scan status...</div>
+<div id="capperHome"><section id="capperPanel" class="panel"><div class="eyebrow">SOURCE-VERIFIED PAPER TRACKING</div><h2 id="capperTitle">Capper Performance by Sport</h2><button id="tennisCapperShortcut" type="button" onclick="setMainView('tennisCappers')" style="margin-top:10px">View tennis capper picks</button><div id="capperScanBanner" class="notice" style="margin-top:12px">Checking source scan status...</div>
 <div class="eyebrow" style="margin-top:18px">LATEST SOURCE-LINKED PICKS · FORWARD AND ARCHIVED</div>
 <div class="scroll" style="margin-top:10px"><table><thead><tr><th>Capper</th><th>Sport</th><th>Date</th><th>Selection</th><th>Odds</th><th>Result</th><th>Tracking cohort</th><th>Source</th></tr></thead><tbody id="capperLatestRows"></tbody></table></div>
 <div class="notice" style="margin-top:12px">Forward W–L–P and ROI use reviewed picks observed before match start. Publisher-reported records appear below for reference. All results use paper units.</div>
@@ -147,14 +147,18 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <div id="tennisCappersView" style="display:none"></div>
 </main>
 <script>
-let tennisData=null,tennisCapperView=false,overviewCapperId="koerner",overviewCapperSport="ALL";
+let picksLoaded=false,picksUnavailable=false,capperPicksUnavailable=false,tennisData=null,tennisCapperView=false,overviewCapperId="koerner",overviewCapperSport="ALL";
 let capperData=null,capperDiscovery=null,capperQualification=null,capperArchive=null,capperSelectedId="koerner",capperSelectedSport="ALL",rows=[],statusData={feeds:[]},researchData={leagues:[]},ncaafContext={},privateMetrics={},yesterdayBets={date:null,rows:[]},perfLeague="ALL",perfTrack="OFFICIAL",seasonView="ACTIVE";
 const ACTIVE_LEAGUES=["NFL","NCAAF","NBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const ALL_LEAGUES=["MLB","NFL","NCAAF","NBA","WNBA","NHL","NCAAB","EPL","SERIEA","MLS"];
 const scopedRows=()=>seasonView==="ALL"?rows:rows.filter(r=>ACTIVE_LEAGUES.includes(r.league));
 const E=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
 const N=v=>{const n=parseFloat(String(v??"").replace(/[+%$u,]/g,""));return Number.isFinite(n)?n:null};
-const todayET=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+const etDateFormat=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"});
+function todayET(){
+ const parts=Object.fromEntries(etDateFormat.formatToParts(new Date()).map(({type,value})=>[type,value]));
+ return [parts.year,parts.month,parts.day].join("-");
+}
 const settled=r=>["WIN","WON","LOSS","LOST","PUSH"].includes(String(r.result||"").toUpperCase());
 function perf(rs){let w=0,l=0,p=0,pnl=0,risk=0;rs.filter(settled).forEach(r=>{const x=String(r.result||"").toUpperCase();if(x.includes("WIN"))w++;else if(x.includes("LOSS")||x.includes("LOST"))l++;else p++;const q=N(r.plUnits);if(q!==null)pnl+=q;const s=N(r.stakeUnits);if(s!==null)risk+=s});return{w,l,p,pnl,risk,roi:risk?100*pnl/risk:null}}
 const unit=v=>{const n=N(v);return n===null?"—":(n>0?"+":"")+n.toFixed(2)+"u"};
@@ -185,9 +189,14 @@ function pickCard(r,hero){
  return '<div class="card '+(hero?'hero':'')+'">'+(hero?'<div class="official-banner">OFFICIAL PICK</div>':'')+'<div class="row"><span class="chip '+(r.trackType==="OFFICIAL"?'off':r.trackType==="SHADOW"?'sha':'pas')+'">'+E(r.trackType)+'</span><span>'+E(r.result||"Pending")+'</span></div><div class="pick">'+friendly(r)+'</div><div class="sub">'+E(r.league)+' · '+E(r.event)+'</div><div class="chips"><span class="chip">'+E(r.category)+'</span>'+execution+(r.edge?'<span class="chip">Edge '+E(r.edge)+' pp</span>':'')+(r.confidence?'<span class="chip">'+E(r.confidence)+'</span>':'')+(r.stakeUnits?'<span class="chip">Stake '+E(r.stakeUnits)+'u</span>':'')+'</div><div class="sub" style="margin-top:8px">'+E(r.reason||"")+'</div></div>';
 }
 function renderToday(){
+ if(!picksLoaded){
+  officialToday.textContent=picksUnavailable?"The model picks feed is unavailable. Use Refresh to retry.":"Loading today’s picks…";
+  otherToday.textContent="";
+  return;
+ }
  const t=scopedRows().filter(r=>r.dateET===todayET());
  const off=t.filter(r=>r.trackType==="OFFICIAL"), other=t.filter(r=>r.trackType!=="OFFICIAL");
- officialToday.innerHTML=off.length?off.map(r=>pickCard(r,true)).join(""):'<div class="notice">No OFFICIAL model bet has been posted for today yet.</div>';
+ officialToday.innerHTML=off.length?off.map(r=>pickCard(r,true)).join(""):'<div class="notice">No Official picks have been published for '+E(todayET())+' ET.</div>';
  otherToday.innerHTML=other.length?other.map(r=>pickCard(r,false)).join(""):'<div class="sub">No shadows or passes today.</div>';
 }
 function renderBankroll(){
@@ -365,6 +374,7 @@ function setMainView(view){
   capperSelectedSport=overviewCapperSport;
   capperHome.append(capperPanel);
  }
+ tennisCapperShortcut.hidden=showTennis;
  capperTitle.textContent=showTennis?"Tennis Capper Evaluation":"Capper Performance by Sport";
  renderCappers();
 }
@@ -373,7 +383,7 @@ function tennisRows(picks,empty){
  return picks.map(p=>'<tr><td>'+E(p.track)+'</td><td>'+E(p.tour+" · "+p.tournament)+'<div class="sub">'+E(start.format(new Date(p.matchStartUTC))+" ET")+'</div></td><td><strong>'+E(p.selection)+'</strong><div class="sub">vs. '+E(p.opponent)+' · '+E(p.surface)+' · Best of '+E(p.bestOf)+'</div></td><td>'+E((p.probability*100).toFixed(1))+'%</td><td>'+E((p.ask*100).toFixed(1))+'¢</td><td>'+E((p.edge*100).toFixed(1))+' pp</td><td>'+E(p.stakeUnits)+'u</td><td>'+E(p.result)+(p.plUnits==null?'':' · '+E(capperUnits(p.plUnits)))+'</td></tr>').join("")||'<tr><td colspan="8">'+E(empty)+'</td></tr>';
 }
 function renderTennis(){
- const date=new Date().toLocaleDateString("sv-SE",{timeZone:"America/New_York"});
+ const date=todayET();
  const current=tennisData?.dateET===date;
  const tracks=["OFFICIAL","SHADOW"];
  const picks=tennisData?.picks||[];
@@ -425,7 +435,7 @@ function capperUnits(n){return (n>0?"+":"")+n.toFixed(2)+"u"}
 function capperPct(n){return n===null?"—":(n>0?"+":"")+n.toFixed(1)+"%"}
 function renderCappers(){
  const scan=capperDiscovery||{};
- const calendarDay=new Date().toLocaleDateString("sv-SE",{timeZone:"America/New_York"});
+ const calendarDay=todayET();
  const sourceStatus=(scan.sourceStatus||[]).filter(x=>!tennisCapperView||x.capperId==="zachcohen");
  const scopedScan=tennisCapperView?sourceStatus[0]:null;
  const attempt=tennisCapperView?scopedScan?.checkedAtUTC:scan.updatedAtUTC;
@@ -439,9 +449,15 @@ function renderCappers(){
  capperScanBanner.textContent=(!scannedToday?"No source scan recorded today. ":scanHealth==="OK"?"Source scan ran today. ":"Today's source scan status is "+(scanHealth||"unknown")+". ")+
    (attempt?"Last attempt "+new Date(attempt).toLocaleString("en-US",{timeZone:"America/New_York"})+" ET · "+(fresh||0)+" public leads · "+sourceSummary:"");
  const meta=capperQualification||{};
- const roster=meta.roster||capperData?.cappers||[];
+ const rosterById=new Map((capperData?.cappers||[]).map(c=>[c.id,c]));
+ for(const capper of meta.roster||[])rosterById.set(capper.id,{...rosterById.get(capper.id),...capper});
+ const roster=[...rosterById.values()];
  const cs=tennisCapperView?roster.filter(c=>c.sports?.includes("TENNIS")):roster;
- if(!cs.length){capperHeadline.textContent="Capper roster feed unavailable.";capperCards.innerHTML="";capperTabs.innerHTML="";capperSportTabs.innerHTML="";return;}
+ if(!cs.length){
+  capperHeadline.textContent=capperData||capperQualification?"No capper roster was published for this view.":capperPicksUnavailable?"Capper picks feed is unavailable.":"Loading capper records…";
+  for(const element of [capperCards,capperTabs,capperSportTabs,capperLatestRows,capperForwardRows,capperRows,capperArchivedRows,capperEvidenceRows,capperLeadList])element.innerHTML="";
+  return;
+ }
  if(!cs.some(c=>c.id===capperSelectedId))capperSelectedId=cs[0].id;
  const active=cs.find(c=>c.id===capperSelectedId);
  const sports=active.sports||[];
@@ -477,7 +493,7 @@ function renderCappers(){
  const allCurrent=capperData?.picks||[];
  const latest=[...allCurrent.map(p=>({...p,cohort:"Forward paper"})),...archivedAll.map(p=>({...p,cohort:"Research archive"}))].filter(p=>!tennisCapperView||p.sport==="TENNIS").sort((a,b)=>String(b.eventStartUTC||b.dateET).localeCompare(String(a.eventStartUTC||a.dateET))).slice(0,12);
  const capNames=Object.fromEntries([...cs.map(c=>[c.id,c.name]),["sartori","Tony Sartori"]]);
- capperLatestRows.innerHTML=latest.length?latest.map(p=>'<tr><td>'+E(capNames[p.capperId]||p.capperId)+'</td><td>'+E(p.sport)+'</td><td>'+E(p.dateET||"—")+'</td><td>'+E(p.selection)+'</td><td>'+E(p.odds===null||p.odds===undefined?"—":(Number(p.odds)>0?"+":"")+p.odds)+'</td><td>'+E(p.result||"PENDING")+'</td><td>'+E(p.cohort)+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Original</a></td></tr>').join(""):'<tr><td colspan="8">No sourced picks in forward tracking or the research archive.</td></tr>';
+ capperLatestRows.innerHTML=latest.length?latest.map(p=>'<tr><td>'+E(capNames[p.capperId]||p.capperId)+'</td><td>'+E(p.sport)+'</td><td>'+E(p.dateET||"—")+'</td><td>'+E(p.selection)+'</td><td>'+E(p.odds===null||p.odds===undefined?"—":(Number(p.odds)>0?"+":"")+p.odds)+'</td><td>'+E(p.result||"PENDING")+'</td><td>'+E(p.cohort)+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Original</a></td></tr>').join(""):'<tr><td colspan="8">'+(capperPicksUnavailable?"Capper picks feed is unavailable.":"No sourced picks in forward tracking or the research archive.")+'</td></tr>';
  capperArchivedRows.innerHTML=archived.length?archived.map(p=>'<tr><td>'+E(p.dateET||"—")+'</td><td>'+E(p.sport||"—")+'</td><td>'+E(p.event||"—")+'</td><td>'+E(p.selection)+'</td><td>'+E(p.odds===null||p.odds===undefined?"—":(Number(p.odds)>0?"+":"")+p.odds)+'</td><td>'+E(p.result||"PENDING")+'</td><td><a href="'+E(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Article</a></td></tr>').join(""):'<tr><td colspan="7">No earlier archived selections for this capper and sport.</td></tr>';
   const recent=[...selected].sort((a,b)=>String(b.eventStartUTC||b.dateET).localeCompare(String(a.eventStartUTC||a.dateET))).slice(0,100);
  capperRows.innerHTML=recent.length?recent.map(p=>{
@@ -514,28 +530,56 @@ document.getElementById("capperSportTabs").addEventListener("click",ev=>{
  const button=ev.target.closest("button[data-capper-sport]");
  if(button)setCapperSportView(button.getAttribute("data-capper-sport"));
 });
-function render(){renderCappers();renderTennis();renderActual();renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();renderHealth();renderResearchHealth();renderNcaafEligibility();renderYesterday()}
+let loadVersion=0;
 async function load(){
- const paths=["/api/picks","/api/status","/api/private-metrics","/api/yesterday-bets","/api/model-health","/api/ncaaf-research-health","/api/cappers","/api/capper-discovery","/api/capper-qualification","/api/capper-archive","/api/tennis"];
- const results=await Promise.allSettled(paths.map(path=>fetch(path,{cache:"no-store"})));
- const p=results[0];
- if(p.status==="fulfilled"&&p.value.status===401){location.href="/login";return}
- const read=async item=>{
-  if(item.status!=="fulfilled"||!item.value.ok)return null;
-  try{return await item.value.json()}catch(e){return null}
+ const version=++loadVersion;
+ const failures=[];
+ const fetchSection=async (name,apply)=>{
+  const timeout=new AbortController();
+  const timer=setTimeout(()=>timeout.abort(),name==="status"||name==="ncaaf-research-health"?40000:15000);
+  let data=null;
+  try{
+   const response=await fetch("/api/"+name,{cache:"no-store",signal:timeout.signal});
+   if(version!==loadVersion)return;
+   if(response.status===401){location.href="/login";return;}
+   if(!response.ok)throw new Error("HTTP "+response.status);
+   data=await response.json();
+  }catch{
+   if(version!==loadVersion)return;
+   failures.push(name);
+  }finally{
+   clearTimeout(timer);
+  }
+  if(version===loadVersion){
+   try{apply(data);}
+   catch(error){failures.push(name);console.error("Could not render "+name,error);}
+  }
  };
- const [d,s,m,y,h,n,c,cd,cq,ca,t]=await Promise.all(results.map(read));
- tennisData=t;
- capperArchive=ca;
- capperQualification=cq;
- capperDiscovery=cd;
- capperData=c;
- if(d&&Array.isArray(d.rows)) rows=d.rows;
- statusData=s||{feeds:[]}; privateMetrics=m||{}; yesterdayBets=y||{date:null,rows:[]}; researchData=h||{leagues:[]}; ncaafContext=n||{};
- render();
- const failures=paths.filter((_,i)=>results[i].status!=="fulfilled"||!results[i].value.ok).map(path=>path.replace("/api/",""));
+ const modelRows=data=>{
+  if(Array.isArray(data?.rows)){rows=data.rows;picksLoaded=true;}
+  picksUnavailable=!data;
+  renderToday();renderBankroll();renderLeagueGrid();renderSportComparison();renderModelPerf();renderLedger();
+ };
+ await Promise.allSettled([
+  fetchSection("picks",modelRows),
+  fetchSection("status",data=>{if(data)statusData=data;renderHealth();renderLeagueGrid();}),
+  fetchSection("private-metrics",data=>{if(data)privateMetrics=data;renderActual();renderBankroll();}),
+  fetchSection("yesterday-bets",data=>{if(data)yesterdayBets=data;renderYesterday();}),
+  fetchSection("model-health",data=>{if(data)researchData=data;renderResearchHealth();}),
+  fetchSection("ncaaf-research-health",data=>{if(data)ncaafContext=data;renderResearchHealth();renderNcaafEligibility();}),
+  fetchSection("cappers",data=>{
+   if(data)capperData=data;
+   capperPicksUnavailable=!capperData;
+   renderCappers();
+  }),
+  fetchSection("capper-qualification",data=>{if(data)capperQualification=data;renderCappers();}),
+  fetchSection("capper-discovery",data=>{if(data)capperDiscovery=data;renderCappers();}),
+  fetchSection("capper-archive",data=>{if(data)capperArchive=data;renderCappers();}),
+  fetchSection("tennis",data=>{if(data)tennisData=data;renderTennis();})
+ ]);
+ if(version!==loadVersion)return;
  const stampTime=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit"}).format(new Date())+" ET";
- stamp.textContent=failures.length?"Partial feed · "+failures.join(", ")+" unavailable · showing loaded data · "+stampTime:"Updated "+stampTime;
+ stamp.textContent=failures.length?"Partial feed · "+failures.join(", ")+" unavailable · "+stampTime:"Updated "+stampTime;
 }
 async function logout(){await fetch("/api/logout",{method:"POST"});location.href="/login"}
 load();setInterval(load,300000);
