@@ -1,29 +1,25 @@
 {
   "dateET": "2026-11-19",
-  "updatedAtUTC": "2026-11-19T14:31:23.790260+00:00",
+  "updatedAtUTC": "2026-11-19T23:39:01.592360+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
-      "quoteErrors": 0,
-      "scheduledSingles": 1,
-      "matchedMarkets": 1,
-      "eligibleCandidates": 2,
-      "ratingsDate": "2026-11-15"
+      "scheduledSingles": 0,
+      "matchedMarkets": 0,
+      "eligibleCandidates": 0
     },
     "WTA": {
       "status": "OK",
-      "quoteErrors": 0,
-      "scheduledSingles": 4,
+      "scheduledSingles": 0,
       "matchedMarkets": 0,
-      "eligibleCandidates": 0,
-      "ratingsDate": "2026-11-15"
+      "eligibleCandidates": 0
     }
   },
   "settlementErrors": [],
   "unmodeledUpcoming": {
-    "ATP Challenger": 24,
-    "WTA Challenger": 3,
-    "ITF": 56
+    "ATP Challenger": 9,
+    "WTA Challenger": 0,
+    "ITF": 17
   },
   "picks": [
     {
@@ -83,8 +79,8 @@
       "edge": -0.12442588675061915,
       "rating": 1776.9070057484419,
       "opponentRating": 1695.1199164167685,
-      "result": "PENDING",
-      "plUnits": null,
+      "result": "WIN",
+      "plUnits": 0.35135,
       "ticker": "KXATPMATCH-26NOV17ZVEFIL-ZVE",
       "eventTicker": "KXATPMATCH-26NOV17ZVEFIL",
       "selection": "Alexander Zverev",
@@ -108,8 +104,8 @@
       "edge": 0.07442588675061913,
       "rating": 1695.1199164167685,
       "opponentRating": 1776.9070057484419,
-      "result": "PENDING",
-      "plUnits": null,
+      "result": "LOSS",
+      "plUnits": -0.5,
       "ticker": "KXATPMATCH-26NOV17ZVEFIL-FIL",
       "eventTicker": "KXATPMATCH-26NOV17ZVEFIL",
       "selection": "Arthur Fils",
