@@ -1,16 +1,16 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-19T03:21:49.167335+00:00",
-  "scanDateET": "2026-11-18",
+  "updatedAtUTC": "2026-11-19T20:30:23.916183+00:00",
+  "scanDateET": "2026-11-19",
   "scanHealth": "OK",
-  "lastSuccessfulSourceScanUTC": "2026-11-19T03:21:49.167335+00:00",
+  "lastSuccessfulSourceScanUTC": "2026-11-19T20:30:23.916183+00:00",
   "sourceStatus": [
     {
       "capperId": "koerner",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 1,
-      "checkedAtUTC": "2026-11-19T03:21:49.167335+00:00",
+      "freshLeads": 2,
+      "checkedAtUTC": "2026-11-19T20:30:23.916183+00:00",
       "errors": []
     },
     {
@@ -18,7 +18,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 9,
-      "checkedAtUTC": "2026-11-19T03:21:49.167335+00:00",
+      "checkedAtUTC": "2026-11-19T20:30:23.916183+00:00",
       "errors": []
     },
     {
@@ -26,7 +26,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 8,
-      "checkedAtUTC": "2026-11-19T03:21:49.167335+00:00",
+      "checkedAtUTC": "2026-11-19T20:30:23.916183+00:00",
       "errors": []
     },
     {
@@ -34,7 +34,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-19T03:21:49.167335+00:00",
+      "checkedAtUTC": "2026-11-19T20:30:23.916183+00:00",
       "errors": []
     },
     {
@@ -42,13 +42,34 @@
       "provider": "VSiN",
       "status": "OK",
       "freshLeads": 3,
-      "checkedAtUTC": "2026-11-19T03:21:49.167335+00:00",
+      "checkedAtUTC": "2026-11-19T20:30:23.916183+00:00",
       "errors": []
     }
   ],
-  "freshLeadsThisRun": 21,
-  "retainedRecentLeads": 7,
+  "freshLeadsThisRun": 22,
+  "retainedRecentLeads": 5,
   "leads": [
+    {
+      "capperId": "koerner",
+      "title": "Colts vs Texans Prediction, Pick Odds for NFL Thursday Night Football on November 19 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdTZtTWtEOXlvRWo4V2FQbVhQUThYaFlrcGlhU2V6ankyaWk1NFRMdENoWFJlVERzamVPZXFKNGdtRUlERHM4bkVSS1J5SmczU28tdUNZdGtkNUhlT2FzaDlDVUZsaTJmcm5DdlpVVHVIR0hTamM2X3Rtc21UeXE0NWNxRk1za1UwUHpvb2FYUk5TVnZPVS05V1Q4QlZISmVabUNJNGZsSUh2WDZXZG40QVdDUVJzWWJQT2dsSmhzanVRWktnUE5kOVdsdw?oc=5",
+      "published": "Thu, 19 Nov 2026 15:15:38 GMT",
+      "publishedAtUTC": "2026-11-19T15:15:38+00:00",
+      "sports": [
+        "NFL"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-19T20:30:23.916183+00:00"
+    },
     {
       "capperId": "koerner",
       "title": "How to Bet Duke vs Illinois: NCAAB Picks for Tuesday\u2019s Marquee Matchup - Action Network",
@@ -94,10 +115,10 @@
     },
     {
       "capperId": "stuckey",
-      "title": "Chargers vs Ravens Predictions, MNF Picks, Odds, Inactives - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPRk5GSk1aeXMteFpKT1dBNUs4YTBEOWRzNTY5Rk82YnI4MVN3VzlUQkFGLTRJN3RsX2M5NjZJMHBZT2ExUGFWVnc5dGpndmwzQkVtVGs4LXJKLVhsZldIcDIwSC1GYjczNGhBS3YxcE83ZHRYSkJlU3NsMXdTMFdhZ2ZFdEo0amhBZWZF?oc=5",
-      "published": "Mon, 16 Nov 2026 23:59:53 GMT",
-      "publishedAtUTC": "2026-11-16T23:59:53+00:00",
+      "title": "Chargers vs Ravens Predictions, MNF Picks, Odds, Inactives - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMizgFBVV95cUxONGlNWnhBTUUwczhSOTJsTWxoUXVqQk9PWkIyaDdyc0ZBUDE3OFB5eDJhT2g2cm9zbE1RcXFPOWt6aUp6QXgxNGdjRTQ2N3J1Y0ZaWDVGX3BRMUZ0Ujg3SzV1Y1luV2F0SHVNdm5FZEhJNHdiRk1YZ0NtZ2p3eU5XZzZIV3NmQzVNNEJ6b1JPVnpLUUJxaDQyRk5PaEN5bmM1ZEZmcnBtdERKc2o3ZUM2R3IxMTZXR3VHbjlxUi1PRk10Vm5ZU19JSzZGR2Ytdw?oc=5",
+      "published": "Tue, 17 Nov 2026 01:15:00 GMT",
+      "publishedAtUTC": "2026-11-17T01:15:00+00:00",
       "sports": [],
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
@@ -109,7 +130,28 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-19T02:49:12.954664+00:00"
+      "firstSeenUTC": "2026-11-16T17:11:51.899328+00:00"
+    },
+    {
+      "capperId": "stuckey",
+      "title": "Colts vs Texans Picks, Props, Odds, Predictions for Thursday Night Football - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPeUpMWjE1bEJIeDRMeDV3akdZejlKNXJMOVFFN1hfRE9YNUwzMzZDd3NVY1doT2M4cjI3SGVhWkw0VXdQMTg5Q1E2S1ZpcGp6NGVYaW94U0JPdjNVQmZkM3RLMEpxc1FUbndKYzFmaWxqWWVrRUthX2R2d3V0M3h2dXVDbUo1S0I3MG0xZVpUR2xhamtZV19seUhKNkw1OEgzOUtzT0dYRk9GVlR0VFE?oc=5",
+      "published": "Thu, 19 Nov 2026 18:04:00 GMT",
+      "publishedAtUTC": "2026-11-19T18:04:00+00:00",
+      "sports": [
+        "NFL"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-19T20:30:23.916183+00:00"
     },
     {
       "capperId": "stuckey",
@@ -156,12 +198,12 @@
     },
     {
       "capperId": "stuckey",
-      "title": "Trail Blazers vs Timberwolves Prediction, Pick, NBA Odds for Tuesday, November 17 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNNnV4ZlN5QURCbkZfYjhUM1FkbkVDQ2tjUENBbjJmVE45QkE1c0xsZk1XM29hTlVrZHczMVliSEJyY093SFV4YWlTdzNoUnNUS0dWdkhhSFlZRUlKOHFlSWdpcW9xS1VyVVBaSFVzdXZUVjY0NzRkQ05wZ1o0X18wUHQzQTBmZEdMaURLNV9PaTNyZ3RtODJnU2xBVkt4ZzJSNUx3VGVoaHFNUnNXR2N3V04xS1M3Z2hnYTlrVk5ieDVEa3BDelE?oc=5",
-      "published": "Tue, 17 Nov 2026 15:42:00 GMT",
-      "publishedAtUTC": "2026-11-17T15:42:00+00:00",
+      "title": "How to Bet Duke vs Illinois: NCAAB Picks for Tuesday\u2019s Marquee Matchup - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQTnprSHNtQTljb09fRVE4eUx1MDN4MEVGYURvVVRvOW9LZ3NtNzk4VG84Z2dwTUgza2I1elFUaWJYT2tXS1I5NDdwRzBXREFrMDdUcGFIT3VTajV4NXNDRmtUcW9KT1lCaWVHTTZNUkRzTG1iVFBZa2pDaGdTdEhUdWZNVWlNZXMxaGpVMzc1dFNHXzY1YWlVdUl5UQ?oc=5",
+      "published": "Tue, 17 Nov 2026 02:48:00 GMT",
+      "publishedAtUTC": "2026-11-17T02:48:00+00:00",
       "sports": [
-        "NBA"
+        "NCAAB"
       ],
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
@@ -173,7 +215,7 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-19T02:49:12.954664+00:00"
+      "firstSeenUTC": "2026-11-19T20:30:23.916183+00:00"
     },
     {
       "capperId": "stuckey",
@@ -237,27 +279,6 @@
       "firstSeenUTC": "2026-11-18T18:40:26.055628+00:00"
     },
     {
-      "capperId": "stuckey",
-      "title": "NBA Player Prop Picks for Pelicans vs Warriors, Nuggets vs Suns (Monday, November 16) - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOZ0x0eTF3bFY4bDUyV25wdEl1SEtSQ2JGb0ZQNjdtODVHcEV0NmQ2ZklkUFozMW9ZVXd1d09mMVpGalpBZDZQUWhwVkNlNTFUQ1hDaXZ6U3dXbFZ1RjJaS3RxX2dCRnZtVEFxSUdpaUJZYURMSVZDYnNaTlhJb05NT2h1T2dvX1EtODBmQmZhbURzakZTMVo4clBjN3BPMUZlaVZpUEg4X2pBeTZmS25KNjBQMmVrUQ?oc=5",
-      "published": "Mon, 16 Nov 2026 18:53:00 GMT",
-      "publishedAtUTC": "2026-11-16T18:53:00+00:00",
-      "sports": [
-        "NBA"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-19T02:49:12.954664+00:00"
-    },
-    {
       "capperId": "dellera",
       "title": "Hawks vs Thunder Prediction, Pick, NBA Odds for Wednesday, November 18 - Yahoo Sports",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVHlSSVltZ0V2eVRyNjY5UmJJT1dHdGpabExkbnY5Nk5JbWlHeGlJR2pLZjVkLTdGcjdYNHZ1WlhwY2c0Wjd0QktvVm12U2NBNkx6NUNNekNNNFZRR21sTTZpdWMyaTMwQjVZLUdqVERsVDNpcEZ1Z1VQVHpCeC1DSG1nTmpSRDU0?oc=5",
@@ -280,10 +301,10 @@
     },
     {
       "capperId": "dellera",
-      "title": "Suns vs Nuggets Prediction, Pick, NBA Odds for Monday, November 16 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNbVBPdGN6Q1JjaFhXOWtlQnhWZTJ0RlV3TjgzOWdqVjBVXzlyYjQxa3V4amY3RmM4dlpPRzVSNTNIQl9JcmU4eDBKLTF1NkJjdlNqMFlDOVBkUGc2QXoyYXIxRFF1dFdiQUphM3NrTEZqc3hXZkZpblBYcEo0WjM2QjBQRjdob1E?oc=5",
-      "published": "Mon, 16 Nov 2026 15:13:40 GMT",
-      "publishedAtUTC": "2026-11-16T15:13:40+00:00",
+      "title": "NBA Player Props: Our Staff\u2019s 4 Picks for Thursday, November 19 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSmRGVk1Tc0N3ZHZpZDZlNFpZa05LNlkwZjJEaVBYWWZLdVR2OVFYbUx6RzFQelpXUzZQM0dRZDZzT2JpdkxyN05QNU54aWFoV0lEZ1NBZzNWRWRJVzAtX2cxNFdMX2xLUDMtSVQ0WGs4M21Tb3ZSU2FsTGhGeHVVUUwxNHMyRmM5Z1dJYm5IeXU2bmtrV1FudDZB?oc=5",
+      "published": "Thu, 19 Nov 2026 16:43:00 GMT",
+      "publishedAtUTC": "2026-11-19T16:43:00+00:00",
       "sports": [
         "NBA"
       ],
@@ -297,33 +318,14 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-16T17:11:51.899328+00:00"
+      "firstSeenUTC": "2026-11-19T20:30:23.916183+00:00"
     },
     {
       "capperId": "dellera",
-      "title": "Suns vs Kings Predictions, Odds, Picks: Dream Matchup for Luke Kennard Tonight - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSXBxdzhlaVFtTjh4S2xjNzA4NXBJNVBXMVU4LTMxMXpxdWpiUlVkQ1hHNzNhRldmYTFCbWpJNU9UaHBMQk8wdGh1YmJlbFBRX2hFcDVJV0hNcWxROEZ6OUcxV0R0WUdldUNoV2NCLWpHUGEzWFFIclZIdVJ1VVNkYzl0Ym1nVHdWU2xGTkFMNkNzZWVJTDZLb1pxWlMwQTQ3YmpHVkd2cmpoaDA4dmxneU5aMA?oc=5",
-      "published": "Thu, 19 Nov 2026 01:45:00 GMT",
-      "publishedAtUTC": "2026-11-19T01:45:00+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-19T03:21:49.167335+00:00"
-    },
-    {
-      "capperId": "dellera",
-      "title": "NBA Player Props: Our Staff\u2019s 5 Picks for Wednesday, Nov. 18 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNWHdvMEYyc0ctcUEzMDc1NVRmeEdjQkNDZmhKdXR3MXl5UDBpY0NWbWhBOXNJQ3otZE4teVJPZUZxaTlBUXo1QmxZYlRUQ004WE12VXVJay0wbElZdUxNYVJVZDduNkQ0MTdrel9ZYnpiYXItd2JPX0VPT1lpQ3Ntdkk1b1BKRDBOMHlLZlpObEVMQjVaRkdqdTNSYW1qcVZJRDJtYmV3?oc=5",
-      "published": "Wed, 18 Nov 2026 22:14:00 GMT",
-      "publishedAtUTC": "2026-11-18T22:14:00+00:00",
+      "title": "Suns vs Kings Prediction, Pick, NBA Odds for Wednesday, November 18 - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPUXd1QXVmNHFPcFRtTHUxM3VFZk5XTmN2dUdwcW9Nb0gwUFNGc3FhZnZZcWxUa1BBckdXeHBwUi10dTA1YXVNejZwMTlqVkhVeGN2SC12VkFEYW05UVVaSHBZR3dnV2ZFTFNJS3M5US15WWoxOUNRbXFPZVBDZVFnTXBSMHQ?oc=5",
+      "published": "Wed, 18 Nov 2026 14:59:16 GMT",
+      "publishedAtUTC": "2026-11-18T14:59:16+00:00",
       "sports": [
         "NBA"
       ],
@@ -338,6 +340,27 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-18T18:40:26.055628+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "NBA Best Bets for Knicks vs T-Wolves, Warriors vs Grizzlies, More (Thursday, November 19) - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOcHJxMXNIU242LU9QOGhlOE4xVmF2dzVnTlBCREVqNHZ5V0VqNTMySVBoTm51UHp0c00tNTZBdUFiNDZ5TGZsUHVGMnU5TGgtVWF3eUh4RDNNLV9qRkpnLTVxeWZWVUxTT2lPd1FaekdhUEwzbnJLV0ZHVHlwQ0dxbHJONlhJQ2YxTkpqZ0V1ZjdhaEZaQy15WDZSRlRldHdrVDgySmJ0TTV6dHEtcG9UTkIxYzlDRTBUdlE?oc=5",
+      "published": "Thu, 19 Nov 2026 17:29:00 GMT",
+      "publishedAtUTC": "2026-11-19T17:29:00+00:00",
+      "sports": [
+        "NBA"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-19T20:30:23.916183+00:00"
     },
     {
       "capperId": "dellera",
@@ -404,10 +427,10 @@
     },
     {
       "capperId": "dellera",
-      "title": "NBA Player Prop Picks for Pelicans vs Warriors, Nuggets vs Suns (Monday, November 16) - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOZ0x0eTF3bFY4bDUyV25wdEl1SEtSQ2JGb0ZQNjdtODVHcEV0NmQ2ZklkUFozMW9ZVXd1d09mMVpGalpBZDZQUWhwVkNlNTFUQ1hDaXZ6U3dXbFZ1RjJaS3RxX2dCRnZtVEFxSUdpaUJZYURMSVZDYnNaTlhJb05NT2h1T2dvX1EtODBmQmZhbURzakZTMVo4clBjN3BPMUZlaVZpUEg4X2pBeTZmS25KNjBQMmVrUQ?oc=5",
-      "published": "Mon, 16 Nov 2026 18:53:00 GMT",
-      "publishedAtUTC": "2026-11-16T18:53:00+00:00",
+      "title": "NBA Best Bets for Magic vs Celtics, Rockets vs Heat, More (Monday, Nov. 16) - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYlRzcGZuNkdHdkFCem9RVEZUNFJjODZqOWthSF9FQXpCWVhweFpiWFpXX1lTdkczWF8xZ2tvQzRWR2wwMC1WbjBYWEY1ZlJyZDJ4RUN3X1RNTnd0ZXBUTFhRX0ZvVVNhZVQzQl9GYl9UU0ljOTVsYW80c1dFQzVYUWNmaHh2eDVPX2V5TXdYYnp6VHIwZHc5RUU4TnB6alRtVTFKOHNEZzhvX0VfeHRQcg?oc=5",
+      "published": "Mon, 16 Nov 2026 21:54:00 GMT",
+      "publishedAtUTC": "2026-11-16T21:54:00+00:00",
       "sports": [
         "NBA"
       ],
@@ -487,11 +510,70 @@
       "firstSeenUTC": "2026-11-18T18:40:26.055628+00:00"
     },
     {
+      "capperId": "stuckey",
+      "title": "Chargers vs Ravens Predictions, MNF Picks, Odds, Inactives - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPRk5GSk1aeXMteFpKT1dBNUs4YTBEOWRzNTY5Rk82YnI4MVN3VzlUQkFGLTRJN3RsX2M5NjZJMHBZT2ExUGFWVnc5dGpndmwzQkVtVGs4LXJKLVhsZldIcDIwSC1GYjczNGhBS3YxcE83ZHRYSkJlU3NsMXdTMFdhZ2ZFdEo0amhBZWZF?oc=5",
+      "published": "Mon, 16 Nov 2026 23:59:53 GMT",
+      "publishedAtUTC": "2026-11-16T23:59:53+00:00",
+      "sports": [],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-19T02:49:12.954664+00:00"
+    },
+    {
+      "capperId": "stuckey",
+      "title": "Trail Blazers vs Timberwolves Prediction, Pick, NBA Odds for Tuesday, November 17 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNNnV4ZlN5QURCbkZfYjhUM1FkbkVDQ2tjUENBbjJmVE45QkE1c0xsZk1XM29hTlVrZHczMVliSEJyY093SFV4YWlTdzNoUnNUS0dWdkhhSFlZRUlKOHFlSWdpcW9xS1VyVVBaSFVzdXZUVjY0NzRkQ05wZ1o0X18wUHQzQTBmZEdMaURLNV9PaTNyZ3RtODJnU2xBVkt4ZzJSNUx3VGVoaHFNUnNXR2N3V04xS1M3Z2hnYTlrVk5ieDVEa3BDelE?oc=5",
+      "published": "Tue, 17 Nov 2026 15:42:00 GMT",
+      "publishedAtUTC": "2026-11-17T15:42:00+00:00",
+      "sports": [
+        "NBA"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-19T02:49:12.954664+00:00"
+    },
+    {
       "capperId": "dellera",
-      "title": "Suns vs Kings Prediction, Pick, NBA Odds for Wednesday, November 18 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPUXd1QXVmNHFPcFRtTHUxM3VFZk5XTmN2dUdwcW9Nb0gwUFNGc3FhZnZZcWxUa1BBckdXeHBwUi10dTA1YXVNejZwMTlqVkhVeGN2SC12VkFEYW05UVVaSHBZR3dnV2ZFTFNJS3M5US15WWoxOUNRbXFPZVBDZVFnTXBSMHQ?oc=5",
-      "published": "Wed, 18 Nov 2026 14:59:16 GMT",
-      "publishedAtUTC": "2026-11-18T14:59:16+00:00",
+      "title": "Suns vs Kings Predictions, Odds, Picks: Dream Matchup for Luke Kennard Tonight - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSXBxdzhlaVFtTjh4S2xjNzA4NXBJNVBXMVU4LTMxMXpxdWpiUlVkQ1hHNzNhRldmYTFCbWpJNU9UaHBMQk8wdGh1YmJlbFBRX2hFcDVJV0hNcWxROEZ6OUcxV0R0WUdldUNoV2NCLWpHUGEzWFFIclZIdVJ1VVNkYzl0Ym1nVHdWU2xGTkFMNkNzZWVJTDZLb1pxWlMwQTQ3YmpHVkd2cmpoaDA4dmxneU5aMA?oc=5",
+      "published": "Thu, 19 Nov 2026 01:45:00 GMT",
+      "publishedAtUTC": "2026-11-19T01:45:00+00:00",
+      "sports": [],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-19T03:21:49.167335+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "NBA Player Props: Our Staff\u2019s 5 Picks for Wednesday, Nov. 18 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNWHdvMEYyc0ctcUEzMDc1NVRmeEdjQkNDZmhKdXR3MXl5UDBpY0NWbWhBOXNJQ3otZE4teVJPZUZxaTlBUXo1QmxZYlRUQ004WE12VXVJay0wbElZdUxNYVJVZDduNkQ0MTdrel9ZYnpiYXItd2JPX0VPT1lpQ3Ntdkk1b1BKRDBOMHlLZlpObEVMQjVaRkdqdTNSYW1qcVZJRDJtYmV3?oc=5",
+      "published": "Wed, 18 Nov 2026 22:14:00 GMT",
+      "publishedAtUTC": "2026-11-18T22:14:00+00:00",
       "sports": [
         "NBA"
       ],
@@ -508,46 +590,6 @@
       "firstSeenUTC": "2026-11-18T18:40:26.055628+00:00"
     },
     {
-      "capperId": "stuckey",
-      "title": "Chargers vs Ravens Predictions, MNF Picks, Odds, Inactives - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMizgFBVV95cUxONGlNWnhBTUUwczhSOTJsTWxoUXVqQk9PWkIyaDdyc0ZBUDE3OFB5eDJhT2g2cm9zbE1RcXFPOWt6aUp6QXgxNGdjRTQ2N3J1Y0ZaWDVGX3BRMUZ0Ujg3SzV1Y1luV2F0SHVNdm5FZEhJNHdiRk1YZ0NtZ2p3eU5XZzZIV3NmQzVNNEJ6b1JPVnpLUUJxaDQyRk5PaEN5bmM1ZEZmcnBtdERKc2o3ZUM2R3IxMTZXR3VHbjlxUi1PRk10Vm5ZU19JSzZGR2Ytdw?oc=5",
-      "published": "Tue, 17 Nov 2026 01:15:00 GMT",
-      "publishedAtUTC": "2026-11-17T01:15:00+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-16T17:11:51.899328+00:00"
-    },
-    {
-      "capperId": "dellera",
-      "title": "Phoenix Suns vs Denver Nuggets Prediction, Pick, NBA Odds -- Monday, November 16 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcXR1dnZEckdDeFRUeGR1a1BNVVlvdzVXNDBrMG14QnZ3VHZYWTBTQV9lb3RYNy0ydHdVZHZseElmN1F5TDdtVE53dkhMc2NLUnMtaGdmLVBENzM4YzkyalZtMk1adWdrYjBjUXhndDNwZ0Y4VXdwNjBoUmlLLU5vOVdqSm53QzdiQWRVT19uRTA2TmxmQ1BXM3Q0RUF4eDhwVmZUd3dveUhsNTdpN3hDYklR?oc=5",
-      "published": "Mon, 16 Nov 2026 15:14:00 GMT",
-      "publishedAtUTC": "2026-11-16T15:14:00+00:00",
-      "sports": [
-        "NBA"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-17T19:37:53.827428+00:00"
-    },
-    {
       "capperId": "dellera",
       "title": "Suns-Nuggets: 3 Prop Bets Experts Love Tonight - Yahoo Sports",
       "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB4aHNKSUI0MVE5RmhXU1Z0ejNWY0ZmMTUtaU1MTms1S1AyUmdMOFRJSnprcW9OQkRZUEdLNERZNEZDRmlna29HanBuc1NQV2QzNG5HME5OX0VuQWZMcTg2MTZvei1kVVFhQ2xlUlI2dDVsNnJOZW5EYWh3Z3BPUQ?oc=5",
@@ -557,65 +599,6 @@
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
       "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-17T19:37:53.827428+00:00"
-    },
-    {
-      "capperId": "dellera",
-      "title": "NBA Best Bets for Magic vs Celtics, Rockets vs Heat, More (Monday, Nov. 16) - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYlRzcGZuNkdHdkFCem9RVEZUNFJjODZqOWthSF9FQXpCWVhweFpiWFpXX1lTdkczWF8xZ2tvQzRWR2wwMC1WbjBYWEY1ZlJyZDJ4RUN3X1RNTnd0ZXBUTFhRX0ZvVVNhZVQzQl9GYl9UU0ljOTVsYW80c1dFQzVYUWNmaHh2eDVPX2V5TXdYYnp6VHIwZHc5RUU4TnB6alRtVTFKOHNEZzhvX0VfeHRQcg?oc=5",
-      "published": "Mon, 16 Nov 2026 21:54:00 GMT",
-      "publishedAtUTC": "2026-11-16T21:54:00+00:00",
-      "sports": [
-        "NBA"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-17T19:37:53.827428+00:00"
-    },
-    {
-      "capperId": "dellera",
-      "title": "Trail Blazers vs. Timberwolves Odds & Betting Predictions November 17, 2026 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOS3AweHFkZG9ndVNjcTR4aFFMXzRpc1A3LU01NnlEY3RNQmFVQTdxeUFKOEU5U0tYUlhDS2dOeTBLS2FTU1EwdndyZmM1SE5menB5bHNLcE95Y0NDX2V1Q3pHYlNIUDJ5MmlYWjFEdkpmZGREd1l5VTFtbGNWM1NDYmEzSDdZbWRyRWVTZlc0VVMxRzRTbXRpM3ZhNTRhclRrTlE?oc=5",
-      "published": "Mon, 16 Nov 2026 08:00:00 GMT",
-      "publishedAtUTC": "2026-11-16T08:00:00+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": false,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-17T19:37:53.827428+00:00"
-    },
-    {
-      "capperId": "dellera",
-      "title": "Suns vs. Nuggets Odds & Betting Predictions November 17, 2026 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSllxSkhFU1ZEOUtKbmFZY0l1SGs1LXotVkFpaV9Ld1FUZUxZeXF1bjJHTEt4d19ndl9JOFlTeGxoSVNZNG5CUWJCVk9Ib2c2UFlmZWJoV0pnTjU3TVdRWWtUaWtNNnh1NmhsR0lRaHluVDJjN0RUZTVwa3U1WnJSTjRubjZoejRfeEw3NjVvNA?oc=5",
-      "published": "Mon, 16 Nov 2026 08:00:00 GMT",
-      "publishedAtUTC": "2026-11-16T08:00:00+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": false,
       "reviewNeeded": [
         "verify actual author",
         "original pregame publication timestamp",
