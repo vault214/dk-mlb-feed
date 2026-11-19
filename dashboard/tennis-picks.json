@@ -1,25 +1,29 @@
 {
-  "dateET": "2026-11-18",
-  "updatedAtUTC": "2026-11-19T01:54:59.067897+00:00",
+  "dateET": "2026-11-19",
+  "updatedAtUTC": "2026-11-19T14:31:23.790260+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
-      "scheduledSingles": 0,
-      "matchedMarkets": 0,
-      "eligibleCandidates": 0
+      "quoteErrors": 0,
+      "scheduledSingles": 1,
+      "matchedMarkets": 1,
+      "eligibleCandidates": 2,
+      "ratingsDate": "2026-11-15"
     },
     "WTA": {
       "status": "OK",
-      "scheduledSingles": 0,
+      "quoteErrors": 0,
+      "scheduledSingles": 4,
       "matchedMarkets": 0,
-      "eligibleCandidates": 0
+      "eligibleCandidates": 0,
+      "ratingsDate": "2026-11-15"
     }
   },
   "settlementErrors": [],
   "unmodeledUpcoming": {
-    "ATP Challenger": 7,
-    "WTA Challenger": 0,
-    "ITF": 22
+    "ATP Challenger": 24,
+    "WTA Challenger": 3,
+    "ITF": 56
   },
   "picks": [
     {
@@ -71,6 +75,56 @@
       "track": "SHADOW",
       "stakeUnits": 0.5,
       "selectionBasis": "MINIMUM_ACTION"
+    },
+    {
+      "probability": 0.6155741132493808,
+      "ask": 0.72,
+      "fee": 0.02,
+      "edge": -0.12442588675061915,
+      "rating": 1776.9070057484419,
+      "opponentRating": 1695.1199164167685,
+      "result": "PENDING",
+      "plUnits": null,
+      "ticker": "KXATPMATCH-26NOV17ZVEFIL-ZVE",
+      "eventTicker": "KXATPMATCH-26NOV17ZVEFIL",
+      "selection": "Alexander Zverev",
+      "opponent": "Arthur Fils",
+      "matchStartUTC": "2026-11-19T19:30:00+00:00",
+      "observedAtUTC": "2026-11-19T14:31:24.591035+00:00",
+      "dateET": "2026-11-19",
+      "tour": "ATP",
+      "tournament": "ATP World Tour Finals Men Singles",
+      "ratingsDate": "2026-11-15",
+      "surface": "hard",
+      "bestOf": 3,
+      "track": "OFFICIAL",
+      "stakeUnits": 1.0,
+      "selectionBasis": "MINIMUM_ACTION"
+    },
+    {
+      "probability": 0.3844258867506191,
+      "ask": 0.29,
+      "fee": 0.02,
+      "edge": 0.07442588675061913,
+      "rating": 1695.1199164167685,
+      "opponentRating": 1776.9070057484419,
+      "result": "PENDING",
+      "plUnits": null,
+      "ticker": "KXATPMATCH-26NOV17ZVEFIL-FIL",
+      "eventTicker": "KXATPMATCH-26NOV17ZVEFIL",
+      "selection": "Arthur Fils",
+      "opponent": "Alexander Zverev",
+      "matchStartUTC": "2026-11-19T19:30:00+00:00",
+      "observedAtUTC": "2026-11-19T14:31:24.684514+00:00",
+      "dateET": "2026-11-19",
+      "tour": "ATP",
+      "tournament": "ATP World Tour Finals Men Singles",
+      "ratingsDate": "2026-11-15",
+      "surface": "hard",
+      "bestOf": 3,
+      "track": "SHADOW",
+      "stakeUnits": 0.5,
+      "selectionBasis": "EDGE_QUALIFIED"
     }
   ]
 }
