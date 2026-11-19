@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-19 11:07:50 UTC",
+  "updatedAt": "2026-11-19 11:09:43 UTC",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -8482,13 +8482,13 @@
       "league": "MLS",
       "model": "MLS Kalshi minimum-action paper model",
       "trackType": "SHADOW",
-      "event": "Real Salt Lake at Seattle Sounders",
+      "event": "FC Cincinnati at Orlando City SC",
       "category": "Game winner",
-      "market": "KXMLSGAME-26NOV19SEARSL-RSL",
-      "selection": "Real Salt Lake wins (Kalshi YES)",
+      "market": "KXMLSGAME-26NOV19ORLCIN-CIN",
+      "selection": "FC Cincinnati wins (Kalshi YES)",
       "line": null,
-      "odds": "$0.27 YES ask",
-      "breakEven": "27.0%",
+      "odds": "$0.37 YES ask",
+      "breakEven": "37.0%",
       "modelProbability": null,
       "edgePP": null,
       "confidence": "Low — riskier shadow / uncalibrated",
@@ -8496,7 +8496,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "RISKIER SHADOW · PAPER ONLY. Real Salt Lake YES is the underdog in the separate Seattle–RSL fixture, intentionally higher variance. Kalshi public API market ask snapshot fetched 2026-11-19 06:03 ET: yes_ask $0.27 (no_ask $0.74); market updated_time is 2026-11-08, so quote freshness is unverified despite current order-book retrieval. Break-even ask only, not a true probability. One contract costs $0.27 and yields $0.73 gross profit if correct; $1 paper stake buys about 3.704 contracts and yields about $2.704 pre-fee. Seattle defender Jackson Ragen is suspended; lineups/keepers and a calibrated matchup probability were not verified. No actual bet.",
+      "reason": "RISKIER SHADOW · PAPER ONLY. FC Cincinnati YES is the higher-variance away side in the separate Orlando–Cincinnati fixture (different game from the official Seattle pick). MLS published a Nov. 19 status report with Cincinnati absences and no final XI yet; lineup/keeper, xG/shot adjustment and calibrated probability are not verified. Kalshi public API order-book ask snapshot fetched 2026-11-19 (run time 2026-11-19 11:08:53 UTC): yes_ask $0.37 (no_ask $0.64); market updated_time is 2026-11-08, so quote freshness is unverified despite current book retrieval. Break-even ask only, not a true probability. One contract costs $0.37 and yields $0.63 gross profit if correct; $1 paper stake buys about 2.703 contracts and yields about $1.703 pre-fee. No actual bet.",
       "boardTimestampET": "2026-11-19 06:03 ET",
       "sourceRun": "MLS 6:00 ET daily paper run"
     }
