@@ -1,29 +1,25 @@
 {
   "dateET": "2026-11-18",
-  "updatedAtUTC": "2026-11-18T19:22:49.022370+00:00",
+  "updatedAtUTC": "2026-11-19T01:54:59.067897+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
-      "quoteErrors": 0,
-      "scheduledSingles": 1,
-      "matchedMarkets": 1,
-      "eligibleCandidates": 2,
-      "ratingsDate": "2026-11-15"
+      "scheduledSingles": 0,
+      "matchedMarkets": 0,
+      "eligibleCandidates": 0
     },
     "WTA": {
       "status": "OK",
-      "quoteErrors": 0,
-      "scheduledSingles": 1,
+      "scheduledSingles": 0,
       "matchedMarkets": 0,
-      "eligibleCandidates": 0,
-      "ratingsDate": "2026-11-15"
+      "eligibleCandidates": 0
     }
   },
   "settlementErrors": [],
   "unmodeledUpcoming": {
-    "ATP Challenger": 17,
-    "WTA Challenger": 1,
-    "ITF": 45
+    "ATP Challenger": 7,
+    "WTA Challenger": 0,
+    "ITF": 22
   },
   "picks": [
     {
@@ -33,8 +29,8 @@
       "edge": 0.0018873358682032389,
       "rating": 1670.2259669786076,
       "opponentRating": 1598.4222819122765,
-      "result": "PENDING",
-      "plUnits": null,
+      "result": "WIN",
+      "plUnits": 0.66667,
       "ticker": "KXATPMATCH-26NOV17COBTIA-TIA",
       "eventTicker": "KXATPMATCH-26NOV17COBTIA",
       "selection": "Frances Tiafoe",
@@ -58,8 +54,8 @@
       "edge": -0.05188733586820325,
       "rating": 1598.4222819122765,
       "opponentRating": 1670.2259669786076,
-      "result": "PENDING",
-      "plUnits": null,
+      "result": "LOSS",
+      "plUnits": -0.5,
       "ticker": "KXATPMATCH-26NOV17COBTIA-COB",
       "eventTicker": "KXATPMATCH-26NOV17COBTIA",
       "selection": "Flavio Cobolli",
