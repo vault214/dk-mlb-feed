@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sport": "NCAAF",
   "source": "CFBD /games + /venues; Open-Meteo Previous Runs fixed prior-day forecast",
-  "updatedUTC": "2026-11-18T21:33:17.923544+00:00",
+  "updatedUTC": "2026-11-19T21:44:47.834824+00:00",
   "records": [
     {
       "cfbd_game_id": "401635525",
@@ -258,6 +258,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401644730",
+      "year": 2024,
+      "kickoff_utc": "2024-08-29T23:00:00+00:00",
+      "home_team": "Central Michigan",
+      "away_team": "Central Connecticut",
+      "home_points": 66,
+      "away_points": 10,
+      "venue_id": 3786,
+      "stadium": "Kelly/Shorts Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2024-08-29T23:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 6.7,
+        "precipitation": 0.0,
+        "temperature_2m": 74.5
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401634306",
       "year": 2024,
       "kickoff_utc": "2024-09-02T23:30:00+00:00",
@@ -412,6 +435,29 @@
         "wind_speed_10m": 5.5,
         "precipitation": 0.0,
         "temperature_2m": 59.0
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401628470",
+      "year": 2024,
+      "kickoff_utc": "2024-09-07T16:00:00+00:00",
+      "home_team": "Penn State",
+      "away_team": "Bowling Green",
+      "home_points": 34,
+      "away_points": 27,
+      "venue_id": 3632,
+      "stadium": "Beaver Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2024-09-07T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 10.1,
+        "precipitation": 0.0,
+        "temperature_2m": 61.7
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -741,6 +787,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401635552",
+      "year": 2024,
+      "kickoff_utc": "2024-09-21T16:00:00+00:00",
+      "home_team": "Clemson",
+      "away_team": "NC State",
+      "home_points": 59,
+      "away_points": 35,
+      "venue_id": 3836,
+      "stadium": "Memorial Stadium (Clemson, SC)",
+      "weather": {
+        "forecast_valid_hour_utc": "2024-09-21T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 3.0,
+        "precipitation": 0.0,
+        "temperature_2m": 84.2
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401645331",
       "year": 2024,
       "kickoff_utc": "2024-09-26T23:30:00+00:00",
@@ -902,6 +971,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401629032",
+      "year": 2024,
+      "kickoff_utc": "2024-09-28T16:00:00+00:00",
+      "home_team": "UConn",
+      "away_team": "Buffalo",
+      "home_points": 47,
+      "away_points": 3,
+      "venue_id": 3892,
+      "stadium": "Pratt & Whitney Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2024-09-28T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 7.2,
+        "precipitation": 0.0,
+        "temperature_2m": 71.5
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401643797",
       "year": 2024,
       "kickoff_utc": "2024-10-03T23:00:00+00:00",
@@ -1056,6 +1148,29 @@
         "wind_speed_10m": 14.0,
         "precipitation": 0.0,
         "temperature_2m": 67.6
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401628510",
+      "year": 2024,
+      "kickoff_utc": "2024-10-05T16:00:00+00:00",
+      "home_team": "Penn State",
+      "away_team": "UCLA",
+      "home_points": 27,
+      "away_points": 11,
+      "venue_id": 3632,
+      "stadium": "Beaver Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2024-10-05T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 5.6,
+        "precipitation": 0.0,
+        "temperature_2m": 62.8
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -1385,6 +1500,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401634769",
+      "year": 2024,
+      "kickoff_utc": "2024-10-18T23:00:00+00:00",
+      "home_team": "Duke",
+      "away_team": "Florida State",
+      "home_points": 23,
+      "away_points": 16,
+      "venue_id": 3982,
+      "stadium": "Wallace Wade Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2024-10-18T23:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 5.6,
+        "precipitation": 0.0,
+        "temperature_2m": 55.9
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401640984",
       "year": 2024,
       "kickoff_utc": "2024-10-22T23:30:00+00:00",
@@ -1539,6 +1677,29 @@
         "wind_speed_10m": 6.3,
         "precipitation": 0.0,
         "temperature_2m": 50.0
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401628532",
+      "year": 2024,
+      "kickoff_utc": "2024-10-26T03:00:00+00:00",
+      "home_team": "USC",
+      "away_team": "Rutgers",
+      "home_points": 42,
+      "away_points": 20,
+      "venue_id": 477,
+      "stadium": "Los Angeles Memorial Coliseum",
+      "weather": {
+        "forecast_valid_hour_utc": "2024-10-26T03:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 2.8,
+        "precipitation": 0.0,
+        "temperature_2m": 58.4
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -2650,6 +2811,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401677176",
+      "year": 2024,
+      "kickoff_utc": "2024-12-21T21:00:00+00:00",
+      "home_team": "Texas",
+      "away_team": "Clemson",
+      "home_points": 38,
+      "away_points": 24,
+      "venue_id": 3910,
+      "stadium": "DKR-Texas Memorial Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2024-12-21T21:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 4.7,
+        "precipitation": 0.0,
+        "temperature_2m": 58.7
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401677085",
       "year": 2024,
       "kickoff_utc": "2024-12-23T16:00:00+00:00",
@@ -2781,6 +2965,29 @@
         "wind_speed_10m": 15.6,
         "precipitation": 0.0,
         "temperature_2m": 57.4
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401677092",
+      "year": 2024,
+      "kickoff_utc": "2024-12-28T00:00:00+00:00",
+      "home_team": "Arkansas",
+      "away_team": "Texas Tech",
+      "home_points": 39,
+      "away_points": 26,
+      "venue_id": 3805,
+      "stadium": "Simmons Bank Liberty Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2024-12-28T00:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 5.2,
+        "precipitation": 0.0,
+        "temperature_2m": 56.1
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -3133,6 +3340,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401762789",
+      "year": 2025,
+      "kickoff_utc": "2025-08-28T23:00:00+00:00",
+      "home_team": "Akron",
+      "away_team": "Wyoming",
+      "home_points": 0,
+      "away_points": 10,
+      "venue_id": 3768,
+      "stadium": "InfoCision Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2025-08-28T23:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 8.6,
+        "precipitation": 0.0,
+        "temperature_2m": 62.1
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401754523",
       "year": 2025,
       "kickoff_utc": "2025-09-02T00:00:00+00:00",
@@ -3287,6 +3517,29 @@
         "wind_speed_10m": 3.7,
         "precipitation": 0.0,
         "temperature_2m": 66.2
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401752812",
+      "year": 2025,
+      "kickoff_utc": "2025-09-06T16:00:00+00:00",
+      "home_team": "Indiana",
+      "away_team": "Kennesaw State",
+      "home_points": 56,
+      "away_points": 9,
+      "venue_id": 3830,
+      "stadium": "Memorial Stadium (Bloomington, IN)",
+      "weather": {
+        "forecast_valid_hour_utc": "2025-09-06T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 8.5,
+        "precipitation": 0.0,
+        "temperature_2m": 66.8
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -3455,6 +3708,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401752828",
+      "year": 2025,
+      "kickoff_utc": "2025-09-13T16:00:00+00:00",
+      "home_team": "Nebraska",
+      "away_team": "Houston Christian",
+      "home_points": 59,
+      "away_points": 7,
+      "venue_id": 3834,
+      "stadium": "Memorial Stadium (Lincoln, NE)",
+      "weather": {
+        "forecast_valid_hour_utc": "2025-09-13T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 14.3,
+        "precipitation": 0.0,
+        "temperature_2m": 87.2
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401762468",
       "year": 2025,
       "kickoff_utc": "2025-09-18T23:30:00+00:00",
@@ -3609,6 +3885,29 @@
         "wind_speed_10m": 6.5,
         "precipitation": 0.0,
         "temperature_2m": 79.4
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401754636",
+      "year": 2025,
+      "kickoff_utc": "2025-09-20T16:00:00+00:00",
+      "home_team": "TCU",
+      "away_team": "SMU",
+      "home_points": 35,
+      "away_points": 24,
+      "venue_id": 3616,
+      "stadium": "Amon G. Carter Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2025-09-20T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 8.0,
+        "precipitation": 0.0,
+        "temperature_2m": 88.5
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -3777,6 +4076,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401754546",
+      "year": 2025,
+      "kickoff_utc": "2025-09-27T16:00:00+00:00",
+      "home_team": "Wake Forest",
+      "away_team": "Georgia Tech",
+      "home_points": 29,
+      "away_points": 30,
+      "venue_id": 3630,
+      "stadium": "Allegacy Federal Credit Union Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2025-09-27T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 4.1,
+        "precipitation": 0.4,
+        "temperature_2m": 74.4
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401757275",
       "year": 2025,
       "kickoff_utc": "2025-10-03T01:00:00+00:00",
@@ -3931,6 +4253,29 @@
         "wind_speed_10m": 9.3,
         "precipitation": 0.0,
         "temperature_2m": 72.0
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401752856",
+      "year": 2025,
+      "kickoff_utc": "2025-10-04T16:00:00+00:00",
+      "home_team": "Michigan",
+      "away_team": "Wisconsin",
+      "home_points": 24,
+      "away_points": 10,
+      "venue_id": 3558,
+      "stadium": "Michigan Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2025-10-04T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 7.1,
+        "precipitation": 0.0,
+        "temperature_2m": 82.2
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -4099,6 +4444,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401752862",
+      "year": 2025,
+      "kickoff_utc": "2025-10-11T01:00:00+00:00",
+      "home_team": "Washington",
+      "away_team": "Rutgers",
+      "home_points": 38,
+      "away_points": 19,
+      "venue_id": 3765,
+      "stadium": "Husky Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2025-10-11T01:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 7.4,
+        "precipitation": 0.0,
+        "temperature_2m": 54.6
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401757282",
       "year": 2025,
       "kickoff_utc": "2025-10-14T23:00:00+00:00",
@@ -4253,6 +4621,29 @@
         "wind_speed_10m": 7.4,
         "precipitation": 0.0,
         "temperature_2m": 76.9
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401752872",
+      "year": 2025,
+      "kickoff_utc": "2025-10-18T00:00:00+00:00",
+      "home_team": "Minnesota",
+      "away_team": "Nebraska",
+      "home_points": 24,
+      "away_points": 6,
+      "venue_id": 3953,
+      "stadium": "Huntington Bank Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2025-10-18T00:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 4.9,
+        "precipitation": 0.0,
+        "temperature_2m": 56.1
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -5502,6 +5893,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401779841",
+      "year": 2025,
+      "kickoff_utc": "2025-12-20T17:00:00+00:00",
+      "home_team": "Texas A&M",
+      "away_team": "Miami",
+      "home_points": 3,
+      "away_points": 10,
+      "venue_id": 3795,
+      "stadium": "Kyle Field",
+      "weather": {
+        "forecast_valid_hour_utc": "2025-12-20T17:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 14.2,
+        "precipitation": 0.0,
+        "temperature_2m": 64.6
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401778308",
       "year": 2025,
       "kickoff_utc": "2025-12-22T19:00:00+00:00",
@@ -5633,6 +6047,29 @@
         "wind_speed_10m": 9.3,
         "precipitation": 0.0,
         "temperature_2m": 27.4
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401778318",
+      "year": 2025,
+      "kickoff_utc": "2025-12-27T19:15:00+00:00",
+      "home_team": "Army",
+      "away_team": "UConn",
+      "home_points": 41,
+      "away_points": 16,
+      "venue_id": 4245,
+      "stadium": "Fenway Park",
+      "weather": {
+        "forecast_valid_hour_utc": "2025-12-27T19:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 7.9,
+        "precipitation": 0.0,
+        "temperature_2m": 21.2
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -6077,6 +6514,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401856776",
+      "year": 2026,
+      "kickoff_utc": "2026-09-04T00:00:00+00:00",
+      "home_team": "Georgia Tech",
+      "away_team": "Colorado",
+      "home_points": 13,
+      "away_points": 14,
+      "venue_id": 721,
+      "stadium": "Bobby Dodd Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2026-09-04T00:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 5.2,
+        "precipitation": 0.0,
+        "temperature_2m": 91.5
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401858212",
       "year": 2026,
       "kickoff_utc": "2026-09-07T23:30:00+00:00",
@@ -6231,6 +6691,29 @@
         "wind_speed_10m": 5.2,
         "precipitation": 0.0,
         "temperature_2m": 83.2
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401856679",
+      "year": 2026,
+      "kickoff_utc": "2026-09-12T16:00:00+00:00",
+      "home_team": "Michigan",
+      "away_team": "Oklahoma",
+      "home_points": 17,
+      "away_points": 10,
+      "venue_id": 3558,
+      "stadium": "Michigan Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2026-09-12T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 4.8,
+        "precipitation": 0.0,
+        "temperature_2m": 74.6
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -6399,6 +6882,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401856798",
+      "year": 2026,
+      "kickoff_utc": "2026-09-19T16:00:00+00:00",
+      "home_team": "Iowa State",
+      "away_team": "Bowling Green",
+      "home_points": 55,
+      "away_points": 7,
+      "venue_id": 3772,
+      "stadium": "Jack Trice Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2026-09-19T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 5.6,
+        "precipitation": 0.0,
+        "temperature_2m": 75.3
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401869941",
       "year": 2026,
       "kickoff_utc": "2026-09-24T23:30:00+00:00",
@@ -6553,6 +7059,29 @@
         "wind_speed_10m": 4.8,
         "precipitation": 0.0,
         "temperature_2m": 64.6
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401856805",
+      "year": 2026,
+      "kickoff_utc": "2026-09-26T16:00:00+00:00",
+      "home_team": "Texas Tech",
+      "away_team": "Sam Houston",
+      "home_points": 49,
+      "away_points": 14,
+      "venue_id": 3784,
+      "stadium": "Jones AT&T Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2026-09-26T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 7.7,
+        "precipitation": 0.0,
+        "temperature_2m": 73.6
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -6721,6 +7250,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401856807",
+      "year": 2026,
+      "kickoff_utc": "2026-10-03T16:00:00+00:00",
+      "home_team": "Kansas",
+      "away_team": "Middle Tennessee",
+      "home_points": 55,
+      "away_points": 0,
+      "venue_id": 3833,
+      "stadium": "Memorial Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2026-10-03T16:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 4.9,
+        "precipitation": 0.0,
+        "temperature_2m": 60.3
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401871090",
       "year": 2026,
       "kickoff_utc": "2026-10-07T00:00:00+00:00",
@@ -6882,6 +7434,29 @@
       "production_eligible": false
     },
     {
+      "cfbd_game_id": "401858487",
+      "year": 2026,
+      "kickoff_utc": "2026-10-10T01:00:00+00:00",
+      "home_team": "Washington",
+      "away_team": "Iowa",
+      "home_points": 24,
+      "away_points": 41,
+      "venue_id": 3765,
+      "stadium": "Husky Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2026-10-10T01:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 6.1,
+        "precipitation": 0.0,
+        "temperature_2m": 51.8
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
       "cfbd_game_id": "401871067",
       "year": 2026,
       "kickoff_utc": "2026-10-13T23:00:00+00:00",
@@ -7036,6 +7611,29 @@
         "wind_speed_10m": 6.7,
         "precipitation": 0.0,
         "temperature_2m": 85.6
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401862801",
+      "year": 2026,
+      "kickoff_utc": "2026-10-16T23:30:00+00:00",
+      "home_team": "Tulane",
+      "away_team": "Memphis",
+      "home_points": 31,
+      "away_points": 17,
+      "venue_id": 4729,
+      "stadium": "Yulman Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2026-10-16T23:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 4.8,
+        "precipitation": 0.0,
+        "temperature_2m": 83.8
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
@@ -7749,6 +8347,52 @@
         "wind_speed_10m": 4.9,
         "precipitation": 0.0,
         "temperature_2m": 40.4
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401866467",
+      "year": 2026,
+      "kickoff_utc": "2026-11-19T00:00:00+00:00",
+      "home_team": "Massachusetts",
+      "away_team": "Akron",
+      "home_points": 33,
+      "away_points": 34,
+      "venue_id": 3985,
+      "stadium": "Warren McGuirk Alumni Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2026-11-19T00:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 5.9,
+        "precipitation": 0.0,
+        "temperature_2m": 47.1
+      },
+      "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
+      "weather_training_valid": true,
+      "model_probability_adjusted": false,
+      "production_eligible": false
+    },
+    {
+      "cfbd_game_id": "401866469",
+      "year": 2026,
+      "kickoff_utc": "2026-11-19T00:30:00+00:00",
+      "home_team": "Buffalo",
+      "away_team": "Central Michigan",
+      "home_points": 40,
+      "away_points": 21,
+      "venue_id": 3965,
+      "stadium": "UB Stadium",
+      "weather": {
+        "forecast_valid_hour_utc": "2026-11-19T00:00:00+00:00",
+        "forecast_lead_hours": 24,
+        "forecast_origin": "Open-Meteo Previous Runs fixed 24h lead, not a hindsight reanalysis",
+        "wind_speed_10m": 5.6,
+        "precipitation": 0.0,
+        "temperature_2m": 43.1
       },
       "weather_source": "Open-Meteo Previous Runs fixed 24h forecast",
       "weather_training_valid": true,
