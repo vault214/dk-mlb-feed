@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sport": "NFL",
+  "event_date_et": "2026-11-19",
+  "observations": [
+    {
+      "espn_game_id": "401873066",
+      "event_ticker": "KXNFLGAME-26NOV19INDHOU",
+      "event_date_et": "2026-11-19",
+      "kickoff_utc": "2026-11-20T01:15:00+00:00",
+      "home_team": "Houston Texans",
+      "away_team": "Indianapolis Colts",
+      "home_team_id": "34",
+      "away_team_id": "11",
+      "ticker": "KXNFLGAME-26NOV19INDHOU-HOU",
+      "home_selection_label": "Houston",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-19T23:02:22.177725+00:00",
+      "home_yes_ask": 0.85,
+      "home_no_ask": 0.16,
+      "home_bidask_midpoint": 0.845,
+      "yes_contracts_available": 18195333.32,
+      "no_contracts_available": 6498855.97,
+      "taker_fee_estimate_one_yes_contract": 0.01,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
+    }
+  ],
+  "verified_outcomes": {}
+}
