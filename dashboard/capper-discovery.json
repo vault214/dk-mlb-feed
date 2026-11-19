@@ -1,16 +1,16 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-19T02:49:12.954664+00:00",
+  "updatedAtUTC": "2026-11-19T03:21:49.167335+00:00",
   "scanDateET": "2026-11-18",
   "scanHealth": "OK",
-  "lastSuccessfulSourceScanUTC": "2026-11-19T02:49:12.954664+00:00",
+  "lastSuccessfulSourceScanUTC": "2026-11-19T03:21:49.167335+00:00",
   "sourceStatus": [
     {
       "capperId": "koerner",
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 1,
-      "checkedAtUTC": "2026-11-19T02:49:12.954664+00:00",
+      "checkedAtUTC": "2026-11-19T03:21:49.167335+00:00",
       "errors": []
     },
     {
@@ -18,7 +18,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 9,
-      "checkedAtUTC": "2026-11-19T02:49:12.954664+00:00",
+      "checkedAtUTC": "2026-11-19T03:21:49.167335+00:00",
       "errors": []
     },
     {
@@ -26,7 +26,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 8,
-      "checkedAtUTC": "2026-11-19T02:49:12.954664+00:00",
+      "checkedAtUTC": "2026-11-19T03:21:49.167335+00:00",
       "errors": []
     },
     {
@@ -34,7 +34,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-19T02:49:12.954664+00:00",
+      "checkedAtUTC": "2026-11-19T03:21:49.167335+00:00",
       "errors": []
     },
     {
@@ -42,12 +42,12 @@
       "provider": "VSiN",
       "status": "OK",
       "freshLeads": 3,
-      "checkedAtUTC": "2026-11-19T02:49:12.954664+00:00",
+      "checkedAtUTC": "2026-11-19T03:21:49.167335+00:00",
       "errors": []
     }
   ],
   "freshLeadsThisRun": 21,
-  "retainedRecentLeads": 6,
+  "retainedRecentLeads": 7,
   "leads": [
     {
       "capperId": "koerner",
@@ -259,10 +259,10 @@
     },
     {
       "capperId": "dellera",
-      "title": "Suns vs Kings Prediction, Pick, NBA Odds for Wednesday, November 18 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPUXd1QXVmNHFPcFRtTHUxM3VFZk5XTmN2dUdwcW9Nb0gwUFNGc3FhZnZZcWxUa1BBckdXeHBwUi10dTA1YXVNejZwMTlqVkhVeGN2SC12VkFEYW05UVVaSHBZR3dnV2ZFTFNJS3M5US15WWoxOUNRbXFPZVBDZVFnTXBSMHQ?oc=5",
-      "published": "Wed, 18 Nov 2026 14:59:16 GMT",
-      "publishedAtUTC": "2026-11-18T14:59:16+00:00",
+      "title": "Hawks vs Thunder Prediction, Pick, NBA Odds for Wednesday, November 18 - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVHlSSVltZ0V2eVRyNjY5UmJJT1dHdGpabExkbnY5Nk5JbWlHeGlJR2pLZjVkLTdGcjdYNHZ1WlhwY2c0Wjd0QktvVm12U2NBNkx6NUNNekNNNFZRR21sTTZpdWMyaTMwQjVZLUdqVERsVDNpcEZ1Z1VQVHpCeC1DSG1nTmpSRDU0?oc=5",
+      "published": "Wed, 18 Nov 2026 14:36:15 GMT",
+      "publishedAtUTC": "2026-11-18T14:36:15+00:00",
       "sports": [
         "NBA"
       ],
@@ -277,6 +277,46 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-18T18:40:26.055628+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "Suns vs Nuggets Prediction, Pick, NBA Odds for Monday, November 16 - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNbVBPdGN6Q1JjaFhXOWtlQnhWZTJ0RlV3TjgzOWdqVjBVXzlyYjQxa3V4amY3RmM4dlpPRzVSNTNIQl9JcmU4eDBKLTF1NkJjdlNqMFlDOVBkUGc2QXoyYXIxRFF1dFdiQUphM3NrTEZqc3hXZkZpblBYcEo0WjM2QjBQRjdob1E?oc=5",
+      "published": "Mon, 16 Nov 2026 15:13:40 GMT",
+      "publishedAtUTC": "2026-11-16T15:13:40+00:00",
+      "sports": [
+        "NBA"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-16T17:11:51.899328+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "Suns vs Kings Predictions, Odds, Picks: Dream Matchup for Luke Kennard Tonight - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSXBxdzhlaVFtTjh4S2xjNzA4NXBJNVBXMVU4LTMxMXpxdWpiUlVkQ1hHNzNhRldmYTFCbWpJNU9UaHBMQk8wdGh1YmJlbFBRX2hFcDVJV0hNcWxROEZ6OUcxV0R0WUdldUNoV2NCLWpHUGEzWFFIclZIdVJ1VVNkYzl0Ym1nVHdWU2xGTkFMNkNzZWVJTDZLb1pxWlMwQTQ3YmpHVkd2cmpoaDA4dmxneU5aMA?oc=5",
+      "published": "Thu, 19 Nov 2026 01:45:00 GMT",
+      "publishedAtUTC": "2026-11-19T01:45:00+00:00",
+      "sports": [],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-19T03:21:49.167335+00:00"
     },
     {
       "capperId": "dellera",
@@ -301,31 +341,10 @@
     },
     {
       "capperId": "dellera",
-      "title": "Hawks vs Thunder Prediction, Pick, NBA Odds for Wednesday, November 18 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVHlSSVltZ0V2eVRyNjY5UmJJT1dHdGpabExkbnY5Nk5JbWlHeGlJR2pLZjVkLTdGcjdYNHZ1WlhwY2c0Wjd0QktvVm12U2NBNkx6NUNNekNNNFZRR21sTTZpdWMyaTMwQjVZLUdqVERsVDNpcEZ1Z1VQVHpCeC1DSG1nTmpSRDU0?oc=5",
-      "published": "Wed, 18 Nov 2026 14:36:15 GMT",
-      "publishedAtUTC": "2026-11-18T14:36:15+00:00",
-      "sports": [
-        "NBA"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-18T18:40:26.055628+00:00"
-    },
-    {
-      "capperId": "dellera",
-      "title": "NBA Best Bets for Bucks vs Heat, 76ers vs Magic, More (Wednesday, Nov. 18) - Action Network",
+      "title": "NBA Best Bets for Nuggets vs Celtics, Kings vs Suns on Wednesday, Nov. 18 - Action Network",
       "sourceUrl": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSW1VQjZnTjRKSHIxQ1RaLWJqelhOcXNNVXZWd0EzQWFzTTdFNVdsczZPS011WV9sYk5LUGRpYkxCRXlxR0ZvWm9tYlAwdG4xODA5REdpbG5veGo4cUxIVU5yUzRUUDdjbGJiNnJ2cDUzWExrd0VFeFlRcmthVUd1ejhQYkxKNWRLVk1VN2RlNlFzTGdwV09JcEhXYWRDUDFCNmR6Y1JXcHk3T0txU1E?oc=5",
-      "published": "Wed, 18 Nov 2026 21:49:00 GMT",
-      "publishedAtUTC": "2026-11-18T21:49:00+00:00",
+      "published": "Thu, 19 Nov 2026 01:24:00 GMT",
+      "publishedAtUTC": "2026-11-19T01:24:00+00:00",
       "sports": [
         "NBA"
       ],
@@ -340,27 +359,6 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-18T20:27:34.071445+00:00"
-    },
-    {
-      "capperId": "dellera",
-      "title": "Suns vs Nuggets Prediction, Pick, NBA Odds for Monday, November 16 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNbVBPdGN6Q1JjaFhXOWtlQnhWZTJ0RlV3TjgzOWdqVjBVXzlyYjQxa3V4amY3RmM4dlpPRzVSNTNIQl9JcmU4eDBKLTF1NkJjdlNqMFlDOVBkUGc2QXoyYXIxRFF1dFdiQUphM3NrTEZqc3hXZkZpblBYcEo0WjM2QjBQRjdob1E?oc=5",
-      "published": "Mon, 16 Nov 2026 15:13:40 GMT",
-      "publishedAtUTC": "2026-11-16T15:13:40+00:00",
-      "sports": [
-        "NBA"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-16T17:11:51.899328+00:00"
     },
     {
       "capperId": "dellera",
@@ -478,6 +476,27 @@
       ],
       "authorInHeadline": false,
       "status": "UNVERIFIED_DISCOVERY_ONLY",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-18T18:40:26.055628+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "Suns vs Kings Prediction, Pick, NBA Odds for Wednesday, November 18 - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPUXd1QXVmNHFPcFRtTHUxM3VFZk5XTmN2dUdwcW9Nb0gwUFNGc3FhZnZZcWxUa1BBckdXeHBwUi10dTA1YXVNejZwMTlqVkhVeGN2SC12VkFEYW05UVVaSHBZR3dnV2ZFTFNJS3M5US15WWoxOUNRbXFPZVBDZVFnTXBSMHQ?oc=5",
+      "published": "Wed, 18 Nov 2026 14:59:16 GMT",
+      "publishedAtUTC": "2026-11-18T14:59:16+00:00",
+      "sports": [
+        "NBA"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
       "candidateBestBet": true,
       "reviewNeeded": [
         "verify actual author",
