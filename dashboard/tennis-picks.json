@@ -1,25 +1,29 @@
 {
-  "dateET": "2026-11-19",
-  "updatedAtUTC": "2026-11-19T23:39:01.592360+00:00",
+  "dateET": "2026-11-20",
+  "updatedAtUTC": "2026-11-20T08:40:47.959705+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
-      "scheduledSingles": 0,
-      "matchedMarkets": 0,
-      "eligibleCandidates": 0
+      "quoteErrors": 0,
+      "scheduledSingles": 2,
+      "matchedMarkets": 2,
+      "eligibleCandidates": 2,
+      "ratingsDate": "2026-11-15"
     },
     "WTA": {
       "status": "OK",
-      "scheduledSingles": 0,
+      "quoteErrors": 0,
+      "scheduledSingles": 4,
       "matchedMarkets": 0,
-      "eligibleCandidates": 0
+      "eligibleCandidates": 0,
+      "ratingsDate": "2026-11-15"
     }
   },
   "settlementErrors": [],
   "unmodeledUpcoming": {
-    "ATP Challenger": 9,
-    "WTA Challenger": 0,
-    "ITF": 17
+    "ATP Challenger": 16,
+    "WTA Challenger": 2,
+    "ITF": 59
   },
   "picks": [
     {
@@ -121,6 +125,56 @@
       "track": "SHADOW",
       "stakeUnits": 0.5,
       "selectionBasis": "EDGE_QUALIFIED"
+    },
+    {
+      "probability": 0.425286710641372,
+      "ask": 0.31,
+      "fee": 0.02,
+      "edge": 0.09528671064137202,
+      "rating": 1670.2259669786076,
+      "opponentRating": 1722.5337379975826,
+      "result": "PENDING",
+      "plUnits": null,
+      "ticker": "KXATPMATCH-26NOV17MEDTIA-TIA",
+      "eventTicker": "KXATPMATCH-26NOV17MEDTIA",
+      "selection": "Frances Tiafoe",
+      "opponent": "Daniil Medvedev",
+      "matchStartUTC": "2026-11-20T19:30:00+00:00",
+      "observedAtUTC": "2026-11-20T08:40:49.140470+00:00",
+      "dateET": "2026-11-20",
+      "tour": "ATP",
+      "tournament": "ATP World Tour Finals Men Singles",
+      "ratingsDate": "2026-11-15",
+      "surface": "hard",
+      "bestOf": 3,
+      "track": "OFFICIAL",
+      "stakeUnits": 1.0,
+      "selectionBasis": "MINIMUM_ACTION"
+    },
+    {
+      "probability": 0.14184818986730707,
+      "ask": 0.17,
+      "fee": 0.01,
+      "edge": -0.03815181013269294,
+      "rating": 1598.4222819122765,
+      "opponentRating": 1911.1184118264264,
+      "result": "PENDING",
+      "plUnits": null,
+      "ticker": "KXATPMATCH-26NOV17ALCCOB-COB",
+      "eventTicker": "KXATPMATCH-26NOV17ALCCOB",
+      "selection": "Flavio Cobolli",
+      "opponent": "Carlos Alcaraz",
+      "matchStartUTC": "2026-11-20T13:00:00+00:00",
+      "observedAtUTC": "2026-11-20T08:40:49.006937+00:00",
+      "dateET": "2026-11-20",
+      "tour": "ATP",
+      "tournament": "ATP World Tour Finals Men Singles",
+      "ratingsDate": "2026-11-15",
+      "surface": "hard",
+      "bestOf": 3,
+      "track": "SHADOW",
+      "stakeUnits": 0.5,
+      "selectionBasis": "MINIMUM_ACTION"
     }
   ]
 }
