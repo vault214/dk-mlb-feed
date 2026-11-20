@@ -1,19 +1,19 @@
 {
   "dateET": "2026-11-20",
-  "updatedAtUTC": "2026-11-20T08:40:47.959705+00:00",
+  "updatedAtUTC": "2026-11-20T19:10:06.192641+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
       "quoteErrors": 0,
-      "scheduledSingles": 2,
-      "matchedMarkets": 2,
+      "scheduledSingles": 1,
+      "matchedMarkets": 1,
       "eligibleCandidates": 2,
       "ratingsDate": "2026-11-15"
     },
     "WTA": {
       "status": "OK",
       "quoteErrors": 0,
-      "scheduledSingles": 4,
+      "scheduledSingles": 2,
       "matchedMarkets": 0,
       "eligibleCandidates": 0,
       "ratingsDate": "2026-11-15"
@@ -21,9 +21,9 @@
   },
   "settlementErrors": [],
   "unmodeledUpcoming": {
-    "ATP Challenger": 16,
+    "ATP Challenger": 11,
     "WTA Challenger": 2,
-    "ITF": 59
+    "ITF": 11
   },
   "picks": [
     {
@@ -158,8 +158,8 @@
       "edge": -0.03815181013269294,
       "rating": 1598.4222819122765,
       "opponentRating": 1911.1184118264264,
-      "result": "PENDING",
-      "plUnits": null,
+      "result": "LOSS",
+      "plUnits": -0.5,
       "ticker": "KXATPMATCH-26NOV17ALCCOB-COB",
       "eventTicker": "KXATPMATCH-26NOV17ALCCOB",
       "selection": "Flavio Cobolli",
