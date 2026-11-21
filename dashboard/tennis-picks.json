@@ -1,25 +1,29 @@
 {
-  "dateET": "2026-11-20",
-  "updatedAtUTC": "2026-11-21T01:36:22.384763+00:00",
+  "dateET": "2026-11-21",
+  "updatedAtUTC": "2026-11-21T13:35:11.888868+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
-      "scheduledSingles": 0,
-      "matchedMarkets": 0,
-      "eligibleCandidates": 0
+      "quoteErrors": 0,
+      "scheduledSingles": 2,
+      "matchedMarkets": 1,
+      "eligibleCandidates": 2,
+      "ratingsDate": "2026-11-15"
     },
     "WTA": {
       "status": "OK",
-      "scheduledSingles": 0,
+      "quoteErrors": 0,
+      "scheduledSingles": 2,
       "matchedMarkets": 0,
-      "eligibleCandidates": 0
+      "eligibleCandidates": 0,
+      "ratingsDate": "2026-11-15"
     }
   },
   "settlementErrors": [],
   "unmodeledUpcoming": {
-    "ATP Challenger": 4,
-    "WTA Challenger": 0,
-    "ITF": 4
+    "ATP Challenger": 16,
+    "WTA Challenger": 2,
+    "ITF": 22
   },
   "picks": [
     {
@@ -163,6 +167,56 @@
       "matchStartUTC": "2026-11-20T13:00:00+00:00",
       "observedAtUTC": "2026-11-20T08:40:49.006937+00:00",
       "dateET": "2026-11-20",
+      "tour": "ATP",
+      "tournament": "ATP World Tour Finals Men Singles",
+      "ratingsDate": "2026-11-15",
+      "surface": "hard",
+      "bestOf": 3,
+      "track": "SHADOW",
+      "stakeUnits": 0.5,
+      "selectionBasis": "MINIMUM_ACTION"
+    },
+    {
+      "probability": 0.5776167939730388,
+      "ask": 0.61,
+      "fee": 0.02,
+      "edge": -0.05238320602696121,
+      "rating": 1776.9070057484419,
+      "opponentRating": 1722.5337379975826,
+      "result": "PENDING",
+      "plUnits": null,
+      "ticker": "KXATPMATCH-26NOV21ZVEMED-ZVE",
+      "eventTicker": "KXATPMATCH-26NOV21ZVEMED",
+      "selection": "Alexander Zverev",
+      "opponent": "Daniil Medvedev",
+      "matchStartUTC": "2026-11-21T19:30:00+00:00",
+      "observedAtUTC": "2026-11-21T13:35:13.134595+00:00",
+      "dateET": "2026-11-21",
+      "tour": "ATP",
+      "tournament": "ATP World Tour Finals Men Singles",
+      "ratingsDate": "2026-11-15",
+      "surface": "hard",
+      "bestOf": 3,
+      "track": "OFFICIAL",
+      "stakeUnits": 1.0,
+      "selectionBasis": "MINIMUM_ACTION"
+    },
+    {
+      "probability": 0.42238320602696133,
+      "ask": 0.39,
+      "fee": 0.02,
+      "edge": 0.01238320602696132,
+      "rating": 1722.5337379975826,
+      "opponentRating": 1776.9070057484419,
+      "result": "PENDING",
+      "plUnits": null,
+      "ticker": "KXATPMATCH-26NOV21ZVEMED-MED",
+      "eventTicker": "KXATPMATCH-26NOV21ZVEMED",
+      "selection": "Daniil Medvedev",
+      "opponent": "Alexander Zverev",
+      "matchStartUTC": "2026-11-21T19:30:00+00:00",
+      "observedAtUTC": "2026-11-21T13:35:13.342229+00:00",
+      "dateET": "2026-11-21",
       "tour": "ATP",
       "tournament": "ATP World Tour Finals Men Singles",
       "ratingsDate": "2026-11-15",
