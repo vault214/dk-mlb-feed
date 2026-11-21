@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-21T16:16:47.000Z",
+  "updatedAt": "2026-11-21T16:25:30.000Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -9099,6 +9099,54 @@
       "reason": "RISKIER SHADOW — PAPER ONLY. Gardner-Webb YES is a higher-variance underdog in a different 7:00 PM ET game than the official pick (at VMI). No independent calibrated roster/efficiency/pace probability or edge; fields blank. Same-day board YES ask 23¢, under the 75¢ cap; ask-only break-even 23% (not a true/model probability). SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. One contract costs $0.23 and yields $0.77 gross; $1 spent would yield about $3.3478 gross pre-fee if correct. No actual bet.",
       "boardTimestampET": "2026-11-21 11:13 ET",
       "sourceRun": "NCAAB 11:00 ET daily paper run"
+    },
+    {
+      "entryId": "NCAAF-OFFICIAL-005",
+      "dateET": "2026-11-21",
+      "league": "NCAAF",
+      "model": "NCAA Football minimum-action paper model",
+      "trackType": "OFFICIAL",
+      "event": "BYU Cougars at Kansas Jayhawks",
+      "category": "Game winner",
+      "market": "KXNCAAFGAME-26NOV21BYUKU-BYU",
+      "selection": "BYU wins (Kalshi YES)",
+      "line": null,
+      "odds": "0.67 YES ask",
+      "breakEven": "67.0%",
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Low — minimum-action / research-only",
+      "stakeUnits": "1.00",
+      "result": "Pending",
+      "plUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. BYU is the lower-variance official slot for the 12:00 PM ET pregame game: official BYU notes list BYU 8-2 (No. 10) vs Kansas 4-6, but BYU is 2-2 away and QB/injury status is not independently verified. Same-day FBS board is current (2026-11-21); exact BYU YES ask 67¢ is valid and below the 75¢ cap. Ask-only break-even 67%, not a true/model probability. No calibrated independent probability/edge; fields blank. v3.9 scorecard: 13 research games, 0 independently verified probability samples, 40-game review target unmet, eligibility false. v3.5/v3.8 artifacts last generated Nov 8 and are stale for this slate. Official NCAA board review matched 205 of 220 same-day candidate markets to 50 FBS events with valid asks; 15 rows from unmatched/FCS events excluded. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. One contract costs $0.67 and yields $0.33 gross; $1 spent yields about $0.4925 gross pre-fee if correct. No actual bet.",
+      "boardTimestampET": "2026-11-21 11:24 ET",
+      "sourceRun": "NCAAF Saturday 11:00 ET game-day paper run"
+    },
+    {
+      "entryId": "NCAAF-SHADOW-013",
+      "dateET": "2026-11-21",
+      "league": "NCAAF",
+      "model": "NCAA Football minimum-action paper model",
+      "trackType": "SHADOW",
+      "event": "Texas Tech Red Raiders at Baylor Bears",
+      "category": "Game winner",
+      "market": "KXNCAAFGAME-26NOV21TTUBAY-BAY",
+      "selection": "Baylor wins (Kalshi YES)",
+      "line": null,
+      "odds": "0.35 YES ask",
+      "breakEven": "35.0%",
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Low — riskier shadow / research-only",
+      "stakeUnits": "0.50",
+      "result": "Pending",
+      "plUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "RISKIER SHADOW — PAPER ONLY. Baylor YES is a higher-variance underdog in a different game from the official selection, scheduled for 3:30 PM ET; current game preview lists Texas Tech 9-1 and Baylor 6-4. Same-day board exact YES ask 35¢ is valid and below the 75¢ cap; ask-only break-even 35%, not a true/model probability. Independent probabilities/edge and current QB/injury adjustments are unavailable; fields blank. v3.9 forward research remains unverified and is not an executed strategy. Forecast for Waco is mild/cloudy-to-partly-sunny; no weather adjustment to probability is supportable. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. One contract costs $0.35 and yields $0.65 gross; $1 spent yields about $1.8571 gross pre-fee if correct. No actual bet.",
+      "boardTimestampET": "2026-11-21 11:24 ET",
+      "sourceRun": "NCAAF Saturday 11:00 ET game-day paper run"
     }
   ]
 }
