@@ -4,6 +4,7 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 import csv
 from datetime import datetime, timedelta, timezone
+from itertools import combinations
 import json
 from pathlib import Path
 import re
@@ -282,6 +283,85 @@ def capture(candidates, ledger, day):
                             "selectionBasis": "EDGE_QUALIFIED" if edge_qualified else "MINIMUM_ACTION"})
 
 
+def capture_parlay(candidates, parlays, day, now):
+    booked = next((row for row in parlays if row["dateET"] == day), None)
+    if booked:
+        return {"status": booked["result"], "legs": len(booked["legs"])}
+
+    # Only use liquid, pregame candidates from separate matches. A per-leg
+    # probability floor and a combined hit-rate floor avoid forced long shots.
+    market_eligible = [p for p in candidates
+                       if p["probability"] >= 0.55
+                       and p["ask"] <= 0.75
+                       and utc(p["matchStartUTC"]) > now + PREGAME_BUFFER]
+    edge_eligible = [p for p in market_eligible if p["edge"] >= 0.025]
+    # Prefer fee-adjusted positive-edge legs; use a clearly marked minimum-action
+    # combo only when the live slate cannot form a qualifying edge combo.
+    eligible = edge_eligible
+    by_event = {}
+    for pick in eligible:
+        old = by_event.get(pick["eventTicker"])
+        if old is None or (pick["probability"], pick["edge"]) > (old["probability"], old["edge"]):
+            by_event[pick["eventTicker"]] = pick
+    ranked = sorted(by_event.values(), key=lambda p: (p["probability"], p["edge"]), reverse=True)
+
+    def qualifying_groups(rows):
+        triples = [group for group in combinations(rows, 3)
+                   if product(p["probability"] for p in group) >= 0.30]
+        pairs = [group for group in combinations(rows, 2)
+                 if product(p["probability"] for p in group) >= 0.30]
+        return triples, pairs
+
+    triples, pairs = qualifying_groups(ranked)
+    minimum_action = False
+    if not triples and not pairs and len(edge_eligible) < len(market_eligible):
+        by_event = {}
+        for pick in market_eligible:
+            old = by_event.get(pick["eventTicker"])
+            if old is None or (pick["probability"], pick["edge"]) > (old["probability"], old["edge"]):
+                by_event[pick["eventTicker"]] = pick
+        ranked = sorted(by_event.values(), key=lambda p: (p["probability"], p["edge"]), reverse=True)
+        triples, pairs = qualifying_groups(ranked)
+        minimum_action = bool(triples or pairs)
+
+    # Prefer a three-leg card only when the modeled chance of all three winning
+    # remains at least 30%; otherwise use the strongest two-leg combination.
+    triples = [group for group in combinations(ranked, 3)
+               if product(p["probability"] for p in group) >= 0.30]
+    pairs = [group for group in combinations(ranked, 2)
+             if product(p["probability"] for p in group) >= 0.30]
+    chosen = max(triples, key=lambda group: product(p["probability"] for p in group), default=None)
+    chosen = chosen or max(pairs, key=lambda group: product(p["probability"] for p in group), default=None)
+    if not chosen:
+        return {"status": "NO_COMBO_MET_HIT_RATE", "eligibleMatches": len(ranked)}
+
+    joint = product(p["probability"] for p in chosen)
+    legs = [{
+        "ticker": p["ticker"], "eventTicker": p["eventTicker"],
+        "selection": p["selection"], "opponent": p["opponent"],
+        "probability": p["probability"], "ask": p["ask"], "fee": p["fee"],
+        "matchStartUTC": p["matchStartUTC"], "tour": p["tour"],
+        "tournament": p["tournament"], "surface": p["surface"],
+        "bestOf": p["bestOf"], "observedAtUTC": p["observedAtUTC"],
+    } for p in chosen]
+    edge_qualified = all(p["edge"] >= 0.05 for p in chosen)
+    parlays.append({
+        "dateET": day, "createdAtUTC": now.isoformat(), "track": "PARLAY",
+        "selectionBasis": "EDGE_QUALIFIED" if edge_qualified and not minimum_action else "MINIMUM_ACTION",
+        "stakeUnits": 0.25, "result": "PENDING", "plUnits": None,
+        "legs": legs, "combinedProbability": joint,
+        "fairDecimalOdds": round(1 / joint, 2),
+    })
+    return {"status": "POSTED", "legs": len(legs), "combinedProbability": joint}
+
+
+def product(values):
+    result = 1.0
+    for value in values:
+        result *= value
+    return result
+
+
 def other_tour_coverage(series, day, now):
     return sum(1 for _, milestone in market_page(series)
                if milestone["details"].get("status") in {"not_started", "SCH"}
@@ -309,14 +389,35 @@ def settle(pick):
     pick["plUnits"] = round(pick["stakeUnits"] * (payout / cost - 1), 5)
 
 
+def settle_parlay(parlay):
+    outcomes = []
+    for leg in parlay["legs"]:
+        market = json.loads(get(API + "/markets/" + leg["ticker"]))["market"]
+        if market.get("status") not in {"finalized", "settled"}:
+            return
+        outcomes.append(market.get("result"))
+    if any(result not in {"yes", "no"} for result in outcomes):
+        parlay["result"] = "VOID"
+    else:
+        parlay["result"] = "WIN" if all(result == "yes" for result in outcomes) else "LOSS"
+    parlay["settledAtUTC"] = datetime.now(timezone.utc).isoformat()
+    # No realized P/L is reported: Kalshi does not offer this packaged ticket.
+    parlay["plUnits"] = None
+
+
 def main():
     now = datetime.now(timezone.utc)
     day = now.astimezone(ET).date()
-    ledger = json.loads(OUT.read_text())["picks"] if OUT.exists() else []
-    candidates, sources, unresolved, unmodeled = [], {}, [], {}
+    existing = json.loads(OUT.read_text()) if OUT.exists() else {}
+    ledger = existing.get("picks", [])
+    parlays = existing.get("parlays", [])
+    candidates, sources, unresolved, unresolved_parlays, unmodeled = [], {}, [], [], {}
     with ThreadPoolExecutor(max_workers=6) as pool:
         pending = {pool.submit(settle, p): p["ticker"] for p in ledger
                    if p["result"] == "PENDING" and utc(p["matchStartUTC"]) < now}
+        pending_parlays = {pool.submit(settle_parlay, parlay): parlay["dateET"]
+                           for parlay in parlays if parlay["result"] == "PENDING"
+                           and any(utc(leg["matchStartUTC"]) < now for leg in parlay["legs"])}
         tours = {tour: pool.submit(evaluate, tour, day) for tour in TOURS}
         coverage = {name: pool.submit(other_tour_coverage, series, day, now)
                     for name, series in OTHER_SERIES.items()}
@@ -327,6 +428,7 @@ def main():
             except (OSError, ValueError, KeyError, TypeError) as error:
                 sources[tour] = {"status": "UNAVAILABLE", "reason": str(error)[:160] if isinstance(error, ValueError) else type(error).__name__}
         capture(candidates, ledger, day.isoformat())
+        parlay_status = capture_parlay(candidates, parlays, day.isoformat(), now)
         for name, future in coverage.items():
             try:
                 unmodeled[name] = future.result()
@@ -337,10 +439,17 @@ def main():
                 future.result()
             except (OSError, ValueError, KeyError, TypeError):
                 unresolved.append(ticker)
+        for future, parlay_day in pending_parlays.items():
+            try:
+                future.result()
+            except (OSError, ValueError, KeyError, TypeError):
+                unresolved_parlays.append(parlay_day)
     out = {"dateET": day.isoformat(), "updatedAtUTC": now.isoformat(), "sources": sources,
-           "settlementErrors": unresolved, "unmodeledUpcoming": unmodeled, "picks": ledger}
+           "settlementErrors": unresolved, "parlaySettlementErrors": unresolved_parlays,
+           "parlayStatus": parlay_status, "unmodeledUpcoming": unmodeled,
+           "picks": ledger, "parlays": parlays}
     OUT.write_text(json.dumps(out, indent=2) + "\n")
-    print(json.dumps({k: v for k, v in out.items() if k != "picks"}, indent=2))
+    print(json.dumps({k: v for k, v in out.items() if k not in {"picks", "parlays"}}, indent=2))
 
 
 if __name__ == "__main__":

@@ -141,7 +141,14 @@ table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:10px;bor
 <div id="tennisCoverageStatus" class="sub" style="margin-top:8px"></div>
 <h3 style="margin-top:16px">Today's picks</h3>
 <div class="scroll"><table><thead><tr><th>Track</th><th>Match / start ET</th><th>Selection</th><th>Model win</th><th>YES ask</th><th>Edge after fee</th><th>Risk</th><th>Result</th></tr></thead><tbody id="tennisTodayRows"></tbody></table></div>
-<h3 style="margin-top:16px">Paper performance</h3>
+<h3 style="margin-top:20px">Daily parlay model · paper tracking</h3>
+<p class="sub">One two- or three-match combination from distinct matches, with at least 55% modeled win chance per leg and 30% for the full combo (the combined estimate multiplies leg probabilities, assuming separate matches are independent). Positive-edge legs are preferred; minimum-action combos are marked. A 0.25u paper stake is tracked for results. Kalshi lists each match separately and does not package these legs as one parlay; combo hit rate is diagnostic, with no parlay P/L claimed.</p>
+<div id="tennisParlayStatus" class="notice" aria-live="polite"></div>
+<div class="scroll"><table><thead><tr><th>Date</th><th>Legs</th><th>Combined model chance</th><th>Model fair odds</th><th>Paper risk</th><th>Result</th></tr></thead><tbody id="tennisParlayTodayRows"></tbody></table></div>
+<div id="tennisParlayPerformance" class="grid" style="margin-top:12px"></div>
+<h4 style="margin-top:16px">Recent parlay results</h4>
+<div class="scroll"><table><thead><tr><th>Date</th><th>Legs</th><th>Combined model chance</th><th>Model fair odds</th><th>Paper risk</th><th>Result</th></tr></thead><tbody id="tennisParlayPreviousRows"></tbody></table></div>
+<h3 style="margin-top:20px">Singles paper performance</h3>
 <div id="tennisPerformance" class="grid" style="margin-top:12px"></div>
 <h3 style="margin-top:16px">Recent previous picks</h3>
 <div class="scroll"><table><thead><tr><th>Track</th><th>Match / start ET</th><th>Selection</th><th>Model win</th><th>YES ask</th><th>Edge after fee</th><th>Risk</th><th>Result</th></tr></thead><tbody id="tennisPreviousRows"></tbody></table></div>
@@ -424,6 +431,39 @@ function tennisModelStatus(date,pickCount){
  if(!sources.length||sources.some(source=>source.status!=="OK"))return {state:"INCOMPLETE SCAN",detail:"Today’s tennis scan has incomplete source coverage."};
  return {state:"NO QUALIFYING PICK",detail:"No tennis pick has qualified today."};
 }
+function tennisParlayRows(parlays,empty){
+ const fmt=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+ return parlays.map(p=>{
+  const legs=(p.legs||[]).map(leg=>'<div><strong>'+E(leg.selection)+' to win</strong> <span class="sub">('+E((leg.probability*100).toFixed(1))+'%)</span><div class="sub">'+E(leg.tour+" · "+leg.tournament+" · vs. "+leg.opponent+" · "+fmt.format(new Date(leg.matchStartUTC))+" ET")+'</div></div>').join("");
+  return '<tr><td>'+E(p.dateET)+'</td><td>'+legs+'</td><td>'+E((p.combinedProbability*100).toFixed(1))+'%</td><td>'+E(Number(p.fairDecimalOdds).toFixed(2))+'×</td><td>'+E(p.stakeUnits)+'u</td><td>'+E(p.result)+(p.selectionBasis==="MINIMUM_ACTION"&&p.result==="PENDING"?' · minimum action':'')+'</td></tr>';
+ }).join("")||'<tr><td colspan="6">'+E(empty)+'</td></tr>';
+}
+function renderTennisParlays(date){
+ const parlays=tennisData?.parlays||[];
+ const todays=parlays.filter(p=>p.dateET===date);
+ const previous=parlays.filter(p=>p.dateET<date).slice().reverse().slice(0,20);
+ const status=tennisData?.parlayStatus||{};
+ let detail;
+ if(todays.length)detail="Daily paper combination posted · "+todays[0].legs.length+" legs.";
+ else if(tennisData?.dateET!==date)detail="Waiting for today’s tennis run.";
+ else if(status.status==="NO_COMBO_MET_HIT_RATE")detail="No combo met the minimum combined model hit chance · "+(status.eligibleMatches||0)+" eligible matches.";
+ else detail="No two- or three-match combo is available from the verified pregame slate yet.";
+ tennisParlayStatus.textContent=detail;
+ tennisParlayTodayRows.innerHTML=tennisParlayRows(todays,"No parlay posted today.");
+ tennisParlayPreviousRows.innerHTML=tennisParlayRows(previous,"No prior parlay results recorded.");
+ const settled=parlays.filter(p=>p.result==="WIN"||p.result==="LOSS");
+ const wins=settled.filter(p=>p.result==="WIN").length;
+ const losses=settled.filter(p=>p.result==="LOSS").length;
+ const pending=parlays.filter(p=>p.result==="PENDING").length;
+ const voids=parlays.filter(p=>p.result==="VOID").length;
+ const hit=settled.length?((100*wins/settled.length).toFixed(1)+"%"):"—";
+ tennisParlayPerformance.innerHTML=[
+  ["Settled record",wins+"-"+losses+(voids?" · "+voids+" void":"")],
+  ["Parlay hit rate",hit],
+  ["Pending",String(pending)],
+  ["Paper risk",parlays.reduce((n,p)=>n+(Number(p.stakeUnits)||0),0).toFixed(2)+"u"]
+ ].map(x=>'<div class="metric"><div class="sub">'+E(x[0])+'</div><div class="v">'+E(x[1])+'</div><div class="sub">Parlay model only · no realized ROI</div></div>').join("");
+}
 function renderTennis(){
  const date=todayET();
  const current=tennisData?.dateET===date;
@@ -431,6 +471,7 @@ function renderTennis(){
  const picks=tennisData?.picks||[];
  const todays=picks.filter(p=>p.dateET===date);
  const previous=picks.filter(p=>p.dateET<date).slice().reverse().slice(0,20);
+ renderTennisParlays(date);
  const sources=Object.entries(tennisData?.sources||{}).map(([tour,x])=>tour+" "+(x.status==="OK"?x.matchedMarkets+" matched / "+x.scheduledSingles+" upcoming":x.status.toLowerCase()));
  const attempted=tennisData?.updatedAtUTC?new Date(tennisData.updatedAtUTC).toLocaleString("en-US",{timeZone:"America/New_York"})+" ET":"—";
  tennisFeedStatus.textContent=tennisData?(current?"Last run ":"Last report is from "+tennisData.dateET+" · Last run ")+attempted+" · "+sources.join(" · "):"Tennis model feed unavailable.";
