@@ -1,29 +1,25 @@
 {
   "dateET": "2026-11-20",
-  "updatedAtUTC": "2026-11-20T19:10:06.192641+00:00",
+  "updatedAtUTC": "2026-11-21T01:36:22.384763+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
-      "quoteErrors": 0,
-      "scheduledSingles": 1,
-      "matchedMarkets": 1,
-      "eligibleCandidates": 2,
-      "ratingsDate": "2026-11-15"
+      "scheduledSingles": 0,
+      "matchedMarkets": 0,
+      "eligibleCandidates": 0
     },
     "WTA": {
       "status": "OK",
-      "quoteErrors": 0,
-      "scheduledSingles": 2,
+      "scheduledSingles": 0,
       "matchedMarkets": 0,
-      "eligibleCandidates": 0,
-      "ratingsDate": "2026-11-15"
+      "eligibleCandidates": 0
     }
   },
   "settlementErrors": [],
   "unmodeledUpcoming": {
-    "ATP Challenger": 11,
-    "WTA Challenger": 2,
-    "ITF": 11
+    "ATP Challenger": 4,
+    "WTA Challenger": 0,
+    "ITF": 4
   },
   "picks": [
     {
@@ -133,8 +129,8 @@
       "edge": 0.09528671064137202,
       "rating": 1670.2259669786076,
       "opponentRating": 1722.5337379975826,
-      "result": "PENDING",
-      "plUnits": null,
+      "result": "LOSS",
+      "plUnits": -1.0,
       "ticker": "KXATPMATCH-26NOV17MEDTIA-TIA",
       "eventTicker": "KXATPMATCH-26NOV17MEDTIA",
       "selection": "Frances Tiafoe",
