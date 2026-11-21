@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-20 17:19:26 UTC",
+  "updatedAt": "2026-11-21 11:13:08 UTC",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -95,7 +95,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "Current same-day NFL slate and injuries/weather were checked, but a current authoritative DraftKings Predictions board with exact same-run prices, especially player props, could not be reliably verified. No official or shadow selection was recorded rather than substituting stale/third-party prices.",
       "boardTimestampET": "2026-09-27 11:02 ET",
       "sourceRun": "Scheduled NFL Model run #1"
@@ -119,7 +119,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "1",
-      "officialBankrollUnits": "101",
+      "officialBankrollUnits": null,
       "reason": "Official selection: UNDER 37.5 via NO contract. Strongest robust edge after weather adjustment; MetLife forecast featured sustained wind/rain and gust risk. Executable Kalshi NO ask used, not midpoint.",
       "boardTimestampET": "2026-09-27 12:50 ET",
       "sourceRun": "NFL Kalshi automation run"
@@ -647,7 +647,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "Verified repository board_date_et=2026-09-28; candidate_market_count=0 and source_model_market_count=0. No NBA prices or selections invented.",
       "boardTimestampET": "2026-09-28 10:57 ET",
       "sourceRun": "Daily Basketball Models 2026-09-28 AM"
@@ -719,7 +719,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1.00",
-      "officialBankrollUnits": "100.00",
+      "officialBankrollUnits": null,
       "reason": "Manual rerun after scheduled automation failed to write. Caleb Williams is out; Tyson Bagent only recently cleared concussion protocol. Eagles are 2-0. Weather is benign, so no weather downgrade. PHI -3.5 cleared the conservative edge threshold at the morning Kalshi board price.",
       "boardTimestampET": "2026-09-28 16:32 ET",
       "sourceRun": "Manual NFL rerun"
@@ -767,7 +767,7 @@
       "stakeUnits": "1.00",
       "result": "Loss",
       "plUnits": "-1.00",
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "Chris Sale elite run prevention plus Philadelphia's weak late-season offense; Luzardo/Phillies starter uncertainty adds variance, but calibrated Under probability remains materially above executable 48c NO ask after fees/slippage allowance.",
       "boardTimestampET": "2026-09-29 10:55 ET",
       "sourceRun": "Automation run 2026-09-29"
@@ -815,7 +815,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "Verified repository board_date_et=2026-09-30; candidate_market_count=0 and source_model_market_count=0. NBA preseason begins Oct. 3, so this is a clean no-slate result; no prices invented.",
       "boardTimestampET": "2026-09-30 11:01 ET",
       "sourceRun": "Daily Basketball Models"
@@ -863,7 +863,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "Board is current for Oct. 1, but the only candidates are Miami-Toronto dated Oct. 3. No NBA market belongs to today's slate.",
       "boardTimestampET": "2026-10-01 10:57 ET",
       "sourceRun": "Daily Basketball Models"
@@ -911,7 +911,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "+0.786",
-      "officialBankrollUnits": "100.786",
+      "officialBankrollUnits": null,
       "reason": "Lead-back role strengthened by Rico Dowdle being out; Warren is coming off 127 rushing yards. Robust edge remains above threshold after short-week and variance adjustment.",
       "boardTimestampET": "2026-10-01 10:58 ET",
       "sourceRun": "Automation run 2026-10-01"
@@ -1031,7 +1031,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "Current board verified for 2026-10-02 with 6 candidates, but all belong to Oct. 3-4. No same-day NBA market was eligible.",
       "boardTimestampET": "2026-10-02 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-10-02"
@@ -1079,7 +1079,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.818",
-      "officialBankrollUnits": "100.818",
+      "officialBankrollUnits": null,
       "reason": "Delaware starting QB Nick Minicucci is not expected to play after a knee injury; backup Braden Streeter struggled badly in relief at Virginia. Liberty QB Deshawn Purdie has 7 TD and 0 INT with strong explosive passing efficiency. Weather risk is modest and does not erase the matchup edge. Executable Kalshi YES ask used, not midpoint.",
       "boardTimestampET": "2026-10-02 18:05 ET",
       "sourceRun": "NCAA Football Kalshi Model automation 2026-10-02 FRI"
@@ -1103,7 +1103,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.818",
+      "officialBankrollUnits": null,
       "reason": "Current Kalshi board verified for 2026-10-03 with 220 same-day candidates. No robust edge cleared the conservative threshold after uncertainty, fees, and slippage; no official play forced.",
       "boardTimestampET": "2026-10-03 11:01 ET",
       "sourceRun": "NCAA Football Kalshi Model automation 2026-10-03 SAT"
@@ -1199,7 +1199,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "A: Toronto win YES $0.60 / Miami +1.5 via NO on MIA -1.5 $0.58; B: Over 229.5 YES $0.50; C: no supported same-day player-prop candidate. This is the preseason opener, with unstable rotations/minutes and incomplete role certainty, so no candidate clears the conservative robust-edge threshold after uncertainty, fees and slippage.",
       "boardTimestampET": "2026-10-03 11:03 ET",
       "sourceRun": "Daily Sports Models 2026-10-03"
@@ -1247,7 +1247,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "A: Colorado win YES $0.73; B: Colorado -1.5 YES $0.51; C: Boston-Minnesota Over 6.5 YES $0.46 were the leading market candidates reviewed. Early-season lineup/goaltender uncertainty is substantial and no candidate has enough verified robust edge after goalie uncertainty, fees and slippage to justify an official 1u play.",
       "boardTimestampET": "2026-10-03 11:03 ET",
       "sourceRun": "Daily Sports Models 2026-10-03"
@@ -1295,7 +1295,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "A: Golden State -3.5 YES $0.51 (also -4.5 YES $0.47) is the strongest side lean, but preseason absences/rotation volatility prevent a robust >=5pp edge. B: GSW-LAC UNDER 224.5 (Kalshi: NO on Over 224.5) $0.52 is the best total lean, but preseason pace/minutes uncertainty erases the edge. C: no same-day supported player-prop candidates. Warriors are without Jimmy Butler, Moses Moody and likely Kristaps Porzingis; Clippers also have multiple absences and Bradley Beal is uncertain. No play forced.",
       "boardTimestampET": "2026-10-04 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-04"
@@ -1343,7 +1343,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "A: Florida win YES $0.56 is the strongest game-winner finalist. B: Vegas -1.5 YES $0.50 is the strongest spread finalist. C: VGK-VAN UNDER 6.5 (Kalshi: NO on Over 6.5) $0.55 is the strongest total finalist. This is preseason and verified starting-goaltender/lineup certainty is insufficient for the model's conservative robust-edge bar; goalie uncertainty receives a substantial haircut. No player props considered and no official/shadow forced.",
       "boardTimestampET": "2026-10-04 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-04"
@@ -1367,7 +1367,7 @@
       "stakeUnits": "1.00",
       "result": "Loss",
       "plUnits": "-1.00",
-      "officialBankrollUnits": "99.786",
+      "officialBankrollUnits": null,
       "reason": "Official selection: OVER 29.5 rushing yards (Kalshi YES on 30+). Allen finished with 4 rushing yards on 5 carries; contract lost. Executable YES ask used, not midpoint.",
       "boardTimestampET": "2026-10-04 11:00 ET",
       "sourceRun": "NFL Kalshi automation run"
@@ -1439,7 +1439,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "1.083",
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "Settled: Bijan Robinson rushed for 145 yards. Official #005 won.",
       "boardTimestampET": "2026-10-05 11:00 ET",
       "sourceRun": "NFL Kalshi automation run"
@@ -1535,7 +1535,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "Invalidated after audit: the 2026-10-05 NBA candidate board contained 35 same-day markets (10 game, 10 total, 15 spread). The automation incorrectly inferred zero same-day candidates from feed metadata/schema. No retroactive official or shadow bet is created because the slate is already in progress/complete; model requires a fresh pregame run.",
       "boardTimestampET": "2026-10-05 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-05"
@@ -1583,7 +1583,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "Invalidated after audit: the 2026-10-05 NHL candidate board contained 28 same-day supported markets (8 game, 8 total, 12 spread). The automation incorrectly inferred zero same-day candidates from feed metadata/schema. No retroactive official or shadow bet is created because the slate is already in progress/complete; model requires a fresh pregame run.",
       "boardTimestampET": "2026-10-05 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-05"
@@ -1631,7 +1631,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "Row-level audit found 28 same-day executable candidate rows despite no today-count summary. A: Golden State -3.5, KXNBASPREAD-26OCT06LALGSW-GSW4, YES ask $0.50, BE 50%; model ~52%, robust ~48% after preseason rotation/minutes uncertainty: FAIL. B: Denver-Utah UNDER 230.5 (Kalshi: NO on Over 230.5), KXNBATOTAL-26OCT06DENUTA-231, NO ask $0.51, BE 51%; model ~53%, robust ~49%: FAIL. C: no same-day player-prop rows in authoritative feed. Preseason availability/role volatility is too large for a robust >=5pp edge; no shadow forced.",
       "boardTimestampET": "2026-10-06 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-10-06"
@@ -1679,7 +1679,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "Row-level audit found 61 same-day supported markets. A: Vegas win, KXNHLGAME-26OCT06VGKSEA-VGK, YES ask $0.62, BE 62%; model ~64%, robust ~60% after goaltender/lineup uncertainty: FAIL. B: Minnesota -1.5, KXNHLSPREAD-26OCT06MINBUF-MIN2, YES ask $0.31, BE 31%; model ~34%, robust ~30%: FAIL. C: Utah-New Jersey UNDER 6.5 (Kalshi: NO on Over 6.5), KXNHLTOTAL-26OCT06UTANJ-7, NO ask $0.55, BE 55%; model ~57%, robust ~53%: FAIL. Goaltender uncertainty received a substantial haircut; no supported candidate retained ~5pp robust edge, so no shadow forced.",
       "boardTimestampET": "2026-10-06 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-10-06"
@@ -1727,7 +1727,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "35 same-day markets validated row by row; board_date_et=2026-10-07. Five preseason games verified. Screening A Minnesota -5.5 KXNBASPREAD-26OCT07MININD-MIN6 YES $0.48/BE48%; B Minnesota-Indiana UNDER237.5 (Kalshi NO on Over237.5) KXNBATOTAL-26OCT07MININD-238 NO $0.45/BE45%; C no same-day prop rows. Official and shadow rejection: no reproducible availability/minutes-adjusted probability supports positive raw edge for A/B; do not fabricate probabilities from ask. This is an ANALYSIS PASS with a valid nonempty board, not an empty-board DATA PASS. kalshi/nba-model.json is dated2026-09-27 and contains no probability model; candidate rows are executable markets, not calibrated forecasts. Sources: https://link.nba.com/Schedule-FB1 . Bankroll100u unchanged.",
       "boardTimestampET": "2026-10-07 11:01:45 ET",
       "sourceRun": "Daily Sports Models2026-10-07"
@@ -1775,7 +1775,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "21 same-day supported markets validated row by row; board_date_et=2026-10-07, covering COL-WPG/PIT-WSH/EDM-ANA. Screening A Colorado win KXNHLGAME-26OCT07COLWPG-COL YES $0.64/BE64%; B Colorado-1.5 KXNHLSPREAD-26OCT07COLWPG-COL2 YES $0.42/BE42%; C Edmonton-Anaheim OVER6.5 KXNHLTOTAL-26OCT07EDMANA-7 YES $0.55/BE55%. Official/shadow rejection: confirmed goalie/lineup inputs and reproducible season-strength/xG-adjusted probabilities insufficient; qualitative offense trends alone do not establish positive modeled raw edge. ANALYSIS PASS, not missing-board DATA PASS. Winnipeg official gameday report still says check back for morning lineup; no goalie names or probabilities invented. Sources: https://www.nhl.com/jets/news/topic/jets-news/gameday-avalanche-at-jets-x3708 ; https://frontend.d3.nhle.com/avalanche/news/game-preview-10-07-26 . Bankroll100u unchanged.",
       "boardTimestampET": "2026-10-07 11:01:45 ET",
       "sourceRun": "Daily Sports Models2026-10-07"
@@ -1871,7 +1871,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "42 same-day executable rows validated row by row; board_date_et=2026-10-08. A: Boston -4.5, KXNBASPREAD-26OCT08BOSCLE-BOS5, YES ask $0.49/BE49%. B: Boston-Cleveland UNDER 222.5 (Kalshi NO on Over 222.5), KXNBATOTAL-26OCT08BOSCLE-223, NO ask $0.50/BE50%. C: no supported same-day player-prop rows. Preseason minutes, lineups and role volatility prevent reproducible positive raw probabilities; official and shadow rejected rather than deriving probability from price. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-08 11:03 ET",
       "sourceRun": "Daily Sports Models 2026-10-08"
@@ -1919,7 +1919,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "70 same-day supported rows validated row by row; board_date_et=2026-10-08. A: Carolina win, KXNHLGAME-26OCT08VANCAR-CAR, YES ask $0.76/BE76%; price leaves insufficient robust margin. B: Carolina -1.5, KXNHLSPREAD-26OCT08VANCAR-CAR2, YES $0.55/BE55%; no verified 5pp robust edge. C: VAN-CAR OVER 6.5, KXNHLTOTAL-26OCT08VANCAR-7, YES $0.49/BE49%; diagnostic raw model ~55%, but 6pp small-sample/goalie haircut gives robust ~49%, edge 0pp. Official rejected. Carolina reports Kochetkov likely; Vancouver has allowed 18 goals in four games, but the full slate had 0 of 20 goalies confirmed at review time. Shadow total recorded separately; no player props considered. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-08 11:03 ET",
       "sourceRun": "Daily Sports Models 2026-10-08"
@@ -1991,7 +1991,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "7 same-day executable rows validated row by row; board_date_et=2026-10-09. A: Chicago -4.5, KXNBASPREAD-26OCT09MEMCHI-CHI5, YES ask $0.45/BE45%. B: MEM-CHI UNDER 240.5 (Kalshi NO on Over 240.5), KXNBATOTAL-26OCT09MEMCHI-241, NO ask $0.53/BE53%. C: no supported same-day player-prop rows. Preseason lineups, minutes, usage and blowout risk prevent a reproducible positive raw probability for A/B. Official and shadow rejected; bankroll remains 100u.",
       "boardTimestampET": "2026-10-09 10:55 ET",
       "sourceRun": "Daily Sports Models 2026-10-09"
@@ -2039,7 +2039,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "28 same-day supported rows validated row by row; board_date_et=2026-10-09. A: Washington win, KXNHLGAME-26OCT09NYRWSH-WSH, YES ask $0.56/BE56%; no supported robust edge. B: Washington -1.5, KXNHLSPREAD-26OCT09NYRWSH-WSH2, YES $0.33/BE33%; puck-line variance leaves no robust edge. C: NYR-WSH UNDER 6.5 (Kalshi NO on Over 6.5), KXNHLTOTAL-26OCT09NYRWSH-7, NO ask $0.60/BE60%; diagnostic model 64%, raw +4pp, robust 59% after goalie/early-season haircut, robust edge -1pp. Official rejected; shadow recorded separately. Rangers are 4-1 with a 14-for-16 penalty kill; Shesterkin reported at 1.76 GAA, but starter confirmation remained incomplete. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-09 10:55 ET",
       "sourceRun": "Daily Sports Models 2026-10-09"
@@ -2087,7 +2087,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.818",
+      "officialBankrollUnits": null,
       "reason": "Verified current board: 220 candidates, 49 Friday markets; five FBS matchups. A Iowa State +10.5, Kalshi NO $0.49 (49% BE). B Iowa-Washington Under 41.5, Kalshi NO $0.52 (52% BE). C Florida State-Louisville Over 59.5, Kalshi YES $0.52 (52% BE). No calibrated independent probability supports a sufficiently robust edge after injury and weather uncertainty; official PASS, no shadows. Saturday excluded.",
       "boardTimestampET": "2026-10-09 18:07 ET",
       "sourceRun": "NCAA Football Kalshi Model automation 2026-10-09 FRI"
@@ -2159,7 +2159,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "49 same-day executable rows validated row by row; board_date_et=2026-10-10. A: Golden State -5.5, KXNBASPREAD-26OCT10SACGSW-GSW6, YES ask $0.53/BE53%. B: Detroit-Washington UNDER 224.5 (Kalshi NO on Over 224.5), KXNBATOTAL-26OCT10DETWAS-225, NO ask $0.57/BE57%. C: no supported player-prop rows. Golden State's current rotation remains unsettled and Porzingis has missed camp; preseason starter minutes and lineups remain unverifiable. No reproducible positive raw probability supports an official or shadow selection. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-10 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-10"
@@ -2207,7 +2207,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "92 same-day supported rows validated row by row; board_date_et=2026-10-10. A: Carolina win, KXNHLGAME-26OCT10CARCHI-CAR, YES ask $0.70/BE70%; raw lean ~73%, but road/back-to-back goalie uncertainty leaves robust ~69%, edge -1pp. B: Carolina -1.5, KXNHLSPREAD-26OCT10CARCHI-CAR2, YES $0.48/BE48%; raw ~51%, robust ~46%, edge -2pp. C: PHI-BOS UNDER 6.5 (Kalshi NO on Over 6.5), KXNHLTOTAL-26OCT10PHIBOS-7, NO $0.60/BE60%; raw ~63%, robust ~59%, edge -1pp. Carolina has won three straight and owns a 30.2% power play since Dec. 5, 2025, but begins a weekend back-to-back; broad goalie uncertainty received a substantial haircut. No official or shadow forced; bankroll remains 100u.",
       "boardTimestampET": "2026-10-10 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-10"
@@ -2231,7 +2231,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.818",
+      "officialBankrollUnits": null,
       "reason": "Current Kalshi board validated: board_date_et=2026-10-10, candidate_market_count=220, all 220 rows Saturday-dated (includes FCS rows excluded). A: Nebraska +7.5 (Kalshi NO on Indiana by >7.5), KXNCAAFSPREAD-26OCT10INDNEB-IND8, NO ask $0.47/BE 47%; high wind/heat and Indiana's first road test add uncertainty; external market near Indiana -7.5, no independent robust edge. B: Texas-Oklahoma UNDER 39.5 (Kalshi NO on Over 39.5), KXNCAAFTOTAL-26OCT10TEXOKLA-40, NO ask $0.46/BE 46%; defensive efficiency and slow-scoring offense support a lean, but sportsbook no-vig near 51% and uncalibrated projection cannot establish net edge after uncertainty/fees. C: Georgia +2.5 (Kalshi NO on Alabama by >2.5), KXNCAAFSPREAD-26OCT10UGAALA-ALA3, NO ask $0.50/BE 50%; Georgia offensive injuries, Alabama home field, Hurricane Isaias weather/timing uncertainty. No official or shadow because independent calibrated model probability/positive net edge not verifiable; no prices invented. Prior Friday pass not duplicated.",
       "boardTimestampET": "2026-10-10 11:07 ET",
       "sourceRun": "NCAA Football Kalshi Model automation 2026-10-10 SAT"
@@ -2303,7 +2303,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "21 same-day executable rows validated row by row; board_date_et=2026-10-11. A: Cleveland -5.5, KXNBASPREAD-26OCT11ORLCLE-CLE6, YES ask $0.50/BE50%; raw ~55%, +5pp, robust ~49%, -1pp after preseason rotation/minutes uncertainty. B: ORL-CLE UNDER 229.5 (Kalshi NO on Over 229.5), KXNBATOTAL-26OCT11ORLCLE-230, NO ask $0.54/BE54%; raw ~56%, +2pp, robust ~50%, -4pp. C: no supported player-prop rows. Official pass; diagnostic side shadow recorded separately. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-11 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-10-11"
@@ -2375,7 +2375,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "20 same-day supported rows validated row by row; board_date_et=2026-10-11. A: Washington win, KXNHLGAME-26OCT11SEAWSH-WSH, YES ask $0.66/BE66%; raw ~69%, +3pp, robust ~64%, -2pp with both goalies unconfirmed and Seattle availability uncertainty. B: Washington -1.5, KXNHLSPREAD-26OCT11SEAWSH-WSH2, YES $0.43/BE43%; raw ~46%, +3pp, robust ~40%, -3pp. C: Vancouver-NY Rangers UNDER 6.5 (Kalshi NO on Over 6.5), KXNHLTOTAL-26OCT11VANNYR-7, NO $0.56/BE56%; raw ~60%, +4pp, robust ~54%, -2pp because Shesterkin was injured and Vancouver's Demko is on IR. No official or shadow: every robust edge is nonpositive. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-11 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-10-11"
@@ -2399,7 +2399,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "Historical backfill from NFL Oct. 8 run: 23 same-day candidate markets, board date valid. A Dallas -7.5 YES $0.53 (53% BE); B UNDER 47.5 NO $0.48 (48% BE); C Chris Godwin 4+ receptions YES $0.52 (52% BE). No independent calibrated model probabilities or quote timestamp to support robust net edge; no official or shadow recorded. This is a pass, not a retroactive bet.",
       "boardTimestampET": null,
       "sourceRun": "NFL Kalshi Model Oct 8 run (historical backfill)"
@@ -2423,7 +2423,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "GitHub Kalshi candidate board date 2026-10-11, 220 markets; 214 Sunday-dated, including 21 for PHI-JAC already live (excluded), 193 for 12 pregame Sunday games; 6 Monday rows excluded. All asks valid, but no fetched_at/last quote update timestamp; current executable freshness cannot be verified. Screening only: A NE -3.5 YES KXNFLSPREAD-26OCT11LVNE-NE4 $0.49/49% BE; B HOU-TEN UNDER 37.5 NO KXNFLTOTAL-26OCT11HOUTEN-38 $0.50/50% BE; C Jonathan Taylor 3+ receptions YES KXNFLREC-26OCT11INDPIT-INDJTAYLOR28-3 $0.51/51% BE. Injuries/role/weather introduce material uncertainty; no independent calibrated robust edge or shadow justified. No official wager.",
       "boardTimestampET": "2026-10-11 10:59 ET",
       "sourceRun": "NFL Kalshi Model Oct 11 Sunday run"
@@ -2495,7 +2495,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "35 same-day executable rows validated row by row; board_date_et=2026-10-12. A: Washington -3.5, KXNBASPREAD-26OCT12BKNWAS-WAS4, YES ask $0.48/BE48%; raw ~52%, +4pp, robust ~46%, -2pp after preseason minutes/rotation uncertainty. B: OKC-Atlanta UNDER 223.5 (Kalshi NO on Over 223.5), KXNBATOTAL-26OCT12OKCATL-224, NO ask $0.48/BE48%; raw ~52%, +4pp, robust ~46%, -2pp. C: no supported player-prop rows. Official pass and no shadow: no evidence-supported raw edge survives lineup/minutes uncertainty. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-12 11:02 ET",
       "sourceRun": "Daily Sports Models 2026-10-12"
@@ -2543,7 +2543,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "21 same-day supported rows validated row by row; board_date_et=2026-10-12. A: New Jersey win, KXNHLGAME-26OCT12OTTNJ-NJ, YES ask $0.54/BE54%; raw ~57%, +3pp, robust ~52%, -2pp. B: New Jersey -1.5, KXNHLSPREAD-26OCT12OTTNJ-NJ2, YES $0.33/BE33%; raw ~36%, +3pp, robust ~30%, -3pp. C: Florida-Buffalo UNDER 6.5 (Kalshi NO on Over 6.5), KXNHLTOTAL-26OCT12FLABUF-7, NO $0.59/BE59%; raw ~62%, +3pp, robust ~57%, -2pp after goalie, special-teams and early-season variance. No official or shadow because all robust edges are nonpositive. Only winner/spread/total markets considered; bankroll remains 100u.",
       "boardTimestampET": "2026-10-12 11:02 ET",
       "sourceRun": "Daily Sports Models 2026-10-12"
@@ -2567,7 +2567,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "Board date valid; 23 markets for today's only NFL game. No quote-refresh timestamp. A Rams -3.5 YES ask 0.48; B Under 54.5 NO ask 0.51; C Puka Nacua 8+ receptions YES ask 0.46. No modeled edge or new shadow entries.",
       "boardTimestampET": "2026-10-12 11:34 ET",
       "sourceRun": "NFL Kalshi Model 2026-10-12"
@@ -2639,7 +2639,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "35 same-day executable rows validated row by row; board_date_et=2026-10-13. A: LA Lakers -4.5, KXNBASPREAD-26OCT13GSWLAL-LAL5, YES ask $0.53/BE53%; raw ~56%, +3pp, robust ~49%, -4pp after rest/minutes uncertainty. B: Golden State-LA Lakers UNDER 229.5 (Kalshi NO on Over 229.5), KXNBATOTAL-26OCT13GSWLAL-230, NO ask $0.52/BE52%; raw ~55%, +3pp, robust ~48%, -4pp. C: no supported player-prop rows. Official pass and no shadow: injury/rest designations and preseason rotations prevent a supported positive robust edge. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-13 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-13"
@@ -2687,7 +2687,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "104 same-day supported rows validated row by row; board_date_et=2026-10-13. A: Carolina win, KXNHLGAME-26OCT13WSHCAR-CAR, YES ask $0.60/BE60%; raw ~64%, +4pp, robust ~59%, -1pp after goalie/travel and rivalry variance. B: Carolina -1.5, KXNHLSPREAD-26OCT13WSHCAR-CAR2, YES $0.38/BE38%; raw ~42%, +4pp, robust ~36%, -2pp. C: Boston-San Jose UNDER 6.5 (Kalshi NO on Over 6.5), KXNHLTOTAL-26OCT13BOSSJ-7, NO $0.55/BE55%; raw ~60%, +5pp, robust ~54%, -1pp after goalie and early-season variance. No official: every robust edge is nonpositive. Diagnostic C shadow recorded separately; only winner/spread/total considered. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-13 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-13"
@@ -2783,7 +2783,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "49 same-day executable rows validated row by row; board_date_et=2026-10-14. A: Minnesota -2.5, KXNBASPREAD-26OCT14DETMIN-MIN3, YES ask $0.53/BE53%; raw ~57%, +4pp, robust ~50%, -3pp after volatile preseason minutes. B: Charlotte-Boston UNDER 226.5, KXNBATOTAL-26OCT14CHABOS-227, NO ask $0.55/BE55%; raw ~58%, +3pp, robust ~50%, -5pp. C: no supported player-prop rows. Multiple Charlotte availability questions and nonbinding preseason rotations prevent a supported official or shadow edge. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-14 10:57 ET",
       "sourceRun": "Daily Sports Models 2026-10-14"
@@ -2831,7 +2831,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "14 same-day supported rows validated row by row; board_date_et=2026-10-14. A: Colorado win, KXNHLGAME-26OCT14DALCOL-COL, YES ask $0.57/BE57%; raw ~61%, +4pp, robust ~55%, -2pp. B: Colorado -1.5, KXNHLSPREAD-26OCT14DALCOL-COL2, YES $0.35/BE35%; raw ~39%, +4pp, robust ~32%, -3pp. C: DAL-COL UNDER 6.5 (Kalshi NO on Over 6.5), KXNHLTOTAL-26OCT14DALCOL-7, NO $0.56/BE56%; raw ~60%, +4pp, robust ~53%, -3pp. Both teams are on a back-to-back with backup goalies projected; Cale Makar and Wyatt Johnston availability also clouds team strength. No official or shadow because all robust edges are nonpositive and raw estimates are too uncertainty-sensitive. Only winner/spread/total considered; bankroll remains 100u.",
       "boardTimestampET": "2026-10-14 10:57 ET",
       "sourceRun": "Daily Sports Models 2026-10-14"
@@ -2855,7 +2855,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "DATA PASS: Kalshi board_date_et=2026-10-15, candidate_market_count=23, 23/23 dated Oct 15, all for Seattle @ Denver (8:15 PM ET), executable asks populated. Board contains no quote-refresh/fetched_at timestamp, so current executable price freshness cannot be verified; independent calibrated probabilities and fee/slippage-adjusted robust edges unavailable. A screening: Seattle -2.5 YES KXNFLSPREAD-26OCT15SEADEN-SEA3 $0.51 (51% BE). B: UNDER 40.5 via NO KXNFLTOTAL-26OCT15SEADEN-41 $0.50 (50% BE). C: Jaxon Smith-Njigba 90+ receiving yards YES KXNFLRECYDS-26OCT15SEADEN-SEAJSMITHNJIGBA11-90 $0.55 (55% BE). Denver CB Patrick Surtain II and S Talanoa Hufanga out; SEA LB Drake Thomas and RB Zach Charbonnet out; Riley Moss questionable. No official or shadow selection, no probabilities fabricated; prior 3-2 official record and 100.869u bankroll unchanged.",
       "boardTimestampET": "2026-10-15 10:58 ET",
       "sourceRun": "NFL Kalshi Model 2026-10-15 THUAM"
@@ -2927,7 +2927,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "14 same-day executable rows validated row by row; board_date_et=2026-10-15. A: New York -5.5, KXNBASPREAD-26OCT15TORNYK-NYK6, YES ask $0.51/BE51%; raw ~55%, +4pp, robust ~48%, -3pp after preseason minutes and rotation uncertainty. B: Oklahoma City-Houston UNDER 223.5, KXNBATOTAL-26OCT15OKCHOU-224, NO ask $0.48/BE48%; raw ~52%, +4pp, robust ~45%, -3pp. C: no supported player-prop rows. Current injury designations and nonbinding preseason rotations prevent a supported official or shadow edge. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-15 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-15"
@@ -2975,7 +2975,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "72 same-day supported rows validated row by row; board_date_et=2026-10-15. A: Florida win, KXNHLGAME-26OCT15VANFLA-FLA, YES ask $0.74/BE74%; raw ~77%, +3pp, robust ~72%, -2pp. B: Florida -1.5, KXNHLSPREAD-26OCT15VANFLA-FLA2, YES $0.51/BE51%; raw ~55%, +4pp, robust ~49%, -2pp. C: Philadelphia-Detroit UNDER 6.5 (Kalshi NO on Over 6.5), KXNHLTOTAL-26OCT15PHIDET-7, NO $0.59/BE59%; raw ~63%, +4pp, robust ~57%, -2pp. Goalie confirmations, early-season shot-quality noise and lineup availability erase the apparent margins. No official or shadow because all robust edges are nonpositive. Only winner/spread/total considered; bankroll remains 100u.",
       "boardTimestampET": "2026-10-15 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-15"
@@ -3047,7 +3047,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "84 same-day executable rows validated row by row; board_date_et=2026-10-16. A: Portland -2.5, KXNBASPREAD-26OCT16PORGSW-POR3, YES ask $0.56/BE56%; raw ~60%, +4pp, robust ~52%, -4pp after preseason rotation uncertainty. B: Milwaukee-Indiana UNDER 239.5, KXNBATOTAL-26OCT16MILIND-240, NO ask $0.59/BE59%; raw ~63%, +4pp, robust ~55%, -4pp. C: no supported player-prop rows. Numerous injury/rest designations and nonbinding final-preseason rotations prevent a supported official or shadow edge. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-16 10:57 ET",
       "sourceRun": "Daily Sports Models 2026-10-16"
@@ -3095,7 +3095,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "13 same-day supported rows validated row by row; board_date_et=2026-10-16. A: Colorado win, KXNHLGAME-26OCT16PITCOL-COL, YES ask $0.66/BE66%; raw ~70%, +4pp, robust ~65%, -1pp. B: Colorado -1.5, KXNHLSPREAD-26OCT16PITCOL-COL2, YES $0.44/BE44%; raw ~49%, +5pp, robust ~43%, -1pp. C: Boston-Anaheim UNDER 6.5 (Kalshi NO on Over 6.5), KXNHLTOTAL-26OCT16BOSANA-7, NO $0.54/BE54%; raw ~59%, +5pp, robust ~53%, -1pp. Projected goalies are Jeremy Swayman and Lukas Dostal, but early-season shot-quality and lineup variance erase the official edge. Diagnostic C shadow recorded separately. Only winner/spread/total considered; bankroll remains 100u.",
       "boardTimestampET": "2026-10-16 10:57 ET",
       "sourceRun": "Daily Sports Models 2026-10-16"
@@ -3143,7 +3143,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.818",
+      "officialBankrollUnits": null,
       "reason": "Current board verified: 220 candidates; 27 eligible markets from 3 Friday FBS games. A Memphis -7.5 YES $0.45; B Washington-Purdue Over 50.5 YES $0.50; C Coastal Carolina win YES $0.49. Unconfirmed injury and weather impacts, missing calibrated model probabilities; no official or shadow bets. Saturday excluded.",
       "boardTimestampET": "2026-10-16 18:09 ET",
       "sourceRun": "NCAA Football Kalshi Model 2026-10-16 FRI"
@@ -3167,7 +3167,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "93.472",
+      "officialBankrollUnits": null,
       "reason": "8 same-day executable rows validated row by row; board_date_et=2026-10-17. A: UNDER 6.5 runs (Kalshi: NO on 7+), KXMLBTOTAL-26OCT172000TBCLE-7, NO ask $0.50/BE 50%; raw 58%, +8pp, robust 52%, +2pp after postseason run environment, rain-delay effects, bullpen sequencing and fee/slippage uncertainty. B: Tampa Bay moneyline, KXMLBGAME-26OCT172000TBCLE-TB, YES ask $0.53/BE 53%; raw 55%, +2pp, robust 50%, -3pp. C: no same-day pitcher K/outs rows in feed. Official threshold not met; bankroll unchanged. Yesterday's MLB-SHADOW-040 remains Pending because Game 4 was postponed to Oct. 17; Nick Martinez did not pitch.",
       "boardTimestampET": "2026-10-17 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-17"
@@ -3215,7 +3215,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-17 but row-level audit found zero same-day candidate rows. At least one preseason game exists today (Toronto at Detroit), so this is a DATA PASS, not a no-slate pass. A/B/C unavailable; no executable yes_ask/no_ask could be validated. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-17 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-17"
@@ -3239,7 +3239,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.282",
+      "officialBankrollUnits": null,
       "reason": "19 same-day executable rows validated row by row; board_date_et=2026-10-17. A: Golden State moneyline, KXWNBAGAME-26OCT17ATLGS-GS, YES ask $0.57/BE 57%; raw 61%, +4pp, robust 55%, -2pp with Allisha Gray day-to-day uncertainty and Finals variance. B: UNDER 155.5 points, KXWNBATOTAL-26OCT17ATLGS-156, NO ask $0.53/BE 53%; raw 60%, +7pp, robust 55%, +2pp. C: Gabby Williams 4+ assists, KXWNBAAST-26OCT17ATLGS-GSGWILLIAMS1-4, YES ask $0.41/BE 41%; raw 46%, +5pp, robust 40%, -1pp. No candidate clears the conservative official bar; bankroll unchanged.",
       "boardTimestampET": "2026-10-17 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-17"
@@ -3287,7 +3287,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "95 same-day executable winner/spread/total rows validated row by row; board_date_et=2026-10-17. A: Vegas moneyline, KXNHLGAME-26OCT17PITVGK-VGK, YES ask $0.67/BE 67%; raw 72%, +5pp, robust 68%, +1pp with projected-goalie uncertainty. B: Vegas -1.5, KXNHLSPREAD-26OCT17PITVGK-VGK2, YES ask $0.45/BE 45%; raw 49%, +4pp, robust 43%, -2pp. C: Ottawa-Philadelphia OVER 6.5, KXNHLTOTAL-26OCT17OTTPHI-7, YES ask $0.39/BE 39%; raw 43%, +4pp, robust 37%, -2pp. No robust ~5pp edge after goalie, lineup, travel and fee/slippage adjustments; bankroll remains 100u.",
       "boardTimestampET": "2026-10-17 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-17"
@@ -3335,7 +3335,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.818",
+      "officialBankrollUnits": null,
       "reason": "Validated Kalshi board_date_et=2026-10-17, candidate_market_count=220, 220 active same-day rows across game/spread/total/team-total before excluding FCS. Saturday FBS only; Friday not duplicated. A Ohio State -3.5, KXNCAAFSPREAD-26OCT17OSUIND-OSU4, YES ask $0.44/BE44%; market consensus Ohio State -3.5, but Indiana defensive pressure, Ohio State OL/WR injuries, conflicting independent power ratings prevent calibrated robust edge. B Penn State-Michigan UNDER 43.5 (Kalshi NO on 44+), KXNCAAFTOTAL-26OCT17PSUMICH-44, NO ask $0.52/BE52%; low-scoring tendencies and Michigan rest advantage, but turnover/pace volatility and external total ~42.5 do not prove fee-adjusted edge. C Mississippi State UNDER 19.5 team points (Kalshi NO on 20+), KXNCAAFTEAMTOTAL-26OCT17MSSTLSU-MSST20, NO ask $0.53/BE53%; QB Kamario Taylor and RB Fluff Bothwell doubtful, but replacement usage and game script remain uncertain. No independent calibrated model probabilities; model % and edge blank. No official or shadow; no invented prices; bankroll unchanged. Board lacks explicit quote capture timestamp.",
       "boardTimestampET": "2026-10-17 11:05 ET",
       "sourceRun": "NCAA Football Kalshi Model 2026-10-17 SAT"
@@ -3359,7 +3359,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "93.472",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-18. Row-level audit found two same-day rows, both Nick Martinez pitcher props: 3+ strikeouts at YES $0.45 and 12+ outs at YES $0.54. Martinez threw 79 pitches and 5.1 innings on Oct. 17, while Drew Rasmussen and Parker Messick are the confirmed Game 5 starters. A/B have no total, winner or spread rows; C rows fail workload/participation validation. No executable candidate can be responsibly modeled; bankroll unchanged.",
       "boardTimestampET": "2026-10-18 10:57 ET",
       "sourceRun": "Daily Sports Models 2026-10-18"
@@ -3383,7 +3383,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-18 and row-level audit found zero same-day candidates. The preseason has ended and the regular season opens Oct. 20, so A/B/C are not applicable. Clean no-current-slate pass; bankroll remains 100u.",
       "boardTimestampET": "2026-10-18 10:57 ET",
       "sourceRun": "Daily Sports Models 2026-10-18"
@@ -3407,7 +3407,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.282",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-18 and row-level audit found zero same-day candidates. Game 1 was played Oct. 17 and Game 2 is Oct. 19, so A/B/C are not applicable. Clean no-current-slate pass; official bankroll remains 100.282u.",
       "boardTimestampET": "2026-10-18 10:57 ET",
       "sourceRun": "Daily Sports Models 2026-10-18"
@@ -3431,7 +3431,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "14 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-18. A: Carolina moneyline, KXNHLGAME-26OCT18CARCGY-CAR, YES ask $0.67/BE67%; raw 73%, +6pp, robust 68%, +1pp. B: Carolina -1.5, KXNHLSPREAD-26OCT18CARCGY-CAR2, YES ask $0.44/BE44%; raw 50%, +6pp, robust 44%, 0pp. C: Columbus-Minnesota UNDER 6.5, KXNHLTOTAL-26OCT18CBJMIN-7, NO ask $0.53/BE53%; raw 58%, +5pp, robust 52%, -1pp. Carolina's seven-game win streak and Calgary's 1-6 start support the raw lean, but travel/back-to-back, Brandon Bussi projection and injuries erase the official margin. Bankroll remains 100u.",
       "boardTimestampET": "2026-10-18 10:57 ET",
       "sourceRun": "Daily Sports Models 2026-10-18"
@@ -3479,7 +3479,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "GitHub main kalshi/nfl-candidates.json: board_date_et=2026-10-18; candidate_market_count=216 matches 216 actual rows. 207 Oct 18 rows across 12 games; 23 HOU-JAC London rows excluded because game in progress; 184 remaining rows across 11 pregame Sunday matchups; 9 Oct 19 rows excluded. All 216 rows have valid YES/NO asks but no board quote capture/refresh timestamp, so executable price freshness cannot be verified. A: Indianapolis -6.5 via YES KXNFLSPREAD-26OCT18TENIND-IND7 $0.51/51% BE. B: Carolina-Philadelphia UNDER 39.5 via NO KXNFLTOTAL-26OCT18CARPHI-40 $0.52/52% BE. C: Jonathan Taylor 90+ rushing yards YES KXNFLRSHYDS-26OCT18TENIND-INDJTAYLOR28-90 $0.48/48% BE. Eagles QB Jalen Hurts and RB Saquon Barkley ruled out; Tanner McKee starts. Titans 0-5 and average 11.6 points/game; Taylor averaging 79.6 rush yards on 20.2 attempts/game; Titans allow 114 rush yards/game. Matchup/weather/role uncertainty and lack of independently calibrated fee-adjusted probabilities prevent verified ~5pp robust edge. A/B/C are screening only, no official or shadow. Existing 3-2, +0.869u official bankroll 100.869u unchanged. Do not promote shadows retroactively.",
       "boardTimestampET": "2026-10-18 11:05 ET",
       "sourceRun": "NFL Kalshi Model 2026-10-18 SUNAM"
@@ -3503,7 +3503,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "DATA PASS: authoritative GitHub main kalshi/nfl-candidates.json board_date_et=2026-10-19; candidate_market_count=23 matches 23 rows; 23/23 active markets dated Oct 19 and covering only Washington Commanders @ San Francisco 49ers (8:15 PM ET). Valid YES/NO asks are present, but no board fetched_at/quote-refresh timestamp; executable price freshness cannot be independently verified. Screening only, NOT picks: A SF -7.5 YES KXNFLSPREAD-26OCT19WASSF-SF8 yes_ask $0.50 (50% break-even); B UNDER 52.5 via NO on Over 52.5 KXNFLTOTAL-26OCT19WASSF-53 no_ask $0.52 (52% break-even); C Christian McCaffrey 60+ rushing yards YES KXNFLRSHYDS-26OCT19WASSF-SFCMCCAFFREY23-60 yes_ask $0.52 (52% break-even). SF 5-0, WAS 1-3-1; SF Nick Bosa and Deebo Samuel out, Mike Evans/Christian Kirk questionable; WAS Jacory Croskey-Merritt out, Stefon Diggs questionable. McCaffrey 286 rushing yards on 61 carries through five games (60+ in 3/5); weather mostly dry with some wind. No independent calibrated model probabilities or robust after-cost edge established. No new official or shadow entries; official 3-2, +0.869u, bankroll 100.869u unchanged. No retroactive shadow promotions.",
       "boardTimestampET": "2026-10-19 11:02 ET",
       "sourceRun": "NFL Kalshi Model 2026-10-19 MONAM"
@@ -3527,7 +3527,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "92.472",
+      "officialBankrollUnits": null,
       "reason": "Final: Tampa Bay 7, Cleveland 3. Freddy Peralta recorded three strikeouts, so the 5+ strikeout official lost. P/L -1.000u; official bankroll 92.472u.",
       "boardTimestampET": "2026-10-20 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-19"
@@ -3575,7 +3575,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-19 and row-level audit found zero same-day candidates. The regular season opens Oct. 20, so A/B/C are not applicable. Clean no-current-slate pass; no shadows; bankroll remains 100u.",
       "boardTimestampET": "2026-10-19 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-10-19"
@@ -3599,7 +3599,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "0.961",
-      "officialBankrollUnits": "101.243",
+      "officialBankrollUnits": null,
       "reason": "Final: Atlanta 79, Golden State 65 (144 points). UNDER 152.5 won; P/L +0.961u at $0.51 risk price. Official bankroll 101.243u.",
       "boardTimestampET": "2026-10-20 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-19"
@@ -3647,7 +3647,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "28 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-19. A: Utah moneyline, KXNHLGAME-26OCT19PITUTA-UTA, YES ask $0.63/BE63%; raw 68%, +5pp, robust 63%, 0pp. B: Utah -1.5, KXNHLSPREAD-26OCT19PITUTA-UTA2, YES ask $0.42/BE42%; raw 47%, +5pp, robust 41%, -1pp. C: Pittsburgh-Utah UNDER 6.5, KXNHLTOTAL-26OCT19PITUTA-7, NO ask $0.46/BE46%; raw 56%, +10pp, robust 50%, +4pp. Pittsburgh is 0-3 on its trip with 10 goals in five games; Utah has strong expected-goals suppression, but all eight slate goalies were projected rather than confirmed and projected Silovs/Vejmelka save rates increase variance. No robust ~5pp edge after goalie, lineup, travel, special-teams and fee/slippage adjustments; bankroll remains 100u.",
       "boardTimestampET": "2026-10-19 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-10-19"
@@ -3695,7 +3695,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "92.472",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-20; row-level audit found zero same-day markets. Tampa Bay clinched the ALCS on Oct. 19 and World Series Game 1 is Oct. 23, so A/B/C are not applicable. Clean no-current-slate pass. Official record 1-8, -7.528u; bankroll 92.472u. Settled shadows 7-4, +2.975u.",
       "boardTimestampET": "2026-10-20 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-20"
@@ -3719,7 +3719,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "66 same-day rows validated row by row; board_date_et=2026-10-20. A: New York -4.5, KXNBASPREAD-26OCT20PHINYK-NYK5, YES ask $0.51/BE51%; raw 58%, +7pp, robust 53%, +2pp. B: Philadelphia-New York OVER 230.5, KXNBATOTAL-26OCT20PHINYK-231, YES ask $0.55/BE55%; raw 58%, +3pp, robust 52%, -3pp. C: Cade Cunningham 25+ points, KXNBAPTS-26OCT20BOSDET-DETCCUNNINGHAM2-25, YES ask $0.49/BE49%; raw 55%, +6pp, robust 50%, +1pp. New rosters, first-game minutes, Philadelphia chemistry/depth injuries and Josh Hart availability reduce confidence. No robust ~5pp official edge; bankroll remains 100u.",
       "boardTimestampET": "2026-10-20 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-20"
@@ -3767,7 +3767,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "101.243",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-20; row-level audit found zero same-day markets. Game 2 was played Oct. 19 and Game 3 is Oct. 21, so A/B/C are not applicable. Clean no-current-slate pass. Official record 2-0, +1.243u; bankroll 101.243u. Settled shadows 1-1, -0.113u.",
       "boardTimestampET": "2026-10-20 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-20"
@@ -3791,7 +3791,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "77 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-20. A: Carolina moneyline, KXNHLGAME-26OCT20CARVAN-CAR, YES ask $0.74/BE74%; raw 77%, +3pp, robust 73%, -1pp. B: Carolina -1.5, KXNHLSPREAD-26OCT20CARVAN-CAR2, YES ask $0.53/BE53%; raw 57%, +4pp, robust 51%, -2pp. C: Colorado-New Jersey OVER 6.5, KXNHLTOTAL-26OCT20COLNJ-7, YES ask $0.49/BE49%; raw 55%, +6pp, robust 50%, +1pp. Colorado is on a road back-to-back with a short bench and Scott Wedgewood expected; New Jersey is rested but Jake Allen's early goals-against profile adds total variance. No robust ~5pp edge after goalie, lineup, rest/travel, special teams and fee/slippage adjustments; bankroll remains 100u.",
       "boardTimestampET": "2026-10-20 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-20"
@@ -3839,7 +3839,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "92.472",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-21; row-level audit found zero same-day markets. The World Series begins Oct. 23, so A/B/C are not applicable. Clean no-current-slate pass. Official record 1-8, -7.528u; bankroll 92.472u. Settled shadows 7-4, +2.975u.",
       "boardTimestampET": "2026-10-21 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-21"
@@ -3863,7 +3863,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "204 same-day rows validated row by row; board_date_et=2026-10-21. A: Orlando -3.5, KXNBASPREAD-26OCT21ATLORL-ORL4, YES ask $0.46/BE46%; raw 53%, +7pp, robust 49%, +3pp. B: Atlanta-Orlando UNDER 235.5, KXNBATOTAL-26OCT21ATLORL-236, NO ask $0.53/BE53%; raw 57%, +4pp, robust 51%, -2pp. C: Kevin Durant 25+ points, KXNBAPTS-26OCT21DALHOU-HOUKDURANT-25, YES ask $0.46/BE46%; raw 55%, +9pp, robust 50%, +4pp. Franz Wagner and other Orlando availability questions, Houston's planned deep early-season rotation, first-game minutes and fee/slippage uncertainty leave no robust ~5pp official edge; bankroll remains 100u. Settled shadows 1-1, 0.000u.",
       "boardTimestampET": "2026-10-21 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-21"
@@ -3911,7 +3911,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "100.243",
+      "officialBankrollUnits": null,
       "reason": "Final: Atlanta 97, Golden State 71 (168 points). UNDER 152.5 lost; official P/L -1.000u and bankroll 100.243u.",
       "boardTimestampET": "2026-10-22 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-21"
@@ -3959,7 +3959,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "14 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-21. A: Buffalo moneyline, KXNHLGAME-26OCT21PHIBUF-BUF, YES ask $0.64/BE64%; raw 68%, +4pp, robust 62%, -2pp. B: Buffalo -1.5, KXNHLSPREAD-26OCT21PHIBUF-BUF2, YES ask $0.41/BE41%; raw 46%, +5pp, robust 40%, -1pp. C: Philadelphia-Buffalo OVER 5.5, KXNHLTOTAL-26OCT21PHIBUF-6, YES ask $0.56/BE56%; raw 62%, +6pp, robust 56%, 0pp. Alex Lyon's shoulder setback and projected Dan Vladar add scoring upside, but Travis Konecny's IR absence, goalie confirmation risk and short early-season samples erase the official edge. No robust ~5pp edge; bankroll remains 100u. Settled shadows 5-3, +1.093u.",
       "boardTimestampET": "2026-10-21 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-21"
@@ -4007,7 +4007,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "Board 2026-10-22: 23 valid markets, full slate. No quote-refresh timestamp; no verified calibrated edge. A Chicago -2.5 YES $0.55; B Under 50.5 NO $0.49; C Swift 3+ receptions YES $0.55. Screening only; no official or shadow.",
       "boardTimestampET": "2026-10-22 11:00 ET",
       "sourceRun": "NFL Kalshi Model 2026-10-22"
@@ -4031,7 +4031,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "1.273",
-      "officialBankrollUnits": "101.273",
+      "officialBankrollUnits": null,
       "reason": "Final: Philadelphia 114, Cleveland 106. Tyrese Maxey scored 32 points, so 25+ won; official P/L +1.273u at $0.44 risk price and bankroll 101.273u.",
       "boardTimestampET": "2026-10-23 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-22"
@@ -4079,7 +4079,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.243",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-22; row-level audit found zero same-day markets and seven future-game rows were excluded. Game 3 was played Oct. 21 and Game 4 is Oct. 24, so A/B/C are not applicable. Clean no-current-slate pass. Official record 2-1, +0.243u; bankroll 100.243u. Settled shadows 2-1, +0.970u.",
       "boardTimestampET": "2026-10-22 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-22"
@@ -4103,7 +4103,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "83 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-22. A: New Jersey moneyline, KXNHLGAME-26OCT22ANANJ-NJ, YES ask $0.67/BE67%; raw 72%, +5pp, robust 68%, +1pp. B: New Jersey -1.5, KXNHLSPREAD-26OCT22ANANJ-NJ2, YES ask $0.44/BE44%; raw 52%, +8pp, robust 46%, +2pp. C: Anaheim-New Jersey UNDER 6.5, KXNHLTOTAL-26OCT22ANANJ-7, NO ask $0.49/BE49%; raw 55%, +6pp, robust 49%, 0pp. Anaheim has lost four straight, is on the fourth game of an Eastern road trip and is missing important forwards, while New Jersey has the travel and possession edge. Goalie confirmation and short early-season samples leave no robust ~5pp official edge. Bankroll remains 100u; settled shadows 5-4, +0.093u.",
       "boardTimestampET": "2026-10-22 10:59 ET",
       "sourceRun": "Daily Sports Models 2026-10-22"
@@ -4151,7 +4151,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "92.472",
+      "officialBankrollUnits": null,
       "reason": "17 same-day market rows validated row by row; board_date_et=2026-10-23. A: UNDER 6.5 runs, KXMLBTOTAL-26OCT232000TBMIL-7, NO ask $0.50/BE50%; raw 58%, +8pp, robust 53%, +3pp. B: Milwaukee moneyline, KXMLBGAME-26OCT232000TBMIL-MIL, YES ask $0.63/BE63%; raw 67%, +4pp, robust 63%, 0pp. C: Jacob Misiorowski UNDER 17 outs, KXMLBOUTS-26OCT232000TBMIL-MILJMISIOROWSKI32-17, NO ask $0.54/BE54%; raw 64%, +10pp, robust 57%, +3pp. Misiorowski led MLB with a 1.80 ERA and 252 strikeouts but failed to complete five innings in his first two postseason starts; Nick Martinez is Tampa Bay's confirmed starter. No pitcher prop reached the required 7pp robust edge, and the broader total also remained below threshold. Bankroll 92.472u.",
       "boardTimestampET": "2026-10-23 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-23"
@@ -4199,7 +4199,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "1.439",
-      "officialBankrollUnits": "102.712",
+      "officialBankrollUnits": null,
       "reason": "Final: Chicago 132, Milwaukee 125. Tyler Herro scored 34 points, so 25+ won; official P/L +1.439u at $0.41 risk price and bankroll 102.712u.",
       "boardTimestampET": "2026-10-24 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-10-23"
@@ -4247,7 +4247,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.243",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-23; row-level audit found zero same-day markets and seven Game 4 rows dated Oct. 24 were excluded. A/B/C are not applicable. Clean no-current-slate pass. Official record 2-1, +0.243u; bankroll 100.243u. Settled shadows 2-1, +0.970u.",
       "boardTimestampET": "2026-10-23 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-23"
@@ -4271,7 +4271,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "14 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-23. A: Colorado moneyline, KXNHLGAME-26OCT23TBCOL-COL, YES ask $0.54/BE54%; raw 59%, +5pp, robust 55%, +1pp. B: Colorado -1.5, KXNHLSPREAD-26OCT23TBCOL-COL2, YES ask $0.33/BE33%; raw 39%, +6pp, robust 33%, 0pp. C: Montreal-Chicago UNDER 6.5, KXNHLTOTAL-26OCT23MTLCHI-7, NO ask $0.53/BE53%; raw 59%, +6pp, robust 53%, 0pp. Montreal is without leading scorer and Selke winner Nick Suzuki and starting goalie Samuel Montembeault; the offensive downgrade supports the under, but backup-goalie variance offsets it. No robust ~5pp official edge; bankroll 100u. Settled shadows 6-4, +1.366u.",
       "boardTimestampET": "2026-10-23 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-23"
@@ -4319,7 +4319,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.818",
+      "officialBankrollUnits": null,
       "reason": "v2.0 verified board_date_et=2026-10-23; 220 candidates, 45 Friday FBS markets across 5 games; FCS and Saturday excluded. A NC State -7.5 YES $0.50, raw model 55% (+5pp gross; +1.5pp net after estimated 1.5pp friction and 2pp uncertainty). B Army-Tulsa OVER 52.5 YES $0.52, raw model 60% (+8pp gross; +3.5pp net after 1.5pp friction and 3pp uncertainty). Both SHADOW; C no further qualifying market. Probability approximations from independent projection ensembles with assumed football scoring variance, not proven calibrated; no official B+ +5pp net edge. Board lacks quote capture timestamp; asks are board snapshots. No Saturday official picks.",
       "boardTimestampET": "2026-10-23 18:03 ET",
       "sourceRun": "NCAA Football Kalshi Model 2026-10-23 FRI v2.0"
@@ -4391,7 +4391,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "92.472",
+      "officialBankrollUnits": null,
       "reason": "16 same-day market rows validated row by row; board_date_et=2026-10-24. A: OVER 6.5 runs, KXMLBTOTAL-26OCT242000TBMIL-7, YES ask $0.50/BE50%; raw 58%, +8pp, robust 53%, +3pp. B: Tampa Bay moneyline, KXMLBGAME-26OCT242000TBMIL-TB, YES ask $0.47/BE47%; raw 52%, +5pp, robust 48%, +1pp. C: Logan Henderson UNDER 16 outs, KXMLBOUTS-26OCT242000TBMIL-MILLHENDERSON43-16, NO ask $0.67/BE67%; raw 72%, +5pp, robust 67%, 0pp. Rasmussen is rested and owns a 1.29 postseason ERA; Henderson has allowed three earned runs in nine postseason innings with five walks after returning from a back injury. No MLB candidate reached the required 7pp robust edge; pitcher props also failed the 10pp raw/7pp robust bar. Official record 1-8, -7.528u; bankroll 92.472u.",
       "boardTimestampET": "2026-10-24 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-10-24"
@@ -4439,7 +4439,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "102.712",
+      "officialBankrollUnits": null,
       "reason": "159 same-day rows validated row by row; board_date_et=2026-10-24. A: Houston moneyline, KXNBAGAME-26OCT24HOUATL-HOU, YES ask $0.48/BE48%; raw 54%, +6pp, robust 50%, +2pp. B: Miami-Charlotte UNDER 230.5, KXNBATOTAL-26OCT24MIACHA-231, NO ask $0.53/BE53%; raw 57%, +4pp, robust 53%, 0pp. C: Kevin Durant 25+ points, KXNBAPTS-26OCT24HOUATL-HOUKDURANT7-25, YES ask $0.47/BE47%; raw 55%, +8pp, robust 50%, +3pp. No candidate retained ~5pp after fees/slippage, role, injury and early-season calibration uncertainty. Official record 2-0, +2.712u; bankroll 102.712u.",
       "boardTimestampET": "2026-10-24 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-10-24"
@@ -4487,7 +4487,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.243",
+      "officialBankrollUnits": null,
       "reason": "19 same-day rows validated row by row; board_date_et=2026-10-24. A: Atlanta -3.5, KXWNBASPREAD-26OCT24GSATL-ATL4, YES ask $0.56/BE56%; raw 63%, +7pp, robust 59%, +3pp. B: UNDER 155.5, KXWNBATOTAL-26OCT24GSATL-156, NO ask $0.57/BE57%; raw 61%, +4pp, robust 57%, 0pp. C: Angel Reese 20+ points, KXWNBAPTS-26OCT24GSATL-ATLAREESE5-20, YES ask $0.34/BE34%; raw 43%, +9pp, robust 38%, +4pp. Atlanta's turnover pressure and Reese's three straight Finals double-doubles support the raw estimates, but no candidate retained the conservative official threshold after role, pace and fee uncertainty. Official record 2-1, +0.243u; bankroll 100.243u.",
       "boardTimestampET": "2026-10-24 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-10-24"
@@ -4535,7 +4535,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "82 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-24. A: Boston moneyline, KXNHLGAME-26OCT24SJBOS-BOS, YES ask $0.65/BE65%; raw 70%, +5pp, robust 66%, +1pp. B: Boston -1.5, KXNHLSPREAD-26OCT24SJBOS-BOS2, YES ask $0.43/BE43%; raw 49%, +6pp, robust 43%, 0pp. C: Vegas-Columbus UNDER 6.5, KXNHLTOTAL-26OCT24VGKCBJ-7, NO ask $0.56/BE56%; raw 61%, +5pp, robust 56%, 0pp. Current goalie listings remained substantially projected rather than uniformly confirmed; lineup, travel and early-season shot-quality uncertainty eliminated the robust edge. Official record 0-0; bankroll 100u.",
       "boardTimestampET": "2026-10-24 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-10-24"
@@ -4583,7 +4583,7 @@
       "stakeUnits": "1.00",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "99.818",
+      "officialBankrollUnits": null,
       "reason": "OFFICIAL v2.0; 1.00u hypothetical stake. Independent pregame scoring projections Tennessee ~24–30 points, blended mean ~27; assumed 11.5-point team-scoring SD supports modeled 58.5% chance of 25+ points. $0.46 executable YES ask/46% break-even; +12.5pp gross edge; +6.5pp net after 1.5pp estimated fees/slippage and 4.5pp injury, model, scoring variance and lower-volume reserve. Tennessee offense 33.4 PPG/217.1 rush yds; South Carolina allows 25.5 PPG. SEC Oct 23 injury report: Tennessee six out; South Carolina five out, RB Jawarn Howell doubtful; neither starting QB listed out. South Carolina home/extra rest, Tennessee QB Faizon Brandon youth, and market pricing are risks. Columbia mild/clear. Snapshot lacks quote capture timestamp; not independently live executable. No actual bet placed. SETTLED 2026-10-30: Tennessee scored 24 at South Carolina (lost 27-24) on Oct 24; OVER 24.5 lost, official P/L -1.000u, official bankroll 99.818u. https://www.foxsports.com/college-football/tennessee-volunteers-vs-south-carolina-gamecocks-oct-24-2026-game-boxscore-43798",
       "boardTimestampET": "2026-10-24 11:06 ET",
       "sourceRun": "NCAA Football Kalshi Model 2026-10-24 SAT v2.0"
@@ -4655,7 +4655,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "92.472",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-25; row-level audit found zero October 25 markets. All 18 candidate rows belong to future games, with World Series Game 3 scheduled for Monday. A/B/C not applicable. Official record 1-8, -7.528u; bankroll 92.472u. Settled shadows 9-4, +4.975u.",
       "boardTimestampET": "2026-10-25 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-10-25"
@@ -4679,7 +4679,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "1.041",
-      "officialBankrollUnits": "103.753",
+      "officialBankrollUnits": null,
       "reason": "Raw model 59% vs executable YES ask $0.49 = +10pp. Robust model 54% = +5pp after fees/slippage, early-season calibration and blowout/minutes uncertainty. Orlando is without Paolo Banchero and has allowed 123.5 points per game through two losses; New York is projected to respond at home after an 0-2 start. Towns retains a stable primary scoring and interior role. Official 1.00u paper risk; bankroll shown pre-settlement. Settled Oct 26: Towns scored 22 in New York's 111-102 loss to Orlando; official record 3-0, +3.753u, bankroll 103.753u.",
       "boardTimestampET": "2026-10-25 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-10-25"
@@ -4727,7 +4727,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.243",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-25; row-level audit found zero October 25 markets and seven future Game 5 rows were excluded. Game 5 is Monday after Golden State tied the Finals 2-2. A/B/C not applicable. Official record 2-1, +0.243u; bankroll 100.243u. Settled shadows 2-2, -0.030u.",
       "boardTimestampET": "2026-10-25 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-10-25"
@@ -4751,7 +4751,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "33 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-25. A: Dallas moneyline, KXNHLGAME-26OCT25NYIDAL-DAL, YES ask $0.63/BE63%; raw 69%, +6pp, robust 65%, +2pp. B: Dallas -1.5, KXNHLSPREAD-26OCT25NYIDAL-DAL2, YES ask $0.40/BE40%; raw 48%, +8pp, robust 42%, +2pp. C: Colorado-Nashville UNDER 6.5, KXNHLTOTAL-26OCT25COLNSH-7, NO ask $0.49/BE49%; raw 56%, +7pp, robust 50%, +1pp. Expected goalies include Sorokin/Oettinger and Blackwood/Annunen, but rest, travel and early-season shot-quality uncertainty leave no robust ~5pp edge. Official record 0-0; bankroll 100u.",
       "boardTimestampET": "2026-10-25 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-10-25"
@@ -4799,7 +4799,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "DATA PASS. GitHub vault214/dk-mlb-feed main kalshi/nfl-candidates.json board_date_et=2026-10-25, candidate_market_count=216 equals 216 rows. 207 Oct 25 active markets across all 12 Sunday games; 9 Oct 26 Monday markets excluded. Paris PIT-NO 9:30 AM ET already underway at 11:01 ET; exclude its 23 rows from new selections, leaving 184 pregame Sunday markets across 11 games. All same-day YES/NO asks numeric and in (0,1), but no quote-capture/refresh timestamp; open_time/close_time are NOT price freshness. Screening ONLY (not bets): A Atlanta +2.5 via NO on San Francisco -2.5, KXNFLSPREAD-26OCT25SFATL-SF3, no_ask $0.49 / BE 49%; SF on short rest/travel, WR Evans/Samuel and DE Bosa out, ATL home; no robust edge validated. B Green Bay-Detroit UNDER 55.5 via NO on over 55.5, KXNFLTOTAL-26OCT25GBDET-56, no_ask $0.51 / BE 51%; DET offense productive, GB Josh Jacobs activated, indoor game, high variance. C Bijan Robinson 90+ rush yards YES, KXNFLRSHYDS-26OCT25SFATL-ATLBROBINSON7-90, yes_ask $0.50 / BE 50%; 641 yards/111 carries through six games but only 61 yards/9 carries last week and SF strong run defense. Model probabilities/robust edges not independently calibrated; no fee/slippage-adjusted ~5pp edge established. No official or shadow entries; NFL official 3-2, +0.869u, bankroll 100.869u unchanged. No retroactive promotions.",
       "boardTimestampET": "2026-10-25 11:01 ET",
       "sourceRun": "NFL Kalshi Model 2026-10-25 SUNAM"
@@ -4823,7 +4823,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "91.472",
+      "officialBankrollUnits": null,
       "reason": "Raw model 54% vs executable YES ask $0.38 = +16pp. Workload-stressed robust model 47% = +9pp after fees/slippage, regression of recent form, postseason hook risk and Milwaukee's patient-at-bat profile. Peralta is the confirmed Game 3 starter, coming off an ALCS MVP run; independent preview supports over 14.5 outs. Stress cases: 5-IP baseline clears; early elevated pitch count or injury/participation failure is the main downside. Kalshi participation/settlement rules remain contract-controlling. Official 1.00u paper risk; bankroll shown pre-settlement. Settled Oct 27: Peralta completed 4 2/3 innings (14 outs), so 16+ outs lost. MLB official record 1-9, -8.528u; bankroll 91.472u.",
       "boardTimestampET": "2026-10-26 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-26"
@@ -4871,7 +4871,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "103.753",
+      "officialBankrollUnits": null,
       "reason": "182 same-day rows validated row by row; board_date_et=2026-10-26. A: Houston -4.5, KXNBASPREAD-26OCT26ATLHOU-HOU5, YES ask $0.52/BE52%; raw 59%, +7pp, robust 55%, +3pp. B: Phoenix-Oklahoma City UNDER 220.5, KXNBATOTAL-26OCT26PHXOKC-221, NO ask $0.49/BE49%; raw 56%, +7pp, robust 51%, +2pp. C: Stephen Curry 6+ assists, KXNBAAST-26OCT26GSWDEN-GSWSCURRY30-6, YES ask $0.29/BE29%; raw 41%, +12pp, robust 35%, +6pp, but role/teammate shooting and early-season distribution uncertainty prevent official promotion. Official record 3-0, +3.753u; bankroll 103.753u. Settled shadows 2-5, -2.872u.",
       "boardTimestampET": "2026-10-26 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-26"
@@ -4919,7 +4919,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "1.128",
-      "officialBankrollUnits": "101.371",
+      "officialBankrollUnits": null,
       "reason": "Raw model 57% vs executable NO ask $0.47 = +10pp. Robust model 52% = +5pp after fees/slippage and Finals shooting variance. The first four Finals totals were 132, 144, 168 and 129; Golden State restored its defensive starting group in Game 4, forced 17 turnovers and held Atlanta to 62. Game 5 at Chase Center carries half-court pace and defensive-adjustment support, with overtime the key tail risk. Official 1.00u paper risk; bankroll shown pre-settlement. Settled Oct 27: Golden State won 64-55 (119 points), so UNDER 148.5 won. WNBA official record 3-1, +1.371u; bankroll 101.371u.",
       "boardTimestampET": "2026-10-26 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-26"
@@ -4967,7 +4967,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "21 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-26. A: Edmonton moneyline, KXNHLGAME-26OCT26DETEDM-EDM, YES ask $0.62/BE62%; raw 67%, +5pp, robust 63%, +1pp. B: Edmonton -1.5, KXNHLSPREAD-26OCT26DETEDM-EDM2, YES ask $0.41/BE41%; raw 48%, +7pp, robust 43%, +2pp. C: Los Angeles-New York Rangers OVER 5.5, KXNHLTOTAL-26OCT26LANYR-6, YES ask $0.55/BE55%; raw 60%, +5pp, robust 56%, +1pp. Rangers goaltending is unsettled after Igor Shesterkin's season-ending injury; projected starters remain unconfirmed. No candidate preserves a robust ~5pp edge. Official record 0-0; bankroll 100u. Settled shadows 9-4, +5.079u.",
       "boardTimestampET": "2026-10-26 11:00 ET",
       "sourceRun": "Daily Sports Models 2026-10-26"
@@ -5015,7 +5015,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "DATA PASS. Authoritative GitHub vault214/dk-mlb-feed main kalshi/nfl-candidates.json board_date_et=2026-10-26, candidate_market_count=23 matches 23 active same-day rows; all for Dallas Cowboys @ Philadelphia Eagles, 8:15 PM ET. All YES/NO asks numeric within (0,1), but no quote-capture/refresh timestamp in board or individual markets; open_time/close_time are NOT quote freshness, so executable pricing cannot be verified as current. A/B/C screening ONLY (not picks): A Dallas -4.5 via YES KXNFLSPREAD-26OCT26DALPHI-DAL5 yes_ask $0.50 / BE 50%; Dallas favored with PHI QB Jalen Hurts out, but DAL offense struggling vs blitz and divisional-road margin uncertainty. B DAL-PHI UNDER 43.5 via NO on Over 43.5 KXNFLTOTAL-26OCT26DALPHI-44 no_ask $0.49 / BE 49%; PHI without Hurts, DeVonta Smith and Dontayvion Wicks, but Dallas offense/PHI defensive injuries and benign weather limit under confidence. C Dallas Goedert 50+ receiving yards YES KXNFLRECYDS-26OCT26DALPHI-PHIDGOEDERT88-50 yes_ask $0.49 / BE 49%; Goedert cleared, 6 receptions for 61 yards last week and PHI wideout absences boost role, but TE usage/efficiency and McKee volatility remain. Barkley questionable, PHI OL/edge injuries; DAL Overshown/Durant return, Turpin/Shelton/Winters out. Forecast ~61F, 5 mph wind, dry. No independently calibrated model probabilities or verified robust ~5pp post-fee/slippage edge; no official or shadow added. Official 3-2, +0.869u, bankroll 100.869u unchanged; no shadow promotion.",
       "boardTimestampET": "2026-10-26 11:02 ET",
       "sourceRun": "NFL Kalshi Model 2026-10-26 MONAM"
@@ -5039,7 +5039,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "91.472",
+      "officialBankrollUnits": null,
       "reason": "15 same-day rows validated row by row; board_date_et=2026-10-27. A: OVER 7.5 runs, KXMLBTOTAL-26OCT272000MILTB-8, YES ask $0.45/BE45%; raw 52%, +7pp, robust 46%, +1pp. B: Milwaukee moneyline, KXMLBGAME-26OCT272000MILTB-MIL, YES ask $0.54/BE54%; raw 63%, +9pp, robust 60%, +6pp. C: Griffin Jax UNDER 12 outs, KXMLBOUTS-26OCT272000MILTB-TBGJAX22-12, NO ask $0.55/BE55%; raw 68%, +13pp, workload-stressed robust 61%, +6pp. Official rejection: neither B nor C reaches MLB's stricter 7pp robust threshold; Jax's first World Series start and Tampa Bay's potential bullpen game create material participation/workload uncertainty, while Milwaukee's starter remained unannounced at evaluation time. Official record 1-9, -8.528u; bankroll 91.472u. Settled shadows 9-5, +3.975u.",
       "boardTimestampET": "2026-10-27 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-27"
@@ -5087,7 +5087,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "103.753",
+      "officialBankrollUnits": null,
       "reason": "88 same-day rows validated row by row; board_date_et=2026-10-27. A: Boston -11.5, KXNBASPREAD-26OCT27BKNBOS-BOS12, YES ask $0.50/BE50%; raw 60%, +10pp, robust 54%, +4pp. B: Brooklyn-Boston UNDER 222.5, KXNBATOTAL-26OCT27BKNBOS-223, NO ask $0.51/BE51%; raw 57%, +6pp, robust 52%, +1pp. C: Jalen Brunson 25+ points, KXNBAPTS-26OCT27DETNYK-NYKJBRUNSON11-25, YES ask $0.55/BE55%; raw 64%, +9pp, robust 59%, +4pp. Jayson Tatum's back-to-back availability is uncertain; Detroit is missing Ausar Thompson and Jalen Duren, while New York is 0-3. No candidate retains ~5pp robust edge. Official record 3-0, +3.753u; bankroll 103.753u. Settled shadows 2-6, -3.872u.",
       "boardTimestampET": "2026-10-27 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-27"
@@ -5135,7 +5135,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "101.371",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-27; row-level audit found zero October 27 markets. All seven candidate rows belong to future Finals games and were excluded. A/B/C not applicable. Official record 3-1, +1.371u; bankroll 101.371u. Settled shadows 3-2, +0.893u.",
       "boardTimestampET": "2026-10-27 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-27"
@@ -5159,7 +5159,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "75 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-27. A: Carolina moneyline, KXNHLGAME-26OCT27BOSCAR-CAR, YES ask $0.63/BE63%; raw 68%, +5pp, robust 64%, +1pp. B: Anaheim -1.5, KXNHLSPREAD-26OCT27VANANA-ANA2, YES ask $0.44/BE44%; raw 51%, +7pp, robust 45%, +1pp. C: Columbus-Philadelphia OVER 6.5, KXNHLTOTAL-26OCT27CBJPHI-7, YES ask $0.40/BE40%; raw 47%, +7pp, robust 41%, +1pp. Only four of 22 projected goalies were confirmed at evaluation time; Vancouver has goaltending and lineup injuries, but Anaheim's margin remains volatile. No candidate retains a robust ~5pp edge. Official record 0-0; bankroll 100u. Settled shadows 9-5, +4.079u.",
       "boardTimestampET": "2026-10-27 11:01 ET",
       "sourceRun": "Daily Sports Models 2026-10-27"
@@ -5207,7 +5207,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "91.472",
+      "officialBankrollUnits": null,
       "reason": "15 same-day rows validated row by row; board_date_et=2026-10-28. A: OVER 6.5 runs, KXMLBTOTAL-26OCT282000MILTB-7, YES ask $0.53/BE53%; raw 58%, +5pp, robust 54%, +1pp. B: Milwaukee moneyline, KXMLBGAME-26OCT282000MILTB-MIL, YES ask $0.60/BE60%; raw 68%, +8pp, robust 65%, +5pp. C: Jacob Misiorowski UNDER 6 strikeouts, KXMLBKS-26OCT282000MILTB-MILJMISIOROWSKI32-6, NO ask $0.45/BE45%; raw 58%, +13pp, workload-stressed robust 51%, +6pp. Misiorowski had only 3 Ks in 5 innings in Game 1 and has not exceeded 5 innings in a postseason start; Tampa Bay starter remained TBD and both bullpens were taxed by Game 4's 12 innings. Neither B nor workload-sensitive C reaches MLB's 7pp robust threshold. Official record 1-9, -8.528u; bankroll 91.472u. Settled shadows 9-6, +2.975u.",
       "boardTimestampET": "2026-10-28 11:12 ET",
       "sourceRun": "Daily Sports Models 2026-10-28"
@@ -5255,7 +5255,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "1.222",
-      "officialBankrollUnits": "104.975",
+      "officialBankrollUnits": null,
       "reason": "Raw model 57% vs executable YES ask $0.45 = +12pp; robust 52% = +7pp. Settled Oct 29: Cade Cunningham scored 30 points in Detroit's 97-89 win, so 25+ points won. NBA official record 4-0, +4.975u; bankroll 104.975u.",
       "boardTimestampET": "2026-10-28 11:12 ET",
       "sourceRun": "Daily Sports Models 2026-10-28"
@@ -5303,7 +5303,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "101.371",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-28; row-level audit found zero October 28 markets. All seven candidate rows belong to a future Finals game and were excluded. A/B/C not applicable. Official record 3-1, +1.371u; bankroll 101.371u. Settled shadows 3-2, +0.893u.",
       "boardTimestampET": "2026-10-28 11:12 ET",
       "sourceRun": "Daily Sports Models 2026-10-28"
@@ -5327,7 +5327,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "28 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-28. A: Edmonton moneyline, KXNHLGAME-26OCT28CGYEDM-EDM, YES ask $0.63/BE63%; raw 69%, +6pp, robust 65%, +2pp. B: Edmonton -1.5, KXNHLSPREAD-26OCT28CGYEDM-EDM2, YES ask $0.42/BE42%; raw 49%, +7pp, robust 44%, +2pp. C: Philadelphia-Washington UNDER 6.5, KXNHLTOTAL-26OCT28PHIWSH-7, NO ask $0.55/BE55%; raw 60%, +5pp, robust 56%, +1pp. Edmonton's projected Tristan Jarry owns an .861 season save percentage and Edmonton is missing Zach Hyman with Mattias Ekholm uncertain; projected goalies remain unconfirmed. No candidate retains a robust ~5pp edge. Official record 0-0; bankroll 100u. Settled shadows 9-6, +3.079u.",
       "boardTimestampET": "2026-10-28 11:12 ET",
       "sourceRun": "Daily Sports Models 2026-10-28"
@@ -5375,7 +5375,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "DATA PASS. Authoritative GitHub vault214/dk-mlb-feed main kalshi/nfl-candidates.json: board_date_et=2026-10-29; candidate_market_count=23 equals 23 active same-day markets, all for Carolina Panthers @ Green Bay Packers, 8:15 PM ET at Lambeau Field. All YES/NO asks numeric in (0,1). GitHub file modified at 2026-10-29 10:55 ET, but neither board nor market rows provide a quote-capture/refresh timestamp; GitHub modification does not prove quote freshness. A screening only: GB -3.5 via YES KXNFLSPREAD-26OCT29CARGB-GB4 yes_ask $0.51 (51% BE); B UNDER 46.5 via NO on Over 46.5 KXNFLTOTAL-26OCT29CARGB-47 no_ask $0.48 (48% BE); C Josh Jacobs 60+ rushing yards YES KXNFLRSHYDS-26OCT29CARGB-GBJJACOBS8-60 yes_ask $0.52 (52% BE). GB C Sean Rhyan, G Travis Glover and LB Zaire Franklin out; WR Matthew Golden and DT Devonte Wyatt questionable. CAR G Damien Lewis, OLB Jaelan Phillips, CB Akayleb Evans out; RT Taylor Moton on IR. Short week and both damaged offensive lines increase volatility. Jacobs only recently returned, workload/role uncertain; CAR conceded 258 rushing yards last week. Weather forecast near 50-54F, light 5-8 mph wind, mostly dry; no material weather penalty. No independently calibrated model probabilities or robust after-cost edge established, so no official or shadow entry; historical 3-2 official, +0.869u, bankroll 100.869u preserved. No retroactive shadow promotion.",
       "boardTimestampET": "2026-10-29 10:55 ET",
       "sourceRun": "NFL Kalshi Model — 2026-10-29 THUAM"
@@ -5399,7 +5399,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "91.472",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-29; row-level audit found zero candidate markets and no same-day MLB game. Milwaukee defeated Tampa Bay 4-1 in Game 5 on Oct. 28 to win the World Series, ending the MLB slate. A/B/C not applicable. Official record 1-9, -8.528u; bankroll 91.472u. Settled shadows 10-6, +3.642u.",
       "boardTimestampET": "2026-10-29 11:15 ET",
       "sourceRun": "Daily Sports Models 2026-10-29"
@@ -5423,7 +5423,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "1.222",
-      "officialBankrollUnits": "106.197",
+      "officialBankrollUnits": null,
       "reason": "Settled Oct. 30: Atlanta defeated Cleveland 114-111, covering -2.5. Profit = (1-$0.45)/$0.45 = +1.222u. NBA official record 5-0, +6.197u; bankroll 106.197u.",
       "boardTimestampET": "2026-10-29 11:15 ET",
       "sourceRun": "Daily Sports Models 2026-10-29"
@@ -5471,7 +5471,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "0.754",
-      "officialBankrollUnits": "102.125",
+      "officialBankrollUnits": null,
       "reason": "Settled Oct. 30: Atlanta won 80-69 (149 total), so UNDER 149.5 won by 0.5. Profit = (1-$0.57)/$0.57 = +0.754u. WNBA official record 4-1, +2.125u; bankroll 102.125u.",
       "boardTimestampET": "2026-10-29 11:15 ET",
       "sourceRun": "Daily Sports Models 2026-10-29"
@@ -5519,7 +5519,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "99",
+      "officialBankrollUnits": null,
       "reason": "Settled Oct. 30: Montreal defeated Dallas 5-2 (7 total), so UNDER 5.5 lost. NHL official record 0-1, -1.000u; bankroll 99.000u.",
       "boardTimestampET": "2026-10-29 11:15 ET",
       "sourceRun": "Daily Sports Models 2026-10-29"
@@ -5567,7 +5567,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "91.472",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-30; row-level audit found zero candidate markets and no same-day MLB game. The 2026 season is complete. A/B/C not applicable. Official record 1-9, -8.528u; bankroll 91.472u. Settled shadows 10-6, +3.642u.",
       "boardTimestampET": "2026-10-30 11:18 ET",
       "sourceRun": "Daily Sports Models 2026-10-30"
@@ -5591,7 +5591,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "105.197",
+      "officialBankrollUnits": null,
       "reason": "Settled Oct. 31: Orlando defeated Toronto 121-114, so Toronto -5.5 lost. NBA official record 5-1, +5.197u; bankroll 105.197u.",
       "boardTimestampET": "2026-10-30 11:18 ET",
       "sourceRun": "Daily Sports Models 2026-10-30"
@@ -5639,7 +5639,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "102.125",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-30; row-level audit found zero October 30 markets. Seven candidate rows belong to Finals Game 7 on October 31 and were excluded. A/B/C not applicable. Official record 4-1, +2.125u; bankroll 102.125u. Settled shadows 4-2, +2.671u.",
       "boardTimestampET": "2026-10-30 11:18 ET",
       "sourceRun": "Daily Sports Models 2026-10-30"
@@ -5663,7 +5663,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "99",
+      "officialBankrollUnits": null,
       "reason": "21 same-day winner/spread/total rows validated row by row; board_date_et=2026-10-30. A: Vegas moneyline, KXNHLGAME-26OCT30NJVGK-VGK, YES ask $0.52/BE52%; raw 60%, +8pp, robust 56%, +4pp. B: Vegas -1.5, KXNHLSPREAD-26OCT30NJVGK-VGK2, YES ask $0.31/BE31%; raw 38%, +7pp, robust 32%, +1pp. C: New Jersey-Vegas UNDER 6.5, KXNHLTOTAL-26OCT30NJVGK-7, NO ask $0.56/BE56%; raw 61%, +5pp, robust 57%, +1pp. Hellebuyck and Hill are projected, not confirmed; Vegas goalie Carter Hart is day-to-day. No candidate retains the ~5pp robust bar. Official record 0-1, -1.000u; bankroll 99.000u. Settled shadows 10-7, +3.460u.",
       "boardTimestampET": "2026-10-30 11:18 ET",
       "sourceRun": "Daily Sports Models 2026-10-30"
@@ -5711,7 +5711,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "99.818",
+      "officialBankrollUnits": null,
       "reason": "Current board_date_et=2026-10-30, candidate_market_count=220; 26 active same-day markets for Tulane-Charlotte, Baylor-UCF, Kent State-Sacramento State; Harvard-Dartmouth FCS and Saturday excluded. A Tulane -7.5 YES $0.52, modeled 59.9%, gross +7.9pp, net +2.4pp after 1.5pp fees/slippage and 4.0pp uncertainty; SHADOW. B Baylor-UCF UNDER 49.5 NO $0.51, modeled 56.4%, gross +5.4pp, net +0.4pp after 1.5pp fees/slippage and 3.5pp uncertainty; diagnostic SHADOW. C no additional defensible positive-edge market. External projection ensembles with assumed scoring SD, not historically calibrated. No official B+ clears +5pp robust edge. Board quote timestamp absent; ask prices are repository snapshot, not independently live verified. Prior Oct24 official and shadows settled separately. No Saturday selection.",
       "boardTimestampET": "2026-10-30 18:08 ET",
       "sourceRun": "NCAA Football Kalshi Model 2026-10-30 FRI v2.0"
@@ -5783,7 +5783,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "91.472",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-10-31; row-level audit found zero candidate markets and no same-day MLB game. The 2026 season is complete. A/B/C not applicable. Official record 1-9, -8.528u; bankroll 91.472u. Settled shadows 10-6, +3.642u.",
       "boardTimestampET": "2026-10-31 11:08 ET",
       "sourceRun": "Daily Sports Models 2026-10-31"
@@ -5807,7 +5807,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "105.197",
+      "officialBankrollUnits": null,
       "reason": "153 same-day rows validated row by row; board_date_et=2026-10-31. A: Philadelphia -1.5, KXNBASPREAD-26OCT31PHICHA-PHI2, YES ask $0.52/BE52%; raw 60%, +8pp, robust 55%, +3pp. B: Philadelphia-Charlotte UNDER 215.5, KXNBATOTAL-26OCT31PHICHA-216, NO ask $0.51/BE51%; raw 57%, +6pp, robust 53%, +2pp. C: Tyrese Maxey 4+ threes, KXNBA3PT-26OCT31PHICHA-PHITMAXEY0-4, YES ask $0.37/BE37%; raw 44%, +7pp, robust 40%, +3pp. Both teams are on a back-to-back and Philadelphia's final injury report was pending; Charlotte's Coby White and Kon Knueppel remained game-time decisions. No candidate retains ~5pp robust edge. Official record 5-1, +5.197u; bankroll 105.197u. Settled shadows 5-7, +0.214u.",
       "boardTimestampET": "2026-10-31 11:08 ET",
       "sourceRun": "Daily Sports Models 2026-10-31"
@@ -5855,7 +5855,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "1.041",
-      "officialBankrollUnits": "103.166",
+      "officialBankrollUnits": null,
       "reason": "Settled Nov. 1: Golden State won Game 7, 68-63 (131 total), so UNDER 142.5 won. Profit = (1-$0.49)/$0.49 = +1.041u. WNBA official record 5-1, +3.166u; bankroll 103.166u.",
       "boardTimestampET": "2026-10-31 11:08 ET",
       "sourceRun": "Daily Sports Models 2026-10-31"
@@ -5903,7 +5903,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "99",
+      "officialBankrollUnits": null,
       "reason": "68 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-10-31. A: Boston moneyline, KXNHLGAME-26OCT31CHIBOS-BOS, YES ask $0.69/BE69%; raw 74%, +5pp, robust 71%, +2pp. B: Boston -1.5, KXNHLSPREAD-26OCT31CHIBOS-BOS2, YES ask $0.47/BE47%; raw 54%, +7pp, robust 50%, +3pp. C: Chicago-Boston OVER 5.5, KXNHLTOTAL-26OCT31CHIBOS-6, YES ask $0.58/BE58%; raw 63%, +5pp, robust 59%, +1pp. Both clubs played Friday; Knight and Swayman remained projected rather than confirmed. No candidate retains ~5pp robust edge. Official record 0-1, -1.000u; bankroll 99.000u. Settled shadows 10-8, +2.460u.",
       "boardTimestampET": "2026-10-31 11:08 ET",
       "sourceRun": "Daily Sports Models 2026-10-31"
@@ -5951,7 +5951,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "98.818",
+      "officialBankrollUnits": null,
       "reason": "OFFICIAL v2.0; 1.00u hypothetical stake. 2026-10-31 current Kalshi board, YES ask $0.45 / 45% break-even, +15.0pp gross modeled edge, +6.5pp estimated net after 1.5pp fees/slippage and 7.0pp uncertainty/defense/pace reserve. Approximate 60% pregame P(OVER 37.5), from conservative blended expected total ~41.7 and assumed total SD 16.5; inputs include independent totals 44.8 (South Ark), 47.3 (havoc), ~38 (Dimers), market 36.5 and observed matchup-based ~42. NOT independently calibrated; no actual bet placed. Iowa and Wisconsin defenses allow ~14-15 PPG; Iowa RB Kamari Moulton out; Iowa slower ~62 plays/game; Wisconsin low passing volume; favorable mild ~55F weather; QB Colton Joseph and Hank Brown active per pregame reporting. Material risk: market strongly disagrees with uncalibrated offensive scoring models; no forced bet if execution quote changes. Board has no quote-capture timestamp; repository ask not independently confirmed live. Sources: https://www.actionnetwork.com/ncaaf/wisconsin-badgers-vs-iowa-hawkeyes-prediction-pick-odds-college-football-saturday-october-31 ; https://havoc.football/games/605 ; https://southarkdailypicks.com/football/college-football/2026/wisconsin-iowa-2026-10-30-401858502/ ; https://www.dimers.com/cfb/news/wisconsin-vs-iowa-prediction-week-9-2026-ac ; https://www.covers.com/sport/football/ncaaf/matchup/378628",
       "boardTimestampET": "2026-10-31 11:01 ET",
       "sourceRun": "NCAA Football Kalshi Model 2026-10-31 SAT v2.0"
@@ -5999,7 +5999,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "91.472",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-01; row-level audit found zero candidate markets and no same-day MLB game. The 2026 season is complete. A/B/C not applicable. Official record 1-9, -8.528u; bankroll 91.472u. Settled shadows 10-6, +3.642u.",
       "boardTimestampET": "2026-11-01 11:09 ET",
       "sourceRun": "Daily Sports Models 2026-11-01"
@@ -6023,7 +6023,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "0.785714",
-      "officialBankrollUnits": "105.983",
+      "officialBankrollUnits": null,
       "reason": "Settled Nov. 2: Boston won 108-97, covering -5.5. Official record 6-1, +5.983u; bankroll 105.983u. Original raw model 66% (+10pp); robust 61% (+5pp).",
       "boardTimestampET": "2026-11-01 11:09 ET",
       "sourceRun": "Daily Sports Models 2026-11-01"
@@ -6071,7 +6071,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "103.166",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-01; row-level audit found zero candidate markets and no same-day game. Golden State defeated Atlanta 68-63 in Game 7 on October 31 to win the championship, ending the WNBA slate. A/B/C not applicable. Official record 5-1, +3.166u; bankroll 103.166u. Settled shadows 5-2, +3.489u.",
       "boardTimestampET": "2026-11-01 11:09 ET",
       "sourceRun": "Daily Sports Models 2026-11-01"
@@ -6095,7 +6095,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "99",
+      "officialBankrollUnits": null,
       "reason": "34 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-11-01. A: Carolina moneyline, KXNHLGAME-26NOV01WPGCAR-CAR, YES ask $0.73/BE73%; raw 78%, +5pp, robust 75%, +2pp. B: Carolina -1.5, KXNHLSPREAD-26NOV01WPGCAR-CAR2, YES ask $0.50/BE50%; raw 58%, +8pp, robust 54%, +4pp. C: Winnipeg-Carolina UNDER 6.5, KXNHLTOTAL-26NOV01WPGCAR-7, NO ask $0.55/BE55%; raw 60%, +5pp, robust 57%, +2pp. Carolina is 11-2-2 and Winnipeg is winless in eight, but sources conflicted on Kochetkov versus Bussi in net. No candidate retains ~5pp robust edge. Official record 0-1, -1.000u; bankroll 99.000u. Settled shadows 10-9, +1.460u.",
       "boardTimestampET": "2026-11-01 11:09 ET",
       "sourceRun": "Daily Sports Models 2026-11-01"
@@ -6143,7 +6143,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "DATA PASS. Authoritative Kalshi GitHub main kalshi/nfl-candidates.json: board_date_et=2026-11-01; candidate_market_count=216 matches 216 active markets, with 208 dated Sunday Nov 1 across all 12 NFL games and 8 Monday Nov 2 excluded. All YES/NO asks valid (0,1), but no quote-capture/refresh timestamp in board or market rows; open/close times do not prove executable quote freshness. A screening ONLY: Raiders +1.5 via NO on Jets win by >1.5, KXNFLSPREAD-26NOV01LVNYJ-NYJ2, no_ask $0.49 (49% BE); NYJ DT T'Vondre Sweat and DE Joseph Ossai out, DE David Bailey doubtful; Breece Hall questionable; LV Brock Bowers expected. B: KC-DEN UNDER 40.5 via NO on Over 40.5, KXNFLTOTAL-26NOV01KCDEN-41, no_ask $0.47 (47% BE); Mahomes/Nix efficiency uneven and DEN defense strong, but Rashee Rice returns, Hufanga out, Pat Surtain II returns, weather ~62-64F and 6-7 mph wind/dry, so no weather-based under edge. C: CeeDee Lamb 7+ receptions YES, KXNFLREC-26NOV01ARIDAL-DALCLAMB88-7, yes_ask $0.52 (52% BE); DAL Lamb ~30.5% target share through Week 7, Pickens questionable, Turpin out; catch volume/game script uncertain. No independently calibrated probability, post-fee/slippage robust edge or valid fresh quote, so no OFFICIAL or SHADOW. NFL official 3-2, +0.869u, 100.869u bankroll unchanged. Sources: https://www.covers.com/sport/football/nfl/matchup/380032 ; https://www.covers.com/sport/football/nfl/matchup/380036 ; https://statchasers.com/nfl/teams/dallas-cowboys/ ; https://weather.football/nfl/game/2026-08-kc-at-den .",
       "boardTimestampET": "2026-11-01 11:04 ET (run start)",
       "sourceRun": "NFL Kalshi automation run 2026-11-01"
@@ -6167,7 +6167,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "DATA PASS. Authoritative GitHub vault214/dk-mlb-feed main kalshi/nfl-candidates.json board_date_et=2026-11-02; candidate_market_count=23 matches 23 active same-day markets, all for Chicago Bears @ Seattle Seahawks at Lumen Field (8:15 PM ET). All YES/NO asks numeric in (0,1); no board or per-market quote-capture/refresh timestamp, so executable freshness unverified; open/close times are not price timestamps. A screening ONLY: Chicago +3.5 via NO on Seattle wins by >3.5, KXNFLSPREAD-26NOV02CHISEA-SEA4, no_ask $0.53 (53% BE). B: CHI-SEA UNDER 46.5 via NO on Over 46.5, KXNFLTOTAL-26NOV02CHISEA-47, no_ask $0.51 (51% BE). C: Jaxon Smith-Njigba 90+ receiving yards YES, KXNFLRECYDS-26NOV02CHISEA-SEAJSMITHNJIGBA11-90, yes_ask $0.61 (61% BE). CHI 5-2/SEA 4-3; Seattle defense ~17.9 PPG allowed, Chicago offense ~25.7 PPG. Seattle LT Charles Cross and WR Rashid Shaheed out; LB Uchenna Nwosu doubtful; RB Zach Charbonnet cleared to return (complicates backfield); Chicago RB Kyle Monangai out, CB Malik Muhammad and LB D'Marco Jackson questionable; T.J. Edwards cleared. JSN ~867 receiving yards through 7 games, but Seattle pass-protection concerns and distribution/defensive coverage uncertain. Seattle home, Chicago travel (11d rest vs SEA 8d); weather ~47-51F, light winds and low rain risk, little material total impact. No independently calibrated probabilities or robust post-fee/slippage edge; NO OFFICIAL or SHADOW. Official 3-2, +0.869u, 100.869u bankroll unchanged; shadow 3-6, separate. Sources: https://www.seahawks.com/news/week-8-injury-report-bears-at-seahawks ; https://www.chicagobears.com/team/injury-report/ ; https://www.si.com/nfl/scoreboard/bears-vs-seahawks-11-2-2026-504 ; https://gridironandwine.com/predictions/nfl/2026-11-02-chicago-bears-vs-seattle-seahawks.html",
       "boardTimestampET": "2026-11-02 10:58 ET (run start; quote time unavailable)",
       "sourceRun": "NFL Kalshi Model 2026-11-02 MONAM"
@@ -6191,7 +6191,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "91.472",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-02; row-level audit found zero candidate markets and no same-day MLB game. A/B/C not applicable. Official record 1-9, -8.528u; bankroll 91.472u. Settled shadows 10-6, +3.642u.",
       "boardTimestampET": "2026-11-02 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-11-02"
@@ -6215,7 +6215,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "0.724138",
-      "officialBankrollUnits": "106.707",
+      "officialBankrollUnits": null,
       "reason": "Settled Nov. 3: Detroit won 124-91, covering -2.5. Official record 7-1, +6.707u; bankroll 106.707u. Original raw model 66% (+8pp); robust 63% (+5pp).",
       "boardTimestampET": "2026-11-02 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-11-02"
@@ -6263,7 +6263,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "103.166",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-02; row-level audit found zero candidate markets and no same-day WNBA game. A/B/C not applicable. Official record 5-1, +3.166u; bankroll 103.166u. Settled shadows 5-2, +3.489u. Historical entries, including WNBA-OFFICIAL-001, preserved unchanged.",
       "boardTimestampET": "2026-11-02 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-11-02"
@@ -6287,7 +6287,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "99",
+      "officialBankrollUnits": null,
       "reason": "28 same-day supported winner/spread/total rows validated row by row; board_date_et=2026-11-02. A: Colorado moneyline, KXNHLGAME-26NOV02COLCHI-COL, YES ask $0.68/BE68%; raw 72%, +4pp; robust 69%, +1pp. B: Colorado -1.5, KXNHLSPREAD-26NOV02COLCHI-COL2, YES ask $0.47/BE47%; raw 55%, +8pp; robust 51%, +4pp. C: Vegas-Boston UNDER 6.5, KXNHLTOTAL-26NOV02VGKBOS-7, NO ask $0.55/BE55%; raw 58%, +3pp; robust 55%, 0pp. No goalie was confirmed at review; Colorado projected Scott Wedgewood (.889 SV%, 3.48 GAA) while Chicago projected Spencer Knight (.897, 3.21), and Colorado has Josh Manson out. No candidate retains ~5pp robust edge. Official record 0-1, -1.000u; bankroll 99.000u. Settled shadows after Nov. 1: 11-9, +2.460u.",
       "boardTimestampET": "2026-11-02 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-11-02"
@@ -6335,7 +6335,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "106.707",
+      "officialBankrollUnits": null,
       "reason": "The authoritative candidate file remained dated 2026-11-02, but the official NBA schedule independently confirms zero games on 2026-11-03 and 14 games on Nov. 4. A/B/C not applicable; no shadow because there is no slate. Official record after Nov. 2 settlement 7-1, +6.707u; bankroll 106.707u. Settled shadows 6-9, -0.863u.",
       "boardTimestampET": "2026-11-03 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-11-03"
@@ -6359,7 +6359,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "99",
+      "officialBankrollUnits": null,
       "reason": "Authoritative kalshi/nhl-candidates.json has board_date_et=2026-11-02, not 2026-11-03. External schedule validation found 11 NHL games today, but the feed contains no valid current-day executable rows. A/B/C unavailable; no ask or modeled edge substituted, and no shadow created. Official record 0-1, -1.000u; bankroll 99.000u. Settled shadows after Nov. 2: 12-9, +3.588u.",
       "boardTimestampET": "2026-11-03 11:04 ET",
       "sourceRun": "Daily Sports Models 2026-11-03"
@@ -6383,7 +6383,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "First NCAAB evaluation at 17:36 ET; board_date_et=2026-11-04. 68 same-day rows: 18 winner, 30 spread, 20 total; both asks numeric in (0,1). Screening finalists (not wagers): A California -15.5, KXNCAAMBSPREAD-26NOV04RADCAL-CAL16, YES ask .53/BE53%; B Radford-California UNDER 156.5 (NO on Over 156.5), KXNCAAMBTOTAL-26NOV04RADCAL-157, NO ask .47/BE47%; C Saint Mary's winner, KXNCAAMBGAME-26NOV04NDSUSMC-SMC, YES ask .90/BE90%. Cal tips 21:00 ET and SMC 22:00 ET; other games not eligible without independently confirmed future tip. No supported calibrated probability or raw/robust edge established; do not infer edge from qualitative previews or small samples. Cal's 115-86 opener was versus D-II Adams State; NDSU's 90-59 opener was versus Minnesota Crookston, limiting opponent-adjusted inference. SMC required overtime versus Illinois State; substantial roster turnover and incomplete nonconference availability reporting. Independent shadow evaluation rejects all screened candidates for unsupported probability estimates, not merely failure of official threshold; no shadow risk. Quote capture timestamp absent, so price freshness independently unproven. Official 0-0, 0u, 100u bankroll; shadow 0-0, 0u. Sources: https://gobison.com/news/2026/11/3/mens-basketball-bison-headed-to-california-for-three-game-road-swing ; https://www.reuters.com/sports/basketball/fresh-off-115-point-showing-cal-gears-up-radford--flm-2026-11-03/ ; https://www.sfchronicle.com/sports/article/sportscal-22507514.php",
       "boardTimestampET": "2026-11-04 17:36 ET",
       "sourceRun": "Daily Sports Models NCAAB 2026-11-04"
@@ -6407,7 +6407,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": null,
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "DATA PASS. Authoritative GitHub vault214/dk-mlb-feed main kalshi/nfl-candidates.json board_date_et=2026-11-05; candidate_market_count=23, 23 same-day markets for Jacksonville Jaguars @ Baltimore Ravens (8:15 PM ET), all asks shown but no quote-capture/fetched_at timestamp; open_time and close_time are not quote timestamps. Screening ONLY, not bets: A Jacksonville -9.5 YES KXNFLSPREAD-26NOV05JACBAL-JAC10 yes_ask $0.52 / 52% BE; B UNDER 39.5 via NO KXNFLTOTAL-26NOV05JACBAL-40 no_ask $0.51 / 51% BE; C Jakobi Meyers 4+ receptions YES KXNFLREC-26NOV05JACBAL-JACJMEYERS3-4 yes_ask $0.41 / 41% BE. Baltimore QB Lamar Jackson and Tyler Huntley OUT, rookie Joe Fagnano starting; S Jaylinn Hawkins OUT, CB Nate Wiggins questionable. Jacksonville RB Bhayshul Tuten and DE Travon Walker questionable; S Eric Murray and DT DaVon Hamilton on IR. JAX 5-2, BAL 4-4; Jacksonville defense allowing 77.4 rush yards/game, limiting Derrick Henry; JAX offense 28 PPG. Mild game-day forecast, weather not decisive. No independently calibrated probabilities or verified robust after-cost edge; no official or shadow entries. Historical NFL 3-2 +0.869u, bankroll 100.869u unchanged. Sources: https://www.nfl.com/news/nfl-week-9-injury-report-2026-season ; https://www.covers.com/sport/football/nfl/matchup/380039 ; https://www.jaguars.com/game-day/2026/reg-week9/jaguars-at-ravens/",
       "boardTimestampET": "2026-11-05 10:56 ET",
       "sourceRun": "NFL scheduled run 2026-11-05"
@@ -6431,7 +6431,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "106.707",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-05 validated. 44 same-day rows. A screening: Golden State -7.5, KXNBASPREAD-26NOV05MIAGSW-GSW8, YES ask .49/BE49%. B: Miami-GSW OVER 234.5, KXNBATOTAL-26NOV05MIAGSW-235, YES .49/BE49%. C: Stephen Curry 30+ points, KXNBAPTS-26NOV05MIAGSW-GSWSCURRY30-30, YES .42/BE42%. Miami is on road back-to-back; GSW has two days rest. Miami pace 105.8 versus GS 101.7, but early-season luck-adjusted ratings conflict with observed net ratings. GSW missing Butler, Moody and Porzingis; Horford availability/minutes uncertain. No calibrated score or Curry minutes/usage distribution supports a reliable probability. Sources: https://deepmetricanalytics.com/nba/game/401909937 ; https://sports.iheart.com/content/2026-11-05-heat-vs-warriors-predictions-odds-stats-nov-5/ . Model probability/raw edge/robust edge intentionally blank rather than guessed. Independent SHADOW evaluation: rejected for unsupported probabilities; not merely failure of official +5pp threshold. Quote capture timestamp absent, freshness unproven; no midpoint/sportsbook substitute. 0u stake. No pending active-league selections found.",
       "boardTimestampET": "2026-11-05 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-11-05"
@@ -6455,7 +6455,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "99",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-05 validated. 76 same-day rows. A screening: Colorado winner, KXNHLGAME-26NOV05NSHCOL-COL, YES .65/BE65%. B: Colorado -1.5, KXNHLSPREAD-26NOV05NSHCOL-COL2, YES .45/BE45%. C: Nashville-Colorado UNDER 6.5 (NO on Over 6.5), KXNHLTOTAL-26NOV05NSHCOL-7, NO .50/BE50%. Starting goalies remain unverified. Nashville Forsberg seeks sixth consecutive multipoint game; Colorado's recent 7-2 loss in Columbus argues against unregressed team-form inference. Dallas alternative has Heiskanen questionable and uncertain Oettinger/DeSmith usage. No calibrated probability after goalie, lineup, shot-quality and special-teams uncertainty established. Sources: https://www.nhl.com/news/nhl-on-tap-news-and-notes-november-5-2026 ; https://www.reuters.com/sports/nhl/stars-blue-jackets-look-leverage-new-found-offenses--flm-2026-11-05/ ; https://daily.hockey/starting-goalies/2026-11-05 . Model probability/raw edge/robust edge intentionally blank rather than guessed. Independent SHADOW evaluation: rejected for unsupported probabilities; not merely failure of official +5pp threshold. Quote capture timestamp absent, freshness unproven; no midpoint/sportsbook substitute. 0u stake. No pending active-league selections found.",
       "boardTimestampET": "2026-11-05 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-11-05"
@@ -6479,7 +6479,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-05 validated. 246 same-day rows. A screening: Tulsa -15.5, KXNCAAMBSPREAD-26NOV05NIUTLSA-TLSA16, YES .45/BE45%. B: NIU-Tulsa UNDER 150.5 (NO on Over 150.5), KXNCAAMBTOTAL-26NOV05NIUTLSA-151, NO .42/BE42%. C: Northern Illinois winner, KXNCAAMBGAME-26NOV05NIUTLSA-NIU, YES .09/BE9%. NIU 0-1 visits Tulsa 1-0 at 20:00 ET. Small opening samples, roster continuity, adjusted efficiency and confirmed rotation/availability inputs insufficient to calibrate margin/total distributions. No supported probability estimate; low ask alone is not value. Sources: https://www.actionnetwork.com/ncaab-game/northern-illinois-huskies-tulsa-golden-hurricane/302237 ; https://www.bleachernation.com/picks/2026/11/05/tulsa-vs-northern-illinois-prediction-picks-and-betting-odds-thursday-november-5-2026/ . Model probability/raw edge/robust edge intentionally blank rather than guessed. Independent SHADOW evaluation: rejected for unsupported probabilities; not merely failure of official +5pp threshold. Quote capture timestamp absent, freshness unproven; no midpoint/sportsbook substitute. 0u stake. No pending active-league selections found.",
       "boardTimestampET": "2026-11-05 10:56 ET",
       "sourceRun": "Daily Sports Models 2026-11-05"
@@ -6503,7 +6503,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "106.707",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-06. 185 same-day rows. Screening only: A Boston -8.5 KXNBASPREAD-26NOV06BOSCHA-BOS9 YES .51/BE51%; B BOS-CHA OVER 210.5 KXNBATOTAL-26NOV06BOSCHA-211 YES .45/BE45%; C Paul George 30+ PRA KXNBAPRA-26NOV06BOSCHA-BOSPGEORGE13-30 YES .37/BE37%. Boston net rating +6.6 versus Charlotte -11.2 supports Boston directionally, not calibrated cover probability. Boston Pritchard questionable (eye); Charlotte Knueppel/Grant Williams out, Schroder/Diabate questionable. George averages 21.3 points but no validated PRA distribution/minutes estimate. Both last played Wednesday; road/home context and blowout risk matter. https://sports.yahoo.com/articles/boston-celtics-charlotte-hornets-stream-013642472.html ; https://readthegame.com/today?date=2026-11-06&season=2026-27. Raw/robust probabilities and edges unestimated rather than invented. Independent SHADOW rejection: no evidence-supported positive raw edge; not simply failure of official threshold. No official/shadow stake. Quote-capture timestamp absent; freshness not independently proven. No pending active-league picks to settle.",
       "boardTimestampET": "2026-11-06 10:58 ET",
       "sourceRun": "Daily Sports Models 2026-11-06"
@@ -6527,7 +6527,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "99",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-06. 21 same-day rows. Screening only: A Calgary winner KXNHLGAME-26NOV06ANACGY-CGY YES .57/BE57%; B Calgary -1.5 KXNHLSPREAD-26NOV06ANACGY-CGY2 YES .36/BE36%; C ANA-CGY OVER 6.5 KXNHLTOTAL-26NOV06ANACGY-7 YES .49/BE49%. Anaheim on travel back-to-back after Edmonton. Dostal/Wolf projected, not confirmed; early save percentages .872/.870 are not stable forecasts. Anaheim Terry/Poehling/Greer/Moore absent; Calgary Zary/Huberdeau/Honzek absent, Othmann day-to-day. No reliable adjusted xG/special-teams projection supports a calibrated probability. https://www.breakawaystats.com/nhl/lineups ; https://insidetherink.com/nhl-game-preview-anaheim-ducks-at-calgary-flames-with-line-combinations-11-06-2026/. Raw/robust probabilities and edges unestimated rather than invented. Independent SHADOW rejection: no evidence-supported positive raw edge; not simply failure of official threshold. No official/shadow stake. Quote-capture timestamp absent; freshness not independently proven. No pending active-league picks to settle.",
       "boardTimestampET": "2026-11-06 10:58 ET",
       "sourceRun": "Daily Sports Models 2026-11-06"
@@ -6551,7 +6551,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-06. 276 same-day rows. Screening only: A Michigan +7.5 (NO on UConn wins by >7.5) KXNCAAMBSPREAD-26NOV06MICHCONN-CONN8 NO .52/BE52%; B MICH-UCONN OVER 144.5 KXNCAAMBTOTAL-26NOV06MICHCONN-145 YES .43/BE43%; C Michigan winner KXNCAAMBGAME-26NOV06MICHCONN-MICH YES .26/BE26%. Both 1-0; neutral TD Garden is geographically favorable to UConn. Michigan returns seven but replaces three lottery picks; UConn retains Demary/Mullins and adds transfers. Michigan 84-68 Oakland opener insufficient to calibrate opponent-adjusted pace/efficiency; confirmed rotation/availability and uncertainty interval unresolved. https://mgoblue.com/news/2026/11/4/mens-basketball-michigan-uconn-set-for-national-championship-rematch-in-boston. Raw/robust probabilities and edges unestimated rather than invented. Independent SHADOW rejection: no evidence-supported positive raw edge; not simply failure of official threshold. No official/shadow stake. Quote-capture timestamp absent; freshness not independently proven. No pending active-league picks to settle.",
       "boardTimestampET": "2026-11-06 10:58 ET",
       "sourceRun": "Daily Sports Models 2026-11-06"
@@ -6575,7 +6575,7 @@
       "stakeUnits": "0",
       "result": "Pass",
       "plUnits": "0",
-      "officialBankrollUnits": "98.818",
+      "officialBankrollUnits": null,
       "reason": "Board current: 2026-11-06; 220 candidates, 45 Friday FBS markets. A: Arizona -6.5 vs TCU (YES ask .53, BE 53%); B: Virginia Tech–SMU OVER 55.5 (YES ask .53, BE 53%); C: New Mexico to win at Nevada (YES ask .79, BE 79%). Independent projections, QB/availability, weather, travel and injury context do not establish sufficiently calibrated probabilities after fees/slippage/uncertainty. No invented probabilities, no shadow entries without defensible positive edge. Board has no independent quote timestamp. 2026-10-31 Iowa 30 Wisconsin 0: OFFICIAL-003 loss; Arizona 26 Texas Tech 34: SHADOW-011 win. Sources: https://www.foxsports.com/college-football/wisconsin-badgers-vs-iowa-hawkeyes-oct-31-2026-game-boxscore-43923 ; https://big12.co/scores ; https://www.covers.com/sports/ncaaf/matchups ; https://kickoffstatus.com/ ; https://www.gordstats.com/cfb/schedule/",
       "boardTimestampET": "2026-11-06 18:05 ET",
       "sourceRun": "NCAA Football Kalshi Model 2026-11-06 Friday"
@@ -6599,7 +6599,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "106.707",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-07. 152 same-day rows. A Houston -6.5 KXNBASPREAD-26NOV07HOUPHX-HOU7 YES .52/BE52%; B HOU-PHX UNDER 224.5 (NO on Over 224.5) KXNBATOTAL-26NOV07HOUPHX-225 NO .53/BE53%; C Sengun 8+ assists KXNBAAST-26NOV07HOUPHX-HOUASENGUN28-8 YES .39/BE39%. Houston 7-2 versus Phoenix 2-5; road favorite directional strength does not calibrate cover probability. Adams/Capela out; Phoenix Mark Williams out, Goodwin doubtful, Fleming questionable per 10AM official injury report. Frontcourt absences change Sengun minutes/usage but assist conversion, pace and blowout distribution not validated. https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-07_10_00AM.pdf ; https://www.si.com/nba/scoreboard/rockets-vs-suns-11-7-2026-1628. Screening contracts, not wagers. Model/raw/robust probabilities and edges not estimated rather than invented. Independent SHADOW rejection: no evidence-supported positive raw edge; not solely official threshold failure. Quote timestamp unavailable; ask freshness not independently verified. No pending active-league selections found.",
       "boardTimestampET": "2026-11-07 11:02 ET",
       "sourceRun": "Daily Sports Models 2026-11-07"
@@ -6623,7 +6623,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "99",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-07. 80 same-day rows. A Washington winner KXNHLGAME-26NOV07FLAWSH-WSH YES .53/BE53%; B Washington -1.5 KXNHLSPREAD-26NOV07FLAWSH-WSH2 YES .33/BE33%; C FLA-WSH UNDER 6.5 (NO on Over 6.5) KXNHLTOTAL-26NOV07FLAWSH-7 NO .53/BE53%. Puck drop 12:30 ET, still pregame at review. Florida starter conflicts: Markstrom projected in NHL lineup versus Schmid toss-up in daily.hockey; Thompson projected Washington. Barkov/Marchand absent, Mikkola expected to play; Washington Sandin/Desharnais absent. Goalie conflict and unavailable reliable adjusted shot-quality/special-teams model prevent supported probability. https://frontend.d3.nhle.com/news/nhl-lineup-projections-2026-27-season ; https://daily.hockey/starting-goalies/2026-11-07. Screening contracts, not wagers. Model/raw/robust probabilities and edges not estimated rather than invented. Independent SHADOW rejection: no evidence-supported positive raw edge; not solely official threshold failure. Quote timestamp unavailable; ask freshness not independently verified. No pending active-league selections found.",
       "boardTimestampET": "2026-11-07 11:02 ET",
       "sourceRun": "Daily Sports Models 2026-11-07"
@@ -6647,7 +6647,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "board_date_et=2026-11-07. 274 same-day rows. A Maryland -2.5 KXNCAAMBSPREAD-26NOV07MDGTWN-MD3 YES .53/BE53%; B MD-GTWN UNDER 148.5 (NO on Over 148.5) KXNCAAMBTOTAL-26NOV07MDGTWN-149 NO .56/BE56%; C Georgetown winner KXNCAAMBGAME-26NOV07MDGTWN-GTWN YES .42/BE42%. 19:30 ET at Georgetown home Capital One Arena. Both 1-0 after wins against Bucknell/Loyola Maryland. Major transfer-driven roster changes undermine last-season priors; Maryland Del Pino questionable, Georgetown Vyctorius Miller out. Opening-game minutes influenced by large margins; opponent-adjusted efficiency and pace distribution not calibrated. https://umterps.com/news/2026/11/5/mens-basketball-dmv-rivalry-renewed-terps-head-to-georgetown-on-saturday ; https://www.covers.com/sport/basketball/ncaab/matchup/383676. Screening contracts, not wagers. Model/raw/robust probabilities and edges not estimated rather than invented. Independent SHADOW rejection: no evidence-supported positive raw edge; not solely official threshold failure. Quote timestamp unavailable; ask freshness not independently verified. No pending active-league selections found.",
       "boardTimestampET": "2026-11-07 11:02 ET",
       "sourceRun": "Daily Sports Models 2026-11-07"
@@ -6671,7 +6671,7 @@
       "stakeUnits": "0",
       "result": "N/A",
       "plUnits": "0",
-      "officialBankrollUnits": "98.818",
+      "officialBankrollUnits": null,
       "reason": "Rerun v2.1. GitHub board_date_et=2026-11-07, candidate_market_count=220; 80 game, 60 spread, 40 total, 40 team-total records, all with same-day event date and at least one syntactically valid ask. Board has no quote-capture timestamp and status=active does not establish currently executable quotes. At/after 12:00 ET early games began; no retroactive picks. Independent calibrated matchup probabilities could not be established for complete eligible pre-kickoff slate; this is INSUFFICIENT MODEL COVERAGE, NOT demonstrated NO EDGE. No official or shadow created; 0u P/L; existing official record 1-2, bankroll 98.818u. No historical rows modified.",
       "boardTimestampET": null,
       "sourceRun": null
@@ -6791,7 +6791,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "0.190476",
-      "officialBankrollUnits": "106.897",
+      "officialBankrollUnits": null,
       "reason": "same-day recovery run; supersedes earlier data block for action coverage. MINIMUM-ACTION — best available market-favored moneyline by board consensus; below normal edge bar. Upcoming Minnesota–Utah game listed for 7:00 PM ET. Same-day board ask; quote freshness unverified; paper only. No independently calibrated model probability or edge; fields left blank. No real-money bet.",
       "boardTimestampET": "2026-11-08 11:34 ET — same-day recovery run",
       "sourceRun": "Consolidated Sports recovery 2026-11-08"
@@ -6815,7 +6815,7 @@
       "stakeUnits": "0.5",
       "result": "Loss",
       "plUnits": "-0.5",
-      "officialBankrollUnits": "106.707",
+      "officialBankrollUnits": null,
       "reason": "same-day recovery run; supersedes earlier data block for action coverage. RISKIER SHADOW — Brooklyn moneyline underdog, intentionally higher variance, separate game from official. Upcoming Brooklyn–Dallas game listed for 7:30 PM ET. Same-day board ask; quote freshness unverified; paper only. No independently calibrated model probability or edge; fields left blank. No real-money bet.",
       "boardTimestampET": "2026-11-08 11:34 ET — same-day recovery run",
       "sourceRun": "Consolidated Sports recovery 2026-11-08"
@@ -6839,7 +6839,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "0.724138",
-      "officialBankrollUnits": "99.724",
+      "officialBankrollUnits": null,
       "reason": "same-day recovery run; supersedes earlier data block for action coverage. MINIMUM-ACTION — best available market-favored moneyline by board consensus; below normal edge bar. Panthers–Bruins listed for 1:00 PM ET. Same-day board ask; quote freshness unverified; paper only. No independently calibrated model probability or edge; fields left blank. No real-money bet.",
       "boardTimestampET": "2026-11-08 11:34 ET — same-day recovery run",
       "sourceRun": "Consolidated Sports recovery 2026-11-08"
@@ -6863,7 +6863,7 @@
       "stakeUnits": "0.5",
       "result": "Loss",
       "plUnits": "-0.5",
-      "officialBankrollUnits": "99",
+      "officialBankrollUnits": null,
       "reason": "same-day recovery run; supersedes earlier data block for action coverage. RISKIER SHADOW — Toronto moneyline underdog, intentionally higher variance, separate game from official. Devils–Maple Leafs listed for 7:00 PM ET. Same-day board ask; quote freshness unverified; paper only. No independently calibrated model probability or edge; fields left blank. No real-money bet.",
       "boardTimestampET": "2026-11-08 11:34 ET — same-day recovery run",
       "sourceRun": "Consolidated Sports recovery 2026-11-08"
@@ -6887,7 +6887,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "0.052632",
-      "officialBankrollUnits": "100.053",
+      "officialBankrollUnits": null,
       "reason": "same-day recovery run; supersedes earlier data block for action coverage. MINIMUM-ACTION — strongest market-favored moneyline available on the checked slate; below normal edge bar. Southeast Missouri State–South Carolina listed for 1:00 PM ET. Same-day board ask; quote freshness unverified; paper only. No independently calibrated model probability or edge; fields left blank. No real-money bet.",
       "boardTimestampET": "2026-11-08 11:34 ET — same-day recovery run",
       "sourceRun": "Consolidated Sports recovery 2026-11-08"
@@ -6911,7 +6911,7 @@
       "stakeUnits": "0.5",
       "result": "Loss",
       "plUnits": "-0.5",
-      "officialBankrollUnits": "100",
+      "officialBankrollUnits": null,
       "reason": "same-day recovery run; supersedes earlier data block for action coverage. RISKIER SHADOW — Arkansas moneyline underdog, intentionally higher variance, separate game from official. Arkansas–Virginia listed for 1:00 PM ET. Same-day board ask; quote freshness unverified; paper only. No independently calibrated model probability or edge; fields left blank. No real-money bet.",
       "boardTimestampET": "2026-11-08 11:34 ET — same-day recovery run",
       "sourceRun": "Consolidated Sports recovery 2026-11-08"
@@ -6935,7 +6935,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "0.234568",
-      "officialBankrollUnits": "101.104",
+      "officialBankrollUnits": null,
       "reason": "same-day recovery run; supersedes earlier data block for action coverage. MINIMUM-ACTION — best available market-favored moneyline by board consensus; below normal edge bar. Jets–Chiefs listed for 1:00 PM ET. Same-day board ask; quote freshness unverified; paper only. No independently calibrated model probability or edge; fields left blank. Cincinnati–Atlanta excluded because it started.",
       "boardTimestampET": "2026-11-08 11:34 ET — same-day recovery run",
       "sourceRun": "Consolidated Sports recovery 2026-11-08"
@@ -6959,7 +6959,7 @@
       "stakeUnits": "0.5",
       "result": "Loss",
       "plUnits": "-0.5",
-      "officialBankrollUnits": "100.869",
+      "officialBankrollUnits": null,
       "reason": "same-day recovery run; supersedes earlier data block for action coverage. RISKIER SHADOW — Las Vegas moneyline underdog, intentionally higher variance, separate game from official. Raiders–49ers listed for 4:25 PM ET. Same-day board ask; quote freshness unverified; paper only. No independently calibrated model probability or edge; fields left blank. No real-money bet.",
       "boardTimestampET": "2026-11-08 11:34 ET — same-day recovery run",
       "sourceRun": "Consolidated Sports recovery 2026-11-08"
@@ -6983,7 +6983,7 @@
       "stakeUnits": "1.00",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "105.897",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; same-day board ask, quote freshness unverified; paper only. Atlanta moneyline chosen as lower-variance eligible side. NBA injury report submissions were incomplete at run time and v4 readiness lacks calibrated forward probabilities; model probability/edge not estimated. No real-money bet. One contract costs $0.53 and pays $1 if correct (gross profit $0.47); $1 paper stake buys ~1.887 contracts, gross profit ~$0.887 before fees if correct.",
       "boardTimestampET": "2026-11-09 11:07 ET",
       "sourceRun": "Consolidated Sports 2026-11-09"
@@ -7031,7 +7031,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.666666667",
-      "officialBankrollUnits": "100.3906667",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; same-day board ask, quote freshness unverified; paper only. Edmonton moneyline selected as lower variance than spread; starting goalies were not confirmed, and independent xG/goalie-calibrated probability unavailable. No real-money bet. One contract costs $0.60 and pays $1 if correct (gross profit $0.40); $1 paper stake buys ~1.667 contracts, gross profit ~$0.667 before fees if correct.",
       "boardTimestampET": "2026-11-09 11:07 ET",
       "sourceRun": "Consolidated Sports 2026-11-09"
@@ -7079,7 +7079,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.449275362",
-      "officialBankrollUnits": "100.5022754",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; same-day board ask, quote freshness unverified; paper only. Indiana moneyline is the lower-variance eligible candidate under the price cap. Both teams have tiny early-season samples and substantial roster turnover; neutral-site context, opponent-adjusted efficiency and availability do not support calibrated probability/edge. No real-money bet. One contract costs $0.69 and pays $1 if correct (gross profit $0.31); $1 paper stake buys ~1.449 contracts, gross profit ~$0.449 before fees if correct.",
       "boardTimestampET": "2026-11-09 11:07 ET",
       "sourceRun": "Consolidated Sports 2026-11-09"
@@ -7127,7 +7127,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.612903226",
-      "officialBankrollUnits": "101.7169032",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; same-day board ask, quote freshness unverified; paper only. Buffalo moneyline selected as lower-variance eligible contract, but Minnesota's quarterback absence and strong scoring defense create opposing matchup effects; no calibrated model probability/edge. No real-money bet. One contract costs $0.62 and pays $1 if correct (gross profit $0.38); $1 paper stake buys ~1.613 contracts, gross profit ~$0.613 before fees if correct.",
       "boardTimestampET": "2026-11-09 11:07 ET",
       "sourceRun": "Consolidated Sports 2026-11-09"
@@ -7175,7 +7175,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "0.8867924528",
-      "officialBankrollUnits": "106.7837925",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; Boston moneyline selected as the steadier eligible side under the 75¢ cap. Philadelphia has three listed rotation/frontcourt absences, while Embiid is not injury-listed; independent calibrated probability/edge unavailable. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No real-money bet. One contract costs $0.53 and returns $1 if correct (gross $0.47); $1 paper stake has about $0.887 gross profit before fees if correct.",
       "boardTimestampET": "2026-11-10 11:05 ET",
       "sourceRun": "Consolidated Sports 2026-11-10"
@@ -7223,7 +7223,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "99.39066667",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; New Jersey selected as the lower-variance eligible side. Jake Allen is confirmed for NJ; Winnipeg's goalie remains unconfirmed/expected, so goalie uncertainty is material. Independent xG/goalie-calibrated probability/edge unavailable. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No real-money bet. One contract costs $0.58 and returns $1 if correct (gross $0.42); $1 paper stake has about $0.724 gross profit before fees if correct.",
       "boardTimestampET": "2026-11-10 11:05 ET",
       "sourceRun": "Consolidated Sports 2026-11-10"
@@ -7271,7 +7271,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "99.50227536",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; Duke moneyline selected as the most defensible eligible favorite at the user's 75¢ cap. No. 2 Duke vs No. 5 Michigan State, neutral-site Champions Classic; early-season sample remains small. Independent adjusted-efficiency/roster-calibrated probability/edge unavailable. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No real-money bet. One contract costs $0.75 and returns $1 if correct (gross $0.25); $1 paper stake has about $0.333 gross profit before fees if correct.",
       "boardTimestampET": "2026-11-10 11:05 ET",
       "sourceRun": "Consolidated Sports 2026-11-10"
@@ -7319,7 +7319,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.449275362",
-      "officialBankrollUnits": "107.2330679",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; Boston moneyline selected as the steadier eligible side under the 75¢ price cap. Toronto's report lists Scottie Barnes and Kawhi Leonard out and Immanuel Quickley questionable; Boston's latest fetched submission remained not yet submitted, so availability/matchup uncertainty remains. No independently calibrated probability or edge. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet. One contract costs $0.69 and returns $1 if correct (gross profit $0.31); a $1 paper stake buys ~1.449 contracts and yields ~$0.449 gross profit before fees if correct.",
       "boardTimestampET": "2026-11-11 11:02 ET",
       "sourceRun": "Scheduled NBA NHL NCAAB Model run 2026-11-11"
@@ -7367,7 +7367,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.818181818",
-      "officialBankrollUnits": "100.2088485",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; Tampa Bay moneyline selected as a lower-variance eligible contract below the 75¢ cap. Projected goalies are Vasilevskiy for Tampa (leaning) and Luukkonen for Buffalo (likely), but the official goalie tracker shows 0 of 12 starters confirmed. NHL independent xG/goalie-calibrated probability and edge unavailable; starting-goalie status could materially alter the matchup. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet. One contract costs $0.55 and returns $1 if correct (gross profit $0.45); a $1 paper stake buys ~1.818 contracts and yields ~$0.818 gross profit before fees if correct.",
       "boardTimestampET": "2026-11-11 11:02 ET",
       "sourceRun": "Scheduled NBA NHL NCAAB Model run 2026-11-11"
@@ -7415,7 +7415,7 @@
       "stakeUnits": "1.00",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "98.5022754",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; Albany moneyline selected as a lower-variance eligible game-winner market at the 49¢ ask, below the 75¢ cap. Men's D-I slate confirmed and event is upcoming; early-season samples, roster continuity, adjusted efficiency, pace, injuries and minutes do not support an independently calibrated probability/edge here. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual-money bet. One contract costs $0.49 and returns $1 if correct (gross profit $0.51); a $1 paper stake buys ~2.041 contracts and yields ~$1.041 gross profit before fees if correct.",
       "boardTimestampET": "2026-11-11 11:02 ET",
       "sourceRun": "Scheduled NBA NHL NCAAB Model run 2026-11-11"
@@ -7463,7 +7463,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "106.2330679",
+      "officialBankrollUnits": null,
       "reason": "Same-day catch-up paper record after task resume. 75¢ ask cap satisfied. Minimum-action official; Atlanta at Chicago scheduled 8:00 PM ET ET. Same-day board ask; row-level quote freshness unverified. No independently calibrated probability or edge; fields left blank. Paper only; no real bet. Final verified: Atlanta lost 117–125 to Chicago (OT), Nov 13 ET; settled 2026-11-14 06:03 ET. Score source: ESPN/HoopsNightly.",
       "boardTimestampET": null,
       "sourceRun": null
@@ -7487,7 +7487,7 @@
       "stakeUnits": "0.5",
       "result": "Win",
       "plUnits": "1.5",
-      "officialBankrollUnits": "107.2330679",
+      "officialBankrollUnits": null,
       "reason": "RISKIER SHADOW — Same-day catch-up paper record after task resume. 75¢ ask cap satisfied. Separate higher-variance shadow; New York at Indiana scheduled 7:00 PM ET ET. Same-day board ask; row-level quote freshness unverified. No independently calibrated probability or edge; fields left blank. Paper only; no real bet. Final verified: Indiana beat New York 106–104, Nov 13 ET; settled 2026-11-14 06:03 ET. Score source: ESPN.",
       "boardTimestampET": null,
       "sourceRun": null
@@ -7511,7 +7511,7 @@
       "stakeUnits": "1",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "99.2088485",
+      "officialBankrollUnits": null,
       "reason": "Same-day catch-up paper record after task resume. 75¢ ask cap satisfied. Minimum-action official; Nashville at Vegas scheduled 10:00 PM ET ET. Same-day board ask; row-level quote freshness unverified. No independently calibrated probability or edge; fields left blank. Paper only; no real bet. Final verified: Vegas lost 2–3 (SO) to Nashville, Nov 13 ET; settled 2026-11-14 06:03 ET. Score source: ESPN.",
       "boardTimestampET": null,
       "sourceRun": null
@@ -7535,7 +7535,7 @@
       "stakeUnits": "0.5",
       "result": "Win",
       "plUnits": "1.015151515",
-      "officialBankrollUnits": "100.2088485",
+      "officialBankrollUnits": null,
       "reason": "RISKIER SHADOW — Same-day catch-up paper record after task resume. 75¢ ask cap satisfied. Separate higher-variance shadow; NY Rangers at Vancouver scheduled 9:00 PM ET ET. Same-day board ask; row-level quote freshness unverified. No independently calibrated probability or edge; fields left blank. Paper only; no real bet. Final verified: Vancouver lost 1–5 to NY Rangers, Nov 13 ET; settled 2026-11-14 06:03 ET. Score source: ESPN.",
       "boardTimestampET": null,
       "sourceRun": null
@@ -7559,7 +7559,7 @@
       "stakeUnits": "1",
       "result": "Win",
       "plUnits": "0.4492753623",
-      "officialBankrollUnits": "98.95155076",
+      "officialBankrollUnits": null,
       "reason": "Same-day catch-up paper record after task resume. 75¢ ask cap satisfied. Minimum-action official; Virginia at Maryland scheduled 8:00 PM ET ET. Same-day board ask; row-level quote freshness unverified. No independently calibrated probability or edge; fields left blank. Paper only; no real bet. Final verified: Virginia beat Maryland 87–83, Nov 13 ET; settled 2026-11-14 06:03 ET. Score source: CBS Sports.",
       "boardTimestampET": null,
       "sourceRun": null
@@ -7583,7 +7583,7 @@
       "stakeUnits": "0.5",
       "result": "Loss",
       "plUnits": "-0.5",
-      "officialBankrollUnits": "98.5022754",
+      "officialBankrollUnits": null,
       "reason": "RISKIER SHADOW — Same-day catch-up paper record after task resume. 75¢ ask cap satisfied. Separate higher-variance shadow; Arizona at Auburn scheduled 9:00 PM ET ET. Same-day board ask; row-level quote freshness unverified. No independently calibrated probability or edge; fields left blank. Paper only; no real bet. Final verified: Auburn lost 69–80 to Arizona, Nov 13 ET; settled 2026-11-14 06:03 ET. Score source: CBS Sports.",
       "boardTimestampET": null,
       "sourceRun": null
@@ -7943,7 +7943,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.5625",
-      "officialBankrollUnits": "101.7169032",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — PAPER ONLY. Cincinnati selected as the lower-variance side for the official slot. Same-day candidate-feed ask; quote freshness unverified because the row has no capture timestamp. No independently calibrated probability or edge; fields left blank. Upcoming Sunday night pregame event checked. No actual bet.",
       "boardTimestampET": null,
       "sourceRun": "Catch-up paper run 2026-11-15; missed scheduled 11:00 ET pass"
@@ -7991,7 +7991,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.4705882353",
-      "officialBankrollUnits": "107.9306299",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Philadelphia selected as the best-supported lower-variance eligible side; edge/probability not reliably estimable. Exact Kalshi YES ask is 0.68 (ask break-even 68%; not a true probability); $1 risked implies about $0.4706 gross profit pre-fees if correct. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. NBA v4 research not production-eligible. Orlando injury reporting incomplete; Boston report not yet submitted. No actual bet. Settled 2026-11-19 06:03 ET: Philadelphia beat Brooklyn 135–123. Verified from NBA.com game summary.",
       "boardTimestampET": "2026-11-16 11:14 ET",
       "sourceRun": "NBA 11:00 ET daily paper run"
@@ -8039,7 +8039,7 @@
       "stakeUnits": "1.00",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "99.6300391",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Montreal selected as best-supported lower-variance eligible side; no calibrated edge/probability. $1 risked implies about $0.9608 gross profit pre-fees if correct; ask break-even only, not true probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Both goalies are projected, not confirmed; no independent starting-goalie/expected-goals model. NHL score-only history underperformed. No actual bet. Settled 2026-11-19 06:03 ET: Montreal lost 1–3 to NY Rangers. Verified from NHL.com game recap.",
       "boardTimestampET": "2026-11-16 11:14 ET",
       "sourceRun": "NHL 11:00 ET daily paper run"
@@ -8087,7 +8087,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.9607843137",
-      "officialBankrollUnits": "99.5513113",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. St. Thomas selected as best-supported lower-variance eligible choice; edge/probability unavailable because independent adjusted efficiency, pace, roster continuity, projected starters/minutes and injury inputs were not verified. Small early-season samples (St. Thomas 2-2, LIU 0-5) strongly regressed; venue LIU home. $1 risked implies about $0.9608 gross profit pre-fees if correct; ask break-even only. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual bet. Settled 2026-11-19 06:03 ET: St. Thomas beat LIU 79–70. Verified from NEC official box score.",
       "boardTimestampET": "2026-11-16 11:14 ET",
       "sourceRun": "NCAAB 11:00 ET daily paper run"
@@ -8135,7 +8135,7 @@
       "stakeUnits": "1.00",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "101.2789712",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Baltimore YES selected as the best-supported lower-variance eligible side at 68¢. Same-day board ask; quote freshness unverified. No independently calibrated probability/edge or full injury-adjusted model, so those fields are blank. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual bet. Settled 2026-11-19 11:00 ET: Baltimore lost 20–23 to Los Angeles. Verified from official Ravens scoring summary. Paper result only.",
       "boardTimestampET": "2026-11-16 11:14 ET",
       "sourceRun": "NFL Monday 11:00 ET daily paper run"
@@ -8183,7 +8183,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.75439",
-      "officialBankrollUnits": "108.6850199",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — PAPER ONLY. New York is the lower-variance official selection at 57¢. Same-day candidate-feed ask; quote freshness unverified because no row capture timestamp is available. No independently calibrated probability or edge; fields left blank. Upcoming event verified for 7:30 PM ET. No actual bet. Settled 2026-11-19 06:03 ET: New York beat Toronto; selection was NYK YES. Verified from final score feed.",
       "boardTimestampET": null,
       "sourceRun": "Catch-up model run 2026-11-17 14:34 ET"
@@ -8231,7 +8231,7 @@
       "stakeUnits": "1.00",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "98.6300391",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — PAPER ONLY. Boston is the lower-variance official selection at 61¢. Same-day candidate-feed ask; quote freshness unverified because no row capture timestamp is available. Independent goalie/forward probability and edge were not verified; fields left blank. Upcoming event scheduled for 7:00 PM ET. No actual bet. Settled 2026-11-19 06:03 ET: Boston selection lost at Detroit. Verified from final score feed.",
       "boardTimestampET": null,
       "sourceRun": "Catch-up model run 2026-11-17 14:34 ET"
@@ -8279,7 +8279,7 @@
       "stakeUnits": "1.00",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "98.5513113",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — PAPER ONLY. Villanova is the lower-variance official selection at 54¢. Same-day candidate-feed ask; quote freshness unverified because no row capture timestamp is available. No independently calibrated probability or edge; fields left blank. Upcoming event verified for 7:00 PM ET. No actual bet. Settled 2026-11-19 06:03 ET: Villanova selection lost at Pittsburgh. Verified from final score feed.",
       "boardTimestampET": null,
       "sourceRun": "Catch-up model run 2026-11-17 14:34 ET"
@@ -8327,7 +8327,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.9607843137",
-      "officialBankrollUnits": "109.6458042",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR · PAPER ONLY. Philadelphia entered 12–3 versus Orlando’s 6–7. ESPN pregame start 7:00 PM ET. Kalshi orderbook ask verified at 2026-11-18 13:54 ET. Independent calibrated probability and net edge unavailable. Settled 2026-11-19 06:03 ET: Philadelphia beat Orlando 121–116. Verified from NBA.com game summary.",
       "boardTimestampET": "2026-11-18 13:54 ET",
       "sourceRun": "Catch-up model run 2026-11-18 13:54 ET"
@@ -8375,7 +8375,7 @@
       "stakeUnits": "1.00",
       "result": "Loss",
       "plUnits": "-1",
-      "officialBankrollUnits": "97.6300391",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR · PAPER ONLY. New Jersey home ice and 15–6–0 record provide basic support. ESPN pregame start 7:30 PM ET. Kalshi orderbook ask verified at 2026-11-18 13:54 ET. Independent calibrated probability and net edge unavailable. Settled 2026-11-19 06:03 ET: New Jersey lost 2–3 to Montreal. Verified from final score feed.",
       "boardTimestampET": "2026-11-18 13:54 ET",
       "sourceRun": "Catch-up model run 2026-11-18 13:54 ET"
@@ -8423,7 +8423,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.6129032258",
-      "officialBankrollUnits": "99.1642145",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR · PAPER ONLY. Chattanooga entered 2–2 against winless Winthrop, with small early-season samples. ESPN pregame start 6:30 PM ET. Kalshi orderbook ask verified at 2026-11-18 13:54 ET. Independent calibrated probability and net edge unavailable. Settled 2026-11-19 06:03 ET: Chattanooga beat Winthrop 90–79. Verified from CBS Sports.",
       "boardTimestampET": "2026-11-18 13:54 ET",
       "sourceRun": "Catch-up model run 2026-11-18 13:54 ET"
@@ -8519,7 +8519,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.9607843137",
-      "officialBankrollUnits": "110.6065885",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. New York YES selected as the best-supported lower-variance eligible moneyline at $0.51. The official NBA report lists Anthony Edwards and Donte DiVincenzo out, Jaylen Clark out, and Jonathan Kuminga questionable for Minnesota; Knicks no injury listed in the searched report. Minute/usage/pace matchup and calibrated win probability/edge not independently modeled; probability and edge intentionally blank. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Break-even ask only, not a true probability. One contract costs $0.51 and returns $1 (gross $0.49); $1 stake would yield about $0.9608 gross pre-fee if correct. No actual bet. Settled 2026-11-20 06:00 ET: New York defeated Minnesota 102–99. Verified from NBA.com official game summary.",
       "boardTimestampET": "2026-11-19 11:00 ET",
       "sourceRun": "NBA 11:00 ET daily paper run"
@@ -8567,7 +8567,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.4705882353",
-      "officialBankrollUnits": "98.10062734",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Minnesota selected as best-supported lower-variance eligible moneyline; official Calgary schedule lists MIN 16-3-4 and CGY 10-11-1. Current goalie feed projects Jesper Wallstedt for Minnesota and Dustin Wolf/Devin Cooley uncertain for Calgary; starters not confirmed. Expected-goals, goalie-adjusted matchup and calibrated edge/probability unavailable; fields blank. NHL score-only research baseline underperformed and v4 eligibility is false. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Break-even ask only. One contract costs $0.68 and returns $1 (gross $0.32); $1 stake yields about $0.4706 gross pre-fee if correct. No actual bet. Settled 2026-11-20 06:00 ET: Minnesota defeated Calgary 4–1. Verified from NHL.com game recap and official NHL game summary.",
       "boardTimestampET": "2026-11-19 11:00 ET",
       "sourceRun": "NHL 11:00 ET daily paper run"
@@ -8615,7 +8615,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.7543859649",
-      "officialBankrollUnits": "99.91860046",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Houston YES selected as best-supported lower-variance eligible winner side; the tournament has #8 Houston vs #11 Kansas at neutral Las Vegas, and current reports note Houston beat Florida while Kansas beat West Virginia yesterday. Roster continuity, injuries, adjusted efficiency, pace and minute/rotation inputs not independently validated; small early-season samples heavily regressed. No calibrated probability/edge; fields blank. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Break-even only. One contract costs $0.57 and returns $1 (gross $0.43); $1 stake yields about $0.7544 gross pre-fee if correct. No actual bet. Settled 2026-11-20 06:00 ET: Houston defeated Kansas 92–83 in the Players Era 8 championship. Verified from University of Houston Athletics.",
       "boardTimestampET": "2026-11-19 11:00 ET",
       "sourceRun": "NCAAB 11:00 ET daily paper run"
@@ -8663,7 +8663,7 @@
       "stakeUnits": "1.00",
       "result": "Win",
       "plUnits": "0.9230769231",
-      "officialBankrollUnits": "102.2020481",
+      "officialBankrollUnits": null,
       "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Under 44.5 via Kalshi NO selected as strongest supported lower-variance eligible market. NFL reports Colts tackles Bernhard Raimann/Jalen Travis out; Texans RB Woody Marks, WR Marvin Harrison Jr and TE Brevin Jordan out, but this is qualitative only and not an independent scoring model. Game is scheduled 8:15 PM ET; no calibrated total probability/edge, efficiency/pace/weather and full personnel adjustment unavailable. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Break-even only. One contract costs $0.52 and yields $0.48 gross; $1 stake yields about $0.9231 gross pre-fee if correct. No actual bet. Settled 2026-11-20 06:00 ET: Houston beat Indianapolis 26–3 (29 total), so Under 44.5 via NO wins. Verified from Colts.com official game recap.",
       "boardTimestampET": "2026-11-19 11:00 ET",
       "sourceRun": "NFL Thursday 11:00 ET daily paper run"
@@ -8709,10 +8709,10 @@
       "edgePP": null,
       "confidence": "Low — minimum-action / uncalibrated",
       "stakeUnits": "1.00",
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Loss",
+      "plUnits": "-1",
       "officialBankrollUnits": null,
-      "reason": "MINIMUM-ACTION — PAPER ONLY. Detroit selected for the official slot at a 71¢ same-day board ask. Quote freshness is unverified because no row capture timestamp is available. Independent model probability and edge are unavailable and left blank. Pregame matchup is scheduled for 4:30 PM PST / 7:30 PM ET. No actual bet.",
+      "reason": "MINIMUM-ACTION — PAPER ONLY. Detroit selected for the official slot at a 71¢ same-day board ask. Quote freshness is unverified because no row capture timestamp is available. Independent model probability and edge are unavailable and left blank. Pregame matchup is scheduled for 4:30 PM PST / 7:30 PM ET. No actual bet. Settled 2026-11-21 06:04 ET: Toronto defeated Detroit 105–102, so Detroit YES loses. Verified from NBA.com official game summary.",
       "boardTimestampET": null,
       "sourceRun": "Catch-up model run 2026-11-20 12:14 ET"
     },
@@ -8733,10 +8733,10 @@
       "edgePP": null,
       "confidence": "Low — riskier shadow / uncalibrated",
       "stakeUnits": "0.50",
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Loss",
+      "plUnits": "-0.5",
       "officialBankrollUnits": null,
-      "reason": "RISKIER SHADOW — PAPER ONLY. Sacramento is the higher-variance underdog in a separate game from the official pick. Same-day board ask at 13¢; quote freshness unverified because no row capture timestamp is available. Independent model probability and edge are unavailable and left blank. Pregame event scheduled for 7:00 PM PST / 10:00 PM ET. No actual bet.",
+      "reason": "RISKIER SHADOW — PAPER ONLY. Sacramento is the higher-variance underdog in a separate game from the official pick. Same-day board ask at 13¢; quote freshness unverified because no row capture timestamp is available. Independent model probability and edge are unavailable and left blank. Pregame event scheduled for 7:00 PM PST / 10:00 PM ET. No actual bet. Settled 2026-11-21 06:04 ET: Los Angeles defeated Sacramento 106–104, so Sacramento YES loses. Verified from NBA.com official game recap.",
       "boardTimestampET": null,
       "sourceRun": "Catch-up model run 2026-11-20 12:14 ET"
     },
@@ -8757,10 +8757,10 @@
       "edgePP": null,
       "confidence": "Low — minimum-action / uncalibrated",
       "stakeUnits": "1.00",
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Win",
+      "plUnits": "0.5625",
       "officialBankrollUnits": null,
-      "reason": "MINIMUM-ACTION — PAPER ONLY. Stephen F. Austin selected for the official slot at a 64¢ same-day board ask. Quote freshness is unverified because no row capture timestamp is available. Independent model probability and edge are unavailable and left blank. Pregame event scheduled for 3:00 PM ET. No actual bet.",
+      "reason": "MINIMUM-ACTION — PAPER ONLY. Stephen F. Austin selected for the official slot at a 64¢ same-day board ask. Quote freshness is unverified because no row capture timestamp is available. Independent model probability and edge are unavailable and left blank. Pregame event scheduled for 3:00 PM ET. No actual bet. Settled 2026-11-21 06:04 ET: Stephen F. Austin defeated Indiana State 86–76, so SFA YES wins. Verified from official Stephen F. Austin Athletics box score.",
       "boardTimestampET": null,
       "sourceRun": "Catch-up model run 2026-11-20 12:14 ET"
     },
@@ -8781,10 +8781,10 @@
       "edgePP": null,
       "confidence": "Low — riskier shadow / uncalibrated",
       "stakeUnits": "0.50",
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Win",
+      "plUnits": "2",
       "officialBankrollUnits": null,
-      "reason": "RISKIER SHADOW — PAPER ONLY. UAB is the higher-variance underdog in a different game from the official selection. Same-day board ask at 20¢; quote freshness is unverified because no row capture timestamp is available. Independent model probability and edge are unavailable and left blank. Pregame event scheduled for 2:00 PM ET. No actual bet.",
+      "reason": "RISKIER SHADOW — PAPER ONLY. UAB is the higher-variance underdog in a different game from the official selection. Same-day board ask at 20¢; quote freshness is unverified because no row capture timestamp is available. Independent model probability and edge are unavailable and left blank. Pregame event scheduled for 2:00 PM ET. No actual bet. Settled 2026-11-21 06:04 ET: UAB defeated George Washington 81–76, so UAB YES wins. Verified from official UAB Athletics box score.",
       "boardTimestampET": null,
       "sourceRun": "Catch-up model run 2026-11-20 12:14 ET"
     },
@@ -8811,6 +8811,150 @@
       "reason": "DATA BLOCK — the candidate feed board_date_et is 2026-11-14, not today. Friday FBS games are scheduled, but the required current exact-market asks are unavailable. No stale asks, prices, probabilities, or selections were reused or invented; no official or shadow entry.",
       "boardTimestampET": null,
       "sourceRun": "Catch-up model run 2026-11-20 12:14 ET"
+    },
+    {
+      "entryId": "MLS-OFFICIAL-002",
+      "dateET": "2026-11-21",
+      "league": "MLS",
+      "model": "Kalshi soccer minimum-action paper model",
+      "trackType": "OFFICIAL",
+      "event": "Inter Miami CF vs Columbus Crew",
+      "category": "Game winner",
+      "market": "KXMLSGAME-26NOV21MIACLB-MIA",
+      "selection": "Inter Miami wins (Kalshi YES)",
+      "line": null,
+      "odds": "$0.60 YES ask",
+      "breakEven": "60%",
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Low — minimum-action; no calibrated model",
+      "stakeUnits": "1",
+      "result": "Pending",
+      "plUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Inter Miami YES is the lower-variance official slot for the eligible MLS slate. Kalshi official event page fetched for this run shows exact ticker and YES ask 60¢; event scheduled 6:00 PM ET per MLS schedule. No independent team-strength/form, xG, lineup/injury, travel/rest, or calibrated outcome model is available, so model probability and edge are blank; this is not a B+ or production-validated pick. Quote freshness unverified; paper only, no actual bet. One contract costs $0.60 and would return $1 (gross $0.40); a $1 stake yields about $0.6667 gross profit pre-fee if correct.",
+      "boardTimestampET": "2026-11-21 06:04 ET",
+      "sourceRun": "Scheduled soccer model run — 2026-11-21 06:00 ET"
+    },
+    {
+      "entryId": "MLS-SHADOW-002",
+      "dateET": "2026-11-21",
+      "league": "MLS",
+      "model": "Kalshi soccer minimum-action paper model",
+      "trackType": "SHADOW",
+      "event": "Inter Miami CF vs Columbus Crew",
+      "category": "Spread",
+      "market": "KXMLSSPREAD-26NOV21MIACLB-MIA3",
+      "selection": "Inter Miami wins by more than 2.5 goals (Kalshi YES)",
+      "line": "Miami -2.5",
+      "odds": "$0.22 YES ask",
+      "breakEven": "22%",
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Low — riskier shadow; no calibrated model",
+      "stakeUnits": "0.5",
+      "result": "Pending",
+      "plUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "RISKIER SHADOW — PAPER ONLY. High-variance Miami >2.5-goal spread, distinct contract from the official side. Kalshi official spread page fetched for this run displays YES ask 22¢; no independent margin model or calibrated probability/edge is available, so those fields are blank. SAME-DAY PAGE ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual bet. One contract costs $0.22 and yields $0.78 gross; $1 spent yields about $3.5455 gross pre-fee if correct.",
+      "boardTimestampET": "2026-11-21 06:04 ET",
+      "sourceRun": "Scheduled soccer model run — 2026-11-21 06:00 ET"
+    },
+    {
+      "entryId": "SERIEA-OFFICIAL-001",
+      "dateET": "2026-11-21",
+      "league": "Serie A",
+      "model": "Kalshi soccer minimum-action paper model",
+      "trackType": "OFFICIAL",
+      "event": "Lazio vs Lecce",
+      "category": "Game winner",
+      "market": "KXSERIEAGAME-26NOV21LAZLEC-LAZ",
+      "selection": "Lazio wins (Kalshi YES)",
+      "line": null,
+      "odds": "$0.67 YES ask",
+      "breakEven": "67%",
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Low — minimum-action; no calibrated model",
+      "stakeUnits": "1",
+      "result": "Pending",
+      "plUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Lazio YES selected as the lower-variance official slot. Kalshi official event page fetched for this run shows exact matchup/ticker and YES ask 67¢; official Serie A schedule lists kickoff 9:00 AM ET. No independent form/xG, lineup/injury, tactical/travel/rest model or calibrated probability/edge is available; fields left blank. Quote freshness unverified; paper only, no actual bet. One contract costs $0.67 and would return $1 (gross $0.33); a $1 stake yields about $0.4925 gross pre-fee if correct.",
+      "boardTimestampET": "2026-11-21 06:04 ET",
+      "sourceRun": "Scheduled soccer model run — 2026-11-21 06:00 ET"
+    },
+    {
+      "entryId": "SERIEA-SHADOW-001",
+      "dateET": "2026-11-21",
+      "league": "Serie A",
+      "model": "Kalshi soccer minimum-action paper model",
+      "trackType": "SHADOW",
+      "event": "Lazio vs Lecce",
+      "category": "Game winner",
+      "market": "KXSERIEAGAME-26NOV21LAZLEC-LEC",
+      "selection": "Lecce wins (Kalshi YES)",
+      "line": null,
+      "odds": "$0.14 YES ask",
+      "breakEven": "14%",
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Low — riskier shadow; no calibrated model",
+      "stakeUnits": "0.5",
+      "result": "Pending",
+      "plUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "RISKIER SHADOW — PAPER ONLY. Lecce YES is the higher-variance underdog, a distinct outcome contract in the same fixture as the official pick because no other fixture had a quote verified as current at this run. Kalshi official event page fetched for this run displays YES ask 14¢. Independent model probability/edge unavailable and left blank. Quote freshness unverified; paper only, no actual bet. One contract costs $0.14 and yields $0.86 gross; $1 spent yields about $6.1429 gross pre-fee if correct.",
+      "boardTimestampET": "2026-11-21 06:04 ET",
+      "sourceRun": "Scheduled soccer model run — 2026-11-21 06:00 ET"
+    },
+    {
+      "entryId": "EPL-OFFICIAL-001",
+      "dateET": "2026-11-21",
+      "league": "EPL",
+      "model": "Kalshi soccer minimum-action paper model",
+      "trackType": "OFFICIAL",
+      "event": "Newcastle United vs Arsenal",
+      "category": "Game winner",
+      "market": "KXEPLGAME-26NOV21NEWARS-ARS",
+      "selection": "Arsenal wins (Kalshi YES)",
+      "line": null,
+      "odds": "$0.63 YES ask",
+      "breakEven": "63%",
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Low — minimum-action; no calibrated model",
+      "stakeUnits": "1",
+      "result": "Pending",
+      "plUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Arsenal YES selected as the lower-variance official slot for the eligible EPL slate. Kalshi official market page fetched for this run shows exact ticker and YES ask 63¢; official Premier League schedule lists kickoff 12:30 PM ET. Independent form/xG, lineup/injury, tactical/rest/travel model and calibrated probability/edge unavailable; fields left blank. Quote freshness unverified; paper only, no actual bet. One contract costs $0.63 and would return $1 (gross $0.37); a $1 stake yields about $0.5873 gross pre-fee if correct.",
+      "boardTimestampET": "2026-11-21 06:04 ET",
+      "sourceRun": "Scheduled soccer model run — 2026-11-21 06:00 ET"
+    },
+    {
+      "entryId": "EPL-SHADOW-001",
+      "dateET": "2026-11-21",
+      "league": "EPL",
+      "model": "Kalshi soccer minimum-action paper model",
+      "trackType": "SHADOW",
+      "event": "Newcastle United vs Arsenal",
+      "category": "Game winner",
+      "market": "KXEPLGAME-26NOV21NEWARS-NEW",
+      "selection": "Newcastle wins (Kalshi YES)",
+      "line": null,
+      "odds": "$0.16 YES ask",
+      "breakEven": "16%",
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Low — riskier shadow; no calibrated model",
+      "stakeUnits": "0.5",
+      "result": "Pending",
+      "plUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "RISKIER SHADOW — PAPER ONLY. Newcastle YES is a higher-variance underdog, a distinct outcome contract in the same fixture as the official selection because no second fixture had an ask verified current at this run. Kalshi official event page fetched for this run displays YES ask 16¢. Independent outcome probability/edge unavailable and left blank. Quote freshness unverified; paper only, no actual bet. One contract costs $0.16 and yields $0.84 gross; $1 spent yields about $5.25 gross pre-fee if correct.",
+      "boardTimestampET": "2026-11-21 06:04 ET",
+      "sourceRun": "Scheduled soccer model run — 2026-11-21 06:00 ET"
     }
   ]
 }
