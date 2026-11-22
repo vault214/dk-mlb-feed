@@ -1,16 +1,16 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-22T00:19:16.286661+00:00",
+  "updatedAtUTC": "2026-11-22T01:35:15.162861+00:00",
   "scanDateET": "2026-11-21",
   "scanHealth": "OK",
-  "lastSuccessfulSourceScanUTC": "2026-11-22T00:19:16.286661+00:00",
+  "lastSuccessfulSourceScanUTC": "2026-11-22T01:35:15.162861+00:00",
   "sourceStatus": [
     {
       "capperId": "koerner",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 3,
-      "checkedAtUTC": "2026-11-22T00:19:16.286661+00:00",
+      "freshLeads": 4,
+      "checkedAtUTC": "2026-11-22T01:35:15.162861+00:00",
       "errors": []
     },
     {
@@ -18,7 +18,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 14,
-      "checkedAtUTC": "2026-11-22T00:19:16.286661+00:00",
+      "checkedAtUTC": "2026-11-22T01:35:15.162861+00:00",
       "errors": []
     },
     {
@@ -26,7 +26,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 7,
-      "checkedAtUTC": "2026-11-22T00:19:16.286661+00:00",
+      "checkedAtUTC": "2026-11-22T01:35:15.162861+00:00",
       "errors": []
     },
     {
@@ -34,7 +34,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-22T00:19:16.286661+00:00",
+      "checkedAtUTC": "2026-11-22T01:35:15.162861+00:00",
       "errors": []
     },
     {
@@ -42,23 +42,25 @@
       "provider": "VSiN",
       "status": "OK",
       "freshLeads": 3,
-      "checkedAtUTC": "2026-11-22T00:19:16.286661+00:00",
+      "checkedAtUTC": "2026-11-22T01:35:15.162861+00:00",
       "errors": []
     }
   ],
-  "freshLeadsThisRun": 27,
-  "retainedRecentLeads": 11,
+  "freshLeadsThisRun": 28,
+  "retainedRecentLeads": 12,
   "leads": [
     {
       "capperId": "koerner",
-      "title": "Georgia vs. G Tech Odds & Betting Predictions November 21, 2026 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNR01UbkNfZFZ5emIwTzBPRkxFVmJDdjdHR3lQemhabU53N1Q4Z3F3X1pybVJFVHQzbDVzU25OYWFNcUVRNFU4MUJaMjRrcmFmN2lGOG5GNk9oY09WYURVb0JJeG1MTmdRa3JxVWRWUlBjTFlmNnBBRDdJUjBWdnVwV0ZkWGp1dDU2emcza0dadW16QVpub1U4WS1zZzk?oc=5",
-      "published": "Sat, 21 Nov 2026 04:27:08 GMT",
-      "publishedAtUTC": "2026-11-21T04:27:08+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": false,
+      "title": "Week 11 NFL Player Props: Sean Koerner\u2019s Best Bets & Parlays for Sunday - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOMnZWeUhGTEN4akxmNVc2cEE5NHN4R2ZuYlBuQ0ZTMkpRSXlxOTg3MldaVGIzRDktclJ0T2VuNFpWWkpSdmhmMDNVazVsZlVDQVMtczhWbWlKczdKRlhUcFUtVm1yZWp6bDdVYmpyQm5KUDRnUjFocnJyc1FZbU1qRlZHZmVqTl9ZUzRiN2xPR2x5SjBGQXpid0lGVWxhYzkzenc?oc=5",
+      "published": "Sun, 22 Nov 2026 00:47:00 GMT",
+      "publishedAtUTC": "2026-11-22T00:47:00+00:00",
+      "sports": [
+        "NFL"
+      ],
+      "authorInHeadline": true,
+      "status": "UNVERIFIED_DISCOVERY_ONLY",
+      "candidateBestBet": true,
       "reviewNeeded": [
         "verify actual author",
         "original pregame publication timestamp",
@@ -66,7 +68,26 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
+      "firstSeenUTC": "2026-11-22T01:35:15.162861+00:00"
+    },
+    {
+      "capperId": "koerner",
+      "title": "Colts vs Texans Predictions, Odds, Picks, Props, Inactives \u2014 TNF Preview - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxObk1ZVGRzUlVtUjhSQmZQTTgtWUcxZW1HYlFqa3BzZTBfM0RYa2duT2dpb2U4MzdGSnE3WmNVZ09wSlUxeDlJdjRHWUNmdG5LS0k5VXcycVJpNEVTVU5PTFBrR255LTFmdnFPQmdVMUNWSUd1NlMySkpnbjR2NG83LUU4bENtVVU?oc=5",
+      "published": "Thu, 19 Nov 2026 23:54:29 GMT",
+      "publishedAtUTC": "2026-11-19T23:54:29+00:00",
+      "sports": [],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-20T03:08:45.323943+00:00"
     },
     {
       "capperId": "koerner",
@@ -92,14 +113,14 @@
     },
     {
       "capperId": "koerner",
-      "title": "Colts vs Texans Predictions, Odds, Picks, Props, Inactives \u2014 TNF Preview - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdTZtTWtEOXlvRWo4V2FQbVhQUThYaFlrcGlhU2V6ankyaWk1NFRMdENoWFJlVERzamVPZXFKNGdtRUlERHM4bkVSS1J5SmczU28tdUNZdGtkNUhlT2FzaDlDVUZsaTJmcm5DdlpVVHVIR0hTamM2X3Rtc21UeXE0NWNxRk1za1UwUHpvb2FYUk5TVnZPVS05V1Q4QlZISmVabUNJNGZsSUh2WDZXZG40QVdDUVJzWWJQT2dsSmhzanVRWktnUE5kOVdsdw?oc=5",
-      "published": "Thu, 19 Nov 2026 23:55:00 GMT",
-      "publishedAtUTC": "2026-11-19T23:55:00+00:00",
+      "title": "Georgia vs. G Tech Odds & Betting Predictions November 21, 2026 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNR01UbkNfZFZ5emIwTzBPRkxFVmJDdjdHR3lQemhabU53N1Q4Z3F3X1pybVJFVHQzbDVzU25OYWFNcUVRNFU4MUJaMjRrcmFmN2lGOG5GNk9oY09WYURVb0JJeG1MTmdRa3JxVWRWUlBjTFlmNnBBRDdJUjBWdnVwV0ZkWGp1dDU2emcza0dadW16QVpub1U4WS1zZzk?oc=5",
+      "published": "Sat, 21 Nov 2026 04:27:08 GMT",
+      "publishedAtUTC": "2026-11-21T04:27:08+00:00",
       "sports": [],
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
+      "candidateBestBet": false,
       "reviewNeeded": [
         "verify actual author",
         "original pregame publication timestamp",
@@ -107,7 +128,7 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-19T20:30:23.916183+00:00"
+      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
     },
     {
       "capperId": "stuckey",
@@ -196,28 +217,6 @@
     },
     {
       "capperId": "stuckey",
-      "title": "College Football Predictions: Week 12 Evening Picks for Saturday, Nov. 21 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNdU5RVVVfTmtiWE9FZlFsb25ReWtrd2NpRkl0Q1FEWmY1WjF6Rldkc211bjlqSVJzQmFtZjdaa2ptTTc3NGZMMDBOVzRwSDhPQklfczZoZGZRckhuUnhqdlBzc2VGaC1teVdwZmg3T21zZGNjOWkyZTRBZHFOc3A4eVgtSXBLcjlXMF85VVJzc21rb3pnMUgzeG5MRVdrcHhoVUhiZFBpcGhnMFU?oc=5",
-      "published": "Sat, 21 Nov 2026 10:06:00 GMT",
-      "publishedAtUTC": "2026-11-21T10:06:00+00:00",
-      "sports": [
-        "NFL",
-        "NCAAF"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
-    },
-    {
-      "capperId": "stuckey",
       "title": "NCAAF Predictions, Picks: Stuckey\u2019s Top 2 Saturday Night Bets for Nov. 21 - Yahoo Sports",
       "sourceUrl": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdllQX3Qydjl4ZXBYNmxyTlpTUjNrMVlqdEd5TlRaTTJkN3VPNW5kRV9rcXhGb1hmWmtoSzlOUEZzSzlqbkUtSWlZSUVqNjNxc3Fmb0VGWWVta0hPdDFIYjNRQjVLelZRNnhjT0UxNEM5WEd3SnZ3R1B4aFJjcGk3TXNaNGhyMUJneXZJeA?oc=5",
       "published": "Sat, 21 Nov 2026 10:16:45 GMT",
@@ -239,17 +238,17 @@
     },
     {
       "capperId": "stuckey",
-      "title": "Week 12 College Football Predictions: Stuckey\u2019s 4 NCAAF Noon Spots for Saturday, Nov. 21 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONkNRWGxnV1ZOaXNjalo5ZGdfYzZKaGh1RFlJUUt1b0JmYUI3UkhxRTN4b0MzRVZ5TnlhWTJhUUtHTnRtWFFjWXZoV2VkZUVQN0lDNk5GRmdsbEx6Q21NNnNRU1dBVFFFSTBOSjczZHJncFRkdm5qYWVjZjR2ajNob0lwVGNpSzNJdXpTc053?oc=5",
-      "published": "Sat, 21 Nov 2026 10:12:12 GMT",
-      "publishedAtUTC": "2026-11-21T10:12:12+00:00",
+      "title": "College Football Moneyline Underdogs: Nebraska vs. Ohio State, Navy vs. Memphis Highlight Week 12 Picks - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOMDdiWE1GbW5rOFdsdGRrM0M2TjBkQUxuNFNPd0FlSVoxcGdCVU1ZbGRZNjBXanlxck1kUk96TjJBXzFveUsyMVBCcjRQZGhmcXFKalhRM0lvUk5Pbm5NeW1DUXpfTnBndFVrQ1E3d0t3ZDB1NDhJcjAwQzVpM001ZnJWT0tyVzVweXVXbFRZd3Y0VEltRGZCSmZIUGdob0d0QmdOZmhMUTFsX0pzU2h2V0MxM2stbjV0bC1tempYVTJ6eWJhQ0pIQ1lhNW9rVHk3d0hraktRenc?oc=5",
+      "published": "Fri, 20 Nov 2026 16:01:00 GMT",
+      "publishedAtUTC": "2026-11-20T16:01:00+00:00",
       "sports": [
         "NFL",
         "NCAAF"
       ],
-      "authorInHeadline": true,
-      "status": "UNVERIFIED_DISCOVERY_ONLY",
-      "candidateBestBet": false,
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
       "reviewNeeded": [
         "verify actual author",
         "original pregame publication timestamp",
@@ -257,7 +256,7 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
+      "firstSeenUTC": "2026-11-20T20:09:09.282049+00:00"
     },
     {
       "capperId": "stuckey",
@@ -283,10 +282,54 @@
     },
     {
       "capperId": "stuckey",
-      "title": "College Football Moneyline Underdogs: Nebraska vs. Ohio State, Navy vs. Memphis Highlight Week 12 Picks - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOMDdiWE1GbW5rOFdsdGRrM0M2TjBkQUxuNFNPd0FlSVoxcGdCVU1ZbGRZNjBXanlxck1kUk96TjJBXzFveUsyMVBCcjRQZGhmcXFKalhRM0lvUk5Pbm5NeW1DUXpfTnBndFVrQ1E3d0t3ZDB1NDhJcjAwQzVpM001ZnJWT0tyVzVweXVXbFRZd3Y0VEltRGZCSmZIUGdob0d0QmdOZmhMUTFsX0pzU2h2V0MxM2stbjV0bC1tempYVTJ6eWJhQ0pIQ1lhNW9rVHk3d0hraktRenc?oc=5",
-      "published": "Fri, 20 Nov 2026 16:01:00 GMT",
-      "publishedAtUTC": "2026-11-20T16:01:00+00:00",
+      "title": "College Football Predictions: Week 12 Evening Picks for Saturday, Nov. 21 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNdU5RVVVfTmtiWE9FZlFsb25ReWtrd2NpRkl0Q1FEWmY1WjF6Rldkc211bjlqSVJzQmFtZjdaa2ptTTc3NGZMMDBOVzRwSDhPQklfczZoZGZRckhuUnhqdlBzc2VGaC1teVdwZmg3T21zZGNjOWkyZTRBZHFOc3A4eVgtSXBLcjlXMF85VVJzc21rb3pnMUgzeG5MRVdrcHhoVUhiZFBpcGhnMFU?oc=5",
+      "published": "Sat, 21 Nov 2026 10:06:00 GMT",
+      "publishedAtUTC": "2026-11-21T10:06:00+00:00",
+      "sports": [
+        "NFL",
+        "NCAAF"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
+    },
+    {
+      "capperId": "stuckey",
+      "title": "Week 12 College Football Predictions: Stuckey\u2019s 4 NCAAF Noon Spots for Saturday, Nov. 21 - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONkNRWGxnV1ZOaXNjalo5ZGdfYzZKaGh1RFlJUUt1b0JmYUI3UkhxRTN4b0MzRVZ5TnlhWTJhUUtHTnRtWFFjWXZoV2VkZUVQN0lDNk5GRmdsbEx6Q21NNnNRU1dBVFFFSTBOSjczZHJncFRkdm5qYWVjZjR2ajNob0lwVGNpSzNJdXpTc053?oc=5",
+      "published": "Sat, 21 Nov 2026 10:12:12 GMT",
+      "publishedAtUTC": "2026-11-21T10:12:12+00:00",
+      "sports": [
+        "NFL",
+        "NCAAF"
+      ],
+      "authorInHeadline": true,
+      "status": "UNVERIFIED_DISCOVERY_ONLY",
+      "candidateBestBet": false,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
+    },
+    {
+      "capperId": "stuckey",
+      "title": "College Football Picks, Best Bets: Our Staff\u2019s Top Predictions for Friday, November 20 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObHE1ZnNoNWoyT255MG1SalM0WUIyeGZFNG9MdkhHTkJOdU1fcTRaVlJ6eXFrSlQ1dlNMdVNxVTVtY0ZrVUtoSmdGb3V1TlVOUFpyN3dlZldveld1bEFIMW5zLW1jVXdPRWt2WXNhWTBkd0FMRlpjTnJhV093b1NvbkZvcThCaXIyTXJGOWhIZGxzZWhpZ0lwZUVUakpiYXJGY19ja2pKWjY?oc=5",
+      "published": "Fri, 20 Nov 2026 11:36:00 GMT",
+      "publishedAtUTC": "2026-11-20T11:36:00+00:00",
       "sports": [
         "NFL",
         "NCAAF"
@@ -324,28 +367,6 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-21T20:15:24.519906+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "College Football Picks, Best Bets: Our Staff\u2019s Top Predictions for Friday, November 20 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObHE1ZnNoNWoyT255MG1SalM0WUIyeGZFNG9MdkhHTkJOdU1fcTRaVlJ6eXFrSlQ1dlNMdVNxVTVtY0ZrVUtoSmdGb3V1TlVOUFpyN3dlZldveld1bEFIMW5zLW1jVXdPRWt2WXNhWTBkd0FMRlpjTnJhV093b1NvbkZvcThCaXIyTXJGOWhIZGxzZWhpZ0lwZUVUakpiYXJGY19ja2pKWjY?oc=5",
-      "published": "Fri, 20 Nov 2026 11:36:00 GMT",
-      "publishedAtUTC": "2026-11-20T11:36:00+00:00",
-      "sports": [
-        "NFL",
-        "NCAAF"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-20T20:09:09.282049+00:00"
     },
     {
       "capperId": "stuckey",
@@ -412,48 +433,6 @@
     },
     {
       "capperId": "dellera",
-      "title": "Raptors vs Pistons Prediction, Pick, NBA Cup Odds for Friday, November 20 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORDIzdF80SlJvam9EZTZDSjBwa241SjdsSjJ1TVZEUEQ0X1JaVmgwMmh0b1hWaloxelNJampNb2phalFZRXc4RXEtSFhJWjc5bUVkSjJ1R2luX3pqMEdKRFhoZVZLUEw4Ri1wM21SM3FUa0lyYW5wa0FUeFNLMmRRdS1qZG43WmhMZWNj?oc=5",
-      "published": "Fri, 20 Nov 2026 14:06:45 GMT",
-      "publishedAtUTC": "2026-11-20T14:06:45+00:00",
-      "sports": [
-        "NBA"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-20T20:09:09.282049+00:00"
-    },
-    {
-      "capperId": "dellera",
-      "title": "NBA Best Bets for Knicks vs Timberwolves, Spurs vs Clippers, More (Thursday, Nov. 19) - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOcHJxMXNIU242LU9QOGhlOE4xVmF2dzVnTlBCREVqNHZ5V0VqNTMySVBoTm51UHp0c00tNTZBdUFiNDZ5TGZsUHVGMnU5TGgtVWF3eUh4RDNNLV9qRkpnLTVxeWZWVUxTT2lPd1FaekdhUEwzbnJLV0ZHVHlwQ0dxbHJONlhJQ2YxTkpqZ0V1ZjdhaEZaQy15WDZSRlRldHdrVDgySmJ0TTV6dHEtcG9UTkIxYzlDRTBUdlE?oc=5",
-      "published": "Thu, 19 Nov 2026 21:44:00 GMT",
-      "publishedAtUTC": "2026-11-19T21:44:00+00:00",
-      "sports": [
-        "NBA"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-19T20:30:23.916183+00:00"
-    },
-    {
-      "capperId": "dellera",
       "title": "Magic vs Nets Predictions, Odds, NBA Cup Picks: Orlando Is Motivated To Win By Margin - Yahoo Sports",
       "sourceUrl": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPQUtaNHNhTjRjcmNvR2x1WEV3dW12WjNHX1NuUzdFTzVPZUtLT3RsZTFmS3piQ0ZkYjdkTlBacUNPLUxTUEFab3ZmSXVKUGxRYm5KOEVpQldZNVZXM3lkS1gwVXB2TTJhRWlNd3lZd3FubWFpbkFxRzdaaU9PUGphRGItYko?oc=5",
       "published": "Fri, 20 Nov 2026 22:32:48 GMT",
@@ -475,10 +454,10 @@
     },
     {
       "capperId": "dellera",
-      "title": "NBA Player Props: Our Staff\u2019s 4 Picks for Thursday, November 19 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSmRGVk1Tc0N3ZHZpZDZlNFpZa05LNlkwZjJEaVBYWWZLdVR2OVFYbUx6RzFQelpXUzZQM0dRZDZzT2JpdkxyN05QNU54aWFoV0lEZ1NBZzNWRWRJVzAtX2cxNFdMX2xLUDMtSVQ0WGs4M21Tb3ZSU2FsTGhGeHVVUUwxNHMyRmM5Z1dJYm5IeXU2bmtrV1FudDZB?oc=5",
-      "published": "Thu, 19 Nov 2026 17:31:00 GMT",
-      "publishedAtUTC": "2026-11-19T17:31:00+00:00",
+      "title": "NBA Best Bets for Knicks vs Timberwolves, Spurs vs Clippers, More (Thursday, Nov. 19) - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOcHJxMXNIU242LU9QOGhlOE4xVmF2dzVnTlBCREVqNHZ5V0VqNTMySVBoTm51UHp0c00tNTZBdUFiNDZ5TGZsUHVGMnU5TGgtVWF3eUh4RDNNLV9qRkpnLTVxeWZWVUxTT2lPd1FaekdhUEwzbnJLV0ZHVHlwQ0dxbHJONlhJQ2YxTkpqZ0V1ZjdhaEZaQy15WDZSRlRldHdrVDgySmJ0TTV6dHEtcG9UTkIxYzlDRTBUdlE?oc=5",
+      "published": "Thu, 19 Nov 2026 21:44:00 GMT",
+      "publishedAtUTC": "2026-11-19T21:44:00+00:00",
       "sports": [
         "NBA"
       ],
@@ -536,10 +515,10 @@
     },
     {
       "capperId": "dellera",
-      "title": "NBA Best Bets for Nuggets vs Celtics, Kings vs Suns on Wednesday, Nov. 18 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSW1VQjZnTjRKSHIxQ1RaLWJqelhOcXNNVXZWd0EzQWFzTTdFNVdsczZPS011WV9sYk5LUGRpYkxCRXlxR0ZvWm9tYlAwdG4xODA5REdpbG5veGo4cUxIVU5yUzRUUDdjbGJiNnJ2cDUzWExrd0VFeFlRcmthVUd1ejhQYkxKNWRLVk1VN2RlNlFzTGdwV09JcEhXYWRDUDFCNmR6Y1JXcHk3T0txU1E?oc=5",
-      "published": "Thu, 19 Nov 2026 01:24:00 GMT",
-      "publishedAtUTC": "2026-11-19T01:24:00+00:00",
+      "title": "Raptors vs Pistons Prediction, Pick, NBA Cup Odds for Friday, November 20 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNT1k5T3lpUWUxYTJENVVMOGQ3MmFrSmtidjhubThrcGlvQTRQV2ctZXQ5bVpKOGVaNkxRTC01MS1MbnhreW5fRVFiR2tQcE8wNzNmOFIyTThYdWUwQzRpangyRU5JVzh4bjJ0OXJsZlJFX2t3cXdGLU55RHhSZFRQZFBqODJCRHFrbzJ2V0dhYVNTX0NXLWdhTU5aVEhXS05RUHZCYWJrRUwzaDlydzNoTmxDSHMtOGs?oc=5",
+      "published": "Fri, 20 Nov 2026 14:07:00 GMT",
+      "publishedAtUTC": "2026-11-20T14:07:00+00:00",
       "sports": [
         "NBA"
       ],
@@ -553,7 +532,47 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-18T20:27:34.071445+00:00"
+      "firstSeenUTC": "2026-11-22T01:35:15.162861+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "Hawks vs. Thunder Odds & Betting Predictions November 19, 2026 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUVgxWUJOSmFuaUg0R1ZJN2xIRlNBSC1EMU4tbkhZQ05qY2hXVTB5SHVEUWxRZ1B3blBWSkpkV0FiVGFxS3h3N2RLRU5fQXFCLWVKV0NCbmp0ekF4N0p2RkY5dEo0VTVJRl9QS1dBNklaVTZtTUVfWEljQ3F4clc2NkI3RDZ2VlRR?oc=5",
+      "published": "Fri, 20 Nov 2026 05:15:59 GMT",
+      "publishedAtUTC": "2026-11-20T05:15:59+00:00",
+      "sports": [],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": false,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-22T01:35:15.162861+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "NBA Player Props: Our Staff\u2019s 4 Picks for Thursday, November 19 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSmRGVk1Tc0N3ZHZpZDZlNFpZa05LNlkwZjJEaVBYWWZLdVR2OVFYbUx6RzFQelpXUzZQM0dRZDZzT2JpdkxyN05QNU54aWFoV0lEZ1NBZzNWRWRJVzAtX2cxNFdMX2xLUDMtSVQ0WGs4M21Tb3ZSU2FsTGhGeHVVUUwxNHMyRmM5Z1dJYm5IeXU2bmtrV1FudDZB?oc=5",
+      "published": "Thu, 19 Nov 2026 17:31:00 GMT",
+      "publishedAtUTC": "2026-11-19T17:31:00+00:00",
+      "sports": [
+        "NBA"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-19T20:30:23.916183+00:00"
     },
     {
       "capperId": "zachcohen",
@@ -617,6 +636,46 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-18T20:27:34.071445+00:00"
+    },
+    {
+      "capperId": "koerner",
+      "title": "Colts vs Texans Predictions, Odds, Picks, Props, Inactives \u2014 TNF Preview - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdTZtTWtEOXlvRWo4V2FQbVhQUThYaFlrcGlhU2V6ankyaWk1NFRMdENoWFJlVERzamVPZXFKNGdtRUlERHM4bkVSS1J5SmczU28tdUNZdGtkNUhlT2FzaDlDVUZsaTJmcm5DdlpVVHVIR0hTamM2X3Rtc21UeXE0NWNxRk1za1UwUHpvb2FYUk5TVnZPVS05V1Q4QlZISmVabUNJNGZsSUh2WDZXZG40QVdDUVJzWWJQT2dsSmhzanVRWktnUE5kOVdsdw?oc=5",
+      "published": "Thu, 19 Nov 2026 23:55:00 GMT",
+      "publishedAtUTC": "2026-11-19T23:55:00+00:00",
+      "sports": [],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-19T20:30:23.916183+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "Raptors vs Pistons Prediction, Pick, NBA Cup Odds for Friday, November 20 - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORDIzdF80SlJvam9EZTZDSjBwa241SjdsSjJ1TVZEUEQ0X1JaVmgwMmh0b1hWaloxelNJampNb2phalFZRXc4RXEtSFhJWjc5bUVkSjJ1R2luX3pqMEdKRFhoZVZLUEw4Ri1wM21SM3FUa0lyYW5wa0FUeFNLMmRRdS1qZG43WmhMZWNj?oc=5",
+      "published": "Fri, 20 Nov 2026 14:06:45 GMT",
+      "publishedAtUTC": "2026-11-20T14:06:45+00:00",
+      "sports": [
+        "NBA"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-20T20:09:09.282049+00:00"
     },
     {
       "capperId": "dellera",
@@ -807,27 +866,6 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-20T20:09:09.282049+00:00"
-    },
-    {
-      "capperId": "koerner",
-      "title": "Colts vs Texans Prediction, Pick Odds for NFL Thursday Night Football on November 19 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxObk1ZVGRzUlVtUjhSQmZQTTgtWUcxZW1HYlFqa3BzZTBfM0RYa2duT2dpb2U4MzdGSnE3WmNVZ09wSlUxeDlJdjRHWUNmdG5LS0k5VXcycVJpNEVTVU5PTFBrR255LTFmdnFPQmdVMUNWSUd1NlMySkpnbjR2NG83LUU4bENtVVU?oc=5",
-      "published": "Thu, 19 Nov 2026 15:09:29 GMT",
-      "publishedAtUTC": "2026-11-19T15:09:29+00:00",
-      "sports": [
-        "NFL"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-20T03:08:45.323943+00:00"
     },
     {
       "capperId": "stuckey",
