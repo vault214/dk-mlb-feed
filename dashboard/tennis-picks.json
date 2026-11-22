@@ -1,6 +1,6 @@
 {
   "dateET": "2026-11-21",
-  "updatedAtUTC": "2026-11-21T20:36:25.669378+00:00",
+  "updatedAtUTC": "2026-11-22T03:17:35.771932+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
@@ -10,11 +10,9 @@
     },
     "WTA": {
       "status": "OK",
-      "quoteErrors": 0,
-      "scheduledSingles": 1,
+      "scheduledSingles": 0,
       "matchedMarkets": 0,
-      "eligibleCandidates": 0,
-      "ratingsDate": "2026-11-15"
+      "eligibleCandidates": 0
     }
   },
   "settlementErrors": [],
@@ -24,9 +22,9 @@
     "eligibleMatches": 0
   },
   "unmodeledUpcoming": {
-    "ATP Challenger": 26,
-    "WTA Challenger": 1,
-    "ITF": 5
+    "ATP Challenger": 9,
+    "WTA Challenger": 0,
+    "ITF": 0
   },
   "picks": [
     {
@@ -186,8 +184,8 @@
       "edge": -0.05238320602696121,
       "rating": 1776.9070057484419,
       "opponentRating": 1722.5337379975826,
-      "result": "PENDING",
-      "plUnits": null,
+      "result": "WIN",
+      "plUnits": 0.5873,
       "ticker": "KXATPMATCH-26NOV21ZVEMED-ZVE",
       "eventTicker": "KXATPMATCH-26NOV21ZVEMED",
       "selection": "Alexander Zverev",
@@ -211,8 +209,8 @@
       "edge": 0.01238320602696132,
       "rating": 1722.5337379975826,
       "opponentRating": 1776.9070057484419,
-      "result": "PENDING",
-      "plUnits": null,
+      "result": "LOSS",
+      "plUnits": -0.5,
       "ticker": "KXATPMATCH-26NOV21ZVEMED-MED",
       "eventTicker": "KXATPMATCH-26NOV21ZVEMED",
       "selection": "Daniil Medvedev",
