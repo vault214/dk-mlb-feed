@@ -55,6 +55,43 @@
       "reviewedBy": "assistant-public-web-review-2026-11-18",
       "approvalStatus": "APPROVED",
       "result": "PENDING"
+    },
+    {
+      "sport": "NFL",
+      "event": "Jacksonville Jaguars at New York Giants",
+      "observedAtUTC": "2026-11-22T21:01:35.906Z",
+      "eventStartUTC": "2026-11-22T21:25:00Z",
+      "reviewedBy": "assistant-public-web-review-2026-11-22",
+      "approvalStatus": "APPROVED",
+      "result": "PENDING",
+      "sourcePriceType": "AUTHOR_POSTED_NOT_EXECUTABLE",
+      "note": "Prospective paper tracking at the author's stated DraftKings price; current execution was not verified.",
+      "id": "2026-11-22-stuckey-giants-plus6",
+      "capperId": "stuckey",
+      "selection": "New York Giants +6",
+      "market": "Full-game spread",
+      "odds": -110,
+      "sourceUrl": "https://www.actionnetwork.com/nfl/jacksonville-jaguars-vs-new-york-giants-prediction-pick-odds-nfl-week-11-november-22",
+      "postedAtUTC": "2026-11-22T14:44:00Z",
+      "bestBetEvidence": "Stuckey's bylined preview explicitly names Giants +6 at -110 as his best bet and identifies DraftKings."
+    },
+    {
+      "sport": "NFL",
+      "event": "Jacksonville Jaguars at New York Giants",
+      "observedAtUTC": "2026-11-22T21:01:35.906Z",
+      "eventStartUTC": "2026-11-22T21:25:00Z",
+      "reviewedBy": "assistant-public-web-review-2026-11-22",
+      "approvalStatus": "APPROVED",
+      "result": "PENDING",
+      "sourcePriceType": "AUTHOR_POSTED_NOT_EXECUTABLE",
+      "note": "Prospective paper tracking at the author's stated DraftKings price; current execution was not verified.",
+      "id": "2026-11-22-koerner-winston-anytime-td",
+      "capperId": "koerner",
+      "selection": "Jameis Winston anytime touchdown",
+      "market": "Anytime touchdown scorer",
+      "odds": 1700,
+      "sourceUrl": "https://www.actionnetwork.com/nfl/week-11-nfl-player-props-sean-koerner-best-bets-parlays-for-sunday",
+      "bestBetEvidence": "Koerner's bylined Sunday props article explicitly lists a Jameis Winston anytime touchdown at +1700 at DraftKings in its own pick section."
     }
   ]
 }
