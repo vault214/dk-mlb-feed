@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-22T16:10:18.398Z",
+  "updatedAt": "2026-11-22T16:12:23.252Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -9312,7 +9312,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability or edge available. A-category lower-variance minimum-action choice from the current validated board. NBA injury report had not yet submitted Dallas/Utah statuses at the run time. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY.",
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability or edge available. Current matchup report lists Utah absences including Lauri Markkanen, Jaren Jackson Jr. and Jusuf Nurkić, and Dallas absences including Dereck Lively II and P.J. Washington, among others; both rotations are affected and minutes/usage and pace adjustments are not independently calibrated. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No actual trade, fill, or production eligibility claimed.",
       "boardTimestampET": "2026-11-22 11:08 ET",
       "sourceRun": "Scheduled NBA/NHL/NCAAB model run"
     },
@@ -9360,7 +9360,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability or edge available. Projected, not confirmed, goalies favor Tampa Bay (Vasilevskiy vs Ellis); use only as limited support. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY.",
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability or edge available. NHL.com lists Tampa Bay (15-5-2) hosting Buffalo (9-10-4); Tampa's Brandon Hagel is unlikely and Zemgus Girgensons questionable, while Buffalo lists three injured players. Starting goalies are not confirmed (Tampa projected Vasilevskiy; Buffalo starter unresolved). Goalie/injury adjustment remains unverified. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY.",
       "boardTimestampET": "2026-11-22 11:08 ET",
       "sourceRun": "Scheduled NBA/NHL/NCAAB model run"
     },
@@ -9408,7 +9408,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability or edge available. Limited contextual support: Texas State entered 6-0 and hosts McNeese (2-1), which had a 13-day gap; early-season records are strongly regressed and do not imply a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY.",
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability or edge available. Texas State (6-0) hosts McNeese (2-1) after McNeese's 13-day break; a matchup injury listing reported no injuries for either team. Early-season record is strongly regressed; adjusted efficiency, pace, roster continuity, projected starters/minutes and usage were not independently verified. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY.",
       "boardTimestampET": "2026-11-22 11:08 ET",
       "sourceRun": "Scheduled NBA/NHL/NCAAB model run"
     },
