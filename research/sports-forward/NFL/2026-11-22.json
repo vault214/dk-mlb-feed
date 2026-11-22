@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sport": "NFL",
+  "event_date_et": "2026-11-22",
+  "observations": [
+    {
+      "espn_game_id": "401873077",
+      "event_ticker": "KXNFLGAME-26NOV22MINSF",
+      "event_date_et": "2026-11-22",
+      "kickoff_utc": "2026-11-23T01:20:00+00:00",
+      "home_team": "San Francisco 49ers",
+      "away_team": "Minnesota Vikings",
+      "home_team_id": "25",
+      "away_team_id": "16",
+      "ticker": "KXNFLGAME-26NOV22MINSF-SF",
+      "home_selection_label": "San Francisco",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-22T21:44:37.520509+00:00",
+      "home_yes_ask": 0.65,
+      "home_no_ask": 0.36,
+      "home_bidask_midpoint": 0.645,
+      "yes_contracts_available": 20551103.8,
+      "no_contracts_available": 9632913.35,
+      "taker_fee_estimate_one_yes_contract": 0.02,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
+    }
+  ],
+  "verified_outcomes": {}
+}
