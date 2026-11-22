@@ -1,16 +1,16 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-22T19:33:00.371885+00:00",
+  "updatedAtUTC": "2026-11-22T20:28:43.124951+00:00",
   "scanDateET": "2026-11-22",
   "scanHealth": "OK",
-  "lastSuccessfulSourceScanUTC": "2026-11-22T19:33:00.371885+00:00",
+  "lastSuccessfulSourceScanUTC": "2026-11-22T20:28:43.124951+00:00",
   "sourceStatus": [
     {
       "capperId": "koerner",
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 5,
-      "checkedAtUTC": "2026-11-22T19:33:00.371885+00:00",
+      "checkedAtUTC": "2026-11-22T20:28:43.124951+00:00",
       "errors": []
     },
     {
@@ -18,7 +18,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 18,
-      "checkedAtUTC": "2026-11-22T19:33:00.371885+00:00",
+      "checkedAtUTC": "2026-11-22T20:28:43.124951+00:00",
       "errors": []
     },
     {
@@ -26,7 +26,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 5,
-      "checkedAtUTC": "2026-11-22T19:33:00.371885+00:00",
+      "checkedAtUTC": "2026-11-22T20:28:43.124951+00:00",
       "errors": []
     },
     {
@@ -34,7 +34,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-22T19:33:00.371885+00:00",
+      "checkedAtUTC": "2026-11-22T20:28:43.124951+00:00",
       "errors": []
     },
     {
@@ -42,7 +42,7 @@
       "provider": "VSiN",
       "status": "OK",
       "freshLeads": 3,
-      "checkedAtUTC": "2026-11-22T19:33:00.371885+00:00",
+      "checkedAtUTC": "2026-11-22T20:28:43.124951+00:00",
       "errors": []
     }
   ],
@@ -236,27 +236,6 @@
     },
     {
       "capperId": "stuckey",
-      "title": "Jaguars vs Giants Prediction, Pick, Odds for NFL Week 11 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOMGRpdDBwcWNTZFB5TWgxMnloVVR6akstQnhRT3kwZG1wUUZzdDAwdWExckE1S01lS0xHQk1iR0pqTWhkaDVELUdzRm9tbm1jWjdxQUVHT0ZsTUI2SXNNc2tXa1V1S2lrTUQ3OVo0NnlfeUhTUnN2SnVjb0pOaklrZE5HLXlkbVZjc3c?oc=5",
-      "published": "Sun, 22 Nov 2026 14:44:37 GMT",
-      "publishedAtUTC": "2026-11-22T14:44:37+00:00",
-      "sports": [
-        "NFL"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-22T19:33:00.371885+00:00"
-    },
-    {
-      "capperId": "stuckey",
       "title": "College Football Predictions, Picks: Stuckey's Week 12 Bets for Utah vs. TCU, BYU vs. Kansas, More - Action Network",
       "sourceUrl": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQeHM5VW45WVlXZllRUEVKNkhLem1NT2Itck1qTXJlczI3Sm8wV0NsMDVmZVhwUzk2aWEyTXNwVEJteS1vOGFCS0s5dVdDUzVFZ3NqNlh4RU1CLVZlWVYtYjFyUWtLNW1reVZtWGE1RF9KYWYyVWlvVXRnMGlNblhGd3FpeEVpLTBiNlJVbk45R0E4Q2llVDBEWHFodTN3RXNDMkpmazdNUV90RGpROUk3U0IxUG05RWM3TEJNTnQ1dzE4WmpoMEw5Z096cDRpX2ZZTHlrZg?oc=5",
       "published": "Fri, 20 Nov 2026 19:47:00 GMT",
@@ -276,6 +255,27 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-20T20:09:09.282049+00:00"
+    },
+    {
+      "capperId": "stuckey",
+      "title": "Jaguars vs Giants Prediction, Pick, Odds for NFL Week 11 - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOMGRpdDBwcWNTZFB5TWgxMnloVVR6akstQnhRT3kwZG1wUUZzdDAwdWExckE1S01lS0xHQk1iR0pqTWhkaDVELUdzRm9tbm1jWjdxQUVHT0ZsTUI2SXNNc2tXa1V1S2lrTUQ3OVo0NnlfeUhTUnN2SnVjb0pOaklrZE5HLXlkbVZjc3c?oc=5",
+      "published": "Sun, 22 Nov 2026 14:44:37 GMT",
+      "publishedAtUTC": "2026-11-22T14:44:37+00:00",
+      "sports": [
+        "NFL"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-22T19:33:00.371885+00:00"
     },
     {
       "capperId": "stuckey",
@@ -557,25 +557,6 @@
     },
     {
       "capperId": "dellera",
-      "title": "Hawks vs. Thunder Odds & Betting Predictions November 19, 2026 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUVgxWUJOSmFuaUg0R1ZJN2xIRlNBSC1EMU4tbkhZQ05qY2hXVTB5SHVEUWxRZ1B3blBWSkpkV0FiVGFxS3h3N2RLRU5fQXFCLWVKV0NCbmp0ekF4N0p2RkY5dEo0VTVJRl9QS1dBNklaVTZtTUVfWEljQ3F4clc2NkI3RDZ2VlRR?oc=5",
-      "published": "Fri, 20 Nov 2026 05:15:59 GMT",
-      "publishedAtUTC": "2026-11-20T05:15:59+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": false,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-22T01:35:15.162861+00:00"
-    },
-    {
-      "capperId": "dellera",
       "title": "NBA Best Bets for Rockets vs Nuggets, Suns vs Jazz, More (Friday, Nov. 20) - Action Network",
       "sourceUrl": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPQ0gzM2pvUERVVFR4Q1ktTUlBeDdYQm5zWXRlV1E4U1JNTDljYmdvMGEzTFFuN1M2Q05MNjRMelpnT3FKLXhNVTkyM1g1ZmwwVFpKQWtKVC12cDBKM05GTTJWMzVDazRTbWZqdjFEUlp6MC1sRjBxNnRORlkzWDkzVDZIQ1pMRS1wUFNLZ0pTdTA1c29tWVZJd3NtcTNUZ2VPOEs5T3JDRmVSRXkzdS0wNU5ZbGM?oc=5",
       "published": "Sat, 21 Nov 2026 01:09:00 GMT",
@@ -594,6 +575,25 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-20T20:09:09.282049+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "Hawks vs. Thunder Odds & Betting Predictions November 19, 2026 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUVgxWUJOSmFuaUg0R1ZJN2xIRlNBSC1EMU4tbkhZQ05qY2hXVTB5SHVEUWxRZ1B3blBWSkpkV0FiVGFxS3h3N2RLRU5fQXFCLWVKV0NCbmp0ekF4N0p2RkY5dEo0VTVJRl9QS1dBNklaVTZtTUVfWEljQ3F4clc2NkI3RDZ2VlRR?oc=5",
+      "published": "Fri, 20 Nov 2026 05:15:59 GMT",
+      "publishedAtUTC": "2026-11-20T05:15:59+00:00",
+      "sports": [],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": false,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-22T01:35:15.162861+00:00"
     },
     {
       "capperId": "dellera",
