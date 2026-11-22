@@ -1,19 +1,17 @@
 {
   "dateET": "2026-11-22",
-  "updatedAtUTC": "2026-11-22T13:27:31.385082+00:00",
+  "updatedAtUTC": "2026-11-22T20:46:31.445980+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
-      "quoteErrors": 0,
-      "scheduledSingles": 1,
-      "matchedMarkets": 1,
-      "eligibleCandidates": 2,
-      "ratingsDate": "2026-11-15"
+      "scheduledSingles": 0,
+      "matchedMarkets": 0,
+      "eligibleCandidates": 0
     },
     "WTA": {
       "status": "OK",
       "quoteErrors": 0,
-      "scheduledSingles": 5,
+      "scheduledSingles": 1,
       "matchedMarkets": 0,
       "eligibleCandidates": 0,
       "ratingsDate": "2026-11-15"
@@ -23,12 +21,12 @@
   "parlaySettlementErrors": [],
   "parlayStatus": {
     "status": "NO_COMBO_MET_HIT_RATE",
-    "eligibleMatches": 1
+    "eligibleMatches": 0
   },
   "unmodeledUpcoming": {
-    "ATP Challenger": 39,
-    "WTA Challenger": 5,
-    "ITF": 6
+    "ATP Challenger": 22,
+    "WTA Challenger": 1,
+    "ITF": 0
   },
   "picks": [
     {
@@ -238,8 +236,8 @@
       "edge": -0.005920625761528058,
       "rating": 1911.1184118264264,
       "opponentRating": 1776.9070057484419,
-      "result": "PENDING",
-      "plUnits": null,
+      "result": "WIN",
+      "plUnits": 0.44928,
       "ticker": "KXATPMATCH-26NOV22ZVEALC-ALC",
       "eventTicker": "KXATPMATCH-26NOV22ZVEALC",
       "selection": "Carlos Alcaraz",
@@ -263,8 +261,8 @@
       "edge": -0.044079374238471955,
       "rating": 1776.9070057484419,
       "opponentRating": 1911.1184118264264,
-      "result": "PENDING",
-      "plUnits": null,
+      "result": "LOSS",
+      "plUnits": -0.5,
       "ticker": "KXATPMATCH-26NOV22ZVEALC-ZVE",
       "eventTicker": "KXATPMATCH-26NOV22ZVEALC",
       "selection": "Alexander Zverev",
