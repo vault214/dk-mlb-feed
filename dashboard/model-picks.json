@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-22T11:13:13Z",
+  "updatedAt": "2026-11-22T11:14:36Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -9168,7 +9168,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Nashville YES is the lower-variance official selection for the 4:00 PM ET MLS Cup playoff opener at home. Kalshi’s official market page showed a $0.66 YES ask when fetched at 5:40 AM ET; the 90-minute result includes stoppage time and excludes extra time/penalties. Nashville’s official preview notes a 4–0 win over Cincinnati earlier this season; injuries/lineups and independently calibrated xG/team-strength probabilities are not fully modeled, so model probability and edge are blank. The ask-only break-even is 66%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. These are paper entries only, not actual trades; no independent fill guarantee or production eligibility is claimed. One contract costs $0.66 and returns $1 if correct ($0.34 gross); $1 spent yields about $0.5152 gross pre-fee.",
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Nashville YES is the lower-variance official selection for the 4:00 PM ET MLS Cup playoff opener at home. Kalshi’s official market page showed a $0.66 YES ask when fetched at 5:40 AM ET; 90-minute regulation includes stoppage time and excludes extra time/penalties. Nashville’s official preview describes the best-of-three opener and cites a 4–0 win over Cincinnati earlier this season. Current team-news reporting lists Nashville absences Camara, Presthus and Palacios, with Yazbek doubtful; lineup availability remains uncertain. No independently calibrated xG/team-strength, lineup-adjusted probability or edge is available, so those cells are blank. Ask-only break-even is 66%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. One contract costs $0.66 and returns $1 ($0.34 gross); $1 spent yields about $0.5152 gross pre-fee. Paper entry only; no actual bet, guaranteed fill or production eligibility.",
       "boardTimestampET": "2026-11-22 06:00 ET",
       "sourceRun": "Scheduled soccer model run — 2026-11-22 06:00 ET"
     },
@@ -9216,7 +9216,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Bologna YES is the lower-variance official selection in the distinct 9:00 AM ET fixture. Kalshi’s official Serie A market board displayed the Bologna YES-side price at 55¢; the official match page also showed the fixture as upcoming. The draw is explicitly a separate outcome in the winner market. No independently calibrated xG/form, lineup/injury, tactical, travel/rest model or probability/edge is available; those cells are blank. Ask-only break-even is 55%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. These are paper entries only, not actual trades; no independent fill guarantee or production eligibility is claimed. One contract costs $0.55 and returns $1 ($0.45 gross); $1 spent yields about $0.8182 gross pre-fee.",
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Bologna YES is the lower-variance official selection for the 9:00 AM ET match. Kalshi’s official market page displayed a $0.55 YES ask; quote freshness is unverified. Sky Sport’s probable XI has Bologna in a 3-4-3 and Udinese in a 3-5-2; Bologna list Holm, Enem and Miranda unavailable, while Udinese list Bertola and Gueye out, with Alaba and Zanoli doubtful. No independent xG/shot, team-strength, tactical, travel/rest or lineup-adjusted probability/edge is calibrated; those cells are blank. The draw is a separate outcome. Ask-only break-even is 55%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. One contract costs $0.55 and returns $1 ($0.45 gross); $1 spent yields about $0.8182 gross pre-fee. Paper entry only; no actual bet, guaranteed fill or production eligibility.",
       "boardTimestampET": "2026-11-22 06:00 ET",
       "sourceRun": "Scheduled soccer model run — 2026-11-22 06:00 ET"
     },
@@ -9240,7 +9240,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "RISKIER SHADOW — PAPER ONLY. Genoa YES is the higher-variance outcome in a different 9:00 AM ET fixture from the official selection. Kalshi’s official Serie A board displayed the Genoa YES-side price at 35¢; this is not an independent probability. No independent outcome probability/edge is supportable, so those cells are blank. Ask-only break-even 35%. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. These are paper entries only, not actual trades; no independent fill guarantee or production eligibility is claimed. One contract costs $0.35 and returns $1 ($0.65 gross); $1 spent yields about $1.8571 gross pre-fee.",
+      "reason": "RISKIER SHADOW — PAPER ONLY. Genoa YES is the higher-variance underdog in a different 9:00 AM ET fixture from the official pick. Kalshi’s official Serie A board displayed the Genoa YES-side price at 35¢; quote freshness is unverified. A pregame preview notes Genoa earned 12 of its prior 18 league points, while Sassuolo are in a managerial change and have Berardi/Volpato fitness doubts; no independent calibrated probability/edge or xG estimate is available. Ask-only break-even is 35%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. One contract costs $0.35 and returns $1 ($0.65 gross); $1 spent yields about $1.8571 gross pre-fee. Paper entry only; no actual bet, guaranteed fill or production eligibility.",
       "boardTimestampET": "2026-11-22 06:00 ET",
       "sourceRun": "Scheduled soccer model run — 2026-11-22 06:00 ET"
     },
@@ -9288,7 +9288,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "RISKIER SHADOW — PAPER ONLY. Manchester United YES is a higher-variance underdog in a different 11:30 AM ET fixture. Kalshi’s official market page displayed a $0.22 YES ask, updated 2:10 AM ET. No independent form/xG, lineup/injury, tactical or rest/travel probability is available; probability/edge remain blank. Ask-only break-even 22%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. These are paper entries only, not actual trades; no independent fill guarantee or production eligibility is claimed. One contract costs $0.22 and returns $1 ($0.78 gross); $1 spent yields about $3.5455 gross pre-fee.",
+      "reason": "RISKIER SHADOW — PAPER ONLY. Manchester United YES is a higher-variance underdog in a different 11:30 AM ET fixture. Kalshi’s official market page displayed a $0.22 YES ask, updated 2:10 AM ET. Current previews describe United’s new-manager debut and report Marcus Rashford unavailable; these factors add lineup and tactical uncertainty rather than a defensible independent edge. No calibrated outcome probability/edge is available, so those cells are blank. Ask-only break-even is 22%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. One contract costs $0.22 and returns $1 ($0.78 gross); $1 spent yields about $3.5455 gross pre-fee. Paper entry only; no actual bet, guaranteed fill or production eligibility.",
       "boardTimestampET": "2026-11-22 06:00 ET",
       "sourceRun": "Scheduled soccer model run — 2026-11-22 06:00 ET"
     }
