@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-22T16:12:23.252Z",
+  "updatedAt": "2026-11-22T21:01:45.492Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -9435,6 +9435,54 @@
       "reason": "RISKIER SHADOW; distinct neutral-site game and higher-variance spread. Player availability, projected starters/minutes and opponent-adjusted efficiency/pace are not independently verified; model probability/edge unavailable and no retroactive promotion. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY.",
       "boardTimestampET": "2026-11-22 11:08 ET",
       "sourceRun": "Scheduled NBA/NHL/NCAAB model run"
+    },
+    {
+      "entryId": "NFL-OFFICIAL-011",
+      "dateET": "2026-11-22",
+      "league": "NFL",
+      "model": "NFL minimum-action paper model",
+      "trackType": "OFFICIAL",
+      "event": "Minnesota Vikings vs San Francisco 49ers (Mexico City)",
+      "category": "Game winner",
+      "market": "KXNFLGAME-26NOV22MINSF-SF",
+      "selection": "San Francisco wins (Kalshi YES)",
+      "line": null,
+      "odds": "0.64 YES ask",
+      "breakEven": "64.0%",
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Low — minimum-action / no calibrated model",
+      "stakeUnits": "1.00",
+      "result": "Pending",
+      "plUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Kalshi listed a 64¢ ask before 8:20 PM ET kickoff. San Francisco entered 8–1 and was favored on the published spread at the neutral venue. No calibrated independent model probability or edge.",
+      "boardTimestampET": "2026-11-22 16:01 ET",
+      "sourceRun": "Sunday NFL pregame catch-up"
+    },
+    {
+      "entryId": "NFL-SHADOW-015",
+      "dateET": "2026-11-22",
+      "league": "NFL",
+      "model": "NFL minimum-action paper model",
+      "trackType": "SHADOW",
+      "event": "Las Vegas Raiders at Denver Broncos",
+      "category": "Game winner",
+      "market": "KXNFLGAME-26NOV22LVDEN-LV",
+      "selection": "Las Vegas wins (Kalshi YES)",
+      "line": null,
+      "odds": "0.16 YES ask",
+      "breakEven": "16.0%",
+      "modelProbability": null,
+      "edgePP": null,
+      "confidence": "Low — riskier shadow / no calibrated model",
+      "stakeUnits": "0.50",
+      "result": "Pending",
+      "plUnits": null,
+      "officialBankrollUnits": null,
+      "reason": "RISKIER SHADOW; PAPER ONLY. Kalshi listed a 16¢ ask before 4:25 PM ET kickoff. Higher-variance road underdog in a different game. No calibrated independent model probability or edge.",
+      "boardTimestampET": "2026-11-22 16:01 ET",
+      "sourceRun": "Sunday NFL pregame catch-up"
     }
   ]
 }
