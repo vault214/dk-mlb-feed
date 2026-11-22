@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-22T11:11:38Z",
+  "updatedAt": "2026-11-22T11:13:13Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -9216,7 +9216,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Bologna YES is the lower-variance official selection in the distinct 2:00 PM ET fixture. Kalshi’s official Serie A market board displayed the Bologna YES-side price at 55¢; the official match page also showed the fixture as upcoming. The draw is explicitly a separate outcome in the winner market. No independently calibrated xG/form, lineup/injury, tactical, travel/rest model or probability/edge is available; those cells are blank. Ask-only break-even is 55%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. These are paper entries only, not actual trades; no independent fill guarantee or production eligibility is claimed. One contract costs $0.55 and returns $1 ($0.45 gross); $1 spent yields about $0.8182 gross pre-fee.",
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Bologna YES is the lower-variance official selection in the distinct 9:00 AM ET fixture. Kalshi’s official Serie A market board displayed the Bologna YES-side price at 55¢; the official match page also showed the fixture as upcoming. The draw is explicitly a separate outcome in the winner market. No independently calibrated xG/form, lineup/injury, tactical, travel/rest model or probability/edge is available; those cells are blank. Ask-only break-even is 55%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. These are paper entries only, not actual trades; no independent fill guarantee or production eligibility is claimed. One contract costs $0.55 and returns $1 ($0.45 gross); $1 spent yields about $0.8182 gross pre-fee.",
       "boardTimestampET": "2026-11-22 06:00 ET",
       "sourceRun": "Scheduled soccer model run — 2026-11-22 06:00 ET"
     },
@@ -9240,7 +9240,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "RISKIER SHADOW — PAPER ONLY. Genoa YES is the higher-variance outcome in a different 2:00 PM ET fixture from the official selection. Kalshi’s official Serie A board displayed the Genoa YES-side price at 35¢; this is not an independent probability. No independent outcome probability/edge is supportable, so those cells are blank. Ask-only break-even 35%. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. These are paper entries only, not actual trades; no independent fill guarantee or production eligibility is claimed. One contract costs $0.35 and returns $1 ($0.65 gross); $1 spent yields about $1.8571 gross pre-fee.",
+      "reason": "RISKIER SHADOW — PAPER ONLY. Genoa YES is the higher-variance outcome in a different 9:00 AM ET fixture from the official selection. Kalshi’s official Serie A board displayed the Genoa YES-side price at 35¢; this is not an independent probability. No independent outcome probability/edge is supportable, so those cells are blank. Ask-only break-even 35%. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. These are paper entries only, not actual trades; no independent fill guarantee or production eligibility is claimed. One contract costs $0.35 and returns $1 ($0.65 gross); $1 spent yields about $1.8571 gross pre-fee.",
       "boardTimestampET": "2026-11-22 06:00 ET",
       "sourceRun": "Scheduled soccer model run — 2026-11-22 06:00 ET"
     },
