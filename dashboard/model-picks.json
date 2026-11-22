@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-22T11:09:52Z",
+  "updatedAt": "2026-11-22T11:11:38Z",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -9207,8 +9207,8 @@
       "market": "KXSERIEAGAME-26NOV22BFCUDI-BFC",
       "selection": "Bologna wins (Kalshi YES)",
       "line": null,
-      "odds": "$0.56 YES ask",
-      "breakEven": "56%",
+      "odds": "$0.55 YES ask",
+      "breakEven": "55%",
       "modelProbability": null,
       "edgePP": null,
       "confidence": "Low — minimum-action; no calibrated model",
@@ -9216,7 +9216,7 @@
       "result": "Pending",
       "plUnits": null,
       "officialBankrollUnits": null,
-      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Bologna YES is the lower-variance official selection in the distinct 2:00 PM ET fixture. Kalshi’s official Serie A market board displayed the Bologna YES-side price at 56¢; the official match page also showed the fixture as upcoming. The draw is explicitly a separate outcome in the winner market. No independently calibrated xG/form, lineup/injury, tactical, travel/rest model or probability/edge is available; those cells are blank. Ask-only break-even is 56%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. These are paper entries only, not actual trades; no independent fill guarantee or production eligibility is claimed. One contract costs $0.56 and returns $1 ($0.44 gross); $1 spent yields about $0.7857 gross pre-fee.",
+      "reason": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; PAPER ONLY. Bologna YES is the lower-variance official selection in the distinct 2:00 PM ET fixture. Kalshi’s official Serie A market board displayed the Bologna YES-side price at 55¢; the official match page also showed the fixture as upcoming. The draw is explicitly a separate outcome in the winner market. No independently calibrated xG/form, lineup/injury, tactical, travel/rest model or probability/edge is available; those cells are blank. Ask-only break-even is 55%, not a model probability. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. These are paper entries only, not actual trades; no independent fill guarantee or production eligibility is claimed. One contract costs $0.55 and returns $1 ($0.45 gross); $1 spent yields about $0.8182 gross pre-fee.",
       "boardTimestampET": "2026-11-22 06:00 ET",
       "sourceRun": "Scheduled soccer model run — 2026-11-22 06:00 ET"
     },
