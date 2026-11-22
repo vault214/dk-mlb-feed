@@ -110,6 +110,33 @@
       "official_eligible": false,
       "shadow_eligible": false,
       "research_only": true
+    },
+    {
+      "espn_game_id": "401910028",
+      "event_ticker": "KXNBAGAME-26NOV21BOSSAC",
+      "event_date_et": "2026-11-21",
+      "kickoff_utc": "2026-11-22T03:00:00+00:00",
+      "home_team": "Sacramento Kings",
+      "away_team": "Boston Celtics",
+      "home_team_id": "23",
+      "away_team_id": "2",
+      "ticker": "KXNBAGAME-26NOV21BOSSAC-SAC",
+      "home_selection_label": "Sacramento",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-22T02:12:30.692451+00:00",
+      "home_yes_ask": 0.17,
+      "home_no_ask": 0.84,
+      "home_bidask_midpoint": 0.165,
+      "yes_contracts_available": 4019264.3,
+      "no_contracts_available": 1713027.82,
+      "taker_fee_estimate_one_yes_contract": 0.01,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
     }
   ],
   "verified_outcomes": {}
