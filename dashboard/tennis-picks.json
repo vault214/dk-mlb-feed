@@ -1,30 +1,34 @@
 {
-  "dateET": "2026-11-21",
-  "updatedAtUTC": "2026-11-22T03:17:35.771932+00:00",
+  "dateET": "2026-11-22",
+  "updatedAtUTC": "2026-11-22T13:27:31.385082+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
-      "scheduledSingles": 0,
-      "matchedMarkets": 0,
-      "eligibleCandidates": 0
+      "quoteErrors": 0,
+      "scheduledSingles": 1,
+      "matchedMarkets": 1,
+      "eligibleCandidates": 2,
+      "ratingsDate": "2026-11-15"
     },
     "WTA": {
       "status": "OK",
-      "scheduledSingles": 0,
+      "quoteErrors": 0,
+      "scheduledSingles": 5,
       "matchedMarkets": 0,
-      "eligibleCandidates": 0
+      "eligibleCandidates": 0,
+      "ratingsDate": "2026-11-15"
     }
   },
   "settlementErrors": [],
   "parlaySettlementErrors": [],
   "parlayStatus": {
     "status": "NO_COMBO_MET_HIT_RATE",
-    "eligibleMatches": 0
+    "eligibleMatches": 1
   },
   "unmodeledUpcoming": {
-    "ATP Challenger": 9,
-    "WTA Challenger": 0,
-    "ITF": 0
+    "ATP Challenger": 39,
+    "WTA Challenger": 5,
+    "ITF": 6
   },
   "picks": [
     {
@@ -218,6 +222,56 @@
       "matchStartUTC": "2026-11-21T19:30:00+00:00",
       "observedAtUTC": "2026-11-21T13:35:13.342229+00:00",
       "dateET": "2026-11-21",
+      "tour": "ATP",
+      "tournament": "ATP World Tour Finals Men Singles",
+      "ratingsDate": "2026-11-15",
+      "surface": "hard",
+      "bestOf": 3,
+      "track": "SHADOW",
+      "stakeUnits": 0.5,
+      "selectionBasis": "MINIMUM_ACTION"
+    },
+    {
+      "probability": 0.684079374238472,
+      "ask": 0.67,
+      "fee": 0.02,
+      "edge": -0.005920625761528058,
+      "rating": 1911.1184118264264,
+      "opponentRating": 1776.9070057484419,
+      "result": "PENDING",
+      "plUnits": null,
+      "ticker": "KXATPMATCH-26NOV22ZVEALC-ALC",
+      "eventTicker": "KXATPMATCH-26NOV22ZVEALC",
+      "selection": "Carlos Alcaraz",
+      "opponent": "Alexander Zverev",
+      "matchStartUTC": "2026-11-22T17:00:00+00:00",
+      "observedAtUTC": "2026-11-22T13:27:34.192945+00:00",
+      "dateET": "2026-11-22",
+      "tour": "ATP",
+      "tournament": "ATP World Tour Finals Men Singles",
+      "ratingsDate": "2026-11-15",
+      "surface": "hard",
+      "bestOf": 3,
+      "track": "OFFICIAL",
+      "stakeUnits": 1.0,
+      "selectionBasis": "MINIMUM_ACTION"
+    },
+    {
+      "probability": 0.3159206257615281,
+      "ask": 0.34,
+      "fee": 0.02,
+      "edge": -0.044079374238471955,
+      "rating": 1776.9070057484419,
+      "opponentRating": 1911.1184118264264,
+      "result": "PENDING",
+      "plUnits": null,
+      "ticker": "KXATPMATCH-26NOV22ZVEALC-ZVE",
+      "eventTicker": "KXATPMATCH-26NOV22ZVEALC",
+      "selection": "Alexander Zverev",
+      "opponent": "Carlos Alcaraz",
+      "matchStartUTC": "2026-11-22T17:00:00+00:00",
+      "observedAtUTC": "2026-11-22T13:27:34.111693+00:00",
+      "dateET": "2026-11-22",
       "tour": "ATP",
       "tournament": "ATP World Tour Finals Men Singles",
       "ratingsDate": "2026-11-15",
