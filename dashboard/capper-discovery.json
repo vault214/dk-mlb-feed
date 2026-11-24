@@ -1,32 +1,32 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-24T01:13:47.203554+00:00",
-  "scanDateET": "2026-11-23",
+  "updatedAtUTC": "2026-11-24T22:22:27.081373+00:00",
+  "scanDateET": "2026-11-24",
   "scanHealth": "OK",
-  "lastSuccessfulSourceScanUTC": "2026-11-24T01:13:47.203554+00:00",
+  "lastSuccessfulSourceScanUTC": "2026-11-24T22:22:27.081373+00:00",
   "sourceStatus": [
     {
       "capperId": "koerner",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 4,
-      "checkedAtUTC": "2026-11-24T01:13:47.203554+00:00",
+      "freshLeads": 2,
+      "checkedAtUTC": "2026-11-24T22:22:27.081373+00:00",
       "errors": []
     },
     {
       "capperId": "stuckey",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 13,
-      "checkedAtUTC": "2026-11-24T01:13:47.203554+00:00",
+      "freshLeads": 6,
+      "checkedAtUTC": "2026-11-24T22:22:27.081373+00:00",
       "errors": []
     },
     {
       "capperId": "dellera",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 3,
-      "checkedAtUTC": "2026-11-24T01:13:47.203554+00:00",
+      "freshLeads": 6,
+      "checkedAtUTC": "2026-11-24T22:22:27.081373+00:00",
       "errors": []
     },
     {
@@ -34,27 +34,27 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-24T01:13:47.203554+00:00",
+      "checkedAtUTC": "2026-11-24T22:22:27.081373+00:00",
       "errors": []
     },
     {
       "capperId": "zachcohen",
       "provider": "VSiN",
       "status": "OK",
-      "freshLeads": 2,
-      "checkedAtUTC": "2026-11-24T01:13:47.203554+00:00",
+      "freshLeads": 1,
+      "checkedAtUTC": "2026-11-24T22:22:27.081373+00:00",
       "errors": []
     }
   ],
-  "freshLeadsThisRun": 22,
-  "retainedRecentLeads": 5,
+  "freshLeadsThisRun": 15,
+  "retainedRecentLeads": 2,
   "leads": [
     {
       "capperId": "koerner",
-      "title": "Week 11 NFL Player Props: Sean Koerner\u2019s Best Bets & Parlays for Sunday - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOMnZWeUhGTEN4akxmNVc2cEE5NHN4R2ZuYlBuQ0ZTMkpRSXlxOTg3MldaVGIzRDktclJ0T2VuNFpWWkpSdmhmMDNVazVsZlVDQVMtczhWbWlKczdKRlhUcFUtVm1yZWp6bDdVYmpyQm5KUDRnUjFocnJyc1FZbU1qRlZHZmVqTl9ZUzRiN2xPR2x5SjBGQXpid0lGVWxhYzkzenc?oc=5",
-      "published": "Sun, 22 Nov 2026 00:48:00 GMT",
-      "publishedAtUTC": "2026-11-22T00:48:00+00:00",
+      "title": "Week 11 NFL Player Props: Sean Koerner\u2019s Best Bets & Parlays for Sunday - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE84M3E2YXlQUVlUMXh1aUlwWVpqS25kdllTcXBnUVJFS0taclJ0YnVfT01FLUtRTUc3VnZPbTZuMG9DY0dVSGl6RF9PMHJBUHNqNGhITUFPeUR4QV8tcHZpN09tRE1VRFNIQWFrTFdKbHJBWmM4SUdrNE9vZ2pNQQ?oc=5",
+      "published": "Sun, 22 Nov 2026 00:47:00 GMT",
+      "publishedAtUTC": "2026-11-22T00:47:00+00:00",
       "sports": [
         "NFL"
       ],
@@ -68,7 +68,7 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-22T01:35:15.162861+00:00"
+      "firstSeenUTC": "2026-11-24T22:22:27.081373+00:00"
     },
     {
       "capperId": "koerner",
@@ -92,54 +92,14 @@
       "firstSeenUTC": "2026-11-22T19:33:00.371885+00:00"
     },
     {
-      "capperId": "koerner",
-      "title": "College Basketball Best Bets: 3 NCAAB Picks for Saturday, Nov. 21 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWjhQQXNMSGxucWRoWnJuRGdZWjBWdnJmTGVuYzFYU2ZEZWlPRHVBT1plQ0tYVjZROHhjX1FpNjEwMFN0MmI1aExhRHRVcXQzcDl6ZWJYTzF3S01BSDl6bWFNY1ZjTUZrQS1IaTd3aXFESGMtbXBGQlp0N1MtaDhvSWZGZldBMGZFT3dURGlURVY5cFREU1E0OG5qN0RxQlVZ?oc=5",
-      "published": "Sat, 21 Nov 2026 04:51:00 GMT",
-      "publishedAtUTC": "2026-11-21T04:51:00+00:00",
-      "sports": [
-        "NBA",
-        "NCAAB"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
-    },
-    {
-      "capperId": "koerner",
-      "title": "Georgia vs. G Tech Odds & Betting Predictions November 21, 2026 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNR01UbkNfZFZ5emIwTzBPRkxFVmJDdjdHR3lQemhabU53N1Q4Z3F3X1pybVJFVHQzbDVzU25OYWFNcUVRNFU4MUJaMjRrcmFmN2lGOG5GNk9oY09WYURVb0JJeG1MTmdRa3JxVWRWUlBjTFlmNnBBRDdJUjBWdnVwV0ZkWGp1dDU2emcza0dadW16QVpub1U4WS1zZzk?oc=5",
-      "published": "Sat, 21 Nov 2026 04:27:08 GMT",
-      "publishedAtUTC": "2026-11-21T04:27:08+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": false,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
-    },
-    {
       "capperId": "stuckey",
-      "title": "Bengals vs Commanders Predictions, Odds, Picks, Monday Night Football Inactives - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPMFg4MmNsZ0g5VHBEM3hnczAwV0pwRWZIT0tPUUFyMlFWakpwZ1ZMUDBxeFI2aDVwczgxcjVTV2JwUl92QzF0TVhJVnEyM21BelZfeVNqR0FMY0ltMG9FRnpYbXBDTWsybjZIckRmOWNxMXFjdlVCWTNicEVZZno5LWhWR2RnRUJGZkFieFRIUm1ObERFbjB4TnFtYXo3VHJqWG1DU2hxdW92emt2amx6Sm5YWnRZX3JlQ0hJdGZlTUxaSmZ2OW9OMEQxcVcxV2RuVmc?oc=5",
-      "published": "Mon, 23 Nov 2026 23:49:00 GMT",
-      "publishedAtUTC": "2026-11-23T23:49:00+00:00",
+      "title": "College Football Predictions, Picks: Our Staff\u2019s MACtion Best Bets for Tuesday, Nov. 24 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPOXctRVZ5bW83WDh2Ylh0Zk9wUk5SR0JzYkZvc21OamFQdmFRYjhyWWtrUTJqNFFjeFZIX3VMUzJab2NjY0k4UURhVzg1RW5VOHlSd3Rob25RNDN6MWJBMjdGVUZvbFZEQzB5djhVM3plQV9JdnR4U1BGNkxET1lzOHNHYUZTWm5ZQllHWmVYV0hLY19IRldYZ0pGZXFNellQMWxYOFFR?oc=5",
+      "published": "Tue, 24 Nov 2026 20:27:00 GMT",
+      "publishedAtUTC": "2026-11-24T20:27:00+00:00",
       "sports": [
-        "NFL"
+        "NFL",
+        "NCAAF"
       ],
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
@@ -151,7 +111,7 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-24T01:13:47.203554+00:00"
+      "firstSeenUTC": "2026-11-24T22:22:27.081373+00:00"
     },
     {
       "capperId": "stuckey",
@@ -176,32 +136,12 @@
     },
     {
       "capperId": "stuckey",
-      "title": "Wisconsin vs Purdue Predictions, Picks, Odds: Best Bets for Badgers-Boilermakers Week 12 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOTVZCRDdKeHlkOHlrSHBRenROWnBDalVEdUVEWVV0WmlFeVV6cVB5b0xnMG80dVE2YVNhVGFHVXU3TjZTQzRKeEp0TEhYZ2VQUnNlbENyTFA0Nzg1TktuQlFkQVFRMHNUc0NxTlBobVJQa3pGTVJaUll4NlZ0b2lBX21kX1ZyTVpGS3ZZUUFYOEdrdFRjVld1RVc4SldxMGZoNnJnZkF4a1FMdXZ4eTVYY0xoR2R1QXdpc09QVHJhSzIzNUpjekJvUXU1cDdoYzBZ?oc=5",
-      "published": "Sat, 21 Nov 2026 15:33:00 GMT",
-      "publishedAtUTC": "2026-11-21T15:33:00+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Memphis vs Navy Prediction, Pick, College Football Odds for Saturday, Nov. 21 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNWHp2Y1dQNjNlYk1mQndBNUNYdzBvaHQ1SUJZdm9WVUk2bUwxYVJfY2ZCS2VfWU5IeThfc0JBZWxyQzRPd2FxYVhoT0tlV1ZBU0hlVTBrQVlqNjNIdVF1TTMyUkhrbmllQXJKY0FzUXZtc1RXeTZNazJWWnJKMUIyODFHZWlSa2lJelRUdG84VF9EMU53VDNZZERtY29iTnZweVdZeDJpemR0WjBqa0J1UHJ5N0syclBWem05WTMxRTRQNnJldHBn?oc=5",
-      "published": "Sat, 21 Nov 2026 10:21:00 GMT",
-      "publishedAtUTC": "2026-11-21T10:21:00+00:00",
+      "title": "Bengals vs Commanders Predictions, Odds, Picks, Monday Night Football Inactives - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPMFg4MmNsZ0g5VHBEM3hnczAwV0pwRWZIT0tPUUFyMlFWakpwZ1ZMUDBxeFI2aDVwczgxcjVTV2JwUl92QzF0TVhJVnEyM21BelZfeVNqR0FMY0ltMG9FRnpYbXBDTWsybjZIckRmOWNxMXFjdlVCWTNicEVZZno5LWhWR2RnRUJGZkFieFRIUm1ObERFbjB4TnFtYXo3VHJqWG1DU2hxdW92emt2amx6Sm5YWnRZX3JlQ0hJdGZlTUxaSmZ2OW9OMEQxcVcxV2RuVmc?oc=5",
+      "published": "Tue, 24 Nov 2026 01:15:00 GMT",
+      "publishedAtUTC": "2026-11-24T01:15:00+00:00",
       "sports": [
-        "NFL",
-        "NCAAF"
+        "NFL"
       ],
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
@@ -213,7 +153,7 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
+      "firstSeenUTC": "2026-11-24T01:13:47.203554+00:00"
     },
     {
       "capperId": "stuckey",
@@ -257,137 +197,6 @@
     },
     {
       "capperId": "stuckey",
-      "title": "College Football Predictions: Week 12 Evening Picks for Saturday, Nov. 21 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNdU5RVVVfTmtiWE9FZlFsb25ReWtrd2NpRkl0Q1FEWmY1WjF6Rldkc211bjlqSVJzQmFtZjdaa2ptTTc3NGZMMDBOVzRwSDhPQklfczZoZGZRckhuUnhqdlBzc2VGaC1teVdwZmg3T21zZGNjOWkyZTRBZHFOc3A4eVgtSXBLcjlXMF85VVJzc21rb3pnMUgzeG5MRVdrcHhoVUhiZFBpcGhnMFU?oc=5",
-      "published": "Sat, 21 Nov 2026 10:06:00 GMT",
-      "publishedAtUTC": "2026-11-21T10:06:00+00:00",
-      "sports": [
-        "NFL",
-        "NCAAF"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "NCAAF Predictions, Picks: Stuckey\u2019s Top 2 Saturday Night Bets for Nov. 21 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdllQX3Qydjl4ZXBYNmxyTlpTUjNrMVlqdEd5TlRaTTJkN3VPNW5kRV9rcXhGb1hmWmtoSzlOUEZzSzlqbkUtSWlZSUVqNjNxc3Fmb0VGWWVta0hPdDFIYjNRQjVLelZRNnhjT0UxNEM5WEd3SnZ3R1B4aFJjcGk3TXNaNGhyMUJneXZJeA?oc=5",
-      "published": "Sat, 21 Nov 2026 10:16:45 GMT",
-      "publishedAtUTC": "2026-11-21T10:16:45+00:00",
-      "sports": [
-        "NCAAF"
-      ],
-      "authorInHeadline": true,
-      "status": "UNVERIFIED_DISCOVERY_ONLY",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T20:15:24.519906+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Saturday College Football Picks: Stuckey\u2019s 4 NCAAF Afternoon Bets for November 21 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNaUxSRGVJdkRxbFZXMmtOcHhVYnRlcVMzcURGbjB1akxnNWtfUVplQW0wTWJobk8yTktHTTRqbW8zVnJYbXFPUXdQNVBUVFMzbWp5bTVhRnprR0o2cDhQendFY1ZpejVuV3IxUFdyZTJ0UC1jM3JTSVl1a1N1X09jcUxoV3JLSjVhZzNRZDJ1TnA3UQ?oc=5",
-      "published": "Sat, 21 Nov 2026 10:14:27 GMT",
-      "publishedAtUTC": "2026-11-21T10:14:27+00:00",
-      "sports": [
-        "NFL",
-        "NCAAF"
-      ],
-      "authorInHeadline": true,
-      "status": "UNVERIFIED_DISCOVERY_ONLY",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-23T00:49:06.515810+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Week 12 College Football Predictions: Stuckey\u2019s 4 NCAAF Noon Spots for Saturday, Nov. 21 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONkNRWGxnV1ZOaXNjalo5ZGdfYzZKaGh1RFlJUUt1b0JmYUI3UkhxRTN4b0MzRVZ5TnlhWTJhUUtHTnRtWFFjWXZoV2VkZUVQN0lDNk5GRmdsbEx6Q21NNnNRU1dBVFFFSTBOSjczZHJncFRkdm5qYWVjZjR2ajNob0lwVGNpSzNJdXpTc053?oc=5",
-      "published": "Sat, 21 Nov 2026 10:12:12 GMT",
-      "publishedAtUTC": "2026-11-21T10:12:12+00:00",
-      "sports": [
-        "NFL",
-        "NCAAF"
-      ],
-      "authorInHeadline": true,
-      "status": "UNVERIFIED_DISCOVERY_ONLY",
-      "candidateBestBet": false,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Delaware vs New Mexico State Prediction, Pick, College Football Odds for Saturday, Nov. 21 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdkR5SzFMZFljX1RaR3UyVHB3WTVnTkJfRDhYODhmMFItZi1sa3FkaFczbkg4clF2VGJ6RjlKcV92bTR1WE1MSmljd3BrLWUya0hJdV9JWmxmSHgwMEJ5dHo0Z1JsNlhaTnBmYUFsZ0FUeFBFRDcxOHR0RHdIdndHLTVReWQ1bnZDSjJ4Nw?oc=5",
-      "published": "Sat, 21 Nov 2026 10:39:05 GMT",
-      "publishedAtUTC": "2026-11-21T10:39:05+00:00",
-      "sports": [
-        "NFL",
-        "NCAAF"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Old Dominion vs UConn Prediction, Pick, College Football Odds for Saturday, Nov. 21 - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNaGRZdHR6WnM0SDYxeUk4SmNFdmdaY1I0dmlMTktkdC1nMHVJUmdKQ2MwaFc0M0tZYnRxbVZTTC1KS1Iwd0FrQzNRLUo2NWZLTlFnR2otNlBzMEVWbUEtTlUxZ0pDSlRITVFIOE5PUjRPVUM2N3ZKZFBoTnd0NDRjMGQ4c0pFQ1My?oc=5",
-      "published": "Sat, 21 Nov 2026 10:46:12 GMT",
-      "publishedAtUTC": "2026-11-21T10:46:12+00:00",
-      "sports": [
-        "NFL",
-        "NCAAF"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T20:15:24.519906+00:00"
-    },
-    {
-      "capperId": "stuckey",
       "title": "Jaguars vs Giants Predictions, Odds, NFL Spread Pick - Yahoo Sports",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOMGRpdDBwcWNTZFB5TWgxMnloVVR6akstQnhRT3kwZG1wUUZzdDAwdWExckE1S01lS0xHQk1iR0pqTWhkaDVELUdzRm9tbm1jWjdxQUVHT0ZsTUI2SXNNc2tXa1V1S2lrTUQ3OVo0NnlfeUhTUnN2SnVjb0pOaklrZE5HLXlkbVZjc3c?oc=5",
       "published": "Sun, 22 Nov 2026 20:23:37 GMT",
@@ -406,6 +215,48 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-22T19:33:00.371885+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "NBA King of the Court Picks, Predictions for Tuesday, November 24 - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPVk5mVi1NaVdXYmdYNjVJSzJGNU4yR3ZhUzM0el91YlNCc1V1dzRWcTJld3hQM0E2WnZqa2s4UTh1Q2dqNzlPMmpCc2x0UGpkSTBIQ0pUT1c2NU9CX1lYMVN5c0NrQTA1WElYNU1tR3JzNnhCQmNMSVE2WmhRY09PMmRvdEhIdnB4?oc=5",
+      "published": "Tue, 24 Nov 2026 18:12:33 GMT",
+      "publishedAtUTC": "2026-11-24T18:12:33+00:00",
+      "sports": [
+        "NBA"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-24T22:22:27.081373+00:00"
+    },
+    {
+      "capperId": "dellera",
+      "title": "Los Angeles Clippers vs Houston Rockets Prediction, Pick, NBA Odds -- Monday, November 23 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOS0lpWnVPc2hJZVRlRTNMenc4SjFfeFprNWdScVVkNlBoa0NIRnQzQVV6am1Eak0tM3pzTWdPUE5uRHlXdVJoa1Vhb0RfejVVc1hSSWxmNTRBaXJPamlhUXE4blZXcWdka2ZjTWtmUFBvWXVkV2lIR0h3M2xGZG0zS1FvTjYteFMxSklKRHduTFVlYk1OMmdPSXpDb2szdVBoWkFQei1rdE1LQkk3dEM0NnpBTC01emtW?oc=5",
+      "published": "Mon, 23 Nov 2026 15:25:00 GMT",
+      "publishedAtUTC": "2026-11-23T15:25:00+00:00",
+      "sports": [
+        "NBA"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-24T01:13:47.203554+00:00"
     },
     {
       "capperId": "dellera",
@@ -430,16 +281,14 @@
     },
     {
       "capperId": "dellera",
-      "title": "Clippers vs Rockets Prediction, Pick, NBA Odds for Monday, November 23 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOS0lpWnVPc2hJZVRlRTNMenc4SjFfeFprNWdScVVkNlBoa0NIRnQzQVV6am1Eak0tM3pzTWdPUE5uRHlXdVJoa1Vhb0RfejVVc1hSSWxmNTRBaXJPamlhUXE4blZXcWdka2ZjTWtmUFBvWXVkV2lIR0h3M2xGZG0zS1FvTjYteFMxSklKRHduTFVlYk1OMmdPSXpDb2szdVBoWkFQei1rdE1LQkk3dEM0NnpBTC01emtW?oc=5",
-      "published": "Mon, 23 Nov 2026 15:25:00 GMT",
-      "publishedAtUTC": "2026-11-23T15:25:00+00:00",
-      "sports": [
-        "NBA"
-      ],
+      "title": "Nets vs. Timberwolves Odds & Betting Predictions November 24, 2026 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQR0FFVkp0TFJacFdhQ2RhcXNqSkxZNE1aakRLZlVpVjRmdmVGV3VuNTFsd0tweDMtemIxYlE4LW8xQkExbFQyNlZlSW1XQ0pybjlKekhNN3cwLWxHZE54cDc3WllYLUlfNjF0WTQzNERCWU96LXpVVlZEa2N5YlM4NXZQQXlpZlFGRjcySjhjNHFFTHNZSWc?oc=5",
+      "published": "Tue, 24 Nov 2026 03:28:53 GMT",
+      "publishedAtUTC": "2026-11-24T03:28:53+00:00",
+      "sports": [],
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
+      "candidateBestBet": false,
       "reviewNeeded": [
         "verify actual author",
         "original pregame publication timestamp",
@@ -447,7 +296,7 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-24T01:13:47.203554+00:00"
+      "firstSeenUTC": "2026-11-24T22:22:27.081373+00:00"
     },
     {
       "capperId": "dellera",
@@ -471,6 +320,25 @@
       "firstSeenUTC": "2026-11-24T01:13:47.203554+00:00"
     },
     {
+      "capperId": "dellera",
+      "title": "Spurs vs. Kings Odds & Betting Predictions November 24, 2026 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQaF9pRDYtaEdyOUJOY1RONXp4UmM0enMzZy1vVWthd0xYR3FhODZHQkpabzhXSF9DMW1zdW9qMEVhVzlySk5OSlEzT0dUSVdUM21KVzJXM0hZcEFvWXE5emtpQmFkLXBXS051emdjbkdjTGZjR1dqVUYwUEhtR0hkV1lzQmlZY083SW1jVmJR?oc=5",
+      "published": "Mon, 23 Nov 2026 08:00:00 GMT",
+      "publishedAtUTC": "2026-11-23T08:00:00+00:00",
+      "sports": [],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": false,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-24T22:22:27.081373+00:00"
+    },
+    {
       "capperId": "zachcohen",
       "title": "ATP Finals Tennis Best Bets & Predictions: Carlos Alcaraz vs. Alexander Zverev",
       "sourceUrl": "https://vsin.com/tennis/atp-finals-tennis-best-bets-predictions-carlos-alcaraz-vs-alexander-zverev/",
@@ -492,15 +360,15 @@
       "firstSeenUTC": "2026-11-22T19:33:00.371885+00:00"
     },
     {
-      "capperId": "zachcohen",
-      "title": "ATP Finals Tennis Best Bets & Predictions: Shelton vs. Alcaraz, Medvedev vs. Zverev",
-      "sourceUrl": "https://vsin.com/tennis/atp-finals-tennis-best-bets-predictions-shelton-vs-alcaraz-medvedev-vs-zverev/",
-      "published": "Sat, 21 Nov 2026 03:42:11 GMT",
-      "publishedAtUTC": "2026-11-21T03:42:11+00:00",
+      "capperId": "koerner",
+      "title": "Week 11 NFL Player Props: Sean Koerner\u2019s Best Bets & Parlays for Sunday - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOMnZWeUhGTEN4akxmNVc2cEE5NHN4R2ZuYlBuQ0ZTMkpRSXlxOTg3MldaVGIzRDktclJ0T2VuNFpWWkpSdmhmMDNVazVsZlVDQVMtczhWbWlKczdKRlhUcFUtVm1yZWp6bDdVYmpyQm5KUDRnUjFocnJyc1FZbU1qRlZHZmVqTl9ZUzRiN2xPR2x5SjBGQXpid0lGVWxhYzkzenc?oc=5",
+      "published": "Sun, 22 Nov 2026 00:48:00 GMT",
+      "publishedAtUTC": "2026-11-22T00:48:00+00:00",
       "sports": [
-        "TENNIS"
+        "NFL"
       ],
-      "authorInHeadline": false,
+      "authorInHeadline": true,
       "status": "UNVERIFIED_DISCOVERY_ONLY",
       "candidateBestBet": true,
       "reviewNeeded": [
@@ -510,7 +378,7 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
+      "firstSeenUTC": "2026-11-22T01:35:15.162861+00:00"
     },
     {
       "capperId": "stuckey",
@@ -532,93 +400,6 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-23T00:49:06.515810+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Saturday College Football Picks: Stuckey\u2019s 4 NCAAF Afternoon Bets for November 21 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPM09UXzN3d0JlQkJvSGVZcVhRUXJtYWlaOXBHWXd5Y0tSeEExT0NzQjNzSUxyeTdzR2lHbmtQaVpfbnB3ZzEwcjVFU3BocHU4ckZrWHhPbmduYm5iQmU4OGlkVHpXczZHNGRxLVI2T1NrSHBVdW1hSkJQZnN6UDJXMG4yejhRdGRxNldqN21oZDROdUpOVzdfU1ltWWdhaURFNVZwYjAzY0x0eGlM?oc=5",
-      "published": "Sat, 21 Nov 2026 10:16:00 GMT",
-      "publishedAtUTC": "2026-11-21T10:16:00+00:00",
-      "sports": [
-        "NFL",
-        "NCAAF"
-      ],
-      "authorInHeadline": true,
-      "status": "UNVERIFIED_DISCOVERY_ONLY",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Delaware vs New Mexico State Prediction, Pick, College Football Odds for Saturday, Nov. 21 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOWllpdHNMbG9aYmo0VjhFLVhSZVl2WHdZaS13Wi1GOWRxR1l3Tkw0Qk96c0RLM3ozZ0ZSZjQzeVZweEJIQUl5WU1uSEl2NmlHWkk3OUdDQjNpQVVQWDdZTERRRmljREN5OEJyd1k1OFZXUFBpb1draks1cFlKNG1ONGdqRF91Q09iQnBvdHREd3A4cVVNNzd2aXRib2dIUTZBWHd1TUxtLVlqTXFNRDFvQ21KMXFwanR4V3BzOEdPbzhrNU10TDJZMWRSaHVSZ1ps?oc=5",
-      "published": "Sat, 21 Nov 2026 10:41:00 GMT",
-      "publishedAtUTC": "2026-11-21T10:41:00+00:00",
-      "sports": [
-        "NFL",
-        "NCAAF"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T20:15:24.519906+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "NCAAF Predictions, Picks: Stuckey\u2019s Top 2 Saturday Night Bets for Nov. 21 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPeDdkRmtXR1M5VDRTendJeHRZYWlsMHFCaFZ6TTJQekhoc1B4VG9Bb2FRZUZaV1A5OFQ1MGZDTGhVRzFSSk1pUmhKR1F5T0V0dV9VMHpDSmdwcnhhSTlNanVNdEs2UlJLS0hQQXdvZE9vNmpmZ2FxeXlMUUswTWhfd1I1Vl9UUGVTT25YQjRVckpRdUpmcHZrdEdR?oc=5",
-      "published": "Sat, 21 Nov 2026 10:21:00 GMT",
-      "publishedAtUTC": "2026-11-21T10:21:00+00:00",
-      "sports": [
-        "NCAAF"
-      ],
-      "authorInHeadline": true,
-      "status": "UNVERIFIED_DISCOVERY_ONLY",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Old Dominion vs UConn Prediction, Pick, College Football Odds for Saturday, Nov. 21 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPNm54ay1MWjVkd2QtTEtCdmN5QlhnNG9ydl9qcFRxa2RjVE42bkRrYi1zSWY1dHlNR0o3NHZfYm1sc0NXM2k5eFJyWG5MT1MxaGV0cGpyZkJfVlhuWkN5M2ZLdk03U2lOclZKdzZIaFpWa01PbjRLdExsMlBTYjIwRXlMMjBjSUFwU0FxUzdTbUtpSXQyZzd5aTI5R09US3F6T1pCeDhZaUViM0xPMG1pQ2xSb1Rmc0lUcUt3VWJnVWhPMjZ4NUxoUXRSYl9vUQ?oc=5",
-      "published": "Sat, 21 Nov 2026 10:51:00 GMT",
-      "publishedAtUTC": "2026-11-21T10:51:00+00:00",
-      "sports": [
-        "NFL",
-        "NCAAF"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-21T19:10:49.138587+00:00"
     }
   ],
   "note": "Discovery is not automatic verification, even when source health is OK. No inferred bets. RSS providers may block requests."
