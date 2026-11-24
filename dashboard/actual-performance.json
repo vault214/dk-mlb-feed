@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-23T18:12:39.444974-05:00",
+  "updatedAt": "2026-11-23T19:26:32.598322-05:00",
   "actualYesterdayPnl": 11.4,
-  "actualWeekPnl": 0.0,
-  "actual30dPnl": 248.49,
-  "actualAllTimePnl": -1477.73,
-  "actualAllTimeWinnings": 5988.68,
-  "actualAllTimeLost": 7466.41,
+  "actualWeekPnl": 0.98,
+  "actual30dPnl": 249.47,
+  "actualAllTimePnl": -1477.75,
+  "actualAllTimeWinnings": 5989.66,
+  "actualAllTimeLost": 7467.41,
   "draftKingsPnl": 509.28,
-  "kalshiPnl": -16.68
+  "kalshiPnl": -16.7
 }
