@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "visibility": "public-sanitized",
   "note": "Model-only data. Actual Bet?, Matched Trade ID, bank transactions, account identifiers, dollar balances, and other private financial information are excluded.",
-  "updatedAt": "2026-11-24 11:09:28 UTC",
+  "updatedAt": "2026-11-24 16:03:38 UTC",
   "rows": [
     {
       "entryId": "NCAAF-PASS-2026-09-26-SATAM",
@@ -9693,12 +9693,12 @@
       "edgePP": null,
       "confidence": "Unrated — independent calibrated probability unavailable",
       "stakeUnits": "1.00",
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Win",
+      "plUnits": "0.724138",
       "officialBankrollUnits": null,
       "reason": "Unknown",
       "boardTimestampET": "2026-11-23 11:03 ET",
-      "sourceRun": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability/edge available. Memphis entered 12-5 vs Charlotte 4-11, but current NBA report lists multiple Memphis absences and Charlotte absences/probable status; minutes, usage, pace and adjusted matchup probability are not calibrated. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No fill or production eligibility claimed. Price cap satisfied. One contract costs $0.58 and pays $1 ($0.42 gross); $1 risked yields about $0.7241 gross pre-fee."
+      "sourceRun": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability/edge available. Memphis entered 12-5 vs Charlotte 4-11, but current NBA report lists multiple Memphis absences and Charlotte absences/probable status; minutes, usage, pace and adjusted matchup probability are not calibrated. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. No fill or production eligibility claimed. Price cap satisfied. One contract costs $0.58 and pays $1 ($0.42 gross); $1 risked yields about $0.7241 gross pre-fee. Settled result reconciled 2026-11-24: Memphis 117–111 Charlotte; verified on Kalshi/ESPN."
     },
     {
       "entryId": "NBA-SHADOW-030",
@@ -9717,12 +9717,12 @@
       "edgePP": null,
       "confidence": "Unrated — independent calibrated probability unavailable",
       "stakeUnits": "0.50",
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Loss",
+      "plUnits": "-0.500000",
       "officialBankrollUnits": null,
       "reason": "Unknown",
       "boardTimestampET": "2026-11-23 11:03 ET",
-      "sourceRun": "RISKIER SHADOW — higher-variance total in a different game; Cleveland lists Evan Mobley out and Chicago's report was not yet submitted. Independent pace/usage/total probability unavailable; no retroactive promotion. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Price cap satisfied. One contract costs $0.49 and pays $1 ($0.51 gross); $1 risked yields about $1.0408 gross pre-fee."
+      "sourceRun": "RISKIER SHADOW — higher-variance total in a different game; Cleveland lists Evan Mobley out and Chicago's report was not yet submitted. Independent pace/usage/total probability unavailable; no retroactive promotion. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Price cap satisfied. One contract costs $0.49 and pays $1 ($0.51 gross); $1 risked yields about $1.0408 gross pre-fee. Settled result reconciled 2026-11-24: Chicago 122–108 Cleveland; total 230, below 241.5; verified NBA/ESPN."
     },
     {
       "entryId": "NHL-OFFICIAL-015",
@@ -9741,12 +9741,12 @@
       "edgePP": null,
       "confidence": "Unrated — independent calibrated probability unavailable",
       "stakeUnits": "1.00",
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Win",
+      "plUnits": "0.587302",
       "officialBankrollUnits": null,
       "reason": "Unknown",
       "boardTimestampET": "2026-11-23 11:03 ET",
-      "sourceRun": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability/edge available. Minnesota entered 17-3-5 with an 11-game point streak vs San Jose, but Filip Gustavsson is injured and Jesper Wallstedt is only projected to start (not confirmed); no independent xG or goalie-adjusted model. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. NHL score-only baseline underperformed; v4 eligibility false. Price cap satisfied. One contract costs $0.63 and pays $1 ($0.37 gross); $1 risked yields about $0.5873 gross pre-fee."
+      "sourceRun": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability/edge available. Minnesota entered 17-3-5 with an 11-game point streak vs San Jose, but Filip Gustavsson is injured and Jesper Wallstedt is only projected to start (not confirmed); no independent xG or goalie-adjusted model. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. NHL score-only baseline underperformed; v4 eligibility false. Price cap satisfied. One contract costs $0.63 and pays $1 ($0.37 gross); $1 risked yields about $0.5873 gross pre-fee. Settled result reconciled 2026-11-24: Minnesota 5–2 San Jose; verified NHL/ESPN."
     },
     {
       "entryId": "NHL-SHADOW-035",
@@ -9765,12 +9765,12 @@
       "edgePP": null,
       "confidence": "Unrated — independent calibrated probability unavailable",
       "stakeUnits": "0.50",
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Win",
+      "plUnits": "0.719512",
       "officialBankrollUnits": null,
       "reason": "Unknown",
       "boardTimestampET": "2026-11-23 11:03 ET",
-      "sourceRun": "RISKIER SHADOW — road underdog in a different game. Projected goalie matchup favors Montreal; starters remain unconfirmed and model probability/edge unavailable. No retroactive promotion. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Price cap satisfied. One contract costs $0.41 and pays $1 ($0.59 gross); $1 risked yields about $1.4390 gross pre-fee."
+      "sourceRun": "RISKIER SHADOW — road underdog in a different game. Projected goalie matchup favors Montreal; starters remain unconfirmed and model probability/edge unavailable. No retroactive promotion. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Price cap satisfied. One contract costs $0.41 and pays $1 ($0.59 gross); $1 risked yields about $1.4390 gross pre-fee. Settled result reconciled 2026-11-24: Los Angeles 2–1 Montreal; verified on Kalshi/NHL/ESPN."
     },
     {
       "entryId": "NCAAB-OFFICIAL-015",
@@ -9789,12 +9789,12 @@
       "edgePP": null,
       "confidence": "Unrated — independent calibrated probability unavailable",
       "stakeUnits": "1.00",
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Win",
+      "plUnits": "0.351351",
       "officialBankrollUnits": null,
       "reason": "Unknown",
       "boardTimestampET": "2026-11-23 11:03 ET",
-      "sourceRun": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability/edge available. Nevada beat Idaho and meets San Francisco at neutral Acrisure Arena; USF had won four of its first five home openers before leaving home, but that form is not a neutral-court independent model. Early-season samples regressed; roster continuity, transfer effects, adjusted efficiency, pace, projected starters/minutes/usage, and injuries remain unverified. Side/spread (A) and total (B) were reviewed; no supported model edge. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Price cap satisfied. One contract costs $0.74 and pays $1 ($0.26 gross); $1 risked yields about $0.3514 gross pre-fee."
+      "sourceRun": "MINIMUM-ACTION — BELOW NORMAL EDGE BAR; no calibrated independent probability/edge available. Nevada beat Idaho and meets San Francisco at neutral Acrisure Arena; USF had won four of its first five home openers before leaving home, but that form is not a neutral-court independent model. Early-season samples regressed; roster continuity, transfer effects, adjusted efficiency, pace, projected starters/minutes/usage, and injuries remain unverified. Side/spread (A) and total (B) were reviewed; no supported model edge. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Price cap satisfied. One contract costs $0.74 and pays $1 ($0.26 gross); $1 risked yields about $0.3514 gross pre-fee. Settled result reconciled 2026-11-24: Nevada 71–62 San Francisco; verified Nevada Athletics/ESPN."
     },
     {
       "entryId": "NCAAB-SHADOW-015",
@@ -9813,12 +9813,12 @@
       "edgePP": null,
       "confidence": "Unrated — independent calibrated probability unavailable",
       "stakeUnits": "0.50",
-      "result": "Pending",
-      "plUnits": null,
+      "result": "Win",
+      "plUnits": "0.851351",
       "officialBankrollUnits": null,
       "reason": "Unknown",
       "boardTimestampET": "2026-11-23 11:03 ET",
-      "sourceRun": "RISKIER SHADOW — higher-variance underdog in a different same-day game. No independently verified team-strength/injury/rotation probabilities or edge; no retroactive promotion. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Price cap satisfied. One contract costs $0.37 and pays $1 ($0.63 gross); $1 risked yields about $1.7027 gross pre-fee."
+      "sourceRun": "RISKIER SHADOW — higher-variance underdog in a different same-day game. No independently verified team-strength/injury/rotation probabilities or edge; no retroactive promotion. SAME-DAY BOARD ASK — QUOTE FRESHNESS UNVERIFIED; PAPER ONLY. Price cap satisfied. One contract costs $0.37 and pays $1 ($0.63 gross); $1 risked yields about $1.7027 gross pre-fee. Settled result reconciled 2026-11-24: Stephen F. Austin 77–72 Utah Valley; verified SFA Athletics/ESPN."
     },
     {
       "entryId": "MLS-OFFICIAL-005",
