@@ -92,16 +92,23 @@ jobs:
           name: seven-league-model-health
           path: dashboard/model-health.json
           retention-days: 30
+          overwrite: true
       - name: Commit health ONLY (never betting/pick ledgers)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin main
-          git rebase origin/main
           git add dashboard/model-health.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update sanitized seven-league research model health [skip ci]"
-            git push origin HEAD:main
-          else
+          if git diff --cached --quiet; then
             echo "Model health unchanged"
+            exit 0
           fi
+          git commit -m "Update sanitized seven-league research model health [skip ci]"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep "$attempt"
+          done
+          exit 1
