@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "visibility": "sanitized research model health only",
-  "generatedAtUTC": "2026-11-07T17:26:03.299427+00:00",
+  "generatedAtUTC": "2026-11-24T22:31:01.271421+00:00",
   "status": "RESEARCH ONLY \u2014 NO PRODUCTION VALIDATION",
   "leagues": [
     {
@@ -27,7 +27,7 @@
       "production_eligible": false,
       "official_eligible": false,
       "market_board": {
-        "date_et": "2026-11-07",
+        "date_et": "2026-11-21",
         "candidate_market_count": 220,
         "active_markets_with_at_least_one_executable_ask": 220,
         "quote_timestamp_verification": "UNVERIFIED"
@@ -35,15 +35,15 @@
     },
     {
       "league": "NFL",
-      "research_status": "RESEARCH HOLDOUT ONLY",
+      "research_status": "INSUFFICIENT RESEARCH COVERAGE",
       "historical_games_collected": 542,
       "feature_rows": 459,
       "training_games": 203,
       "holdout_games": 256,
-      "winner_brier": 0.228601,
-      "home_prior_baseline_brier": 0.250652,
-      "improvement_vs_home_baseline": 0.022052,
-      "failed_source_dates": 0,
+      "winner_brier": null,
+      "home_prior_baseline_brier": null,
+      "improvement_vs_home_baseline": null,
+      "failed_source_dates": 2,
       "missing_verified_inputs": [
         "EPA/success rate",
         "true pace",
@@ -56,9 +56,9 @@
       "production_eligible": false,
       "official_eligible": false,
       "market_board": {
-        "date_et": "2026-11-05",
-        "candidate_market_count": 23,
-        "active_markets_with_at_least_one_executable_ask": 23,
+        "date_et": "2026-11-23",
+        "candidate_market_count": 46,
+        "active_markets_with_at_least_one_executable_ask": 46,
         "quote_timestamp_verification": "UNVERIFIED"
       }
     },
@@ -85,9 +85,9 @@
       "production_eligible": false,
       "official_eligible": false,
       "market_board": {
-        "date_et": "2026-11-07",
-        "candidate_market_count": 178,
-        "active_markets_with_at_least_one_executable_ask": 178,
+        "date_et": "2026-11-23",
+        "candidate_market_count": 215,
+        "active_markets_with_at_least_one_executable_ask": 215,
         "quote_timestamp_verification": "UNVERIFIED"
       }
     },
@@ -113,9 +113,9 @@
       "production_eligible": false,
       "official_eligible": false,
       "market_board": {
-        "date_et": "2026-11-07",
-        "candidate_market_count": 105,
-        "active_markets_with_at_least_one_executable_ask": 105,
+        "date_et": "2026-11-23",
+        "candidate_market_count": 87,
+        "active_markets_with_at_least_one_executable_ask": 87,
         "quote_timestamp_verification": "UNVERIFIED"
       }
     },
@@ -142,9 +142,9 @@
       "production_eligible": false,
       "official_eligible": false,
       "market_board": {
-        "date_et": "2026-11-07",
-        "candidate_market_count": 300,
-        "active_markets_with_at_least_one_executable_ask": 300,
+        "date_et": "2026-11-23",
+        "candidate_market_count": 274,
+        "active_markets_with_at_least_one_executable_ask": 274,
         "quote_timestamp_verification": "UNVERIFIED"
       }
     },
@@ -171,7 +171,7 @@
       "production_eligible": false,
       "official_eligible": false,
       "market_board": {
-        "date_et": "2026-11-07",
+        "date_et": "2026-11-23",
         "candidate_market_count": 0,
         "active_markets_with_at_least_one_executable_ask": 0,
         "quote_timestamp_verification": "BOARD FETCH TIME ONLY; NOT PER-CONTRACT ASK FRESHNESS"
@@ -200,7 +200,7 @@
       "production_eligible": false,
       "official_eligible": false,
       "market_board": {
-        "date_et": "2026-11-07",
+        "date_et": "2026-11-23",
         "candidate_market_count": 0,
         "active_markets_with_at_least_one_executable_ask": 0,
         "quote_timestamp_verification": "UNVERIFIED"
