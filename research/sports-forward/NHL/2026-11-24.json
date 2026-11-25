@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sport": "NHL",
+  "event_date_et": "2026-11-24",
+  "observations": [
+    {
+      "espn_game_id": "401892780",
+      "event_ticker": "KXNHLGAME-26NOV24VGKEDM",
+      "event_date_et": "2026-11-24",
+      "kickoff_utc": "2026-11-25T01:00:00+00:00",
+      "home_team": "Edmonton Oilers",
+      "away_team": "Vegas Golden Knights",
+      "home_team_id": "6",
+      "away_team_id": "37",
+      "ticker": "KXNHLGAME-26NOV24VGKEDM-EDM",
+      "home_selection_label": "Edmonton",
+      "team_identity_matched_both_sides": true,
+      "quote_observed_utc": "2026-11-25T00:40:59.391974+00:00",
+      "home_yes_ask": 0.48,
+      "home_no_ask": 0.53,
+      "home_bidask_midpoint": 0.475,
+      "yes_contracts_available": 1012116.88,
+      "no_contracts_available": 524869.32,
+      "taker_fee_estimate_one_yes_contract": 0.02,
+      "fee_metadata_verified": true,
+      "independent_model_probability": null,
+      "lineup_or_starter_verified": false,
+      "model_edge_evaluated": false,
+      "official_eligible": false,
+      "shadow_eligible": false,
+      "research_only": true
+    }
+  ],
+  "verified_outcomes": {}
+}
