@@ -1,16 +1,16 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-25T21:38:24.336720+00:00",
+  "updatedAtUTC": "2026-11-25T22:46:19.905380+00:00",
   "scanDateET": "2026-11-25",
   "scanHealth": "OK",
-  "lastSuccessfulSourceScanUTC": "2026-11-25T21:38:24.336720+00:00",
+  "lastSuccessfulSourceScanUTC": "2026-11-25T22:46:19.905380+00:00",
   "sourceStatus": [
     {
       "capperId": "koerner",
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-25T21:38:24.336720+00:00",
+      "checkedAtUTC": "2026-11-25T22:46:19.905380+00:00",
       "errors": []
     },
     {
@@ -18,7 +18,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 9,
-      "checkedAtUTC": "2026-11-25T21:38:24.336720+00:00",
+      "checkedAtUTC": "2026-11-25T22:46:19.905380+00:00",
       "errors": []
     },
     {
@@ -26,7 +26,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 6,
-      "checkedAtUTC": "2026-11-25T21:38:24.336720+00:00",
+      "checkedAtUTC": "2026-11-25T22:46:19.905380+00:00",
       "errors": []
     },
     {
@@ -34,7 +34,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-25T21:38:24.336720+00:00",
+      "checkedAtUTC": "2026-11-25T22:46:19.905380+00:00",
       "errors": []
     },
     {
@@ -42,7 +42,7 @@
       "provider": "VSiN",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-25T21:38:24.336720+00:00",
+      "checkedAtUTC": "2026-11-25T22:46:19.905380+00:00",
       "errors": []
     }
   ],
@@ -94,13 +94,11 @@
     },
     {
       "capperId": "stuckey",
-      "title": "Packers vs Rams Picks, Props, Odds, Predictions for NFL Thanksgiving Eve - Action Network",
+      "title": "Packers vs Rams Props, Thanksgiving Eve Picks, Predictions, Odds - Action Network",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNbmRwTjdBVTJ4MjFJZkJuekhROWNrZzNYN09vX0ptTmV5UVZSQlhET204YzdSOE5YVzlxekhnZjlpQWxFSjIyZ2Y5Q185SlprcTNRcDRnQmdyN0RocEFjT255ZmNHOWUtb3NMbURGWnByaEQzb1hPS0xNQmtvb094dmNodXM2NW9rSnczY0JzbDF4SFJjM3p6WjdoWTBhYXhKMzg2SVJBdVJTUQ?oc=5",
-      "published": "Wed, 25 Nov 2026 18:19:00 GMT",
-      "publishedAtUTC": "2026-11-25T18:19:00+00:00",
-      "sports": [
-        "NFL"
-      ],
+      "published": "Wed, 25 Nov 2026 22:16:00 GMT",
+      "publishedAtUTC": "2026-11-25T22:16:00+00:00",
+      "sports": [],
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
       "candidateBestBet": true,
@@ -119,25 +117,6 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOSUxPQno0Q1BZb29ENEQyaUpHYzk0aWphSmhrNWpSUzBqNm1EUy1oTDQwZkZwT1FCVHBGdzVRWk11VGpqVXVyTFlvU0FSTHRFb0FYVXNPYWhpX0RmZ2czckRHai1LUXo5U1UyNTNVd2JfaTZfc1ctMVRjMjFMV3ZlSXhHYlowM1BMcDVMNG54SjBHNjM4NzVCVFp1OURVWGdCMHNESFJsTjlXLW9hSUJhdjlUT3VxLXNfNm1Iem0yNUVxd0p6V1Z2T05CdmdBWE0?oc=5",
       "published": "Tue, 24 Nov 2026 22:03:00 GMT",
       "publishedAtUTC": "2026-11-24T22:03:00+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-25T21:38:24.336720+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Vikings vs 49ers Anytime Touchdown Props: Deebo Samuel, Jordan Mason, Jauan Jennings - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVmVLUDdBWWFmRXBFVldUaEU1cGF2bFZpdVVLbThFM0dYanFKS0VPVWUxalpVWnp2VVI2U1Z4Z3ZzLVlQTXkwOC0tWWxvLTRSSEtqRVFCSGx4akNUVXJEYkh0WlFpblF6U2t2MmgzaTZJUWRPekZuY1ZFd2F2anVWcFBNTEJuVF9rVEttRXBJVHVMTzJ5dUhVMS1ldXM5Mi1rNmJwS1hJSQ?oc=5",
-      "published": "Sun, 22 Nov 2026 22:33:00 GMT",
-      "publishedAtUTC": "2026-11-22T22:33:00+00:00",
       "sports": [],
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
@@ -190,6 +169,27 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-25T21:38:24.336720+00:00"
+    },
+    {
+      "capperId": "stuckey",
+      "title": "49ers vs Vikings Odds, Picks, Parlay for Sunday Night Football - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPQ0dkcWo4OHpJd1gtN0pWN2V2Q0MxbU56YzZTN2lTcm10RHEySDhzaXNUZFdMb0MwVS1XTW8zR0FVX1JIUUhKVFdDamNPalNXWDJ4RXZINmJITEtSMW5kd1lHM0RNSWpyUkRJRnRXVnRtckIxNVIyVGp3WS03LUtqc0tza2x1R3VOX1F4cDVGRkwyNW5rNWkzS0Vn?oc=5",
+      "published": "Sun, 22 Nov 2026 22:55:00 GMT",
+      "publishedAtUTC": "2026-11-22T22:55:00+00:00",
+      "sports": [
+        "NFL"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-25T22:46:19.905380+00:00"
     },
     {
       "capperId": "stuckey",
