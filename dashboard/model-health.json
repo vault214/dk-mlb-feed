@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "visibility": "sanitized research model health only",
-  "generatedAtUTC": "2026-11-24T22:31:01.271421+00:00",
+  "generatedAtUTC": "2026-11-25T18:18:00.606967+00:00",
   "status": "RESEARCH ONLY \u2014 NO PRODUCTION VALIDATION",
   "leagues": [
     {
@@ -35,15 +35,15 @@
     },
     {
       "league": "NFL",
-      "research_status": "INSUFFICIENT RESEARCH COVERAGE",
+      "research_status": "RESEARCH HOLDOUT ONLY",
       "historical_games_collected": 542,
       "feature_rows": 459,
       "training_games": 203,
       "holdout_games": 256,
-      "winner_brier": null,
-      "home_prior_baseline_brier": null,
-      "improvement_vs_home_baseline": null,
-      "failed_source_dates": 2,
+      "winner_brier": 0.228601,
+      "home_prior_baseline_brier": 0.250652,
+      "improvement_vs_home_baseline": 0.022052,
+      "failed_source_dates": 0,
       "missing_verified_inputs": [
         "EPA/success rate",
         "true pace",
