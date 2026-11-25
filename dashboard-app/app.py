@@ -161,12 +161,19 @@ let capperData=null,capperDiscovery=null,capperQualification=null,capperArchive=
 const ACTIVE_LEAGUES=["NFL","NCAAF","NBA","NHL","NCAAB","EPL","SERIEA","MLS","TENNIS"];
 const ALL_LEAGUES=["MLB","NFL","NCAAF","NBA","WNBA","NHL","NCAAB","EPL","SERIEA","MLS","TENNIS"];
 function scopedRows(){
- const available=seasonView==="ALL"?rows:rows.filter(r=>ACTIVE_LEAGUES.includes(r.league));
- return available.concat(tennisRowsForOverview);
+ const available=rows.map(row=>{
+  if(!/^tennis\s+—\s+/i.test(row.league||""))return row;
+  if(row.trackType==="PARLAY")return {...row,league:"TENNIS",selection:row.selection||row.market,stakeUnits:Number(row.stakeUnits)>0?row.stakeUnits:null,result:row.result||"Diagnostic"};
+  return {...row,league:"TENNIS"};
+ });
+ const visible=seasonView==="ALL"?available:available.filter(row=>ACTIVE_LEAGUES.includes(row.league));
+ const tennisKey=row=>JSON.stringify([row.dateET,row.trackType,row.market]);
+ const publishedTennis=new Set(visible.filter(row=>row.league==="TENNIS"&&row.market).map(tennisKey));
+ return visible.concat(tennisRowsForOverview.filter(row=>!row.market||!publishedTennis.has(tennisKey(row))));
 }
 function tennisOverviewRow(pick){
  return {
-  league:"TENNIS",dateET:pick.dateET,trackType:pick.track,
+  league:"TENNIS",dateET:pick.dateET,trackType:pick.track,market:pick.ticker,
   selection:pick.selection+" to win (Kalshi YES)",
   event:pick.tour+" · "+pick.tournament+" · vs. "+pick.opponent,
   category:"Singles match winner",odds:(pick.ask*100).toFixed(1)+"¢ YES",
@@ -214,7 +221,7 @@ function pickCard(r,hero){
 function renderToday(){
  const date=todayET();
  const t=scopedRows().filter(r=>r.dateET===date);
- const status=tennisModelStatus(date,t.filter(r=>r.league==="TENNIS").length);
+ const status=tennisModelStatus(date,t.filter(r=>r.league==="TENNIS"&&(r.trackType==="OFFICIAL"||r.trackType==="SHADOW")).length);
  tennisOverviewStatus.textContent="Tennis · "+status.detail;
  const waiting=picksUnavailable?"The main picks feed is unavailable.":"Loading the main picks feed…";
  const hasTennis=t.some(r=>r.league==="TENNIS");
@@ -424,10 +431,10 @@ function tennisRows(picks,empty){
  return picks.map(p=>'<tr><td>'+E(p.track)+(p.selectionBasis==="MINIMUM_ACTION"?'<div class="sub">Minimum action</div>':'')+'</td><td>'+E(p.tour+" · "+p.tournament)+'<div class="sub">'+E(start.format(new Date(p.matchStartUTC))+" ET")+'</div></td><td><strong>'+E(p.selection)+'</strong><div class="sub">vs. '+E(p.opponent)+' · '+E(p.surface)+' · Best of '+E(p.bestOf)+'</div></td><td>'+E((p.probability*100).toFixed(1))+'%</td><td>'+E((p.ask*100).toFixed(1))+'¢</td><td>'+E((p.edge*100).toFixed(1))+' pp</td><td>'+E(p.stakeUnits)+'u</td><td>'+E(p.result)+(p.plUnits==null?'':' · '+E(capperUnits(p.plUnits)))+'</td></tr>').join("")||'<tr><td colspan="8">'+E(empty)+'</td></tr>';
 }
 function tennisModelStatus(date,pickCount){
+ if(pickCount)return {state:"PICKS POSTED",detail:pickCount+" paper "+(pickCount===1?"pick":"picks")+" posted today."};
  if(!tennisData)return tennisUnavailable?{state:"FEED UNAVAILABLE",detail:"Tennis model feed unavailable."}:{state:"LOADING",detail:"Model feed loading…"};
  if(tennisData.dateET!==date)return {state:"AWAITING TODAY’S RUN",detail:"Last report was "+tennisData.dateET+" ET."};
  const sources=Object.values(tennisData.sources||{});
- if(pickCount)return {state:"PICKS POSTED",detail:pickCount+" paper "+(pickCount===1?"pick":"picks")+" posted today."};
  if(!sources.length||sources.some(source=>source.status!=="OK"))return {state:"INCOMPLETE SCAN",detail:"Today’s tennis scan has incomplete source coverage."};
  return {state:"NO QUALIFYING PICK",detail:"No tennis pick has qualified today."};
 }
