@@ -1,6 +1,6 @@
 {
-  "dateET": "2026-11-25",
-  "updatedAtUTC": "2026-11-26T01:02:16.133104+00:00",
+  "dateET": "2026-11-26",
+  "updatedAtUTC": "2026-11-26T09:40:17.229185+00:00",
   "sources": {
     "ATP": {
       "status": "OK",
@@ -10,9 +10,11 @@
     },
     "WTA": {
       "status": "OK",
-      "scheduledSingles": 0,
+      "quoteErrors": 0,
+      "scheduledSingles": 4,
       "matchedMarkets": 0,
-      "eligibleCandidates": 0
+      "eligibleCandidates": 0,
+      "ratingsDate": "2026-11-15"
     }
   },
   "settlementErrors": [],
@@ -22,9 +24,9 @@
     "eligibleMatches": 0
   },
   "unmodeledUpcoming": {
-    "ATP Challenger": 7,
-    "WTA Challenger": 0,
-    "ITF": 3
+    "ATP Challenger": 17,
+    "WTA Challenger": 3,
+    "ITF": 18
   },
   "picks": [
     {
