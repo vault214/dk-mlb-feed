@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "sport": "NCAAF",
-  "capturedAtUTC": "2026-11-21T20:14:24.958026+00:00",
+  "capturedAtUTC": "2026-11-27T22:17:25.831349+00:00",
   "status": "WEATHER RESEARCH ONLY",
   "counts": {
-    "matched_events": 12,
-    "forecast_available": 12,
+    "matched_events": 0,
+    "forecast_available": 0,
     "indoor_venue": 0,
     "unverified_venue": 0,
     "forecast_unavailable": 0,
