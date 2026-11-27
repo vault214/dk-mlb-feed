@@ -1,24 +1,24 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-27T21:11:55.590235+00:00",
+  "updatedAtUTC": "2026-11-27T22:20:33.258663+00:00",
   "scanDateET": "2026-11-27",
   "scanHealth": "OK",
-  "lastSuccessfulSourceScanUTC": "2026-11-27T21:11:55.590235+00:00",
+  "lastSuccessfulSourceScanUTC": "2026-11-27T22:20:33.258663+00:00",
   "sourceStatus": [
     {
       "capperId": "koerner",
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 4,
-      "checkedAtUTC": "2026-11-27T21:11:55.590235+00:00",
+      "checkedAtUTC": "2026-11-27T22:20:33.258663+00:00",
       "errors": []
     },
     {
       "capperId": "stuckey",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 9,
-      "checkedAtUTC": "2026-11-27T21:11:55.590235+00:00",
+      "freshLeads": 8,
+      "checkedAtUTC": "2026-11-27T22:20:33.258663+00:00",
       "errors": []
     },
     {
@@ -26,7 +26,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 5,
-      "checkedAtUTC": "2026-11-27T21:11:55.590235+00:00",
+      "checkedAtUTC": "2026-11-27T22:20:33.258663+00:00",
       "errors": []
     },
     {
@@ -34,7 +34,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-27T21:11:55.590235+00:00",
+      "checkedAtUTC": "2026-11-27T22:20:33.258663+00:00",
       "errors": []
     },
     {
@@ -42,11 +42,11 @@
       "provider": "VSiN",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-27T21:11:55.590235+00:00",
+      "checkedAtUTC": "2026-11-27T22:20:33.258663+00:00",
       "errors": []
     }
   ],
-  "freshLeadsThisRun": 18,
+  "freshLeadsThisRun": 17,
   "retainedRecentLeads": 4,
   "leads": [
     {
@@ -285,25 +285,6 @@
     },
     {
       "capperId": "stuckey",
-      "title": "Miami (OH) vs Western Michigan Prediction, Odds: Week 13 Tuesday MACtion Picks for November 24 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOSUxPQno0Q1BZb29ENEQyaUpHYzk0aWphSmhrNWpSUzBqNm1EUy1oTDQwZkZwT1FCVHBGdzVRWk11VGpqVXVyTFlvU0FSTHRFb0FYVXNPYWhpX0RmZ2czckRHai1LUXo5U1UyNTNVd2JfaTZfc1ctMVRjMjFMV3ZlSXhHYlowM1BMcDVMNG54SjBHNjM4NzVCVFp1OURVWGdCMHNESFJsTjlXLW9hSUJhdjlUT3VxLXNfNm1Iem0yNUVxd0p6V1Z2T05CdmdBWE0?oc=5",
-      "published": "Tue, 24 Nov 2026 22:03:00 GMT",
-      "publishedAtUTC": "2026-11-24T22:03:00+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-25T21:38:24.336720+00:00"
-    },
-    {
-      "capperId": "stuckey",
       "title": "Packers vs Rams Props, Thanksgiving Eve Picks, Predictions, Odds - Action Network",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNbmRwTjdBVTJ4MjFJZkJuekhROWNrZzNYN09vX0ptTmV5UVZSQlhET204YzdSOE5YVzlxekhnZjlpQWxFSjIyZ2Y5Q185SlprcTNRcDRnQmdyN0RocEFjT255ZmNHOWUtb3NMbURGWnByaEQzb1hPS0xNQmtvb094dmNodXM2NW9rSnczY0JzbDF4SFJjM3p6WjdoWTBhYXhKMzg2SVJBdVJTUQ?oc=5",
       "published": "Wed, 25 Nov 2026 22:16:00 GMT",
@@ -407,10 +388,10 @@
     },
     {
       "capperId": "dellera",
-      "title": "Bucks vs Pistons Predictions, Odds, NBA Cup Picks: Joe Stays Hot with Prop - Action Network",
+      "title": "Bucks vs Pistons Prediction, Odds, NBA Cup Pick for Friday, November 27 - Action Network",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNenhrQ0l3WVlScXRfdmdobGFKTU1BejVUOGZ0WkIxQmpXb1I5bm9tTWNVeVh0M09vOXM2bU5qVnFLNmZkZG93TzFzb3N4QU1ObWpadzhMRU1ManFVSFVURTE0b09VZGZXT0F0RGVXUXVmVzJrbDZGUDdsc2txWmE2VFhEcTc4Wk84b0htVFowbVozcnlUWi0ySzkzNE5PdVAybXFrOENtRDA?oc=5",
-      "published": "Fri, 27 Nov 2026 16:09:00 GMT",
-      "publishedAtUTC": "2026-11-27T16:09:00+00:00",
+      "published": "Fri, 27 Nov 2026 16:22:00 GMT",
+      "publishedAtUTC": "2026-11-27T16:22:00+00:00",
       "sports": [
         "NBA"
       ],
