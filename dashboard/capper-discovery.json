@@ -1,32 +1,32 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-26T22:36:00.200356+00:00",
+  "updatedAtUTC": "2026-11-27T04:13:49.162784+00:00",
   "scanDateET": "2026-11-26",
   "scanHealth": "OK",
-  "lastSuccessfulSourceScanUTC": "2026-11-26T22:36:00.200356+00:00",
+  "lastSuccessfulSourceScanUTC": "2026-11-27T04:13:49.162784+00:00",
   "sourceStatus": [
     {
       "capperId": "koerner",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 2,
-      "checkedAtUTC": "2026-11-26T22:36:00.200356+00:00",
+      "freshLeads": 4,
+      "checkedAtUTC": "2026-11-27T04:13:49.162784+00:00",
       "errors": []
     },
     {
       "capperId": "stuckey",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 9,
-      "checkedAtUTC": "2026-11-26T22:36:00.200356+00:00",
+      "freshLeads": 10,
+      "checkedAtUTC": "2026-11-27T04:13:49.162784+00:00",
       "errors": []
     },
     {
       "capperId": "dellera",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 3,
-      "checkedAtUTC": "2026-11-26T22:36:00.200356+00:00",
+      "freshLeads": 1,
+      "checkedAtUTC": "2026-11-27T04:13:49.162784+00:00",
       "errors": []
     },
     {
@@ -34,7 +34,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-26T22:36:00.200356+00:00",
+      "checkedAtUTC": "2026-11-27T04:13:49.162784+00:00",
       "errors": []
     },
     {
@@ -42,13 +42,55 @@
       "provider": "VSiN",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-26T22:36:00.200356+00:00",
+      "checkedAtUTC": "2026-11-27T04:13:49.162784+00:00",
       "errors": []
     }
   ],
-  "freshLeadsThisRun": 14,
-  "retainedRecentLeads": 1,
+  "freshLeadsThisRun": 15,
+  "retainedRecentLeads": 0,
   "leads": [
+    {
+      "capperId": "koerner",
+      "title": "Chiefs vs Bills Best Bets: 5 Props, Picks, Predictions for Thanksgiving Week 12 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNlJJekVTWmdPdHBWSWplZ1ltTTFkMnhlV0dFZzlySXFKWmgyWWhMdC1rT1NLRGhqTGRwYzlLVzhaNEotQWpxNzVPR1h5TF9Za1VsNUUxNE50YjBtNEdlWkRkb0NZTEFHeXBNcGlma2tnVkZCRFZqeWRxZEVUWC0xc0dyRkJ3YkJlazBzOHJRZmk1RlJHMlFtWnZZZnc1Zw?oc=5",
+      "published": "Fri, 27 Nov 2026 00:46:00 GMT",
+      "publishedAtUTC": "2026-11-27T00:46:00+00:00",
+      "sports": [
+        "NFL"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-27T04:13:49.162784+00:00"
+    },
+    {
+      "capperId": "koerner",
+      "title": "Eagles vs Cowboys Prediction, Pick, Odds for NFL Thanksgiving - Yahoo Sports",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNeUJsNGd1TUlpWTJlRWRwa1JuOGxWcnkyWU5FMHhQb1ZvSmdOZ3NHMDg5ckszVlk3T04ya1BKYVN1WXZLMlZHNldmSEpKNERPU2VkQkJHS21KalE5cnZReXVMeWNPeEJ2LWgyc3NMbTh1QjhHUzlXN1BzUVhtN0VzZWYyNWlVNk9pSjBhQm1iSmYxc1dY?oc=5",
+      "published": "Thu, 26 Nov 2026 13:01:53 GMT",
+      "publishedAtUTC": "2026-11-26T13:01:53+00:00",
+      "sports": [
+        "NFL"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-27T04:13:49.162784+00:00"
+    },
     {
       "capperId": "koerner",
       "title": "College Basketball Best Bets: 4 NCAAB Picks for Thanksgiving - Action Network",
@@ -73,10 +115,10 @@
     },
     {
       "capperId": "koerner",
-      "title": "Eagles vs Cowboys Prediction, Odds, Expert Thanksgiving Picks, Props - Action Network",
+      "title": "Eagles vs Cowboys Predictions, Thanksgiving Picks, Props, Inactives, Odds - Action Network",
       "sourceUrl": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTEVSTms4cTJMOW05dzNiTUU5QmtxNWQxemhMbmwtYXRxc3ZtX04zdmo1YV9xQjZkRUR4SG9KT0NETDR4QVk0a01RNksxLWp1UlU5UjNBNWhFUjI5Y1Z5bGdDV0FRaWo5VFZad3VaN29UUGhrMWZkUlkzcmxVbXNhckFwSEpwTmpKS0lDcnA4QzFteHA3WWJQVnc1Qkxvak4yMUVKcG9vREZna29TbFNVRWlRY0pBZ1BuS1lDaXhB?oc=5",
-      "published": "Thu, 26 Nov 2026 17:58:00 GMT",
-      "publishedAtUTC": "2026-11-26T17:58:00+00:00",
+      "published": "Thu, 26 Nov 2026 20:16:00 GMT",
+      "publishedAtUTC": "2026-11-26T20:16:00+00:00",
       "sports": [
         "NFL"
       ],
@@ -137,10 +179,29 @@
     },
     {
       "capperId": "stuckey",
-      "title": "Bengals vs Commanders Predictions, Odds, Picks, Monday Night Football Inactives - Yahoo Sports",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQ2ZFdXNYNDZkMUF0VkRpay03cVZZdlV2dDJzOXNvYjdYZ0J5VzV5eXE5UElXc1cxU2JPMmhxU3VFRGs3SjVGV2hIOWlDZEhQSDhZRzE3Qk9CXzhNSE9yeU1oNDdCbEl0LVJudVhFYlVNZ2hqWms4dGRGM2RoZ3AzNV82SXVqVXB6ZHBJS0xLUQ?oc=5",
-      "published": "Mon, 23 Nov 2026 23:48:39 GMT",
-      "publishedAtUTC": "2026-11-23T23:48:39+00:00",
+      "title": "Bears vs Lions Predictions: 5 Props & Picks for Thanksgiving Week 12 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWWxSZ2NISlFsWWNRVkJSSjNHMFRXTlBJRjczME5zLWd1YjlpMEc0eEd4STI1OW1NMkJfUGRPOVNKbjQ5TDRncVNBTDVZS0dFamRfTTRwelhlMTFDRDVyUXZFVXJjYnB3SGk1LXRHUVNTRlJuNk15SlQ5SDNpY1lodW01OHZoUlVaUk5helQ5c2VOZzkydWt6Q0ZneE8?oc=5",
+      "published": "Thu, 26 Nov 2026 14:46:00 GMT",
+      "publishedAtUTC": "2026-11-26T14:46:00+00:00",
+      "sports": [],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-26T21:27:25.820444+00:00"
+    },
+    {
+      "capperId": "stuckey",
+      "title": "Chiefs vs Bills Best Bets: 5 Props, Picks, Predictions for Thanksgiving Week 12 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNlJJekVTWmdPdHBWSWplZ1ltTTFkMnhlV0dFZzlySXFKWmgyWWhMdC1rT1NLRGhqTGRwYzlLVzhaNEotQWpxNzVPR1h5TF9Za1VsNUUxNE50YjBtNEdlWkRkb0NZTEFHeXBNcGlma2tnVkZCRFZqeWRxZEVUWC0xc0dyRkJ3YkJlazBzOHJRZmk1RlJHMlFtWnZZZnc1Zw?oc=5",
+      "published": "Fri, 27 Nov 2026 00:46:00 GMT",
+      "publishedAtUTC": "2026-11-27T00:46:00+00:00",
       "sports": [
         "NFL"
       ],
@@ -154,7 +215,7 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-25T05:25:55.066167+00:00"
+      "firstSeenUTC": "2026-11-27T04:13:49.162784+00:00"
     },
     {
       "capperId": "stuckey",
@@ -180,11 +241,13 @@
     },
     {
       "capperId": "stuckey",
-      "title": "Bears vs Lions Predictions: 5 Props & Picks for Thanksgiving Week 12 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWWxSZ2NISlFsWWNRVkJSSjNHMFRXTlBJRjczME5zLWd1YjlpMEc0eEd4STI1OW1NMkJfUGRPOVNKbjQ5TDRncVNBTDVZS0dFamRfTTRwelhlMTFDRDVyUXZFVXJjYnB3SGk1LXRHUVNTRlJuNk15SlQ5SDNpY1lodW01OHZoUlVaUk5helQ5c2VOZzkydWt6Q0ZneE8?oc=5",
-      "published": "Thu, 26 Nov 2026 14:46:00 GMT",
-      "publishedAtUTC": "2026-11-26T14:46:00+00:00",
-      "sports": [],
+      "title": "Eagles vs Cowboys Picks, Props, Odds, Predictions for NFL Week 12 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdFFzUWd0Y2Vtc1dWNjhVYnQwbTVlT3FleUI3QzRBS1hWWWphRlhNdDlmblcwTjFJUVl3VVJFZ05CclJ3YUI1RVNFcnl2UXRvTkpiRmFfT0tiMWJBeEJmOU5oWDVSLUEtS1I0Wko1ZWJFN0ZwZUh0a2NSVnZjSWxnZnItWnBpbGZOdDNua1B3NjVWQW96MGxzOFh3VUZBeVhi?oc=5",
+      "published": "Thu, 26 Nov 2026 15:26:00 GMT",
+      "publishedAtUTC": "2026-11-26T15:26:00+00:00",
+      "sports": [
+        "NFL"
+      ],
       "authorInHeadline": false,
       "status": "AUTHOR_UNCONFIRMED",
       "candidateBestBet": true,
@@ -195,7 +258,28 @@
         "event start time",
         "reviewer approval"
       ],
-      "firstSeenUTC": "2026-11-26T21:27:25.820444+00:00"
+      "firstSeenUTC": "2026-11-27T04:13:49.162784+00:00"
+    },
+    {
+      "capperId": "stuckey",
+      "title": "Phoenix Suns vs Houston Rockets Prediction, Pick, NBA Cup Odds -- Wednesday, November 25 - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOTThDRGs1bXhpalRRWElJdmp3bFFaMzZ3dGZKTk9MSUozeEp3NDRWVHFWc25jZDBRckFwRTVlQ1ZSNll1Vm5HenJvT1NoTER4VWd6cFR1VzlINTk5UEpqeUF3eGJ6MG5LSVp0Uzc5THI5bHdSYmFxZXB2OVhnMnd2a0t2RlJOZ2JGTk5GeWdNdVhKSVRLR2ppQTY4Z0p1OGc3bEgwTGVGdFVUUW0welhwTnQ3SkpraHVnTE9NdQ?oc=5",
+      "published": "Wed, 25 Nov 2026 15:00:00 GMT",
+      "publishedAtUTC": "2026-11-25T15:00:00+00:00",
+      "sports": [
+        "NBA"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-27T04:13:49.162784+00:00"
     },
     {
       "capperId": "stuckey",
@@ -255,25 +339,6 @@
       "firstSeenUTC": "2026-11-25T21:38:24.336720+00:00"
     },
     {
-      "capperId": "stuckey",
-      "title": "Bengals vs Commanders Props, MNF Picks, Predictions, Best Bets - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQWGpnWDNaS3RneW9OOW5wRzl5eDdscmZYQlM4U0M1cFFLdFczalJueWp2Rm5Pcy1OMmdCUXpvOUFfcnhfRXo0VGp5bDZyd003QXpNQl9Td3lmN2ZlOEluWXhNSmcyN0V4b1FtdG80bkpSUFNCckFGdFRNbk1IaDdST1FvNHViLXBaSGxUNEUzdDJBSmdQdHBBaklHU0FJbFZEQnNQRTFzZkxia0FpOWJ0YV9Fdw?oc=5",
-      "published": "Tue, 24 Nov 2026 00:13:00 GMT",
-      "publishedAtUTC": "2026-11-24T00:13:00+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-26T04:08:26.363521+00:00"
-    },
-    {
       "capperId": "dellera",
       "title": "NBA King of the Court Picks, Predictions for Tuesday, November 24 - Yahoo Sports",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPVk5mVi1NaVdXYmdYNjVJSzJGNU4yR3ZhUzM0el91YlNCc1V1dzRWcTJld3hQM0E2WnZqa2s4UTh1Q2dqNzlPMmpCc2x0UGpkSTBIQ0pUT1c2NU9CX1lYMVN5c0NrQTA1WElYNU1tR3JzNnhCQmNMSVE2WmhRY09PMmRvdEhIdnB4?oc=5",
@@ -293,67 +358,6 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-24T22:22:27.081373+00:00"
-    },
-    {
-      "capperId": "dellera",
-      "title": "Nets vs. Timberwolves Odds & Betting Predictions November 24, 2026 - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQR0FFVkp0TFJacFdhQ2RhcXNqSkxZNE1aakRLZlVpVjRmdmVGV3VuNTFsd0tweDMtemIxYlE4LW8xQkExbFQyNlZlSW1XQ0pybjlKekhNN3cwLWxHZE54cDc3WllYLUlfNjF0WTQzNERCWU96LXpVVlZEa2N5YlM4NXZQQXlpZlFGRjcySjhjNHFFTHNZSWc?oc=5",
-      "published": "Tue, 24 Nov 2026 03:28:53 GMT",
-      "publishedAtUTC": "2026-11-24T03:28:53+00:00",
-      "sports": [],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": false,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-24T22:22:27.081373+00:00"
-    },
-    {
-      "capperId": "dellera",
-      "title": "NBA Best Bets for Thunder vs Pacers, Cavaliers vs Bulls, More (Monday, Nov. 23) - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNVlVLMGVsNFkwTFQxMy0tM0owU2FrNXloalFkUGJMR2xTcXFVWGtobVNKbFZvZm5oZ2ZZRVNhZXlleGxGYUtkb3hQYV9vZVo5VzRrQ1BPbVM3RGtKRi1BQmJkX09KS21QbVhjS3RnRzBTVHNVM2llQnBzZUVEbGNYMTFqb0Ztc3pSbGhnel9DSGRRbTVnVkRPdW9sQ0xySmRfTDlXNW95RU9RZzRKUGE4?oc=5",
-      "published": "Mon, 23 Nov 2026 22:54:00 GMT",
-      "publishedAtUTC": "2026-11-23T22:54:00+00:00",
-      "sports": [
-        "NBA"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-24T01:13:47.203554+00:00"
-    },
-    {
-      "capperId": "stuckey",
-      "title": "Bengals vs Commanders Predictions, Odds, Picks, Monday Night Football Inactives - Action Network",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPMFg4MmNsZ0g5VHBEM3hnczAwV0pwRWZIT0tPUUFyMlFWakpwZ1ZMUDBxeFI2aDVwczgxcjVTV2JwUl92QzF0TVhJVnEyM21BelZfeVNqR0FMY0ltMG9FRnpYbXBDTWsybjZIckRmOWNxMXFjdlVCWTNicEVZZno5LWhWR2RnRUJGZkFieFRIUm1ObERFbjB4TnFtYXo3VHJqWG1DU2hxdW92emt2amx6Sm5YWnRZX3JlQ0hJdGZlTUxaSmZ2OW9OMEQxcVcxV2RuVmc?oc=5",
-      "published": "Tue, 24 Nov 2026 01:15:00 GMT",
-      "publishedAtUTC": "2026-11-24T01:15:00+00:00",
-      "sports": [
-        "NFL"
-      ],
-      "authorInHeadline": false,
-      "status": "AUTHOR_UNCONFIRMED",
-      "candidateBestBet": true,
-      "reviewNeeded": [
-        "verify actual author",
-        "original pregame publication timestamp",
-        "exact selection and quoted odds",
-        "event start time",
-        "reviewer approval"
-      ],
-      "firstSeenUTC": "2026-11-24T01:13:47.203554+00:00"
     }
   ],
   "note": "Discovery is not automatic verification, even when source health is OK. No inferred bets. RSS providers may block requests."
