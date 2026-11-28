@@ -1,32 +1,32 @@
 {
   "schemaVersion": 2,
-  "updatedAtUTC": "2026-11-27T22:20:33.258663+00:00",
+  "updatedAtUTC": "2026-11-28T03:53:21.064701+00:00",
   "scanDateET": "2026-11-27",
   "scanHealth": "OK",
-  "lastSuccessfulSourceScanUTC": "2026-11-27T22:20:33.258663+00:00",
+  "lastSuccessfulSourceScanUTC": "2026-11-28T03:53:21.064701+00:00",
   "sourceStatus": [
     {
       "capperId": "koerner",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 4,
-      "checkedAtUTC": "2026-11-27T22:20:33.258663+00:00",
+      "freshLeads": 5,
+      "checkedAtUTC": "2026-11-28T03:53:21.064701+00:00",
       "errors": []
     },
     {
       "capperId": "stuckey",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 8,
-      "checkedAtUTC": "2026-11-27T22:20:33.258663+00:00",
+      "freshLeads": 9,
+      "checkedAtUTC": "2026-11-28T03:53:21.064701+00:00",
       "errors": []
     },
     {
       "capperId": "dellera",
       "provider": "GoogleNewsRSS",
       "status": "OK",
-      "freshLeads": 5,
-      "checkedAtUTC": "2026-11-27T22:20:33.258663+00:00",
+      "freshLeads": 4,
+      "checkedAtUTC": "2026-11-28T03:53:21.064701+00:00",
       "errors": []
     },
     {
@@ -34,7 +34,7 @@
       "provider": "GoogleNewsRSS",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-27T22:20:33.258663+00:00",
+      "checkedAtUTC": "2026-11-28T03:53:21.064701+00:00",
       "errors": []
     },
     {
@@ -42,12 +42,12 @@
       "provider": "VSiN",
       "status": "OK",
       "freshLeads": 0,
-      "checkedAtUTC": "2026-11-27T22:20:33.258663+00:00",
+      "checkedAtUTC": "2026-11-28T03:53:21.064701+00:00",
       "errors": []
     }
   ],
-  "freshLeadsThisRun": 17,
-  "retainedRecentLeads": 4,
+  "freshLeadsThisRun": 18,
+  "retainedRecentLeads": 5,
   "leads": [
     {
       "capperId": "koerner",
@@ -69,6 +69,27 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-27T04:13:49.162784+00:00"
+    },
+    {
+      "capperId": "koerner",
+      "title": "2026 Live NFL Quarterback Power Rankings: Every QB\u2019s Value Against the Spread - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNcHZURGtyOW92OVk5ZXBJNVBUY1BGdzJEMEl0T0szZGZla0hjUnpMY28zeUEtNEpVWXpseWo3M19BR0tiLW9RcE9uTkVkbFNwdE1CM3BWVmwydzZjNmRTRGluYW16Tmp5SlBXZEtPTDBzYVhQSWdRbTNwQUhSaXRKdjBhZTlNcVRWQXJZQ0wxQVQ3OUNlWm80Vk0xUjV2eVJKaTVkWWRwRklMdHB3YXc?oc=5",
+      "published": "Wed, 25 Nov 2026 19:59:00 GMT",
+      "publishedAtUTC": "2026-11-25T19:59:00+00:00",
+      "sports": [
+        "NFL"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": false,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-28T03:53:21.064701+00:00"
     },
     {
       "capperId": "koerner",
@@ -242,6 +263,28 @@
         "reviewer approval"
       ],
       "firstSeenUTC": "2026-11-27T21:11:55.590235+00:00"
+    },
+    {
+      "capperId": "stuckey",
+      "title": "Texas vs Texas A&M Prediction, Odds, Time: Friday College Football Picks - Action Network",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNenI1c1pscjVxN1RvMUF4WmFsaFk3SC1xUWtRWVRoYm81a0NKOUZEMlYzU1pjQllYbVpxQmJyeUJTQlU4S2NlRUM0T0txZXZjSHdZeU9ZMXA1WURIYVBRSGVuV29tMnBQcVlDTFVTU016LWFRMXd5aG9UQUVGZjAxTGVacTZJTUVGcG5UanAxNnV4dTJyXzd0eExQNVVaZERNeXVPRVFMdHluSDM2YVRrUnJLZndCOXR1ZlFhMDRXaw?oc=5",
+      "published": "Fri, 27 Nov 2026 23:17:00 GMT",
+      "publishedAtUTC": "2026-11-27T23:17:00+00:00",
+      "sports": [
+        "NFL",
+        "NCAAF"
+      ],
+      "authorInHeadline": false,
+      "status": "AUTHOR_UNCONFIRMED",
+      "candidateBestBet": true,
+      "reviewNeeded": [
+        "verify actual author",
+        "original pregame publication timestamp",
+        "exact selection and quoted odds",
+        "event start time",
+        "reviewer approval"
+      ],
+      "firstSeenUTC": "2026-11-28T03:53:21.064701+00:00"
     },
     {
       "capperId": "stuckey",
